@@ -20,6 +20,7 @@ Individual: Title%20%28ADD56%29TITLE
     rico:generalDescription "(ADD08)ASSMAT",
     rico:generalDescription "(ADD09)AVAIL",
     rico:generalDescription "(ADD24)FINDAID",
+    rico:generalDescription "(ADD29)CMTD or HIDDENNOTES",
     rico:generalDescription "(ADD41)NOTES",
     rico:generalDescription "(ADD49)RELMAT",
     rico:isOrWasDescribedBy Archival%20Description,
@@ -95,18 +96,11 @@ Individual: Archival%20Description
     rdfs:label "Archival Description"
   Types: rico:DocumentaryFormType, rico:Record
   Facts:
-    rico:resultsOrResultedFrom Archival%20Description%20Creation,
     rico:lastModificationDate "Date Modified (ADD21)MODDATE",
     rico:hasDocumentaryFormType Archival%20Description,
     rico:hasRecordState %28ADD54%29STATUSD,
-    rico:hasRecordState %28ADD57%29WEBD%20%2F%20WEBL
-
-Individual: Archival%20Description%20Creation
-  Annotations:
-    rdfs:label "Archival Description Creation"
-  Types: rico:Activity
-  Facts:
-    rico:isOrWasPerformedBy Archivist%20%28ADD05%29ARCHD
+    rico:hasRecordState %28ADD57%29WEBD%20%2F%20WEBL,
+    rico:hasCreator Archivist%20%28ADD05%29ARCHD
 
 Individual: Archivist%20%28ADD05%29ARCHD
   Annotations:

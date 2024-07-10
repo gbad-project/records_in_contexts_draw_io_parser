@@ -49,21 +49,14 @@
 <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record> rdf:type owl:NamedIndividual ,
                                                                               rico:DocumentaryFormType ,
                                                                               rico:Record ;
+                                                                     rico:hasCreator <http://gbad.archives.gov.on.ca/schema/authority#Archivist%20%28AUTH02%29ARCHAU> ;
                                                                      rico:hasDocumentaryFormType <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record> ;
                                                                      rico:hasRecordState <http://gbad.archives.gov.on.ca/schema/authority#%28AUTH18%29STATUSA> ,
                                                                                          <http://gbad.archives.gov.on.ca/schema/authority#%28AUTH22%29WEBA> ;
                                                                      rico:isOrWasRegulatedBy <http://gbad.archives.gov.on.ca/schema/authority#Rules%20%28AUTH16%29RULES> ;
-                                                                     rico:resultsOrResultedFrom <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record%20Creation> ;
                                                                      rico:generalDescription "(AUTH17)SOURCE" ;
                                                                      rico:lastModificationDate "Date (AUTH09)MOD_DATE" ;
                                                                      rdfs:label "Authority Record" .
-
-
-###  http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record%20Creation
-<http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record%20Creation> rdf:type owl:NamedIndividual ,
-                                                                                         rico:Activity ;
-                                                                                rico:isOrWasPerformedBy <http://gbad.archives.gov.on.ca/schema/authority#Archivist%20%28AUTH02%29ARCHAU> ;
-                                                                                rdfs:label "Authority Record Creation" .
 
 
 ###  http://gbad.archives.gov.on.ca/schema/authority#Authority%20Type%20%28AUTH03%29AUTHTP
@@ -124,7 +117,8 @@
                                                                                 rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC> ;
                                                                                 rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record> ;
                                                                                 rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> ;
-                                                                                rico:generalDescription "(AUTH11)FUN" ;
+                                                                                rico:generalDescription "(AUTH07)CMTAU" ,
+                                                                                                        "(AUTH11)FUN" ;
                                                                                 rico:history "Biographical Sketch or Administrative History (AUTH05)ADM" ;
                                                                                 rico:normalizedValue "Natural Name (AUTH13)NAME" ;
                                                                                 rdfs:label "Heading (AUTH12)HEADING" .

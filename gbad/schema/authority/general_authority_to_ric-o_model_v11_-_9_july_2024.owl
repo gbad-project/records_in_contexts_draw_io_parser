@@ -25,6 +25,7 @@ Individual: Heading%20%28AUTH12%29HEADING
     rico:isSuccessorOf Predecessor%20Agencies%20%28AUTH15%29PRED,
     rico:hasSuccessor Successor%20Agencies%20%28AUTH20%29SUC,
     rico:isOrWasDescribedBy Authority%20Record,
+    rico:generalDescription "(AUTH07)CMTAU",
     rico:generalDescription "(AUTH11)FUN"
 
 Individual: Agency%20Reference%20Code%20%28AUTH01%29REFA
@@ -93,22 +94,15 @@ Individual: Authority%20Record
     rico:generalDescription "(AUTH17)SOURCE",
     rico:hasDocumentaryFormType Authority%20Record,
     rico:isOrWasRegulatedBy Rules%20%28AUTH16%29RULES,
-    rico:resultsOrResultedFrom Authority%20Record%20Creation,
     rico:lastModificationDate "Date (AUTH09)MOD_DATE",
     rico:hasRecordState %28AUTH18%29STATUSA,
-    rico:hasRecordState %28AUTH22%29WEBA
+    rico:hasRecordState %28AUTH22%29WEBA,
+    rico:hasCreator Archivist%20%28AUTH02%29ARCHAU
 
 Individual: Rules%20%28AUTH16%29RULES
   Annotations:
     rdfs:label "Rules (AUTH16)RULES"
   Types: rico:Rule
-
-Individual: Authority%20Record%20Creation
-  Annotations:
-    rdfs:label "Authority Record Creation"
-  Types: rico:Activity
-  Facts:
-    rico:isOrWasPerformedBy Archivist%20%28AUTH02%29ARCHAU
 
 Individual: Archivist%20%28AUTH02%29ARCHAU
   Annotations:

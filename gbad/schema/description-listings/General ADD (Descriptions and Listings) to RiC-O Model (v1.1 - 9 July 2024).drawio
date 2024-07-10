@@ -149,7 +149,7 @@
             <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="vEi_3DjQt7wcUmB-cSFn-15" value="rico:DocumentaryFormType&lt;div&gt;ric-dft:FindingAid&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="vEi_3DjQt7wcUmB-cSFn-14" vertex="1">
+        <mxCell id="vEi_3DjQt7wcUmB-cSFn-15" value="rico:DocumentaryFormType" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="vEi_3DjQt7wcUmB-cSFn-14" vertex="1">
           <mxGeometry y="26" width="170" height="44" as="geometry" />
         </mxCell>
         <mxCell id="vEi_3DjQt7wcUmB-cSFn-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.536;exitY=0.957;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="vEi_3DjQt7wcUmB-cSFn-11" target="vEi_3DjQt7wcUmB-cSFn-14" edge="1">
@@ -633,7 +633,7 @@
             <mxPoint x="50" y="200" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="hDRFmwmGqqun0fTEbF33-5" value="rico:accumulationDate" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="hDRFmwmGqqun0fTEbF33-4" connectable="0" vertex="1">
+        <mxCell id="hDRFmwmGqqun0fTEbF33-5" value="rico:date" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="hDRFmwmGqqun0fTEbF33-4" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="hDRFmwmGqqun0fTEbF33-6" value="Dates of Accumulation (ADD18)&lt;div&gt;DATEACM&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" parent="1" vertex="1">
