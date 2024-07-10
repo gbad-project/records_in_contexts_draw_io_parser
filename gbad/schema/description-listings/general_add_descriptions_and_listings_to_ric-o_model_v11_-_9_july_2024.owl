@@ -11,18 +11,18 @@ Individual: Title%20%28ADD56%29TITLE
   Facts:
     rico:hasRecordSetType Level%20%28ADD36%29LEVELDES,
     rico:scopeAndContent "Scope and Content (ADD51)SCOPE",
-    rico:history "(ADD03)ADMBIO",
-    rico:history "(ADD17)CUSTOD",
-    rico:history "(ADD33)ISA",
+    rico:history "Administrative History (ADD03)ADMBIO",
+    rico:history "Custodial History (ADD17)CUSTOD",
+    rico:history "Immediate Source of Acquisition (ADD33)ISA",
     rico:hasOrHadInstantiation Title%20%28ADD56%29%20%5B+%20-i1%5DTITLE,
     rico:conditionsOfAccess "Access Restrictions (ADD01)RESTRTX / REST",
     rico:conditionsOfUse "Terms Governing Use (ADD55)TGU",
-    rico:generalDescription "(ADD08)ASSMAT",
-    rico:generalDescription "(ADD09)AVAIL",
-    rico:generalDescription "(ADD24)FINDAID",
-    rico:generalDescription "(ADD29)CMTD or HIDDENNOTES",
-    rico:generalDescription "(ADD41)NOTES",
-    rico:generalDescription "(ADD49)RELMAT",
+    rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29)CMTD or HIDDENNOTES",
+    rico:generalDescription "Associated Material (ADD08)ASSMAT",
+    rico:generalDescription "Availability of Other Formats (ADD09)AVAIL",
+    rico:generalDescription "Finding Aid Note (ADD24)FINDAID",
+    rico:generalDescription "Notes (ADD41)NOTES",
+    rico:generalDescription "Related Material (ADD49)RELMAT",
     rico:isOrWasDescribedBy Archival%20Description,
     rico:isOrWasDescribedBy Finding%20Aid%20Link%20%28ADD23%29FINDAIDLINK,
     rico:accruals "Accruals (ADD02)ACCRUAL",
@@ -53,7 +53,7 @@ Individual: Title%20%28ADD56%29%20%5B+%20-i1%5DTITLE
   Facts:
     rico:instantiationExtent "Physical Description (ADD46) PHDESC",
     rico:physicalCharacteristicsNote "Physical Condition (ADD45)PHYSCO",
-    rico:generalDescription "(ADD31)HOWTO"
+    rico:generalDescription "How to Order (ADD31)HOWTO"
 
 Individual: Finding%20Aid%20Link%20%28ADD23%29FINDAIDLINK
   Annotations:
@@ -98,8 +98,8 @@ Individual: Archival%20Description
   Facts:
     rico:lastModificationDate "Date Modified (ADD21)MODDATE",
     rico:hasDocumentaryFormType Archival%20Description,
-    rico:hasRecordState %28ADD54%29STATUSD,
-    rico:hasRecordState %28ADD57%29WEBD%20%2F%20WEBL,
+    rico:hasRecordState Status%20%28ADD54%29STATUSD,
+    rico:hasRecordState Web%20Enabled%20%28ADD57%29WEBD%20%2F%20WEBL,
     rico:hasCreator Archivist%20%28ADD05%29ARCHD
 
 Individual: Archivist%20%28ADD05%29ARCHD
@@ -122,14 +122,14 @@ Individual: Geographic%20%28ADD28%29INDEXGEO
     rdfs:label "Geographic (ADD28)INDEXGEO"
   Types: rico:Place
 
-Individual: %28ADD54%29STATUSD
+Individual: Status%20%28ADD54%29STATUSD
   Annotations:
-    rdfs:label "(ADD54)STATUSD"
+    rdfs:label "Status (ADD54)STATUSD"
   Types: rico:RecordState
 
-Individual: %28ADD57%29WEBD%20%2F%20WEBL
+Individual: Web%20Enabled%20%28ADD57%29WEBD%20%2F%20WEBL
   Annotations:
-    rdfs:label "(ADD57)WEBD / WEBL"
+    rdfs:label "Web Enabled (ADD57)WEBD / WEBL"
   Types: rico:RecordState
 
 Individual: Office%20Of%20Origin%20Relation

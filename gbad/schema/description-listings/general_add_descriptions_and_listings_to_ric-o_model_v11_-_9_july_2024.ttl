@@ -14,26 +14,14 @@
 #    Individuals
 #################################################################
 
-###  http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD54%29STATUSD
-<http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD54%29STATUSD> rdf:type owl:NamedIndividual ,
-                                                                                         rico:RecordState ;
-                                                                                rdfs:label "(ADD54)STATUSD" .
-
-
-###  http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD57%29WEBD%20%2F%20WEBL
-<http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD57%29WEBD%20%2F%20WEBL> rdf:type owl:NamedIndividual ,
-                                                                                                   rico:RecordState ;
-                                                                                          rdfs:label "(ADD57)WEBD / WEBL" .
-
-
 ###  http://gbad.archives.gov.on.ca/schema/description-listings#Archival%20Description
 <http://gbad.archives.gov.on.ca/schema/description-listings#Archival%20Description> rdf:type owl:NamedIndividual ,
                                                                                              rico:DocumentaryFormType ,
                                                                                              rico:Record ;
                                                                                     rico:hasCreator <http://gbad.archives.gov.on.ca/schema/description-listings#Archivist%20%28ADD05%29ARCHD> ;
                                                                                     rico:hasDocumentaryFormType <http://gbad.archives.gov.on.ca/schema/description-listings#Archival%20Description> ;
-                                                                                    rico:hasRecordState <http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD54%29STATUSD> ,
-                                                                                                        <http://gbad.archives.gov.on.ca/schema/description-listings#%28ADD57%29WEBD%20%2F%20WEBL> ;
+                                                                                    rico:hasRecordState <http://gbad.archives.gov.on.ca/schema/description-listings#Status%20%28ADD54%29STATUSD> ,
+                                                                                                        <http://gbad.archives.gov.on.ca/schema/description-listings#Web%20Enabled%20%28ADD57%29WEBD%20%2F%20WEBL> ;
                                                                                     rico:lastModificationDate "Date Modified (ADD21)MODDATE" ;
                                                                                     rdfs:label "Archival Description" .
 
@@ -146,6 +134,12 @@
                                                                                                 rdfs:label "Reference Code (ADD48)REFD" .
 
 
+###  http://gbad.archives.gov.on.ca/schema/description-listings#Status%20%28ADD54%29STATUSD
+<http://gbad.archives.gov.on.ca/schema/description-listings#Status%20%28ADD54%29STATUSD> rdf:type owl:NamedIndividual ,
+                                                                                                  rico:RecordState ;
+                                                                                         rdfs:label "Status (ADD54)STATUSD" .
+
+
 ###  http://gbad.archives.gov.on.ca/schema/description-listings#Title%20%28ADD56%29TITLE
 <http://gbad.archives.gov.on.ca/schema/description-listings#Title%20%28ADD56%29TITLE> rdf:type owl:NamedIndividual ,
                                                                                                rico:RecordSet ,
@@ -171,15 +165,15 @@
                                                                                       rico:conditionsOfUse "Terms Governing Use (ADD55)TGU" ;
                                                                                       rico:creationDate "Dates of Creation (ADD19)DATECR" ;
                                                                                       rico:date "Dates of Accumulation (ADD18)DATEACM" ;
-                                                                                      rico:generalDescription "(ADD08)ASSMAT" ,
-                                                                                                              "(ADD09)AVAIL" ,
-                                                                                                              "(ADD24)FINDAID" ,
-                                                                                                              "(ADD29)CMTD or HIDDENNOTES" ,
-                                                                                                              "(ADD41)NOTES" ,
-                                                                                                              "(ADD49)RELMAT" ;
-                                                                                      rico:history "(ADD03)ADMBIO" ,
-                                                                                                   "(ADD17)CUSTOD" ,
-                                                                                                   "(ADD33)ISA" ;
+                                                                                      rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29)CMTD or HIDDENNOTES" ,
+                                                                                                              "Associated Material (ADD08)ASSMAT" ,
+                                                                                                              "Availability of Other Formats (ADD09)AVAIL" ,
+                                                                                                              "Finding Aid Note (ADD24)FINDAID" ,
+                                                                                                              "Notes (ADD41)NOTES" ,
+                                                                                                              "Related Material (ADD49)RELMAT" ;
+                                                                                      rico:history "Administrative History (ADD03)ADMBIO" ,
+                                                                                                   "Custodial History (ADD17)CUSTOD" ,
+                                                                                                   "Immediate Source of Acquisition (ADD33)ISA" ;
                                                                                       rico:scopeAndContent "Scope and Content (ADD51)SCOPE" ;
                                                                                       rdfs:label "Title (ADD56)TITLE" .
 
@@ -187,10 +181,16 @@
 ###  http://gbad.archives.gov.on.ca/schema/description-listings#Title%20%28ADD56%29%20%5B+%20-i1%5DTITLE
 <http://gbad.archives.gov.on.ca/schema/description-listings#Title%20%28ADD56%29%20%5B+%20-i1%5DTITLE> rdf:type owl:NamedIndividual ,
                                                                                                                rico:Instantiation ;
-                                                                                                      rico:generalDescription "(ADD31)HOWTO" ;
+                                                                                                      rico:generalDescription "How to Order (ADD31)HOWTO" ;
                                                                                                       rico:instantiationExtent "Physical Description (ADD46) PHDESC" ;
                                                                                                       rico:physicalCharacteristicsNote "Physical Condition (ADD45)PHYSCO" ;
                                                                                                       rdfs:label "Title (ADD56) [+ -i1]TITLE" .
+
+
+###  http://gbad.archives.gov.on.ca/schema/description-listings#Web%20Enabled%20%28ADD57%29WEBD%20%2F%20WEBL
+<http://gbad.archives.gov.on.ca/schema/description-listings#Web%20Enabled%20%28ADD57%29WEBD%20%2F%20WEBL> rdf:type owl:NamedIndividual ,
+                                                                                                                   rico:RecordState ;
+                                                                                                          rdfs:label "Web Enabled (ADD57)WEBD / WEBL" .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi

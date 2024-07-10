@@ -25,8 +25,8 @@ Individual: Heading%20%28AUTH12%29HEADING
     rico:isSuccessorOf Predecessor%20Agencies%20%28AUTH15%29PRED,
     rico:hasSuccessor Successor%20Agencies%20%28AUTH20%29SUC,
     rico:isOrWasDescribedBy Authority%20Record,
-    rico:generalDescription "(AUTH07)CMTAU",
-    rico:generalDescription "(AUTH11)FUN"
+    rico:generalDescription "Comment (AUTH07)CMTAU",
+    rico:generalDescription "Function Note (AUTH11)FUN"
 
 Individual: Agency%20Reference%20Code%20%28AUTH01%29REFA
   Annotations:
@@ -91,12 +91,12 @@ Individual: Authority%20Record
     rdfs:label "Authority Record"
   Types: rico:DocumentaryFormType, rico:Record
   Facts:
-    rico:generalDescription "(AUTH17)SOURCE",
+    rico:generalDescription "Source Note (AUTH17)SOURCE",
     rico:hasDocumentaryFormType Authority%20Record,
     rico:isOrWasRegulatedBy Rules%20%28AUTH16%29RULES,
     rico:lastModificationDate "Date (AUTH09)MOD_DATE",
-    rico:hasRecordState %28AUTH18%29STATUSA,
-    rico:hasRecordState %28AUTH22%29WEBA,
+    rico:hasRecordState Status%20%28AUTH18%29STATUSA,
+    rico:hasRecordState Web%20Ready%20%28AUTH22%29WEBA,
     rico:hasCreator Archivist%20%28AUTH02%29ARCHAU
 
 Individual: Rules%20%28AUTH16%29RULES
@@ -133,12 +133,12 @@ Individual: Variant%20Name
     rdfs:label "Variant Name"
   Types: rico:Type
 
-Individual: %28AUTH22%29WEBA
+Individual: Web%20Ready%20%28AUTH22%29WEBA
   Annotations:
-    rdfs:label "(AUTH22)WEBA"
+    rdfs:label "Web Ready (AUTH22)WEBA"
   Types: rico:RecordState
 
-Individual: %28AUTH18%29STATUSA
+Individual: Status%20%28AUTH18%29STATUSA
   Annotations:
-    rdfs:label "(AUTH18)STATUSA"
+    rdfs:label "Status (AUTH18)STATUSA"
   Types: rico:RecordState

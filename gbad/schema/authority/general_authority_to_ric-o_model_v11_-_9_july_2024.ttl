@@ -14,18 +14,6 @@
 #    Individuals
 #################################################################
 
-###  http://gbad.archives.gov.on.ca/schema/authority#%28AUTH18%29STATUSA
-<http://gbad.archives.gov.on.ca/schema/authority#%28AUTH18%29STATUSA> rdf:type owl:NamedIndividual ,
-                                                                               rico:RecordState ;
-                                                                      rdfs:label "(AUTH18)STATUSA" .
-
-
-###  http://gbad.archives.gov.on.ca/schema/authority#%28AUTH22%29WEBA
-<http://gbad.archives.gov.on.ca/schema/authority#%28AUTH22%29WEBA> rdf:type owl:NamedIndividual ,
-                                                                            rico:RecordState ;
-                                                                   rdfs:label "(AUTH22)WEBA" .
-
-
 ###  http://gbad.archives.gov.on.ca/schema/authority#Agency%20Reference%20Code%20%28AUTH01%29REFA
 <http://gbad.archives.gov.on.ca/schema/authority#Agency%20Reference%20Code%20%28AUTH01%29REFA> rdf:type owl:NamedIndividual ,
                                                                                                         rico:Identifier ;
@@ -51,10 +39,10 @@
                                                                               rico:Record ;
                                                                      rico:hasCreator <http://gbad.archives.gov.on.ca/schema/authority#Archivist%20%28AUTH02%29ARCHAU> ;
                                                                      rico:hasDocumentaryFormType <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record> ;
-                                                                     rico:hasRecordState <http://gbad.archives.gov.on.ca/schema/authority#%28AUTH18%29STATUSA> ,
-                                                                                         <http://gbad.archives.gov.on.ca/schema/authority#%28AUTH22%29WEBA> ;
+                                                                     rico:hasRecordState <http://gbad.archives.gov.on.ca/schema/authority#Status%20%28AUTH18%29STATUSA> ,
+                                                                                         <http://gbad.archives.gov.on.ca/schema/authority#Web%20Ready%20%28AUTH22%29WEBA> ;
                                                                      rico:isOrWasRegulatedBy <http://gbad.archives.gov.on.ca/schema/authority#Rules%20%28AUTH16%29RULES> ;
-                                                                     rico:generalDescription "(AUTH17)SOURCE" ;
+                                                                     rico:generalDescription "Source Note (AUTH17)SOURCE" ;
                                                                      rico:lastModificationDate "Date (AUTH09)MOD_DATE" ;
                                                                      rdfs:label "Authority Record" .
 
@@ -117,8 +105,8 @@
                                                                                 rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC> ;
                                                                                 rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record> ;
                                                                                 rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> ;
-                                                                                rico:generalDescription "(AUTH07)CMTAU" ,
-                                                                                                        "(AUTH11)FUN" ;
+                                                                                rico:generalDescription "Comment (AUTH07)CMTAU" ,
+                                                                                                        "Function Note (AUTH11)FUN" ;
                                                                                 rico:history "Biographical Sketch or Administrative History (AUTH05)ADM" ;
                                                                                 rico:normalizedValue "Natural Name (AUTH13)NAME" ;
                                                                                 rdfs:label "Heading (AUTH12)HEADING" .
@@ -149,6 +137,12 @@
                                                                             rdfs:label "Rules (AUTH16)RULES" .
 
 
+###  http://gbad.archives.gov.on.ca/schema/authority#Status%20%28AUTH18%29STATUSA
+<http://gbad.archives.gov.on.ca/schema/authority#Status%20%28AUTH18%29STATUSA> rdf:type owl:NamedIndividual ,
+                                                                                        rico:RecordState ;
+                                                                               rdfs:label "Status (AUTH18)STATUSA" .
+
+
 ###  http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC
 <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC> rdf:type owl:NamedIndividual ,
                                                                                                   rico:Agent ;
@@ -166,6 +160,12 @@
                                                                                              rico:AgentName ;
                                                                                     rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> ;
                                                                                     rdfs:label "Variant Names (AUTH21)VAR" .
+
+
+###  http://gbad.archives.gov.on.ca/schema/authority#Web%20Ready%20%28AUTH22%29WEBA
+<http://gbad.archives.gov.on.ca/schema/authority#Web%20Ready%20%28AUTH22%29WEBA> rdf:type owl:NamedIndividual ,
+                                                                                          rico:RecordState ;
+                                                                                 rdfs:label "Web Ready (AUTH22)WEBA" .
 
 
 ###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
