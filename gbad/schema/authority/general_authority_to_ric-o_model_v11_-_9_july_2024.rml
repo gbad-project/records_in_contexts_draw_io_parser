@@ -14,8 +14,6 @@
 @prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
 @base <http://gbad.archives.gov.on.ca/> .
 
-_:source dc:title "gbad/mapping/source/authority_head_6.csv" .
-
 :AgentNameAUTH13 a rr:TriplesMap;
   rml:logicalSource [
     rml:source "gbad/mapping/source/authority_head_6.csv";
