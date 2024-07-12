@@ -4,14 +4,13 @@ Prefix: : <http://gbad.archives.gov.on.ca/schema/authority#>
 Ontology: <http://gbad.archives.gov.on.ca/schema/authority>
   Import: <https://www.ica.org/standards/RiC/ontology>
 
-Individual: Heading%20%28AUTH12%29HEADING
+Individual: Heading%20%28AUTH24%29HEADING
   Annotations:
-    rdfs:label "Heading (AUTH12)HEADING"
-  Types: rico:Agent, rico:AgentName
+    rdfs:label "Heading (AUTH24)HEADING"
+  Types: rico:Agent
   Facts:
-    rico:normalizedValue "Natural Name (AUTH13)NAME",
     rico:hasOrHadIdentifier Agency%20Reference%20Code%20%28AUTH01%29REFA,
-    rico:hasOrHadAgentName Heading%20%28AUTH12%29HEADING,
+    rico:hasOrHadAgentName Heading%20%28AUTH23%29HEADING,
     rico:hasOrHadAgentName Parallel%20Names%20%28AUTH14%29PAR,
     rico:hasOrHadAgentName Variant%20Names%20%28AUTH21%29VAR,
     rico:hasOrHadCorporateBodyType Authority%20Type%20%28AUTH03%29AUTHTP,
@@ -39,6 +38,13 @@ Individual: Agent%20Identifier
   Annotations:
     rdfs:label "Agent Identifier"
   Types: rico:IdentifierType
+
+Individual: Heading%20%28AUTH23%29HEADING
+  Annotations:
+    rdfs:label "Heading (AUTH23)HEADING"
+  Types: rico:AgentName
+  Facts:
+    rico:normalizedValue "Natural Name (AUTH13)NAME"
 
 Individual: Authority%20Type%20%28AUTH03%29AUTHTP
   Annotations:
@@ -114,7 +120,7 @@ Individual: Controlling%20Agency%20Relation
     rdfs:label "Controlling Agency Relation"
   Types: rico:AgentControlRelation
   Facts:
-    rico:relationHasTarget Heading%20%28AUTH12%29HEADING,
+    rico:relationHasTarget Heading%20%28AUTH24%29HEADING,
     rico:hasBeginningDate Date%20Of%20Subordination%20%28AUTH08%29DATECONT,
     rico:hasEndDate Date%20Of%20Subordination%20%28AUTH08%29DATECONT
 

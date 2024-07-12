@@ -71,7 +71,7 @@
                                                                                            rico:AgentControlRelation ;
                                                                                   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Date%20Of%20Subordination%20%28AUTH08%29DATECONT> ;
                                                                                   rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Date%20Of%20Subordination%20%28AUTH08%29DATECONT> ;
-                                                                                  rico:relationHasTarget <http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH12%29HEADING> ;
+                                                                                  rico:relationHasTarget <http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH24%29HEADING> ;
                                                                                   rdfs:label "Controlling Agency Relation" .
 
 
@@ -87,16 +87,22 @@
                                                                                               rdfs:label "Dates of Existence (AUTH10)DATEEX" .
 
 
-###  http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH12%29HEADING
-<http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH12%29HEADING> rdf:type owl:NamedIndividual ,
-                                                                                         rico:Agent ,
+###  http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH23%29HEADING
+<http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH23%29HEADING> rdf:type owl:NamedIndividual ,
                                                                                          rico:AgentName ;
+                                                                                rico:normalizedValue "Natural Name (AUTH13)NAME" ;
+                                                                                rdfs:label "Heading (AUTH23)HEADING" .
+
+
+###  http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH24%29HEADING
+<http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH24%29HEADING> rdf:type owl:NamedIndividual ,
+                                                                                         rico:Agent ;
                                                                                 rico:authorizedBy <http://gbad.archives.gov.on.ca/schema/authority#Authorizing%20Agent%20%28AUTH04%29AA> ;
                                                                                 rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ;
                                                                                 rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ;
                                                                                 rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ;
                                                                                 rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ;
-                                                                                rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH12%29HEADING> ,
+                                                                                rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/schema/authority#Heading%20%28AUTH23%29HEADING> ,
                                                                                                        <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR> ,
                                                                                                        <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Names%20%28AUTH21%29VAR> ;
                                                                                 rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG> ;
@@ -108,8 +114,7 @@
                                                                                 rico:generalDescription "Comment (AUTH07)CMTAU" ,
                                                                                                         "Function Note (AUTH11)FUN" ;
                                                                                 rico:history "Biographical Sketch or Administrative History (AUTH05)ADM" ;
-                                                                                rico:normalizedValue "Natural Name (AUTH13)NAME" ;
-                                                                                rdfs:label "Heading (AUTH12)HEADING" .
+                                                                                rdfs:label "Heading (AUTH24)HEADING" .
 
 
 ###  http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Name
