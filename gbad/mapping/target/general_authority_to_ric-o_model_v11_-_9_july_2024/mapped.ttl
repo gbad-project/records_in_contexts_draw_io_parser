@@ -1,33 +1,43 @@
 @prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 
 <http://gbad.archives.gov.on.ca/AA108/Identifier> a rico:Identifier;
+  rdfs:label "AA108";
   rico:hasIdentifierType <http://gbad.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
 
 <http://gbad.archives.gov.on.ca/AgentName/CFMT> a rico:AgentName;
+  rdfs:label "CFMT";
   rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
 
-<http://gbad.archives.gov.on.ca/AgentName/CHIN%20Radio%2FTV%20International> a rico:AgentName .
+<http://gbad.archives.gov.on.ca/AgentName/CHIN%20Radio%2FTV%20International> a rico:AgentName;
+  rdfs:label "CHIN Radio/TV International" .
 
-<http://gbad.archives.gov.on.ca/AgentName/Canada%20Packers> a rico:AgentName .
+<http://gbad.archives.gov.on.ca/AgentName/Canada%20Packers> a rico:AgentName;
+  rdfs:label "Canada Packers" .
 
 <http://gbad.archives.gov.on.ca/AgentName/Canadian%20Pacific%20Railway%20Company>
-  a rico:AgentName .
+  a rico:AgentName;
+  rdfs:label "Canadian Pacific Railway Company" .
 
 <http://gbad.archives.gov.on.ca/AgentName/Multilingual%20Television%20%28Toronto%29%20Limited>
-  a rico:AgentName .
+  a rico:AgentName;
+  rdfs:label "Multilingual Television (Toronto) Limited" .
 
 <http://gbad.archives.gov.on.ca/AgentName/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>
   a rico:AgentName;
+  rdfs:label "Ontario. Minister Responsible for Native Affairs";
   rico:normalizedValue "Minister Responsible for Native Affairs" .
 
 <http://gbad.archives.gov.on.ca/AgentName/Radio%201540%20Limited> a rico:AgentName;
+  rdfs:label "Radio 1540 Limited";
   rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
 
 <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International> a rico:Agent;
+  rdfs:label "CHIN Radio/TV International";
   rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
@@ -43,6 +53,7 @@
   rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
 
 <http://gbad.archives.gov.on.ca/Canada%20Packers> a rico:Agent;
+  rdfs:label "Canada Packers";
   rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
@@ -58,6 +69,7 @@
   rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
 
 <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company> a rico:Agent;
+  rdfs:label "Canadian Pacific Railway Company";
   rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
@@ -72,16 +84,20 @@
   rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
   rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
 
-<http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name> a rico:CorporateBodyType .
+<http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name> a rico:CorporateBodyType;
+  rdfs:label " Corporate name" .
 
 <http://gbad.archives.gov.on.ca/CorporateBodyType/A%20Ontario%20Government%20Name>
-  a rico:CorporateBodyType .
+  a rico:CorporateBodyType;
+  rdfs:label "A Ontario Government Name" .
 
 <http://gbad.archives.gov.on.ca/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>
-  a rico:Mandate .
+  a rico:Mandate;
+  rdfs:label "No authorizing agent can be identified for this agency." .
 
 <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>
   a rico:Agent;
+  rdfs:label "Multilingual Television (Toronto) Limited";
   rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
@@ -98,6 +114,7 @@
 
 <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>
   a rico:Agent;
+  rdfs:label "Ontario. Minister Responsible for Native Affairs";
   rico:authorizedBy <http://gbad.archives.gov.on.ca/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>;
   rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>, "The Minister Responsible for Native Affairs develops policy in the area of native affairs on behalf of the Government of Ontario. In particular, the Minister coordinates special projects across ministries; negotiates native issues such as aboriginal constitutional matters and self- government agreements; researches, negotiates and settles native land claims in conjunction with the federal government; and monitors development and delivery of line Ministry programs affecting native people.";
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
@@ -114,10 +131,14 @@
   rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
   rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
 
-<http://gbad.archives.gov.on.ca/RecordState/Status/Approved> a rico:RecordState .
+<http://gbad.archives.gov.on.ca/RecordState/Status/Approved> a rico:RecordState;
+  rdfs:label "Approved" .
 
-<http://gbad.archives.gov.on.ca/RecordState/Status/Review> a rico:RecordState .
+<http://gbad.archives.gov.on.ca/RecordState/Status/Review> a rico:RecordState;
+  rdfs:label "Review" .
 
-<http://gbad.archives.gov.on.ca/RecordState/Web%20Ready/Y> a rico:RecordState .
+<http://gbad.archives.gov.on.ca/RecordState/Web%20Ready/Y> a rico:RecordState;
+  rdfs:label "Y" .
 
-<http://gbad.archives.gov.on.ca/Rule/Rules%20for%20Archival%20Description> a rico:Rule .
+<http://gbad.archives.gov.on.ca/Rule/Rules%20for%20Archival%20Description> a rico:Rule;
+  rdfs:label "Rules for Archival Description" .
