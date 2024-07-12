@@ -1,0 +1,27 @@
+@prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<http://gbad.archives.gov.on.ca/Identifier/AA108> a rico:Identifier;
+  rico:hasIdentifierType <http://gbad.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://gbad.archives.gov.on.ca/None> a rico:Agent, rico:AgentName, rico:CorporateBodyType,
+    rico:Mandate, rico:Person, rico:RecordState, rico:Rule;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/None>;
+  rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
+  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/None>, <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name>;
+  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/None>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/None>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/None>;
+  rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
+  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/None>;
+  rico:normalizedValue "Natural Name (AUTH13)NAME" .

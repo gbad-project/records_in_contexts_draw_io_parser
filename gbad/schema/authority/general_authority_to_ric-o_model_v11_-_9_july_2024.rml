@@ -1,150 +1,128 @@
+@base <http://gbad.archives.gov.on.ca/> .
+@prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
-@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
-@prefix csvw: <http://www.w3.org/ns/csvw#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
-@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
-@prefix auth: <http://gbad.archives.gov.on.ca/schema/authority#> .
-@prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
-@base <http://gbad.archives.gov.on.ca/> .
 
-:AgentNameAUTH13 a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "gbad/mapping/source/authority_head_6.csv";
-    rml:referenceFormulation ql:CSV
-  ];
+<schema/mapping#AgentFromPredecessorAgencies> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "{PRED}" ] .
 
-  rr:subjectMap [
-    rr:template "{REFA}/AgentName";
-    rr:class rico:AgentName
-  ];
+<schema/mapping#AgentFromSuccessorAgencies> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "None" ] .
 
-  rr:predicateObjectMap [
-    rr:predicate rico:normalizedValue;
-    rr:objectMap [
-      rml:reference "HEADING";
-    ]
-  ].
+<schema/mapping#AgentNameFromVariantNames> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Variant%20Name> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "None" ] .
 
-:AgentAUTH13 a rr:TriplesMap;
-  rml:logicalSource [
-    rml:source "gbad/mapping/source/authority_head_6.csv";
-    rml:referenceFormulation ql:CSV
-  ];
+<schema/mapping#CorporateBodyTypeFromAuthorityType> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBodyType ;
+            rr:template "None" ] .
 
-  rr:subjectMap [
-    rr:template "{REFA}";
-    rr:class rico:Agent
-  ];
+<schema/mapping#IdentifierFromAgencyReferenceCode> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Agent%20Identifier> ] ;
+            rr:predicate rico:hasIdentifierType ] ;
+    rr:subjectMap [ rr:class rico:Identifier ;
+            rr:template "Identifier/{REFA}" ] .
 
-  rr:predicateObjectMap [
-    rr:predicate rdfs:label;
-    rr:objectMap [
-      rml:reference "HEADING";
-    ]
-  ].
+<schema/mapping#MandateFromAuthorizingAgent> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:Mandate ;
+            rr:template "None" ] .
 
-  # Mapping for General Description
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:generalDescription;
-  #  rr:objectMap [
-  #    rml:reference "BRIEFBIO";
-  #    rr:constant auth:GeneralDescription
-  #  ]
-  #];
+<schema/mapping#PersonFromArchivist> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:Person ;
+            rr:template "None" ] .
 
-  # Mapping for Identifier Type
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasIdentifierType;
-  #  rr:objectMap [
-  #    rr:constant auth:AgentIdentifier
-  #  ]
-  #];
+<schema/mapping#RecordStateFromStatus> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "None" ] .
 
-  # Mapping for Last Modification Date
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:lastModificationDate;
-  #  rr:objectMap [
-  #    rml:reference "DATEEX";
-  #    rr:constant auth:DateOfModification
-  #  ]
-  #];
+<schema/mapping#RecordStateFromWebReady> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "None" ] .
 
-  # Mapping for Documentary Form Type
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasDocumentaryFormType;
-  #  rr:objectMap [
-  #    rr:constant auth:AuthorityRecord
-  #  ]
-  #];
+<schema/mapping#RuleFromRules> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:subjectMap [ rr:class rico:Rule ;
+            rr:template "None" ] .
 
-  # Mapping for Predecessor
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasPredecessor;
-  #  rr:objectMap [
-  #    rml:reference "PRED";
-  #    rr:constant auth:PredecessorAgencies
-  #  ]
-  #];
+<schema/mapping#AgentFromHeading> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasBirthDate ],
+        [ rr:objectMap [ rr:constant "Comment (AUTH07)CMTAU" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:constant <schema/authority#Authority%20Record> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:constant <schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:constant "Biographical Sketch or Administrative History (AUTH05)ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:constant <schema/authority#Parallel%20Names%20%28AUTH14%29PAR> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:constant "Function Note (AUTH11)FUN" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasDeathDate ],
+        [ rr:objectMap [ rr:constant "Natural Name (AUTH13)NAME" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "None" ] .
 
-  # Mapping for Successor
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasSuccessor;
-  #  rr:objectMap [
-  #    rml:reference "SUC";
-  #    rr:constant auth:SuccessorAgencies
-  #  ]
-  #];
 
-  # Mapping for Rules
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasRecordCreator;
-  #  rr:objectMap [
-  #    rml:reference "RULES";
-  #    rr:constant auth:Rules
-  #  ]
-  #];
-
-  # Mapping for Status
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:status;
-  #  rr:objectMap [
-  #    rml:reference "STATUSA";
-  #    rr:constant auth:Status
-  #  ]
-  #];
-
-  # Mapping for Website
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasRecordState;
-  #  rr:objectMap [
-  #    rml:reference "WEBA";
-  #    rr:constant auth:WebReady
-  #  ]
-  #];
-
-  ### Additional Mappings from Ontology
-
-  # Mapping for Agency Reference Code
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasIdentifier;
-  #  rr:objectMap [
-  #    rml:reference "REFA";
-  #    rr:constant auth:AgencyReferenceCode
-  #  ]
-  #].
-
-  # Mapping for Archivist
-  #rr:predicateObjectMap [
-  #  rr:predicate rico:hasCreator;
-  #  rr:objectMap [
-  #    rml:reference "ARCHAU";
-  #    rr:constant auth:Archivist
-  #  ]
-  #].
