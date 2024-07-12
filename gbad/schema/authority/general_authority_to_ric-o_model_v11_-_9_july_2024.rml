@@ -15,7 +15,7 @@
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:Agent ;
-            rr:template "None" ] .
+            rr:template "\"{SUC}\"" ] .
 
 <schema/mapping#AgentNameFromVariantNames> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
@@ -23,13 +23,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Variant%20Name> ] ;
             rr:predicate rico:hasOrHadCategory ] ;
     rr:subjectMap [ rr:class rico:AgentName ;
-            rr:template "None" ] .
+            rr:template "AgentName/{VAR}" ] .
 
 <schema/mapping#CorporateBodyTypeFromAuthorityType> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:CorporateBodyType ;
-            rr:template "None" ] .
+            rr:template "CorporateBodyType/{AUTHTP}" ] .
 
 <schema/mapping#IdentifierFromAgencyReferenceCode> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
@@ -37,81 +37,43 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Agent%20Identifier> ] ;
             rr:predicate rico:hasIdentifierType ] ;
     rr:subjectMap [ rr:class rico:Identifier ;
-            rr:template "Identifier/{REFA}" ] .
+            rr:template "{REFA}/Identifier" ] .
 
 <schema/mapping#MandateFromAuthorizingAgent> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:Mandate ;
-            rr:template "None" ] .
-
-<schema/mapping#PersonFromArchivist> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
-    rr:subjectMap [ rr:class rico:Person ;
-            rr:template "None" ] .
+            rr:template "Mandate/{AA}" ] .
 
 <schema/mapping#RecordStateFromStatus> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:RecordState ;
-            rr:template "None" ] .
+            rr:template "RecordState/Status/{STATUSA}" ] .
 
 <schema/mapping#RecordStateFromWebReady> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:RecordState ;
-            rr:template "None" ] .
+            rr:template "RecordState/Web%20Ready/{WEBA}" ] .
 
 <schema/mapping#RuleFromRules> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
     rr:subjectMap [ rr:class rico:Rule ;
-            rr:template "None" ] .
+            rr:template "Rule/{RULES}" ] .
 
 <schema/mapping#AgentFromHeading> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
-            rr:predicate rico:hasBirthDate ],
-        [ rr:objectMap [ rr:constant "Comment (AUTH07)CMTAU" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
-                            rr:parent "HEADING" ] ;
-                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
-            rr:predicate rico:hasOrHadCorporateBodyType ],
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant <schema/authority#Parallel%20Names%20%28AUTH14%29PAR> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
         [ rr:objectMap [ rr:constant <schema/authority#Authority%20Record> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
         [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
                             rr:parent "HEADING" ] ;
                     rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
             rr:predicate rico:hasSuccessor ],
-        [ rr:objectMap [ rr:constant <schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG> ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:constant "Biographical Sketch or Administrative History (AUTH05)ADM" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
-                            rr:parent "HEADING" ] ;
-                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:constant <schema/authority#Parallel%20Names%20%28AUTH14%29PAR> ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:constant "Function Note (AUTH11)FUN" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
-            rr:predicate rico:hasDeathDate ],
-        [ rr:objectMap [ rr:constant "Natural Name (AUTH13)NAME" ] ;
-            rr:predicate rico:normalizedValue ],
-        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
-                            rr:parent "HEADING" ] ;
-                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
-            rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
-                            rr:parent "HEADING" ] ;
-                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
-            rr:predicate rico:authorizedBy ],
         [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
             rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
@@ -121,8 +83,40 @@
         [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
                             rr:parent "HEADING" ] ;
                     rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
-            rr:predicate rico:hasOrHadIdentifier ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:constant "Comment (AUTH07)CMTAU" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasDeathDate ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasBirthDate ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:constant <schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:constant <schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:constant "Natural Name (AUTH13)NAME" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:constant "Function Note (AUTH11)FUN" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant "Biographical Sketch or Administrative History (AUTH05)ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:joinCondition [ rr:child "HEADING" ;
+                            rr:parent "HEADING" ] ;
+                    rr:parentTriplesMap <schema/mapping#AgentFromHeading> ] ;
+            rr:predicate rico:authorizedBy ] ;
     rr:subjectMap [ rr:class rico:Agent ;
-            rr:template "None" ] .
+            rr:template "{HEADING}" ] .
 
 

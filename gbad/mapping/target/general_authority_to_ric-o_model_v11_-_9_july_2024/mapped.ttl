@@ -4,24 +4,118 @@
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 
-<http://gbad.archives.gov.on.ca/Identifier/AA108> a rico:Identifier;
+<http://gbad.archives.gov.on.ca/AA108/Identifier> a rico:Identifier;
   rico:hasIdentifierType <http://gbad.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
 
-<http://gbad.archives.gov.on.ca/None> a rico:Agent, rico:AgentName, rico:CorporateBodyType,
-    rico:Mandate, rico:Person, rico:RecordState, rico:Rule;
-  rico:authorizedBy <http://gbad.archives.gov.on.ca/None>;
+<http://gbad.archives.gov.on.ca/AgentName/CFMT> a rico:AgentName;
+  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
+
+<http://gbad.archives.gov.on.ca/AgentName/Radio%201540%20Limited> a rico:AgentName;
+  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
+
+<http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International> a rico:Agent;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>;
   rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
   rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
   rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/None>, <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>,
+    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
   rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/None>;
-  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/None>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/None>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>;
   rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
   rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/None>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International>;
   rico:normalizedValue "Natural Name (AUTH13)NAME" .
+
+<http://gbad.archives.gov.on.ca/Canada%20Packers> a rico:Agent;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/Canada%20Packers>;
+  rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
+  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/Canada%20Packers>, <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/Canada%20Packers>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/Canada%20Packers>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/Canada%20Packers>;
+  rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
+  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/Canada%20Packers>;
+  rico:normalizedValue "Natural Name (AUTH13)NAME" .
+
+<http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company> a rico:Agent;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>;
+  rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
+  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>,
+    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>;
+  rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
+  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company>;
+  rico:normalizedValue "Natural Name (AUTH13)NAME" .
+
+<http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name> a rico:CorporateBodyType .
+
+<http://gbad.archives.gov.on.ca/CorporateBodyType/A%20Ontario%20Government%20Name>
+  a rico:CorporateBodyType .
+
+<http://gbad.archives.gov.on.ca/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>
+  a rico:Mandate .
+
+<http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>
+  a rico:Agent;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>;
+  rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
+  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>,
+    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>;
+  rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
+  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>;
+  rico:normalizedValue "Natural Name (AUTH13)NAME" .
+
+<http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>
+  a rico:Agent;
+  rico:authorizedBy <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>;
+  rico:generalDescription "Comment (AUTH07)CMTAU", "Function Note (AUTH11)FUN";
+  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>,
+    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>;
+  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>;
+  rico:hasSuccessor <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>;
+  rico:history "Biographical Sketch or Administrative History (AUTH05)ADM";
+  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>;
+  rico:normalizedValue "Natural Name (AUTH13)NAME" .
+
+<http://gbad.archives.gov.on.ca/RecordState/Status/Approved> a rico:RecordState .
+
+<http://gbad.archives.gov.on.ca/RecordState/Status/Review> a rico:RecordState .
+
+<http://gbad.archives.gov.on.ca/RecordState/Web%20Ready/Y> a rico:RecordState .
+
+<http://gbad.archives.gov.on.ca/Rule/Rules%20for%20Archival%20Description> a rico:Rule .
