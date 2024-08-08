@@ -1,144 +1,219 @@
-@prefix : <http://gbad.archives.gov.on.ca/schema/mapping#> .
+@prefix : <http://data.archives.gov.on.ca/schema/mapping#> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 
-<http://gbad.archives.gov.on.ca/AA108/Identifier> a rico:Identifier;
-  rdfs:label "AA108";
-  rico:hasIdentifierType <http://gbad.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
-
-<http://gbad.archives.gov.on.ca/AgentName/CFMT> a rico:AgentName;
-  rdfs:label "CFMT";
-  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
-
-<http://gbad.archives.gov.on.ca/AgentName/CHIN%20Radio%2FTV%20International> a rico:AgentName;
-  rdfs:label "CHIN Radio/TV International" .
-
-<http://gbad.archives.gov.on.ca/AgentName/Canada%20Packers> a rico:AgentName;
-  rdfs:label "Canada Packers" .
-
-<http://gbad.archives.gov.on.ca/AgentName/Canadian%20Pacific%20Railway%20Company>
-  a rico:AgentName;
-  rdfs:label "Canadian Pacific Railway Company" .
-
-<http://gbad.archives.gov.on.ca/AgentName/Multilingual%20Television%20%28Toronto%29%20Limited>
-  a rico:AgentName;
-  rdfs:label "Multilingual Television (Toronto) Limited" .
-
-<http://gbad.archives.gov.on.ca/AgentName/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>
-  a rico:AgentName;
-  rdfs:label "Ontario. Minister Responsible for Native Affairs";
-  rico:normalizedValue "Minister Responsible for Native Affairs" .
-
-<http://gbad.archives.gov.on.ca/AgentName/Radio%201540%20Limited> a rico:AgentName;
-  rdfs:label "Radio 1540 Limited";
-  rico:hasOrHadCategory <http://gbad.archives.gov.on.ca/schema/authority#Variant%20Name> .
-
-<http://gbad.archives.gov.on.ca/CHIN%20Radio%2FTV%20International> a rico:Agent;
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Agent/1>
+  a rico:Agent;
   rdfs:label "CHIN Radio/TV International";
-  rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
-  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/AgentName/CHIN%20Radio%2FTV%20International>,
-    <http://gbad.archives.gov.on.ca/AgentName/Radio%201540%20Limited>, <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
+  rico:authorizedBy <http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Mandate/1>;
+  rico:generalDescription <http://data.archives.gov.on.ca/RiC-O_1-0-1/censored#CMTAU>;
+  rico:hasBeginningDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1>,
+    <http://data.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://data.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/CorporateBodyType/1>;
+  rico:hasOrHadIdentifier <http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Identifier/1>;
+  rico:hasSuccessor <http://data.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
   rico:history "CHIN is composed of television facilities and radio stations. CHIN Radio/Television International was incorporated in 1964. The organization was established in 1965, by Johnny Lombardi, and began broadcasting in 1966. Lombardi explained the meaning of CHIN: \"C is for Canada, H for happiness, I and N for international. CHIN is the first multicultural / multilingual station to be established in Ontario. In 1967, CHIN obtained an FM radio license and inherited with that two radio stations, AM 1540 and FM 100.7, as well as a television program on CITY-TV hosted by Johnny Lombardi. In 1967, the first CHIN Picnic was held and has become one of Toronto's most popular annual multicultural events. When Lombardi died in 2002, ownership of CHIN Radio/TV International passed to his son Lenny and daughters Theresa and Donina. CHIN Ottawa CJLL 97.9FM began broadcasting to the Ottawa / Gatineau region in October of 2003, and is the first third language radio service in Ottawa.";
-  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+  rico:isOrWasDescribedBy <http://data.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://data.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
 
-<http://gbad.archives.gov.on.ca/Canada%20Packers> a rico:Agent;
-  rdfs:label "Canada Packers";
-  rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
-  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/AgentName/Canada%20Packers>,
-    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
-  rico:history "The company was formed out of a succession of mergers with predecessor companies. These include the William Davies Company, Ltd. (est. 1854), the Canadian Packing Company, Ltd. (est. 1868 as the George Matthews Company), Gunns Ltd. (est. 1876), and the Harris Abattoir Company, Ltd. (est. 1896). These firms merged in 1927 to form Canada Packers, Ltd., which became Canada Packers Inc. in 1980. In 1990 Canada Packers Inc. merged with British based Maple Leaf Mills, Ltd. to form Maple Leaf Foods, Inc.";
-  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1>
+  a rico:AgentName;
+  rdfs:label "CHIN Radio/TV International", "Radio 1540 Limited";
+  rico:hasOrHadCategory <http://data.archives.gov.on.ca/schema/authority#Variant%20Name> .
 
-<http://gbad.archives.gov.on.ca/Canadian%20Pacific%20Railway%20Company> a rico:Agent;
-  rdfs:label "Canadian Pacific Railway Company";
-  rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
-  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/AgentName/Canadian%20Pacific%20Railway%20Company>,
-    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
-  rico:history "The company was incorporated in 1881 and has also had interests in settlement, tourism and communications.";
-  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
-
-<http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name> a rico:CorporateBodyType;
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/CorporateBodyType/1>
+  a rico:CorporateBodyType;
   rdfs:label " Corporate name" .
 
-<http://gbad.archives.gov.on.ca/CorporateBodyType/A%20Ontario%20Government%20Name>
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Identifier/1>
+  a rico:Identifier;
+  rico:hasIdentifierType <http://data.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Mandate/1>
+  a rico:Mandate .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/RecordState/1>
+  a rico:RecordState;
+  rdfs:label "Approved", "Y" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Rule/1>
+  a rico:Rule;
+  rdfs:label "Rules for Archival Description" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Agent/1> a rico:Agent;
+  rdfs:label "Canada Packers";
+  rico:authorizedBy <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Mandate/1>;
+  rico:generalDescription <http://data.archives.gov.on.ca/RiC-O_1-0-1/censored#CMTAU>;
+  rico:hasBeginningDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/1>,
+    <http://data.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://data.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/CorporateBodyType/1>;
+  rico:hasOrHadIdentifier <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Identifier/1>;
+  rico:hasSuccessor <http://data.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
+  rico:history "The company was formed out of a succession of mergers with predecessor companies. These include the William Davies Company, Ltd. (est. 1854), the Canadian Packing Company, Ltd. (est. 1868 as the George Matthews Company), Gunns Ltd. (est. 1876), and the Harris Abattoir Company, Ltd. (est. 1896). These firms merged in 1927 to form Canada Packers, Ltd., which became Canada Packers Inc. in 1980. In 1990 Canada Packers Inc. merged with British based Maple Leaf Mills, Ltd. to form Maple Leaf Foods, Inc.";
+  rico:isOrWasDescribedBy <http://data.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://data.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/1> a rico:AgentName;
+  rdfs:label "Canada Packers";
+  rico:hasOrHadCategory <http://data.archives.gov.on.ca/schema/authority#Variant%20Name> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/CorporateBodyType/1>
+  a rico:CorporateBodyType;
+  rdfs:label " Corporate name" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Identifier/1> a rico:Identifier;
+  rico:hasIdentifierType <http://data.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Mandate/1> a rico:Mandate .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/RecordState/1> a rico:RecordState;
+  rdfs:label "Approved", "Y" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Rule/1> a rico:Rule;
+  rdfs:label "Rules for Archival Description" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Agent/1>
+  a rico:Agent;
+  rdfs:label "Canadian Pacific Railway Company";
+  rico:authorizedBy <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Mandate/1>;
+  rico:generalDescription <http://data.archives.gov.on.ca/RiC-O_1-0-1/censored#CMTAU>;
+  rico:hasBeginningDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1>,
+    <http://data.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://data.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/CorporateBodyType/1>;
+  rico:hasOrHadIdentifier <http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Identifier/1>;
+  rico:hasSuccessor <http://data.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
+  rico:history "The company was incorporated in 1881 and has also had interests in settlement, tourism and communications.";
+  rico:isOrWasDescribedBy <http://data.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://data.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1>
+  a rico:AgentName;
+  rdfs:label "Canadian Pacific Railway Company";
+  rico:hasOrHadCategory <http://data.archives.gov.on.ca/schema/authority#Variant%20Name> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/CorporateBodyType/1>
+  a rico:CorporateBodyType;
+  rdfs:label " Corporate name" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Identifier/1>
+  a rico:Identifier;
+  rico:hasIdentifierType <http://data.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Mandate/1>
+  a rico:Mandate .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/RecordState/1>
+  a rico:RecordState;
+  rdfs:label "Approved", "Y" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Rule/1>
+  a rico:Rule;
+  rdfs:label "Rules for Archival Description" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Agent/1>
+  a rico:Agent;
+  rdfs:label "Multilingual Television (Toronto) Limited";
+  rico:authorizedBy <http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Mandate/1>;
+  rico:generalDescription <http://data.archives.gov.on.ca/RiC-O_1-0-1/censored#CMTAU>;
+  rico:hasBeginningDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1>,
+    <http://data.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://data.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/CorporateBodyType/1>;
+  rico:hasOrHadIdentifier <http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>;
+  rico:hasSuccessor <http://data.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
+  rico:history "Multilingual Television Limited was founded in Toronto in 1979 by Dan Iannuzzi with the backing of private investors Jerry Grafstein, Raymond Moriyama, Steve Stavro, Garth Drabinsky and Nat Taylor. It first aired on Sept. 3, 1979. Popularly known by the call letters CFMT (\"Canada's First Multilingual Television\"), its mandate is to produce and broadcast ethnic programming reflecting a diverse multicultural viewing public, to match third language programming with the needs of each ethnic group, and to entertain and inform members of the ethnic communities in Toronto. The major groups targeted are Italian, Chinese and Portuguese, although the station broadcasts in a total of fifteen different languages. In 1986 Rogers Communications became the major shareholder of CFMT. It became known as \"OMNI1\" in 2002 after Rogers introduced Omni Television, its multilingual programming brand.";
+  rico:isOrWasDescribedBy <http://data.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://data.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1>
+  a rico:AgentName;
+  rdfs:label "CFMT", "Multilingual Television (Toronto) Limited";
+  rico:hasOrHadCategory <http://data.archives.gov.on.ca/schema/authority#Variant%20Name> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/CorporateBodyType/1>
+  a rico:CorporateBodyType;
+  rdfs:label " Corporate name" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>
+  a rico:Identifier;
+  rico:hasIdentifierType <http://data.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Mandate/1>
+  a rico:Mandate .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/RecordState/1>
+  a rico:RecordState;
+  rdfs:label "Review", "Y" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Rule/1>
+  a rico:Rule;
+  rdfs:label "Rules for Archival Description" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Agent/1>
+  a rico:Agent;
+  rdfs:label "Ontario. Minister Responsible for Native Affairs";
+  rico:authorizedBy <http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Mandate/1>;
+  rico:generalDescription <http://data.archives.gov.on.ca/RiC-O_1-0-1/censored#CMTAU>,
+    "The Minister Responsible for Native Affairs develops policy in the area of native affairs on behalf of the Government of Ontario. In particular, the Minister coordinates special projects across ministries; negotiates native issues such as aboriginal constitutional matters and self- government agreements; researches, negotiates and settles native land claims in conjunction with the federal government; and monitors development and delivery of line Ministry programs affecting native people.";
+  rico:hasBeginningDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasBirthDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasDeathDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasEndDate <http://data.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
+  rico:hasOrHadAgentName <http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>,
+    <http://data.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
+  rico:hasOrHadController <http://data.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
+  rico:hasOrHadCorporateBodyType <http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/CorporateBodyType/1>;
+  rico:hasOrHadIdentifier <http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Identifier/1>;
+  rico:hasSuccessor <http://data.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
+  rico:history "The position of Minister Responsible for Native Affairs was first appointed in June  1985, and assumed duties that had been with the Provincial Secretariat for Resources Development since 1981. The Provincial Secretariat had a \"Native Affairs Policy\" section, which was transferred to the jurisdiction of the Minister Responsible for Native Affairs. When the Ontario Native Affairs Directorate  (known later as a Secretariat) was formed in 1987, it reported to the Legislature through the Minister Responsible for Native Affairs and replaced the \"Native Affairs Policy\" section. The position of Minister Responsible for Native Affairs has been held by Ian G. Scott (1985-1990, also the Attorney General); C. J. Wildman (1990-1995, also the Minister of Natural Resources) and Charles A. Harnick (1995 - , also the Attorney General).";
+  rico:isOrWasDescribedBy <http://data.archives.gov.on.ca/schema/authority#Authority%20Record>;
+  rico:isSuccessorOf <http://data.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>
+  a rico:AgentName;
+  rdfs:label "Ontario. Minister Responsible for Native Affairs";
+  rico:hasOrHadCategory <http://data.archives.gov.on.ca/schema/authority#Variant%20Name>;
+  rico:normalizedValue "Minister Responsible for Native Affairs" .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/CorporateBodyType/1>
   a rico:CorporateBodyType;
   rdfs:label "A Ontario Government Name" .
 
-<http://gbad.archives.gov.on.ca/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Identifier/1>
+  a rico:Identifier;
+  rdfs:label "AA108";
+  rico:hasIdentifierType <http://data.archives.gov.on.ca/schema/authority#Agent%20Identifier> .
+
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Mandate/1>
   a rico:Mandate;
   rdfs:label "No authorizing agent can be identified for this agency." .
 
-<http://gbad.archives.gov.on.ca/Multilingual%20Television%20%28Toronto%29%20Limited>
-  a rico:Agent;
-  rdfs:label "Multilingual Television (Toronto) Limited";
-  rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>;
-  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/AgentName/CFMT>, <http://gbad.archives.gov.on.ca/AgentName/Multilingual%20Television%20%28Toronto%29%20Limited>,
-    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CorporateBodyType/%20Corporate%20name>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
-  rico:history "Multilingual Television Limited was founded in Toronto in 1979 by Dan Iannuzzi with the backing of private investors Jerry Grafstein, Raymond Moriyama, Steve Stavro, Garth Drabinsky and Nat Taylor. It first aired on Sept. 3, 1979. Popularly known by the call letters CFMT (\"Canada's First Multilingual Television\"), its mandate is to produce and broadcast ethnic programming reflecting a diverse multicultural viewing public, to match third language programming with the needs of each ethnic group, and to entertain and inform members of the ethnic communities in Toronto. The major groups targeted are Italian, Chinese and Portuguese, although the station broadcasts in a total of fifteen different languages. In 1986 Rogers Communications became the major shareholder of CFMT. It became known as \"OMNI1\" in 2002 after Rogers introduced Omni Television, its multilingual programming brand.";
-  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
-
-<http://gbad.archives.gov.on.ca/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>
-  a rico:Agent;
-  rdfs:label "Ontario. Minister Responsible for Native Affairs";
-  rico:authorizedBy <http://gbad.archives.gov.on.ca/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>;
-  rico:generalDescription <http://gbad.archives.gov.on.ca/censored#CMTAU>, "The Minister Responsible for Native Affairs develops policy in the area of native affairs on behalf of the Government of Ontario. In particular, the Minister coordinates special projects across ministries; negotiates native issues such as aboriginal constitutional matters and self- government agreements; researches, negotiates and settles native land claims in conjunction with the federal government; and monitors development and delivery of line Ministry programs affecting native people.";
-  rico:hasBeginningDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasBirthDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasDeathDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasEndDate <http://gbad.archives.gov.on.ca/schema/authority#Dates%20Of%20Existence%20%28AUTH10%29DATEEX>;
-  rico:hasOrHadAgentName <http://gbad.archives.gov.on.ca/AgentName/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs>,
-    <http://gbad.archives.gov.on.ca/schema/authority#Parallel%20Names%20%28AUTH14%29PAR>;
-  rico:hasOrHadController <http://gbad.archives.gov.on.ca/schema/authority#Controlling%20Agencies%20%28AUTH08%29CONTAG>;
-  rico:hasOrHadCorporateBodyType <http://gbad.archives.gov.on.ca/CorporateBodyType/A%20Ontario%20Government%20Name>;
-  rico:hasOrHadIdentifier <http://gbad.archives.gov.on.ca/AA108/Identifier>;
-  rico:hasSuccessor <http://gbad.archives.gov.on.ca/schema/authority#Successor%20Agencies%20%28AUTH20%29SUC>;
-  rico:history "The position of Minister Responsible for Native Affairs was first appointed in June  1985, and assumed duties that had been with the Provincial Secretariat for Resources Development since 1981. The Provincial Secretariat had a \"Native Affairs Policy\" section, which was transferred to the jurisdiction of the Minister Responsible for Native Affairs. When the Ontario Native Affairs Directorate  (known later as a Secretariat) was formed in 1987, it reported to the Legislature through the Minister Responsible for Native Affairs and replaced the \"Native Affairs Policy\" section. The position of Minister Responsible for Native Affairs has been held by Ian G. Scott (1985-1990, also the Attorney General); C. J. Wildman (1990-1995, also the Minister of Natural Resources) and Charles A. Harnick (1995 - , also the Attorney General).";
-  rico:isOrWasDescribedBy <http://gbad.archives.gov.on.ca/schema/authority#Authority%20Record>;
-  rico:isSuccessorOf <http://gbad.archives.gov.on.ca/schema/authority#Predecessor%20Agencies%20%28AUTH15%29PRED> .
-
-<http://gbad.archives.gov.on.ca/RecordState/Status/Approved> a rico:RecordState;
-  rdfs:label "Approved" .
-
-<http://gbad.archives.gov.on.ca/RecordState/Status/Review> a rico:RecordState;
-  rdfs:label "Review" .
-
-<http://gbad.archives.gov.on.ca/RecordState/Web%20Ready/Y> a rico:RecordState;
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/RecordState/1>
+  a rico:RecordState;
   rdfs:label "Y" .
 
-<http://gbad.archives.gov.on.ca/Rule/Rules%20for%20Archival%20Description> a rico:Rule;
+<http://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Rule/1>
+  a rico:Rule;
   rdfs:label "Rules for Archival Description" .
