@@ -575,7 +575,7 @@ Replacement = str
 DEFAULT_CAPITALISATION_SCHEME = "upper-camel"
 DEFAULT_INDENTATION = 2
 DEFAULT_MAX_GAP = 10
-OWL_METACHARACTERS = ["(", ")", "[", "]", "/", ",", ":", ".", "'", '"']
+OWL_METACHARACTERS = ["(", ")", "[", "]", "{", "}", "/", ",", ":", ".", "'", '"', ' ']
 
 
 class NothingToParseException(Exception):
