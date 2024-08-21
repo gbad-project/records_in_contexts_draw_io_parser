@@ -1470,6 +1470,8 @@ def serialise(blocks: Blocks, serialisation_config: SerialisationConfig) -> str:
         serialised = ""
     for individual, types_and_facts in blocks.items():
         individual_id, individual_label = individual
+        # Ensure that quotation marks are escaped properly in values for rdfs:label
+        individual_label = individual_label.replace('"', r'\"')
         serialised += _serialise_block(
             individual_id,
             individual_label,
