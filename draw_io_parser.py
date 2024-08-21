@@ -714,28 +714,27 @@ class NodeHTMLParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self._chunks = []
-        self._within_tag = False
-        self._raw_data = ""
 
     def handle_starttag(self, tag: str, _: list[tuple[str, str | None]]) -> None:
-        if tag in ["div", "blockquote", "p", "b", "i"]:
-            self._chunks.append(self._raw_data)
-            self._within_tag = True
+        if tag in ["div", "blockquote", "p", "br"]:
+            # Otherwise words stick together in place of a single line break
+            self._chunks.append(' ')
 
     def handle_endtag(self, tag: str) -> None:
-        if tag in ["div", "blockquote", "p", "b", "i"]:
-            self._chunks.append(self._raw_data)
-            self._raw_data = ""
-            self._within_tag = False
+        if tag in ["div", "blockquote", "p"]:
+            # Otherwise words stick together in place of a single line break
+            self._chunks.append(' ')
 
     def handle_data(self, data: str) -> None:
         """
         Overrides a function in HTMLParser, storing the raw data (text) inside
         a HTML element in the instance variable 'raw_data'.
         """
-        self._raw_data = data
+        # Implementing chunks universally seems to fix lost data with single <br> tags
+        self._chunks.append(data)
 
     def _prettify_linebreaks(self) -> Generator[Paragraph, None, None]:
+        # This method is unsafe because can also generate line breaks in Individuals
         previous_was_empty = False
         paragraph_already_handled = False
         current = ""
@@ -763,8 +762,6 @@ class NodeHTMLParser(HTMLParser):
         into paragraphs, handling line breaks as described in the docstring
         for this class
         """
-        if self._raw_data:
-            return self._raw_data
         return "".join(self._prettify_linebreaks()).strip()
 
     def clear(self) -> None:
@@ -773,8 +770,6 @@ class NodeHTMLParser(HTMLParser):
         constructed
         """
         self._chunks = []
-        self._raw_data = ""
-        self._within_tag = False
 
 
 @dataclass(frozen=True)
