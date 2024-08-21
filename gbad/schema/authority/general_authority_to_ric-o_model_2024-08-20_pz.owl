@@ -1,0 +1,164 @@
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: rico: <https://www.ica.org/standards/RiC/ontology#>
+Prefix: : <https://data.archives.gov.on.ca/>
+Ontology: <https://data.archives.gov.on.ca>
+  Import: <https://www.ica.org/standards/RiC/ontology>
+
+Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Agent/1\""
+  Types: rico:Agent
+  Facts:
+    rico:hasOrHadIdentifier Agency%20Reference%20Code%20%28AUTH01a%29%20REFA,
+    rico:hasOrHadAgentName Parallel%20Names%20%28AUTH14%29%20PAR,
+    rico:hasOrHadAgentName Variant%20Names%20%28AUTH21%29%20VAR,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22,
+    rico:hasOrHadCorporateBodyType Authority%20Type%20%28AUTH03%29%20AUTHTP,
+    rico:hasBeginningDate Dates%20of%20Existence%20-%20Beginning%20%28AUTH10a%29%20DATEEX,
+    rico:hasEndDate Dates%20of%20Existence%20-%20End%20%28AUTH10b%29%20DATEEX,
+    rico:authorizedBy Authorizing%20Agent%20%28AUTH04%29%20AA,
+    rico:history "Biographical Sketch or Administrative History (AUTH05) ADM",
+    rico:hasOrHadController Controlling%20Agencies%20%28AUTH08a%29%20CONTAG,
+    rico:isSuccessorOf Predecessor%20Agencies%20%28AUTH15%29%20PRED,
+    rico:hasSuccessor Successor%20Agencies%20%28AUTH20%29%20SUC,
+    rico:isOrWasDescribedBy Authority%20Record,
+    rico:generalDescription "Comment (AUTH07) CMTAU",
+    rico:generalDescription "Function Note (AUTH11) FUN",
+    rico:isEquivalentTo rr%3Atemplate%C2%A0%22RiC-O_1-0-1%2F%7BREFA%7D%22
+
+Individual: Agency%20Reference%20Code%20%28AUTH01a%29%20REFA
+  Annotations:
+    rdfs:label "Agency Reference Code (AUTH01a) REFA"
+  Types: rico:Identifier
+  Facts:
+    rico:hasIdentifierType rr%3Atemplate%20%22schema%2Fauthority%2FAgent%20Identifier%22
+
+Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/1\""
+  Types: rico:AgentName
+  Facts:
+    rico:normalizedValue "rml:reference \"NAME\""
+
+Individual: Authority%20Type%20%28AUTH03%29%20AUTHTP
+  Annotations:
+    rdfs:label "Authority Type (AUTH03) AUTHTP"
+  Types: rico:CorporateBodyType
+
+Individual: Dates%20of%20Existence%20-%20Beginning%20%28AUTH10a%29%20DATEEX
+  Annotations:
+    rdfs:label "Dates of Existence - Beginning (AUTH10a) DATEEX"
+  Types: rico:Date
+
+Individual: Dates%20of%20Existence%20-%20End%20%28AUTH10b%29%20DATEEX
+  Annotations:
+    rdfs:label "Dates of Existence - End (AUTH10b) DATEEX"
+  Types: rico:Date
+
+Individual: Authorizing%20Agent%20%28AUTH04%29%20AA
+  Annotations:
+    rdfs:label "Authorizing Agent (AUTH04) AA"
+  Types: rico:Mandate
+
+Individual: Controlling%20Agencies%20%28AUTH08a%29%20CONTAG
+  Annotations:
+    rdfs:label "Controlling Agencies (AUTH08a) CONTAG"
+  Types: rico:Agent
+  Facts:
+    rico:thingIsSourceOfRelation Controlling%20Agency%20Relation
+
+Individual: Predecessor%20Agencies%20%28AUTH15%29%20PRED
+  Annotations:
+    rdfs:label "Predecessor Agencies (AUTH15) PRED"
+  Types: rico:Agent
+
+Individual: Successor%20Agencies%20%28AUTH20%29%20SUC
+  Annotations:
+    rdfs:label "Successor Agencies (AUTH20) SUC"
+  Types: rico:Agent
+
+Individual: Parallel%20Names%20%28AUTH14%29%20PAR
+  Annotations:
+    rdfs:label "Parallel Names (AUTH14) PAR"
+  Types: rico:AgentName
+  Facts:
+    rico:hasOrHadCategory Parallel%20Name
+
+Individual: Variant%20Names%20%28AUTH21%29%20VAR
+  Annotations:
+    rdfs:label "Variant Names (AUTH21) VAR"
+  Types: rico:AgentName
+  Facts:
+    rico:hasOrHadCategory Variant%20Name
+
+Individual: Authority%20Record
+  Annotations:
+    rdfs:label "Authority Record"
+  Types: rico:DocumentaryFormType, rico:Record
+  Facts:
+    rico:generalDescription "Source Note (AUTH17) SOURCE",
+    rico:hasDocumentaryFormType Authority%20Record,
+    rico:isOrWasRegulatedBy Rules%20%28AUTH16%29%20RULES,
+    rico:lastModificationDate "Date (AUTH09) MOD_DATE",
+    rico:hasRecordState Status%20%28AUTH18%29%20STATUSA,
+    rico:hasRecordState Web%20Ready%20%28AUTH22%29%20WEBA,
+    rico:hasCreator Archivist%20%28AUTH02%29%20ARCHAU
+
+Individual: Rules%20%28AUTH16%29%20RULES
+  Annotations:
+    rdfs:label "Rules (AUTH16) RULES"
+  Types: rico:Rule
+
+Individual: Archivist%20%28AUTH02%29%20ARCHAU
+  Annotations:
+    rdfs:label "Archivist (AUTH02) ARCHAU"
+  Types: rico:Person
+
+Individual: Controlling%20Agency%20Relation
+  Annotations:
+    rdfs:label "Controlling Agency Relation"
+  Types: rico:AgentControlRelation
+  Facts:
+    rico:relationHasTarget rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22,
+    rico:hasBeginningDate Date%20of%20Subordination%20%28AUTH08b%29%20DATECONT,
+    rico:hasEndDate Date%20of%20Subordination%20%28AUTH08c%29%20DATECONT
+
+Individual: Date%20of%20Subordination%20%28AUTH08b%29%20DATECONT
+  Annotations:
+    rdfs:label "Date of Subordination (AUTH08b) DATECONT"
+  Types: rico:Date
+
+Individual: Date%20of%20Subordination%20%28AUTH08c%29%20DATECONT
+  Annotations:
+    rdfs:label "Date of Subordination (AUTH08c) DATECONT"
+  Types: rico:Date
+
+Individual: Parallel%20Name
+  Annotations:
+    rdfs:label "Parallel Name"
+  Types: rico:Type
+
+Individual: Variant%20Name
+  Annotations:
+    rdfs:label "Variant Name"
+  Types: rico:Type
+
+Individual: Web%20Ready%20%28AUTH22%29%20WEBA
+  Annotations:
+    rdfs:label "Web Ready (AUTH22) WEBA"
+  Types: rico:RecordState
+
+Individual: Status%20%28AUTH18%29%20STATUSA
+  Annotations:
+    rdfs:label "Status (AUTH18) STATUSA"
+  Types: rico:RecordState
+
+Individual: rr%3Atemplate%C2%A0%22RiC-O_1-0-1%2F%7BREFA%7D%22
+  Annotations:
+    rdfs:label "rr:template \"RiC-O_1-0-1/{REFA}\""
+  Types: rico:CorporateBody
+
+Individual: rr%3Atemplate%20%22schema%2Fauthority%2FAgent%20Identifier%22
+  Annotations:
+    rdfs:label "rr:template \"schema/authority/Agent Identifier\""
+  Types: rico:IdentifierType

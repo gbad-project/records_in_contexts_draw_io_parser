@@ -15,8 +15,9 @@ drawio_file=$(find "$graph_dir" -type f -name "*.drawio" | head -n 1)
 
 # Set desired args
 args="-m url \
-      -o http://gbad.archives.gov.on.ca/schema/description-listings \
-      -p http://gbad.archives.gov.on.ca/schema/description-listings#"
+      -c none \
+      -o https://data.archives.gov.on.ca \
+      -p https://data.archives.gov.on.ca/"
 
 # Construct the python command
 python_command="\"$ORIGINAL_SCRIPT_PATH\" \"$drawio_file\" $args"
