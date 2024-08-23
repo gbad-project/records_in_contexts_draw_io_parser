@@ -20,10 +20,10 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="gmwnegnUR_CNORKRYM6Y-12" value="rml:reference &quot;NAME&quot;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;strokeColor=#FF0000;" parent="1" vertex="1">
-          <mxGeometry x="100" y="40" width="80" height="50" as="geometry" />
+          <mxGeometry x="30" y="20" width="80" height="50" as="geometry" />
         </mxCell>
         <mxCell id="gmwnegnUR_CNORKRYM6Y-13" value="Agency Reference Code (AUTH01a)&lt;div&gt;REFA&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="530" y="170" width="230" height="52" as="geometry">
+          <mxGeometry x="630" y="170" width="230" height="52" as="geometry">
             <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -49,7 +49,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="iiJ8OJKaNMLrSCaLO3TT-1" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;br&gt;&quot;RiC-O_1-0-1/&lt;/span&gt;{HEADING}/AgentName/1&quot;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
-          <mxGeometry x="120" y="182" width="250" height="52" as="geometry">
+          <mxGeometry x="120" y="190" width="250" height="52" as="geometry">
             <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -463,7 +463,7 @@
           <mxGeometry x="-50" y="486" width="130" height="54" as="geometry" />
         </mxCell>
         <mxCell id="lstVy3rX84DfsURla7Zy-1" value="rr:template&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;RiC-O_1-0-1/{REFA}&quot;&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" vertex="1" parent="1">
-          <mxGeometry x="320" y="60" width="235" height="52" as="geometry" />
+          <mxGeometry x="380" y="150" width="235" height="52" as="geometry" />
         </mxCell>
         <mxCell id="lstVy3rX84DfsURla7Zy-2" value="rico:CorporateBody" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lstVy3rX84DfsURla7Zy-1">
           <mxGeometry y="26" width="235" height="26" as="geometry" />
@@ -484,6 +484,36 @@
         </mxCell>
         <mxCell id="lstVy3rX84DfsURla7Zy-17" value="rico:IdentifierType&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lstVy3rX84DfsURla7Zy-16">
           <mxGeometry y="26" width="219.5" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-19" value="https://data.archives.gov.on.ca/" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="29" width="180" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-20" value="rico:Thing" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lstVy3rX84DfsURla7Zy-19">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-21" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.511;entryY=0.962;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="iiJ8OJKaNMLrSCaLO3TT-1" target="lstVy3rX84DfsURla7Zy-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="300" as="sourcePoint" />
+            <mxPoint x="450" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-22" value="rico:affectsOrAffected" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="lstVy3rX84DfsURla7Zy-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-26" value="rr:constant&lt;br&gt;&quot;ftp://data.archives.gov.on.ca/&quot;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="29" width="180" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-27" value="rico:Thing" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="lstVy3rX84DfsURla7Zy-26">
+          <mxGeometry y="26" width="180" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-28" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.676;exitY=-0.019;exitDx=0;exitDy=0;entryX=0.517;entryY=0.923;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="1" source="iiJ8OJKaNMLrSCaLO3TT-1" target="lstVy3rX84DfsURla7Zy-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="255" y="200" as="sourcePoint" />
+            <mxPoint x="292" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lstVy3rX84DfsURla7Zy-29" value="rico:affectsOrAffected" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="lstVy3rX84DfsURla7Zy-28">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

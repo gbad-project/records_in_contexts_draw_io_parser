@@ -38,7 +38,9 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22
     rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/1\""
   Types: rico:AgentName
   Facts:
-    rico:normalizedValue "rml:reference \"NAME\""
+    rico:normalizedValue "rml:reference \"NAME\"",
+    rico:affectsOrAffected https%3A%2F%2Fdata.archives.gov.on.ca%2F,
+    rico:affectsOrAffected rr%3Aconstant%20%22ftp%3A%2F%2Fdata.archives.gov.on.ca%2F%22
 
 Individual: Authority%20Type%20%28AUTH03%29%20AUTHTP
   Annotations:
@@ -167,3 +169,13 @@ Individual: rr%3Atemplate%20%22schema%2Fauthority%2FAgent%20Identifier%22
   Annotations:
     rdfs:label "rr:template \"schema/authority/Agent Identifier\""
   Types: rico:IdentifierType
+
+Individual: https%3A%2F%2Fdata.archives.gov.on.ca%2F
+  Annotations:
+    rdfs:label "https://data.archives.gov.on.ca/"
+  Types: rico:Thing
+
+Individual: rr%3Aconstant%20%22ftp%3A%2F%2Fdata.archives.gov.on.ca%2F%22
+  Annotations:
+    rdfs:label "rr:constant \"ftp://data.archives.gov.on.ca/\""
+  Types: rico:Thing

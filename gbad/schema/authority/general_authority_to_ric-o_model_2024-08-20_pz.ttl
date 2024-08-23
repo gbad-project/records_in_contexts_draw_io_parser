@@ -154,6 +154,18 @@
                                                                     rdfs:label "Web Ready (AUTH22) WEBA" .
 
 
+###  https://data.archives.gov.on.ca/https%3A%2F%2Fdata.archives.gov.on.ca%2F
+<https://data.archives.gov.on.ca/https%3A%2F%2Fdata.archives.gov.on.ca%2F> rdf:type owl:NamedIndividual ,
+                                                                                    rico:Thing ;
+                                                                           rdfs:label "https://data.archives.gov.on.ca/" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22ftp%3A%2F%2Fdata.archives.gov.on.ca%2F%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22ftp%3A%2F%2Fdata.archives.gov.on.ca%2F%22> rdf:type owl:NamedIndividual ,
+                                                                                                        rico:Thing ;
+                                                                                               rdfs:label "rr:constant \"ftp://data.archives.gov.on.ca/\"" .
+
+
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                          rico:Agent ;
@@ -179,6 +191,8 @@
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                              rico:AgentName ;
+                                                                                                    rico:affectsOrAffected <https://data.archives.gov.on.ca/https%3A%2F%2Fdata.archives.gov.on.ca%2F> ,
+                                                                                                                           <https://data.archives.gov.on.ca/rr%3Aconstant%20%22ftp%3A%2F%2Fdata.archives.gov.on.ca%2F%22> ;
                                                                                                     rico:normalizedValue "rml:reference \"NAME\"" ;
                                                                                                     rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/1\"" .
 
