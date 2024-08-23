@@ -224,8 +224,8 @@ def __init__():
 
     # Convert preprocessed DataFrame to HTML
     #from IPython.display import display, HTML, Markdown
-    sorted_columns = [triplesmap_label, rico_name_label, map_predicate_label, map_object_label, mnemonic_label, 'subject']
-    display_table = subjects_df[subjects_df[map_predicate_label].notnull()][sorted_columns].head(10).sort_values(by=triplesmap_label, ascending=True)
+    #sorted_columns = [triplesmap_label, rico_name_label, map_predicate_label, map_object_label, mnemonic_label, 'subject']
+    #display_table = subjects_df[subjects_df[map_predicate_label].notnull()][sorted_columns].head(10).sort_values(by=triplesmap_label, ascending=True)
     #html_table = display_table.to_html(index=False) # for Jupyter Notebook
     #display(HTML(html_table)) # for Jupyter Notebook
     #print("\n\nSubjects Dataframe Preview:")
@@ -243,7 +243,7 @@ def __init__():
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
     parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
-    #parsed_df.drop(uriref_str_label, axis=1, inplace=True)
+    parsed_df.drop(uriref_str_label, axis=1, inplace=True)
 
     # Sort and only show those that have a predicate
     #display_table = parsed_df[parsed_df[uriref_str_label].notnull()].head(10).sort_values(by=triplesmap_label, ascending=True)
@@ -368,9 +368,9 @@ def __init__():
         for k, parsed_result in objectmap_df.iterrows():
             # Only focus on RiC-O or RDFS predicates
             predicate = parsed_result['predicate']
-            if ((normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rico[0]}:")) |
-                (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rdfs[0]}:"))
-            ):
+            is_rico = (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rico[0]}:"))
+            is_rdfs = (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rdfs[0]}:"))
+            if (is_rico | is_rdfs):
                 # Now we can actually iterate over objects
                 object = parsed_result['object']
                 object_map_predicate = parsed_result[map_predicate_label]
@@ -387,6 +387,15 @@ def __init__():
                 # Define an empty object map within the predicate-object map
                 object_map = BNode()
                 mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+
+                # If not RiC-O, then nothing applies and just attach as literal
+                # In the current version of drawio parser only rdfs:label is supported
+                # and such, so this is essential to bypass these. However, I am not
+                # sure at this point how well this would work if other namespaces
+                # were fully supported by drawio parser.
+                if not is_rico:
+                    mapping.add((object_map, rr[1].constant, Literal(object))) 
+                    continue
 
                 # This concerns only constant literals, meaning nodes
                 # in drawio graph for which no mapping logic is defined
