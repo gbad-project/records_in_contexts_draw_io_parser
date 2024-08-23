@@ -21,7 +21,8 @@ map_object_label = 'map_object'
 def __init__():
     # Define GBAD schema ontology
     base_data_uri = 'https://data.archives.gov.on.ca'
-    base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
+    base_gbad_uri = base_data_uri
+    #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
     base_schema_uri = URIRef(f"{base_data_uri}/schema")
     #base_kb_uri = URIRef(f"{base_data_uri}/KB")
     base_auth_uri = URIRef(f"{base_schema_uri}/authority")
