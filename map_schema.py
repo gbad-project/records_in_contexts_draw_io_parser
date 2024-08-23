@@ -181,14 +181,20 @@ def __init__():
         elif uriref_str.startswith(norm(rr[1].template)):
             map_predicate = rr[1].template
             cleaned_uri = remove(norm(map_predicate), uriref_str)
-            encoded_uri = urllib.parse.quote(cleaned_uri, safe='')
-            map_object = Literal(encoded_uri)
+            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=''))
+            if isinstance(cleaned_uri, URIRef): # check if true URI or rr:template
+                map_object = URIRef(encoded_uri)
+            else:
+                map_object = Literal(cleaned_uri)
         # Constant URI
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
             cleaned_uri = remove(norm(map_predicate), uriref_str)
-            encoded_uri = urllib.parse.quote(cleaned_uri, safe='')
-            map_object = URIRef(encoded_uri)
+            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=''))
+            if isinstance(cleaned_uri, URIRef): # check if true URI or constant literal
+                map_object = URIRef(encoded_uri)
+            else:
+                map_object = Literal(cleaned_uri)
         # Treat anything else as a literal
         else:
             map_object = Literal(uriref_str)
