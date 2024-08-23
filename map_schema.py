@@ -331,6 +331,12 @@ def __init__():
         subject_map = BNode()
         mapping.add((triples_map, rr[1].subjectMap, subject_map))
 
+        # Remove prefix from RiC-O name from subject df and add to graph
+        rico_name = subject_row[rico_name_label]
+        rico_class = rico_name[5:]
+        # So this adds the rdf:type definition
+        mapping.add((subject_map, rr[1]['class'], rico[1][rico_class]))
+
         # If no valid RML definitions in the graph
         if not subject_map_predicate:
             #if isinstance(triples_map, BNode):
@@ -353,12 +359,6 @@ def __init__():
 
         # Add map predicate and object from df to subject map
         mapping.add((subject_map, subject_map_predicate, uri_mask))
-
-        # Remove prefix from RiC-O name from subject df and add to graph
-        rico_name = subject_row[rico_name_label]
-        rico_class = rico_name[5:]
-        # So this adds the rdf:type definition
-        mapping.add((subject_map, rr[1]['class'], rico[1][rico_class]))
 
         # Deal with predicates and objects in full triples df
         # Subset triples with the subject and RiC-O class from i-loop
