@@ -27,18 +27,23 @@
                                                                     rdfs:label "Archivist (AUTH02) ARCHAU" .
 
 
-###  https://data.archives.gov.on.ca/Authority%20Record
-<https://data.archives.gov.on.ca/Authority%20Record> rdf:type owl:NamedIndividual ,
-                                                              rico:DocumentaryFormType ,
-                                                              rico:Record ;
-                                                     rico:hasCreator <https://data.archives.gov.on.ca/Archivist%20%28AUTH02%29%20ARCHAU> ;
-                                                     rico:hasDocumentaryFormType <https://data.archives.gov.on.ca/Authority%20Record> ;
-                                                     rico:hasRecordState <https://data.archives.gov.on.ca/Status%20%28AUTH18%29%20STATUSA> ,
-                                                                         <https://data.archives.gov.on.ca/Web%20Ready%20%28AUTH22%29%20WEBA> ;
-                                                     rico:isOrWasRegulatedBy <https://data.archives.gov.on.ca/Rules%20%28AUTH16%29%20RULES> ;
-                                                     rico:generalDescription "Source Note (AUTH17) SOURCE" ;
-                                                     rico:lastModificationDate "Date (AUTH09) MOD_DATE" ;
-                                                     rdfs:label "Authority Record" .
+###  https://data.archives.gov.on.ca/Authority%20Record1
+<https://data.archives.gov.on.ca/Authority%20Record1> rdf:type owl:NamedIndividual ,
+                                                               rico:Record ;
+                                                      rico:hasCreator <https://data.archives.gov.on.ca/Archivist%20%28AUTH02%29%20ARCHAU> ;
+                                                      rico:hasDocumentaryFormType <https://data.archives.gov.on.ca/Authority%20Record2> ;
+                                                      rico:hasRecordState <https://data.archives.gov.on.ca/Status%20%28AUTH18%29%20STATUSA> ,
+                                                                          <https://data.archives.gov.on.ca/Web%20Ready%20%28AUTH22%29%20WEBA> ;
+                                                      rico:isOrWasRegulatedBy <https://data.archives.gov.on.ca/Rules%20%28AUTH16%29%20RULES> ;
+                                                      rico:generalDescription "Source Note (AUTH17) SOURCE" ;
+                                                      rico:lastModificationDate "Date (AUTH09) MOD_DATE" ;
+                                                      rdfs:label "Authority Record1" .
+
+
+###  https://data.archives.gov.on.ca/Authority%20Record2
+<https://data.archives.gov.on.ca/Authority%20Record2> rdf:type owl:NamedIndividual ,
+                                                               rico:DocumentaryFormType ;
+                                                      rdfs:label "Authority Record2" .
 
 
 ###  https://data.archives.gov.on.ca/Authority%20Type%20%28AUTH03%29%20AUTHTP
@@ -163,7 +168,7 @@
                                                                                                 rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Agency%20Reference%20Code%20%28AUTH01a%29%20REFA> ;
                                                                                                 rico:hasSuccessor <https://data.archives.gov.on.ca/Successor%20Agencies%20%28AUTH20%29%20SUC> ;
                                                                                                 rico:isEquivalentTo <https://data.archives.gov.on.ca/rr%3Atemplate%C2%A0%22RiC-O_1-0-1%2F%7BREFA%7D%22> ;
-                                                                                                rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/Authority%20Record> ;
+                                                                                                rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/Authority%20Record1> ;
                                                                                                 rico:isSuccessorOf <https://data.archives.gov.on.ca/Predecessor%20Agencies%20%28AUTH15%29%20PRED> ;
                                                                                                 rico:generalDescription "Comment (AUTH07) CMTAU" ,
                                                                                                                         "Function Note (AUTH11) FUN" ;

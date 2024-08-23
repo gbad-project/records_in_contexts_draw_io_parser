@@ -21,7 +21,7 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
     rico:hasOrHadController Controlling%20Agencies%20%28AUTH08a%29%20CONTAG,
     rico:isSuccessorOf Predecessor%20Agencies%20%28AUTH15%29%20PRED,
     rico:hasSuccessor Successor%20Agencies%20%28AUTH20%29%20SUC,
-    rico:isOrWasDescribedBy Authority%20Record,
+    rico:isOrWasDescribedBy Authority%20Record1,
     rico:generalDescription "Comment (AUTH07) CMTAU",
     rico:generalDescription "Function Note (AUTH11) FUN",
     rico:isEquivalentTo rr%3Atemplate%C2%A0%22RiC-O_1-0-1%2F%7BREFA%7D%22
@@ -91,18 +91,23 @@ Individual: Variant%20Names%20%28AUTH21%29%20VAR
   Facts:
     rico:hasOrHadCategory Variant%20Name
 
-Individual: Authority%20Record
+Individual: Authority%20Record1
   Annotations:
-    rdfs:label "Authority Record"
-  Types: rico:DocumentaryFormType, rico:Record
+    rdfs:label "Authority Record1"
+  Types: rico:Record
   Facts:
     rico:generalDescription "Source Note (AUTH17) SOURCE",
-    rico:hasDocumentaryFormType Authority%20Record,
+    rico:hasDocumentaryFormType Authority%20Record2,
     rico:isOrWasRegulatedBy Rules%20%28AUTH16%29%20RULES,
     rico:lastModificationDate "Date (AUTH09) MOD_DATE",
     rico:hasRecordState Status%20%28AUTH18%29%20STATUSA,
     rico:hasRecordState Web%20Ready%20%28AUTH22%29%20WEBA,
     rico:hasCreator Archivist%20%28AUTH02%29%20ARCHAU
+
+Individual: Authority%20Record2
+  Annotations:
+    rdfs:label "Authority Record2"
+  Types: rico:DocumentaryFormType
 
 Individual: Rules%20%28AUTH16%29%20RULES
   Annotations:

@@ -5,12 +5,25 @@ import re
 import urllib.parse
 from pprint import pprint
 
+# Set labels for reference fields
+auth_heading_label = 'HEADING'
+add_refd_label = 'REFD'
+add_ref_add_label = 'REF_ADD'
+add_ref_file_label = 'REF_FILE'
+add_title_label = 'TITLE'
+private_mnemonics = ['ARCHAU', 'CMTAU']
+
+triplesmap_label = 'TriplesMap'
+uriref_str_label = 'uriref_str'
+map_predicate_label = 'map_predicate'
+map_object_label = 'map_object'
+
 def __init__():
     # Define GBAD schema ontology
     base_data_uri = 'https://data.archives.gov.on.ca'
     base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
     base_schema_uri = URIRef(f"{base_data_uri}/schema")
-    base_kb_uri = URIRef(f"{base_data_uri}/KB")
+    #base_kb_uri = URIRef(f"{base_data_uri}/KB")
     base_auth_uri = URIRef(f"{base_schema_uri}/authority")
     base_add_uri = URIRef(f"{base_schema_uri}/description-listings")
     base_mapping_uri = URIRef(f"{base_schema_uri}/mapping")
@@ -18,6 +31,7 @@ def __init__():
     # Choose ontology to map
     base_uri = base_data_uri
     graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-20_pz.ttl'
+    rml_path = graph_path[:-3]+ "rml"
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -34,13 +48,22 @@ def __init__():
     rdfs = ('rdfs', RDFS)
     owl = ('owl', OWL)
 
+    # Define RML-specific prefixes
+    rml = ('rml', Namespace('http://semweb.mmlab.be/ns/rml#'))
+    rr = ('rr', Namespace('http://www.w3.org/ns/r2rml#'))
+    ql = ('ql', Namespace('http://semweb.mmlab.be/ns/ql#'))
+    csvw = ('csvw', Namespace('http://www.w3.org/ns/csvw#'))
+
     # Bind prefixes to namespaces
-    g_namespace_manager = g.namespace_manager
-    g_namespace_manager.bind(*rico)
-    g_namespace_manager.bind(*rdf)
-    g_namespace_manager.bind(*rdfs)
-    g_namespace_manager.bind(*owl)
-    g_namespace_manager.bind(*ns)
+    g.namespace_manager.bind(*rico)
+    g.namespace_manager.bind(*rdf)
+    g.namespace_manager.bind(*rdfs)
+    g.namespace_manager.bind(*owl)
+    g.namespace_manager.bind(*ns)
+    g.namespace_manager.bind(*rml)
+    g.namespace_manager.bind(*rr)
+    g.namespace_manager.bind(*ql)
+    g.namespace_manager.bind(*csvw)
 
     #print(g.serialize(format='turtle'))
 
@@ -63,42 +86,48 @@ def __init__():
         predicate = row.predicate
         object = row.object
 
-        object_query = f"""
-        SELECT ?object
-        WHERE {{
-        <{subject}> rdf:type ?object .
-        FILTER (STRSTARTS(STR(?object), "{rico[1]}"))
-        }}
-        """
-        # Execute the query
-        object_result = g.query(object_query)
-        for object_row in object_result:
-            parsed_result = {
-                'subject': subject,
-                'predicate': predicate,
-                'object': object
-            }
-            parsed_results.append(parsed_result)
+        parsed_results.append({
+            'subject': subject,
+            'predicate': predicate,
+            'object': object
+        })
         
     #print(parsed_results[:5]) # debug
 
     # Convert the parsed results to a dataframe
     parsed_df = pd.DataFrame(parsed_results)
 
-    def normalize_uri(uri):
+    def normalize_uri(uri, ns_manager):
         if isinstance(uri, URIRef):
-            return g_namespace_manager.normalizeUri(uri)
+            return ns_manager.normalizeUri(uri)
         return None
 
     # SELECT ?s a ?o
     subjects_df = parsed_df[
-        (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x))) == 'rdf:type') &
-        (parsed_df['object'].apply(lambda x: str(normalize_uri(x)).startswith(f"{rico[0]}:")))
+        (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x, g.namespace_manager))) == 'rdf:type') &
+        (parsed_df['object'].apply(lambda x: str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:")))
     ].loc[:,['subject','object']]
 
     def extract_uriref_str(uriref):
+        norm_uri = normalize_uri(uriref, g.namespace_manager)
+        if not norm_uri:
+            #map_series = uriref_str_to_map(uriref)
+            #if map_series[map_predicate_label]:
+                # This is a tricky part but really important because
+                # otherwise nodes that are drawn as non-class nodes
+                # are simply dropped. So this part tries to process
+                # the "uriref" (which is really a literal in this case)
+                # to produce a map, and if successful, that means that
+                # input uriref is already uriref_str, so we are returning it.
+            # Sorry, this is even simpler! Any input uriref which is not norm_uri
+            # actually has to be returned as uriref because it means that it is
+            # has to be passed on as a literal. By contrast, if only the if block
+            # above is implemented, non-map series structures literals are dropped.
+            # Thus, we are simply returning any literal as uriref.
+            return uriref
+            #return None
         # Replace namespace URIs with prefix codes
-        uriref_str = str(normalize_uri(uriref))
+        uriref_str = str(norm_uri)
         # Remove base URI prefix
         uriref_str = uriref_str.replace(f"{ns[0]}:", '')
         # Decode special URI entities
@@ -106,94 +135,121 @@ def __init__():
         return uriref_str
 
     def generate_triplesmap_name(row):
-        # This assumes that subject URIs are unique
-        subject_str = extract_uriref_str(row['subject'])
-        print(uriref_str_to_map(subject_str))
+        # This implementation assumes that subject URIs are unique
+        subject_str = row[uriref_str_label]
         # Replace with underscores anything but Latin letters, numbers, hyphens, and underscores
         cleaned_subject = re.sub(r'[^0-9a-z_-]', '_', subject_str, flags=re.IGNORECASE)
         return cleaned_subject
     
-    # Define RML-specific prefixes
-    rml = ('rml', Namespace('http://semweb.mmlab.be/ns/rml#'))
-    rr = ('rr', Namespace('http://www.w3.org/ns/r2rml#'))
-    ql = ('ql', Namespace('http://semweb.mmlab.be/ns/ql#'))
-    csvw = ('csvw', Namespace('http://www.w3.org/ns/csvw#'))
+    # Necessary to init namespace manager for uriref_str_to_map
+    # Initialize an RDF graph
+    mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
+    source_path = 'gbad/mapping/source/authority_head_6.csv'
     
-    def uriref_str_to_map(uriref_str: str):
-        predicate = None
-        object = None
+    def uriref_str_to_map(uriref_str):
+        map_predicate = None
+        map_object = None
+
+        def series(map_predicate, map_object):
+            map_series = pd.Series({
+                map_predicate_label: map_predicate,
+                map_object_label: map_object
+            })
+            return map_series
+
+        if not uriref_str:
+            return series(map_predicate, map_object)
+        
         uriref_str = re.sub('\s+', ' ', uriref_str)
+
         def remove(predicate: URIRef, uriref_str):
             sin_predicate = re.sub(f"^{str(predicate)}\s+", "", uriref_str)
+            sin_predicate = sin_predicate.strip('"')
             return sin_predicate
+        
+        def norm(uriref):
+            return str(normalize_uri(uriref, g.namespace_manager))
+        
         # Literal mapped from source
-        if uriref_str.startswith(str(normalize_uri(rml[1].reference))):
-            predicate = rml[1].reference
-            object = Literal(remove(predicate, uriref_str))
+        if uriref_str.startswith(norm(rml[1].reference)):
+            map_predicate = rml[1].reference
+            map_object = Literal(remove(norm(map_predicate), uriref_str))
         # URI mapped from source
-        elif uriref_str.startswith(str(normalize_uri(rr[1].template))):
-            predicate = rr[1].template
-            object = URIRef(remove(predicate, uriref_str))
+        elif uriref_str.startswith(norm(rr[1].template)):
+            map_predicate = rr[1].template
+            map_object = Literal(remove(norm(map_predicate), uriref_str))
         # Constant URI
-        elif uriref_str.startswith(str(normalize_uri(rr[1].constant))):
-            predicate = rr[1].constant
-            object = URIRef(remove(predicate, uriref_str))
+        elif uriref_str.startswith(norm(rr[1].constant)):
+            map_predicate = rr[1].constant
+            map_object = URIRef(remove(norm(map_predicate), uriref_str))
         # Treat anything else as a literal
         else:
-            object = Literal(uriref_str)
-        return (predicate, object)
+            map_object = Literal(uriref_str)
+
+        return series(map_predicate, map_object)
 
     def generate_rico_name(row):
         object_uri = row['object']
-        object_str = str(normalize_uri(object_uri))
+        object_str = str(normalize_uri(object_uri, g.namespace_manager))
         cleaned_object = object_str
         return cleaned_object
     
     def extract_mnemonic(row):
-        subject_str = str(row['object'])
-
-    def is_private_mnemonic(subject_row):
-        global private_mnemonics
-        subject_uri_str = subject_row['subject']
-        # Looks up directly in hardcoded URIs, with %7B and %7D being URI entities for curly brackets
-        is_private = any(f"%7B{mnemonic}%7D" in subject_uri_str for mnemonic in private_mnemonics)
-        return is_private
-
-    triplesmap_label = 'TriplesMap'
+        map_predicate = row[map_predicate_label]
+        map_object = row[map_object_label]
+        if map_object:
+            if map_predicate != rr[1].template:
+                return None
+            pattern = r"\{([A-Z]+)\}"
+            matches = re.findall(pattern, map_object)
+            if matches:
+                if len(matches) > 1:
+                    print("At most one rr:template is allowed per subject map ",
+                          f"whereas multiple are given in: '{map_object}'")
+                    return None
+                return matches[0]
+        return None
+    
     rico_name_label = 'RiC-O Name'.replace(' ','_')
     mnemonic_label = 'Authority Mnemonic'.replace(' ','_')
 
+    # Note for next line that it is the only one that applies to series, all other to df
+    subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     subjects_df[triplesmap_label] = subjects_df.apply(generate_triplesmap_name, axis=1)
     subjects_df[rico_name_label] = subjects_df.apply(generate_rico_name, axis=1)
-    subjects_df[rico_name_label] = subjects_df.apply(generate_rico_name, axis=1)
-    subjects_df.drop('object', axis=1, inplace=True)
+    # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
+    subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
+    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
+    subjects_df.drop(['object', uriref_str_label], axis=1, inplace=True)
 
     # Convert preprocessed DataFrame to HTML
     #from IPython.display import display, HTML, Markdown
-    sorted_columns = [triplesmap_label, rico_name_label, 'subject']
-    display_table = subjects_df[sorted_columns].sort_values(by=triplesmap_label, ascending=True)
+    sorted_columns = [triplesmap_label, rico_name_label, map_predicate_label, map_object_label, mnemonic_label, 'subject']
+    display_table = subjects_df[subjects_df[map_predicate_label].notnull()][sorted_columns].head(10).sort_values(by=triplesmap_label, ascending=True)
     #html_table = display_table.to_html(index=False) # for Jupyter Notebook
     #display(HTML(html_table)) # for Jupyter Notebook
-    #print(display_table[[triplesmap_label, rico_name_label]]) # debug
-    return None
-    # Initialize an RDF graph
-    mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    source_path = 'gbad/mapping/source/authority_head_6.csv'
+    #print("\n\nSubjects Dataframe Preview:")
+    #subjects_df.info()
+    #print("\n", "\n\n".join([str(display_table.iloc[i]) for i in range(len(display_table))])) # debug
 
-    # Define custom prefix
-    maps = ('data', Namespace(URIRef(f"{base_mapping_uri}#")))
+    # Add useful columns from subjects dataset for matching within loop later
+    # The column name stays unique so we should just remember that RiC-O name refers to subject
+    parsed_df = pd.merge(parsed_df, subjects_df[['subject', rico_name_label, triplesmap_label]], on='subject', how='left')
 
-    # Bind prefixes to namespaces
-    map_namespace_manager = mapping.namespace_manager
-    map_namespace_manager.bind(*rico)
-    map_namespace_manager.bind(*rdf)
-    map_namespace_manager.bind(*rdfs)
-    map_namespace_manager.bind(*owl)
-    map_namespace_manager.bind(*rml)
-    map_namespace_manager.bind(*rr)
-    map_namespace_manager.bind(*ql)
-    map_namespace_manager.bind(*csvw)
-    map_namespace_manager.bind(*maps)
+    # Also extract map predicates and objects for each object
+    # Note that the below are for object, not subject, even though columns are called the same
+    # Also note for next line that it is the only one that applies to series, all other to df
+    parsed_df[uriref_str_label] = parsed_df['object'].apply(extract_uriref_str)
+    # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
+    parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
+    parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
+    #parsed_df.drop(uriref_str_label, axis=1, inplace=True)
+
+    # Sort and only show those that have a predicate
+    #display_table = parsed_df[parsed_df[uriref_str_label].notnull()].head(10).sort_values(by=triplesmap_label, ascending=True)
+    #print("\n\nAll Triples Dataframe Preview:")
+    #parsed_df.info()
+    #print("\n", "\n\n".join([str(display_table.iloc[i]) for i in range(len(display_table))])) # debug
 
     # Define blank nodes and triples
     #agent_name_map = BNode()
@@ -201,14 +257,6 @@ def __init__():
 
     # Triples for :AgentNameAUTH13
     #mapping.add((maps[1].AgentNameAUTH13, RDF.type, rr[1].TriplesMap))
-
-    # Set labels for reference fields
-    auth_heading_label = 'HEADING'
-    add_refd_label = 'REFD'
-    add_ref_add_label = 'REF_ADD'
-    add_ref_file_label = 'REF_FILE'
-    add_title_label = 'TITLE'
-    private_mnemonics = ['ARCHAU', 'CMTAU']
 
     # Additional RML masks
     iterator_mask = r'1'
@@ -237,91 +285,142 @@ def __init__():
         except UnboundLocalError:
             print(f'No valid identifiers found for an ADD source:\n{subject_row}')
             return None
-        
-    def is_private_mnemonic(subject_row):
-        global private_mnemonics
-        subject_uri_str = subject_row['subject']
-        # Looks up directly in hardcoded URIs, with %7B and %7D being URI entities for curly brackets
-        is_private = any(f"%7B{mnemonic}%7D" in subject_uri_str for mnemonic in private_mnemonics)
-        return is_private
+    
+    # Initialize a mapping RDF graph
+    mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
+    source_path = 'gbad/mapping/source/authority_head_6.csv'
 
+    # Define custom prefix
+    maps = ('', Namespace(URIRef(f"{base_mapping_uri}#")))
+
+    # Bind prefixes to namespaces
+    mapping.namespace_manager.bind(*rico)
+    mapping.namespace_manager.bind(*rdf)
+    mapping.namespace_manager.bind(*rdfs)
+    mapping.namespace_manager.bind(*owl)
+    mapping.namespace_manager.bind(*rml)
+    mapping.namespace_manager.bind(*rr)
+    mapping.namespace_manager.bind(*ql)
+    mapping.namespace_manager.bind(*csvw)
+    mapping.namespace_manager.bind(*maps)
+    
     # Construct RML graph
     for i, subject_row in subjects_df.iterrows():
+        # This refers to the original subject URI from drawio graph
+        # which is being used to uniquely identify subject
+        subject_uri = subject_row['subject']
+        subject_mnemonic = subject_row[mnemonic_label]
+
         # Skip private fields removed from input data
-        if is_private_mnemonic(subject_row):
-            print(f"Aha! Here we go: '{subject_row['subject']}'")
+        if subject_mnemonic in private_mnemonics:
             continue
 
         # Define TriplesMap
-        subject = maps[1][subject_row[triplesmap_label]]
-        mapping.add((subject, RDF.type, rr[1].TriplesMap))
+        triples_map = maps[1][subject_row[triplesmap_label]]
+        mapping.add((triples_map, RDF.type, rr[1].TriplesMap))
+
+        # Collect subjectmap predicate and object from subject df
+        # These will be added to the graph and then used later on
+        subject_map_predicate = subject_row[map_predicate_label]
+        uri_mask = subject_row[map_object_label]
+        #URIRef(urllib.parse.unquote(str(subject)))
+        #uri_mask = construct_uri_mask(subjects_df, i)
+        
+        # Define an empty Subject Map
+        subject_map = BNode()
+        mapping.add((triples_map, rr[1].subjectMap, subject_map))
+
+        # If no valid RML definitions in the graph
+        if not subject_map_predicate:
+            #if isinstance(triples_map, BNode):
+            #    # Means that 
+            #    continue
+            # Replace the blank node with subject as literal
+            # Well, this is not really a subject "uri" in this case
+            # or shouldn't be because URIs have to be set up via rr:constant
+            if subject_uri: # not sure if it is at all possible for this to be null
+                mapping.add((subject_map, rr[1].constant, Literal(subject_uri)))
+            continue # because cannot move forward with map predicate undefined
+            # Also note that rr:subject is incompatible with logical source
 
         # Define Logical Source
         logical_source = BNode()
-        mapping.add((subject, rml[1].logicalSource, logical_source))
+        mapping.add((triples_map, rml[1].logicalSource, logical_source))
         mapping.add((logical_source, rml[1].source, Literal(source_path)))
         mapping.add((logical_source, rml[1].referenceFormulation, ql[1].CSV))
         #mapping.add((logical_source, rml[1].iterator, Literal(iterator_mask)))
 
-        # Define Subject Map
-        subject_map = BNode()
-        mapping.add((subject, rr[1].subjectMap, subject_map))
-        #URIRef(urllib.parse.unquote(str(subject)))
-        #uri_mask = construct_uri_mask(subjects_df, i)
-        uri_mask = urllib.parse.unquote(str(subject_row['subject']))
-        mapping.add((subject_map, rr[1].template, Literal(uri_mask)))
-        rico_class = subject_row[rico_name_label][5:]
+        # Add map predicate and object from df to subject map
+        mapping.add((subject_map, subject_map_predicate, uri_mask))
+
+        # Remove prefix from RiC-O name from subject df and add to graph
+        rico_name = subject_row[rico_name_label]
+        rico_class = rico_name[5:]
+        # So this adds the rdf:type definition
         mapping.add((subject_map, rr[1]['class'], rico[1][rico_class]))
-        
-        # Define Predicate-Object Map
-        for parsed_result in parsed_results:
-            #break
-            if ((parsed_result['subject'] == subject_row['subject']) &
-                (parsed_result[rico_name_label] == subject_row[rico_name_label])
+
+        # Deal with predicates and objects in full triples df
+        # Subset triples with the subject and RiC-O class from i-loop
+        objectmap_df = parsed_df[(
+            (parsed_df['subject']==subject_uri) &
+            (parsed_df[rico_name_label] == rico_name)
+        )]
+        for k, parsed_result in objectmap_df.iterrows():
+            # Only focus on RiC-O or RDFS predicates
+            predicate = parsed_result['predicate']
+            if ((normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rico[0]}:")) |
+                (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rdfs[0]}:"))
             ):
-                predicate = parsed_result['predicate']
-                if ((map_namespace_manager.normalizeUri(predicate).startswith(f"{rico[0]}:")) |
-                    (map_namespace_manager.normalizeUri(predicate).startswith(f"{rdfs[0]}:"))
-                ):
-                    predicate_object_map = BNode()
-                    mapping.add((subject, rr[1].predicateObjectMap, predicate_object_map))
-                    mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate)))
-                    object = parsed_result['object']
-                    object_map = BNode()
-                    mapping.add((predicate_object_map, rr[1].objectMap, object_map))
-                    # Case when the object is supposed to reference another Subject map
-                    if object in set(subjects_df['subject']):
-                        triplesmap = maps[1][subjects_df[subjects_df['subject']==parsed_result['object']][triplesmap_label].iloc[0]]
-                        mapping.add((object_map, rr[1].parentTriplesMap, triplesmap))
-                        #join_condition = BNode()
-                        #mapping.add((object_map, rr[1].joinCondition, join_condition))
-                        #mnemonic = parsed_result[mnemonic_label]
-                        #mapping.add((join_condition, rr[1].child, Literal(mnemonic)))
-                        #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
-                    elif isinstance(object, URIRef):
-                        mapping.add((object_map, rr[1].constant, object))
-                        #rico_class = subjects_df[subjects_df['subject']==object][rico_name_label].iloc[0]
-                        #rico_class_uri = URIRef(f"{rico[1]}{rico_class[5:]}")
-                        #parsed_object = parse_node(object, rico_class_uri)
-                        #object_mnemonic = parsed_object[mnemonic_label]
-                        # Case when the object is supposed to reference a table row
-                        #if mnemonic:
-                        #    mapping.add((object_map, rml[1].reference , Literal(object_mnemonic)))
-                        # Case when the object is supposed to be an external URI, or
-                        # is actually supposed to reference a table row but is unmatched
-                        #else:
-                        #    mapping.add((object_map, rr[1].constant , object))
-                    # Case when the object is a supposed to be a literal
-                    elif isinstance(object, Literal):
-                        #node_label_dict = break_node_label(object)
-                        #mnemonic = node_label_dict[mnemonic_label]
-                        if is_private_mnemonic(subject_row):
-                            mapping.add((object_map, rr[1].constant, URIRef(f"censored#{mnemonic}")))
-                            continue
-                        mapping.add((object_map, rml[1].reference, Literal(mnemonic)))
+                # Now we can actually iterate over objects
+                object = parsed_result['object']
+                object_map_predicate = parsed_result[map_predicate_label]
+                object_map_object = parsed_result[map_object_label]
+                object_mnemonic = parsed_result[mnemonic_label]
+
+                # Define a predicate-object map
+                predicate_object_map = BNode()
+                mapping.add((triples_map, rr[1].predicateObjectMap, predicate_object_map))
+
+                # Add predicate to predicate-object map
+                mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate)))
+
+                # Define an empty object map within the predicate-object map
+                object_map = BNode()
+                mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+
+                # This concerns only constant literals, meaning nodes
+                # in drawio graph for which no mapping logic is defined
+                if not object_map_predicate:
+                    # So these are simply added as predicate and object, no predicate-object map
+                    if object_map_object: # sometimes it may be empty
+                        mapping.add((object_map, rr[1].constant, object_map_object)) 
+                    continue
+                
+                # Now let's finally attach the object to the object map
+                # Case when the object is supposed to reference another Subject map
+                if object in set(subjects_df['subject']):
+                    triplesmap = maps[1][subjects_df[subjects_df['subject']==object][triplesmap_label].iloc[0]]
+                    mapping.add((object_map, rr[1].parentTriplesMap, triplesmap))
+                    #join_condition = BNode()
+                    #mapping.add((object_map, rr[1].joinCondition, join_condition))
+                    #mnemonic = parsed_result[mnemonic_label]
+                    #mapping.add((join_condition, rr[1].child, Literal(mnemonic)))
+                    #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
+                else:
+                    if object_mnemonic in private_mnemonics:
+                        mapping.add((object_map, rr[1].constant, URIRef(f"censored#{object_mnemonic}")))
+                        continue
+                    object_map_predicate = parsed_result[map_predicate_label]
+                    object_map_object = parsed_result[map_object_label]
+                    if object_map_object: # just in case user forgot to set it in drawio
+                        mapping.add((object_map, object_map_predicate, object_map_object))
 
     # Serialize and print the RDF graph
-    print(mapping.serialize(format='turtle'))
+    ttl = mapping.serialize(format='turtle')
+    with open(rml_path, 'w') as f:
+        f.write(mapping.serialize(format='turtle'))
+    print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
+    #print(ttl)
 
 if __name__ == '__main__':
     __init__()

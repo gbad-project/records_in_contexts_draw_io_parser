@@ -1,0 +1,116 @@
+@prefix : <https://data.archives.gov.on.ca/schema/mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/AA108> a rico:CorporateBody;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/AA108> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Agent/1>
+  a rico:Agent;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Agent/1>;
+  rico:authorizedBy "Authorizing Agent (AUTH04) AA";
+  rico:generalDescription "Comment (AUTH07) CMTAU", "Function Note (AUTH11) FUN";
+  rico:hasBeginningDate "Dates of Existence - Beginning (AUTH10a) DATEEX";
+  rico:hasEndDate "Dates of Existence - End (AUTH10b) DATEEX";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1>,
+    "Parallel Names (AUTH14) PAR", "Variant Names (AUTH21) VAR";
+  rico:hasOrHadController "Controlling Agencies (AUTH08a) CONTAG";
+  rico:hasOrHadCorporateBodyType "Authority Type (AUTH03) AUTHTP";
+  rico:hasOrHadIdentifier "Agency Reference Code (AUTH01a) REFA";
+  rico:hasSuccessor "Successor Agencies (AUTH20) SUC";
+  rico:history "Biographical Sketch or Administrative History (AUTH05) ADM";
+  rico:isOrWasDescribedBy "Authority Record1";
+  rico:isSuccessorOf "Predecessor Agencies (AUTH15) PRED" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1>
+  a rico:AgentName;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canada%20Packers/Agent/1>
+  a rico:Agent;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canada%20Packers/Agent/1>;
+  rico:authorizedBy "Authorizing Agent (AUTH04) AA";
+  rico:generalDescription "Comment (AUTH07) CMTAU", "Function Note (AUTH11) FUN";
+  rico:hasBeginningDate "Dates of Existence - Beginning (AUTH10a) DATEEX";
+  rico:hasEndDate "Dates of Existence - End (AUTH10b) DATEEX";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canada%20Packers/AgentName/1>,
+    "Parallel Names (AUTH14) PAR", "Variant Names (AUTH21) VAR";
+  rico:hasOrHadController "Controlling Agencies (AUTH08a) CONTAG";
+  rico:hasOrHadCorporateBodyType "Authority Type (AUTH03) AUTHTP";
+  rico:hasOrHadIdentifier "Agency Reference Code (AUTH01a) REFA";
+  rico:hasSuccessor "Successor Agencies (AUTH20) SUC";
+  rico:history "Biographical Sketch or Administrative History (AUTH05) ADM";
+  rico:isOrWasDescribedBy "Authority Record1";
+  rico:isSuccessorOf "Predecessor Agencies (AUTH15) PRED" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canada%20Packers/AgentName/1>
+  a rico:AgentName;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canada%20Packers/AgentName/1> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Agent/1>
+  a rico:Agent;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Agent/1>;
+  rico:authorizedBy "Authorizing Agent (AUTH04) AA";
+  rico:generalDescription "Comment (AUTH07) CMTAU", "Function Note (AUTH11) FUN";
+  rico:hasBeginningDate "Dates of Existence - Beginning (AUTH10a) DATEEX";
+  rico:hasEndDate "Dates of Existence - End (AUTH10b) DATEEX";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1>,
+    "Parallel Names (AUTH14) PAR", "Variant Names (AUTH21) VAR";
+  rico:hasOrHadController "Controlling Agencies (AUTH08a) CONTAG";
+  rico:hasOrHadCorporateBodyType "Authority Type (AUTH03) AUTHTP";
+  rico:hasOrHadIdentifier "Agency Reference Code (AUTH01a) REFA";
+  rico:hasSuccessor "Successor Agencies (AUTH20) SUC";
+  rico:history "Biographical Sketch or Administrative History (AUTH05) ADM";
+  rico:isOrWasDescribedBy "Authority Record1";
+  rico:isSuccessorOf "Predecessor Agencies (AUTH15) PRED" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1>
+  a rico:AgentName;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Agent/1>
+  a rico:Agent;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Agent/1>;
+  rico:authorizedBy "Authorizing Agent (AUTH04) AA";
+  rico:generalDescription "Comment (AUTH07) CMTAU", "Function Note (AUTH11) FUN";
+  rico:hasBeginningDate "Dates of Existence - Beginning (AUTH10a) DATEEX";
+  rico:hasEndDate "Dates of Existence - End (AUTH10b) DATEEX";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1>,
+    "Parallel Names (AUTH14) PAR", "Variant Names (AUTH21) VAR";
+  rico:hasOrHadController "Controlling Agencies (AUTH08a) CONTAG";
+  rico:hasOrHadCorporateBodyType "Authority Type (AUTH03) AUTHTP";
+  rico:hasOrHadIdentifier "Agency Reference Code (AUTH01a) REFA";
+  rico:hasSuccessor "Successor Agencies (AUTH20) SUC";
+  rico:history "Biographical Sketch or Administrative History (AUTH05) ADM";
+  rico:isOrWasDescribedBy "Authority Record1";
+  rico:isSuccessorOf "Predecessor Agencies (AUTH15) PRED" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1>
+  a rico:AgentName;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Agent/1>
+  a rico:Agent;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Agent/1>;
+  rico:authorizedBy "Authorizing Agent (AUTH04) AA";
+  rico:generalDescription "Comment (AUTH07) CMTAU", "Function Note (AUTH11) FUN";
+  rico:hasBeginningDate "Dates of Existence - Beginning (AUTH10a) DATEEX";
+  rico:hasEndDate "Dates of Existence - End (AUTH10b) DATEEX";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>,
+    "Parallel Names (AUTH14) PAR", "Variant Names (AUTH21) VAR";
+  rico:hasOrHadController "Controlling Agencies (AUTH08a) CONTAG";
+  rico:hasOrHadCorporateBodyType "Authority Type (AUTH03) AUTHTP";
+  rico:hasOrHadIdentifier "Agency Reference Code (AUTH01a) REFA";
+  rico:hasSuccessor "Successor Agencies (AUTH20) SUC";
+  rico:history "Biographical Sketch or Administrative History (AUTH05) ADM";
+  rico:isEquivalentTo <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/AA108>;
+  rico:isOrWasDescribedBy "Authority Record1";
+  rico:isSuccessorOf "Predecessor Agencies (AUTH15) PRED" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>
+  a rico:AgentName;
+  rdfs:label <https://data.archives.gov.on.ca/RiC-O_1-0-1/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>;
+  rico:normalizedValue "Minister Responsible for Native Affairs" .

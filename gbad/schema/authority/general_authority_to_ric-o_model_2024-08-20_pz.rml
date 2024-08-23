@@ -1,0 +1,137 @@
+@base <https://data.archives.gov.on.ca/RiC-O_1-0-1/> .
+@prefix : <https://data.archives.gov.on.ca/schema/mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+:Agency_Reference_Code__AUTH01a__REFA a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Agency%20Reference%20Code%20%28AUTH01a%29%20REFA" ] .
+
+:Archivist__AUTH02__ARCHAU a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Archivist%20%28AUTH02%29%20ARCHAU" ] .
+
+:Authority_Record1 a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Authority%20Record1" ] .
+
+:Authority_Record2 a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Authority%20Record2" ] .
+
+:Authority_Type__AUTH03__AUTHTP a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Authority%20Type%20%28AUTH03%29%20AUTHTP" ] .
+
+:Authorizing_Agent__AUTH04__AA a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Authorizing%20Agent%20%28AUTH04%29%20AA" ] .
+
+:Controlling_Agencies__AUTH08a__CONTAG a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Controlling%20Agencies%20%28AUTH08a%29%20CONTAG" ] .
+
+:Controlling_Agency_Relation a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Controlling%20Agency%20Relation" ] .
+
+:Date_of_Subordination__AUTH08b__DATECONT a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Date%20of%20Subordination%20%28AUTH08b%29%20DATECONT" ] .
+
+:Date_of_Subordination__AUTH08c__DATECONT a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Date%20of%20Subordination%20%28AUTH08c%29%20DATECONT" ] .
+
+:Dates_of_Existence_-_Beginning__AUTH10a__DATEEX a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Dates%20of%20Existence%20-%20Beginning%20%28AUTH10a%29%20DATEEX" ] .
+
+:Dates_of_Existence_-_End__AUTH10b__DATEEX a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Dates%20of%20Existence%20-%20End%20%28AUTH10b%29%20DATEEX" ] .
+
+:Parallel_Name a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Parallel%20Name" ] .
+
+:Parallel_Names__AUTH14__PAR a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Parallel%20Names%20%28AUTH14%29%20PAR" ] .
+
+:Predecessor_Agencies__AUTH15__PRED a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Predecessor%20Agencies%20%28AUTH15%29%20PRED" ] .
+
+:Rules__AUTH16__RULES a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Rules%20%28AUTH16%29%20RULES" ] .
+
+:Status__AUTH18__STATUSA a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Status%20%28AUTH18%29%20STATUSA" ] .
+
+:Successor_Agencies__AUTH20__SUC a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Successor%20Agencies%20%28AUTH20%29%20SUC" ] .
+
+:Variant_Name a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Variant%20Name" ] .
+
+:Variant_Names__AUTH21__VAR a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Variant%20Names%20%28AUTH21%29%20VAR" ] .
+
+:Web_Ready__AUTH22__WEBA a rr:TriplesMap ;
+    rr:subjectMap [ rr:constant "https://data.archives.gov.on.ca/Web%20Ready%20%28AUTH22%29%20WEBA" ] .
+
+:rr_template__RiC-O_1-0-1__HEADING__Agent_1_ a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "Comment (AUTH07) CMTAU" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant "Biographical Sketch or Administrative History (AUTH05) ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:constant "Function Note (AUTH11) FUN" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:constant "Agency Reference Code (AUTH01a) REFA" ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:constant "Successor Agencies (AUTH20) SUC" ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__RiC-O_1-0-1__REFA__ ] ;
+            rr:predicate rico:isEquivalentTo ],
+        [ rr:objectMap [ rr:constant "Dates of Existence - Beginning (AUTH10a) DATEEX" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:constant "Dates of Existence - End (AUTH10b) DATEEX" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:constant "Predecessor Agencies (AUTH15) PRED" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:constant "Parallel Names (AUTH14) PAR" ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__RiC-O_1-0-1__HEADING__AgentName_1_ ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:constant "Authority Type (AUTH03) AUTHTP" ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:constant "Authorizing Agent (AUTH04) AA" ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:constant "Authority Record1" ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-1/{HEADING}/Agent/1" ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:constant "Controlling Agencies (AUTH08a) CONTAG" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:constant "Variant Names (AUTH21) VAR" ] ;
+            rr:predicate rico:hasOrHadAgentName ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "RiC-O_1-0-1/{HEADING}/Agent/1" ] .
+
+:rr_template__schema_authority_Agent_Identifier_ a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "schema/authority/Agent Identifier" ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:template "schema/authority/Agent Identifier" ] .
+
+:rr_template__RiC-O_1-0-1__HEADING__AgentName_1_ a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "NAME" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-1/{HEADING}/AgentName/1" ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "RiC-O_1-0-1/{HEADING}/AgentName/1" ] .
+
+:rr_template__RiC-O_1-0-1__REFA__ a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-1/{REFA}" ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:template "RiC-O_1-0-1/{REFA}" ] .
+
