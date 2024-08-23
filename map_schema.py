@@ -31,8 +31,11 @@ def __init__():
 
     # Choose ontology to map
     base_uri = base_data_uri
-    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-20_pz.ttl'
+    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-23_pz.ttl'
     rml_path = graph_path[:-3]+ "rml"
+
+    # Choose source CSV for mapping
+    source_path = 'gbad/mapping/source/authority_head_101.csv'
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -145,7 +148,6 @@ def __init__():
     # Necessary to init namespace manager for uriref_str_to_map
     # Initialize an RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    source_path = 'gbad/mapping/source/authority_head_6.csv'
     
     def uriref_str_to_map(uriref_str):
         map_predicate = None
@@ -178,11 +180,15 @@ def __init__():
         # URI mapped from source
         elif uriref_str.startswith(norm(rr[1].template)):
             map_predicate = rr[1].template
-            map_object = Literal(remove(norm(map_predicate), uriref_str))
+            cleaned_uri = remove(norm(map_predicate), uriref_str)
+            encoded_uri = urllib.parse.quote(cleaned_uri, safe='')
+            map_object = Literal(encoded_uri)
         # Constant URI
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
-            map_object = URIRef(remove(norm(map_predicate), uriref_str))
+            cleaned_uri = remove(norm(map_predicate), uriref_str)
+            encoded_uri = urllib.parse.quote(cleaned_uri, safe='')
+            map_object = URIRef(encoded_uri)
         # Treat anything else as a literal
         else:
             map_object = Literal(uriref_str)
@@ -289,7 +295,6 @@ def __init__():
     
     # Initialize a mapping RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    source_path = 'gbad/mapping/source/authority_head_6.csv'
 
     # Define custom prefix
     maps = ('', Namespace(URIRef(f"{base_mapping_uri}#")))
