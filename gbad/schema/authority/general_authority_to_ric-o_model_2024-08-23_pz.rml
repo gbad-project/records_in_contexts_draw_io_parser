@@ -66,11 +66,11 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:constant "rr:template  \"RiC-O_1-0-1/{HEADING}/AgentControlRelation/1\"" ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATECONT__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATECONT__> ] ;
             rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Agent_1_> ] ;
-            rr:predicate rico:relationHasTarget ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATECONT__> ] ;
-            rr:predicate rico:hasBeginningDate ] ;
+            rr:predicate rico:relationHasTarget ] ;
     rr:subjectMap [ rr:class rico:AgentControlRelation ;
             rr:template "RiC-O_1-0-1/{HEADING}/AgentControlRelation/1" ] .
 
@@ -89,10 +89,6 @@
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
     rr:predicateObjectMap [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_Type_Parallel_Name_> ] ;
-            rr:predicate rico:hasOrHadCategory ],
-        [ rr:objectMap [ rml:reference "PAR" ] ;
-            rr:predicate rico:textualValue ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_Type_Variant_Name_> ] ;
             rr:predicate rico:hasOrHadCategory ],
         [ rr:objectMap [ rml:reference "VAR" ] ;
@@ -100,51 +96,65 @@
     rr:subjectMap [ rr:class rico:AgentName ;
             rr:template "RiC-O_1-0-1/{HEADING}/AgentName/2" ] .
 
+<schema/mapping#rr_template__RiC-O_1-0-1__HEADING__AgentName_3_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "PAR" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_Type_Parallel_Name_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "RiC-O_1-0-1/{HEADING}/AgentName/3" ] .
+
 <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Agent_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
     rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__AgentName_1_> ] ;
             rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATEEX__> ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:constant "CMTAU" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "ADM" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Identifier_1_> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Record_1_> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__AgentName_2_> ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Agent/1\"" ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__DATECONT_CONTAG__CorporateBody_1_> ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Mandate_1_> ] ;
-            rr:predicate rico:authorizedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATEEX__> ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__SUC__CorporateBody_1_> ] ;
-            rr:predicate rico:hasSuccessor ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__REFA__CorporateBody_2_> ] ;
             rr:predicate rico:isEquivalentTo ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__https___schema_archives_gov_on_ca_Authority_CorporateBodyType__AUTHTP__> ] ;
-            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__SUC__CorporateBody_1_> ] ;
+            rr:predicate rico:hasSuccessor ],
         [ rr:objectMap [ rml:reference "FUN" ] ;
             rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Mandate_1_> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__AgentName_3_> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Identifier_1_> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Agent/1\"" ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Record_1_> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__PRED__CorporateBody_1_> ] ;
-            rr:predicate rico:isSuccessorOf ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:constant "CMTAU" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATEEX__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__https___schema_archives_gov_on_ca_Authority_CorporateBodyType__AUTHTP__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__AgentName_2_> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__RiC-O_1-0-1__DATECONT_CONTAG__CorporateBody_1_> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Date__DATEEX__> ] ;
+            rr:predicate rico:hasBeginningDate ] ;
     rr:subjectMap [ rr:class rico:Agent ;
             rr:template "RiC-O_1-0-1/{HEADING}/Agent/1" ] .
 
 <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Identifier_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_IdentifierType_Agent_Identifier_> ] ;
-            rr:predicate rico:hasIdentifierType ],
-        [ rr:objectMap [ rml:reference "REFA" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFA" ] ;
             rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_IdentifierType_Agent_Identifier_> ] ;
+            rr:predicate rico:hasIdentifierType ],
         [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Identifier/1\"" ] ;
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ rr:class rico:Identifier ;
@@ -153,32 +163,32 @@
 <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Mandate_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "AA" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Mandate/1\"" ] ;
-            rr:predicate rdfs:label ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Mandate/1\"" ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "AA" ] ;
+            rr:predicate rico:textualValue ] ;
     rr:subjectMap [ rr:class rico:Mandate ;
             rr:template "RiC-O_1-0-1/{HEADING}/Mandate/1" ] .
 
 <schema/mapping#rr_template__RiC-O_1-0-1__HEADING__Record_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "SOURCE" ] ;
-            rr:predicate rico:generalDescription ],
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant "ARCHAU" ] ;
+            rr:predicate rico:hasCreator ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__KB_Rule__RULES__> ] ;
             rr:predicate rico:isOrWasRegulatedBy ],
-        [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Record/1\"" ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_DocumentaryFormType_Authority_Record_> ] ;
-            rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:constant "MOD_DATE" ] ;
-            rr:predicate rico:lastModificationDate ],
-        [ rr:objectMap [ rr:constant "ARCHAU" ] ;
-            rr:predicate rico:hasCreator ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__https___schema_archives_gov_on_ca_Authority_RecordState_Status__STATUSA__> ] ;
             rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rml:reference "SOURCE" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_constant__https___schema_archives_gov_on_ca_Authority_DocumentaryFormType_Authority_Record_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
         [ rr:objectMap [ rr:parentTriplesMap <schema/mapping#rr_template__https___schema_archives_gov_on_ca_Authority_RecordState_Web_Ready__WEBA__> ] ;
-            rr:predicate rico:hasRecordState ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:constant "MOD_DATE" ] ;
+            rr:predicate rico:lastModificationDate ],
+        [ rr:objectMap [ rr:constant "rr:template \"RiC-O_1-0-1/{HEADING}/Record/1\"" ] ;
+            rr:predicate rdfs:label ] ;
     rr:subjectMap [ rr:class rico:Record ;
             rr:template "RiC-O_1-0-1/{HEADING}/Record/1" ] .
 

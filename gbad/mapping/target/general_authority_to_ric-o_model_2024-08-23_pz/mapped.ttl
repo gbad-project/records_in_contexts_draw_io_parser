@@ -435,7 +435,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Mandate/1>;
   rico:generalDescription "CMTAU";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/%20Corporate%20name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Identifier/1>;
@@ -455,6 +456,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Radio 1540 Limited" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/CHIN%20Radio%2FTV%20International/Identifier/1>
   a rico:Identifier;
@@ -487,7 +492,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Finance was responsible for acting as the custodian of the funds of the Province of Canada and for supervising and controlling all matters relating to the financial affairs of the Province.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/Identifier/1>;
@@ -511,6 +517,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Canada (Province). Inspector General's Office" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Finance/Identifier/1>
   a rico:Identifier;
@@ -536,7 +546,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Public Works for the Province of Canada was responsible for managing and controlling the construction, maintenance and repair of all canals, harbours, roads or parts of roads, bridges, slides, and other public works and buildings.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/Identifier/1>;
@@ -560,6 +571,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Canada (Province). Commissioners of Public Works" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Dept.%20of%20Public%20Works/CorporateBody/1>
   a rico:CorporateBody;
@@ -597,7 +612,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/Mandate/1>;
   rico:generalDescription "CMTAU", "The Legislative Assembly of the Province of Canada was the representative assembly for the people of the Province of Canada. Although the Assembly could consider and approve bills, their power to effect legislation was limited.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/Identifier/1>;
@@ -621,6 +637,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Canada. Legislature. Legislative Assembly. Canada. Legislative Assembly" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Assembly/CorporateBody/1>
   a rico:CorporateBody;
@@ -650,7 +670,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/Mandate/1>;
   rico:generalDescription "CMTAU", "The Legislative Council of the Province of Canada reviewed, amended and, if necessary, rejected initiatives of the House of Assembly. Members of the Council were appointed by the Lieutenant-Governor.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/Identifier/1>;
@@ -672,6 +693,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20%28Province%29.%20Legislature.%20Legislative%20Council/CorporateBody/1>
   a rico:CorporateBody;
@@ -700,7 +725,7 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Mandate/1>;
   rico:generalDescription "CMTAU";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/2>, <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/%20Corporate%20name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Identifier/1>;
@@ -717,6 +742,9 @@
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/2> a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/AgentName/3> a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canada%20Packers/Identifier/1> a rico:Identifier;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Identifier/1\"" .
@@ -738,7 +766,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Mandate/1>;
   rico:generalDescription "CMTAU";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/%20Corporate%20name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Identifier/1>;
@@ -757,6 +786,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Canadian%20Pacific%20Railway%20Company/Identifier/1>
   a rico:Identifier;
@@ -781,7 +814,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Mandate/1>;
   rico:generalDescription "CMTAU";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/%20Corporate%20name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>;
@@ -801,6 +835,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "CFMT" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>
   a rico:Identifier;
@@ -833,7 +871,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Agriculture and Food was responsible for promoting and regulating the agricultural activities of the province. The Department also acted to promote the prosperity and welfare of the farming community, and for developing, improving and marketing the agricultural and food industries of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/Identifier/1>;
@@ -855,6 +894,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture%20and%20Food/CorporateBody/1>
   a rico:CorporateBody;
@@ -884,7 +927,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Agriculture provided services in production methods, farm management, marketing, and other phases of agriculture, with a view to improving the quality and quantity of agricultural products, and to promoting the prosperity and welfare of the farming community. The Department was also responsible for operating various educational and research institutions in the field of agriculture.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/Identifier/1>;
@@ -906,6 +950,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Agriculture/CorporateBody/1>
   a rico:CorporateBody;
@@ -935,7 +983,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Colleges and Universities was responsible for the expansion, development and financing of the universities and colleges of applied arts and technology (along with Ryserson Polytechnical Institute) in Ontario. Activities of the Department included receiving proposals for new capital projects from the colleges and universities; working with university officials in studying their financial requirements and establishing the amount of financial assistance to be provided by the provincial government; conducting research on trends and issues having implications on higher education; and administering various award programmes for students.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/Identifier/1>;
@@ -958,6 +1007,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Colleges%20and%20Universities/CorporateBody/1>
   a rico:CorporateBody;
@@ -993,7 +1046,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1961>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1961>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/Identifier/1>;
@@ -1016,6 +1070,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Commerce%20and%20Development/CorporateBody/1>
   a rico:CorporateBody;
@@ -1049,7 +1107,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Crown Lands was responsible for the public lands, mines, woods and forests of the Province of Ontario. Activities of the Department included: issuing licenses of occupation to intending settlers; keeping a register of assignments of claims to land; issuing patents; and collecting and acquiring information concerning the mining and forestry industries of the Province. In 1900, the Department also acquired responsibility over immigration and colonization.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/Identifier/1>;
@@ -1072,6 +1131,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Crown%20Lands/CorporateBody/1>
   a rico:CorporateBody;
@@ -1101,7 +1164,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The mandate of the Department was to promote trade and industrial expansion, increase the province's rate of economic growth and undertake studies of the economy.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/Identifier/1>;
@@ -1124,6 +1188,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Economics%20and%20Development/CorporateBody/1>
   a rico:CorporateBody;
@@ -1153,7 +1221,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Energy Resources was responsible for regulating the production, storage, transmission, distribution, sale, and use of fuel in Ontario. Activities included administering and developing regulations relating to fuel appliances, fuel use, pipe lines, and the drilling and production of gas and oil.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/Identifier/1>;
@@ -1175,6 +1244,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20Resources/CorporateBody/1>
   a rico:CorporateBody;
@@ -1204,7 +1277,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Energy and Resources Management was responsible for programmes and activities relating to the management of natural gas, fuel oil, propane, petroleum products, and water, and for projects carried out within local Conservation Authorities.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/Identifier/1>;
@@ -1227,6 +1301,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Energy%20and%20Resources%20Management/CorporateBody/1>
   a rico:CorporateBody;
@@ -1256,7 +1334,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Financial and Commercial Affairs was responsible for the regulation of insurance companies, loan and trust companies, and the trading of securities within the Province of Ontario. In 1968, the Department acquired further responsibility over the regulation of credit unions, cemeteries, upholstered and stuffed articles, and the sale of goods and services. Responsibility over the incorporation of companies and the regulation of lotteries was added by 1970.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/Identifier/1>;
@@ -1278,6 +1357,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Financial%20and%20Commercial%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -1303,7 +1386,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Health was responsible for the  management and operation of programmes relating to health insurance, care for the mentally ill, home care services, drug services, and the regulation of hospitals and nursing homes. The Department also operates laboratories, psychiatric hospitals, and provides funding and leadership for local public health services.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/Identifier/1>;
@@ -1326,6 +1410,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Health/CorporateBody/1>
   a rico:CorporateBody;
@@ -1355,7 +1443,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Highways was responsible for the planning, construction and maintenance of all highways and secondary roads throughout the Province of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/Identifier/1>;
@@ -1378,6 +1467,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Highways/Identifier/1>
   a rico:Identifier;
@@ -1403,7 +1496,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Justice was responsible for administering the justice system in the province, supervising and administering law enforcement, representing the province and the government in civil disputes, and advising the government and its ministers on all matters of the law and on the development of legislation.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/Identifier/1>;
@@ -1426,6 +1520,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Justice/CorporateBody/1>
   a rico:CorporateBody;
@@ -1455,7 +1553,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Labour was responsible for the administration of statutes and regulations involving safety in industry, collective bargaining and the economic protection of workers.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/Identifier/1>;
@@ -1478,6 +1577,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Labour/CorporateBody/1>
   a rico:CorporateBody;
@@ -1515,7 +1618,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Lands and Mines was responsible for the surveying of crown lands, issuing licenses of occupation to intending settlers, keeping a register of assignments of claims to land, issuing patents, and collecting and acquiring information concerning the mines of the province.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/Identifier/1>;
@@ -1538,6 +1642,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%20and%20Mines/CorporateBody/1>
   a rico:CorporateBody;
@@ -1567,7 +1675,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Lands, Forests and Mines was responsible for controlling and developing the Crown Lands, forest resources, and mining interests of the Province.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/Identifier/1>;
@@ -1590,6 +1699,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Lands%2C%20Forests%20and%20Mines/CorporateBody/1>
   a rico:CorporateBody;
@@ -1619,7 +1732,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Mines and Northern Affairs was responsible for the development and regulation of the mining industry in Ontario, and for providing solutions to government-oriented problems of people living in the northern part of the province. Activities of the Department included: the provision of geological services and information; supervision of regulations governing the operations of mines, and the safety of miners; the provision of services in connection with the public's acquisition and use of Crown Lands for mining purposes; and assisting the people of Northern Ontario in their relationship with the government.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/Identifier/1>;
@@ -1642,6 +1756,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines%20and%20Northern%20Affairs/CorporateBody/1>
   a rico:CorporateBody;
@@ -1671,7 +1789,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Mines was responsible for promoting and expanding the mining interests of the Province. In the later years of its existence, the Department also began to take a broader interest in the overall structure of the industry, focusing attention on activities such as resource processing, worker health and safety, and pollution controls.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/Identifier/1>;
@@ -1694,6 +1813,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Mines/CorporateBody/1>
   a rico:CorporateBody;
@@ -1723,7 +1846,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Planning and Development was established in 1944 to work with agricultural, industrial, labour, mining, trade and other associations and organisations and with public and private sector enterprises in order to create and maintain productive employment and to develop the human and material resources of the Province.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/Identifier/1>;
@@ -1745,6 +1869,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Planning%20and%20Development/CorporateBody/1>
   a rico:CorporateBody;
@@ -1778,7 +1906,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Public Welfare was responsible for a variety of programs and services that provided social assistance to individuals and families in Ontario. These services included mothers' allowances, old age pensions, soldiers' aid and veterans' welfare, child welfare, and houses of refuge and orphanages.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/Identifier/1>;
@@ -1800,6 +1929,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Welfare/CorporateBody/1>
   a rico:CorporateBody;
@@ -1829,7 +1962,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Public Works was responsible for providing and maintaining the buildings and other facilities necessary to house the operations of all departments of the Provincial Government of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/Identifier/1>;
@@ -1853,6 +1987,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Dept. of the Commissioner of Agriculture and Public Works" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Public%20Works/CorporateBody/1>
   a rico:CorporateBody;
@@ -1882,7 +2020,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Revenue was responsible for tax administration and collection for the Province of Ontario, including taxes on motor fues, tobacco, retail sales,  estates, provincial lands, corporations and logging.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/Identifier/1>;
@@ -1905,6 +2044,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Revenue/CorporateBody/1>
   a rico:CorporateBody;
@@ -1934,7 +2077,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Social and Family Services was responsible for the administration of a variety of programmes and services that provide social assistance to individuals and families in Ontario. These programmes and services include child welfare, day nurseries, old age assistance, homes for the aged, rest homes, disabled persons allowances, Ontario legal aid, and general welfare assistance.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/Identifier/1>;
@@ -1957,6 +2101,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services/CorporateBody/1>
   a rico:CorporateBody;
@@ -1986,7 +2134,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Tourism and Information was responsible for developing the tourist industry in Ontario by encouraging and promoting improvement in the standards of accommodation, facilities and services offered to tourists, and by undertaking the publicizing of the tourist industry and of the resources, attractions and advantages of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/Identifier/1>;
@@ -2009,6 +2158,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Tourism%20and%20Information/CorporateBody/1>
   a rico:CorporateBody;
@@ -2042,7 +2195,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Trade and Development worked to promote trade and industrial expansion in Ontario by assisting Ontario companies seeking to expand their export markets; working to attract manufacturing industries to the province; providing information and consultative services for industries in Ontario wishing to expand; and providing conferences, exhibits, and trade shows promoting Ontario products and companies.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/Identifier/1>;
@@ -2065,6 +2219,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Trade%20and%20Development/CorporateBody/1>
   a rico:CorporateBody;
@@ -2098,7 +2256,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Transport was responsible for the administration of matters relating to motor vehicle traffic, including the licensing of motor vehicles, the examination of drivers, and highway safety.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/Identifier/1>;
@@ -2120,6 +2279,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transport/Identifier/1>
   a rico:Identifier;
@@ -2145,7 +2308,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Transportation and Communications was responsible for the highways of Ontario and for assisting municipalities in road construction and maintenance. The Department was also responsible for government policy with respect to communications and for maintaining a liaison with other provincial and federal agencies on communications issues. Activities of the Department included: the development of transportation and communication policies; the design, construction and maintenance of highways; driver and vehicle safety; and the administration of public transportation systems operated by the Government of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/Identifier/1>;
@@ -2168,6 +2332,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Transportation%20and%20Communications/CorporateBody/1>
   a rico:CorporateBody;
@@ -2197,7 +2365,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of Travel and Publicity developed the tourist industry in Ontario by encouraging and promoting improvement in the standards of accommodation, facilities and services offered to tourists and by undertaking the publicizing of the tourist industry and of the resources, attractions and advantages of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/Identifier/1>;
@@ -2220,6 +2389,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Travel%20and%20Publicity/CorporateBody/1>
   a rico:CorporateBody;
@@ -2249,7 +2422,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ontario Department of Treasury and Economics was responsible for financial, economic, accounting and taxation policy, and the management of government investments and the public debt.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/Identifier/1>;
@@ -2272,6 +2446,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20Treasury%20and%20Economics/Identifier/1>
   a rico:Identifier;
@@ -2297,7 +2475,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of University Affairs was responsible for administering the government's support programs for higher education. Activities of the Department included the provision of operating grants to universities; calculating capital building grants based on projected enrolment; and the provision of student loans and awards through the Ontario Student Awards Program, the Ontario Graduate Fellowship Program, Ontario Scholarships and other awards.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/Identifier/1>;
@@ -2319,6 +2498,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20University%20Affairs/CorporateBody/1>
   a rico:CorporateBody;
@@ -2352,7 +2535,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of the Commissioner of Agriculture and Arts was responsible for encouraging and developing the agricultural and manufacturing activities of Ontario (\"arts\", at the time, referred to the application of industrial, manufacturing and scientific pursuits, rather than to its current cultural meaning). The department was also responsible for acquiring and publishing information and statistics, related to agriculture and industry, and for inspecting the books and accounts of the agricultural, arts and manufacturing societies and associations that were in receipt of government grants.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/Identifier/1>;
@@ -2375,6 +2559,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Arts/Identifier/1>
   a rico:Identifier;
@@ -2408,7 +2596,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of the Environment was responsible for research and policy development relating to the environmental  protection of the province. Activities included the conservation and preservation of air quality and the limitation of waste pollution.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/Identifier/1>;
@@ -2431,6 +2620,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Environment/CorporateBody/1>
   a rico:CorporateBody;
@@ -2460,7 +2653,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/Mandate/1>;
   rico:generalDescription "CMTAU", "The Department of the Provincial Secretary and Citizenship was responsible for a variety of programs and functions concerned with the acquisition of civil information and the custody and care of certain government documents. As the Registrar General, the Provincial Secretary and Minister of Citizenship was responsible for matters relating to the registration of births, marriages and deaths in accordance with the provisions of the Vital Statistics Act. In addition, the Department was responsible for the custody of records of documents issued under the Great Seal of Ontario, the Privy Seal of the Lieutenant Governor, and the seal of the Provincial Secretary. Through the Citizenship Branch, the Department was also responsible for assisting in the integration of immigrants to the province through the provision of resource materials, advisory services, and language and citizenship classes.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/Identifier/1>;
@@ -2482,6 +2676,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary%20and%20Citizenship/Identifier/1>
   a rico:Identifier;
@@ -2513,7 +2711,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1867>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1867>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/Identifier/1>;
@@ -2535,6 +2734,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Cabinet" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Executive%20Council/Identifier/1>
   a rico:Identifier;
@@ -2564,7 +2767,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/Mandate/1>;
   rico:generalDescription "CMTAU", "The Management Board of Cabinet is responsible for coordinating the financial and administrative operations of the Government of Ontario and for the management of the public service. The Board reviews all Ministry submissions with financial or administrative implications, including program proposals, annual estimates, new legislation and regulations, as well as organizational changes.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/Identifier/1>;
@@ -2587,6 +2791,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MBC" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Management%20Board%20of%20Cabinet/CorporateBody/1>
   a rico:CorporateBody;
@@ -2618,7 +2826,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1978>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1978>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/Identifier/1>;
@@ -2640,6 +2849,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Minister Responsible for French Language Services." .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Francophone%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -2667,7 +2880,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1985>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1985>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Identifier/1>;
@@ -2688,6 +2902,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Minister%20Responsible%20for%20Native%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -2713,7 +2931,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Aboriginal Affairs was created as a stand-alone entity with the following express purpose: to build a stronger relationship with Aboriginal people and speed up the resolution of outstanding issues. As the direct successor of the Ontario Native Affairs Secretariat, its mandate continued to be to provide corporate Aboriginal policy development and management support, and to negotiate and settle land claims. It also monitors where appropriate, self-government negotiations led by the federal government. ";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/Identifier/1>;
@@ -2736,6 +2955,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Aboriginal%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -2765,7 +2988,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Agriculture and Food was responsible for promoting, regulating, developing and enhancing the farming industry in the province. The Ministry conducted a variety of activities including: agricultural and horticultural research and development, and education; provision of financial assistance through grants to agricultural and horticultural programs and societies; collection and dissemination of agricultural information and statistics; maintenance of a crop insurance plan; inspection and regulation of farm products; and the development and expansion of both domestic and international markets for Ontario-produced agricultural products.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/Identifier/1>;
@@ -2788,6 +3012,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Agriculture%20and%20Food/CorporateBody/1>
   a rico:CorporateBody;
@@ -2825,7 +3053,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Citizenship enforces human rights legislation, encourages the arts and cultural industries, protects Ontario�s heritage; encourages safe involvement in sport, recreation and physical activity for the health, social and economic benefit of Ontarians and the communities in which they live; promotes the safety and economic independence of women; and to promote policies that assist the quality of life for seniors.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/Identifier/1>;
@@ -2848,6 +3077,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20%282001-2003%29/Identifier/1>
   a rico:Identifier;
@@ -2881,7 +3114,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/Mandate/1>;
   rico:generalDescription "CMTAU", "The role of the Ministry of Citizenship and Culture was to encourage equal and responsible citizenship through programs emphasizing the participation of all Ontarians as equal members of the community. The Ministry also aimed to develop programs and services that would recognize cultural diversity and the sharing of cultural heritage, stimulate cultural expression and cultural preservation, and foster the development of individual and community excellence.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/Identifier/1>;
@@ -2905,6 +3139,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MCC" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Citizenship%20and%20Culture/Identifier/1>
   a rico:Identifier;
@@ -2948,7 +3186,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-2003>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-2003>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/Identifier/1>;
@@ -2970,6 +3209,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Community%20Safety%20and%20Correctional%20Services/CorporateBody/1>
   a rico:CorporateBody;
@@ -3003,7 +3246,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Consumer and Business Services delivered consumer protection, business regulation, property, business and vital events registration, and integrated information and services delivery to consumers and businesses.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/Identifier/1>;
@@ -3026,6 +3270,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Consumer%20and%20Business%20Services/Identifier/1>
   a rico:Identifier;
@@ -3059,7 +3307,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ontario Ministry of Correctional Services was responsible for supervising the detention and release of inmates, parolees and probationers and for providing treatment and rehabilitation programs for these individuals. The principal functions of the Ministry were to provide for the secure custody of persons awaiting trial or convicted of an offence; to establish, maintain and operate correctional facilities, such as jails, detention centres, correctional centres, treatment centres and young offenders facilities; to provide programs and facilities designed to assist in the rehabilitation of inmates; to establish and operate a system of parole; to provide probation services; and to provide programs for the prevention of crime.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/Identifier/1>;
@@ -3082,6 +3331,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29/Identifier/1>
   a rico:Identifier;
@@ -3111,7 +3364,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Correctional Services is responsible for the provision of a wide range of custodial and community-based services for adult and young offenders in Ontario. It operates jails, detention centres, correctional centres, treatment centres, and probabation and parole offices.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/Identifier/1>;
@@ -3134,6 +3388,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Correctional%20Services%20%281999-2002%29/Identifier/1>
   a rico:Identifier;
@@ -3159,7 +3417,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Culture and Communications was responsible for promoting cultural expression and development and encouraging heritage preservation by supporting a number of community and provincial cultural and historical facilities and institutions. The ministry also advocated Ontario's interests in the communications field and provided broadcasting, cable and telecommunications policy advice on issues affecting Ontario consumers, suppliers and manufacturers of communications systems and services. ";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/Identifier/1>;
@@ -3182,6 +3441,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Communications/Identifier/1>
   a rico:Identifier;
@@ -3207,7 +3470,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Culture and Recreation was responsible for developing policies and operating programs related to heritage conservation, arts support, sports and fitness, libraries and community information, and multicultural support and citizenship.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/Identifier/1>;
@@ -3230,6 +3494,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MCR" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture%20and%20Recreation/CorporateBody/1>
   a rico:CorporateBody;
@@ -3267,7 +3535,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Culture was responsible for the development of policies and programs and the operation of programs related to arts, cultural industries, heritage sectors and public libraries in Ontario. The Ministry also oversaw program and financial liaison with the ministry's eleven cultural agencies and two library agencies.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/Identifier/1>;
@@ -3290,6 +3559,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Culture/Identifier/1>
   a rico:Identifier;
@@ -3315,7 +3588,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Economic Development and Trade worked to develop a more productive and internationally competitive economy for Ontario. Through its programs and services, the Ministry acted to advance Ontario's interests with governments abroad; promote cooperation for economic development at all levels of government; deliver a range of programs to stimulate opportunities for business and trade development; and provide leadership in the development of economic policy.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/Identifier/1>;
@@ -3339,6 +3613,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MEDT" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281993-1995%29/Identifier/1>
   a rico:Identifier;
@@ -3364,7 +3642,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Economic Development and Trade supports the economic growth of Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/Identifier/1>;
@@ -3387,6 +3666,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Economic%20Development%20and%20Trade%20%281999-2002%29/Identifier/1>
   a rico:Identifier;
@@ -3420,7 +3703,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Energy was responsible for maintaining and ensuring the availability of an adequate and secure supply of energy to Ontario residents and industries. Activities included: reviewing and analysing energy matters and policy; maintaining communications between the government and Ontario Hydro; supporting research and development in alternative sources of energy and energy technologies; and promoting effective and efficient use of energy.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/Identifier/1>;
@@ -3442,6 +3726,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%20%281973-1993%29/Identifier/1>
   a rico:Identifier;
@@ -3467,7 +3755,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Energy, Science and Technology ensured access to affordable energy and encouraged job creation and economic growth by fostering an effective and efficient framework of energy policy and regulation in Ontario. The ministry was responsible for introducing competition into the electricity industry. The ministry also stimulated private sector involvement in scientific research, innovation and technology development.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/Identifier/1>;
@@ -3491,6 +3780,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MEST. Ministry of Energy" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Energy%2C%20Science%20and%20Technology/Identifier/1>
   a rico:Identifier;
@@ -3524,7 +3817,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Environment and Energy was responsible for the protection of the environment of Ontario and for ensuring an environmentally safe and affordable  supply of energy for domestic and industrial use within the province. Activities and programmes of the Ministry included: environmental assessment, waste reduction, and industry conservation; air quality and meteorology; environmental monitoring and reporting; water quality; laboratory services; standards development; and energy research, development and management.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/Identifier/1>;
@@ -3547,6 +3841,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Environment%20and%20Energy/CorporateBody/1>
   a rico:CorporateBody;
@@ -3582,7 +3880,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1993>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1993>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/Identifier/1>;
@@ -3605,6 +3904,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MOF. MFO" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Finance/CorporateBody/1>
   a rico:CorporateBody;
@@ -3634,7 +3937,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Financial Institutions was responsible for regulating the market conduct of financial institutions in the province of Ontario, including credit unions, co-operatives, trust companies, and insurance companies (chartered banks, however, are not regulated by the provincial government). Regulation was aimed at protecting the consumer, ensuring confidence in the financial system, and maximizing the contribution of financial institutions to overall economic growth in the province.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/Identifier/1>;
@@ -3657,6 +3961,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Financial%20Institutions/Identifier/1>
   a rico:Identifier;
@@ -3686,7 +3994,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Government Services was responsible for providing accommodation facilities and a variety of goods and services in support of Ontario government Ministries and agencies. These responsibilities included the design, construction, renovation, repair and maintenance of government buildings; centralized services for government workers such as employee benefits and payroll, as well as central mail and translation services; responsibility over  government property; and responsibility for providing government ministries, agencies and boards with information technology and services including computers and telecommunications equipment.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/Identifier/1>;
@@ -3709,6 +4018,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MGS" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Government%20Services/CorporateBody/1>
   a rico:CorporateBody;
@@ -3740,7 +4053,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1999>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1999>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/Identifier/1>;
@@ -3762,6 +4076,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health%20and%20Long-Term%20Care/CorporateBody/1>
   a rico:CorporateBody;
@@ -3791,7 +4109,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Health is responsible for administering the health care system and providing services to the Ontario public through programs such as health insurance, care for the mentally ill, drug services, home care services, and the regulation of hospitals and nursing homes. The Ministry also operates psychiatric hospitals, medical laboratories and provides funding and leadership for local public health services.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/Identifier/1>;
@@ -3815,6 +4134,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MS. MOH" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Health/CorporateBody/1>
   a rico:CorporateBody;
@@ -3844,7 +4167,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Housing was responsible for co-ordinating provincial efforts to meet the housing needs of Ontario residents. Activities of the Ministry included: provision of rent-geared-to-income housing for those with low and moderate incomes; encouraging the development of housing and rental accommodation; facilitating home- ownership; improving existing housing; and fostering effective municipal planning.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/Identifier/1>;
@@ -3866,6 +4190,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281973-1981%29/CorporateBody/1>
   a rico:CorporateBody;
@@ -3899,7 +4227,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Housing was responsible for programs and strategies to ensure affordable rental housing for low and moderate income households in the province. Activities of the Ministry included: providing rent-geared-to-income housing; supporting municipal, private and co-operative non-profit housing; administering rent review legislation; developing and maintaining the Ontario Building and Plumbing Codes; and developing Ontario's building industry.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/Identifier/1>;
@@ -3922,6 +4251,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Housing%20%281985-1995%29/Identifier/1>
   a rico:Identifier;
@@ -3955,7 +4288,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Industry and Tourism was responsible for the promotion and development of Ontario's manufacturing and tourism sectors. The Ministry worked to increase the sales of Ontario businesses, both domestically and abroad; to search out new market opportunities; to encourage new technology; to identify key economic problems or opportunities; and to assist in the development and promotion of Ontario's tourism industry.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/Identifier/1>;
@@ -3979,6 +4313,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MIT" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Tourism/CorporateBody/1>
   a rico:CorporateBody;
@@ -4008,7 +4346,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Industry and Trade supported the growth of productive, stable employment by expanding domestic and international trade, encouraging investment opportunities, strengthening the competitiveness of Ontario's industrial base, and assisting small business development.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/Identifier/1>;
@@ -4032,6 +4371,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MIT. Industry & Trade Ontario" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Industry%20and%20Trade/Identifier/1>
   a rico:Identifier;
@@ -4063,7 +4406,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1978>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1978>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/Identifier/1>;
@@ -4086,6 +4430,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MAI. MIA" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Intergovernmental%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -4113,7 +4461,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1972>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1972>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/Identifier/1>;
@@ -4136,6 +4485,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MOL" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Labour/CorporateBody/1>
   a rico:CorporateBody;
@@ -4165,7 +4518,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Municipal Affairs and Housing was responsible for advisory, administrative and financial assistance to municipalities; community planning, development and renewal; and the provision of rent- geared-to-income housing for qualified households in Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/Identifier/1>;
@@ -4188,6 +4542,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281981-1985%29/CorporateBody/1>
   a rico:CorporateBody;
@@ -4221,7 +4579,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Municipal Affairs and Housing is responsible for municipal government, community planning and housing related programs in Ontario. The Ministry provides administrative and financial assistance and support to municipalities, advice on community land use, planning and renewal, and rent-geared-to-income housing for qualified households. The Ministry also administers rental legislation and ensures building safety through the administration of the Ontario Building and Plumbing Codes.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/Identifier/1>;
@@ -4243,6 +4602,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-2016%29/Identifier/1>
   a rico:Identifier;
@@ -4268,7 +4631,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Municipal Affairs was responsible for the province's policies and programs relating to municipal government. Activities of the Ministry included: financial assistance to municipalities through transfer payments; legislation and policy development regarding municipalities; provision of advice and assistance on municipal administration and organization; and the co-ordination of community and land use planning.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/Identifier/1>;
@@ -4291,6 +4655,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Municipal%20Affairs/Identifier/1>
   a rico:Identifier;
@@ -4320,7 +4688,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Natural Resources is responsible for programs concerned with the land, water, trees, fish and animals of the province. Ministry activities include: the administration and protection of Crown lands and waters; regulation of the fish and wildlife resources of Ontario; management of the production and harvest of timber; forest fire control; development and administration of provincial parks and recreation areas; and the provision of financial assistance to Conservation Authorities. Between 1972 and 1977, the Ministry was also responsible for programs and activities associated with northern affairs, and from 1972 until 1985, the Ministry was responsible for mines.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/Identifier/1>;
@@ -4344,6 +4713,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MNR" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Natural%20Resources/CorporateBody/1>
   a rico:CorporateBody;
@@ -4375,7 +4748,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1985>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1985>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/Identifier/1>;
@@ -4398,6 +4772,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs%20and%20Mines/CorporateBody/1>
   a rico:CorporateBody;
@@ -4427,7 +4805,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Northern Affairs was responsible for the development of programs and policies relating to the expansion of social and economic opportunities for residents of northern Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/Identifier/1>;
@@ -4449,6 +4828,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Affairs/CorporateBody/1>
   a rico:CorporateBody;
@@ -4478,7 +4861,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Northern Development and Mines was responsible for the social and economic development of northern Ontario, and for co-ordinating other Ministries' policies and programs with respect to northern Ontario. The Ministry also promoted and regulated the development and use of the province's mineral resources. Through its Northern Development Officers, the Ministry was also responsible for assisting communities without a municipal government in establishing a Local Services Board, to act on behalf of the residents and to ensure that basic services were provided to the community.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/Identifier/1>;
@@ -4501,6 +4885,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MNDM. MDNM" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines/CorporateBody/1>
   a rico:CorporateBody;
@@ -4530,7 +4918,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Public Safety and Security is responsible for programs that protect the public interest in three broad areas: public security and counter-terrorism, correctional services and police and emergency services. It is responsible for overseeing law enforcement including the Ontario Provincial Police, private investigators, fire and ambulance services, Office of the Chief Coroner, Centre of Forensic Sciences, Office of the Fire Marshal, and Emergency Management Ontario. The ministry is also responsible for managing Ontario's adult and young offender correctional facilities, the Ontario Parole and Earned Release Board and provincial probation and parole offices. ";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/Identifier/1>;
@@ -4553,6 +4942,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Public%20Safety%20and%20Security/CorporateBody/1>
   a rico:CorporateBody;
@@ -4582,7 +4975,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Revenue was responsible for tax  administration and collection for the Province of Ontario. Activities included conducting property assessments to provide the tax base for Ontario municipalities; operating the Province of Ontario Savings Office; administering the Employee Share Ownership Plan and the Ontario Home Ownership Savings Plan; and directing the Ontario Tax Credit Program, the Guaranteed Annual Income System (GAINS), Ontario Property and Sales Tax Grants for Senior Citizens, and the Small Business Development Corporations Program.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/Identifier/1>;
@@ -4605,6 +4999,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Revenue/CorporateBody/1>
   a rico:CorporateBody;
@@ -4634,7 +5032,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Skills Development was responsible for providing programs and initiatives designed to develop and upgrade the skills of individuals in Ontario and enhance their employability. Activities of the Ministry included co-ordinating and administering employer-based training programs; establishing and developing youth employment initiatives and programs; assisting individuals and communities in developing literacy and other basic skills; and conducting labour market research.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/Identifier/1>;
@@ -4657,6 +5056,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Skills%20Development/Identifier/1>
   a rico:Identifier;
@@ -4682,7 +5085,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Tourism supported the development of the tourist industry in Ontario by encouraging development in tourism products and infrastructure and marketing Ontario as a tourism destination.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/Identifier/1>;
@@ -4705,6 +5109,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20%281999-2001%29/Identifier/1>
   a rico:Identifier;
@@ -4742,7 +5150,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Tourism and Recreation formulated policies and delivered programs and services to support tourism and recreation development and promotion in Ontario. Activities of the Ministry included conducting promotions and marketing within and outside the province; assisting tourist facilities operators; maintaining government- sponsored attractions; and providing recreation, sports and fitness resources to municipalities and provincial organisations.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/Identifier/1>;
@@ -4765,6 +5174,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%281982-1993%29/Identifier/1>
   a rico:Identifier;
@@ -4790,7 +5203,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Tourism and Recreation developed policies and delivered programs and services to support tourism and recreation development and promotion in Ontario. Activities of the Ministry included tourism and recreation promotion and marketing both within and outside the province; assistance to tourist facility operators; maintenance of government-sponsored attractions; and management of sport and tourism infrastructure funding programs.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/Identifier/1>;
@@ -4813,6 +5227,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%20and%20Recreation%20%282002-2005%29/Identifier/1>
   a rico:Identifier;
@@ -4838,7 +5256,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Tourism, Culture and Recreation supports Ontario's tourist industry, cultural industries, and amateur sport and recreation.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/Identifier/1>;
@@ -4861,6 +5280,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Tourism%2C%20Culture%20and%20Recreation/CorporateBody/1>
   a rico:CorporateBody;
@@ -4894,7 +5317,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Training, Colleges and Universities was responsible for programs and policies regarding post-secondary education in Ontario.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/Identifier/1>;
@@ -4917,6 +5341,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Training%2C%20Colleges%20and%20Universities%20%281999-2016%29/Identifier/1>
   a rico:Identifier;
@@ -4942,7 +5370,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Transportation and Communications was responsible for the design, construction and maintenance of Ontario's highway system, and for providing road construction and maintenance subsidies to municipalities. The Ministry was also responsible for driver licensing and all aspects of motor vehicle licensing and safety. In addition, the Ministry represented the rights of Ontario citizens in the communications field and was responsible for regulating telephone services under provincial jurisdiction.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/Identifier/1>;
@@ -4965,6 +5394,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Transportation%20and%20Communications/CorporateBody/1>
   a rico:CorporateBody;
@@ -5002,7 +5435,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of Treasury and Economics was responsible for recommending financial, economic, accounting and taxation policies to the Ontario Cabinet. The Ministry also supervised, directed and controlled all financial, statistical and accounting functions of the Government and was responsible for managing the Consolidated Revenue Fund.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/Identifier/1>;
@@ -5025,6 +5459,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20Treasury%20and%20Economics/Identifier/1>
   a rico:Identifier;
@@ -5060,7 +5498,8 @@
   rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/-1972>;
   rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/-1972>;
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/Identifier/1>;
@@ -5083,6 +5522,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MAG. MPG" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Attorney%20General/Identifier/1>
   a rico:Identifier;
@@ -5112,7 +5555,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of the Environment was responsible for ensuring that acceptable standards with respect to the air, water and land quality of the province, were maintained. Activities included: air quality management and auto emission controls; waste management; water management; provision of sewage and water facilities and regulation of septic tanks; meteorology; environmental assessment; and the operation of laboratories for environmental research.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/Identifier/1>;
@@ -5136,6 +5580,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MOE. MEO" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29/CorporateBody/1>
   a rico:CorporateBody;
@@ -5169,7 +5617,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of the Environment was the lead ministry responsible for restoring, protecting and enhancing the environment to ensure public health and environmental quality. The ministry set policies, standards, rules and regulations to protect the environment, enforced said rules, and encouraged conservation activities. The Ministry of the Environment carried out its duties through the following four functions: Environmental Monitoring, Research and Analysis; Environmental Protection Policies and Standards Development; Environmental Inspection, Investigation and Enforcement; and Environmental Conservation and Stewardship.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/Identifier/1>;
@@ -5193,6 +5642,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "MOE. MEO. Ministry of the Environment and Climate Change" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Environment%20%281997-2002%29/Identifier/1>
   a rico:Identifier;
@@ -5222,7 +5675,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of the Solicitor General oversees law enforcement and public safety across Ontario, through coordinating the activities of agencies such as the Ontario Provincial Policy, the Office of the Fire Marshal, and the Office of the Chief Coroner.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/Identifier/1>;
@@ -5245,6 +5699,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20%281999-2002%29/Identifier/1>
   a rico:Identifier;
@@ -5270,7 +5728,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/Mandate/1>;
   rico:generalDescription "CMTAU", "The Ministry of the Solicitor General and Correctional Services wass responsible for police services, public safety and security, the operation of correctional facilities, and the provision of probation and parole services in Ontario for adult male and female offenders, and phase II young offenders.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/Identifier/1>;
@@ -5293,6 +5752,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Ministry%20of%20the%20Solicitor%20General%20and%20Correctional%20Services/CorporateBody/1>
   a rico:CorporateBody;
@@ -5322,7 +5785,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/Mandate/1>;
   rico:generalDescription "CMTAU", "The Provincial Secretariat for Justice provided analytical and research support to assist the Cabinet Committee on Justice in co- ordinating and developing policies in areas such as law enforcement, court administration, protection of citizens' rights, and the rehabilitation of offenders.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/Identifier/1>;
@@ -5344,6 +5808,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Justice Policy Field" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Justice/Identifier/1>
   a rico:Identifier;
@@ -5369,7 +5837,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The Provincial Secretariat for Resources Development provided analytical and research support to the Provincial Secretary for Resources Development to assist him in his capacities as Chairman of the Cabinet Committee on Resources Development and as Chairman of the Cabinet Committee on Native Affairs. The Secretariat was also responsible for co-ordinating Legislation on privacy and access to information.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/Identifier/1>;
@@ -5391,6 +5860,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Resources Development Policy Field" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Resources%20Development/Identifier/1>
   a rico:Identifier;
@@ -5416,7 +5889,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/Mandate/1>;
   rico:generalDescription "CMTAU", "The Provincial Secretariat for Social Development provided analytical and research support to assist the Cabinet Committee on Social Development in the co-ordination and development of government policies in the areas of youth, the family, rehabilitation services, seniors and group homes.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/Identifier/1>;
@@ -5438,6 +5912,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Ontario. Social Development Policy Field" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Provincial%20Secretariat%20for%20Social%20Development/Identifier/1>
   a rico:Identifier;
@@ -5471,7 +5949,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/Mandate/1>;
   rico:generalDescription "CMTAU", "The Treasury Board of Cabinet was responsible for reviewing government expenditures and ensuring effective use of public money.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/Identifier/1>;
@@ -5493,6 +5972,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Ontario.%20Treasury%20Board%20%281886-1971%29/CorporateBody/1>
   a rico:CorporateBody;
@@ -5530,7 +6013,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/Mandate/1>;
   rico:generalDescription "CMTAU", "The Executive Council of the Province of Upper Canada acted as an advisory body to the Lieutenant Governor. The Executive Council, along with the Lieutenant Governor, also performed a judicial role by acting as a Court of Appeal.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/Identifier/1>;
@@ -5552,6 +6036,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Executive%20Council/Identifier/1>
   a rico:Identifier;
@@ -5577,7 +6065,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/Mandate/1>;
   rico:generalDescription "CMTAU", "The House of Assembly of Upper Canada was the representative assembly for the people of the Province of Canada, consisting of at least sixteen members elected from various districts for a maximum of four years. Although the Assembly could consider and approve bills, their power to effect legislation was limited.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/Identifier/1>;
@@ -5600,6 +6089,10 @@
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"";
   rico:textualValue "Canada. Legislature. Legislative Assembly. Canada. Legislative Assembly" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20House%20of%20Assembly/CorporateBody/1>
   a rico:CorporateBody;
@@ -5629,7 +6122,8 @@
   rico:authorizedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/Mandate/1>;
   rico:generalDescription "CMTAU", "The Legislative Council of Upper Canada reviewed, amended and, if necessary, rejected initiatives of the House of Assembly. Members of the Council were appointed by the Lieutenant-Governor. There was also a provision for hereditary membership for those individuals given titles by the King. No such titles were granted.";
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/1>,
-    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/2>;
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/2>,
+    <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/3>;
   rico:hasOrHadController <https://data.archives.gov.on.ca/RiC-O_1-0-1/%3A%3A/CorporateBody/1>;
   rico:hasOrHadCorporateBodyType <https://schema.archives.gov.on.ca/Authority/CorporateBodyType/A%20Ontario%20Government%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/Identifier/1>;
@@ -5651,6 +6145,10 @@
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/2>
   a rico:AgentName;
   rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\"" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/AgentName/3>
+  a rico:AgentName;
+  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\"" .
 
 <https://data.archives.gov.on.ca/RiC-O_1-0-1/Upper%20Canada.%20Legislature.%20Legislative%20Council/CorporateBody/1>
   a rico:CorporateBody;

@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="JNRxnBV9_3tvGunqLC9R">
-    <mxGraphModel dx="3054" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="3266" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -195,7 +195,7 @@
         <mxCell id="I4GB3cVhTv-sTvJ7h0Jz-10" value="rico:hasOrHadAgentName" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="I4GB3cVhTv-sTvJ7h0Jz-9" connectable="0" vertex="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="I4GB3cVhTv-sTvJ7h0Jz-11" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;br&gt;&quot;RiC-O_1-0-1/&lt;/span&gt;{HEADING}/AgentName/2&quot;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="I4GB3cVhTv-sTvJ7h0Jz-11" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;br&gt;&quot;RiC-O_1-0-1/&lt;/span&gt;{HEADING}/AgentName/3&quot;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-170" y="130" width="260" height="52" as="geometry">
             <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
           </mxGeometry>

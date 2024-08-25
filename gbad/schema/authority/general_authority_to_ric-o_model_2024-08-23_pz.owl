@@ -12,6 +12,7 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
     rico:hasOrHadIdentifier rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FIdentifier%2F1%22,
     rico:hasOrHadAgentName rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22,
     rico:hasOrHadAgentName rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F2%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F3%22,
     rico:hasOrHadCorporateBodyType rr%3Atemplate%20%22https%3A%2F%2Fschema.archives.gov.on.ca%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP%7D%22,
     rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX%7D%22,
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX%7D%22,
@@ -74,14 +75,20 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BSUC%7D%2FCorporateBody%2F1%22
     rdfs:label "rr:template  \"RiC-O_1-0-1/{SUC}/CorporateBody/1\""
   Types: rico:CorporateBody
 
+Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F3%22
+  Annotations:
+    rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/3\""
+  Types: rico:AgentName
+  Facts:
+    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fschema.archives.gov.on.ca%2FAuthority%2FType%2FParallel%20Name%22,
+    rico:textualValue "rml:reference \"PAR\""
+
 Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F2%22
   Annotations:
     rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/2\""
   Types: rico:AgentName
   Facts:
-    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fschema.archives.gov.on.ca%2FAuthority%2FType%2FParallel%20Name%22,
     rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fschema.archives.gov.on.ca%2FAuthority%2FType%2FVariant%20Name%22,
-    rico:textualValue "rml:reference \"PAR\"",
     rico:textualValue "rml:reference \"VAR\""
 
 Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22
