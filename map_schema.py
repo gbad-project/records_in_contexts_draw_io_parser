@@ -35,7 +35,7 @@ def __init__():
     rml_path = graph_path[:-3]+ "rml"
 
     # Choose source CSV for mapping
-    source_path = 'gbad/mapping/source/authority_head_101.csv'
+    source_path = 'gbad/mapping/source/AUTHORITY.csv'
 
     # Create the input RDF graph
     g = Graph(base = base_uri)

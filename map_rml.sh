@@ -8,6 +8,6 @@ rml_filename=$(basename "$rml" .rml)
 
 ttl_dir="$ttl_root/$rml_filename"
 mkdir -p "$ttl_dir"
-ttl="$ttl_dir/mapped.ttl"
+ttl="$ttl_dir/mapped_LARGE.ttl"
 
 java -jar rmlmapper* -s turtle -m "$rml" -o "$ttl"
