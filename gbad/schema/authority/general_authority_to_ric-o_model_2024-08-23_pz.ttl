@@ -20,6 +20,12 @@
                                          rdfs:label "ARCHAU" .
 
 
+###  https://data.archives.gov.on.ca/KB%2FDate%2F%7BDATECONT%7D
+<https://data.archives.gov.on.ca/KB%2FDate%2F%7BDATECONT%7D> rdf:type owl:NamedIndividual ,
+                                                                      rico:Date ;
+                                                             rdfs:label "KB/Date/{DATECONT}" .
+
+
 ###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22
 <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22> rdf:type owl:NamedIndividual ,
                                                                                                                                                                        rico:DocumentaryFormType ;
@@ -42,12 +48,6 @@
 <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FVariant%20Name%22> rdf:type owl:NamedIndividual ,
                                                                                                                                                     rico:Type ;
                                                                                                                                            rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/Type/Variant Name\"" .
-
-
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                            rico:Date ;
-                                                                                   rdfs:label "rr:template \"KB/Date/{DATECONT}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX%7D%22
@@ -94,8 +94,8 @@
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                                         rico:AgentControlRelation ;
-                                                                                                               rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22> ;
-                                                                                                               rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22> ;
+                                                                                                               rico:hasBeginningDate <https://data.archives.gov.on.ca/KB%2FDate%2F%7BDATECONT%7D> ;
+                                                                                                               rico:hasEndDate <https://data.archives.gov.on.ca/KB%2FDate%2F%7BDATECONT%7D> ;
                                                                                                                rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22> ;
                                                                                                                rdfs:label "rr:template  \"RiC-O_1-0-1/{HEADING}/AgentControlRelation/1\"" .
 

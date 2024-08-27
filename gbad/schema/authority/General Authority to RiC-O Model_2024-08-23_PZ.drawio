@@ -338,7 +338,7 @@
             <mxPoint x="2" y="19" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pk83CXQ_J8W3k7jnCZb_-27" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;KB/Date&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/{&lt;/span&gt;DATECONT&lt;span style=&quot;background-color: initial;&quot;&gt;}&quot;&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
+        <mxCell id="pk83CXQ_J8W3k7jnCZb_-27" value="&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;KB/Date&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/{&lt;/span&gt;DATECONT&lt;span style=&quot;background-color: initial;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
           <mxGeometry x="350" y="1000" width="215" height="52" as="geometry" />
         </mxCell>
         <mxCell id="pk83CXQ_J8W3k7jnCZb_-28" value="rico:Date" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="pk83CXQ_J8W3k7jnCZb_-27" vertex="1">
@@ -355,7 +355,7 @@
             <mxPoint y="18" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pk83CXQ_J8W3k7jnCZb_-31" value="&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;KB/Date&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/{&lt;/span&gt;DATECONT&lt;span style=&quot;background-color: initial;&quot;&gt;}&quot;&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
+        <mxCell id="pk83CXQ_J8W3k7jnCZb_-31" value="&lt;span style=&quot;background-color: initial;&quot;&gt;KB/Date&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/{&lt;/span&gt;DATECONT&lt;span style=&quot;background-color: initial;&quot;&gt;}&lt;/span&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
           <mxGeometry x="60" y="1000" width="215" height="52" as="geometry" />
         </mxCell>
         <mxCell id="pk83CXQ_J8W3k7jnCZb_-32" value="rico:Date" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="pk83CXQ_J8W3k7jnCZb_-31" vertex="1">

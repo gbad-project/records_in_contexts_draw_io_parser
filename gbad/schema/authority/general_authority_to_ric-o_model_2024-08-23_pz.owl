@@ -125,12 +125,12 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentControlRelatio
   Types: rico:AgentControlRelation
   Facts:
     rico:relationHasTarget rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22,
-    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22,
-    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22
+    rico:hasBeginningDate KB%2FDate%2F%7BDATECONT%7D,
+    rico:hasEndDate KB%2FDate%2F%7BDATECONT%7D
 
-Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT%7D%22
+Individual: KB%2FDate%2F%7BDATECONT%7D
   Annotations:
-    rdfs:label "rr:template \"KB/Date/{DATECONT}\""
+    rdfs:label "KB/Date/{DATECONT}"
   Types: rico:Date
 
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22
