@@ -23,11 +23,11 @@ def __init__():
     base_data_uri = 'https://data.archives.gov.on.ca'
     base_gbad_uri = base_data_uri
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
-    base_schema_uri = URIRef(f"{base_data_uri}/schema")
+    base_schema_uri = URIRef(f"{base_data_uri}/Schema")
     #base_kb_uri = URIRef(f"{base_data_uri}/KB")
-    base_auth_uri = URIRef(f"{base_schema_uri}/authority")
-    base_add_uri = URIRef(f"{base_schema_uri}/description-listings")
-    base_mapping_uri = URIRef(f"{base_schema_uri}/mapping")
+    #base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
+    #base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
+    base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
 
     # Choose ontology to map
     base_uri = base_data_uri
@@ -67,6 +67,7 @@ def __init__():
     g.namespace_manager.bind(*rml)
     g.namespace_manager.bind(*rr)
     g.namespace_manager.bind(*ql)
+    g.namespace_manager.bind(*csvw)
     g.namespace_manager.bind(*csvw)
 
     #print(g.serialize(format='turtle'))
@@ -137,12 +138,16 @@ def __init__():
         # Decode special URI entities
         uriref_str = urllib.parse.unquote(uriref_str)
         return uriref_str
+    
+    def triplesmap_clean(str):
+        # Replace with underscores anything but Latin letters, numbers, hyphens, and underscores
+        triplesmap_name = re.sub(r'[^0-9a-z_-]', '_', str, flags=re.IGNORECASE)
+        return triplesmap_name
 
     def generate_triplesmap_name(row):
         # This implementation assumes that subject URIs are unique
         subject_str = row[uriref_str_label]
-        # Replace with underscores anything but Latin letters, numbers, hyphens, and underscores
-        cleaned_subject = re.sub(r'[^0-9a-z_-]', '_', subject_str, flags=re.IGNORECASE)
+        cleaned_subject = triplesmap_clean(subject_str)
         return cleaned_subject
     
     # Necessary to init namespace manager for uriref_str_to_map
@@ -301,7 +306,7 @@ def __init__():
     
     # Initialize a mapping RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-
+    
     # Define custom prefix
     maps = ('', Namespace(URIRef(f"{base_mapping_uri}#")))
 
@@ -380,8 +385,9 @@ def __init__():
         for k, parsed_result in objectmap_df.iterrows():
             # Only focus on RiC-O or RDFS predicates
             predicate = parsed_result['predicate']
-            is_rico = (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rico[0]}:"))
-            is_rdfs = (normalize_uri(predicate, mapping.namespace_manager).startswith(f"{rdfs[0]}:"))
+            norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
+            is_rico = (norm_predicate.startswith(f"{rico[0]}:"))
+            is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
             if (is_rico | is_rdfs):
                 # Now we can actually iterate over objects
                 object = parsed_result['object']
@@ -405,8 +411,14 @@ def __init__():
                 # and such, so this is essential to bypass these. However, I am not
                 # sure at this point how well this would work if other namespaces
                 # were fully supported by drawio parser.
-                if not is_rico:
-                    mapping.add((object_map, rr[1].constant, Literal(object))) 
+                if not is_rico: # any other namespace
+                    if norm_predicate == 'rdfs:label': # handle labels from drawio parser
+                        mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
+                        # Only using object_map_object here because object_map_predicate is irrelevant
+                        mapping.add((object_map, rr[1].template, Literal(object_map_object)))
+                        continue
+                    
+                    mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
                     continue
 
                 # This concerns only constant literals, meaning nodes
