@@ -21,13 +21,66 @@ map_object_label = 'map_object'
 def __init__():
     # Define GBAD schema ontology
     base_data_uri = 'https://data.archives.gov.on.ca'
-    base_gbad_uri = base_data_uri
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
+    base_gbad_uri = base_data_uri
     base_schema_uri = URIRef(f"{base_data_uri}/Schema")
     #base_kb_uri = URIRef(f"{base_data_uri}/KB")
-    #base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
-    #base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
+    base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
+    base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
     base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
+
+    base_uri_prefix = f"{base_data_uri}/"
+    schema_term = 'Schema'
+    auth_term = 'Authority'
+    add_term = 'Description-Listings'
+    maps_term = 'Mapping'
+    kb_term = 'KB'
+    gbad_term = 'RiC-O_1-0-1'
+    schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/.*'
+    schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
+
+    mnemonic_pattern = r"\{([A-Z:]+)\}"
+    mnemonic_regex = re.compile(rf"({mnemonic_pattern})/([a-zA-Z]+)(/\d+)?")
+    def prettify_rdfs_label(literal_str):
+        # Remove base data prefix
+        if literal_str.startswith(base_uri_prefix):
+            literal_str = str(literal_str[len(base_uri_prefix):])
+
+        # Schema entities
+        if literal_str.lower().startswith(schema_term.lower() + '/'):
+            literal_str = str(literal_str[len(schema_term)+1:])
+            match = schema_regex.search(literal_str)
+            if match:
+                schema_group = match.group(1)
+                literal_str = str(literal_str[len(schema_group)+1:])
+                literal_str = literal_str + f' ({schema_group} Schema Entity)'
+
+        # KB entities
+        if literal_str.lower().startswith(kb_term.lower() + '/'):
+            literal_str = str(literal_str[len(kb_term)+1:])
+            literal_str = literal_str + ' (Knowledge Base Entity'
+            match = re.search(mnemonic_pattern, literal_str)
+            if match:
+                mnemonic = match.group(1)
+                literal_str = literal_str + f' from "{mnemonic}"'
+            literal_str = literal_str + ')'
+
+        # GBAD entities
+        if literal_str.lower().startswith(gbad_term.lower() + '/'):
+            literal_str = str(literal_str[len(gbad_term)+1:])
+            match = mnemonic_regex.match(literal_str)
+            if match:
+                mnemonic_group = match.group(1) # in curly brackets
+                mnemonic  = match.group(2)
+                rico_class = match.group(3)
+                instance_number = match.group(4)
+                literal_str = f'{mnemonic_group} ({rico_class} Entity'
+                if instance_number:
+                    instance_number = instance_number[1:] # leading slash removed
+                    literal_str = literal_str + f' #{instance_number}'
+                literal_str = literal_str + f' from "{mnemonic}")'
+        
+        return literal_str
 
     # Choose ontology to map
     base_uri = base_data_uri
@@ -36,6 +89,7 @@ def __init__():
 
     # Choose source CSV for mapping
     source_path = 'gbad/mapping/source/AUTHORITY.csv'
+    #source_path = 'gbad/mapping/source/authority_head_101.csv'
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -218,8 +272,7 @@ def __init__():
         if map_object:
             if map_predicate != rr[1].template:
                 return None
-            pattern = r"\{([A-Z]+)\}"
-            matches = re.findall(pattern, map_object)
+            matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
                     print("At most one rr:template is allowed per subject map ",
@@ -415,7 +468,8 @@ def __init__():
                     if norm_predicate == 'rdfs:label': # handle labels from drawio parser
                         mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
                         # Only using object_map_object here because object_map_predicate is irrelevant
-                        mapping.add((object_map, rr[1].template, Literal(object_map_object)))
+                        pretty_omo = prettify_rdfs_label(object_map_object)
+                        mapping.add((object_map, rr[1].template, Literal(pretty_omo)))
                         continue
                     
                     mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
