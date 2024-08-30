@@ -1,0 +1,110 @@
+Script started on 2024-08-30 11:28:55-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
+find: warning: -path gbad/schema/ will not match anything because it ends with /.
+Total number of *.drawio files found: 17
+
+Processing file 1 of 17: gbad/schema/authority/General Authority to RiC-O Model_2024-08-29_PZ.drawio
+Executing command: cat "gbad/schema/authority/General Authority to RiC-O Model_2024-08-29_PZ.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.owl"
+Manchester OWL Output saved to: gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.owl" -o "gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl"
+TTL Output saved to: gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl
+
+Processing file 2 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.ttl
+
+Processing file 3 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_10.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_10.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.ttl
+
+Processing file 4 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_11.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_11.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.ttl
+
+Processing file 5 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_12.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_12.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.ttl
+
+Processing file 6 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_13.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_13.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.ttl
+
+Processing file 7 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_14.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_14.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.ttl
+
+Processing file 8 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_2.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_2.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.ttl
+
+Processing file 9 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_3.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_3.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.ttl
+
+Processing file 10 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_4.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_4.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.ttl
+
+Processing file 11 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_5.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_5.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.ttl
+
+Processing file 12 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_6.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_6.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.ttl
+
+Processing file 13 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_7.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_7.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.ttl
+
+Processing file 14 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_8.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_8.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.ttl
+
+Processing file 15 of 17: gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_9.drawio
+Executing command: cat "gbad/schema/authority_AgentControlRelation/General Authority_AgentControlRelation_2024-08-29_PZ_9.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.owl"
+Manchester OWL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.owl
+Executing command: ./robot.sh convert -i "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.owl" -o "gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.ttl"
+TTL Output saved to: gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.ttl
+
+Processing file 16 of 17: gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model (v1.1 - 9 July 2024).drawio
+Executing command: cat "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model (v1.1 - 9 July 2024).drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_v11_-_9_july_2024.owl"
+Manchester OWL Output saved to: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_v11_-_9_july_2024.owl
+Executing command: ./robot.sh convert -i "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_v11_-_9_july_2024.owl" -o "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_v11_-_9_july_2024.ttl"
+TTL Output saved to: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_v11_-_9_july_2024.ttl
+
+Processing file 17 of 17: gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2024-08-20_PZ.drawio
+Executing command: cat "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2024-08-20_PZ.drawio" | python draw_io_parser.py -m url -c none -o https://data.archives.gov.on.ca -p https://data.archives.gov.on.ca/ > "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-08-20_pz.owl"
+Not a RiC class: DocumentaryFormType ric-dft:FindingAid
+Manchester OWL Output saved to: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-08-20_pz.owl
+Executing command: ./robot.sh convert -i "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-08-20_pz.owl" -o "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-08-20_pz.ttl"
+Warning: This TTL exists but is unchanged: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-08-20_pz.ttl
+
+Finished processing all Draw.io files.
+
+Script done on 2024-08-30 11:31:11-04:00 [COMMAND_EXIT_CODE="0"]
