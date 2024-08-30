@@ -121,7 +121,7 @@ def __init__():
 
     # Choose source CSV for mapping
     source_path = 'gbad/mapping/source/AUTHORITY.csv'
-    source_path = 'gbad/mapping/source/authority_head_6.csv'
+    #source_path = 'gbad/mapping/source/authority_head_6.csv'
     #source_path = 'gbad/mapping/source/authority_head_101.csv'
 
     # Create the input RDF graph

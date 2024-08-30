@@ -1,4 +1,4 @@
-Script started on 2024-08-30 11:57:39-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
+Script started on 2024-08-30 12:24:38-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
 Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.ttl'
 Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.ttl'
 Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.ttl'
@@ -17,4 +17,4 @@ Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation
 
 Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.rml'
 
-Script done on 2024-08-30 11:57:42-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-08-30 12:24:40-04:00 [COMMAND_EXIT_CODE="0"]

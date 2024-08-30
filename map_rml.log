@@ -1,7 +1,9 @@
-Script started on 2024-08-27 08:46:54-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="17"]
+Script started on 2024-08-30 12:24:44-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
+./map_rml.sh: line 14: unexpected EOF while looking for matching `"'
+./map_rml.sh: line 15: syntax error: unexpected end of file
 
-real	0m24.158s
-user	0m40.889s
-sys	0m2.452s
+real	0m35.106s
+user	0m53.271s
+sys	0m1.642s
 
-Script done on 2024-08-27 08:47:18-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-08-30 12:25:20-04:00 [COMMAND_EXIT_CODE="2"]
