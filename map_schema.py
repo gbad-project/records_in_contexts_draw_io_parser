@@ -4,6 +4,7 @@ import pandas as pd
 import re
 import urllib.parse
 from pprint import pprint
+import os
 
 # Set labels for reference fields
 auth_heading_label = 'HEADING'
@@ -17,6 +18,36 @@ triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
 map_predicate_label = 'map_predicate'
 map_object_label = 'map_object'
+
+# combine_turtle_files generated with Claude 3.5 Sonnet
+# on 2024-08-29, with modifications
+def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
+    formats = {
+        'turtle': ['ttl', 'turtle'],
+        'nt': ['nt'],
+        'n3': ['n3'],
+        'xml': ['rdf', 'owl', 'xml'],
+        'json-ld': ['jsonld', 'json-ld'],
+        'nquads': ['nq'],
+        'trig': ['trig']
+    }
+
+    # Walk through the directory tree
+    for folder_path, _, filenames in os.walk(root_folder):
+        for filename in filenames:
+            # Get the file extension
+            file_ext = filename.split('.')[-1]
+
+            # Iterate over formats and check if the extension matches
+            for format_name, extensions in formats.items():
+                if ((file_ext in extensions) & (format_name == format)):
+                    file_path = os.path.join(folder_path, filename)
+                    print(f"Adding a supplemental '{format_name}' file: '{file_path}'")
+                    
+                    # Parse the Turtle file and add its contents to the combined graph
+                    source_graph.parse(file_path, format=format)
+
+    return source_graph
 
 def __init__():
     # Define GBAD schema ontology
@@ -84,17 +115,22 @@ def __init__():
 
     # Choose ontology to map
     base_uri = base_data_uri
-    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-23_pz.ttl'
+    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl'
+    suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
     rml_path = graph_path[:-3]+ "rml"
 
     # Choose source CSV for mapping
     source_path = 'gbad/mapping/source/AUTHORITY.csv'
+    source_path = 'gbad/mapping/source/authority_head_6.csv'
     #source_path = 'gbad/mapping/source/authority_head_101.csv'
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
     g.parse(graph_path,
             format="turtle")  # Adjust the format as needed
+
+    # Add additional triples
+    g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
 
     # Define custom prefixes
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
