@@ -1,0 +1,37 @@
+# Initially generated with ChatGPT-4o on 2024-08-30, with modifications
+
+PREFIX rico: <https://www.ica.org/standards/RiC/ontology#> 
+
+# Step 1: Select all rico:AgentControlRelation entities without the rico:thingIsSourceOfRelation predicate
+SELECT ?agentControlRelation
+WHERE {
+  ?agentControlRelation a rico:AgentControlRelation .
+  ?corporateBody a rico:CorporateBody .
+  FILTER NOT EXISTS {
+    ?corporateBody rico:thingIsSourceOfRelation ?agentControlRelation .
+  }
+}
+
+# Step 2: Remove all triples where these entities are subject or object
+DELETE WHERE {
+  # Subquery to select all rico:AgentControlRelation entities without rico:thingIsSourceOfRelation predicate
+  {
+    SELECT ?agentControlRelation
+    WHERE {
+      ?agentControlRelation a rico:AgentControlRelation .
+      ?corporateBody a rico:CorporateBody .
+      FILTER NOT EXISTS {
+        ?corporateBody rico:thingIsSourceOfRelation ?agentControlRelation .
+      }
+    }
+  }
+
+  # Removing triples where these entities are subject or object
+  {
+    ?agentControlRelation ?predicate ?object .
+  }
+  UNION
+  {
+    ?subject ?predicate ?agentControlRelation .
+  }
+}
