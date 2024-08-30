@@ -18,11 +18,9 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22,
     rico:authorizedBy rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FMandate%2F1%22,
     rico:history "rml:reference \"ADM\"",
-    rico:hasOrHadController rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BCONTAG_1%7D%2FCorporateBody%2F1%22,
     rico:isSuccessorOf rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BPRED%7D%2FCorporateBody%2F1%22,
     rico:hasSuccessor rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BSUC%7D%2FCorporateBody%2F1%22,
     rico:isOrWasDescribedBy rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22,
-    rico:generalDescription "CMTAU",
     rico:generalDescription "rml:reference \"FUN\"",
     rico:isEquivalentTo rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFA%7D%2FCorporateBody%2F2%22
 
@@ -63,13 +61,6 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FMandate%2F1%22
   Facts:
     rico:textualValue "rml:reference \"AA\""
 
-Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BCONTAG_1%7D%2FCorporateBody%2F1%22
-  Annotations:
-    rdfs:label "rr:template  \"RiC-O_1-0-1/{CONTAG_1}/CorporateBody/1\""
-  Types: rico:CorporateBody
-  Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
-
 Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BPRED%7D%2FCorporateBody%2F1%22
   Annotations:
     rdfs:label "rr:template \"RiC-O_1-0-1/{PRED}/CorporateBody/1\""
@@ -104,10 +95,8 @@ Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22
     rico:generalDescription "rml:reference \"SOURCE\"",
     rico:hasDocumentaryFormType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22,
     rico:isOrWasRegulatedBy rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22,
-    rico:lastModificationDate "MOD_DATE",
     rico:hasRecordState rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FStatus%2F%7BSTATUSA%7D%22,
-    rico:hasRecordState rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FWeb%20Ready%2F%7BWEBA%7D%22,
-    rico:hasCreator ARCHAU
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FWeb%20Ready%2F%7BWEBA%7D%22
 
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22
   Annotations:
@@ -118,30 +107,6 @@ Individual: rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22
   Annotations:
     rdfs:label "rr:template  \"KB/Rule/{RULES}\""
   Types: rico:Rule
-
-Individual: ARCHAU
-  Annotations:
-    rdfs:label "ARCHAU"
-  Types: rico:Person
-
-Individual: rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
-  Annotations:
-    rdfs:label "rr:template  \"RiC-O_1-0-1/{HEADING}/AgentControlRelation/1\""
-  Types: rico:AgentControlRelation
-  Facts:
-    rico:relationHasTarget rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22,
-    rico:hasBeginningDate KB%2FDate%2F%7BDATECONT_1_BEGINNING%7D,
-    rico:hasEndDate KB%2FDate%2F%7BDATECONT_1_END%7D
-
-Individual: KB%2FDate%2F%7BDATECONT_1_BEGINNING%7D
-  Annotations:
-    rdfs:label "KB/Date/{DATECONT_1_BEGINNING}"
-  Types: rico:Date
-
-Individual: KB%2FDate%2F%7BDATECONT_1_END%7D
-  Annotations:
-    rdfs:label "KB/Date/{DATECONT_1_END}"
-  Types: rico:Date
 
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22
   Annotations:
