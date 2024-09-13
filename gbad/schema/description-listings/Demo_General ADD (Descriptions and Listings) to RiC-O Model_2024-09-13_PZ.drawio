@@ -531,23 +531,6 @@
             <mxPoint x="18" y="-74" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Q8uZV5vyl1yQ3metHevY-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.611;exitY=0.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.211;entryY=1.019;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sWa0SD8Ajx1KSGOqKPP4-1" target="Q8uZV5vyl1yQ3metHevY-32" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="388" y="380" as="sourcePoint" />
-            <mxPoint x="520" y="-120" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Q8uZV5vyl1yQ3metHevY-30" value="rico:hasCreator" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="Q8uZV5vyl1yQ3metHevY-29" connectable="0" vertex="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="61" y="-165" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Q8uZV5vyl1yQ3metHevY-31" value="rr:template&lt;div&gt;&quot;RiC-O_1-0-1/{REFD}/Agent/2&quot;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;strokeColor=#FF0000;" parent="1" vertex="1">
-          <mxGeometry x="520" y="-220" width="220" height="52" as="geometry" />
-        </mxCell>
-        <mxCell id="Q8uZV5vyl1yQ3metHevY-32" value="rico:Agent" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="Q8uZV5vyl1yQ3metHevY-31" vertex="1">
-          <mxGeometry y="26" width="220" height="26" as="geometry" />
-        </mxCell>
         <mxCell id="lszSfj4lrEIONad0Ssyt-1" value="Form (ADD26)&lt;div&gt;GMD&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-200" y="728" width="178" height="52" as="geometry">
             <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
@@ -735,20 +718,6 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="kmMX0edAvFb6f9fuV1_x-5" value="rico:textualValue" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="kmMX0edAvFb6f9fuV1_x-4" connectable="0" vertex="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="18" y="-74" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="0oZ3CC-ZIx-7idGXy-Q2-1" value="rml:reference&lt;div&gt;&quot;CREATOR&quot;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
-          <mxGeometry x="830" y="-366" width="111" height="58" as="geometry" />
-        </mxCell>
-        <mxCell id="0oZ3CC-ZIx-7idGXy-Q2-2" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" target="0oZ3CC-ZIx-7idGXy-Q2-1" source="Q8uZV5vyl1yQ3metHevY-31">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="600" y="-160" as="sourcePoint" />
-            <mxPoint x="688" y="-436" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="0oZ3CC-ZIx-7idGXy-Q2-3" value="rico:textualValue" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="0oZ3CC-ZIx-7idGXy-Q2-2">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="18" y="-74" as="offset" />
           </mxGeometry>

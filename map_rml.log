@@ -1,9 +1,13 @@
-Script started on 2024-08-30 12:24:44-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
-./map_rml.sh: line 14: unexpected EOF while looking for matching `"'
-./map_rml.sh: line 15: syntax error: unexpected end of file
+Script started on 2024-09-13 19:02:26-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
+Initiated mapping params:
+('gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.rml',
+ './rmlmapper-7.0.0-r374-all.jar',
+ 'gbad/mapping/target/general_authority_to_ric-o_model_2024-08-29_pz/mapped.ttl')
+Converted file is larger than 10 MB (76.97 MB) - trying to rename to LARGE...
+Successfully renamed to 'mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-08-29_pz/mapped_LARGE.ttl'
 
-real	0m35.106s
-user	0m53.271s
-sys	0m1.642s
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-08-29_pz/mapped_LARGE.ttl' 
+Number of triples in the graph: 625319
 
-Script done on 2024-08-30 12:25:20-04:00 [COMMAND_EXIT_CODE="2"]
+Script done on 2024-09-13 19:03:44-04:00 [COMMAND_EXIT_CODE="0"]

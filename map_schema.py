@@ -5,6 +5,8 @@ import re
 import urllib.parse
 from pprint import pprint
 import os
+import argparse
+import glob
 
 # Set labels for reference fields
 auth_heading_label = 'HEADING'
@@ -49,7 +51,7 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
 
     return source_graph
 
-def __init__():
+def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
     base_data_uri = 'https://data.archives.gov.on.ca'
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
@@ -115,19 +117,35 @@ def __init__():
 
     # Choose ontology to map
     base_uri = base_data_uri
-    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl'
-    #graph_path = 'gbad/schema/description-listings/demo_general_add_descriptions_and_listings_to_ric-o_model_2024-08-30_pz.ttl'
-    suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
+    suppl_graph_dir = None
+
+    # Set schema-specific params
+    if schema_code == 'add':
+        # Assume the first file found
+        graph_dir = 'gbad/schema/description-listings'
+        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+        
+        # ADD: Choose source CSV for mapping
+        if source_filename is None:
+            source_path = 'gbad/mapping/source/description_head_6.csv'
+    
+    elif schema_code == 'auth':
+        suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
+        # Assume the first file found
+        graph_dir = 'gbad/schema/authority/'
+        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+
+        # Authority: Choose source CSV for mapping
+        if source_filename is None:
+            source_path = 'gbad/mapping/source/authority_head_6.csv'
+
+    else:
+        raise Exception(f"Fatal error: Schema code not supplied.")
+
+    if source_filename:
+        source_path = f'gbad/mapping/source/{source_filename}.csv'
+
     rml_path = graph_path[:-3]+ "rml"
-
-    # Authority: Choose source CSV for mapping
-    #source_path = 'gbad/mapping/source/AUTHORITY.csv'
-    source_path = 'gbad/mapping/source/authority_head_6.csv'
-    #source_path = 'gbad/mapping/source/authority_head_101.csv'
-
-    # ADD: Choose source CSV for mapping
-    #source_path = 'gbad/mapping/source/description_head_6.csv'
-    #source_path = 'gbad/mapping/source/description_head_101.csv'
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -135,7 +153,8 @@ def __init__():
             format="turtle")  # Adjust the format as needed
 
     # Add additional triples
-    g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
+    if suppl_graph_dir:
+        g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
 
     # Define custom prefixes
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
@@ -551,4 +570,10 @@ def __init__():
     #print(ttl)
 
 if __name__ == '__main__':
-    __init__()
+    parser = argparse.ArgumentParser(description="Map schema of choice")
+    parser.add_argument("schema", help="Choose one: add or auth.")
+    parser.add_argument("source", nargs='?', help="Filename of source CSV without extension. Defaults to the head=6 version for chosen schema.")
+
+    args = parser.parse_args()
+
+    __init__(str(args.schema).lower(), args.source)

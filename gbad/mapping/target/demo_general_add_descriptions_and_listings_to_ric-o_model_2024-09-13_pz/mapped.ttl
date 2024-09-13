@@ -1,0 +1,210 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%201/Record/1> a rico:Record;
+  rdfs:label " C 1 (Record Entity #1 from \"REFD\")";
+  rico:hasCreator "Archivist (ADD05) ARCHD";
+  rico:hasRecordState "Status (ADD54) STATUSD", "Web Enabled (ADD57) WEBD / WEBL";
+  rico:lastModificationDate "Date Modified (ADD21) MODDATE" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%201/RecordSet/1> a rico:RecordSet;
+  rdfs:label " C 1 (RecordSet Entity #1 from \"REFD\")";
+  rico:accruals "Accruals (ADD02) ACCRUAL";
+  rico:conditionsOfAccess "Access Restrictions (ADD01) RESTRTX / REST";
+  rico:conditionsOfUse "Terms Governing Use (ADD55) TGU";
+  rico:creationDate "Dates of Creation (ADD19) DATECR";
+  rico:date "Dates of Accumulation (ADD18) DATEACM";
+  rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29) CMTD or HIDDENNOTES",
+    "Associated Material (ADD08) ASSMAT", "Availability of Other Formats (ADD09) AVAIL",
+    "Finding Aid Note (ADD24) FINDAID", "Notes (ADD41) NOTES", "Related Material (ADD49) RELMAT";
+  rico:hasContentOfType "Form (ADD26) GMD";
+  rico:hasCreator <https://data.archives.gov.on.ca/RiC-O_1-0-1/Burrowes%2C%20Thomas%2C%201796-1866/Agent/1>,
+    "Higher Office (A or B) OR Lower Office (C) (ADD42) OFFICEAB or OFFICEC";
+  rico:hasOrHadIdentifier "Former Codes (ADD27) FCODES", "Reference Code (ADD48) REFD";
+  rico:hasOrHadInstantiation "<https://data.archives.gov.on.ca/Title (ADD56) [+ -i1] TITLE>";
+  rico:hasOrHadSubject "Names as Subjects (ADD40) INDEXSUB";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%201/Title/1>;
+  rico:hasRecordSetType "Level (ADD36) LEVELDES";
+  rico:history "Administrative History (ADD03) ADMBIO", "Custodial History (ADD17) CUSTOD",
+    "Immediate Source of Acquisition (ADD33) ISA";
+  rico:isAssociatedWithPlace "Geographic (ADD28) INDEXGEO";
+  rico:isDirectlyIncludedIn "Title (ADD56) TITLE";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%201/Record/1>,
+    "Finding Aid Link (ADD23) FINDAIDLINK";
+  rico:scopeAndContent "Scope and Content (ADD51) SCOPE";
+  rico:thingIsSourceOfRelation "Office of Origin Relation" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%201/Title/1> a rico:Title;
+  rdfs:label " C 1 (Title Entity #1 from \"REFD\")";
+  rico:textualValue "Thomas Burrowes fonds" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%202/Record/1> a rico:Record;
+  rdfs:label " C 2 (Record Entity #1 from \"REFD\")";
+  rico:hasCreator "Archivist (ADD05) ARCHD";
+  rico:hasRecordState "Status (ADD54) STATUSD", "Web Enabled (ADD57) WEBD / WEBL";
+  rico:lastModificationDate "Date Modified (ADD21) MODDATE" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%202/RecordSet/1> a rico:RecordSet;
+  rdfs:label " C 2 (RecordSet Entity #1 from \"REFD\")";
+  rico:accruals "Accruals (ADD02) ACCRUAL";
+  rico:conditionsOfAccess "Access Restrictions (ADD01) RESTRTX / REST";
+  rico:conditionsOfUse "Terms Governing Use (ADD55) TGU";
+  rico:creationDate "Dates of Creation (ADD19) DATECR";
+  rico:date "Dates of Accumulation (ADD18) DATEACM";
+  rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29) CMTD or HIDDENNOTES",
+    "Associated Material (ADD08) ASSMAT", "Availability of Other Formats (ADD09) AVAIL",
+    "Finding Aid Note (ADD24) FINDAID", "Notes (ADD41) NOTES", "Related Material (ADD49) RELMAT";
+  rico:hasContentOfType "Form (ADD26) GMD";
+  rico:hasCreator <https://data.archives.gov.on.ca/RiC-O_1-0-1/Bartle%20Brothers%20%28firm%29/Agent/1>,
+    "Higher Office (A or B) OR Lower Office (C) (ADD42) OFFICEAB or OFFICEC";
+  rico:hasOrHadIdentifier "Former Codes (ADD27) FCODES", "Reference Code (ADD48) REFD";
+  rico:hasOrHadInstantiation "<https://data.archives.gov.on.ca/Title (ADD56) [+ -i1] TITLE>";
+  rico:hasOrHadSubject "Names as Subjects (ADD40) INDEXSUB";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%202/Title/1>;
+  rico:hasRecordSetType "Level (ADD36) LEVELDES";
+  rico:history "Administrative History (ADD03) ADMBIO", "Custodial History (ADD17) CUSTOD",
+    "Immediate Source of Acquisition (ADD33) ISA";
+  rico:isAssociatedWithPlace "Geographic (ADD28) INDEXGEO";
+  rico:isDirectlyIncludedIn "Title (ADD56) TITLE";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%202/Record/1>,
+    "Finding Aid Link (ADD23) FINDAIDLINK";
+  rico:scopeAndContent "Scope and Content (ADD51) SCOPE";
+  rico:thingIsSourceOfRelation "Office of Origin Relation" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%202/Title/1> a rico:Title;
+  rdfs:label " C 2 (Title Entity #1 from \"REFD\")";
+  rico:textualValue "Bartle Brothers fonds" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%203/Record/1> a rico:Record;
+  rdfs:label " C 3 (Record Entity #1 from \"REFD\")";
+  rico:hasCreator "Archivist (ADD05) ARCHD";
+  rico:hasRecordState "Status (ADD54) STATUSD", "Web Enabled (ADD57) WEBD / WEBL";
+  rico:lastModificationDate "Date Modified (ADD21) MODDATE" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%203/RecordSet/1> a rico:RecordSet;
+  rdfs:label " C 3 (RecordSet Entity #1 from \"REFD\")";
+  rico:accruals "Accruals (ADD02) ACCRUAL";
+  rico:conditionsOfAccess "Access Restrictions (ADD01) RESTRTX / REST";
+  rico:conditionsOfUse "Terms Governing Use (ADD55) TGU";
+  rico:creationDate "Dates of Creation (ADD19) DATECR";
+  rico:date "Dates of Accumulation (ADD18) DATEACM";
+  rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29) CMTD or HIDDENNOTES",
+    "Associated Material (ADD08) ASSMAT", "Availability of Other Formats (ADD09) AVAIL",
+    "Finding Aid Note (ADD24) FINDAID", "Notes (ADD41) NOTES", "Related Material (ADD49) RELMAT";
+  rico:hasContentOfType "Form (ADD26) GMD";
+  rico:hasCreator <https://data.archives.gov.on.ca/RiC-O_1-0-1/Milne%2C%20Gilbert%20A.%2C%201914-1991/Agent/1>,
+    "Higher Office (A or B) OR Lower Office (C) (ADD42) OFFICEAB or OFFICEC";
+  rico:hasOrHadIdentifier "Former Codes (ADD27) FCODES", "Reference Code (ADD48) REFD";
+  rico:hasOrHadInstantiation "<https://data.archives.gov.on.ca/Title (ADD56) [+ -i1] TITLE>";
+  rico:hasOrHadSubject "Names as Subjects (ADD40) INDEXSUB";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%203/Title/1>;
+  rico:hasRecordSetType "Level (ADD36) LEVELDES";
+  rico:history "Administrative History (ADD03) ADMBIO", "Custodial History (ADD17) CUSTOD",
+    "Immediate Source of Acquisition (ADD33) ISA";
+  rico:isAssociatedWithPlace "Geographic (ADD28) INDEXGEO";
+  rico:isDirectlyIncludedIn "Title (ADD56) TITLE";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%203/Record/1>,
+    "Finding Aid Link (ADD23) FINDAIDLINK";
+  rico:scopeAndContent "Scope and Content (ADD51) SCOPE";
+  rico:thingIsSourceOfRelation "Office of Origin Relation" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%203/Title/1> a rico:Title;
+  rdfs:label " C 3 (Title Entity #1 from \"REFD\")";
+  rico:textualValue "Gilbert A. Milne fonds" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%204/Record/1> a rico:Record;
+  rdfs:label " C 4 (Record Entity #1 from \"REFD\")";
+  rico:hasCreator "Archivist (ADD05) ARCHD";
+  rico:hasRecordState "Status (ADD54) STATUSD", "Web Enabled (ADD57) WEBD / WEBL";
+  rico:lastModificationDate "Date Modified (ADD21) MODDATE" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%204/RecordSet/1> a rico:RecordSet;
+  rdfs:label " C 4 (RecordSet Entity #1 from \"REFD\")";
+  rico:accruals "Accruals (ADD02) ACCRUAL";
+  rico:conditionsOfAccess "Access Restrictions (ADD01) RESTRTX / REST";
+  rico:conditionsOfUse "Terms Governing Use (ADD55) TGU";
+  rico:creationDate "Dates of Creation (ADD19) DATECR";
+  rico:date "Dates of Accumulation (ADD18) DATEACM";
+  rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29) CMTD or HIDDENNOTES",
+    "Associated Material (ADD08) ASSMAT", "Availability of Other Formats (ADD09) AVAIL",
+    "Finding Aid Note (ADD24) FINDAID", "Notes (ADD41) NOTES", "Related Material (ADD49) RELMAT";
+  rico:hasContentOfType "Form (ADD26) GMD";
+  rico:hasCreator <https://data.archives.gov.on.ca/RiC-O_1-0-1/Mitchell%2C%20George%20S./Agent/1>,
+    "Higher Office (A or B) OR Lower Office (C) (ADD42) OFFICEAB or OFFICEC";
+  rico:hasOrHadIdentifier "Former Codes (ADD27) FCODES", "Reference Code (ADD48) REFD";
+  rico:hasOrHadInstantiation "<https://data.archives.gov.on.ca/Title (ADD56) [+ -i1] TITLE>";
+  rico:hasOrHadSubject "Names as Subjects (ADD40) INDEXSUB";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%204/Title/1>;
+  rico:hasRecordSetType "Level (ADD36) LEVELDES";
+  rico:history "Administrative History (ADD03) ADMBIO", "Custodial History (ADD17) CUSTOD",
+    "Immediate Source of Acquisition (ADD33) ISA";
+  rico:isAssociatedWithPlace "Geographic (ADD28) INDEXGEO";
+  rico:isDirectlyIncludedIn "Title (ADD56) TITLE";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%204/Record/1>,
+    "Finding Aid Link (ADD23) FINDAIDLINK";
+  rico:scopeAndContent "Scope and Content (ADD51) SCOPE";
+  rico:thingIsSourceOfRelation "Office of Origin Relation" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%204/Title/1> a rico:Title;
+  rdfs:label " C 4 (Title Entity #1 from \"REFD\")";
+  rico:textualValue "George S. Mitchell collection" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%205/Record/1> a rico:Record;
+  rdfs:label " C 5 (Record Entity #1 from \"REFD\")";
+  rico:hasCreator "Archivist (ADD05) ARCHD";
+  rico:hasRecordState "Status (ADD54) STATUSD", "Web Enabled (ADD57) WEBD / WEBL";
+  rico:lastModificationDate "Date Modified (ADD21) MODDATE" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%205/RecordSet/1> a rico:RecordSet;
+  rdfs:label " C 5 (RecordSet Entity #1 from \"REFD\")";
+  rico:accruals "Accruals (ADD02) ACCRUAL";
+  rico:conditionsOfAccess "Access Restrictions (ADD01) RESTRTX / REST";
+  rico:conditionsOfUse "Terms Governing Use (ADD55) TGU";
+  rico:creationDate "Dates of Creation (ADD19) DATECR";
+  rico:date "Dates of Accumulation (ADD18) DATEACM";
+  rico:generalDescription "Archivist's Comments (ADD06) or Hidden Notes (ADD29) CMTD or HIDDENNOTES",
+    "Associated Material (ADD08) ASSMAT", "Availability of Other Formats (ADD09) AVAIL",
+    "Finding Aid Note (ADD24) FINDAID", "Notes (ADD41) NOTES", "Related Material (ADD49) RELMAT";
+  rico:hasContentOfType "Form (ADD26) GMD";
+  rico:hasCreator <https://data.archives.gov.on.ca/RiC-O_1-0-1/Powley%2C%20Gordon%20W./Agent/1>,
+    "Higher Office (A or B) OR Lower Office (C) (ADD42) OFFICEAB or OFFICEC";
+  rico:hasOrHadIdentifier "Former Codes (ADD27) FCODES", "Reference Code (ADD48) REFD";
+  rico:hasOrHadInstantiation "<https://data.archives.gov.on.ca/Title (ADD56) [+ -i1] TITLE>";
+  rico:hasOrHadSubject "Names as Subjects (ADD40) INDEXSUB";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%205/Title/1>;
+  rico:hasRecordSetType "Level (ADD36) LEVELDES";
+  rico:history "Administrative History (ADD03) ADMBIO", "Custodial History (ADD17) CUSTOD",
+    "Immediate Source of Acquisition (ADD33) ISA";
+  rico:isAssociatedWithPlace "Geographic (ADD28) INDEXGEO";
+  rico:isDirectlyIncludedIn "Title (ADD56) TITLE";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%205/Record/1>,
+    "Finding Aid Link (ADD23) FINDAIDLINK";
+  rico:scopeAndContent "Scope and Content (ADD51) SCOPE";
+  rico:thingIsSourceOfRelation "Office of Origin Relation" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/%20C%205/Title/1> a rico:Title;
+  rdfs:label " C 5 (Title Entity #1 from \"REFD\")";
+  rico:textualValue "Gordon W. Powley fonds" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Bartle%20Brothers%20%28firm%29/Agent/1>
+  a rico:Agent;
+  rdfs:label "Bartle Brothers (firm) (Agent Entity #1 from \"INDEXPROV\")" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Burrowes%2C%20Thomas%2C%201796-1866/Agent/1>
+  a rico:Agent;
+  rdfs:label "Burrowes, Thomas, 1796-1866 (Agent Entity #1 from \"INDEXPROV\")" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Milne%2C%20Gilbert%20A.%2C%201914-1991/Agent/1>
+  a rico:Agent;
+  rdfs:label "Milne, Gilbert A., 1914-1991 (Agent Entity #1 from \"INDEXPROV\")" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Mitchell%2C%20George%20S./Agent/1> a
+    rico:Agent;
+  rdfs:label "Mitchell, George S. (Agent Entity #1 from \"INDEXPROV\")" .
+
+<https://data.archives.gov.on.ca/RiC-O_1-0-1/Powley%2C%20Gordon%20W./Agent/1> a rico:Agent;
+  rdfs:label "Powley, Gordon W. (Agent Entity #1 from \"INDEXPROV\")" .

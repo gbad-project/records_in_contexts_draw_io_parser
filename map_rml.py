@@ -9,14 +9,22 @@ import subprocess
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS, OWL, DCTERMS, NamespaceManager
 from pprint import pprint
+import argparse
+import shutil
 
-def map_rml():
+def map_rml(schema_code):
     """
     Returns a tuple of (rml, rmlmapper, ttl) paths.
     """
 
     # Define directories
-    rml_dir = "gbad/schema/authority"
+    if schema_code == 'add':
+        rml_dir = "gbad/schema/description-listings"
+    elif schema_code == 'auth':
+        rml_dir = "gbad/schema/authority"
+    else:
+        raise Exception(f"Fatal error: Schema code not supplied.")
+    
     ttl_root = "gbad/mapping/target"
     rmlmapper_dir = "."
 
@@ -35,7 +43,17 @@ def map_rml():
         os.makedirs(ttl_dir, exist_ok=True)
         
         # Define the output file
-        ttl = os.path.join(ttl_dir, "mapped.ttl")
+        mapped_filename = "mapped.ttl"
+        ttl = os.path.join(ttl_dir, mapped_filename)
+
+        if os.path.exists(ttl):
+            mapped_backup_filename = "mapped.ttl.backup"
+            ttl_backup = os.path.join(ttl_dir, mapped_backup_filename)
+            try:
+                os.rename(ttl, ttl_backup)
+                print(f"File '{mapped_filename}' already exists - renamed to '{mapped_backup_filename}'")
+            except PermissionError:
+                print(f"Aborted: File '{mapped_filename}' already exists and cannot be renamed for backup due to a permission error.")
 
         return_tuple = (rml, rmlmapper, ttl)
         print("Initiated mapping params:")
@@ -45,7 +63,27 @@ def map_rml():
         java_command = ["java", "-jar", rmlmapper, "-s", "turtle", "-m", rml, "-o", ttl]
         try:
             subprocess.run(java_command, check=True)
+
+            if os.path.exists(ttl):
+                file_size_bytes = os.path.getsize(ttl)
+                file_size_mb = file_size_bytes / (1024 * 1024)
+
+                if file_size_mb > 10:
+                    print(f"Converted file is larger than 10 MB ({file_size_mb:.2f} MB) - trying to rename to LARGE...")
+                    try:
+                        mapped_large_filename = "mapped_LARGE.ttl"
+                        os.rename(ttl, mapped_large_filename)
+                        print(f"Successfully renamed to '{mapped_large_filename}'")
+                        # Update returned params
+                        ttl = os.path.join(ttl_dir, mapped_large_filename)
+                        return_tuple = (rml, rmlmapper, ttl)
+                    except PermissionError:
+                        print(f"Aborted: Could not rename due to a permission error.")
+                else:
+                    pass
+            
             print(f"Successfully mapped '{rml}' to '{ttl}'\n")
+        
         except Exception as e:
             print(f"Failed to run mapper jar: '{e}'")
     else:
@@ -93,5 +131,10 @@ def postprocess(graph_path):
     return g
 
 if __name__ == '__main__':
-    rml, rmlmapper, ttl = map_rml()
+    parser = argparse.ArgumentParser(description="Map schema of choice")
+    parser.add_argument("schema", help="Choose one: add or auth.")
+
+    args = parser.parse_args()
+
+    rml, rmlmapper, ttl = map_rml(str(args.schema).lower())
     graph = postprocess(ttl)

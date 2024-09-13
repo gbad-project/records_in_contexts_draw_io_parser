@@ -20,12 +20,6 @@
                                                                   rdfs:label "Archivist (ADD05) ARCHD" .
 
 
-###  https://data.archives.gov.on.ca/Creator%20%28ADD15%29%20CREATOR
-<https://data.archives.gov.on.ca/Creator%20%28ADD15%29%20CREATOR> rdf:type owl:NamedIndividual ,
-                                                                           rico:Agent ;
-                                                                  rdfs:label "Creator (ADD15) CREATOR" .
-
-
 ###  https://data.archives.gov.on.ca/Current%20Reference%20Code
 <https://data.archives.gov.on.ca/Current%20Reference%20Code> rdf:type owl:NamedIndividual ,
                                                                       rico:IdentifierType ;
@@ -109,12 +103,6 @@
                                                                   rdfs:label "Office of Origin Relation" .
 
 
-###  https://data.archives.gov.on.ca/Provenance%20%28ADD47%29%20INDEXPROV
-<https://data.archives.gov.on.ca/Provenance%20%28ADD47%29%20INDEXPROV> rdf:type owl:NamedIndividual ,
-                                                                                rico:Agent ;
-                                                                       rdfs:label "Provenance (ADD47) INDEXPROV" .
-
-
 ###  https://data.archives.gov.on.ca/Reference%20Code%20%28ADD48%29%20REFD
 <https://data.archives.gov.on.ca/Reference%20Code%20%28ADD48%29%20REFD> rdf:type owl:NamedIndividual ,
                                                                                  rico:Identifier ;
@@ -157,6 +145,12 @@
                                                                                                                                                        rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Description-Listings/Archival Description\"" .
 
 
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BINDEXPROV%7D%2FAgent%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BINDEXPROV%7D%2FAgent%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                           rico:Agent ;
+                                                                                                  rdfs:label "rr:template \"RiC-O_1-0-1/{INDEXPROV}/Agent/1\"" .
+
+
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFD%7D%2FRecord%2F1%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFD%7D%2FRecord%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                        rico:Record ;
@@ -172,9 +166,8 @@
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFD%7D%2FRecordSet%2F1> rdf:type owl:NamedIndividual ,
                                                                                                        rico:RecordSet ;
                                                                                               rico:hasContentOfType <https://data.archives.gov.on.ca/Form%20%28ADD26%29%20GMD> ;
-                                                                                              rico:hasCreator <https://data.archives.gov.on.ca/Creator%20%28ADD15%29%20CREATOR> ,
-                                                                                                              <https://data.archives.gov.on.ca/Higher%20Office%20%28A%20or%20B%29%20OR%20Lower%20Office%20%28C%29%20%28ADD42%29%20OFFICEAB%20or%20OFFICEC> ,
-                                                                                                              <https://data.archives.gov.on.ca/Provenance%20%28ADD47%29%20INDEXPROV> ;
+                                                                                              rico:hasCreator <https://data.archives.gov.on.ca/Higher%20Office%20%28A%20or%20B%29%20OR%20Lower%20Office%20%28C%29%20%28ADD42%29%20OFFICEAB%20or%20OFFICEC> ,
+                                                                                                              <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BINDEXPROV%7D%2FAgent%2F1%22> ;
                                                                                               rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Former%20Codes%20%28ADD27%29%20FCODES> ,
                                                                                                                       <https://data.archives.gov.on.ca/Reference%20Code%20%28ADD48%29%20REFD> ;
                                                                                               rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/Title%20%28ADD56%29%20%5B+%20-i1%5D%20TITLE> ;
