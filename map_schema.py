@@ -115,18 +115,18 @@ def __init__():
 
     # Choose ontology to map
     base_uri = base_data_uri
-    #graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl'
-    graph_path = 'gbad/schema/description-listings/demo_general_add_descriptions_and_listings_to_ric-o_model_2024-08-30_pz.ttl'
-    #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
+    graph_path = 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.ttl'
+    #graph_path = 'gbad/schema/description-listings/demo_general_add_descriptions_and_listings_to_ric-o_model_2024-08-30_pz.ttl'
+    suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
     rml_path = graph_path[:-3]+ "rml"
 
     # Authority: Choose source CSV for mapping
     #source_path = 'gbad/mapping/source/AUTHORITY.csv'
-    #source_path = 'gbad/mapping/source/authority_head_6.csv'
+    source_path = 'gbad/mapping/source/authority_head_6.csv'
     #source_path = 'gbad/mapping/source/authority_head_101.csv'
 
     # ADD: Choose source CSV for mapping
-    source_path = 'gbad/mapping/source/description_head_6.csv'
+    #source_path = 'gbad/mapping/source/description_head_6.csv'
     #source_path = 'gbad/mapping/source/description_head_101.csv'
 
     # Create the input RDF graph
@@ -135,7 +135,7 @@ def __init__():
             format="turtle")  # Adjust the format as needed
 
     # Add additional triples
-    #g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
+    g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
 
     # Define custom prefixes
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'

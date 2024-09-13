@@ -6,3 +6,4 @@ robot.sh
 # Large files
 AUTHORITY.csv
 mapped_LARGE.ttl
+__pycache__
