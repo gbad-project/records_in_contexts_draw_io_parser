@@ -5,5 +5,7 @@ catalog-v001.xml
 robot.sh
 # Large files
 AUTHORITY.csv
+DESCRIPTION.csv
+LISTINGS_*.csv
 mapped_LARGE.ttl
 __pycache__
