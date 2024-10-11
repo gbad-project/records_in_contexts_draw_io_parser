@@ -15,6 +15,7 @@ add_ref_add_label = 'REF_ADD'
 add_ref_file_label = 'REF_FILE'
 add_title_label = 'TITLE'
 private_mnemonics = ['ARCHAU', 'CMTAU']
+rico_version_mask = r'{RICO_VERSION}'
 
 triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
@@ -68,12 +69,43 @@ def __init__(schema_code, source_filename=None):
     add_term = 'Description-Listings'
     maps_term = 'Mapping'
     kb_term = 'KB'
-    gbad_term = 'RiC-O_1-0-1'
+
+    # Any supported schema namespaces
     schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/.*'
     schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
 
+    # Any mnemonic-based URIs in GBAD URI syntax
     mnemonic_pattern = r"\{([A-Z:]+)\}"
     mnemonic_regex = re.compile(rf"({mnemonic_pattern})/([a-zA-Z]+)(/\d+)?")
+
+    # This intends to support any RiC-O versions, past and future
+    semver_pattern = '(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
+    def gbadify_rico_version(semver_str): return 'RiC-O_' + semver_str.replace('.', '-')
+    def gbadify_rico_pattern(semver_pattern): return 'RiC-O_' + semver_pattern.replace(r'\.', '-')
+    gbad_term_pattern = gbadify_rico_pattern(semver_pattern)
+
+    # Logic for getting the current version
+    rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
+    def get_rico_version():
+        # Load the ontology
+        rico_graph = Graph()
+        rico_graph.parse(rico_uri, format="owl")  # Replace with your file path
+        query = f"""
+        SELECT ?subject ?object
+        WHERE {{
+        ?subject {OWL.versionIRI} ?object.
+        }}
+        LIMIT 1
+        """
+        result = rico_graph.query(query)
+        if result:
+            rico_version_iri = result[0].object
+            match = re.match(f'/({semver_pattern})$', rico_version_iri)
+            return match.group(1)
+        else:
+            return None
+    gbad_term = gbadify_rico_version(get_rico_version())
+
     def prettify_rdfs_label(literal_str):
         # Remove base data prefix
         if literal_str.startswith(base_uri_prefix):
@@ -98,9 +130,10 @@ def __init__(schema_code, source_filename=None):
                 literal_str = literal_str + f' from "{mnemonic}"'
             literal_str = literal_str + ')'
 
-        # GBAD entities
-        if literal_str.lower().startswith(gbad_term.lower() + '/'):
-            literal_str = str(literal_str[len(gbad_term)+1:])
+        # GBAD entities 
+        gbad_term_match = re.match(f"^{gbad_term_pattern}/", literal_str, flags=re.IGNORECASE)
+        if gbad_term_match:
+            literal_str = str(literal_str[len(gbad_term_match.group(0)):])
             match = mnemonic_regex.match(literal_str)
             if match:
                 mnemonic_group = match.group(1) # in curly brackets
@@ -158,7 +191,6 @@ def __init__(schema_code, source_filename=None):
         g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
 
     # Define custom prefixes
-    rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
     rico = ('rico', Namespace(rico_uri))
     ns = ('data', Namespace(URIRef(f"{base_uri}/")))
 
@@ -333,6 +365,10 @@ def __init__(schema_code, source_filename=None):
         if map_object:
             if map_predicate != rr[1].template:
                 return None
+            # Consider replacing this with more robust, findall logic
+            # later on to allow for true multiple masks
+            if rico_version_mask in map_object: # replace all matches
+                map_object = map_object.replace(rico_version_mask, gbad_term)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
