@@ -107,11 +107,12 @@ def __init__(schema_code, source_filename=None):
                 mnemonic  = match.group(2)
                 rico_class = match.group(3)
                 instance_number = match.group(4)
-                literal_str = f'{mnemonic_group} ({rico_class} Entity'
-                if instance_number:
-                    instance_number = instance_number[1:] # leading slash removed
-                    literal_str = literal_str + f' #{instance_number}'
-                literal_str = literal_str + f' from "{mnemonic}")'
+                #literal_str = f'{mnemonic_group} ({rico_class} Entity'
+                #if instance_number:
+                #    instance_number = instance_number[1:] # leading slash removed
+                #    literal_str = literal_str + f' #{instance_number}'
+                #literal_str = literal_str + f' from "{mnemonic}")'
+                literal_str = f'{mnemonic_group}'
         
         return literal_str
 
