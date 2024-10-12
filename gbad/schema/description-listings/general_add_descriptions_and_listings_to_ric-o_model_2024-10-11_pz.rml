@@ -1,0 +1,296 @@
+@base <https://data.archives.gov.on.ca/> .
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__RecordSet_1> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Record_2_> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD__> ] ;
+            rr:predicate rico:hasContentOfType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/RecordSet/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Identifier_1_> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "NOTES" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "AVAIL" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Record_1_> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Instantiation_1_> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rml:reference "CMTD" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "TGU" ] ;
+            rr:predicate rico:conditionsOfUse ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___INDEXSUB__Thing_1_> ] ;
+            rr:predicate rico:hasOrHadSubject ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___INDEXGEO__Thing_1_> ] ;
+            rr:predicate rico:isAssociatedWithPlace ],
+        [ rr:objectMap [ rml:reference "FINDAID" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "CUSTOD" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "RESTRTX " ] ;
+            rr:predicate rico:conditionsOfAccess ],
+        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "DATEACM" ] ;
+            rr:predicate rico:date ],
+        [ rr:objectMap [ rml:reference "DATECR" ] ;
+            rr:predicate rico:creationDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Identifier_2_> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "ISA" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rml:reference "SCOPE" ] ;
+            rr:predicate rico:scopeAndContent ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REF_ADD__RecordSet_1> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rml:reference "ADMBIO" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Title_1_> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_RecordSetType__LEVELDES__> ] ;
+            rr:predicate rico:hasRecordSetType ],
+        [ rr:objectMap [ rml:reference "RELMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___INDEXPROV__Thing_1_> ] ;
+            rr:predicate rico:hasCreator ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD_HIGHER__RecordSet_1> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
+            rr:predicate rico:accruals ],
+        [ rr:objectMap [ rml:reference "REST" ] ;
+            rr:predicate rico:conditionsOfAccess ] ;
+    rr:subjectMap [ rr:class rico:RecordSet ;
+            rr:template "RiC-O_1-0-2/{REFD}/RecordSet/1" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_DocumentaryFormType_Archival_Description_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "DocumentaryFormType/Archival Description (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:DocumentaryFormType ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Archival Description" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_DocumentaryFormType_Finding_Aid_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "DocumentaryFormType/Finding Aid (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:DocumentaryFormType ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Finding Aid" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_IdentifierType_Current_Reference_Code_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "IdentifierType/Current Reference Code (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Current Reference Code" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_IdentifierType_Former_Code_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "IdentifierType/Former Code (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Former Code" ] .
+
+<Schema/Mapping#rr_template__KB_Date__MODDATE__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "MODDATE" ] ;
+            rr:predicate rico:normalizedDateValue ],
+        [ rr:objectMap [ rr:template "Date/{MODDATE} (Knowledge Base Entity from \"MODDATE\")" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{MODDATE}" ] .
+
+<Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "ContentType/{GMD} (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:ContentType ;
+            rr:template "Schema/Description-Listings/ContentType/{GMD}" ] .
+
+<Schema/Mapping#rr_template__Schema_Description-Listings_RecordSetType__LEVELDES__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RecordSetType/{LEVELDES} (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordSetType ;
+            rr:template "Schema/Description-Listings/RecordSetType/{LEVELDES}" ] .
+
+<Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Status__STATUSD__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RecordState/Status/{STATUSD} (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "Schema/Description-Listings/RecordState/Status/{STATUSD}" ] .
+
+<Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Web_Enabled__WEBD__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RecordState/Web%20Enabled/{WEBD} (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "Schema/Description-Listings/RecordState/Web Enabled/{WEBD}" ] .
+
+<Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Web_Enabled__WEBL__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RecordState/Web%20Enabled/{WEBL} (Description-Listings Schema Entity)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "Schema/Description-Listings/RecordState/Web Enabled/{WEBL}" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___INDEXGEO__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{INDEXGEO}/Thing/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Place ;
+            rr:template "RiC-O_1-0-2/{INDEXGEO}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___INDEXPROV__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{INDEXPROV}/Thing/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "RiC-O_1-0-2/{INDEXPROV}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___INDEXSUB__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{INDEXSUB}/Thing/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Agent ;
+            rr:template "RiC-O_1-0-2/{INDEXSUB}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD_HIGHER__RecordSet_1> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD_HIGHER}/RecordSet/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordSet ;
+            rr:template "RiC-O_1-0-2/{REFD_HIGHER}/RecordSet/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Identifier_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_IdentifierType_Current_Reference_Code_> ] ;
+            rr:predicate rico:hasIdentifierType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Identifier/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Identifier ;
+            rr:template "RiC-O_1-0-2/{REFD}/Identifier/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Identifier_2_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_IdentifierType_Former_Code_> ] ;
+            rr:predicate rico:hasIdentifierType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Identifier/2" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "FCODES" ] ;
+            rr:predicate rico:textualValue ] ;
+    rr:subjectMap [ rr:class rico:Identifier ;
+            rr:template "RiC-O_1-0-2/{REFD}/Identifier/2" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Instantiation_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFD__Title_1_> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "HOWTO" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Instantiation/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "PHDESC" ] ;
+            rr:predicate rico:instantiationExtent ],
+        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
+            rr:predicate rico:physicalCharacteristicsNote ] ;
+    rr:subjectMap [ rr:class rico:Instantiation ;
+            rr:template "RiC-O_1-0-2/{REFD}/Instantiation/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Record_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_DocumentaryFormType_Archival_Description_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Web_Enabled__WEBD__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
+            rr:predicate rico:wasLastUpdatedAtDate ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Record/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Web_Enabled__WEBL__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_RecordState_Status__STATUSD__> ] ;
+            rr:predicate rico:hasRecordState ] ;
+    rr:subjectMap [ rr:class rico:Record ;
+            rr:template "RiC-O_1-0-2/{REFD}/Record/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Record_2_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_DocumentaryFormType_Finding_Aid_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Record/2" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Record ;
+            rr:template "RiC-O_1-0-2/{REFD}/Record/2" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REF_ADD__RecordSet_1> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REF_ADD}/RecordSet/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordSet ;
+            rr:template "RiC-O_1-0-2/{REF_ADD}/RecordSet/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFD__Title_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/description_head_6.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{REFD}/Title/1" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "TITLE" ] ;
+            rr:predicate rico:textualValue ] ;
+    rr:subjectMap [ rr:class rico:Title ;
+            rr:template "RiC-O_1-0-2/{REFD}/Title/1" ] .
+

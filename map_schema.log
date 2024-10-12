@@ -1,20 +1,6 @@
-Script started on 2024-08-30 12:24:38-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="18"]
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_10.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_11.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_12.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_13.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_14.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_2.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_3.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_4.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_5.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_6.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_7.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_8.ttl'
-Adding a supplemental 'turtle' file: 'gbad/schema/authority_AgentControlRelation/general_authority_agentcontrolrelation_2024-08-29_pz_9.ttl'
+Script started on 2024-10-11 20:16:45-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="16"]
 
 
-Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2024-08-29_pz.rml'
+Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz.rml'
 
-Script done on 2024-08-30 12:24:40-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-10-11 20:16:52-04:00 [COMMAND_EXIT_CODE="0"]

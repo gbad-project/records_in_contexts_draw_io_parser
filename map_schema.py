@@ -7,6 +7,7 @@ from pprint import pprint
 import os
 import argparse
 import glob
+import requests
 
 # Set labels for reference fields
 auth_heading_label = 'HEADING'
@@ -75,36 +76,44 @@ def __init__(schema_code, source_filename=None):
     schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
 
     # Any mnemonic-based URIs in GBAD URI syntax
-    mnemonic_pattern = r"\{([A-Z:]+)\}"
+    mnemonic_pattern = r"\{([A-Z:_]+)\}"
     mnemonic_regex = re.compile(rf"({mnemonic_pattern})/([a-zA-Z]+)(/\d+)?")
 
     # This intends to support any RiC-O versions, past and future
-    semver_pattern = '(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
+    semver_pattern = r'(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
     def gbadify_rico_version(semver_str): return 'RiC-O_' + semver_str.replace('.', '-')
-    def gbadify_rico_pattern(semver_pattern): return 'RiC-O_' + semver_pattern.replace(r'\.', '-')
-    gbad_term_pattern = gbadify_rico_pattern(semver_pattern)
+    # The commented below are useful to recognize any RiC-O version mask in GBAD URIs
+    #def gbadify_rico_pattern(semver_pattern): return 'RiC-O_' + semver_pattern.replace(r'\.', '-')
+    #gbad_term_pattern = gbadify_rico_pattern(semver_pattern)
 
     # Logic for getting the current version
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
     def get_rico_version():
-        # Load the ontology
-        rico_graph = Graph()
-        rico_graph.parse(rico_uri, format="owl")  # Replace with your file path
-        query = f"""
-        SELECT ?subject ?object
-        WHERE {{
-        ?subject {OWL.versionIRI} ?object.
-        }}
-        LIMIT 1
-        """
-        result = rico_graph.query(query)
-        if result:
-            rico_version_iri = result[0].object
-            match = re.match(f'/({semver_pattern})$', rico_version_iri)
-            return match.group(1)
-        else:
-            return None
-    gbad_term = gbadify_rico_version(get_rico_version())
+        # Try to request the OWL file using content negotiation
+        headers = {'Accept': 'application/xml'}
+        response = requests.get(rico_uri, headers=headers)
+        # Check if we received RDF/XML content
+        try:
+            rico_graph = Graph()
+            rico_graph.parse(data=response.text, format="xml")
+            query = f"""
+            SELECT ?versionIRI WHERE {{
+                ?s <{OWL.versionIRI}> ?versionIRI .
+            }}
+            """
+            for row in rico_graph.query(query):
+                pattern = re.compile(rf'\/({semver_pattern})$')
+                match = pattern.search(row.versionIRI)
+                return match.group(1)
+        except:
+            pass
+
+        return None
+    try:
+        gbad_term = gbadify_rico_version(get_rico_version())
+    except:
+        exit(f"Exiting. Fatal error: Could not resolve RiC-O version from '{rico_uri}'")
+    def substitute_rico_version_mask(s): return str(s).replace(rico_version_mask, gbad_term) if str(s).startswith(rico_version_mask) else str(s)
 
     def prettify_rdfs_label(literal_str):
         # Remove base data prefix
@@ -130,10 +139,9 @@ def __init__(schema_code, source_filename=None):
                 literal_str = literal_str + f' from "{mnemonic}"'
             literal_str = literal_str + ')'
 
-        # GBAD entities 
-        gbad_term_match = re.match(f"^{gbad_term_pattern}/", literal_str, flags=re.IGNORECASE)
-        if gbad_term_match:
-            literal_str = str(literal_str[len(gbad_term_match.group(0)):])
+        # GBAD entities
+        if literal_str.startswith(rico_version_mask):
+            literal_str = str(literal_str[len(rico_version_mask)+1:])
             match = mnemonic_regex.match(literal_str)
             if match:
                 mnemonic_group = match.group(1) # in curly brackets
@@ -337,6 +345,7 @@ def __init__(schema_code, source_filename=None):
             if isinstance(cleaned_uri, URIRef): # check if true URI or rr:template
                 map_object = URIRef(encoded_uri)
             else:
+                cleaned_uri = substitute_rico_version_mask(cleaned_uri)
                 map_object = Literal(cleaned_uri)
         # Constant URI
         elif uriref_str.startswith(norm(rr[1].constant)):
@@ -367,8 +376,7 @@ def __init__(schema_code, source_filename=None):
                 return None
             # Consider replacing this with more robust, findall logic
             # later on to allow for true multiple masks
-            if rico_version_mask in map_object: # replace all matches
-                map_object = map_object.replace(rico_version_mask, gbad_term)
+            map_object = substitute_rico_version_mask(map_object)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
