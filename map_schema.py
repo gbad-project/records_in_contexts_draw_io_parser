@@ -136,7 +136,7 @@ def __init__(schema_code, source_filename=None):
         # KB entities
         if literal_str.lower().startswith(kb_term.lower() + '/'):
             literal_str = str(literal_str[len(kb_term)+1:])
-            literal_str = literal_str + ' (Knowledge Base Entity'
+            #literal_str = literal_str + ' (Knowledge Base Entity'
             match = re.search(mnemonic_pattern, literal_str)
             if match:
                 mnemonic = match.group(1)
