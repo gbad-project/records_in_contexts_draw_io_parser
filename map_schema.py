@@ -9,6 +9,12 @@ import argparse
 import glob
 import requests
 
+# Prohibit trimming pd prints in shell
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', 0)
+pd.set_option('display.max_colwidth', None)
+
 # Set labels for reference fields
 auth_heading_label = 'HEADING'
 add_refd_label = 'REFD'
@@ -22,6 +28,7 @@ triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
 map_predicate_label = 'map_predicate'
 map_object_label = 'map_object'
+has_increment_label = 'has_increment_request'
 
 # combine_turtle_files generated with Claude 3.5 Sonnet
 # on 2024-08-29, with modifications
@@ -81,6 +88,20 @@ def __init__(schema_code, source_filename=None):
     # Pattern to capture within-mnemonic iterators
     mnemonic_i_pattern = r"(\d+)\.\.(\d+)"
     mnemonic_i_regex = re.compile(mnemonic_i_pattern)
+
+    def get_mnemonic_i_from_to(mnemonic):
+        mnemonic_i_from, mnemonic_i_to = 1, 1
+        if mnemonic:
+            mnemonic_i_matches = mnemonic_i_regex.findall(mnemonic)
+            mnemonic_i_match_count = len(mnemonic_i_matches)
+            if mnemonic_i_match_count == 0:
+                pass
+            elif mnemonic_i_match_count > 1:
+                raise Exception(f"Error while handling '{mnemonic}' mnemonic: ",
+                                f"{mnemonic_i_match_count} increment requests detected while max one allowed.")
+            else:
+                mnemonic_i_from, mnemonic_i_to = int(mnemonic_i_matches[0][0]), int(mnemonic_i_matches[0][1])
+        return mnemonic_i_from, mnemonic_i_to
 
     # This intends to support any RiC-O versions, past and future
     semver_pattern = r'(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
@@ -271,7 +292,7 @@ def __init__(schema_code, source_filename=None):
     subjects_df = parsed_df[
         (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x, g.namespace_manager))) == 'rdf:type') &
         (parsed_df['object'].apply(lambda x: str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:")))
-    ].loc[:,['subject','object']]
+    ].loc[:,['subject','object']] # So to be sure, object is the rdf:type URI here
 
     def extract_uriref_str(uriref):
         norm_uri = normalize_uri(uriref, g.namespace_manager)
@@ -396,13 +417,38 @@ def __init__(schema_code, source_filename=None):
     rico_name_label = 'RiC-O Name'.replace(' ','_')
     mnemonic_label = 'Authority Mnemonic'.replace(' ','_')
 
+    disaggregated_subject_rows = []
+    def collect_incremented_subject_uri(row):
+        row_id = row.name
+        mnemonic = row[mnemonic_label]
+        subject_uri = row['subject']
+        mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
+        for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
+            new_row = row.copy()
+            new_row['subject'] = URIRef(mnemonic_i_regex.sub(str(mnemonic_i), str(subject_uri)))
+            disaggregated_subject_rows.append(new_row)
+        row[has_increment_label] = True if mnemonic_i_to > 1 else False
+        return row
+
     # Note for next line that it is the only one that applies to series, all other to df
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
-    subjects_df[triplesmap_label] = subjects_df.apply(generate_triplesmap_name, axis=1)
-    subjects_df[rico_name_label] = subjects_df.apply(generate_rico_name, axis=1)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
     subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
+    # Now that we have mnemonics generated, let's honor any increment requests
+    subjects_df = subjects_df.apply(collect_incremented_subject_uri, axis=1)
+    for new_row_series in disaggregated_subject_rows: # Adds new rows for each disaggregated
+        subjects_df.loc[len(subjects_df), :] = new_row_series
+    subjects_df = subjects_df[subjects_df[has_increment_label] == False] # Drops aggregated rows
+    subjects_df.reindex()
+    # Let's regenerate cols above for simplicity now that rows are disaggregated
+    subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
+    subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
+    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
+    # Now that all cols have been disaggregated, let's generate remaining useful cols
+    subjects_df[triplesmap_label] = subjects_df.apply(generate_triplesmap_name, axis=1)
+    subjects_df[rico_name_label] = subjects_df.apply(generate_rico_name, axis=1)
+    # Let's drop the object (i.e., rdf:type) because it's now in rico_name_label
     subjects_df.drop(['object', uriref_str_label], axis=1, inplace=True)
 
     # Convert preprocessed DataFrame to HTML
@@ -485,20 +531,6 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*ql)
     mapping.namespace_manager.bind(*csvw)
     mapping.namespace_manager.bind(*maps)
-
-    def get_mnemonic_i_from_to(mnemonic):
-        mnemonic_i_from, mnemonic_i_to = 1, 1
-        if mnemonic:
-            mnemonic_i_matches = mnemonic_i_regex.findall(mnemonic)
-            mnemonic_i_match_count = len(mnemonic_i_matches)
-            if mnemonic_i_match_count == 0:
-                pass
-            elif mnemonic_i_match_count > 1:
-                raise Exception(f"Error while handling '{mnemonic}' mnemonic: ",
-                                f"{mnemonic_i_match_count} increment requests detected while max one allowed.")
-            else:
-                mnemonic_i_from, mnemonic_i_to = int(mnemonic_i_matches[0][0]), int(mnemonic_i_matches[0][1])
-        return mnemonic_i_from, mnemonic_i_to
     
     # Construct RML graph
     for i, subject_row in subjects_df.iterrows():
