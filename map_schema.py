@@ -128,9 +128,10 @@ def __init__(schema_code, source_filename=None):
             literal_str = str(literal_str[len(schema_term)+1:])
             match = schema_regex.search(literal_str)
             if match:
-                schema_group = match.group(1)
-                literal_str = str(literal_str[len(schema_group)+1:])
-                literal_str = literal_str + f' ({schema_group} Schema Entity)'
+                literal_str = match.group(0)
+                #schema_group = match.group(1)
+                #literal_str = str(literal_str[len(schema_group)+1:])
+                #literal_str = literal_str + f' ({schema_group} Schema Entity)'
 
         # KB entities
         if literal_str.lower().startswith(kb_term.lower() + '/'):
@@ -139,8 +140,9 @@ def __init__(schema_code, source_filename=None):
             match = re.search(mnemonic_pattern, literal_str)
             if match:
                 mnemonic = match.group(1)
-                literal_str = literal_str + f' from "{mnemonic}"'
-            literal_str = literal_str + ')'
+                literal_str = f'{mnemonic}'
+                #literal_str = literal_str + f' from "{mnemonic}"'
+            #literal_str = literal_str + ')'
 
         # GBAD entities
         if literal_str.startswith(rico_version_mask):
