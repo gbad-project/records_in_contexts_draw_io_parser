@@ -76,8 +76,11 @@ def __init__(schema_code, source_filename=None):
     schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
 
     # Any mnemonic-based URIs in GBAD URI syntax
-    mnemonic_pattern = r"\{([A-Z:_]+)\}"
+    mnemonic_pattern = r"\{([A-Z:_\d\.]+)\}"
     mnemonic_regex = re.compile(rf"({mnemonic_pattern})/([a-zA-Z]+)(/\d+)?")
+    # Pattern to capture within-mnemonic iterators
+    mnemonic_i_pattern = r"(\d+)\.\.(\d+)"
+    mnemonic_i_regex = re.compile(mnemonic_i_pattern)
 
     # This intends to support any RiC-O versions, past and future
     semver_pattern = r'(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
@@ -172,7 +175,7 @@ def __init__(schema_code, source_filename=None):
             source_path = 'gbad/mapping/source/description_head_6.csv'
     
     elif schema_code == 'auth':
-        suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
+        #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
         # Assume the first file found
         graph_dir = 'gbad/schema/authority/'
         graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
@@ -372,7 +375,9 @@ def __init__(schema_code, source_filename=None):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
         if map_object:
-            if map_predicate != rr[1].template:
+            if map_predicate == rml[1].reference:
+                return map_object
+            elif map_predicate != rr[1].template:
                 return None
             # Consider replacing this with more robust, findall logic
             # later on to allow for true multiple masks
@@ -478,6 +483,20 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*ql)
     mapping.namespace_manager.bind(*csvw)
     mapping.namespace_manager.bind(*maps)
+
+    def get_mnemonic_i_from_to(mnemonic):
+        mnemonic_i_from, mnemonic_i_to = 1, 1
+        if mnemonic:
+            mnemonic_i_matches = mnemonic_i_regex.findall(mnemonic)
+            mnemonic_i_match_count = len(mnemonic_i_matches)
+            if mnemonic_i_match_count == 0:
+                pass
+            elif mnemonic_i_match_count > 1:
+                raise Exception(f"Error while handling '{mnemonic}' mnemonic: ",
+                                f"{mnemonic_i_match_count} increment requests detected while max one allowed.")
+            else:
+                mnemonic_i_from, mnemonic_i_to = int(mnemonic_i_matches[0][0]), int(mnemonic_i_matches[0][1])
+        return mnemonic_i_from, mnemonic_i_to
     
     # Construct RML graph
     for i, subject_row in subjects_df.iterrows():
@@ -553,59 +572,66 @@ def __init__(schema_code, source_filename=None):
                 object_map_object = parsed_result[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
 
-                # Define a predicate-object map
-                predicate_object_map = BNode()
-                mapping.add((triples_map, rr[1].predicateObjectMap, predicate_object_map))
+                # Handle possible increment requests in object mnemonic
+                object_mnemonic_i_from, object_mnemonic_i_to = get_mnemonic_i_from_to(object_mnemonic)
+                for object_mnemonic_i in range(object_mnemonic_i_from, object_mnemonic_i_to + 1):
+                    # Define a predicate-object map
+                    predicate_object_map = BNode()
+                    mapping.add((triples_map, rr[1].predicateObjectMap, predicate_object_map))
 
-                # Add predicate to predicate-object map
-                mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate)))
+                    # Add predicate to predicate-object map
+                    mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate)))
 
-                # Define an empty object map within the predicate-object map
-                object_map = BNode()
-                mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+                    # Define an empty object map within the predicate-object map
+                    object_map = BNode()
+                    mapping.add((predicate_object_map, rr[1].objectMap, object_map))
 
-                # If not RiC-O, then nothing applies and just attach as literal
-                # In the current version of drawio parser only rdfs:label is supported
-                # and such, so this is essential to bypass these. However, I am not
-                # sure at this point how well this would work if other namespaces
-                # were fully supported by drawio parser.
-                if not is_rico: # any other namespace
-                    if norm_predicate == 'rdfs:label': # handle labels from drawio parser
-                        mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
-                        # Only using object_map_object here because object_map_predicate is irrelevant
-                        pretty_omo = prettify_rdfs_label(object_map_object)
-                        mapping.add((object_map, rr[1].template, Literal(pretty_omo)))
+                    # If not RiC-O, then nothing applies and just attach as literal
+                    # In the current version of drawio parser only rdfs:label is supported
+                    # and such, so this is essential to bypass these. However, I am not
+                    # sure at this point how well this would work if other namespaces
+                    # were fully supported by drawio parser.
+                    if not is_rico: # any other namespace
+                        if norm_predicate == 'rdfs:label': # handle labels from drawio parser
+                            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
+                            # Only using object_map_object here because object_map_predicate is irrelevant
+                            pretty_omo = prettify_rdfs_label(object_map_object)
+                            mapping.add((object_map, rr[1].template, Literal(pretty_omo)))
+                            continue
+                        
+                        mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
+                        continue
+
+                    # This concerns only constant literals, meaning nodes
+                    # in drawio graph for which no mapping logic is defined
+                    if not object_map_predicate:
+                        # So these are simply added as predicate and object, no predicate-object map
+                        if object_map_object: # sometimes it may be empty
+                            mapping.add((object_map, rr[1].constant, object_map_object)) 
                         continue
                     
-                    mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
-                    continue
-
-                # This concerns only constant literals, meaning nodes
-                # in drawio graph for which no mapping logic is defined
-                if not object_map_predicate:
-                    # So these are simply added as predicate and object, no predicate-object map
-                    if object_map_object: # sometimes it may be empty
-                        mapping.add((object_map, rr[1].constant, object_map_object)) 
-                    continue
-                
-                # Now let's finally attach the object to the object map
-                # Case when the object is supposed to reference another Subject map
-                if object in set(subjects_df['subject']):
-                    triplesmap = maps[1][subjects_df[subjects_df['subject']==object][triplesmap_label].iloc[0]]
-                    mapping.add((object_map, rr[1].parentTriplesMap, triplesmap))
-                    #join_condition = BNode()
-                    #mapping.add((object_map, rr[1].joinCondition, join_condition))
-                    #mnemonic = parsed_result[mnemonic_label]
-                    #mapping.add((join_condition, rr[1].child, Literal(mnemonic)))
-                    #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
-                else:
-                    if object_mnemonic in private_mnemonics:
-                        mapping.add((object_map, rr[1].constant, URIRef(f"censored#{object_mnemonic}")))
-                        continue
-                    object_map_predicate = parsed_result[map_predicate_label]
-                    object_map_object = parsed_result[map_object_label]
-                    if object_map_object: # just in case user forgot to set it in drawio
-                        mapping.add((object_map, object_map_predicate, object_map_object))
+                    # Now let's finally attach the object to the object map
+                    # Case when the object is supposed to reference another Subject map
+                    if object in set(subjects_df['subject']):
+                        triplesmap = maps[1][subjects_df[subjects_df['subject']==object][triplesmap_label].iloc[0]]
+                        mapping.add((object_map, rr[1].parentTriplesMap, triplesmap))
+                        #join_condition = BNode()
+                        #mapping.add((object_map, rr[1].joinCondition, join_condition))
+                        #mnemonic = parsed_result[mnemonic_label]
+                        #mapping.add((join_condition, rr[1].child, Literal(mnemonic)))
+                        #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
+                    else:
+                        object_mnemonic_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), object_mnemonic) if object_mnemonic_i_to > 1 else object_mnemonic
+                        if object_mnemonic_ith in private_mnemonics:
+                            mapping.add((object_map, rr[1].constant, URIRef(f"censored#{object_mnemonic_ith}")))
+                            continue
+                        object_map_predicate = parsed_result[map_predicate_label]
+                        object_map_object = parsed_result[map_object_label]
+                        if object_map_object: # just in case user forgot to set it in drawio
+                            # Logic to substitute increment request with an actual number for object
+                            object_map_object_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), str(object_map_object)) if object_mnemonic_i_to > 1 else str(object_map_object)
+                            object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object, URIRef) else Literal(object_map_object_ith)
+                            mapping.add((object_map, object_map_predicate, object_map_object_ith))
 
     # Serialize and print the RDF graph
     ttl = mapping.serialize(format='turtle')

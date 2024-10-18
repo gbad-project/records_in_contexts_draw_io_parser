@@ -1,0 +1,193 @@
+@prefix : <https://data.archives.gov.on.ca#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@base <https://data.archives.gov.on.ca> .
+
+<https://data.archives.gov.on.ca> rdf:type owl:Ontology ;
+                                   owl:imports <https://www.ica.org/standards/RiC/ontology> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                                       rico:DocumentaryFormType ;
+                                                                                                                                                              rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/DocumentaryFormType/Authority Record\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FIdentifierType%2FAgent%20Identifier%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FIdentifierType%2FAgent%20Identifier%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                                  rico:IdentifierType ;
+                                                                                                                                                         rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent Identifier\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                     rico:Type ;
+                                                                                                                                            rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/Type/Parallel Name\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FVariant%20Name%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FVariant%20Name%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                    rico:Type ;
+                                                                                                                                           rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/Type/Variant Name\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FCorporateBody%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FCorporateBody%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                                             rico:CorporateBody ;
+                                                                                                                    rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22> ;
+                                                                                                                    rdfs:label "rr:template \"{RICO_VERSION}/{CONTAG_1..14}/CorporateBody/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                                               rico:AgentControlRelation ;
+                                                                                                                      rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> ;
+                                                                                                                      rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> ;
+                                                                                                                      rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22> ;
+                                                                                                                      rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentControlRelation/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22> rdf:type owl:NamedIndividual ,
+                                                                                                                    rico:AgentName ;
+                                                                                                           rico:hasOrHadCategory <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FVariant%20Name%22> ;
+                                                                                                           rico:textualValue "rml:reference \"VAR_1..11\"" ;
+                                                                                                           rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentName/2\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22> rdf:type owl:NamedIndividual ,
+                                                                                                                    rico:AgentName ;
+                                                                                                           rico:hasOrHadCategory <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22> ;
+                                                                                                           rico:textualValue "rml:reference \"PAR_1..4\"" ;
+                                                                                                           rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentName/3\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FCorporateBody%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FCorporateBody%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                                          rico:CorporateBody ;
+                                                                                                                 rdfs:label "rr:template \"{RICO_VERSION}/{PRED_1..5}/CorporateBody/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FCorporateBody%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FCorporateBody%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                                         rico:CorporateBody ;
+                                                                                                                rdfs:label "rr:template  \"{RICO_VERSION}/{SUC_1..4}/CorporateBody/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                            rico:Date ;
+                                                                                                   rdfs:label "rr:template  \"KB/Date/{DATECONT_1..14_BEGINNING}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                      rico:Date ;
+                                                                                             rdfs:label "rr:template \"KB/Date/{DATECONT_1..14_END}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                    rico:Date ;
+                                                                                           rdfs:label "rr:template  \"KB/Date/{DATEEX_BEGINNING}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                              rico:Date ;
+                                                                                     rdfs:label "rr:template  \"KB/Date/{DATEEX_END}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                         rico:Rule ;
+                                                                                rdfs:label "rr:template  \"KB/Rule/{RULES}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgent%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                         rico:Agent ;
+                                                                                                rico:authorizedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FMandate%2F1%22> ;
+                                                                                                rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> ;
+                                                                                                rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> ;
+                                                                                                rico:hasOrHadAgentName <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22> ,
+                                                                                                                       <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22> ,
+                                                                                                                       <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22> ;
+                                                                                                rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FCorporateBody%2F1%22> ;
+                                                                                                rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22> ;
+                                                                                                rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FIdentifier%2F1%22> ;
+                                                                                                rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FCorporateBody%2F1%22> ;
+                                                                                                rico:isEquivalentTo <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFA%7D%2FCorporateBody%2F2%22> ;
+                                                                                                rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22> ;
+                                                                                                rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FCorporateBody%2F1%22> ;
+                                                                                                rico:generalDescription "rml:reference \"FUN\"" ;
+                                                                                                rico:history "rml:reference \"ADM\"" ;
+                                                                                                rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Agent/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FAgentName%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                             rico:AgentName ;
+                                                                                                    rico:normalizedValue "rml:reference \"NAME\"" ;
+                                                                                                    rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/AgentName/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FIdentifier%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FIdentifier%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                              rico:Identifier ;
+                                                                                                     rico:hasIdentifierType <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FIdentifierType%2FAgent%20Identifier%22> ;
+                                                                                                     rico:normalizedValue "rml:reference \"REFA\"" ;
+                                                                                                     rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Identifier/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FMandate%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FMandate%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                           rico:Mandate ;
+                                                                                                  rico:textualValue "rml:reference \"AA\"" ;
+                                                                                                  rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Mandate/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BHEADING%7D%2FRecord%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                          rico:Record ;
+                                                                                                 rico:hasDocumentaryFormType <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FDocumentaryFormType%2FAuthority%20Record%22> ;
+                                                                                                 rico:hasRecordState <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FStatus%2F%7BSTATUSA%7D%22> ,
+                                                                                                                     <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FWeb%20Ready%2F%7BWEBA%7D%22> ;
+                                                                                                 rico:isOrWasRegulatedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> ;
+                                                                                                 rico:generalDescription "rml:reference \"SOURCE\"" ;
+                                                                                                 rdfs:label "rr:template \"RiC-O_1-0-1/{HEADING}/Record/1\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFA%7D%2FCorporateBody%2F2%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22RiC-O_1-0-1%2F%7BREFA%7D%2FCorporateBody%2F2%22> rdf:type owl:NamedIndividual ,
+                                                                                                              rico:CorporateBody ;
+                                                                                                     rdfs:label "rr:template \"RiC-O_1-0-1/{REFA}/CorporateBody/2\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                            rico:CorporateBodyType ;
+                                                                                                                   rdfs:label "rr:template \"Schema/Authority/CorporateBodyType/{AUTHTP_1..2}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FStatus%2F%7BSTATUSA%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FStatus%2F%7BSTATUSA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                           rico:RecordState ;
+                                                                                                                  rdfs:label "rr:template  \"Schema/Authority/RecordState/Status/{STATUSA}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FWeb%20Ready%2F%7BWEBA%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FWeb%20Ready%2F%7BWEBA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                             rico:RecordState ;
+                                                                                                                    rdfs:label "rr:template  \"Schema/Authority/RecordState/Web%20Ready/{WEBA}\"" .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
