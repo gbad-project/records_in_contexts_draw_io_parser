@@ -78,8 +78,16 @@ def __init__(schema_code, source_filename=None):
     maps_term = 'Mapping'
     kb_term = 'KB'
 
+    def get_second_term():
+        if schema_code == 'auth':
+            return auth_term
+        elif schema_code == 'add':
+            return add_term
+        else:
+            raise Exception(f"Fatal error: Schema code not supplied or supported.")
+
     # Any supported schema namespaces
-    schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/.*'
+    schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/.*?/([^/]+)/?$'
     schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
 
     # Any mnemonic-based URIs in GBAD URI syntax
@@ -107,8 +115,9 @@ def __init__(schema_code, source_filename=None):
     semver_pattern = r'(?P<major>0|[1-9]\d*)\.(?P<minor>0|[1-9]\d*)\.(?P<patch>0|[1-9]\d*)(?:-(?P<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?P<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?'
     def gbadify_rico_version(semver_str): return 'RiC-O_' + semver_str.replace('.', '-')
     # The commented below are useful to recognize any RiC-O version mask in GBAD URIs
-    #def gbadify_rico_pattern(semver_pattern): return 'RiC-O_' + semver_pattern.replace(r'\.', '-')
-    #gbad_term_pattern = gbadify_rico_pattern(semver_pattern)
+    def gbadify_rico_pattern(semver_pattern): return 'RiC-O_' + semver_pattern.replace(r'\.', '-')
+    gbad_term_pattern = gbadify_rico_pattern(semver_pattern)
+    gbad_term_regex = re.compile(rf"^({gbad_term_pattern})/.+", re.IGNORECASE)
 
     # Logic for getting the current version
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
@@ -150,6 +159,8 @@ def __init__(schema_code, source_filename=None):
             match = schema_regex.search(literal_str)
             if match:
                 literal_str = match.group(0)
+                last_term = match.group(2)
+                literal_str = last_term
                 #schema_group = match.group(1)
                 #literal_str = str(literal_str[len(schema_group)+1:])
                 #literal_str = literal_str + f' ({schema_group} Schema Entity)'
@@ -161,13 +172,15 @@ def __init__(schema_code, source_filename=None):
             match = re.search(mnemonic_pattern, literal_str)
             if match:
                 mnemonic = match.group(1)
-                literal_str = f'{mnemonic}'
+                literal_str = f'{{{mnemonic}}}'
                 #literal_str = literal_str + f' from "{mnemonic}"'
             #literal_str = literal_str + ')'
 
         # GBAD entities
-        if literal_str.startswith(rico_version_mask):
-            literal_str = str(literal_str[len(rico_version_mask)+1:])
+        gbad_term_match = gbad_term_regex.match(literal_str)
+        if gbad_term_match:
+            matched_gbad_term = gbad_term_match.group(1)
+            literal_str = str(literal_str[len(matched_gbad_term)+1:])
             match = mnemonic_regex.match(literal_str)
             if match:
                 mnemonic_group = match.group(1) # in curly brackets
@@ -179,7 +192,7 @@ def __init__(schema_code, source_filename=None):
                 #    instance_number = instance_number[1:] # leading slash removed
                 #    literal_str = literal_str + f' #{instance_number}'
                 #literal_str = literal_str + f' from "{mnemonic}")'
-                literal_str = f'{mnemonic_group}'
+                literal_str = f'{{{mnemonic}}} ({rico_class})'
         
         return literal_str
 
@@ -211,7 +224,7 @@ def __init__(schema_code, source_filename=None):
         raise Exception(f"Fatal error: Schema code not supplied.")
 
     if source_filename:
-        source_path = f'gbad/mapping/source/{source_filename}.csv'
+        source_path = f'gbad/mapping/source/{source_filename}'
 
     rml_path = graph_path[:-3]+ "rml"
 
@@ -531,6 +544,20 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*ql)
     mapping.namespace_manager.bind(*csvw)
     mapping.namespace_manager.bind(*maps)
+
+    def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
+        # Define a predicate-object map
+        predicate_object_map = BNode()
+        mapping.add((triples_map, rr[1].predicateObjectMap, predicate_object_map))
+        # Add predicate to predicate-object map
+        mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate_uri)))
+        # Define an empty object map within the predicate-object map
+        object_map = BNode()
+        mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+        # Add object to object map
+        object = object_var if isinstance(object_var, URIRef) else Literal(object_var)
+        mapping.add((object_map, rr[1].template, object))
+        return None
     
     # Construct RML graph
     for i, subject_row in subjects_df.iterrows():
@@ -586,6 +613,11 @@ def __init__(schema_code, source_filename=None):
 
         # Add map predicate and object from df to subject map
         mapping.add((subject_map, subject_map_predicate, uri_mask))
+
+        # Record source mnemonic as a triple
+        mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
+        predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
+        add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
 
         # Deal with predicates and objects in full triples df
         # Subset triples with the subject and RiC-O class from i-loop
