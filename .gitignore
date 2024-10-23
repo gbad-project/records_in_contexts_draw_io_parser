@@ -7,5 +7,5 @@ robot.sh
 AUTHORITY.csv
 DESCRIPTION.csv
 LISTINGS_*.csv
-mapped_LARGE.ttl
+mapped_LARGE*.ttl
 __pycache__

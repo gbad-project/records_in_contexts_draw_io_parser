@@ -1,14 +1,16 @@
-Script started on 2024-10-22 22:10:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="14"]
+Script started on 2024-10-22 22:21:31-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="14"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-10-18_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl')
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-10-18_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl'
+Converted file is larger than 10 MB (41.83 MB) - trying to rename to LARGE...
+Successfully renamed to 'mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-10-18_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped_LARGE.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped_LARGE.ttl'
 
-Number of triples in the graph: 4927
+Number of triples in the graph: 384706
 Postprocessing...
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
@@ -20,11 +22,13 @@ Executed a parametrized alternative of the following query:
             }
         }
         
-400 triples were removed.
+41491 triples were removed.
 
-Number of triples in the graph: 4527
+Number of triples in the graph: 343215
 
 
-Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped_postprocessed.ttl'
 
-Script done on 2024-10-22 22:10:06-04:00 [COMMAND_EXIT_CODE="0"]
+
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped_LARGE_postprocessed.ttl'
+
+Script done on 2024-10-22 22:28:23-04:00 [COMMAND_EXIT_CODE="0"]
