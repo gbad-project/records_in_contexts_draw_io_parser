@@ -1,12 +1,30 @@
-Script started on 2024-10-11 20:16:00-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="16"]
+Script started on 2024-10-22 22:10:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="14"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
-('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz.rml',
+('gbad/schema/authority/general_authority_to_ric-o_model_2024-10-18_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz/mapped.ttl')
-20:16:05.374 [main] ERROR be.ugent.rml.cli.Main               .run(423) - Mapping for WEBL not found, expected one of [SCOPE, INDEXGEO_20, INDEXGEO_21, INDEXGEO_15, INDEXGEO_16, INDEXGEO_17, PHDESC, INDEXGEO_18, INDEXGEO_11, INDEXGEO_12, DATEDSRC_BEGINNING, INDEXGEO_13, SISN, REFD, INDEXGEO_14, REFD_HIGHER, INDEXPROV, LEVELDES, SCALE, ASSMAT, INDEXGEO_19, DATEDSRC_END, STATUSD, INDEXGEO_10, DATEACM, ACCRUAL, HOWTO, FINDAID:FINDAIDLINK:FINDAID_URL, RESTRTX, WEBD, INDEXNAME, CUSTOD, TGU, FCODES, NOTES, ADMBIO, ISA, DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA, DATESUBJ, GMD_5, DATECR, GMD_6, PHYSCO, GMD_7, GMD_8, GMD_1, GMD_2, GMD_3, GMD_4, INDEXGEO_8, INDEXGEO_9, INDEXGEO_4, INDEXGEO_5, INDEXGEO_6, INDEXGEO_7, INDEXGEO_1, INDEXGEO_2, INDEXGEO_3, AVAIL, INDEXSUB, TITLE, RELMAT, MODDATE, IIL:IIL_URL]
-java.lang.IllegalArgumentException: Mapping for WEBL not found, expected one of [SCOPE, INDEXGEO_20, INDEXGEO_21, INDEXGEO_15, INDEXGEO_16, INDEXGEO_17, PHDESC, INDEXGEO_18, INDEXGEO_11, INDEXGEO_12, DATEDSRC_BEGINNING, INDEXGEO_13, SISN, REFD, INDEXGEO_14, REFD_HIGHER, INDEXPROV, LEVELDES, SCALE, ASSMAT, INDEXGEO_19, DATEDSRC_END, STATUSD, INDEXGEO_10, DATEACM, ACCRUAL, HOWTO, FINDAID:FINDAIDLINK:FINDAID_URL, RESTRTX, WEBD, INDEXNAME, CUSTOD, TGU, FCODES, NOTES, ADMBIO, ISA, DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA, DATESUBJ, GMD_5, DATECR, GMD_6, PHYSCO, GMD_7, GMD_8, GMD_1, GMD_2, GMD_3, GMD_4, INDEXGEO_8, INDEXGEO_9, INDEXGEO_4, INDEXGEO_5, INDEXGEO_6, INDEXGEO_7, INDEXGEO_1, INDEXGEO_2, INDEXGEO_3, AVAIL, INDEXSUB, TITLE, RELMAT, MODDATE, IIL:IIL_URL]
-Failed to run mapper jar: 'Command '['java', '-jar', './rmlmapper-7.0.0-r374-all.jar', '-s', 'turtle', '-m', 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz.rml', '-o', 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz/mapped.ttl']' returned non-zero exit status 1.'
-Failed to read graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz/mapped.ttl' 
-Error: '[Errno 2] No such file or directory: '/mnt/c/Users/Anonymous/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2024-10-11_pz/mapped.ttl''
+ 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl')
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-10-18_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl'
 
-Script done on 2024-10-11 20:16:05-04:00 [COMMAND_EXIT_CODE="0"]
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped.ttl'
+
+Number of triples in the graph: 4927
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+
+        DELETE WHERE {
+            ?s a rico:AgentControlRelation .
+            FILTER NOT EXISTS {
+                ?subject rico:thingIsSourceOfRelation ?s .
+            }
+        }
+        
+400 triples were removed.
+
+Number of triples in the graph: 4527
+
+
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-18_pz/mapped_postprocessed.ttl'
+
+Script done on 2024-10-22 22:10:06-04:00 [COMMAND_EXIT_CODE="0"]
