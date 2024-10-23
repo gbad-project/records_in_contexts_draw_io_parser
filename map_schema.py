@@ -390,8 +390,8 @@ def __init__(schema_code, source_filename=None):
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
             cleaned_uri = remove(norm(map_predicate), uriref_str)
-            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=''))
-            if isinstance(cleaned_uri, URIRef): # check if true URI or constant literal
+            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=":/?&="))
+            if isinstance(encoded_uri, URIRef): # check if true URI or constant literal
                 map_object = URIRef(encoded_uri)
             else:
                 map_object = Literal(cleaned_uri)
@@ -615,9 +615,10 @@ def __init__(schema_code, source_filename=None):
         mapping.add((subject_map, subject_map_predicate, uri_mask))
 
         # Record source mnemonic as a triple
-        mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
-        predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
-        add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
+        if subject_mnemonic:
+            mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
+            predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
+            add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
 
         # Deal with predicates and objects in full triples df
         # Subset triples with the subject and RiC-O class from i-loop
@@ -696,13 +697,13 @@ def __init__(schema_code, source_filename=None):
                         if object_map_object: # just in case user forgot to set it in drawio
                             # Logic to substitute increment request with an actual number for object
                             object_map_object_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), str(object_map_object)) if object_mnemonic_i_to > 1 else str(object_map_object)
-                            object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object, URIRef) else Literal(object_map_object_ith)
+                            object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object_ith, URIRef) else Literal(object_map_object_ith)
                             mapping.add((object_map, object_map_predicate, object_map_object_ith))
 
     # Serialize and print the RDF graph
     ttl = mapping.serialize(format='turtle')
     with open(rml_path, 'w') as f:
-        f.write(mapping.serialize(format='turtle'))
+        f.write(ttl)
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
     #print(ttl)
 
