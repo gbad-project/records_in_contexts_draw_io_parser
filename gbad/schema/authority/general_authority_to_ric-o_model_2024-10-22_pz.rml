@@ -1,0 +1,991 @@
+@base <https://data.archives.gov.on.ca/> .
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_10_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_10_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_10_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_10_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_10_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_10_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_10_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_10_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_11_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_11_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_11_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_11_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_11_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_11_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_11_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_11_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_12_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_12_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_12_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_12_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_12_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_12_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_12_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_12_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_13_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_13_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_13_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_13_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_13_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_13_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_13_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_13_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_14_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_14_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_14_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_14_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_14_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_14_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_14_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_14_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_1_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_1_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_1_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_1_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_1_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_1_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_1_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_1_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_2_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_2_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_2_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_2_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_2_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_2_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_2_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_2_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_3_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_3_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_3_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_3_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_3_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_3_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_3_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_3_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_4_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_4_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_4_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_4_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_4_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_4_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_4_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_4_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_5_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_5_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_5_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_5_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_5_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_5_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_5_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_5_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_6_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_6_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_6_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_6_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_6_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_6_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_6_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_6_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_7_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_7_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_7_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_7_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_7_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_7_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_7_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_7_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_8_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_8_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_8_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_8_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_8_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_8_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATECONT_8_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_8_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_9_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_9_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_9_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_9_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_9_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_9_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATECONT_9_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATECONT_9_END}" ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_CorporateBodyType__AUTHTP_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/AUTHTP_1> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{AUTHTP_1}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:CorporateBodyType ;
+            rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_1}" ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_CorporateBodyType__AUTHTP_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/AUTHTP_2> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{AUTHTP_2}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:CorporateBodyType ;
+            rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_2}" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_10__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_10> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_10}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_11__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_11> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_11}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_12__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_12> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_12}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_13__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_13> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_13}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_14__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_14> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_14}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_1__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_1> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_1}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_2__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_2> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_2}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_3__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_3> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_3}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_4__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_4} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_4> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_4}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_5__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_5> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_5}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_6__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_6> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_6}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_7__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_7> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_7}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_8__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_8> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_8}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___CONTAG_9__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_9} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/CONTAG_9> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{CONTAG_9}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___PRED_1__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/PRED_1> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{PRED_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{PRED_1}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___PRED_2__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/PRED_2> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{PRED_2}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___PRED_3__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/PRED_3> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{PRED_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{PRED_3}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___PRED_4__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/PRED_4> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{PRED_4} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{PRED_4}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___PRED_5__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/PRED_5> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{PRED_5} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{PRED_5}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___SUC_1__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/SUC_1> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{SUC_1}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___SUC_2__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/SUC_2> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{SUC_2}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___SUC_3__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/SUC_3> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{SUC_3}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___SUC_4__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/SUC_4> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{SUC_4} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{SUC_4}/Thing/1" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_DocumentaryFormType_Authority_Record_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Authority%20Record" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:DocumentaryFormType ;
+            rr:constant <Schema/Authority/DocumentaryFormType/Authority%20Record> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_IdentifierType_Agent_Identifier_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Agent%20Identifier" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:constant <Schema/Authority/IdentifierType/Agent%20Identifier> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Parallel_Name_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Parallel%20Name" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant <Schema/Authority/Type/Parallel%20Name> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Variant_Name_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Variant%20Name" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant <Schema/Authority/Type/Variant%20Name> ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATEEX_BEGINNING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{DATEEX_BEGINNING}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATEEX_BEGINNING}" ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATEEX_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEEX_END}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/DATEEX_END> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:template "KB/Date/{DATEEX_END}" ] .
+
+<Schema/Mapping#rr_template__KB_Rule__RULES__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/RULES> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{RULES}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Rule ;
+            rr:template "KB/Rule/{RULES}" ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_RecordState_Status__STATUSA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{STATUSA}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/STATUSA> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "Schema/Authority/RecordState/Status/{STATUSA}" ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_RecordState_Web_Ready__WEBA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/WEBA> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{WEBA}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:template "Schema/Authority/RecordState/Web Ready/{WEBA}" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "NAME" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "RiC-O_1-0-2/{HEADING}/AgentName/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_2_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_2" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_5" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_10" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_7" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_11" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_8" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Variant_Name_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rml:reference "VAR_4" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_3" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_1" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_9" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_6" ] ;
+            rr:predicate rico:textualValue ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "RiC-O_1-0-2/{HEADING}/AgentName/2" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_3_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_1" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "PAR_2" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "PAR_4" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "PAR_3" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Parallel_Name_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:template "RiC-O_1-0-2/{HEADING}/AgentName/3" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__Identifier_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "REFA" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_IdentifierType_Agent_Identifier_> ] ;
+            rr:predicate rico:hasIdentifierType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Identifier)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Identifier ;
+            rr:template "RiC-O_1-0-2/{HEADING}/Identifier/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__Mandate_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{HEADING} (Mandate)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "AA" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Mandate ;
+            rr:template "RiC-O_1-0-2/{HEADING}/Mandate/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__Record_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_RecordState_Status__STATUSA__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_DocumentaryFormType_Authority_Record_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_RecordState_Web_Ready__WEBA__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{HEADING} (Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "SOURCE" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Rule__RULES__> ] ;
+            rr:predicate rico:isOrWasRegulatedBy ] ;
+    rr:subjectMap [ rr:class rico:Record ;
+            rr:template "RiC-O_1-0-2/{HEADING}/Record/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_6}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_7}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_3_> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_4}/Thing/1" ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_5}/Thing/1" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_3}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_5}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_3}/Thing/1" ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_2}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_1}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_4}/Thing/1" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:template "{HEADING} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "FUN" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_10}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_9}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_1}/Thing/1" ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__Identifier_1_> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_1}/Thing/1" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__Mandate_1_> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_1}" ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_14}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_2_> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentName_1_> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___REFA__Thing_1_> ] ;
+            rr:predicate rico:isEquivalentTo ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_2}/Thing/1" ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__Record_1_> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_13}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_3}/Thing/1" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_2}" ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_2}/Thing/1" ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_4}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_8}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_11}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_12}/Thing/1" ] ;
+            rr:predicate rico:hasOrHadController ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{HEADING}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___REFA__Thing_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFA} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/REFA> ] ;
+            rr:predicate rico:hasOrHadIdentifier ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:template "RiC-O_1-0-2/{REFA}/Thing/1" ] .
+
+<Schema/Mapping#rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_8_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (AgentControlRelation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_8_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_END}" ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template___RICO_VERSION___HEADING__Thing_1_> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template <Schema/Authority/Mnemonic/HEADING> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_BEGINNING}" ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_END}" ] ;
+            rr:predicate rico:hasEndDate ] ;
+    rr:subjectMap [ rr:class rico:AgentControlRelation ;
+            rr:template "RiC-O_1-0-2/{HEADING}/AgentControlRelation/1" ] .
+

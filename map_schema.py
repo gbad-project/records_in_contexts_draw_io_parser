@@ -430,18 +430,20 @@ def __init__(schema_code, source_filename=None):
     rico_name_label = 'RiC-O Name'.replace(' ','_')
     mnemonic_label = 'Authority Mnemonic'.replace(' ','_')
 
-    disaggregated_subject_rows = []
-    def collect_incremented_subject_uri(row):
-        row_id = row.name
+    def collect_incremented_uri(row, column, disaggregated_series_list):
+        #row_id = row.name
         mnemonic = row[mnemonic_label]
-        subject_uri = row['subject']
+        column_uri = row[column]
         mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
+        row[f'original_{column}'] = row[column]
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
             new_row = row.copy()
-            new_row['subject'] = URIRef(mnemonic_i_regex.sub(str(mnemonic_i), str(subject_uri)))
-            disaggregated_subject_rows.append(new_row)
-        row[has_increment_label] = True if mnemonic_i_to > 1 else False
+            new_row[column] = URIRef(mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri)))
+            disaggregated_series_list.append(new_row)
         return row
+    
+    disaggregated_subject_rows = []
+    def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
 
     # Note for next line that it is the only one that applies to series, all other to df
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
@@ -450,10 +452,8 @@ def __init__(schema_code, source_filename=None):
     subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
     # Now that we have mnemonics generated, let's honor any increment requests
     subjects_df = subjects_df.apply(collect_incremented_subject_uri, axis=1)
-    for new_row_series in disaggregated_subject_rows: # Adds new rows for each disaggregated
-        subjects_df.loc[len(subjects_df), :] = new_row_series
-    subjects_df = subjects_df[subjects_df[has_increment_label] == False] # Drops aggregated rows
-    subjects_df.reindex()
+    # Creating new frame so that there is no duplication wih previous
+    subjects_df = pd.DataFrame(disaggregated_subject_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
@@ -473,11 +473,13 @@ def __init__(schema_code, source_filename=None):
     #print("\n\nSubjects Dataframe Preview:")
     #subjects_df.info()
     #print("\n", "\n\n".join([str(display_table.iloc[i]) for i in range(len(display_table))])) # debug
-
+    
+    # Now that we have mnemonics generated, let's honor any increment requests
     # Add useful columns from subjects dataset for matching within loop later
     # The column name stays unique so we should just remember that RiC-O name refers to subject
-    parsed_df = pd.merge(parsed_df, subjects_df[['subject', rico_name_label, triplesmap_label]], on='subject', how='left')
-
+    # The line below is really important, or triples will be lost!
+    parsed_df = parsed_df.rename(columns={'subject': 'original_subject'}) 
+    parsed_df = pd.merge(parsed_df, subjects_df[['original_subject', 'subject', rico_name_label, triplesmap_label]], on='original_subject', how='left')
     # Also extract map predicates and objects for each object
     # Note that the below are for object, not subject, even though columns are called the same
     # Also note for next line that it is the only one that applies to series, all other to df
@@ -638,20 +640,27 @@ def __init__(schema_code, source_filename=None):
                 object_map_predicate = parsed_result[map_predicate_label]
                 object_map_object = parsed_result[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
+                rdfs_label_triple = None # to use later
 
                 # Handle possible increment requests in object mnemonic
                 object_mnemonic_i_from, object_mnemonic_i_to = get_mnemonic_i_from_to(object_mnemonic)
                 for object_mnemonic_i in range(object_mnemonic_i_from, object_mnemonic_i_to + 1):
+                    #if (parsed_result['original_subject']==subject_row['original_subject'] and
+                    #    object_mnemonic != subject_mnemonic):
+                    #    continue
                     # Define a predicate-object map
                     predicate_object_map = BNode()
-                    mapping.add((triples_map, rr[1].predicateObjectMap, predicate_object_map))
+                    pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
+                    mapping.add(pom_create_triple)
 
                     # Add predicate to predicate-object map
-                    mapping.add((predicate_object_map, rr[1].predicate, URIRef(predicate)))
+                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, URIRef(predicate))
+                    mapping.add(pom_predicate_triple)
 
                     # Define an empty object map within the predicate-object map
                     object_map = BNode()
-                    mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+                    om_create_triple = (predicate_object_map, rr[1].objectMap, object_map)
+                    mapping.add(om_create_triple)
 
                     # If not RiC-O, then nothing applies and just attach as literal
                     # In the current version of drawio parser only rdfs:label is supported
@@ -660,10 +669,18 @@ def __init__(schema_code, source_filename=None):
                     # were fully supported by drawio parser.
                     if not is_rico: # any other namespace
                         if norm_predicate == 'rdfs:label': # handle labels from drawio parser
-                            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
-                            # Only using object_map_object here because object_map_predicate is irrelevant
-                            pretty_omo = prettify_rdfs_label(object_map_object)
-                            mapping.add((object_map, rr[1].template, Literal(pretty_omo)))
+                            if rdfs_label_triple: # already added - remove empty nodes and continue
+                                mapping.remove(pom_create_triple)
+                                mapping.remove(pom_predicate_triple)
+                                mapping.remove(om_create_triple)
+                            else:
+                                mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
+                                # Only using map object here because object_map_predicate is irrelevant.
+                                # But using uri_mask of subject as map object and not object_map_object
+                                # because the former has been disaggregated but the latter has not
+                                pretty_omo = prettify_rdfs_label(uri_mask) 
+                                rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
+                                mapping.add(rdfs_label_triple)
                             continue
                         
                         mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
