@@ -11,6 +11,7 @@ from rdflib.namespace import RDF, RDFS, OWL, DCTERMS, NamespaceManager
 from pprint import pprint
 import argparse
 import shutil
+from io import BytesIO
 
 def map_rml(schema_code):
     """
@@ -179,11 +180,25 @@ if __name__ == '__main__':
     graph = postprocess(ttl_path)
 
     # Serialize and print the RDF graph
+    output_format = 'nt' # assumed to be quickest
+    #output_format = 'ttl' # more lightweight and readable
+    #output_encoding = 'utf-8' # just to be sure
     ttl_filename = os.path.basename(ttl_path)
-    postprocessed_ttl_filename = f'{ttl_filename[:-4]}_postprocessed.ttl'
-    postprocessed_ttl_path = os.path.join(os.path.dirname(ttl_path), postprocessed_ttl_filename)
-    postprocessed_ttl_content = graph.serialize(format='turtle')
-    with open(postprocessed_ttl_path, 'w') as f:
-        f.write(postprocessed_ttl_content)
-    print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_ttl_path}'")
+    postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
+    postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
+    postprocessed_serialized = graph.serialize(format=output_format)
+    # FYI, serialize returns:
+    # bytes if destination is None and encoding is not None.
+    # str if destination is None and encoding is None.
+    with open(postprocessed_path, 'w') as f:
+        f.write(postprocessed_serialized)
+    # Output to memory for speed
+    #postprocessed_serialized = BytesIO()
+    #graph.serialize(destination=postprocessed_serialized,
+    #                format=output_format,
+    #                encoding=output_encoding)
+    # Save to a file from BytesIO
+    #with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
+    #    f.write(postprocessed_serialized.getvalue())
+    print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
     #print(postprocessed_ttl_content)
