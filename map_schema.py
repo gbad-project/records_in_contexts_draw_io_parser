@@ -617,10 +617,12 @@ def __init__(schema_code, source_filename=None):
         mapping.add((subject_map, subject_map_predicate, uri_mask))
 
         # Record source mnemonic as a triple
-        if subject_mnemonic:
-            mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
-            predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
-            add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
+        # Commenting out for now because not sure yet
+        # how exactly in RDF we want this implemented
+        #if subject_mnemonic:
+        #    mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
+        #    predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
+        #    add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
 
         # Deal with predicates and objects in full triples df
         # Subset triples with the subject and RiC-O class from i-loop
