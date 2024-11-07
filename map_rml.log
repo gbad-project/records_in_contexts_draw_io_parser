@@ -1,16 +1,17 @@
-Script started on 2024-10-25 16:53:42-04:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="16"]
+Script started on 2024-11-06 20:12:25-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="17"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-10-22_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped.ttl')
-Converted file is larger than 10 MB (42.71 MB) - trying to rename to LARGE...
-Successfully renamed to 'mapped_LARGE.ttl'
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-10-22_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-10-22_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped_LARGE.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped.ttl'
 
-Number of triples in the graph: 393455
+Number of triples in the graph: 5239
 Postprocessing...
+/home/anonymous/anaconda3/lib/python3.9/site-packages/rdflib/plugins/serializers/nt.py:40: UserWarning: NTSerializer always uses UTF-8 encoding. Given encoding was: None
+  warnings.warn(
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
 
@@ -21,11 +22,11 @@ Executed a parametrized alternative of the following query:
             }
         }
         
-41491 triples were removed.
+400 triples were removed and dumped to: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/removed_triples.nt'
 
-Number of triples in the graph: 351964
+Number of triples in the graph: 4839
 
 
-Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped_LARGE_postprocessed.nt'
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-10-22_pz/mapped_postprocessed.nt'
 
-Script done on 2024-10-25 16:54:45-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-06 20:12:33-05:00 [COMMAND_EXIT_CODE="0"]

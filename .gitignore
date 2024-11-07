@@ -9,3 +9,4 @@ DESCRIPTION.csv
 LISTINGS_*.csv
 mapped_LARGE*.*
 __pycache__
+*.backup

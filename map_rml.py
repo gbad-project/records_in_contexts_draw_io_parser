@@ -139,6 +139,8 @@ def postprocess(graph_path):
         # objects of rico:thingIsSourceOfRelation (empty, false entities generated from
         # drawio logic), and remove any triples where these are subjects or objects
         triples_to_remove = []
+        removed_graph = Graph()
+        removed_list_path = os.path.join(os.path.dirname(graph_path), 'removed_triples.nt')
         for s, p, o in g.triples((None, RDF.type, rico[1].AgentControlRelation)):
             if not (s, None, None) in g.triples((None, rico[1].thingIsSourceOfRelation, s)):
                 for triple in g.triples((s, None, None)):
@@ -150,6 +152,8 @@ def postprocess(graph_path):
         for triple in triples_to_remove:
             g.remove(triple)
             #print(*triple)
+            removed_graph.add(triple)
+        removed_graph.serialize(destination=removed_list_path, format="nt")
         pseudo_sparql = """
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
 
@@ -161,7 +165,7 @@ def postprocess(graph_path):
         }
         """ # generated with ChatGPT based on parametrized
         print("Executed a parametrized alternative of the following query:", pseudo_sparql)
-        print(f"{removed_count} triples were removed.")
+        print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
         return removed_count
 
     print("Postprocessing...")
