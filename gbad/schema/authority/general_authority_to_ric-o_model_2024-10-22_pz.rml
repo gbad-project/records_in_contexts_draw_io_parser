@@ -5,6 +5,10 @@
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix fnml:   <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: 	<https://w3id.org/function/ontology#> .
+@prefix idlab-fn: <http://example.com/idlab/function/> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
 
 <Schema/Mapping#rr_template__KB_Date__DATECONT_10_BEGINNING__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
@@ -789,8 +793,42 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_IdentifierType_Agent_Identifier_> ] ;
             rr:predicate rico:hasIdentifierType ] ;
-    rr:subjectMap [ rr:class rico:Identifier ;
-            rr:template "RiC-O_1-0-2/{HEADING}/Identifier/1" ] .
+    rr:subjectMap [ 
+        
+        fnml:functionValue [
+          # Use the controls_if function to conditionally map based on non-empty value
+          rr:predicateObjectMap [
+            rr:predicate fno:executes ;
+            rr:objectMap [ rr:constant grel:controls_if ]
+          ];
+        
+        # Define the arguments for the if condition
+
+        # First argument: Check if REFA is empty
+        rr:predicateObjectMap [
+          rr:predicate grel:bool_b;
+          rr:objectMap [
+            fnml:functionValue [
+              rr:predicateObjectMap [
+                rr:predicate fno:executes;
+                rr:objectMap [ rr:constant idlab-fn:isNull ]
+              ];
+              rr:predicateObjectMap [
+                rr:predicate idlab-fn:str;
+                rr:objectMap [ rml:reference "REFA" ]
+              ]
+            ]
+          ]
+        ];
+
+        # If the REFA column is not null, use the value in the object map
+        rr:predicateObjectMap [
+          rr:predicate grel:any_false;
+          rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/Identifier/1" ]
+        ];
+      ] ;
+        
+        rr:class rico:Identifier ] .
 
 <Schema/Mapping#rr_template___RICO_VERSION___HEADING__Mandate_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;

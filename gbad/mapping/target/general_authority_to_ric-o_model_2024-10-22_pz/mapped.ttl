@@ -1,4 +1,8 @@
 @prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <http://example.com/idlab/function/> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
@@ -454,12 +458,6 @@
   rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/Type/Parallel%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
 
-<https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/Identifier/1>
-  a rico:Identifier;
-  rdfs:label "CHIN Radio/TV International (Identifier)";
-  rico:hasIdentifierType <https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent%20Identifier>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
-
 <https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/Mandate/1>
   a rico:Mandate;
   rdfs:label "CHIN Radio/TV International (Mandate)";
@@ -482,8 +480,7 @@
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/AgentName/2>,
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/AgentName/3>;
   rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/CorporateBodyType/Corporate%20Name>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/Identifier/1>,
-    <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
   rico:history "CHIN is composed of television facilities and radio stations. CHIN Radio/Television International was incorporated in 1964. The organization was established in 1965, by Johnny Lombardi, and began broadcasting in 1966. Lombardi explained the meaning of CHIN: \"C is for Canada, H for happiness, I and N for international. CHIN is the first multicultural / multilingual station to be established in Ontario. In 1967, CHIN obtained an FM radio license and inherited with that two radio stations, AM 1540 and FM 100.7, as well as a television program on CITY-TV hosted by Johnny Lombardi. In 1967, the first CHIN Picnic was held and has become one of Toronto's most popular annual multicultural events. When Lombardi died in 2002, ownership of CHIN Radio/TV International passed to his son Lenny and daughters Theresa and Donina. CHIN Ottawa CJLL 97.9FM began broadcasting to the Ottawa / Gatineau region in October of 2003, and is the first third language radio service in Ottawa.";
   rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-2/CHIN%20Radio%2FTV%20International/Record/1> .
 
@@ -777,11 +774,6 @@
   rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/Type/Parallel%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
 
-<https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/Identifier/1> a rico:Identifier;
-  rdfs:label "Canada Packers (Identifier)";
-  rico:hasIdentifierType <https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent%20Identifier>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
-
 <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/Mandate/1> a rico:Mandate;
   rdfs:label "Canada Packers (Mandate)";
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
@@ -800,8 +792,7 @@
   rico:hasOrHadAgentName <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/AgentName/1>,
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/AgentName/2>, <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/AgentName/3>;
   rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/CorporateBodyType/Corporate%20Name>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/Identifier/1>,
-    <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
   rico:history "The company was formed out of a succession of mergers with predecessor companies. These include the William Davies Company, Ltd. (est. 1854), the Canadian Packing Company, Ltd. (est. 1868 as the George Matthews Company), Gunns Ltd. (est. 1876), and the Harris Abattoir Company, Ltd. (est. 1896). These firms merged in 1927 to form Canada Packers, Ltd., which became Canada Packers Inc. in 1980. In 1990 Canada Packers Inc. merged with British based Maple Leaf Mills, Ltd. to form Maple Leaf Foods, Inc.";
   rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canada%20Packers/Record/1> .
 
@@ -828,12 +819,6 @@
   rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/Type/Parallel%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
 
-<https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/Identifier/1>
-  a rico:Identifier;
-  rdfs:label "Canadian Pacific Railway Company (Identifier)";
-  rico:hasIdentifierType <https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent%20Identifier>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
-
 <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/Mandate/1>
   a rico:Mandate;
   rdfs:label "Canadian Pacific Railway Company (Mandate)";
@@ -856,8 +841,7 @@
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/AgentName/2>,
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/AgentName/3>;
   rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/CorporateBodyType/Corporate%20Name>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/Identifier/1>,
-    <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
   rico:history "The company was incorporated in 1881 and has also had interests in settlement, tourism and communications.";
   rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-2/Canadian%20Pacific%20Railway%20Company/Record/1> .
 
@@ -885,12 +869,6 @@
   rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/Type/Parallel%20Name>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
 
-<https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>
-  a rico:Identifier;
-  rdfs:label "Multilingual Television (Toronto) Limited (Identifier)";
-  rico:hasIdentifierType <https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent%20Identifier>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING> .
-
 <https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/Mandate/1>
   a rico:Mandate;
   rdfs:label "Multilingual Television (Toronto) Limited (Mandate)";
@@ -913,8 +891,7 @@
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/2>,
     <https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/AgentName/3>;
   rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/CorporateBodyType/Corporate%20Name>;
-  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/Identifier/1>,
-    <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/Schema/Authority/Mnemonic/HEADING>;
   rico:history "Multilingual Television Limited was founded in Toronto in 1979 by Dan Iannuzzi with the backing of private investors Jerry Grafstein, Raymond Moriyama, Steve Stavro, Garth Drabinsky and Nat Taylor. It first aired on Sept. 3, 1979. Popularly known by the call letters CFMT (\"Canada's First Multilingual Television\"), its mandate is to produce and broadcast ethnic programming reflecting a diverse multicultural viewing public, to match third language programming with the needs of each ethnic group, and to entertain and inform members of the ethnic communities in Toronto. The major groups targeted are Italian, Chinese and Portuguese, although the station broadcasts in a total of fifteen different languages. In 1986 Rogers Communications became the major shareholder of CFMT. It became known as \"OMNI1\" in 2002 after Rogers introduced Omni Television, its multilingual programming brand.";
   rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/RiC-O_1-0-2/Multilingual%20Television%20%28Toronto%29%20Limited/Record/1> .
 
