@@ -168,9 +168,11 @@ def postprocess(graph_path):
         print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
         return removed_count
 
-    print("Postprocessing...")
-    total_count = total_count - remove_false_agentcontrolrelation(g)
-    print_total_count()
+    def run_postprocessing():
+        print("Postprocessing...")
+        total_count = total_count - remove_false_agentcontrolrelation(g)
+        print_total_count()
+    #run_postprocessing()
 
     return g
 
@@ -183,26 +185,30 @@ if __name__ == '__main__':
     rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
     graph = postprocess(ttl_path)
 
-    # Serialize and print the RDF graph
-    output_format = 'nt' # assumed to be quickest
-    #output_format = 'ttl' # more lightweight and readable
-    #output_encoding = 'utf-8' # just to be sure
-    ttl_filename = os.path.basename(ttl_path)
-    postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
-    postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
-    postprocessed_serialized = graph.serialize(format=output_format)
-    # FYI, serialize returns:
-    # bytes if destination is None and encoding is not None.
-    # str if destination is None and encoding is None.
-    with open(postprocessed_path, 'w') as f:
-        f.write(postprocessed_serialized)
-    # Output to memory for speed
-    #postprocessed_serialized = BytesIO()
-    #graph.serialize(destination=postprocessed_serialized,
-    #                format=output_format,
-    #                encoding=output_encoding)
-    # Save to a file from BytesIO
-    #with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
-    #    f.write(postprocessed_serialized.getvalue())
-    print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
+    def save_postprocessed_graph(
+            output_format = 'nt', # assumed to be quickest
+            ttl_path = ttl_path):
+        # Serialize and print the RDF graph
+        #output_format = 'ttl' # more lightweight and readable
+        #output_encoding = 'utf-8' # just to be sure
+        ttl_filename = os.path.basename(ttl_path)
+        postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
+        postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
+        postprocessed_serialized = graph.serialize(format=output_format)
+        # FYI, serialize returns:
+        # bytes if destination is None and encoding is not None.
+        # str if destination is None and encoding is None.
+        with open(postprocessed_path, 'w') as f:
+            f.write(postprocessed_serialized)
+        # Output to memory for speed
+        #postprocessed_serialized = BytesIO()
+        #graph.serialize(destination=postprocessed_serialized,
+        #                format=output_format,
+        #                encoding=output_encoding)
+        # Save to a file from BytesIO
+        #with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
+        #    f.write(postprocessed_serialized.getvalue())
+        print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
+        return postprocessed_serialized
+    #postprocessed_ttl_content = save_postprocessed_graph()
     #print(postprocessed_ttl_content)

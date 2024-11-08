@@ -252,6 +252,12 @@ def __init__(schema_code, source_filename=None):
     ql = ('ql', Namespace('http://semweb.mmlab.be/ns/ql#'))
     csvw = ('csvw', Namespace('http://www.w3.org/ns/csvw#'))
 
+    # Namespaces for FnO to work at RML mapping
+    fnml = ('fnml', Namespace('http://semweb.mmlab.be/ns/fnml#'))
+    fno = ('fno', Namespace('https://w3id.org/function/ontology#'))
+    idlab_fn = ('idlab-fn', Namespace('http://example.com/idlab/function/'))
+    grel = ('grel', Namespace('http://users.ugent.be/~bjdmeest/function/grel.ttl#'))
+
     # Bind prefixes to namespaces
     g.namespace_manager.bind(*rico)
     g.namespace_manager.bind(*rdf)
@@ -262,7 +268,10 @@ def __init__(schema_code, source_filename=None):
     g.namespace_manager.bind(*rr)
     g.namespace_manager.bind(*ql)
     g.namespace_manager.bind(*csvw)
-    g.namespace_manager.bind(*csvw)
+    g.namespace_manager.bind(*fnml)
+    g.namespace_manager.bind(*fno)
+    g.namespace_manager.bind(*idlab_fn)
+    g.namespace_manager.bind(*grel)
 
     #print(g.serialize(format='turtle'))
 
@@ -546,6 +555,10 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*ql)
     mapping.namespace_manager.bind(*csvw)
     mapping.namespace_manager.bind(*maps)
+    mapping.namespace_manager.bind(*fnml)
+    mapping.namespace_manager.bind(*fno)
+    mapping.namespace_manager.bind(*idlab_fn)
+    mapping.namespace_manager.bind(*grel)
 
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
         # Define a predicate-object map
@@ -575,6 +588,13 @@ def __init__(schema_code, source_filename=None):
         # Define TriplesMap
         triples_map = maps[1][subject_row[triplesmap_label]]
         mapping.add((triples_map, RDF.type, rr[1].TriplesMap))
+
+        # Define Logical Source
+        logical_source = BNode()
+        mapping.add((triples_map, rml[1].logicalSource, logical_source))
+        mapping.add((logical_source, rml[1].source, Literal(source_path)))
+        mapping.add((logical_source, rml[1].referenceFormulation, ql[1].CSV))
+        #mapping.add((logical_source, rml[1].iterator, Literal(iterator_mask)))
 
         # Collect subjectmap predicate and object from subject df
         # These will be added to the graph and then used later on
@@ -606,15 +626,64 @@ def __init__(schema_code, source_filename=None):
             continue # because cannot move forward with map predicate undefined
             # Also note that rr:subject is incompatible with logical source
 
-        # Define Logical Source
-        logical_source = BNode()
-        mapping.add((triples_map, rml[1].logicalSource, logical_source))
-        mapping.add((logical_source, rml[1].source, Literal(source_path)))
-        mapping.add((logical_source, rml[1].referenceFormulation, ql[1].CSV))
-        #mapping.add((logical_source, rml[1].iterator, Literal(iterator_mask)))
+        if not subject_mnemonic:
+            # Add map predicate and object from df to subject map
+            mapping.add((subject_map, subject_map_predicate, uri_mask))
+        #
+        # Now that we have handled all the no-mnemonic cases (both when no valid RML
+        # syntax in the drawio graph AND when the syntax is there but no mnemonic
+        # used), let's handle cases with both valid RML syntax and mnemonic set.
+        #
+        # We will use an FnO logic to leave subject maps empty at mapping
+        # when the value of the source CSV column in empty.
+        #
+        # Here comes:
+        else:
+            fno_logic = BNode()
+            mapping.add((subject_map, fnml[1].functionValue, fno_logic))
 
-        # Add map predicate and object from df to subject map
-        mapping.add((subject_map, subject_map_predicate, uri_mask))
+            # Use the controls_if function to conditionally map based on non-empty value
+            controls_if_pomap = BNode()
+            mapping.add((fno_logic, rr[1].predicateObjectMap, controls_if_pomap))
+            mapping.add((controls_if_pomap, rr[1].predicate, fno[1].executes))
+            controls_if_omap = BNode()
+            mapping.add((controls_if_pomap, rr[1].objectMap, controls_if_omap))
+            mapping.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
+
+            # Define the arguments for the if condition
+            # First argument: Check if {MNEMONIC} is empty
+            mnemonic_isnull_pomap = BNode()
+            mapping.add((fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_pomap))
+            mapping.add((mnemonic_isnull_pomap, rr[1].predicate, grel[1].bool_b))
+            mnemonic_isnull_omap = BNode()
+            mapping.add((mnemonic_isnull_pomap, rr[1].objectMap, mnemonic_isnull_omap))
+            # A nested function
+            nested_fno_logic = BNode()
+            mapping.add((mnemonic_isnull_omap, fnml[1].functionValue, nested_fno_logic))
+            # Nested function definition
+            mnemonic_isnull_nested_def_pomap = BNode()
+            mapping.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_def_pomap))
+            mapping.add((mnemonic_isnull_nested_def_pomap, rr[1].predicate, fno[1].executes))
+            mnemonic_isnull_nested_def_omap = BNode()
+            mapping.add((mnemonic_isnull_nested_def_pomap, rr[1].objectMap, mnemonic_isnull_nested_def_omap))
+            mapping.add((mnemonic_isnull_nested_def_omap, rr[1].constant, idlab_fn[1].isNull))
+            # Nested function argument
+            mnemonic_isnull_nested_arg_pomap = BNode()
+            mapping.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_arg_pomap))
+            mapping.add((mnemonic_isnull_nested_arg_pomap, rr[1].predicate, idlab_fn[1].str))
+            mnemonic_isnull_nested_arg_omap = BNode()
+            mapping.add((mnemonic_isnull_nested_arg_pomap, rr[1].objectMap, mnemonic_isnull_nested_arg_omap))
+            # Here goes the climax of checking - the mnemonic value
+            mapping.add((mnemonic_isnull_nested_arg_omap, rml[1].reference, Literal(subject_mnemonic)))
+
+            # If the {MNEMONIC} column is not null, use the value in the object map
+            mnemonic_uri_mask_pomap = BNode()
+            mapping.add((fno_logic, rr[1].predicateObjectMap, mnemonic_uri_mask_pomap))
+            mapping.add((mnemonic_uri_mask_pomap, rr[1].predicate, grel[1].any_false))
+            mnemonic_uri_mask_omap = BNode()
+            mapping.add((mnemonic_uri_mask_pomap, rr[1].objectMap, mnemonic_uri_mask_omap))
+            # Here goes the climax of writing - the uri mask
+            mapping.add((mnemonic_uri_mask_omap, subject_map_predicate, uri_mask))
 
         # Record source mnemonic as a triple
         # Commenting out for now because not sure yet
