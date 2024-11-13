@@ -90,15 +90,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_10_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_10_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_10_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_10_END__ a rr:TriplesMap ;
@@ -148,10 +148,10 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_10_END" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_10_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_END}" ] ;
                             rr:predicate grel:any_false ] ] ;
@@ -202,15 +202,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_11_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_11_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_11_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_11_END__ a rr:TriplesMap ;
@@ -258,15 +258,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_11_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATECONT_11_END" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_END}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_12_BEGINNING__ a rr:TriplesMap ;
@@ -314,15 +314,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_12_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_12_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_12_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_12_END__ a rr:TriplesMap ;
@@ -370,15 +370,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_12_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_12_END" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_12_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_END}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_13_BEGINNING__ a rr:TriplesMap ;
@@ -426,15 +426,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_13_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_13_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_13_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_13_END__ a rr:TriplesMap ;
@@ -482,15 +482,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_13_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_END}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_13_END" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_14_BEGINNING__ a rr:TriplesMap ;
@@ -538,15 +538,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_14_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_14_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_14_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_14_END__ a rr:TriplesMap ;
@@ -594,15 +594,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_14_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_14_END" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_14_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_END}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_1_BEGINNING__ a rr:TriplesMap ;
@@ -655,10 +655,10 @@
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_1_END__ a rr:TriplesMap ;
@@ -706,13 +706,13 @@
         [ rr:objectMap [ rr:template "{DATECONT_1_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_1_END" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_END}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_END}" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_1_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
@@ -762,15 +762,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_2_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_2_BEGINNING" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_2_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_2_END__ a rr:TriplesMap ;
@@ -818,15 +818,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_2_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_END}" ] ;
-                            rr:predicate grel:any_false ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_2_END" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_3_BEGINNING__ a rr:TriplesMap ;
@@ -876,13 +876,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_BEGINNING}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_3_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_3_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_3_END__ a rr:TriplesMap ;
@@ -930,15 +930,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_3_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATECONT_3_END" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_END}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_4_BEGINNING__ a rr:TriplesMap ;
@@ -988,13 +988,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATECONT_4_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_4_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_4_END__ a rr:TriplesMap ;
@@ -1042,15 +1042,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_4_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_END}" ] ;
-                            rr:predicate grel:any_false ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATECONT_4_END" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_5_BEGINNING__ a rr:TriplesMap ;
@@ -1098,15 +1098,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_5_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATECONT_5_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_5_END__ a rr:TriplesMap ;
@@ -1154,15 +1154,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_5_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_5_END" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_5_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_END}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_6_BEGINNING__ a rr:TriplesMap ;
@@ -1210,15 +1210,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_6_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_6_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_6_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_6_END__ a rr:TriplesMap ;
@@ -1266,15 +1266,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_6_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_6_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_END}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_6_END" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_7_BEGINNING__ a rr:TriplesMap ;
@@ -1322,15 +1322,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_7_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_BEGINNING}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_BEGINNING}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_7_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_7_END__ a rr:TriplesMap ;
@@ -1378,15 +1378,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_7_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_END}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATECONT_7_END" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_8_BEGINNING__ a rr:TriplesMap ;
@@ -1434,15 +1434,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_8_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_8_BEGINNING" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_8_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATECONT_8_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_8_END__ a rr:TriplesMap ;
@@ -1551,10 +1551,10 @@
                                                 [ rr:objectMap [ rml:reference "DATECONT_9_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATECONT_9_END__ a rr:TriplesMap ;
@@ -1602,15 +1602,15 @@
         [ rr:objectMap [ rr:template "{DATECONT_9_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_9_END" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_9_END" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_END}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATEEX_BEGINNING__ a rr:TriplesMap ;
@@ -1619,15 +1619,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEEX_BEGINNING}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATEEX_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "DATEEX_BEGINNING" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEEX_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Date__DATEEX_END__ a rr:TriplesMap ;
@@ -1636,15 +1636,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEEX_END}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Date/{DATEEX_END}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEEX_END" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEEX_END" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEEX_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 :rr_template__KB_Rule__RULES__ a rr:TriplesMap ;
@@ -1667,80 +1667,80 @@
 :rr_template__KB__RICO_AUTHTP___HEADING__ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_2_ ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:template "{RICO_AUTHTP}" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Record_1_ ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_4__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Identifier_1_ ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_11__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_5__Thing_1_ ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_5__Thing_1_ ] ;
             rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATEEX_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_9__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_1__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_CorporateBodyType__AUTHTP_1__ ] ;
             rr:predicate rico:hasOrHadCorporateBodyType ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Mandate_1_ ] ;
-            rr:predicate rico:authorizedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_5__Thing_1_ ] ;
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_1__Thing_1_ ] ;
             rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_14__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_12__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_4__Thing_1_ ] ;
-            rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_3_ ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_3__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_2__Thing_1_ ] ;
-            rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_1_ ] ;
-            rr:predicate rico:hasOrHadAgentName ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_CorporateBodyType__AUTHTP_2__ ] ;
-            rr:predicate rico:hasOrHadCorporateBodyType ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_10__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rml:reference "ADM" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_3__Thing_1_ ] ;
-            rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATEEX_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_13__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_1__Thing_1_ ] ;
-            rr:predicate rico:isSuccessorOf ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_6__Thing_1_ ] ;
-            rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___REFA__Thing_1_ ] ;
-            rr:predicate rico:isEquivalentTo ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_3__Thing_1_ ] ;
-            rr:predicate rico:hasSuccessor ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_1__Thing_1_ ] ;
-            rr:predicate rico:hasSuccessor ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_4__Thing_1_ ] ;
-            rr:predicate rico:hasSuccessor ],
         [ rr:objectMap [ rml:reference "FUN" ] ;
             rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_2__Thing_1_ ] ;
-            rr:predicate rico:hasSuccessor ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_8__Thing_1_ ] ;
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_7__Thing_1_ ] ;
             rr:predicate rico:hasOrHadController ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_2__Thing_1_ ] ;
             rr:predicate rico:hasOrHadController ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_7__Thing_1_ ] ;
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATEEX_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Identifier_1_ ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Mandate_1_ ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_11__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_4__Thing_1_ ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___REFA__Thing_1_ ] ;
+            rr:predicate rico:isEquivalentTo ],
+        [ rr:objectMap [ rr:template "{RICO_AUTHTP}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_13__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_3__Thing_1_ ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_4__Thing_1_ ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_2__Thing_1_ ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATEEX_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_1__Thing_1_ ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_1_ ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_10__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_CorporateBodyType__AUTHTP_2__ ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___SUC_1__Thing_1_ ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_9__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_8__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_3_ ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_4__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_5__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_3__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentName_2_ ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_3__Thing_1_ ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___PRED_2__Thing_1_ ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_6__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_12__Thing_1_ ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__Record_1_ ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___CONTAG_14__Thing_1_ ] ;
             rr:predicate rico:hasOrHadController ] ;
     rr:subjectMap [ rr:class rico:Thing ;
             rr:template "KB/{RICO_AUTHTP}/{HEADING}" ] .
@@ -1754,13 +1754,13 @@
         [ rr:objectMap [ rr:template "{AUTHTP_1}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_1}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_1}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:CorporateBodyType ] .
@@ -1774,15 +1774,15 @@
         [ rr:objectMap [ rr:template "{AUTHTP_2}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "Schema/Authority/CorporateBodyType/{AUTHTP_2}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:CorporateBodyType ] .
 
 :rr_template__Schema_Authority_RecordState_Status__STATUSA__ a rr:TriplesMap ;
@@ -1791,13 +1791,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{STATUSA}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Authority/RecordState/Status/{STATUSA}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "STATUSA" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "STATUSA" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/RecordState/Status/{STATUSA}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:RecordState ] .
@@ -1846,20 +1846,20 @@
         [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_10} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
@@ -1886,26 +1886,26 @@
         [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_11} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
@@ -1929,10 +1929,10 @@
                                                 [ rr:objectMap [ rml:reference "CONTAG_11" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_11}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_11}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_12__Thing_1_ a rr:TriplesMap ;
@@ -1968,12 +1968,6 @@
         [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
@@ -1981,16 +1975,22 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
                     rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_12} (Thing)" ;
+                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_12" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_12}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_12" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_13__Thing_1_ a rr:TriplesMap ;
@@ -2008,20 +2008,20 @@
         [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
@@ -2040,13 +2040,13 @@
         [ rr:objectMap [ rr:template "{CONTAG_13} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_13}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "CONTAG_13" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_13}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
@@ -2057,32 +2057,32 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_14} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
@@ -2100,13 +2100,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_14" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_14}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_14" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_1__Thing_1_ a rr:TriplesMap ;
@@ -2118,53 +2118,53 @@
         [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
-            rr:predicate rico:thingIsSourceOfRelation ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_1}/Thing/1" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_1" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_2__Thing_1_ a rr:TriplesMap ;
@@ -2179,6 +2179,18 @@
         [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
@@ -2201,23 +2213,11 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
                     rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_2} (Thing)" ;
-                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_2" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
@@ -2231,39 +2231,6 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
@@ -2271,16 +2238,49 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
                     rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Thing)" ;
+                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_3}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "CONTAG_3" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_3}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_4__Thing_1_ a rr:TriplesMap ;
@@ -2330,15 +2330,15 @@
         [ rr:objectMap [ rr:template "{CONTAG_4} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_4}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "CONTAG_4" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_4}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_5__Thing_1_ a rr:TriplesMap ;
@@ -2374,6 +2374,12 @@
         [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
@@ -2381,28 +2387,40 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
                     rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_5} (Thing)" ;
-                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_5" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_5}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_5" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_5}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_6__Thing_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
                     rr:termType rr:Literal ] ;
@@ -2427,34 +2445,16 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
                     rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_6} (Thing)" ;
-                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_6}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_6" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_6" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_6}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_7__Thing_1_ a rr:TriplesMap ;
@@ -2478,21 +2478,6 @@
         [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
@@ -2503,16 +2488,31 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
                     rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Thing)" ;
+                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_7}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "CONTAG_7" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_7}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_8__Thing_1_ a rr:TriplesMap ;
@@ -2548,9 +2548,6 @@
         [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
@@ -2561,25 +2558,25 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
                     rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_8} (Thing)" ;
+                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_8}/Thing/1" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_8" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_8}/Thing/1" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "CONTAG_8" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___CONTAG_9__Thing_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_9} (Thing)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:template "{CONTAG_9} (Thing)" ;
                     rr:termType rr:Literal ] ;
@@ -2619,14 +2616,17 @@
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:template "{CONTAG_9} (Thing)" ;
                     rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{CONTAG_9} (Thing)" ;
+                    rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "CONTAG_9" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{CONTAG_9}/Thing/1" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
@@ -2639,74 +2639,74 @@
         [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentName/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
-            rr:class rico:AgentName ] .
-
-:rr_template___RICO_VERSION___HEADING__AgentName_2_ a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_8" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_4" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_6" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Variant_Name_ ] ;
-            rr:predicate rico:hasOrHadCategory ],
-        [ rr:objectMap [ rml:reference "VAR_7" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_5" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_3" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_2" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_10" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rml:reference "VAR_1" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_9" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "VAR_11" ] ;
-            rr:predicate rico:textualValue ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentName/2" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentName/1" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentName ] .
+
+:rr_template___RICO_VERSION___HEADING__AgentName_2_ a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_4" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_1" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_8" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_6" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_7" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_10" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_2" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_3" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "VAR_5" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "VAR_9" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Variant_Name_ ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rml:reference "VAR_11" ] ;
+            rr:predicate rico:textualValue ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentName/2" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:AgentName ] .
 
 :rr_template___RICO_VERSION___HEADING__AgentName_3_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_1" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_3" ] ;
             rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "PAR_3" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "PAR_2" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rml:reference "PAR_4" ] ;
-            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Parallel_Name_ ] ;
+            rr:predicate rico:hasOrHadCategory ],
         [ rr:objectMap [ rr:template "{HEADING} (AgentName)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_Type_Parallel_Name_ ] ;
-            rr:predicate rico:hasOrHadCategory ] ;
+        [ rr:objectMap [ rml:reference "PAR_4" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "PAR_2" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rml:reference "PAR_1" ] ;
+            rr:predicate rico:textualValue ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "HEADING" ] ;
@@ -2721,38 +2721,38 @@
 :rr_template___RICO_VERSION___HEADING__Identifier_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFA" ] ;
-            rr:predicate rico:normalizedValue ],
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{HEADING} (Identifier)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_IdentifierType_Agent_Identifier_ ] ;
             rr:predicate rico:hasIdentifierType ],
-        [ rr:objectMap [ rr:template "{HEADING} (Identifier)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
+        [ rr:objectMap [ rml:reference "REFA" ] ;
+            rr:predicate rico:normalizedValue ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/Identifier/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Identifier ] .
 
 :rr_template___RICO_VERSION___HEADING__Mandate_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{HEADING} (Mandate)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "AA" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template "{HEADING} (Mandate)" ;
                     rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rml:reference "AA" ] ;
-            rr:predicate rico:textualValue ] ;
+            rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/Mandate/1" ] ;
                             rr:predicate grel:any_false ] ] ;
@@ -2761,28 +2761,28 @@
 :rr_template___RICO_VERSION___HEADING__Record_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_RecordState_Web_Ready__WEBA__ ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_DocumentaryFormType_Authority_Record_ ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_constant__https___data_archives_gov_on_ca_Schema_Authority_DocumentaryFormType_Authority_Record_ ] ;
             rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "SOURCE" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_RecordState_Web_Ready__WEBA__ ] ;
+            rr:predicate rico:hasRecordState ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__Schema_Authority_RecordState_Status__STATUSA__ ] ;
             rr:predicate rico:hasRecordState ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Rule__RULES__ ] ;
-            rr:predicate rico:isOrWasRegulatedBy ],
-        [ rr:objectMap [ rml:reference "SOURCE" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:template "{HEADING} (Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+            rr:predicate rico:isOrWasRegulatedBy ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/Record/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Record ] .
 
 :rr_template___RICO_VERSION___PRED_1__Thing_1_ a rr:TriplesMap ;
@@ -2803,15 +2803,15 @@
         [ rr:objectMap [ rr:template "{PRED_1} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "PRED_1" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_1}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PRED_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_1}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___PRED_2__Thing_1_ a rr:TriplesMap ;
@@ -2832,15 +2832,15 @@
         [ rr:objectMap [ rr:template "{PRED_2} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_2}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PRED_2" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PRED_2" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_2}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___PRED_3__Thing_1_ a rr:TriplesMap ;
@@ -2861,15 +2861,15 @@
         [ rr:objectMap [ rr:template "{PRED_3} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_3" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_3}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PRED_3" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___PRED_4__Thing_1_ a rr:TriplesMap ;
@@ -2890,15 +2890,15 @@
         [ rr:objectMap [ rr:template "{PRED_4} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "PRED_4" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_4}/Thing/1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PRED_4" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_4}/Thing/1" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___PRED_5__Thing_1_ a rr:TriplesMap ;
@@ -2924,10 +2924,10 @@
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_5}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{PRED_5}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___REFA__Thing_1_ a rr:TriplesMap ;
@@ -2936,10 +2936,10 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFA} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFA" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFA" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
@@ -2962,15 +2962,15 @@
         [ rr:objectMap [ rr:template "{SUC_1} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_1}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "SUC_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_1" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_1}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___SUC_2__Thing_1_ a rr:TriplesMap ;
@@ -2988,10 +2988,10 @@
         [ rr:objectMap [ rr:template "{SUC_2} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_2" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "SUC_2" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_2}/Thing/1" ] ;
                             rr:predicate grel:any_false ],
@@ -3016,13 +3016,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_3}/Thing/1" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "SUC_3" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_3" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___SUC_4__Thing_1_ a rr:TriplesMap ;
@@ -3040,89 +3040,89 @@
         [ rr:objectMap [ rr:template "{SUC_4} (Thing)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_4}/Thing/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "SUC_4" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{SUC_4}/Thing/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Thing ] .
 
 :rr_template___RICO_VERSION___HEADING__AgentControlRelation_1_ a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/authority_head_101.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_1_BEGINNING__ ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_5_BEGINNING__ ] ;
             rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_5_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_1_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_4_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_11_END__ ] ;
+            rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_13_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_14_BEGINNING__ ] ;
             rr:predicate rico:hasBeginningDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_8_BEGINNING__ ] ;
             rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_6_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB__RICO_AUTHTP___HEADING__ ] ;
-            rr:predicate rico:relationHasTarget ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_10_END__ ] ;
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_12_END__ ] ;
             rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_7_END__ ] ;
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_14_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_11_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_12_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_3_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_10_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_2_END__ ] ;
             rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_13_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_9_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_6_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_4_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_10_END__ ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB__RICO_AUTHTP___HEADING__ ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_1_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_9_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_5_END__ ] ;
             rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:template "{HEADING} (AgentControlRelation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_10_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_9_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_7_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_6_END__ ] ;
-            rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_3_BEGINNING__ ] ;
             rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_4_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_11_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_11_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_1_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_5_END__ ] ;
-            rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_2_BEGINNING__ ] ;
             rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_7_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_7_END__ ] ;
+            rr:predicate rico:hasEndDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_14_END__ ] ;
             rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_3_END__ ] ;
-            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_6_BEGINNING__ ] ;
+            rr:predicate rico:hasBeginningDate ],
         [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_8_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_4_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_12_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_9_BEGINNING__ ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_2_END__ ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:parentTriplesMap :rr_template__KB_Date__DATECONT_12_END__ ] ;
             rr:predicate rico:hasEndDate ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentControlRelation/1" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "RiC-O_1-0-2/{HEADING}/AgentControlRelation/1" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:AgentControlRelation ] .
 

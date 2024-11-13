@@ -577,6 +577,59 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*idlab_fn)
     mapping.namespace_manager.bind(*grel)
 
+    def fno_map_mnemonic_unless_isnull(
+            rml_g,
+            input_tuple, mnemonic):
+        subject_map_predicate, uri_mask = input_tuple
+
+        # Define a wrapper function
+        fno_wrapper = BNode()
+
+        # Use the controls_if function to conditionally map based on non-empty value
+        controls_if_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, controls_if_pomap))
+        rml_g.add((controls_if_pomap, rr[1].predicate, fno[1].executes))
+        controls_if_omap = BNode()
+        rml_g.add((controls_if_pomap, rr[1].objectMap, controls_if_omap))
+        rml_g.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
+
+        # Define the arguments for the if condition
+        # First argument: Check if {MNEMONIC} is empty
+        mnemonic_isnull_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, mnemonic_isnull_pomap))
+        rml_g.add((mnemonic_isnull_pomap, rr[1].predicate, grel[1].bool_b))
+        mnemonic_isnull_omap = BNode()
+        rml_g.add((mnemonic_isnull_pomap, rr[1].objectMap, mnemonic_isnull_omap))
+        # A nested function
+        nested_fno_logic = BNode()
+        rml_g.add((mnemonic_isnull_omap, fnml[1].functionValue, nested_fno_logic))
+        # Nested function definition
+        mnemonic_isnull_nested_def_pomap = BNode()
+        rml_g.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_def_pomap))
+        rml_g.add((mnemonic_isnull_nested_def_pomap, rr[1].predicate, fno[1].executes))
+        mnemonic_isnull_nested_def_omap = BNode()
+        rml_g.add((mnemonic_isnull_nested_def_pomap, rr[1].objectMap, mnemonic_isnull_nested_def_omap))
+        rml_g.add((mnemonic_isnull_nested_def_omap, rr[1].constant, idlab_fn[1].isNull))
+        # Nested function argument
+        mnemonic_isnull_nested_arg_pomap = BNode()
+        rml_g.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_arg_pomap))
+        rml_g.add((mnemonic_isnull_nested_arg_pomap, rr[1].predicate, idlab_fn[1].str))
+        mnemonic_isnull_nested_arg_omap = BNode()
+        rml_g.add((mnemonic_isnull_nested_arg_pomap, rr[1].objectMap, mnemonic_isnull_nested_arg_omap))
+        # Here goes the climax of checking - the mnemonic value
+        rml_g.add((mnemonic_isnull_nested_arg_omap, rml[1].reference, Literal(mnemonic)))
+
+        # If the {MNEMONIC} column is not null, use the value in the object map
+        mnemonic_uri_mask_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, mnemonic_uri_mask_pomap))
+        rml_g.add((mnemonic_uri_mask_pomap, rr[1].predicate, grel[1].any_false))
+        mnemonic_uri_mask_omap = BNode()
+        rml_g.add((mnemonic_uri_mask_pomap, rr[1].objectMap, mnemonic_uri_mask_omap))
+        # Here goes the climax of writing - the uri mask
+        rml_g.add((mnemonic_uri_mask_omap, subject_map_predicate, uri_mask))
+        
+        return fno_wrapper
+
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
         # Define a predicate-object map
         predicate_object_map = BNode()
@@ -656,51 +709,11 @@ def __init__(schema_code, source_filename=None):
         #
         # Here comes:
         else:
-            fno_logic = BNode()
-            mapping.add((subject_map, fnml[1].functionValue, fno_logic))
-
-            # Use the controls_if function to conditionally map based on non-empty value
-            controls_if_pomap = BNode()
-            mapping.add((fno_logic, rr[1].predicateObjectMap, controls_if_pomap))
-            mapping.add((controls_if_pomap, rr[1].predicate, fno[1].executes))
-            controls_if_omap = BNode()
-            mapping.add((controls_if_pomap, rr[1].objectMap, controls_if_omap))
-            mapping.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
-
-            # Define the arguments for the if condition
-            # First argument: Check if {MNEMONIC} is empty
-            mnemonic_isnull_pomap = BNode()
-            mapping.add((fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_pomap))
-            mapping.add((mnemonic_isnull_pomap, rr[1].predicate, grel[1].bool_b))
-            mnemonic_isnull_omap = BNode()
-            mapping.add((mnemonic_isnull_pomap, rr[1].objectMap, mnemonic_isnull_omap))
-            # A nested function
-            nested_fno_logic = BNode()
-            mapping.add((mnemonic_isnull_omap, fnml[1].functionValue, nested_fno_logic))
-            # Nested function definition
-            mnemonic_isnull_nested_def_pomap = BNode()
-            mapping.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_def_pomap))
-            mapping.add((mnemonic_isnull_nested_def_pomap, rr[1].predicate, fno[1].executes))
-            mnemonic_isnull_nested_def_omap = BNode()
-            mapping.add((mnemonic_isnull_nested_def_pomap, rr[1].objectMap, mnemonic_isnull_nested_def_omap))
-            mapping.add((mnemonic_isnull_nested_def_omap, rr[1].constant, idlab_fn[1].isNull))
-            # Nested function argument
-            mnemonic_isnull_nested_arg_pomap = BNode()
-            mapping.add((nested_fno_logic, rr[1].predicateObjectMap, mnemonic_isnull_nested_arg_pomap))
-            mapping.add((mnemonic_isnull_nested_arg_pomap, rr[1].predicate, idlab_fn[1].str))
-            mnemonic_isnull_nested_arg_omap = BNode()
-            mapping.add((mnemonic_isnull_nested_arg_pomap, rr[1].objectMap, mnemonic_isnull_nested_arg_omap))
-            # Here goes the climax of checking - the mnemonic value
-            mapping.add((mnemonic_isnull_nested_arg_omap, rml[1].reference, Literal(subject_mnemonic)))
-
-            # If the {MNEMONIC} column is not null, use the value in the object map
-            mnemonic_uri_mask_pomap = BNode()
-            mapping.add((fno_logic, rr[1].predicateObjectMap, mnemonic_uri_mask_pomap))
-            mapping.add((mnemonic_uri_mask_pomap, rr[1].predicate, grel[1].any_false))
-            mnemonic_uri_mask_omap = BNode()
-            mapping.add((mnemonic_uri_mask_pomap, rr[1].objectMap, mnemonic_uri_mask_omap))
-            # Here goes the climax of writing - the uri mask
-            mapping.add((mnemonic_uri_mask_omap, subject_map_predicate, uri_mask))
+            fno_mnemonic_logic = fno_map_mnemonic_unless_isnull(
+                    rml_g = mapping,
+                    input_tuple = (subject_map_predicate, uri_mask),
+                    mnemonic = subject_mnemonic)
+            mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
 
         # Record source mnemonic as a triple
         # Commenting out for now because not sure yet
