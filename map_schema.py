@@ -23,6 +23,8 @@ add_ref_file_label = 'REF_FILE'
 add_title_label = 'TITLE'
 private_mnemonics = ['ARCHAU', 'CMTAU']
 rico_version_mask = r'{RICO_VERSION}'
+# Note that [12] is what we get after disaggregating 1\.\.2
+#rico_authtp_mnemonic = r'RICO_AUTHTP_[12]'
 rico_authtp_mask = r'{RICO_AUTHTP}'
 rico_authtp_dict = {
     'A Ontario Government Name': 'CorporateBody',
@@ -298,74 +300,22 @@ def __init__(schema_code, source_filename=None):
     # List to hold the parsed results
     parsed_results = []
 
-    def disaggregate_rico_authtp(spo):
-        subject_uri, predicate_uri, object_uri = spo
-        rico_disaggregated_subjects = []
-        rico_disaggregated_objects = []
-
-        # Replacing subject
-        if rico_authtp_mask in subject_uri:
-            for authtp_rico_class in rico_authtp_dict.values():
-                # If contains {RICO_AUTHTP}
-                rico_disaggregated_subject_uri = str(subject_uri).replace(rico_authtp_mask,
-                                                                          authtp_rico_class)
-                if isinstance(subject_uri, URIRef):
-                    rico_disaggregated_subject_uri = URIRef(rico_disaggregated_subject_uri)
-                else:
-                    rico_disaggregated_subject_uri = Literal(rico_disaggregated_subject_uri)
-                rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
-
-                # If is a triple like ?s a rico:Thing
-                if ((predicate_uri == rdf[1].type) and
-                    (object_uri == rico[1].Thing)):
-                    object_uri = URIRef(str(object_uri).replace('Thing',
-                                                                authtp_rico_class))
-        else:
-            rico_disaggregated_subjects.append(subject_uri)
-        
-        # Replacing object
-        if rico_authtp_mask in object_uri:
-            for authtp_rico_class in rico_authtp_dict.values():
-                # If contains {RICO_AUTHTP}
-                rico_disaggregated_object_uri = str(object_uri).replace(rico_authtp_mask,
-                                                                          authtp_rico_class)
-                if isinstance(object_uri, URIRef):
-                    rico_disaggregated_object_uri = URIRef(rico_disaggregated_object_uri)
-                else:
-                    rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
-                rico_disaggregated_objects.append(rico_disaggregated_object_uri)
-        else:
-            rico_disaggregated_objects.append(object_uri)
-        
-        # Collect all subjects and objects
-        rico_disaggregated_triples = []
-        for rico_disaggregated_subject in rico_disaggregated_subjects:
-            for rico_disaggregated_object in rico_disaggregated_objects:
-                rico_disaggregated_triples.append((urllib.parse.quote(rico_disaggregated_subject),
-                                                   predicate_uri,
-                                                   urllib.parse.quote(rico_disaggregated_object)))
-
-        return rico_disaggregated_triples
-
     # Process the results and create new triples
     for row in result:
         subject = row.subject
         predicate = row.predicate
         object = row.object
 
-        rico_disaggregated_triples = disaggregate_rico_authtp((subject, predicate, object))
-        for s, p, o in rico_disaggregated_triples:
-            parsed_results.append({
-                'subject': s,
-                'predicate': p,
-                'object': o
-            })
+        parsed_results.append({
+            'subject': subject,
+            'predicate': predicate,
+            'object': object
+        })
         
     #print(parsed_results[:5]) # debug
 
     # Convert the parsed results to a dataframe
     parsed_df = pd.DataFrame(parsed_results)
-    print(parsed_df)
 
     def normalize_uri(uri, ns_manager):
         if isinstance(uri, URIRef):
@@ -377,6 +327,20 @@ def __init__(schema_code, source_filename=None):
         (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x, g.namespace_manager))) == 'rdf:type') &
         (parsed_df['object'].apply(lambda x: str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:")))
     ].loc[:,['subject','object']] # So to be sure, object is the rdf:type URI here
+
+    def disaggregate_rico_authtp(row):
+        subject_uri = row['subject']
+        if rico_authtp_mask in subject_uri:
+            for authtp_rico_class in rico_authtp_dict.values():
+                new_row = row.copy()
+                column_value = str(column_uri).replace(rico_authtp_mask, authtp_rico_class)
+                if column_value:
+                    new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)        
+                disaggregated_series_list.append(new_row)
+        return row
+    
+    def disaggregate_rico_authtp_subject_uri(row): return disaggregate_rico_authtp(row, 'subject', disaggregated_subject_rows)
+    subjects_df = subjects_df.apply(disaggregate_rico_authtp_subject_uri, axis=1)
 
     def extract_uriref_str(uriref):
         norm_uri = normalize_uri(uriref, g.namespace_manager)
@@ -514,7 +478,7 @@ def __init__(schema_code, source_filename=None):
                 new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)        
             disaggregated_series_list.append(new_row)
         return row
-    
+
     # Note for next line that it is the only one that applies to series, all other to df
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
@@ -525,7 +489,7 @@ def __init__(schema_code, source_filename=None):
     disaggregated_subject_rows = []
     def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
     subjects_df = subjects_df.apply(collect_incremented_subject_uri, axis=1)
-    # Creating new frame so that there is no duplication with previous
+    # Creating new frame so that there is no duplication wih previous
     subjects_df = pd.DataFrame(disaggregated_subject_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
@@ -885,7 +849,6 @@ def __init__(schema_code, source_filename=None):
         # Here comes:
         else:
             if rico_class == 'Thing': # so for rico:Thing in drawio, we let magic happen
-                continue
                 if re.match(rf"^{rico_authtp_mnemonic}$", subject_mnemonic):
                     # Dropping RICO_ from the pseudo mnemonic in URI mask
                     pseudo_uri_mask = uri_mask
