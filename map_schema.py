@@ -820,7 +820,7 @@ def __init__(schema_code, source_filename=None):
 
     # Sort triples to ensure smooth diffs
     sorted_triples = sorted(mapping.triples((None, None, None)))
-    mapping_sorted = Graph()
+    mapping_sorted = Graph(base = URIRef(f"{base_gbad_uri}/"))
     # Bind prefixes to namespaces
     mapping_sorted.namespace_manager.bind(*rico)
     mapping_sorted.namespace_manager.bind(*rdf)
