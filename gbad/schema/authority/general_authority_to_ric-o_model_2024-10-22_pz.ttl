@@ -50,7 +50,7 @@
                                                                                                                                rico:AgentControlRelation ;
                                                                                                                       rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> ;
                                                                                                                       rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> ;
-                                                                                                                      rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP_1..2%7D%22> ;
+                                                                                                                      rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FThing%2F1%22> ;
                                                                                                                       rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentControlRelation/1\"" .
 
 
@@ -103,6 +103,27 @@
                                                                                                         rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/Record/1\"" .
 
 
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FThing%2F1%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FThing%2F1%22> rdf:type owl:NamedIndividual ,
+                                                                                                                rico:Thing ;
+                                                                                                       rico:authorizedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FMandate%2F1%22> ;
+                                                                                                       rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> ;
+                                                                                                       rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> ;
+                                                                                                       rico:hasOrHadAgentName <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F1%22> ,
+                                                                                                                              <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22> ,
+                                                                                                                              <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22> ;
+                                                                                                       rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FThing%2F1%22> ;
+                                                                                                       rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22> ;
+                                                                                                       rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FIdentifier%2F1%22> ;
+                                                                                                       rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FThing%2F1%22> ;
+                                                                                                       rico:isEquivalentTo <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFA%7D%2FThing%2F1%22> ;
+                                                                                                       rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FRecord%2F1%22> ;
+                                                                                                       rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22> ;
+                                                                                                       rico:generalDescription "rml:reference \"FUN\"" ;
+                                                                                                       rico:history "rml:reference \"ADM\"" ;
+                                                                                                       rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/Thing/1\"" .
+
+
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                                   rico:Thing ;
@@ -119,27 +140,6 @@
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FThing%2F1%22> rdf:type owl:NamedIndividual ,
                                                                                                                  rico:Thing ;
                                                                                                         rdfs:label "rr:template  \"{RICO_VERSION}/{SUC_1..4}/Thing/1\"" .
-
-
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP_1..2%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP_1..2%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                             rico:Thing ;
-                                                                                    rico:authorizedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FMandate%2F1%22> ;
-                                                                                    rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> ;
-                                                                                    rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> ;
-                                                                                    rico:hasOrHadAgentName <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F1%22> ,
-                                                                                                           <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22> ,
-                                                                                                           <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22> ;
-                                                                                    rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FThing%2F1%22> ;
-                                                                                    rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22> ;
-                                                                                    rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FIdentifier%2F1%22> ;
-                                                                                    rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FThing%2F1%22> ;
-                                                                                    rico:isEquivalentTo <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFA%7D%2FThing%2F1%22> ;
-                                                                                    rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FRecord%2F1%22> ;
-                                                                                    rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22> ;
-                                                                                    rico:generalDescription "rml:reference \"FUN\"" ;
-                                                                                    rico:history "rml:reference \"ADM\"" ;
-                                                                                    rdfs:label "rr:template \"KB/{RICO_AUTHTP_1..2}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22
