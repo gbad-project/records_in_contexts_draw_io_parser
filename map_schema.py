@@ -22,6 +22,7 @@ add_ref_add_label = 'REF_ADD'
 add_ref_file_label = 'REF_FILE'
 add_title_label = 'TITLE'
 private_mnemonics = ['ARCHAU', 'CMTAU']
+auth_authtp_label = 'AUTHTP'
 rico_version_mask = r'{RICO_VERSION}'
 rico_authtp_mask = r'{RICO_AUTHTP}'
 rico_authtp_dict = {
@@ -704,6 +705,68 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((mnemonic_uri_mask_omap, subject_map_predicate, uri_mask))
         
         return fno_wrapper
+    
+    def fno_map_this_if_mnemonic_equal(
+            rml_g,
+            return_tuple, input_value_tuples_1, input_value_tuples_2):
+        subject_map_predicate, uri_mask = return_tuple
+
+        # Define a wrapper function
+        fno_wrapper = BNode()
+
+        # Use the controls_if function to conditionally map based on nested function
+        controls_if_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, controls_if_pomap))
+        rml_g.add((controls_if_pomap, rr[1].predicate, fno[1].executes))
+        controls_if_omap = BNode()
+        rml_g.add((controls_if_pomap, rr[1].objectMap, controls_if_omap))
+        rml_g.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
+
+        # Create a boolean param
+        bool_b_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, bool_b_pomap))
+        rml_g.add((bool_b_pomap, rr[1].predicate, grel[1].bool_b))
+        bool_b_omap = BNode()
+        rml_g.add((bool_b_pomap, rr[1].objectMap, bool_b_omap))
+        # A nested function
+        nested_fno_wrapper = BNode()
+        rml_g.add((bool_b_omap, fnml[1].functionValue, nested_fno_wrapper))
+        # Nested function definition
+        nested_def_pomap = BNode()
+        rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_def_pomap))
+        rml_g.add((nested_def_pomap, rr[1].predicate, fno[1].executes))
+        nested_def_omap = BNode()
+        rml_g.add((nested_def_pomap, rr[1].objectMap, nested_def_omap))
+        rml_g.add((nested_def_omap, rr[1].constant, idlab_fn[1].equal))
+        # Nested function argument 1
+        nested_fun_arg_1_pomap = BNode()
+        rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_1_pomap))
+        rml_g.add((nested_fun_arg_1_pomap, rr[1].predicate, idlab_fn[1].str))
+        nested_fun_arg_1_omap = BNode()
+        rml_g.add((nested_fun_arg_1_pomap, rr[1].objectMap, nested_fun_arg_1_omap))
+        # Here goes the climax of checking - the input_value_1
+        for input_value_tuple_1 in input_value_tuples_1:
+            rml_g.add((nested_fun_arg_1_omap, input_value_tuple_1[0], input_value_tuple_1[1]))
+        # Nested function argument 2
+        nested_fun_arg_2_pomap = BNode()
+        rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_2_pomap))
+        rml_g.add((nested_fun_arg_2_pomap, rr[1].predicate, idlab_fn[1].str))
+        nested_fun_arg_2_omap = BNode()
+        rml_g.add((nested_fun_arg_2_pomap, rr[1].objectMap, nested_fun_arg_2_omap))
+        # Here goes the climax of checking - the input_value_2
+        for input_value_tuple_2 in input_value_tuples_2:
+            rml_g.add((nested_fun_arg_2_omap, input_value_tuple_2[0], input_value_tuple_2[1]))
+
+        # If input value 1 is equal to input value 2, use the return tuple
+        return_pomap = BNode()
+        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, return_pomap))
+        rml_g.add((return_pomap, rr[1].predicate, grel[1].any_true))
+        return_omap = BNode()
+        rml_g.add((return_pomap, rr[1].objectMap, return_omap))
+        # Here goes the climax of writing - the uri mask
+        rml_g.add((return_omap, subject_map_predicate, uri_mask))
+        
+        return fno_wrapper
 
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
         # Define a predicate-object map
@@ -784,11 +847,28 @@ def __init__(schema_code, source_filename=None):
         #
         # Here comes:
         else:
+            return_tuple = (subject_map_predicate, uri_mask)
             fno_mnemonic_logic = fno_map_mnemonic_unless_isnull(
                     rml_g = mapping,
-                    input_tuple = (subject_map_predicate, uri_mask),
+                    input_tuple = return_tuple,
                     mnemonic = subject_mnemonic)
             mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
+            
+            # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
+            # so for entities defined as constants RICO_AUTHTP will be bugged
+            for authtp_i in [1, 2]:
+                for authtp_value, authtp_rico_class in rico_authtp_dict.items():
+                    if authtp_rico_class == rico_class:
+                        # Apply this to all subject maps - generate selectively based on AUTHTP_1 and AUTHTP_2
+                        authtp_column_tuples = [(rml[1].reference, Literal(f"{auth_authtp_label}_{authtp_i}"))]
+                        authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
+                                              (rr[1].termType, rr[1].Literal)]
+                        rico_authtp_str_replace = fno_map_this_if_mnemonic_equal(
+                            rml_g = mapping,
+                            return_tuple = return_tuple,
+                            input_value_tuples_1 = authtp_column_tuples,
+                            input_value_tuples_2 = authtp_value_tuples)                
+                        mapping.add((subject_map, fnml[1].functionValue, rico_authtp_str_replace))
 
         # Record source mnemonic as a triple
         # Commenting out for now because not sure yet
