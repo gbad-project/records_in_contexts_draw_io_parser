@@ -153,11 +153,14 @@ def __init__(schema_code, source_filename=None):
             pass
 
         return None
-    try:
-        gbad_term = gbadify_rico_version(get_rico_version())
-    except:
-        exit(f"Exiting. Fatal error: Could not resolve RiC-O version from '{rico_uri}'")
-    def substitute_rico_version_mask(s): return str(s).replace(rico_version_mask, gbad_term) if str(s).startswith(rico_version_mask) else str(s)
+    
+    ### Start block for downloading RiC-O version
+    #try:
+    #    gbad_term = gbadify_rico_version(get_rico_version())
+    #except:
+    #    exit(f"Exiting. Fatal error: Could not resolve RiC-O version from '{rico_uri}'")
+    #def substitute_rico_version_mask(s): return str(s).replace(rico_version_mask, gbad_term) if str(s).startswith(rico_version_mask) else str(s)
+    ### End block for downloading RiC-O version
 
     def prettify_rdfs_label(literal_str):
         # Remove base data prefix
@@ -469,7 +472,7 @@ def __init__(schema_code, source_filename=None):
             if isinstance(cleaned_uri, URIRef): # check if true URI or rr:template
                 map_object = URIRef(encoded_uri)
             else:
-                cleaned_uri = substitute_rico_version_mask(cleaned_uri)
+                #cleaned_uri = substitute_rico_version_mask(cleaned_uri)
                 map_object = Literal(cleaned_uri)
         # Constant URI
         elif uriref_str.startswith(norm(rr[1].constant)):
@@ -502,7 +505,7 @@ def __init__(schema_code, source_filename=None):
                 return None
             # Consider replacing this with more robust, findall logic
             # later on to allow for true multiple masks
-            map_object = substitute_rico_version_mask(map_object)
+            #map_object = substitute_rico_version_mask(map_object)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
