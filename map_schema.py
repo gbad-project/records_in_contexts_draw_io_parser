@@ -788,8 +788,13 @@ def __init__(schema_code, source_filename=None):
                             object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object_ith, URIRef) else Literal(object_map_object_ith)
                             mapping.add((object_map, object_map_predicate, object_map_object_ith))
 
+    # Sort triples to ensure smooth diffs
+    sorted_triples = sorted(mapping.triples((None, None, None)))
+    mapping_sorted = Graph()
+    for triple in sorted_triples:
+        mapping_sorted.add(triple)
     # Serialize and print the RDF graph
-    ttl = mapping.serialize(format='turtle')
+    ttl = mapping_sorted.serialize(format='turtle')
     with open(rml_path, 'w') as f:
         f.write(ttl)
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
