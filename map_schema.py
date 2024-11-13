@@ -447,7 +447,9 @@ def __init__(schema_code, source_filename=None):
         row[f'original_{column}'] = row[column]
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
             new_row = row.copy()
-            new_row[column] = URIRef(mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri)))
+            column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
+            if column_value:
+                new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value) 
             disaggregated_series_list.append(new_row)
         return row
     
