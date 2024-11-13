@@ -791,6 +791,20 @@ def __init__(schema_code, source_filename=None):
     # Sort triples to ensure smooth diffs
     sorted_triples = sorted(mapping.triples((None, None, None)))
     mapping_sorted = Graph()
+    # Bind prefixes to namespaces
+    mapping_sorted.namespace_manager.bind(*rico)
+    mapping_sorted.namespace_manager.bind(*rdf)
+    mapping_sorted.namespace_manager.bind(*rdfs)
+    mapping_sorted.namespace_manager.bind(*owl)
+    mapping_sorted.namespace_manager.bind(*rml)
+    mapping_sorted.namespace_manager.bind(*rr)
+    mapping_sorted.namespace_manager.bind(*ql)
+    mapping_sorted.namespace_manager.bind(*csvw)
+    mapping_sorted.namespace_manager.bind(*maps)
+    mapping_sorted.namespace_manager.bind(*fnml)
+    mapping_sorted.namespace_manager.bind(*fno)
+    mapping_sorted.namespace_manager.bind(*idlab_fn)
+    mapping_sorted.namespace_manager.bind(*grel)
     for triple in sorted_triples:
         mapping_sorted.add(triple)
     # Serialize and print the RDF graph
