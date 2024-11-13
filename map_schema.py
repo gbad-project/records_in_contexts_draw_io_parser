@@ -460,8 +460,11 @@ def __init__(schema_code, source_filename=None):
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
-    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
+    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)\
+    
     # Now that we have mnemonics generated, let's honor any increment requests
+    disaggregated_subject_rows = []
+    def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
     subjects_df = subjects_df.apply(collect_incremented_subject_uri, axis=1)
     # Creating new frame so that there is no duplication wih previous
     subjects_df = pd.DataFrame(disaggregated_subject_rows)
@@ -485,7 +488,6 @@ def __init__(schema_code, source_filename=None):
     #subjects_df.info()
     #print("\n", "\n\n".join([str(display_table.iloc[i]) for i in range(len(display_table))])) # debug
     
-    # Now that we have mnemonics generated, let's honor any increment requests
     # Add useful columns from subjects dataset for matching within loop later
     # The column name stays unique so we should just remember that RiC-O name refers to subject
     # The line below is really important, or triples will be lost!
@@ -498,6 +500,19 @@ def __init__(schema_code, source_filename=None):
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
     parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
+
+    # Now that we have mnemonics generated, let's honor any increment requests
+    disaggregated_object_rows = []
+    def collect_incremented_object_uri(row): return collect_incremented_uri(row, 'object', disaggregated_object_rows)
+    parsed_df = parsed_df.apply(collect_incremented_object_uri, axis=1)
+    # Creating new frame so that there is no duplication wih previous
+    parsed_df = pd.DataFrame(disaggregated_object_rows)
+    # Let's regenerate cols above for simplicity now that rows are disaggregated
+    parsed_df[uriref_str_label] = parsed_df['object'].apply(extract_uriref_str)
+    parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
+    parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
+
+    # Now that all cols have been disaggregated, drop the temporary field
     parsed_df.drop(uriref_str_label, axis=1, inplace=True)
 
     # Sort and only show those that have a predicate
