@@ -23,6 +23,16 @@ add_ref_file_label = 'REF_FILE'
 add_title_label = 'TITLE'
 private_mnemonics = ['ARCHAU', 'CMTAU']
 rico_version_mask = r'{RICO_VERSION}'
+rico_authtp_mask = r'{RICO_AUTHTP}'
+rico_authtp_dict = {
+    'A Ontario Government Name': 'CorporateBody',
+    'B Ontario Government Name': 'CorporateBody',
+    'C Ontario Government Name': 'CorporateBody',
+    'Corporate Name': 'CorporateBody',
+    'Family Name': 'Family',
+    'Geographic Name': 'Place',
+    'Personal Name': 'Person'
+}
 
 triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
@@ -288,22 +298,87 @@ def __init__(schema_code, source_filename=None):
     # List to hold the parsed results
     parsed_results = []
 
+    def disaggregate_rico_authtp(spo):
+        subject_uri, predicate_uri, object_uri = spo
+        rico_disaggregated_subjects = []
+        rico_disaggregated_objects = []
+        rico_disaggregated_triples = []
+
+        # Necessary to make matches and replacements work
+        rico_authtp_mask_encoded = urllib.parse.quote(rico_authtp_mask, safe='')
+        subject_mask = rico_authtp_mask_encoded if isinstance(subject_uri, URIRef) else rico_authtp_mask
+        object_mask = rico_authtp_mask_encoded if isinstance(object_uri, URIRef) else rico_authtp_mask
+
+        # Replacing subject
+        if subject_mask in str(subject_uri):
+            for authtp_rico_class in rico_authtp_dict.values():
+                # If contains {RICO_AUTHTP}
+                rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask,
+                                                                          authtp_rico_class)
+                if isinstance(subject_uri, URIRef):
+                    rico_disaggregated_subject_uri = URIRef(rico_disaggregated_subject_uri)
+                else:
+                    rico_disaggregated_subject_uri = Literal(rico_disaggregated_subject_uri)
+                rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
+
+                # If is a triple like ?s a rico:Thing
+                if ((predicate_uri == rdf[1].type) and
+                    (object_uri == rico[1].Thing)):
+                    rico_disaggregated_object_uri = URIRef(str(object_uri).replace('Thing',
+                                                                                    authtp_rico_class))
+                    rico_disaggregated_triples.append((rico_disaggregated_subject_uri,
+                                                       predicate_uri,
+                                                       rico_disaggregated_object_uri))
+        else:
+            rico_disaggregated_subjects.append(subject_uri)
+
+        if len(rico_disaggregated_triples) == 0: # if not a triple like ?s a rico:Thing
+            # Replacing object
+            if object_mask in str(object_uri):
+                for authtp_rico_class in rico_authtp_dict.values():
+                    # If contains {RICO_AUTHTP}
+                    rico_disaggregated_object_uri = str(object_uri).replace(object_mask,
+                                                                            authtp_rico_class)
+                    if isinstance(object_uri, URIRef):
+                        rico_disaggregated_object_uri = URIRef(rico_disaggregated_object_uri)
+                    else:
+                        rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
+                    rico_disaggregated_objects.append(rico_disaggregated_object_uri)
+            elif len(rico_disaggregated_objects) == 0: 
+                rico_disaggregated_objects.append(object_uri)
+            
+            # Collect all subjects and objects
+            for rico_disaggregated_subject in rico_disaggregated_subjects:
+                for rico_disaggregated_object in rico_disaggregated_objects:
+                    rico_disaggregated_triples.append((rico_disaggregated_subject,
+                                                    predicate_uri,
+                                                    rico_disaggregated_object))
+
+        return rico_disaggregated_triples
+
     # Process the results and create new triples
     for row in result:
         subject = row.subject
         predicate = row.predicate
         object = row.object
 
-        parsed_results.append({
-            'subject': subject,
-            'predicate': predicate,
-            'object': object
-        })
+        rico_disaggregated_triples = disaggregate_rico_authtp((subject, predicate, object))
+        for s, p, o in rico_disaggregated_triples:
+            parsed_results.append({
+                'subject': s,
+                'predicate': p,
+                'object': o
+            })
         
     #print(parsed_results[:5]) # debug
 
     # Convert the parsed results to a dataframe
     parsed_df = pd.DataFrame(parsed_results)
+    # Dropping duplicates is necessary due to the duplicated classes
+    # in rico_authtp_dict as this duplicates #rr_template__KB_CorporateBody__HEADING__
+    # thus producing an error at RML mapping
+    parsed_df = parsed_df.drop_duplicates()
+    #parsed_df.to_csv('parsed_df.csv') # for debug
 
     def normalize_uri(uri, ns_manager):
         if isinstance(uri, URIRef):

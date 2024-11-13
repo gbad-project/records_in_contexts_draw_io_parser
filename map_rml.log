@@ -1,12 +1,13 @@
-Script started on 2024-11-13 15:53:24-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="12"]
+Script started on 2024-11-13 17:12:40-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="12"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-13_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl')
-15:53:29.277 [main] ERROR be.ugent.rml.cli.Main               .run(423) - Mapping for RICO_AUTHTP not found, expected one of [REFA, ADM, DATECONT_7_BEGINNING, DATECONT_9_END, DATECONT_14_END, SISN, DATECONT_1_END, DATECONT_3_BEGINNING, DATECONT_13_END, VAR_2, AA, VAR_3, DATECONT_3_END, DATEEX_BEGINNING, VAR_1, VAR_11, VAR_6, VAR_7, WEBA, VAR_4, VAR_5, SUC_1, VAR_10, SUC_3, DATECONT_2_END, SUC_2, SUC_4, NAME, PRED_5, PRED_4, DATECONT_14_BEGINNING, PRED_3, PRED_2, SEEALSO, PRED_1, SOURCE, STATUSA, DATECONT_11_BEGINNING, DATECONT_4_BEGINNING, CONTAG_9, CONTAG_8, CONTAG_7, AUTHTP_2, AUTHTP_1, DATECONT_5_BEGINNING, DATEEX_END, DATECONT_10_END, DATECONT_6_END, DATECONT_1_BEGINNING, HEADING, DATECONT_4_END, DATECONT_8_BEGINNING, DATECONT_12_BEGINNING, CONTAG_2, CONTAG_1, VAR_8, VAR_9, DATECONT_5_END, CONTAG_6, CONTAG_5, FUN, CONTAG_4, CONTAG_3, DATECONT_6_BEGINNING, DATECONT_10_BEGINNING, DATECONT_8_END, DATECONT_12_END, CONTAG_12, PAR_4, DATECONT_13_BEGINNING, CONTAG_13, CONTAG_14, PAR_2, PAR_3, DATECONT_2_BEGINNING, PAR_1, RULES, DATECONT_7_END, DATECONT_9_BEGINNING, CONTAG_10, DATECONT_11_END, CONTAG_11]
-java.lang.IllegalArgumentException: Mapping for RICO_AUTHTP not found, expected one of [REFA, ADM, DATECONT_7_BEGINNING, DATECONT_9_END, DATECONT_14_END, SISN, DATECONT_1_END, DATECONT_3_BEGINNING, DATECONT_13_END, VAR_2, AA, VAR_3, DATECONT_3_END, DATEEX_BEGINNING, VAR_1, VAR_11, VAR_6, VAR_7, WEBA, VAR_4, VAR_5, SUC_1, VAR_10, SUC_3, DATECONT_2_END, SUC_2, SUC_4, NAME, PRED_5, PRED_4, DATECONT_14_BEGINNING, PRED_3, PRED_2, SEEALSO, PRED_1, SOURCE, STATUSA, DATECONT_11_BEGINNING, DATECONT_4_BEGINNING, CONTAG_9, CONTAG_8, CONTAG_7, AUTHTP_2, AUTHTP_1, DATECONT_5_BEGINNING, DATEEX_END, DATECONT_10_END, DATECONT_6_END, DATECONT_1_BEGINNING, HEADING, DATECONT_4_END, DATECONT_8_BEGINNING, DATECONT_12_BEGINNING, CONTAG_2, CONTAG_1, VAR_8, VAR_9, DATECONT_5_END, CONTAG_6, CONTAG_5, FUN, CONTAG_4, CONTAG_3, DATECONT_6_BEGINNING, DATECONT_10_BEGINNING, DATECONT_8_END, DATECONT_12_END, CONTAG_12, PAR_4, DATECONT_13_BEGINNING, CONTAG_13, CONTAG_14, PAR_2, PAR_3, DATECONT_2_BEGINNING, PAR_1, RULES, DATECONT_7_END, DATECONT_9_BEGINNING, CONTAG_10, DATECONT_11_END, CONTAG_11]
-Failed to run mapper jar: 'Command '['java', '-jar', './rmlmapper-7.0.0-r374-all.jar', '-s', 'turtle', '-m', 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-13_pz.rml', '-o', 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl']' returned non-zero exit status 1.'
-Failed to read graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl' 
-Error: '[Errno 2] No such file or directory: '/mnt/c/Users/Anonymous/gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl''
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-13_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl'
 
-Script done on 2024-11-13 15:53:29-05:00 [COMMAND_EXIT_CODE="0"]
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-13_pz/mapped.ttl'
+
+Number of triples in the graph: 8729
+
+Script done on 2024-11-13 17:12:48-05:00 [COMMAND_EXIT_CODE="0"]
