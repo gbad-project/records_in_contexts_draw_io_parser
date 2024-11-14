@@ -299,6 +299,7 @@ def __init__(schema_code, source_filename=None):
     # List to hold the parsed results
     parsed_results = []
 
+    rico_authtp_subjects = dict() # keeping these out for future use
     def disaggregate_rico_authtp(spo):
         subject_uri, predicate_uri, object_uri = spo
         rico_disaggregated_subjects = []
@@ -314,22 +315,34 @@ def __init__(schema_code, source_filename=None):
         if subject_mask in str(subject_uri):
             for authtp_rico_class in rico_authtp_dict.keys():
                 # If contains {RICO_AUTHTP}
-                rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask,
-                                                                          authtp_rico_class)
-                if isinstance(subject_uri, URIRef):
-                    rico_disaggregated_subject_uri = URIRef(rico_disaggregated_subject_uri)
-                else:
-                    rico_disaggregated_subject_uri = Literal(rico_disaggregated_subject_uri)
-                rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
+                # Add two subjects for easy separate triplesmap creation later on
+                for authtp_i in [1, 2]:
+                    authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
+                    replacement = f"{authtp_rico_class}_{authtp_column_name}"
+                    rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, replacement)
 
-                # If is a triple like ?s a rico:Thing
-                if ((predicate_uri == rdf[1].type) and
-                    (object_uri == rico[1].Thing)):
-                    rico_disaggregated_object_uri = URIRef(str(object_uri).replace('Thing',
-                                                                                    authtp_rico_class))
-                    rico_disaggregated_triples.append((rico_disaggregated_subject_uri,
-                                                       predicate_uri,
-                                                       rico_disaggregated_object_uri))
+                    if isinstance(subject_uri, URIRef):
+                        rico_disaggregated_subject_uri = URIRef(rico_disaggregated_subject_uri)
+                    else:
+                        rico_disaggregated_subject_uri = Literal(rico_disaggregated_subject_uri)
+                    rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
+                    # Keep an external list of these for future use
+                    if not rico_disaggregated_subject_uri in rico_authtp_subjects.keys():
+                        true_rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, authtp_rico_class)
+                        if isinstance(subject_uri, URIRef):
+                            true_rico_disaggregated_subject_uri = URIRef(true_rico_disaggregated_subject_uri)
+                        else:
+                            true_rico_disaggregated_subject_uri = Literal(true_rico_disaggregated_subject_uri)
+                        rico_authtp_subjects[rico_disaggregated_subject_uri] = (true_rico_disaggregated_subject_uri, authtp_column_name)
+
+                    # If is a triple like ?s a rico:Thing
+                    if ((predicate_uri == rdf[1].type) and
+                        (object_uri == rico[1].Thing)):
+                        rico_disaggregated_object_uri = URIRef(str(object_uri).replace('Thing',
+                                                                                        authtp_rico_class))
+                        rico_disaggregated_triples.append((rico_disaggregated_subject_uri,
+                                                        predicate_uri,
+                                                        rico_disaggregated_object_uri))
         else:
             rico_disaggregated_subjects.append(subject_uri)
 
@@ -711,25 +724,7 @@ def __init__(schema_code, source_filename=None):
             rml_g,
             return_tuple, input_value_tuples, regex_tuples):
         # Define a wrapper function
-        fno_wrapper = BNode()
-
-        # Use the controls_if function to conditionally map based on nested function
-        controls_if_pomap = BNode()
-        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, controls_if_pomap))
-        rml_g.add((controls_if_pomap, rr[1].predicate, fno[1].executes))
-        controls_if_omap = BNode()
-        rml_g.add((controls_if_pomap, rr[1].objectMap, controls_if_omap))
-        rml_g.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
-
-        # Create a boolean param
-        bool_b_pomap = BNode()
-        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, bool_b_pomap))
-        rml_g.add((bool_b_pomap, rr[1].predicate, grel[1].bool_b))
-        bool_b_omap = BNode()
-        rml_g.add((bool_b_pomap, rr[1].objectMap, bool_b_omap))
-        # A nested function
         nested_fno_wrapper = BNode()
-        rml_g.add((bool_b_omap, fnml[1].functionValue, nested_fno_wrapper))
         # Nested function definition
         nested_def_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_def_pomap))
@@ -756,24 +751,14 @@ def __init__(schema_code, source_filename=None):
         for input_value_tuple_2 in regex_tuples:
             rml_g.add((nested_fun_arg_2_omap, input_value_tuple_2[0], input_value_tuple_2[1]))
 
-        # If input value 1 is equal to input value 2, use the return tuple
-        return_pomap = BNode()
-        rml_g.add((fno_wrapper, rr[1].predicateObjectMap, return_pomap))
-        rml_g.add((return_pomap, rr[1].template, grel[1].output_array))
-        rml_g.add((return_pomap, rr[1].termType, rr[1].Literal))
-        #return_omap = BNode()
-        #rml_g.add((return_pomap, rr[1].objectMap, return_omap))
-        # Here goes the climax of writing - the value
-        #rml_g.add((return_omap, grel[1].o_array, fno[1].Output))
-
         # Convert string match output to boolean
-        input_tuples = [(fnml[1].functionValue, fno_wrapper)]
-        uber_fno_wrapper = fno_map_value_unless_isnull(
+        input_tuples = [(fnml[1].functionValue, nested_fno_wrapper)]
+        fno_wrapper = fno_map_value_unless_isnull(
             rml_g = rml_g,
             return_tuple = return_tuple,
             input_tuples = input_tuples)
         
-        return uber_fno_wrapper
+        return fno_wrapper
 
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
         # Define a predicate-object map
@@ -813,8 +798,15 @@ def __init__(schema_code, source_filename=None):
 
         # Collect subjectmap predicate and object from subject df
         # These will be added to the graph and then used later on
-        subject_map_predicate = subject_row[map_predicate_label]
-        uri_mask = subject_row[map_object_label]
+        authtp_column_name = None # only set for RICO_AUTHTP replaced subjects
+        if subject_uri in rico_authtp_subjects.keys():
+            true_subject_uri, authtp_column_name = rico_authtp_subjects[subject_uri]
+            true_subject_po = uriref_str_to_map(extract_uriref_str(true_subject_uri))
+            subject_map_predicate = true_subject_po[map_predicate_label]
+            uri_mask = true_subject_po[map_object_label]
+        else:
+            subject_map_predicate = subject_row[map_predicate_label]
+            uri_mask = subject_row[map_object_label]
         #URIRef(urllib.parse.unquote(str(subject)))
         #uri_mask = construct_uri_mask(subjects_df, i)
         
@@ -863,26 +855,19 @@ def __init__(schema_code, source_filename=None):
             
             # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
             # so for entities defined as constants RICO_AUTHTP will be bugged
-            rico_authtp_string_match = None
-            for authtp_rico_class, authtp_value in rico_authtp_dict.items():
-                if authtp_rico_class == rico_class: # not really a loop because dict contains unique values
-                    # Apply this to all subject maps - generate selectively based on AUTHTP_1 and AUTHTP_2
-                    # Any of the two columns works, so will combine and check combined string against rico_authtp_dict
-                    authtp_column_names = f"{{{auth_authtp_label}_1}}|{{{auth_authtp_label}_2}}"
-                    authtp_column_tuples = [(rr[1].template, Literal(authtp_column_names)),
-                                             (rr[1].termType, rr[1].Literal)]
-                    authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
-                                            (rr[1].termType, rr[1].Literal)]
-                    return_tuple = (fnml[1].functionValue, fno_mnemonic_logic)
-                    rico_authtp_string_match = fno_map_this_string_match(
-                        rml_g = mapping,
-                        return_tuple = return_tuple,
-                        input_value_tuples = authtp_column_tuples,
-                        regex_tuples = authtp_value_tuples)
-                    mapping.add((subject_map, fnml[1].functionValue, rico_authtp_string_match))
-
-            # If rico_authtp logic did not work, simply add mnemonic logic
-            if rico_authtp_string_match is None:
+            if authtp_column_name:
+                authtp_value = rico_authtp_dict[rico_class]
+                authtp_column_tuples = [(rml[1].reference, Literal(authtp_column_name))]
+                authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
+                                        (rr[1].termType, rr[1].Literal)]
+                return_tuple = (fnml[1].functionValue, fno_mnemonic_logic)
+                rico_authtp_string_match = fno_map_this_string_match(
+                    rml_g = mapping,
+                    return_tuple = return_tuple,
+                    input_value_tuples = authtp_column_tuples,
+                    regex_tuples = authtp_value_tuples)
+                mapping.add((subject_map, fnml[1].functionValue, rico_authtp_string_match))
+            else:
                 mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
 
         # Record source mnemonic as a triple
