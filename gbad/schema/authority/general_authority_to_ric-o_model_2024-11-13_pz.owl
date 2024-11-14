@@ -9,33 +9,33 @@ Individual: rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22
     rdfs:label "rr:template \"KB/{RICO_AUTHTP}/{HEADING}\""
   Types: rico:Thing
   Facts:
-    rico:hasOrHadIdentifier rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FIdentifier%2F1%22,
-    rico:hasOrHadAgentName rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F1%22,
-    rico:hasOrHadAgentName rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22,
-    rico:hasOrHadAgentName rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22,
+    rico:hasOrHadIdentifier rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FIdentifier%2F1%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FAgentName%2F1%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2FParallelName%2F%7BPAR_1..4%7D%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2FVariantName%2F%7BVAR_1..11%7D%22,
     rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22,
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22,
-    rico:authorizedBy rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FMandate%2F1%22,
+    rico:authorizedBy rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FMandate%2F1%22,
     rico:history "rml:reference \"ADM\"",
-    rico:isOrWasDescribedBy rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FRecord%2F1%22,
+    rico:isOrWasDescribedBy rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FRecord%2F1%22,
     rico:generalDescription "rml:reference \"FUN\"",
-    rico:isEquivalentTo rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFA%7D%2FThing%2F1%22,
-    rico:hasOrHadController rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FThing%2F1%22,
-    rico:isSuccessorOf rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22,
-    rico:hasSuccessor rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FThing%2F1%22,
+    rico:isEquivalentTo rr%3Atemplate%20%22KB%2F%7BREFA%7D%2FThing%2F1%22,
+    rico:hasOrHadController rr%3Atemplate%20%22KB%2F%7BCONTAG_1..14%7D%2FThing%2F1%22,
+    rico:isSuccessorOf rr%3Atemplate%20%22KB%2F%7BPRED_1..5%7D%2FThing%2F1%22,
+    rico:hasSuccessor rr%3Atemplate%20%22KB%2F%7BSUC_1..4%7D%2FThing%2F1%22,
     rico:hasOrHadCorporateBodyType rr%3Atemplate%20%22Schema%2FAuthority%2FCorporateBodyType%2F%7BAUTHTP_1..2%7D%22
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FIdentifier%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FIdentifier%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/Identifier/1\""
+    rdfs:label "rr:template \"KB/{HEADING}/Identifier/1\""
   Types: rico:Identifier
   Facts:
     rico:hasIdentifierType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FIdentifierType%2FAgent%20Identifier%22,
     rico:normalizedValue "rml:reference \"REFA\""
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FAgentName%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentName/1\""
+    rdfs:label "rr:template \"KB/{HEADING}/AgentName/1\""
   Types: rico:AgentName
   Facts:
     rico:normalizedValue "rml:reference \"NAME\""
@@ -50,16 +50,16 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22
     rdfs:label "rr:template  \"KB/Date/{DATEEX_END}\""
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FMandate%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FMandate%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/Mandate/1\""
+    rdfs:label "rr:template \"KB/{HEADING}/Mandate/1\""
   Types: rico:Mandate
   Facts:
     rico:textualValue "rml:reference \"AA\""
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FRecord%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FRecord%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/Record/1\""
+    rdfs:label "rr:template \"KB/{HEADING}/Record/1\""
   Types: rico:Record
   Facts:
     rico:generalDescription "rml:reference \"SOURCE\"",
@@ -88,9 +88,9 @@ Individual: rr%3Atemplate%20%22Schema%2FAuthority%2FRecordState%2FStatus%2F%7BST
     rdfs:label "rr:template  \"Schema/Authority/RecordState/Status/{STATUSA}\""
   Types: rico:RecordState
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFA%7D%2FThing%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BREFA%7D%2FThing%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{REFA}/Thing/1\""
+    rdfs:label "rr:template \"KB/{REFA}/Thing/1\""
   Types: rico:Thing
 
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FIdentifierType%2FAgent%20Identifier%22
@@ -98,16 +98,16 @@ Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2F
     rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/IdentifierType/Agent Identifier\""
   Types: rico:IdentifierType
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BCONTAG_1..14%7D%2FThing%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BCONTAG_1..14%7D%2FThing%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{CONTAG_1..14}/Thing/1\""
+    rdfs:label "rr:template \"KB/{CONTAG_1..14}/Thing/1\""
   Types: rico:Thing
   Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BHEADING%7D%2FAgentControlRelation%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentControlRelation/1\""
+    rdfs:label "rr:template \"KB/{HEADING}/AgentControlRelation/1\""
   Types: rico:AgentControlRelation
   Facts:
     rico:relationHasTarget rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22,
@@ -124,27 +124,27 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22
     rdfs:label "rr:template \"KB/Date/{DATECONT_1..14_END}\""
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F2%22
+Individual: rr%3Atemplate%20%22KB%2FVariantName%2F%7BVAR_1..11%7D%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentName/2\""
+    rdfs:label "rr:template \"KB/VariantName/{VAR_1..11}\""
   Types: rico:AgentName
   Facts:
     rico:textualValue "rml:reference \"VAR_1..11\"",
     rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FVariant%20Name%22
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BPRED_1..5%7D%2FThing%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BPRED_1..5%7D%2FThing%2F1%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{PRED_1..5}/Thing/1\""
+    rdfs:label "rr:template \"KB/{PRED_1..5}/Thing/1\""
   Types: rico:Thing
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BSUC_1..4%7D%2FThing%2F1%22
+Individual: rr%3Atemplate%20%22KB%2F%7BSUC_1..4%7D%2FThing%2F1%22
   Annotations:
-    rdfs:label "rr:template  \"{RICO_VERSION}/{SUC_1..4}/Thing/1\""
+    rdfs:label "rr:template  \"KB/{SUC_1..4}/Thing/1\""
   Types: rico:Thing
 
-Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BHEADING%7D%2FAgentName%2F3%22
+Individual: rr%3Atemplate%20%22KB%2FParallelName%2F%7BPAR_1..4%7D%22
   Annotations:
-    rdfs:label "rr:template \"{RICO_VERSION}/{HEADING}/AgentName/3\""
+    rdfs:label "rr:template \"KB/ParallelName/{PAR_1..4}\""
   Types: rico:AgentName
   Facts:
     rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FType%2FParallel%20Name%22,
