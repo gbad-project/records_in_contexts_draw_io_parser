@@ -351,13 +351,17 @@ def __init__(schema_code, source_filename=None):
             if object_mask in str(object_uri):
                 for authtp_rico_class in rico_authtp_dict.keys():
                     # If contains {RICO_AUTHTP}
-                    rico_disaggregated_object_uri = str(object_uri).replace(object_mask,
-                                                                            authtp_rico_class)
-                    if isinstance(object_uri, URIRef):
-                        rico_disaggregated_object_uri = URIRef(rico_disaggregated_object_uri)
-                    else:
-                        rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
-                    rico_disaggregated_objects.append(rico_disaggregated_object_uri)
+                    # Add two subjects for easy separate triplesmap creation later on
+                    for authtp_i in [1, 2]:
+                        authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
+                        replacement = f"{authtp_rico_class}_{authtp_column_name}"
+                        rico_disaggregated_object_uri = str(object_uri).replace(object_mask, replacement)
+
+                        if isinstance(object_uri, URIRef):
+                            rico_disaggregated_object_uri = URIRef(rico_disaggregated_object_uri)
+                        else:
+                            rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
+                        rico_disaggregated_objects.append(rico_disaggregated_object_uri)
             elif len(rico_disaggregated_objects) == 0: 
                 rico_disaggregated_objects.append(object_uri)
             
