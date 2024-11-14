@@ -100,7 +100,7 @@ def __init__(schema_code, source_filename=None):
 
     # Any mnemonic-based URIs in GBAD URI syntax
     mnemonic_pattern = r"\{([A-Z:_\d\.]+)\}"
-    mnemonic_regex = re.compile(rf"({mnemonic_pattern})/([a-zA-Z]+)(/\d+)?")
+    mnemonic_regex = re.compile(rf"([a-zA-Z]+)/({mnemonic_pattern})/?(.*)")
     # Pattern to capture within-mnemonic iterators
     mnemonic_i_pattern = r"(\d+)\.\.(\d+)"
     mnemonic_i_regex = re.compile(mnemonic_i_pattern)
@@ -180,30 +180,32 @@ def __init__(schema_code, source_filename=None):
         if literal_str.lower().startswith(kb_term.lower() + '/'):
             literal_str = str(literal_str[len(kb_term)+1:])
             #literal_str = literal_str + ' (Knowledge Base Entity'
-            match = re.search(mnemonic_pattern, literal_str)
+            match = re.search(mnemonic_regex, literal_str)
             if match:
-                mnemonic = match.group(1)
-                literal_str = f'{{{mnemonic}}}'
+                rico_ish_class = match.group(1)
+                mnemonic = match.group(3)
+                optional_rest = match.group(4)
+                literal_str = f'{{{mnemonic}}} ({rico_ish_class})'
                 #literal_str = literal_str + f' from "{mnemonic}"'
             #literal_str = literal_str + ')'
 
-        # GBAD entities
-        gbad_term_match = gbad_term_regex.match(literal_str)
-        if gbad_term_match:
-            matched_gbad_term = gbad_term_match.group(1)
-            literal_str = str(literal_str[len(matched_gbad_term)+1:])
-            match = mnemonic_regex.match(literal_str)
-            if match:
-                mnemonic_group = match.group(1) # in curly brackets
-                mnemonic  = match.group(2)
-                rico_class = match.group(3)
-                instance_number = match.group(4)
+        # GBAD entities - deprecated as of 2024-11-14 :(
+        #gbad_term_match = gbad_term_regex.match(literal_str)
+        #if gbad_term_match:
+        #    matched_gbad_term = gbad_term_match.group(1)
+        #    literal_str = str(literal_str[len(matched_gbad_term)+1:])
+        #    match = mnemonic_regex.match(literal_str)
+        #    if match:
+        #        mnemonic_group = match.group(1) # in curly brackets
+        #        mnemonic  = match.group(2)
+        #        rico_class = match.group(3)
+        #        instance_number = match.group(4)
                 #literal_str = f'{mnemonic_group} ({rico_class} Entity'
                 #if instance_number:
                 #    instance_number = instance_number[1:] # leading slash removed
                 #    literal_str = literal_str + f' #{instance_number}'
                 #literal_str = literal_str + f' from "{mnemonic}")'
-                literal_str = f'{{{mnemonic}}} ({rico_class})'
+        #        literal_str = f'{{{mnemonic}}} ({rico_class})'
         
         return literal_str
 
