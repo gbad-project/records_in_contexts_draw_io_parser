@@ -26,13 +26,10 @@ auth_authtp_label = 'AUTHTP'
 rico_version_mask = r'{RICO_VERSION}'
 rico_authtp_mask = r'{RICO_AUTHTP}'
 rico_authtp_dict = {
-    'A Ontario Government Name': 'CorporateBody',
-    'B Ontario Government Name': 'CorporateBody',
-    'C Ontario Government Name': 'CorporateBody',
-    'Corporate Name': 'CorporateBody',
-    'Family Name': 'Family',
-    'Geographic Name': 'Place',
-    'Personal Name': 'Person'
+    'CorporateBody': r'/(Corporate Name|[ABC] Ontario Government Name)/',
+    'Family': r'/Family Name/',
+    'Place': r'/Geographic Name/',
+    'Person': r'/Personal Name/'
 }
 
 triplesmap_label = 'TriplesMap'
@@ -269,7 +266,7 @@ def __init__(schema_code, source_filename=None):
     # Namespaces for FnO to work at RML mapping
     fnml = ('fnml', Namespace('http://semweb.mmlab.be/ns/fnml#'))
     fno = ('fno', Namespace('https://w3id.org/function/ontology#'))
-    idlab_fn = ('idlab-fn', Namespace('http://example.com/idlab/function/'))
+    idlab_fn = ('idlab-fn', Namespace('https://w3id.org/imec/idlab/function#'))
     grel = ('grel', Namespace('http://users.ugent.be/~bjdmeest/function/grel.ttl#'))
 
     # Bind prefixes to namespaces
@@ -315,7 +312,7 @@ def __init__(schema_code, source_filename=None):
 
         # Replacing subject
         if subject_mask in str(subject_uri):
-            for authtp_rico_class in rico_authtp_dict.values():
+            for authtp_rico_class in rico_authtp_dict.keys():
                 # If contains {RICO_AUTHTP}
                 rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask,
                                                                           authtp_rico_class)
@@ -339,7 +336,7 @@ def __init__(schema_code, source_filename=None):
         if len(rico_disaggregated_triples) == 0: # if not a triple like ?s a rico:Thing
             # Replacing object
             if object_mask in str(object_uri):
-                for authtp_rico_class in rico_authtp_dict.values():
+                for authtp_rico_class in rico_authtp_dict.keys():
                     # If contains {RICO_AUTHTP}
                     rico_disaggregated_object_uri = str(object_uri).replace(object_mask,
                                                                             authtp_rico_class)
@@ -381,7 +378,7 @@ def __init__(schema_code, source_filename=None):
     # Dropping duplicates is necessary due to the duplicated classes
     # in rico_authtp_dict as this duplicates #rr_template__KB_CorporateBody__HEADING__
     # thus producing an error at RML mapping
-    parsed_df = parsed_df.drop_duplicates()
+    #parsed_df = parsed_df.drop_duplicates()
     #parsed_df.to_csv('parsed_df.csv') # for debug
 
     def normalize_uri(uri, ns_manager):
@@ -656,10 +653,10 @@ def __init__(schema_code, source_filename=None):
     mapping.namespace_manager.bind(*idlab_fn)
     mapping.namespace_manager.bind(*grel)
 
-    def fno_map_mnemonic_unless_isnull(
+    def fno_map_value_unless_isnull(
             rml_g,
-            input_tuple, mnemonic):
-        subject_map_predicate, uri_mask = input_tuple
+            return_tuple, input_tuples):
+        return_predicate, return_object = return_tuple
 
         # Define a wrapper function
         fno_wrapper = BNode()
@@ -673,7 +670,7 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((controls_if_omap, rr[1].constant, grel[1].controls_if))
 
         # Define the arguments for the if condition
-        # First argument: Check if {MNEMONIC} is empty
+        # First argument: Check if input value is empty
         mnemonic_isnull_pomap = BNode()
         rml_g.add((fno_wrapper, rr[1].predicateObjectMap, mnemonic_isnull_pomap))
         rml_g.add((mnemonic_isnull_pomap, rr[1].predicate, grel[1].bool_b))
@@ -695,25 +692,24 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((mnemonic_isnull_nested_arg_pomap, rr[1].predicate, idlab_fn[1].str))
         mnemonic_isnull_nested_arg_omap = BNode()
         rml_g.add((mnemonic_isnull_nested_arg_pomap, rr[1].objectMap, mnemonic_isnull_nested_arg_omap))
-        # Here goes the climax of checking - the mnemonic value
-        rml_g.add((mnemonic_isnull_nested_arg_omap, rml[1].reference, Literal(mnemonic)))
+        # Here goes the climax of checking - the input value
+        for input_tuple in input_tuples:
+            rml_g.add((mnemonic_isnull_nested_arg_omap, input_tuple[0], input_tuple[1]))
 
-        # If the {MNEMONIC} column is not null, use the value in the object map
+        # If the input value is not null, use the value in the object map
         mnemonic_uri_mask_pomap = BNode()
         rml_g.add((fno_wrapper, rr[1].predicateObjectMap, mnemonic_uri_mask_pomap))
         rml_g.add((mnemonic_uri_mask_pomap, rr[1].predicate, grel[1].any_false))
         mnemonic_uri_mask_omap = BNode()
         rml_g.add((mnemonic_uri_mask_pomap, rr[1].objectMap, mnemonic_uri_mask_omap))
-        # Here goes the climax of writing - the uri mask
-        rml_g.add((mnemonic_uri_mask_omap, subject_map_predicate, uri_mask))
+        # Here goes the climax of writing - the return value
+        rml_g.add((mnemonic_uri_mask_omap, return_predicate, return_object))
         
         return fno_wrapper
     
-    def fno_map_this_if_mnemonic_equal(
+    def fno_map_this_string_match(
             rml_g,
-            return_tuple, input_value_tuples_1, input_value_tuples_2):
-        subject_map_predicate, uri_mask = return_tuple
-
+            return_tuple, input_value_tuples, regex_tuples):
         # Define a wrapper function
         fno_wrapper = BNode()
 
@@ -740,36 +736,44 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((nested_def_pomap, rr[1].predicate, fno[1].executes))
         nested_def_omap = BNode()
         rml_g.add((nested_def_pomap, rr[1].objectMap, nested_def_omap))
-        rml_g.add((nested_def_omap, rr[1].constant, idlab_fn[1].equal))
+        rml_g.add((nested_def_omap, rr[1].constant, grel[1].string_match))
         # Nested function argument 1
         nested_fun_arg_1_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_1_pomap))
-        rml_g.add((nested_fun_arg_1_pomap, rr[1].predicate, idlab_fn[1].str))
+        rml_g.add((nested_fun_arg_1_pomap, rr[1].predicate, grel[1].valueParameter))
         nested_fun_arg_1_omap = BNode()
         rml_g.add((nested_fun_arg_1_pomap, rr[1].objectMap, nested_fun_arg_1_omap))
         # Here goes the climax of checking - the input_value_1
-        for input_value_tuple_1 in input_value_tuples_1:
+        for input_value_tuple_1 in input_value_tuples:
             rml_g.add((nested_fun_arg_1_omap, input_value_tuple_1[0], input_value_tuple_1[1]))
         # Nested function argument 2
         nested_fun_arg_2_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_2_pomap))
-        rml_g.add((nested_fun_arg_2_pomap, rr[1].predicate, idlab_fn[1].str))
+        rml_g.add((nested_fun_arg_2_pomap, rr[1].predicate, grel[1].p_string_regex))
         nested_fun_arg_2_omap = BNode()
         rml_g.add((nested_fun_arg_2_pomap, rr[1].objectMap, nested_fun_arg_2_omap))
         # Here goes the climax of checking - the input_value_2
-        for input_value_tuple_2 in input_value_tuples_2:
+        for input_value_tuple_2 in regex_tuples:
             rml_g.add((nested_fun_arg_2_omap, input_value_tuple_2[0], input_value_tuple_2[1]))
 
         # If input value 1 is equal to input value 2, use the return tuple
         return_pomap = BNode()
         rml_g.add((fno_wrapper, rr[1].predicateObjectMap, return_pomap))
-        rml_g.add((return_pomap, rr[1].predicate, grel[1].any_true))
-        return_omap = BNode()
-        rml_g.add((return_pomap, rr[1].objectMap, return_omap))
-        # Here goes the climax of writing - the uri mask
-        rml_g.add((return_omap, subject_map_predicate, uri_mask))
+        rml_g.add((return_pomap, rr[1].template, grel[1].output_array))
+        rml_g.add((return_pomap, rr[1].termType, rr[1].Literal))
+        #return_omap = BNode()
+        #rml_g.add((return_pomap, rr[1].objectMap, return_omap))
+        # Here goes the climax of writing - the value
+        #rml_g.add((return_omap, grel[1].o_array, fno[1].Output))
+
+        # Convert string match output to boolean
+        input_tuples = [(fnml[1].functionValue, fno_wrapper)]
+        uber_fno_wrapper = fno_map_value_unless_isnull(
+            rml_g = rml_g,
+            return_tuple = return_tuple,
+            input_tuples = input_tuples)
         
-        return fno_wrapper
+        return uber_fno_wrapper
 
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
         # Define a predicate-object map
@@ -850,28 +854,36 @@ def __init__(schema_code, source_filename=None):
         #
         # Here comes:
         else:
+            input_tuples = [(rml[1].reference, Literal(subject_mnemonic))]
             return_tuple = (subject_map_predicate, uri_mask)
-            fno_mnemonic_logic = fno_map_mnemonic_unless_isnull(
+            fno_mnemonic_logic = fno_map_value_unless_isnull(
                     rml_g = mapping,
-                    input_tuple = return_tuple,
-                    mnemonic = subject_mnemonic)
-            mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
+                    return_tuple = return_tuple,
+                    input_tuples = input_tuples)
             
             # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
             # so for entities defined as constants RICO_AUTHTP will be bugged
-            for authtp_i in [1, 2]:
-                for authtp_value, authtp_rico_class in rico_authtp_dict.items():
-                    if authtp_rico_class == rico_class:
-                        # Apply this to all subject maps - generate selectively based on AUTHTP_1 and AUTHTP_2
-                        authtp_column_tuples = [(rml[1].reference, Literal(f"{auth_authtp_label}_{authtp_i}"))]
-                        authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
-                                              (rr[1].termType, rr[1].Literal)]
-                        rico_authtp_str_replace = fno_map_this_if_mnemonic_equal(
-                            rml_g = mapping,
-                            return_tuple = return_tuple,
-                            input_value_tuples_1 = authtp_column_tuples,
-                            input_value_tuples_2 = authtp_value_tuples)                
-                        mapping.add((subject_map, fnml[1].functionValue, rico_authtp_str_replace))
+            rico_authtp_string_match = None
+            for authtp_rico_class, authtp_value in rico_authtp_dict.items():
+                if authtp_rico_class == rico_class: # not really a loop because dict contains unique values
+                    # Apply this to all subject maps - generate selectively based on AUTHTP_1 and AUTHTP_2
+                    # Any of the two columns works, so will combine and check combined string against rico_authtp_dict
+                    authtp_column_names = f"{{{auth_authtp_label}_1}}|{{{auth_authtp_label}_2}}"
+                    authtp_column_tuples = [(rr[1].template, Literal(authtp_column_names)),
+                                             (rr[1].termType, rr[1].Literal)]
+                    authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
+                                            (rr[1].termType, rr[1].Literal)]
+                    return_tuple = (fnml[1].functionValue, fno_mnemonic_logic)
+                    rico_authtp_string_match = fno_map_this_string_match(
+                        rml_g = mapping,
+                        return_tuple = return_tuple,
+                        input_value_tuples = authtp_column_tuples,
+                        regex_tuples = authtp_value_tuples)
+                    mapping.add((subject_map, fnml[1].functionValue, rico_authtp_string_match))
+
+            # If rico_authtp logic did not work, simply add mnemonic logic
+            if rico_authtp_string_match is None:
+                mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
 
         # Record source mnemonic as a triple
         # Commenting out for now because not sure yet
