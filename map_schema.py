@@ -736,6 +736,7 @@ def __init__(schema_code, source_filename=None):
         nested_def_omap = BNode()
         rml_g.add((nested_def_pomap, rr[1].objectMap, nested_def_omap))
         rml_g.add((nested_def_omap, rr[1].constant, grel[1].string_match))
+
         # Nested function argument 1
         nested_fun_arg_1_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_1_pomap))
@@ -744,7 +745,24 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((nested_fun_arg_1_pomap, rr[1].objectMap, nested_fun_arg_1_omap))
         # Here goes the climax of checking - the input_value_1
         for input_value_tuple_1 in input_value_tuples:
-            rml_g.add((nested_fun_arg_1_omap, input_value_tuple_1[0], input_value_tuple_1[1]))
+            # Define a wrapper function
+            nested_tostring_fno_wrapper = BNode()
+            # Nested function definition
+            nested_tostring_def_pomap = BNode()
+            rml_g.add((nested_tostring_fno_wrapper, rr[1].predicateObjectMap, nested_tostring_def_pomap))
+            rml_g.add((nested_tostring_def_pomap, rr[1].predicate, fno[1].executes))
+            nested_tostring_def_omap = BNode()
+            rml_g.add((nested_tostring_def_pomap, rr[1].objectMap, nested_tostring_def_omap))
+            rml_g.add((nested_tostring_def_omap, rr[1].constant, grel[1].string_toString))
+            # Nested function argument 1
+            nested_tostring_fun_arg_1_pomap = BNode()
+            rml_g.add((nested_tostring_fno_wrapper, rr[1].predicateObjectMap, nested_tostring_fun_arg_1_pomap))
+            rml_g.add((nested_tostring_fun_arg_1_pomap, rr[1].predicate, grel[1].p_any_e))
+            nested_tostring_fun_arg_1_omap = BNode()
+            rml_g.add((nested_tostring_fun_arg_1_pomap, rr[1].objectMap, nested_tostring_fun_arg_1_omap))
+            rml_g.add((nested_tostring_fun_arg_1_omap, input_value_tuple_1[0], input_value_tuple_1[1]))
+            rml_g.add((nested_fun_arg_1_omap, fnml[1].functionValue, nested_tostring_fno_wrapper))
+        
         # Nested function argument 2
         nested_fun_arg_2_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_2_pomap))
