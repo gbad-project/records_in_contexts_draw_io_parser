@@ -54,8 +54,6 @@ Individual: rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22
   Annotations:
     rdfs:label "rr:template \"KB/Mandate/{AA}\""
   Types: rico:Mandate
-  Facts:
-    rico:textualValue "rml:reference \"AA\""
 
 Individual: rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22
   Annotations:
@@ -124,7 +122,6 @@ Individual: rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22
     rdfs:label "rr:template \"KB/VariantAgentName/{VAR_1..11}\""
   Types: rico:AgentName
   Facts:
-    rico:textualValue "rml:reference \"VAR_1..11\"",
     rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22
 
 Individual: rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BPRED_1..5%7D%22
@@ -142,8 +139,7 @@ Individual: rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22
     rdfs:label "rr:template \"KB/ParallelAgentName/{PAR_1..4}\""
   Types: rico:AgentName
   Facts:
-    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22,
-    rico:textualValue "rml:reference \"PAR_1..4\""
+    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22
 
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22
   Annotations:

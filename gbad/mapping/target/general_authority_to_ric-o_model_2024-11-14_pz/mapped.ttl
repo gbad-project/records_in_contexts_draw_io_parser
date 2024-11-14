@@ -2873,18 +2873,15 @@
 
 <https://data.archives.gov.on.ca/KB/Mandate/Act%20respecting%20the%20Department%20of%20Agriculture%20and%20other%20Industries%2C%20Statutes%20of%20Ontario%201888%2C%20Chap.%208>
   a rico:Mandate;
-  rdfs:label "Act respecting the Department of Agriculture and other Industries, Statutes of Ontario 1888, Chap. 8";
-  rico:textualValue "Act respecting the Department of Agriculture and other Industries, Statutes of Ontario 1888, Chap. 8" .
+  rdfs:label "Act respecting the Department of Agriculture and other Industries, Statutes of Ontario 1888, Chap. 8" .
 
 <https://data.archives.gov.on.ca/KB/Mandate/Act%20to%20Amend%20the%20Department%20of%20Agriculture%20Act%2C%20Statutes%20of%20Ontario%201966%2C%20Chap.%2030>
   a rico:Mandate;
-  rdfs:label "Act to Amend the Department of Agriculture Act, Statutes of Ontario 1966, Chap. 30";
-  rico:textualValue "Act to Amend the Department of Agriculture Act, Statutes of Ontario 1966, Chap. 30" .
+  rdfs:label "Act to Amend the Department of Agriculture Act, Statutes of Ontario 1966, Chap. 30" .
 
 <https://data.archives.gov.on.ca/KB/Mandate/No%20authorizing%20agent%20can%20be%20identified%20for%20this%20agency.>
   a rico:Mandate;
-  rdfs:label "No authorizing agent can be identified for this agency.";
-  rico:textualValue "No authorizing agent can be identified for this agency." .
+  rdfs:label "No authorizing agent can be identified for this agency." .
 
 <https://data.archives.gov.on.ca/KB/NaturalAgentName/Canada%20%28Province%29.%20Department%20of%20Public%20Works>
   a rico:AgentName;
@@ -3425,204 +3422,166 @@
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/CFMT> a rico:AgentName;
   rdfs:label "CFMT";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "CFMT" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Canada%20%28Province%29.%20Commissioners%20of%20Public%20Works>
   a rico:AgentName;
   rdfs:label "Canada (Province). Commissioners of Public Works";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Canada (Province). Commissioners of Public Works" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Canada%20%28Province%29.%20Inspector%20General%27s%20Office>
   a rico:AgentName;
   rdfs:label "Canada (Province). Inspector General's Office";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Canada (Province). Inspector General's Office" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Canada.%20Legislative%20Assembly>
   a rico:AgentName;
   rdfs:label "Canada. Legislative Assembly";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Canada. Legislative Assembly", "Canada. Legislature. Legislative Assembly." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Canada.%20Legislature.%20Legislative%20Assembly.>
   a rico:AgentName;
   rdfs:label "Canada. Legislature. Legislative Assembly.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Canada. Legislative Assembly", "Canada. Legislature. Legislative Assembly." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Industry%20%26%20Trade%20Ontario>
   a rico:AgentName;
   rdfs:label "Industry & Trade Ontario";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Industry & Trade Ontario", "MIT." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MAG.> a rico:AgentName;
   rdfs:label "MAG.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MAG.", "MPG" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MAI.> a rico:AgentName;
   rdfs:label "MAI.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MAI.", "MIA" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MBC> a rico:AgentName;
   rdfs:label "MBC";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MBC" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MCC> a rico:AgentName;
   rdfs:label "MCC";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MCC" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MCR> a rico:AgentName;
   rdfs:label "MCR";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MCR" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MDNM> a rico:AgentName;
   rdfs:label "MDNM";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MDNM", "MNDM." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MEDT> a rico:AgentName;
   rdfs:label "MEDT";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEDT" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MEO> a rico:AgentName;
   rdfs:label "MEO";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEO", "MOE." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MEO.> a rico:AgentName;
   rdfs:label "MEO.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEO.", "MOE.", "Ministry of the Environment and Climate Change" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MEST.> a rico:AgentName;
   rdfs:label "MEST.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEST.", "Ministry of Energy" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MFO> a rico:AgentName;
   rdfs:label "MFO";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MFO", "MOF." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MGS> a rico:AgentName;
   rdfs:label "MGS";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MGS" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MIA> a rico:AgentName;
   rdfs:label "MIA";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MAI.", "MIA" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MIT> a rico:AgentName;
   rdfs:label "MIT";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MIT" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MIT.> a rico:AgentName;
   rdfs:label "MIT.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Industry & Trade Ontario", "MIT." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MNDM.> a rico:AgentName;
   rdfs:label "MNDM.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MDNM", "MNDM." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MNR> a rico:AgentName;
   rdfs:label "MNR";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MNR" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MOE.> a rico:AgentName;
   rdfs:label "MOE.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEO", "MEO.", "MOE.", "Ministry of the Environment and Climate Change" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MOF.> a rico:AgentName;
   rdfs:label "MOF.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MFO", "MOF." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MOH> a rico:AgentName;
   rdfs:label "MOH";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MOH", "MS." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MOL> a rico:AgentName;
   rdfs:label "MOL";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MOL" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MPG> a rico:AgentName;
   rdfs:label "MPG";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MAG.", "MPG" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/MS.> a rico:AgentName;
   rdfs:label "MS.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MOH", "MS." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ministry%20of%20Energy> a rico:AgentName;
   rdfs:label "Ministry of Energy";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEST.", "Ministry of Energy" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ministry%20of%20the%20Environment%20and%20Climate%20Change>
   a rico:AgentName;
   rdfs:label "Ministry of the Environment and Climate Change";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "MEO.", "MOE.", "Ministry of the Environment and Climate Change" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Cabinet> a rico:AgentName;
   rdfs:label "Ontario. Cabinet";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Cabinet" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Dept.%20of%20the%20Commissioner%20of%20Agriculture%20and%20Public%20Works>
   a rico:AgentName;
   rdfs:label "Ontario. Dept. of the Commissioner of Agriculture and Public Works";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Dept. of the Commissioner of Agriculture and Public Works" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Justice%20Policy%20Field>
   a rico:AgentName;
   rdfs:label "Ontario. Justice Policy Field";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Justice Policy Field" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Minister%20Responsible%20for%20French%20Language%20Services.>
   a rico:AgentName;
   rdfs:label "Ontario. Minister Responsible for French Language Services.";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Minister Responsible for French Language Services." .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Resources%20Development%20Policy%20Field>
   a rico:AgentName;
   rdfs:label "Ontario. Resources Development Policy Field";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Resources Development Policy Field" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Ontario.%20Social%20Development%20Policy%20Field>
   a rico:AgentName;
   rdfs:label "Ontario. Social Development Policy Field";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Ontario. Social Development Policy Field" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/KB/VariantAgentName/Radio%201540%20Limited> a rico:AgentName;
   rdfs:label "Radio 1540 Limited";
-  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName>;
-  rico:textualValue "Radio 1540 Limited" .
+  rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AgentIdentifier%23Agency%20Reference%20Code>
   a rico:IdentifierType;

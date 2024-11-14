@@ -138,7 +138,6 @@
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22> rdf:type owl:NamedIndividual ,
                                                                                          rico:Mandate ;
-                                                                                rico:textualValue "rml:reference \"AA\"" ;
                                                                                 rdfs:label "rr:template \"KB/Mandate/{AA}\"" .
 
 
@@ -154,7 +153,6 @@
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                          rico:AgentName ;
                                                                                                 rico:hasOrHadCategory <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22> ;
-                                                                                                rico:textualValue "rml:reference \"PAR_1..4\"" ;
                                                                                                 rdfs:label "rr:template \"KB/ParallelAgentName/{PAR_1..4}\"" .
 
 
@@ -168,7 +166,6 @@
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                          rico:AgentName ;
                                                                                                 rico:hasOrHadCategory <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22> ;
-                                                                                                rico:textualValue "rml:reference \"VAR_1..11\"" ;
                                                                                                 rdfs:label "rr:template \"KB/VariantAgentName/{VAR_1..11}\"" .
 
 
