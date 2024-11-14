@@ -995,27 +995,8 @@ def __init__(schema_code, source_filename=None):
                             object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object_ith, URIRef) else Literal(object_map_object_ith)
                             mapping.add((object_map, object_map_predicate, object_map_object_ith))
 
-    # Sort triples to ensure smooth diffs
-    sorted_triples = sorted(mapping.triples((None, None, None)))
-    mapping_sorted = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    # Bind prefixes to namespaces
-    mapping_sorted.namespace_manager.bind(*rico)
-    mapping_sorted.namespace_manager.bind(*rdf)
-    mapping_sorted.namespace_manager.bind(*rdfs)
-    mapping_sorted.namespace_manager.bind(*owl)
-    mapping_sorted.namespace_manager.bind(*rml)
-    mapping_sorted.namespace_manager.bind(*rr)
-    mapping_sorted.namespace_manager.bind(*ql)
-    mapping_sorted.namespace_manager.bind(*csvw)
-    mapping_sorted.namespace_manager.bind(*maps)
-    mapping_sorted.namespace_manager.bind(*fnml)
-    mapping_sorted.namespace_manager.bind(*fno)
-    mapping_sorted.namespace_manager.bind(*idlab_fn)
-    mapping_sorted.namespace_manager.bind(*grel)
-    for triple in sorted_triples:
-        mapping_sorted.add(triple)
     # Serialize and print the RDF graph
-    ttl = mapping_sorted.serialize(format='turtle')
+    ttl = mapping.serialize(format='turtle')
     with open(rml_path, 'w') as f:
         f.write(ttl)
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
