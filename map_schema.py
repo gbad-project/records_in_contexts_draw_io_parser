@@ -915,6 +915,7 @@ def __init__(schema_code, source_filename=None):
             if (is_rico | is_rdfs):
                 # Now we can actually iterate over objects
                 object = parsed_result['object']
+                original_object = parsed_result['original_object']
                 object_map_predicate = parsed_result[map_predicate_label]
                 object_map_object = parsed_result[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
@@ -984,6 +985,15 @@ def __init__(schema_code, source_filename=None):
                         #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
                     else:
                         object_mnemonic_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), object_mnemonic) if object_mnemonic_i_to > 1 else object_mnemonic
+                        # Well, the below does seem to work but may be a bad idea because object's mnemonic
+                        # does not necessarily have to match subject's mnemonic (what if they are separate increments?)
+                        # Thus, I commented out that block
+                        #if ((object != original_object) and # means it is one of the disaggregated ones
+                        #    (str(object_mnemonic_ith) != str(subject_mnemonic))): # mismatched phantoms - remove empty nodes and continue
+                        #    mapping.remove(pom_create_triple)
+                        #    mapping.remove(pom_predicate_triple)
+                        #    mapping.remove(om_create_triple)
+                        #    continue
                         if object_mnemonic_ith in private_mnemonics:
                             mapping.add((object_map, rr[1].constant, URIRef(f"censored#{object_mnemonic_ith}")))
                             continue

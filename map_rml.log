@@ -1,4 +1,5 @@
-Script started on 2024-11-14 12:50:40-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="120" LINES="22"]
+Script started on 2024-11-14 16:02:24-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-14_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
@@ -9,4 +10,4 @@ Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_m
 
 Number of triples in the graph: 2816
 
-Script done on 2024-11-14 12:50:48-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-14 16:02:32-05:00 [COMMAND_EXIT_CODE="0"]
