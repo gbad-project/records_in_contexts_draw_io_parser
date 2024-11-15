@@ -1,15 +1,12 @@
-Script started on 2024-11-15 17:17:37-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
-File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
+Script started on 2024-11-15 17:24:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
 Initiated mapping params:
-('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-14_pz.rml',
+('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-14_pz/mapped.ttl')
-Converted file is larger than 10 MB (19.05 MB) - trying to rename to LARGE...
-Successfully renamed to 'mapped_LARGE.ttl'
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-14_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-14_pz/mapped_LARGE.ttl'
+ 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz/mapped.ttl')
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-14_pz/mapped_LARGE.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz/mapped.ttl'
 
-Number of triples in the graph: 158051
+Number of triples in the graph: 2751
 
-Script done on 2024-11-15 17:18:31-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-15 17:24:52-05:00 [COMMAND_EXIT_CODE="0"]

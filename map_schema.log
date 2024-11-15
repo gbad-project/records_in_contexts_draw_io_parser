@@ -1,4 +1,4 @@
-Script started on 2024-11-15 17:17:14-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
+Script started on 2024-11-15 17:24:28-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_1..14}/{HEADING}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_1..14} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_1}/{HEADING}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_1} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
@@ -871,6 +871,6 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 
 
-Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-14_pz.rml'
+Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz.rml'
 
-Script done on 2024-11-15 17:17:20-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-15 17:24:34-05:00 [COMMAND_EXIT_CODE="0"]
