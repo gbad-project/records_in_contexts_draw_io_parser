@@ -8,6 +8,7 @@ import os
 import argparse
 import glob
 import requests
+#import uuid
 
 # Prohibit trimming pd prints in shell
 pd.set_option('display.max_rows', None)
@@ -31,6 +32,7 @@ rico_authtp_dict = {
     'Place': r'/Geographic Name/',
     'Person': r'/Personal Name/'
 }
+#uuid_label = 'UUID'
 
 triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
@@ -73,6 +75,8 @@ def __init__(schema_code, source_filename=None):
     base_data_uri = 'https://data.archives.gov.on.ca'
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
     base_gbad_uri = base_data_uri
+    #NAMESPACE_UUID = uuid.uuid5(uuid.NAMESPACE_URL, f"{base_gbad_uri}/")
+    #print(f"Namespace UUID v5 for <{base_gbad_uri}/>: {NAMESPACE_UUID}")
     base_schema_uri = URIRef(f"{base_data_uri}/Schema")
     #base_kb_uri = URIRef(f"{base_data_uri}/KB")
     base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
@@ -158,6 +162,16 @@ def __init__(schema_code, source_filename=None):
     #    exit(f"Exiting. Fatal error: Could not resolve RiC-O version from '{rico_uri}'")
     #def substitute_rico_version_mask(s): return str(s).replace(rico_version_mask, gbad_term) if str(s).startswith(rico_version_mask) else str(s)
     ### End block for downloading RiC-O version
+
+    # The below works but commented out for now because did not do the trick without accessing input CSV values
+    # That is, the UUID is only unique to the TriplesMap, so all entities generated from it have the same UUID
+    # Define UUID replacement logic - support any position of number but only allowed chars
+    #uuid_pattern = f"%7B({uuid_label}_?(\d*)|(\d*)_?{uuid_label})%7D" # using encoded because rr:constant will be used
+    #uuid_regex = re.compile(uuid_pattern) # let's make it case-sensitive to enforce strictness for this special word
+    #def substitute_uuid(uriref, entity_name):
+    #    str(uriref)
+    #    s = uuid_regex.sub(str(uuid.uuid5(NAMESPACE_UUID, entity_name)), str(uriref))
+    #    return URIRef(s) if isinstance(uriref, URIRef) else Literal(s)
 
     def prettify_rdfs_label(literal_str):
         # Remove base data prefix
@@ -514,6 +528,7 @@ def __init__(schema_code, source_filename=None):
     def extract_mnemonic(row):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
+        #triplesmap_name = row[triplesmap_label]
         if map_object:
             if map_predicate == rml[1].reference:
                 return map_object
@@ -522,12 +537,17 @@ def __init__(schema_code, source_filename=None):
             # Consider replacing this with more robust, findall logic
             # later on to allow for true multiple masks
             #map_object = substitute_rico_version_mask(map_object)
+            #map_object = substitute_uuid_mask(map_object, triplesmap_name)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
+                    other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
                     print("At most one rr:template is allowed per subject map ",
-                          f"whereas multiple are given in: '{map_object}'")
-                    return None
+                          f"whereas multiple are given in: '{map_object}'. ",
+                          f"By default logic, the leftmost mnemonic is deliberately chosen as the main one.",
+                          f"Thus, {{{matches[0]}}} will be processed as the main mnemonic, "
+                          f"and all the others will be passed to RML as is: {other_mnemonics}", "\n")
+                    #return None
                 return matches[0]
         return None
     
@@ -538,6 +558,8 @@ def __init__(schema_code, source_filename=None):
         #row_id = row.name
         mnemonic = row[mnemonic_label]
         column_uri = row[column]
+        # Uncomment the below if want to allow increments outside of mnemonics
+        #mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(column_uri)
         mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
         row[f'original_{column}'] = row[column]
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
@@ -810,7 +832,8 @@ def __init__(schema_code, source_filename=None):
             continue
 
         # Define TriplesMap
-        triples_map = maps[1][subject_row[triplesmap_label]]
+        triplesmap_name = subject_row[triplesmap_label]
+        triples_map = maps[1][triplesmap_name]
         mapping.add((triples_map, RDF.type, rr[1].TriplesMap))
 
         # Define Logical Source
@@ -833,6 +856,10 @@ def __init__(schema_code, source_filename=None):
             uri_mask = subject_row[map_object_label]
         #URIRef(urllib.parse.unquote(str(subject)))
         #uri_mask = construct_uri_mask(subjects_df, i)
+
+        # This is where the actual UUID substitution happens, right before writing to RML
+        # Commented out because we are not using UUIDs eventually, as of yet
+        #uri_mask = substitute_uuid(uri_mask, triplesmap_name)
         
         # Define an empty Subject Map
         subject_map = BNode()

@@ -96,11 +96,11 @@ Individual: rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22
     rdfs:label "rr:template \"KB/CorporateBody/{CONTAG_1..14}\""
   Types: rico:CorporateBody
   Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%22
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%22
 
-Individual: rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%22
+Individual: rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%22
   Annotations:
-    rdfs:label "rr:template \"KB/AgentControlRelation/{CONTAG_1..14}\""
+    rdfs:label "rr:template \"KB/AgentControlRelation/{CONTAG_1..14}/{HEADING}\""
   Types: rico:AgentControlRelation
   Facts:
     rico:relationHasTarget rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22,

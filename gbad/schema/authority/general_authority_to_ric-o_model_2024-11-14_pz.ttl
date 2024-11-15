@@ -64,13 +64,13 @@
                                                                                                rdfs:label "rr:template \"KB/{RICO_AUTHTP}/{HEADING}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                rico:AgentControlRelation ;
-                                                                                                       rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> ;
-                                                                                                       rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> ;
-                                                                                                       rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22> ;
-                                                                                                       rdfs:label "rr:template \"KB/AgentControlRelation/{CONTAG_1..14}\"" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                rico:AgentControlRelation ;
+                                                                                                                       rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> ;
+                                                                                                                       rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> ;
+                                                                                                                       rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22> ;
+                                                                                                                       rdfs:label "rr:template \"KB/AgentControlRelation/{CONTAG_1..14}/{HEADING}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22
@@ -95,7 +95,7 @@
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                          rico:CorporateBody ;
-                                                                                                rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%22> ;
+                                                                                                rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%22> ;
                                                                                                 rdfs:label "rr:template \"KB/CorporateBody/{CONTAG_1..14}\"" .
 
 
