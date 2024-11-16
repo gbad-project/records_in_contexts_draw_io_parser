@@ -2739,7 +2739,7 @@
 
 <https://data.archives.gov.on.ca/Schema/Authority/AgentIdentifier#Agency%20Reference%20Code>
   a rico:IdentifierType;
-  rdfs:label "Authority/AgentIdentifier#Agency%20Reference%20Code" .
+  rdfs:label "Authority/AgentIdentifier#Agency Reference Code" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityRecord> a rico:DocumentaryFormType;
   rdfs:label "Authority/AuthorityRecord" .

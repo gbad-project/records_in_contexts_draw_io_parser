@@ -179,6 +179,9 @@ def __init__(schema_code, source_filename=None):
         return URIRef(uriref) if isinstance(uriref, URIRef) else Literal(uriref)
 
     def prettify_rdfs_label(literal_str):
+        # Make sure no encoded chars remain, in particular those can come from rr:constant
+        literal_str = urllib.parse.unquote(literal_str)
+
         # Remove base data prefix
         if literal_str.startswith(base_uri_prefix):
             literal_str = str(literal_str[len(base_uri_prefix):])
