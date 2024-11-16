@@ -1998,6 +1998,11 @@
 <https://data.archives.gov.on.ca/KB/Date/2008> a rico:Date;
   rdfs:label "2008 (Date)" .
 
+<https://data.archives.gov.on.ca/KB/Family/Birchard%20%28family%29> a rico:Family;
+  rdfs:label "Birchard (family) (Family)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Family%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Birchard%20%28family%29> .
+
 <https://data.archives.gov.on.ca/KB/Mandate/Act%20to%20make%20better%20provision%20for%20keeping%20and%20auditing%20Municipal%20and%20School%20Accounts%2C%20Statutes%20of%20Ontario%201897%2C%20Chap%2048>
   a rico:Mandate;
   rdfs:label "Act to make better provision for keeping and auditing Municipal and School Accounts, Statutes of Ontario 1897, Chap 48 (Mandate)" .
@@ -2151,6 +2156,417 @@
   rdfs:label "War Memorial Committee of Ontario (NaturalAgentName)";
   rico:hasOrHadCategory <https://data.archives.gov.on.ca/Schema/Authority/NaturalAgentName>;
   rico:normalizedValue "War Memorial Committee of Ontario" .
+
+<https://data.archives.gov.on.ca/KB/Person/Canniff%2C%20William%2C%201830-1910> a
+    rico:Person;
+  rdfs:label "Canniff, William, 1830-1910 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "He was born in Thurlow Township, Hastings County, and attended Victoria College, Cobourg, the Toronto School of Medicine and the University of New York, where he graduated in 1854. He became a member of the English Royal College of Surgeons in 1855 and served as a medical officer in the Crimean War. On his return to Canada, he practised medicine at Belleville and Toronto. He was a professor of general pathology and surgery at Victoria College and Sub-Dean of the Toronto Medical School. He was also the first Medical Health Officer of Toronto, 1883-1891. Canniff was also the author of two historical works entitled A History of the early settlement of Upper Canada (1869), and The medical profession in Upper Canada: a historical narrative (Toronto, 1894). Topics in his other papers included: the Toronto General Hospital, the Canadian Medical Association, Victoria College, settlement in Belleville and Prince Edward County, the Northwest Rebellion and historical societies.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Canniff%2C%20William%2C%201830-1910> .
+
+<https://data.archives.gov.on.ca/KB/Person/Fraser%2C%20Frederick%20George%20Mackenzie%2C%20fl.%201878-1889>
+  a rico:Person;
+  rdfs:label "Fraser, Frederick George Mackenzie, fl. 1878-1889 (Person)";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/KB/VariantAgentName/Fraser%2C%20Frederick%20G.%20M.>;
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "His duty was to enforce the issuing of licenses and the confiscation of the gear of violators. In 1884 he reported that the Muskoka Lumber Mills was dumping sawdust into the Muskoka River, which led to the trial and conviction of the mill's owner, Trueman Aldrich.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Fraser%2C%20Frederick%20George%20Mackenzie%2C%20fl.%201878-1889> .
+
+<https://data.archives.gov.on.ca/KB/Person/Gilling%2C%20Walter%20J.%2C%201906-1993>
+  a rico:Person;
+  rdfs:label "Gilling, Walter J., 1906-1993 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Walter J. Gilling was born in Edinburgh, Scotland to Sergeant Richard Gilling and Clara Maude Gilling. Richard Gilling was captured at Mons, France during the First World War and underwent serious privations as a prisoner of war. He was repatriated to Switzerland in 1917 and returned to England in 1918. He immigrated to Canada in 1918 and he became the Chief of Police in Ingersoll, Ontario and later Watford. Walter J. Gilling, left school at the age of fourteen and began working for the Ingersoll File Company. He travelled to England looking for work unsuccessfully in 1923, drove a truck for the Ingersoll Tool and Machine Company and worked as a harvest labourer in Saskatchewan. He returned home in 1929 and worked at J.C. Labatt Company in order to save money for divinity college. He was admitted to Trinity College in 1931 and graduated with a licentiate of theology in 1935. Walter J. Gilling served as an assistant curate at St. John the Evangelist Anglican Church in Peterborough, Ontario where he joined the Canadian Chaplain Service in the Militia and served as chaplain of the 4th Machine Gun Battalion. He moved to Toronto and was appointed chaplain at Trinity College in 1937. With the outbreak of war in 1939, Gilling volunteered for service and went to England as chaplain of the Toronto Scottish Regiment. He returned to Canada in October 1946 having served as Principal Chaplain Overseas since November 1945. In his time overseas, Gilling served with the Toronto Scottish, the Hastings and Prince Edward Regiment, The Royal Canadian Dragoons, in several capacities with the Central Mediterranean Forces, The Canadian Army in North West Europe and at The Canadian Military Headquarters in London, England. After the war Gilling became Rector of St. Luke's Anglican Church in Peterborough (1946-1956) and was appointed Archdeacon of Peterborough in 1955. He moved to Toronto and was Archdeacon of the Diocese of Toronto from 1956 to 1961 and Rector of the Cathedral Church of St. James and the Dean of Toronto (1961-1973). Walter J. Gilling married Phyllis (nee Douglas) Gilling in 1945 and raised his stepson Alec Douglas. He married Kathleen (nee English) Gilling in 1968. Walter J. Gilling died in 1993.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Gilling%2C%20Walter%20J.%2C%201906-1993> .
+
+<https://data.archives.gov.on.ca/KB/Person/Grobb%2C%20Reita%20Margaret%20%281910-1988%29>
+  a rico:Person;
+  rdfs:label "Grobb, Reita Margaret (1910-1988) (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Reita Margaret Grobb was born February 3, 1910 to John Delbert Grobb and Leatha Tallman Grobb. She grew up on the Grobb family farm in Beamsville Ontario, before graduating from the Hamilton Normal School in 1932. She worked as a teacher for seven years before working as an accounting clerk in St. Catharines for 25 years. She retired to Grimsby, Ontario, and died April 8, 1988.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Grobb%2C%20Reita%20Margaret%20%281910-1988%29> .
+
+<https://data.archives.gov.on.ca/KB/Person/Hoy%2C%20Claire%2C%201940-> a rico:Person;
+  rdfs:label "Hoy, Claire, 1940- (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "He was born in Brockville, Ontario in 1940. After studying political science and journalism at Ryerson Polytechnical Institute from 1961-1964, Hoy has covered political events for a number of newspapers, including the Toronto Telegram and Toronto Star. As well, Hoy was the Toronto Sun's Queen's Park columnist from 1975-1984. He has since become the Toronto Sun's Ottawa political correspondent.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Hoy%2C%20Claire%2C%201940-> .
+
+<https://data.archives.gov.on.ca/KB/Person/Hunter%2C%20Donald%20F.%2C%201911-1976>
+  a rico:Person;
+  rdfs:label "Hunter, Donald F., 1911-1976 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Donald F. Hunter (1911-1976), was born on January 22, 1911 to Horace T. Hunter and Christine Fleming in Toronto, Ontario. He was educated at Upper Canada College and the University of Toronto, but left university in 1930 to begin working in the audit department of the Maclean Publishing Company. In 1938, he was appointed Managing Director of its British subsidiary. During the Second World War, he served with the Governor-General's Horse Guards, which was converted to a tank regiment. He went overseas as a staff captain with the 5th Canadian Armored Brigade. He served as a Brigade Major in the 4th Canadian Armored Division in England, then in Italy with the First Canadian Army Tank Brigade, before returning to Canada and to Maclean-Hunter as manager of Mayfair magazine. In 1946, he was appointed Executive Assistant to T. H. Howse, then Vice-president and company Treasurer, and he became involved in the company's London and Chicago operations. He was also closely involved in the design and development of the company's new printing plant, which opened in Willowdale in 1948. He was appointed Vice-president and Managing Director in 1952, President in 1962, and President and Chairman of the Board in 1969. He was President of the Business Newspapers Association, and a Director of the Periodical Press Association of Canada and the Audit Bureau of Circulations in the United States. Hunter died on October 3, 1976.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Hunter%2C%20Donald%20F.%2C%201911-1976> .
+
+<https://data.archives.gov.on.ca/KB/Person/Jessup%2C%20Edward%2C%201735-1816> a rico:Person;
+  rdfs:label "Jessup, Edward, 1735-1816 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "He was born in Stamford, Connecticut, and married Abigail Dibble in 1760. Before the American Revolution, he was a Justice of the Peace for the City and County of Albany. In the fall of 1776, he and his brothers formed a band of Loyalists which went to Canada to join Sir Guy Carleton at Crown Point. In 1777, he was made a Captain in the \"King's Loyal Americans\", a corps of Loyalists formed by his younger brother, Lt. Col., Ebenezer Jessup. In November of 1781, this corps was reorganized, and Edward Jessup was appointed to be Major Commandant to a corps called the Loyal Rangers (sometimes referred to as Jessup's Rangers). This regiment was disbanded in 1783, and in 1784, Jessup worked to settle his soldiers in the area that now comprises the counties of Leeds, Grenville, Addington, and the Bay of Quinte. In 1785, he went to England to present his schedule of losses to the commissioners appointed for inquiry into the losses and services of American Loyalists. In 1787, he proceeded to Augusta Township, and settled on his grant of 1200 acres (he was also granted 3000 acres in the District of Lunenburg). In 1810, he had a town plot surveyed on the front of Lots 2 and 3 in the First Concession of Augusta Township, Grenville County, which he named Prescott (in honour of General Robert Prescott, Governor-in-Chief of Canada from 1787-1807).";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Jessup%2C%20Edward%2C%201735-1816> .
+
+<https://data.archives.gov.on.ca/KB/Person/Jessup%2C%20Hamilton%20Dibble%2C%201806-1892>
+  a rico:Person;
+  rdfs:label "Jessup, Hamilton Dibble, 1806-1892 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Hamilton Dibble Jessup (1806-1892) was born in Augusta Township, and was educated at the Rev. John Bethune's grammar school at Augusta. In 1825, he was articled to William Caldwell, M.D. in Montreal as a student of medicine, and in 1829 received his license to practice medicine in Upper Canada. In 1830, he was licensed to practice in Lower Canada. During the Rebellion of 1837, he was Captain of a company of militia under Colonel Young. In 1844, he was elected to the federal parliament for the county of Grenville, and retained the seat until 1847. He was also a Mayor of Prescott, and in 1867 was appointed to the collectorship of customs at Prescott.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Jessup%2C%20Hamilton%20Dibble%2C%201806-1892> .
+
+<https://data.archives.gov.on.ca/KB/Person/Martin%2C%20William%20L.%2C%2019th%20cent.>
+  a rico:Person;
+  rdfs:label "Martin, William L., 19th cent. (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Martin%2C%20William%20L.%2C%2019th%20cent.> .
+
+<https://data.archives.gov.on.ca/KB/Person/McMullen%2C%20W.%20T.%2C%20fl.%201891-1928>
+  a rico:Person;
+  rdfs:label "McMullen, W. T., fl. 1891-1928 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "McMullen was also Commanding Officer of the 22nd Regiment, Woodstock. At one point, McMullen was in partnership with Alexander Finkle.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/McMullen%2C%20W.%20T.%2C%20fl.%201891-1928> .
+
+<https://data.archives.gov.on.ca/KB/Person/Montaigne%2C%20Bill%2C%201915-1988> a rico:Person;
+  rdfs:label "Montaigne, Bill, 1915-1988 (Person)";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/KB/VariantAgentName/Montaigne%2C%20William%20J.>;
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Born in Montreal, Quebec Montaigne graduated in 1936 from St. James College in Minneapolis, Minnesota with a B.A. in journalism. After graduation he worked as a freelance journalist for a number of major American newspapers and magazines, and also wrote radio scripts. Montaigne served in World War Two as a member of a Canadian artillery unit, and while in Scotland, married Barbara Malcolm Hope, a native of Pembroke, Ontario. After the war ended, they settled in Pembroke, and Montaigne began work with radio station CHOV as a commercial representative, involved in advertising, news gathering, writing and producing. In 1948 Bill and Barbara Montaigne opened Montaigne's Flowers, Gifts and Photography Shop, where he focussed primarily on photographing local events. In the 1950s the photography part of the business expanded to include film productions, sound recordings, and television journalism, with Montaigne freelancing for CBC television. He also became more active in photojournalism, contributing work for magazines, journals, and local newspapers. In the 1970s Montaigne involved himself more in commercial photography, focussing upon weddings, portraits and graduations. In 1979 he published a book entitled \"How to Begin and Operate a Successful Commercial Photography Business.\" Montaigne operated his photography business until his death in 1988.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Montaigne%2C%20Bill%2C%201915-1988> .
+
+<https://data.archives.gov.on.ca/KB/Person/Schoolcraft%2C%20John> a rico:Person;
+  rdfs:label "Schoolcraft, John (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Schoolcraft%2C%20John> .
+
+<https://data.archives.gov.on.ca/KB/Person/Solski%2C%20Mike%2C%201918-1999> a rico:Person;
+  rdfs:label "Solski, Mike, 1918-1999 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Born in Coniston, Solski was educated in Sudbury. Between 1935 and 1978, he was employed by INCO as a labourer, tradesman, foreman, co-ordinator, and Supervisor of Central Assets and Surplus. Solski was also active in Local 598 of the International Union of Mine Mill and Smelter Workers, serving as local union shop steward, organiser, vice-president treasurer and eventually president. He was also Secretary of the Canadian Mine Mill Union Council as well as Eastern Canadian Director of the International Mine, Mill and Smelter Workers. In addition to labour activism, Solksi was involved in local politics. In 1954, he became Councillor for Coniston and, in 1963, Mayor, a position he held for ten years. Solski also served as Mayor of Nickel Centre for six years. Further, he was a Regional Councillor and President of the Sudbury District Municipal Association. He also acted as Vice-Chairman of the Regional Municipality of Sudbury for 3 years. Solski served on various boards, committees and commissions including the Hydro Commission, Sudbury Regional Police Commission, the Police Governing Authority of Ontario, the Sudbury General Hospital Board and the Canada Employment and Immigration Advisory Council. Solski also authored and co-authored numerous books and booklets such as: The Coniston Story; Mine Mill - The History of the International Union of Mine Mill and Smelter Workers in Canada since 1895; and the Industrial Communities of the Sudbury Basin: Copper, Cliff, Victoria Mines, Mond and Coniston. Solksi was married to Irene Horrick with whom he has one daughter, Sandra Spratt. He died in November, 1999.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Solski%2C%20Mike%2C%201918-1999> .
+
+<https://data.archives.gov.on.ca/KB/Person/Troster%2C%20David%2C%201949-1995> a rico:Person;
+  rdfs:label "Troster, David, 1949-1995 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Troster was born in Toronto on 12 June 1949.  From 1968 to 1970 he studied in the honours B.A. program at York University majoring in film. In 1970, while at York  he produced his first independent film The Spell That Comes After. Between 1970 and 1974 he produced, through Christopher Chapman Ltd., several film shorts for Mr. Rogers' Neighborhood broadcast over PBS in the United States. Christopher Chapman had a mentoring influence on Troster's filmmaking career.  Troster went on to serve as producer and researcher of An Outside View in 1973, produced at Nielsen Ferns Ltd., a 30 minute educational TV talk show broadcast over TV Ontario. In 1975 he produced One Afternoon, an experimental short for children's television at CBC.  In 1976 he produced his second independent film, Bubbie (or My Grandmother's Film), a portrait of his grandmother Sarah Salsberg. He worked as a film editor at CBC television in Toronto from 1976 to 1979.  Troster began work on his third independent film Spadina by 1980 and completed it in 1984. In 1980 Troster formed his own production company in Toronto, David Troster Productions. Through this company he produced films and videos for corporate clients including medical and pharmaceutical companies, major banks and government agencies. Between work on corporate productions, Troster wrote scripts and worked to create films of his own, a number of  which explored gay relationships (Jamie and Eric, Dear John, Seeing Someone, A Family Likeness and Binding Offers). Troster's documentary film proposals included treatments of the lives of  music artist, Jackie Washington and filmmaker, Christopher Chapman,  as well as political figures, Tommy Douglas and J.B. Salsberg, Troster's uncle. However, Troster was not able to complete any of these works. David Troster died on 18 November 1995.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Troster%2C%20David%2C%201949-1995> .
+
+<https://data.archives.gov.on.ca/KB/Person/Walmsley%2C%20Thomas%2C%201859-ca.%201929>
+  a rico:Person;
+  rdfs:label "Walmsley, Thomas, 1859-ca. 1929 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Thomas Walmsley, son of Samuel and Eliza Walmsley of Athol, Ontario, was born in Ontario on 13 February 1859. He was a schoolteacher in Athol in 1881 but later became a barrister, establishing a practice in Picton, Ontario about 1890. He married Ada F. Rorke on 26 August 1896, and they had a son, Gordon Turnbull Walmsley who later joined his father's law practice. Thomas Walmsley died about 1929.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Walmsley%2C%20Thomas%2C%201859-ca.%201929> .
+
+<https://data.archives.gov.on.ca/KB/Person/West%2C%20William%20A.%20N.%2C%20fl.%201872>
+  a rico:Person;
+  rdfs:label "West, William A. N., fl. 1872 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/West%2C%20William%20A.%20N.%2C%20fl.%201872> .
+
+<https://data.archives.gov.on.ca/KB/Person/Wood%2C%20Orville%20Alvin%2C%201912-2006>
+  a rico:Person;
+  rdfs:label "Wood, Orville Alvin, 1912-2006 (Person)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name>;
+  rico:history "Orville Wood was born in South River, Ontario, in 1912. He served in the Navy, stationed in Halifax, during World War II, after which he became president of the Fort York Construction Company Ltd.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Wood%2C%20Orville%20Alvin%2C%201912-2006> .
+
+<https://data.archives.gov.on.ca/KB/Place/Brock%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Brock (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Corporate%20Name>;
+  rico:history "This act provided for the creation of municipal governments at the town, village and township levels and identified those which would automatically be granted municipal status when the act came into effect, January 1, 1850. Communities not named in the original act could petition the county council or legislative assembly for incorporation on reaching specified population levels. An incorporated township, lower tier municipality, has a council consisting of an elected Reeve, Deputy Reeves, and councillors the number of which depend on the population of the township. Its responsibilities relate largely to the upkeep of the local road system and the delivery of services such as water and sewage. It has wide powers relating to the regulation of land and local administration through by-laws. It has the power to raise money through direct taxation on land and through the use of debentures. Originally part of the County of Ontario, on January 1, 1974  it absorbed the Village of Cannington to form part of the Durham Region under Ontario Statutes, 1973, Chapter 78, the Regional Municipality of Durham Act.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Brock%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Campbellville%20%28Ont.%29> a rico:Place;
+  rdfs:label "Campbellville (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Campbellville%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Churchill%20%28Man.%29> a rico:Place;
+  rdfs:label "Churchill (Man.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "58ø47' 94ø12'";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Churchill%20%28Man.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Clear%20Lake%20%28Haliburton%20County%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Clear Lake (Haliburton County, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Clear%20Lake%20%28Haliburton%20County%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Colenso%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Colenso (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Kenora District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Colenso%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Cygnet%20Lake%20%28Ont.%29> a rico:Place;
+  rdfs:label "Cygnet Lake (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Rudd Township, Kenora District";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Cygnet%20Lake%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Dennie%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Dennie (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sudbury District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Dennie%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Devon%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Devon (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Thunder Bay District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Devon%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Fallingsnow%20Lake%20%28Ont.%29> a rico:Place;
+  rdfs:label "Fallingsnow Lake (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Devon Township, Thunder Bay District";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Fallingsnow%20Lake%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Greenwater%20Lake%20%28South%20of%20Lac%20des%20Milles%20Lacs%2C%20Thunder%20Bay%20District%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Greenwater Lake (South of Lac des Milles Lacs, Thunder Bay District, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Greenwater%20Lake%20%28South%20of%20Lac%20des%20Milles%20Lacs%2C%20Thunder%20Bay%20District%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Halton%20Hills%20%28Ont.%29> a rico:Place;
+  rdfs:label "Halton Hills (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Town located in the Regional Municipality of Halton. In January 1974 it was formed through the amalgamation of the Towns of Acton and Georgetown and parts of the Township of Esquesing and the Town of Oakville.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Halton%20Hills%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Harmony%20%28Oshawa%2C%20Ont.%29> a rico:Place;
+  rdfs:label "Harmony (Oshawa, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Ontario County";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Harmony%20%28Oshawa%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Harrow%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Harrow (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sudbury District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Harrow%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Henvey%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Henvey (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Parry Sound District, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Henvey%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Herschel%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "Herschel (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Hastings County, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Herschel%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Inwood%20%28Ont.%29> a rico:Place;
+  rdfs:label "Inwood (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Lambton County, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Inwood%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Joffre%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Joffre (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sudbury District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Joffre%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Killraine%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "Killraine (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Thunder Bay District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Killraine%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Kirkfield%20%28Ont.%29> a rico:Place;
+  rdfs:label "Kirkfield (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Police village located in Eldon Township, Victoria County. Incorporated as a police village in 1905.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Kirkfield%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Law%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Law (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Nipissing District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Law%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Longbow%20Lake%20%28Ont.%29> a rico:Place;
+  rdfs:label "Longbow Lake (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Kirkup Township, Kenora District";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Longbow%20Lake%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Lyndoch%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Lyndoch (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Renfrew County, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Lyndoch%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/MacGregor%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "MacGregor (Ont. : Township) (Place)";
+  rico:hasOrHadAgentName <https://data.archives.gov.on.ca/KB/VariantAgentName/Macgregor%20%28Ont.%20%3A%20Township%29>;
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Thunder Bay District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/MacGregor%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Medora%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Medora (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Muskoka District, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Medora%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Middle%20Shebandowan%20Lake%20%28Ont.%29>
+  a rico:Place;
+  rdfs:label "Middle Shebandowan Lake (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Thunder Bay District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Middle%20Shebandowan%20Lake%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Minden%20%28Ont.%29> a rico:Place;
+  rdfs:label "Minden (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Haliburton County.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Minden%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Morin%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Morin (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Algoma District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Morin%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Musgrove%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "Musgrove (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Timiskaming District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Musgrove%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/New%20York%20City%2C%20%28NY%29> a rico:Place;
+  rdfs:label "New York City, (NY) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/New%20York%20City%2C%20%28NY%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Oneida%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Oneida (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "This act provided for the creation of municipal governments at the town, village and township levels and identified those which would automatically be granted municipal status when the act came into effect, January 1, 1850. Communities not named in the original act could petition the county council or legislative assembly for incorporation on reaching specified population levels. An incorporated township, lower tier municipality, has a council consisting of an elected Reeve, Deputy Reeves, and councillors the number of which depend on the population of the township. Its responsibilities relate largely to the upkeep of the local road system and the delivery of services such as water and sewage. It has wide powers relating to the regulation of land and local administration through by-laws. It has the power to raise money through direct taxation on land and through the use of debentures. The Township was dissolved in 1974 and amalgamated into the new Town of Haldimand in the Regional Municipality of Haldimand-Norfolk under Ontario Statutes 1973, Chapter 96.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Oneida%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Opasatika%20River%20%28Ont.%29> a rico:Place;
+  rdfs:label "Opasatika River (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Opasatika%20River%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Rebecca%20Lake%20%28Muskoka%20District%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Rebecca Lake (Muskoka District, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sinclair Township, Muskoka District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Rebecca%20Lake%20%28Muskoka%20District%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Roosevelt%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "Roosevelt (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sudbury District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Roosevelt%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Ryde%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Ryde (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Corporate%20Name>;
+  rico:history "This Act permitted communities to petition the Legislative Assembly or county for incorporation as townships, towns or villages on reaching specified population levels. An incorporated township, lower tier municipality, has a council consisting of an elected Reeve, Deputy Reeves, and councillors the number of which depend on the population of the township. Its responsibilities relate largely to the upkeep of the local road system and the delivery of services such as water and sewage. It has wide powers relating to the regulation of land and local administration through by-laws. It has the power to raise money through direct taxation on land and through the use of debentures. The Township of Ryde was dissolved and incorporated into the Town of Gravenhurst in 1971 under the District Municipality of Muskoka Act, Ontario Statutes 1970, Chapter 32.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Ryde%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Sanborn%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Sanborn (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Cochrane District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Sanborn%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Shearer%20%28Ont.%20%3A%20Township%29> a
+    rico:Place;
+  rdfs:label "Shearer (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Cochrane District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Shearer%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Shoal%20Lake%20%28Rainy%20River%20District%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Shoal Lake (Rainy River District, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Shoal%20Lake%20%28Rainy%20River%20District%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Silver%20Lake%20%28Lanark%20and%20Frontenac%20Counties%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Silver Lake (Lanark and Frontenac Counties, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Sherbrooke Township, Lanark County and Oso Township, Frontenac County.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Silver%20Lake%20%28Lanark%20and%20Frontenac%20Counties%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Sombra%20%28Ont.%29> a rico:Place;
+  rdfs:label "Sombra (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Police Village located in Sombra Township, Lambton County. Incorporated as a police village in 1903.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Sombra%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/St.%20Raphaels%20%28Ont.%29> a rico:Place;
+  rdfs:label "St. Raphaels (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/St.%20Raphaels%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Sutcliffe%20%28Ont.%20%3A%20Township%29>
+  a rico:Place;
+  rdfs:label "Sutcliffe (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Cochrane District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Sutcliffe%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Tichborne%20%28Ont.%29> a rico:Place;
+  rdfs:label "Tichborne (Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Concentrated rural community located in Hinchinbrooke Township, Frontenac County.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Tichborne%20%28Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Tiny%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Tiny (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Simcoe County, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Tiny%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Ware%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Ware (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Thunder Bay District, Ontario.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Ware%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Whitney%20Lake%20%28Smellie%20Township%2C%20Kenora%20District%2C%20Ont.%29>
+  a rico:Place;
+  rdfs:label "Whitney Lake (Smellie Township, Kenora District, Ont.) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Whitney%20Lake%20%28Smellie%20Township%2C%20Kenora%20District%2C%20Ont.%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/Wyse%20%28Ont.%20%3A%20Township%29> a rico:Place;
+  rdfs:label "Wyse (Ont. : Township) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:history "Located in Nipissing District.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/Wyse%20%28Ont.%20%3A%20Township%29> .
+
+<https://data.archives.gov.on.ca/KB/Place/York%20%28Upper%20Canada%29> a rico:Place;
+  rdfs:label "York (Upper Canada) (Place)";
+  rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>;
+  rico:hasSuccessor <https://data.archives.gov.on.ca/KB/CorporateBody/Toronto%20%28Ont.%29>;
+  rico:history "Use for material relating to the Town of York, 1793-1834, provincial capital and military centre.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/AuthorityRecord/York%20%28Upper%20Canada%29> .
 
 <https://data.archives.gov.on.ca/KB/Rule/NAM%20%204.10B> a rico:Rule;
   rdfs:label "NAM  4.10B (Rule)" .

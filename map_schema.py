@@ -28,9 +28,9 @@ rico_version_mask = r'{RICO_VERSION}'
 rico_authtp_mask = r'{RICO_AUTHTP}'
 rico_authtp_dict = {
     'CorporateBody': r'/(Corporate Name|[ABC] Ontario Government Name)/',
-    'Family': r'/Family Name/',
-    'Place': r'/Geographic Name/',
-    'Person': r'/Personal Name/'
+    'Family': r'/(Family Name)/',
+    'Place': r'/(Geographic Name)/',
+    'Person': r'/(Personal Name)/'
 }
 uuid_label = 'UUID'
 
