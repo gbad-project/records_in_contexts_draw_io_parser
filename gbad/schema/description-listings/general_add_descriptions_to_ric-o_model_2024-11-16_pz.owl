@@ -1,0 +1,168 @@
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: rico: <https://www.ica.org/standards/RiC/ontology#>
+Prefix: : <https://data.archives.gov.on.ca/>
+Ontology: <https://data.archives.gov.on.ca>
+  Import: <https://www.ica.org/standards/RiC/ontology>
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FRecordSet%2F1
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/RecordSet/1"
+  Types: rico:RecordSet
+  Facts:
+    rico:hasRecordSetType rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordSetType%2F%7BLEVELDES%7D%22,
+    rico:scopeAndContent "rml:reference   \"SCOPE\"",
+    rico:history "rml:reference  \"CUSTOD\"",
+    rico:history "rml:reference  \"ISA\"",
+    rico:history "rml:reference \"ADMBIO\"",
+    rico:hasOrHadInstantiation rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FInstantiation%2F1%22,
+    rico:conditionsOfAccess "rml:reference  \"REST\"",
+    rico:conditionsOfAccess "rml:reference  \"RESTRTX \"",
+    rico:conditionsOfUse "rml:reference \"TGU\"",
+    rico:generalDescription "rml:reference  \"AVAIL\"",
+    rico:generalDescription "rml:reference  \"NOTES\"",
+    rico:generalDescription "rml:reference \"ASSMAT\"",
+    rico:generalDescription "rml:reference \"CMTD\"",
+    rico:generalDescription "rml:reference \"FINDAID\"",
+    rico:generalDescription "rml:reference \"HIDDENNOTES\"",
+    rico:generalDescription "rml:reference \"RELMAT\"",
+    rico:isOrWasDescribedBy rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FRecord%2F1%22,
+    rico:isOrWasDescribedBy rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FRecord%2F2%22,
+    rico:accruals "rml:reference \"ACCRUAL\"",
+    rico:hasOrHadIdentifier rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FIdentifier%2F1%22,
+    rico:hasOrHadIdentifier rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FIdentifier%2F2%22,
+    rico:hasCreator rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXPROV%7D%2FThing%2F1%22,
+    rico:hasOrHadTitle rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FTitle%2F1%22,
+    rico:hasOrHadSubject rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXSUB%7D%2FThing%2F1%22,
+    rico:isAssociatedWithPlace rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXGEO%7D%2FThing%2F1%22,
+    rico:hasContentOfType rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%2F%7BGMD%7D%22,
+    rico:creationDate "rml:reference \"DATECR\"",
+    rico:isDirectlyIncludedIn rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD_HIGHER%7D%2FRecordSet%2F1,
+    rico:isDirectlyIncludedIn rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREF_ADD%7D%2FRecordSet%2F1,
+    rico:date "rml:reference \"DATEACM\""
+
+Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordSetType%2F%7BLEVELDES%7D%22
+  Annotations:
+    rdfs:label "rr:template  \"Schema/Description-Listings/RecordSetType/{LEVELDES}\""
+  Types: rico:RecordSetType
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FInstantiation%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Instantiation/1\""
+  Types: rico:Instantiation
+  Facts:
+    rico:instantiationExtent "rml:reference \"PHDESC\"",
+    rico:physicalCharacteristicsNote "rml:reference \"PHYSCO\"",
+    rico:generalDescription "rml:reference \"HOWTO\"",
+    rico:hasOrHadTitle rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FTitle%2F1%22
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FRecord%2F2%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Record/2\""
+  Types: rico:Record
+  Facts:
+    rico:hasDocumentaryFormType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FDocumentaryFormType%2FFinding%20Aid%22
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FDocumentaryFormType%2FFinding%20Aid%22
+  Annotations:
+    rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Finding Aid\""
+  Types: rico:DocumentaryFormType
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FIdentifier%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Identifier/1\""
+  Types: rico:Identifier
+  Facts:
+    rico:hasIdentifierType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FIdentifierType%2FCurrent%20Reference%20Code%22
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FIdentifier%2F2%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Identifier/2\""
+  Types: rico:Identifier
+  Facts:
+    rico:hasIdentifierType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FIdentifierType%2FFormer%20Code%22,
+    rico:textualValue "rml:reference \"FCODES\""
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FIdentifierType%2FCurrent%20Reference%20Code%22
+  Annotations:
+    rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Current Reference Code\""
+  Types: rico:IdentifierType
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FIdentifierType%2FFormer%20Code%22
+  Annotations:
+    rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Former Code\""
+  Types: rico:IdentifierType
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FRecord%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Record/1\""
+  Types: rico:Record
+  Facts:
+    rico:hasDocumentaryFormType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FDocumentaryFormType%2FArchival%20Description%22,
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FStatus%2F%7BSTATUSD%7D%22,
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FWeb%20Enabled%2F%7BWEBD%7D%22,
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FWeb%20Enabled%2F%7BWEBL%7D%22,
+    rico:wasLastUpdatedAtDate rr%3Atemplate%20%22KB%2FDate%2F%7BMODDATE%7D%22
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXPROV%7D%2FThing%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{INDEXPROV}/Thing/1\""
+  Types: rico:Agent
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD%7D%2FTitle%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD}/Title/1\""
+  Types: rico:Title
+  Facts:
+    rico:textualValue "rml:reference \"TITLE\""
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXSUB%7D%2FThing%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{INDEXSUB}/Thing/1\""
+  Types: rico:Agent
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BINDEXGEO%7D%2FThing%2F1%22
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{INDEXGEO}/Thing/1\""
+  Types: rico:Place
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FDescription-Listings%2FDocumentaryFormType%2FArchival%20Description%22
+  Annotations:
+    rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Archival Description\""
+  Types: rico:DocumentaryFormType
+
+Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FStatus%2F%7BSTATUSD%7D%22
+  Annotations:
+    rdfs:label "rr:template \"Schema/Description-Listings/RecordState/Status/{STATUSD}\""
+  Types: rico:RecordState
+
+Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FWeb%20Enabled%2F%7BWEBD%7D%22
+  Annotations:
+    rdfs:label "rr:template \"Schema/Description-Listings/RecordState/Web%20Enabled/{WEBD}\""
+  Types: rico:RecordState
+
+Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%2F%7BGMD%7D%22
+  Annotations:
+    rdfs:label "rr:template  \"Schema/Description-Listings/ContentType/{GMD}\""
+  Types: rico:ContentType
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREFD_HIGHER%7D%2FRecordSet%2F1
+  Annotations:
+    rdfs:label "rr:template \"{RICO_VERSION}/{REFD_HIGHER}/RecordSet/1"
+  Types: rico:RecordSet
+
+Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FRecordState%2FWeb%20Enabled%2F%7BWEBL%7D%22
+  Annotations:
+    rdfs:label "rr:template \"Schema/Description-Listings/RecordState/Web%20Enabled/{WEBL}\""
+  Types: rico:RecordState
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BMODDATE%7D%22
+  Annotations:
+    rdfs:label "rr:template \"KB/Date/{MODDATE}\""
+  Types: rico:Date
+  Facts:
+    rico:normalizedDateValue "rml:reference \"MODDATE\""
+
+Individual: rr%3Atemplate%20%22%7BRICO_VERSION%7D%2F%7BREF_ADD%7D%2FRecordSet%2F1
+  Annotations:
+    rdfs:label "rr:template  \"{RICO_VERSION}/{REF_ADD}/RecordSet/1"
+  Types: rico:RecordSet

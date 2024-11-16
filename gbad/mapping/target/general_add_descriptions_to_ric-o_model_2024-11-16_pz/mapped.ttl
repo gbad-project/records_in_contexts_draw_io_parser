@@ -1,0 +1,106 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<https://data.archives.gov.on.ca/KB/Date/02%2F26%2F2003> a rico:Date;
+  rdfs:label "02/26/2003 (Date)";
+  rico:normalizedDateValue "02/26/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F05%2F2001> a rico:Date;
+  rdfs:label "03/05/2001 (Date)";
+  rico:normalizedDateValue "03/05/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F06%2F2003> a rico:Date;
+  rdfs:label "03/06/2003 (Date)";
+  rico:normalizedDateValue "03/06/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F21%2F2000> a rico:Date;
+  rdfs:label "03/21/2000 (Date)";
+  rico:normalizedDateValue "03/21/2000" .
+
+<https://data.archives.gov.on.ca/KB/Date/04%2F01%2F2003> a rico:Date;
+  rdfs:label "04/01/2003 (Date)";
+  rico:normalizedDateValue "04/01/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/04%2F11%2F2003> a rico:Date;
+  rdfs:label "04/11/2003 (Date)";
+  rico:normalizedDateValue "04/11/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/06%2F03%2F2002> a rico:Date;
+  rdfs:label "06/03/2002 (Date)";
+  rico:normalizedDateValue "06/03/2002" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F26%2F2000> a rico:Date;
+  rdfs:label "07/26/2000 (Date)";
+  rico:normalizedDateValue "07/26/2000" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F30%2F2001> a rico:Date;
+  rdfs:label "07/30/2001 (Date)";
+  rico:normalizedDateValue "07/30/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F30%2F2003> a rico:Date;
+  rdfs:label "07/30/2003 (Date)";
+  rico:normalizedDateValue "07/30/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F01%2F2003> a rico:Date;
+  rdfs:label "08/01/2003 (Date)";
+  rico:normalizedDateValue "08/01/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F13%2F2002> a rico:Date;
+  rdfs:label "08/13/2002 (Date)";
+  rico:normalizedDateValue "08/13/2002" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F25%2F2003> a rico:Date;
+  rdfs:label "08/25/2003 (Date)";
+  rico:normalizedDateValue "08/25/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/10%2F05%2F2001> a rico:Date;
+  rdfs:label "10/05/2001 (Date)";
+  rico:normalizedDateValue "10/05/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/12%2F19%2F2000> a rico:Date;
+  rdfs:label "12/19/2000 (Date)";
+  rico:normalizedDateValue "12/19/2000" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Archival%20Description>
+  a rico:DocumentaryFormType;
+  rdfs:label "Archival Description" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/DocumentaryFormType/Finding%20Aid>
+  a rico:DocumentaryFormType;
+  rdfs:label "Finding Aid" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Current%20Reference%20Code>
+  a rico:IdentifierType;
+  rdfs:label "Current Reference Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/IdentifierType/Former%20Code>
+  a rico:IdentifierType;
+  rdfs:label "Former Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/RecordSetType/Fonds>
+  a rico:RecordSetType;
+  rdfs:label "Fonds" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/RecordSetType/Series>
+  a rico:RecordSetType;
+  rdfs:label "Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/RecordSetType/Sub-series>
+  a rico:RecordSetType;
+  rdfs:label "Sub-series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/RecordState/Status/Approved>
+  a rico:RecordState;
+  rdfs:label "Status/Approved" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/RecordState/Status/Review>
+  a rico:RecordState;
+  rdfs:label "Status/Review" .
