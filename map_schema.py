@@ -508,7 +508,7 @@ def __init__(schema_code, source_filename=None):
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
             cleaned_uri = remove(norm(map_predicate), uriref_str)
-            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=":/?&="))
+            encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=":/#?&="))
             if isinstance(encoded_uri, URIRef): # check if true URI or constant literal
                 map_object = URIRef(encoded_uri)
             else:
