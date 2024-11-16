@@ -596,11 +596,9 @@ def __init__(schema_code, source_filename=None):
 
         # If increment number in row, then disaggregation already done (e.g., for subject)...
         increment_number = row.get(increment_number_label, None)
+        if isinstance(increment_number, int): # ...so will only generate one row with the inherited increment number (e.g., for object)
+            mnemonic_i_from = increment_number; mnemonic_i_to = increment_number
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
-            # ...so will only generate one row with the inherited increment number (e.g., for object)
-            if ((increment_number is not None) and
-                (mnemonic_i != increment_number)):
-                continue
             new_row = row.copy()
             new_row[increment_number_label] = mnemonic_i
             column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
@@ -651,6 +649,10 @@ def __init__(schema_code, source_filename=None):
     # The line below is really important, or triples will be lost!
     parsed_df = parsed_df.rename(columns={'subject': 'original_subject'}) 
     parsed_df = pd.merge(parsed_df, subjects_df[['original_subject', 'subject', rico_name_label, increment_number_label]], on='original_subject', how='left')
+    # The below line is necessary because np.nan in merged df force this col into float
+    parsed_df[increment_number_label] = parsed_df[increment_number_label].astype('Int64')
+    #parsed_df[increment_number_label] = parsed_df[increment_number_label].astype(int)  # Convert to int
+    #print(parsed_df[increment_number_label])
     # Also extract map predicates and objects for each object
     # Note that the below are for object, not subject, even though columns are called the same
     # Also note for next line that it is the only one that applies to series, all other to df

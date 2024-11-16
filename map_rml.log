@@ -1,12 +1,13 @@
-Script started on 2024-11-16 06:29:35-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
+Script started on 2024-11-16 08:32:11-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="17"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
-('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz_v2.rml',
+('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz_v3.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v2/mapped.ttl')
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz_v2.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v2/mapped.ttl'
+ 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v3/mapped.ttl')
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz_v3.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v3/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v2/mapped.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz_v3/mapped.ttl'
 
-Number of triples in the graph: 2016
+Number of triples in the graph: 2041
 
-Script done on 2024-11-16 06:29:43-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-16 08:32:18-05:00 [COMMAND_EXIT_CODE="0"]
