@@ -38,7 +38,7 @@ triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
 map_predicate_label = 'map_predicate'
 map_object_label = 'map_object'
-has_increment_label = 'has_increment_request'
+increment_number_label = 'increment_number'
 
 # combine_turtle_files generated with Claude 3.5 Sonnet
 # on 2024-08-29, with modifications
@@ -593,11 +593,19 @@ def __init__(schema_code, source_filename=None):
         #mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(column_uri)
         mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
         row[f'original_{column}'] = row[column]
+
+        # If increment number in row, then disaggregation already done (e.g., for subject)...
+        increment_number = row.get(increment_number_label, None)
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
+            # ...so will only generate one row with the inherited increment number (e.g., for object)
+            if ((increment_number is not None) and
+                (mnemonic_i != increment_number)):
+                continue
             new_row = row.copy()
+            new_row[increment_number_label] = mnemonic_i
             column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
             if column_value:
-                new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value) 
+                new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)
             disaggregated_series_list.append(new_row)
         return row
     
@@ -642,7 +650,7 @@ def __init__(schema_code, source_filename=None):
     # The column name stays unique so we should just remember that RiC-O name refers to subject
     # The line below is really important, or triples will be lost!
     parsed_df = parsed_df.rename(columns={'subject': 'original_subject'}) 
-    parsed_df = pd.merge(parsed_df, subjects_df[['original_subject', 'subject', rico_name_label, triplesmap_label]], on='original_subject', how='left')
+    parsed_df = pd.merge(parsed_df, subjects_df[['original_subject', 'subject', rico_name_label, increment_number_label]], on='original_subject', how='left')
     # Also extract map predicates and objects for each object
     # Note that the below are for object, not subject, even though columns are called the same
     # Also note for next line that it is the only one that applies to series, all other to df
@@ -659,7 +667,8 @@ def __init__(schema_code, source_filename=None):
     parsed_df = pd.DataFrame(disaggregated_object_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
     parsed_df[uriref_str_label] = parsed_df['object'].apply(extract_uriref_str)
-    # Note that not reapplying TriplesMap to objects because it only works for subjects, and we are only interested in literals here anyway
+    # TriplesMap string will be necessary later on to filter out non-matching objects
+    parsed_df[[triplesmap_label, uuid_label]] = parsed_df.apply(generate_triplesmap_name, axis=1)
     parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
     parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
 
@@ -977,8 +986,17 @@ def __init__(schema_code, source_filename=None):
                 # Now we can actually iterate over objects
                 object = parsed_result['object']
                 original_object = parsed_result['original_object']
-                object_map_predicate = parsed_result[map_predicate_label]
-                object_map_object = parsed_result[map_object_label]
+                if object in rico_authtp_subjects.keys(): # checking if the object is a subject among rico_authtp_subjects
+                    true_object_uri, authtp_column_name = rico_authtp_subjects[object]
+                    object_triplesmap_name = parsed_result[triplesmap_label]
+                    true_object_po = uriref_str_to_map(extract_uriref_str(true_object_uri),
+                                                        generate_uuid_str(object_triplesmap_name,
+                                                                          show_message=False)) # already saw these UUIDs
+                    object_map_predicate = true_object_po[map_predicate_label]
+                    object_map_object = true_object_po[map_object_label]
+                else:
+                    object_map_predicate = parsed_result[map_predicate_label]
+                    object_map_object = parsed_result[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
                 rdfs_label_triple = None # to use later
 
