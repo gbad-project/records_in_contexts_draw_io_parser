@@ -8,7 +8,7 @@ import os
 import argparse
 import glob
 import requests
-#import uuid
+import uuid
 
 # Prohibit trimming pd prints in shell
 pd.set_option('display.max_rows', None)
@@ -32,7 +32,7 @@ rico_authtp_dict = {
     'Place': r'/Geographic Name/',
     'Person': r'/Personal Name/'
 }
-#uuid_label = 'UUID'
+uuid_label = 'UUID'
 
 triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
@@ -75,13 +75,13 @@ def __init__(schema_code, source_filename=None):
     base_data_uri = 'https://data.archives.gov.on.ca'
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
     base_gbad_uri = base_data_uri
-    #NAMESPACE_UUID = uuid.uuid5(uuid.NAMESPACE_URL, f"{base_gbad_uri}/")
-    #print(f"Namespace UUID v5 for <{base_gbad_uri}/>: {NAMESPACE_UUID}")
     base_schema_uri = URIRef(f"{base_data_uri}/Schema")
     #base_kb_uri = URIRef(f"{base_data_uri}/KB")
     base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
     base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
     base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
+    MAPPING_NS_UUID = uuid.uuid5(uuid.NAMESPACE_URL, f"{base_mapping_uri}#")
+    print(f"Namespace UUID v5 for <{base_mapping_uri}#>: {MAPPING_NS_UUID}\n")
 
     base_uri_prefix = f"{base_data_uri}/"
     schema_term = 'Schema'
@@ -166,12 +166,17 @@ def __init__(schema_code, source_filename=None):
     # The below works but commented out for now because did not do the trick without accessing input CSV values
     # That is, the UUID is only unique to the TriplesMap, so all entities generated from it have the same UUID
     # Define UUID replacement logic - support any position of number but only allowed chars
-    #uuid_pattern = f"%7B({uuid_label}_?(\d*)|(\d*)_?{uuid_label})%7D" # using encoded because rr:constant will be used
-    #uuid_regex = re.compile(uuid_pattern) # let's make it case-sensitive to enforce strictness for this special word
-    #def substitute_uuid(uriref, entity_name):
-    #    str(uriref)
-    #    s = uuid_regex.sub(str(uuid.uuid5(NAMESPACE_UUID, entity_name)), str(uriref))
-    #    return URIRef(s) if isinstance(uriref, URIRef) else Literal(s)
+    uuid_pattern = f"{{({uuid_label}_?(\d*)|(\d*)_?{uuid_label})}}" # unencoded curly brackets because regex applied before encoding
+    uuid_regex = re.compile(uuid_pattern) # let's make it case-sensitive to enforce strictness for this special word
+    def generate_uuid_str(entity_name, show_message=True):
+        uuid_str = str(uuid.uuid5(MAPPING_NS_UUID, entity_name))
+        if show_message:
+            print(f"UUID v5 generated from namespace and '{entity_name}': {uuid_str}")
+        return uuid_str
+
+    def substitute_uuid(uriref, uuid_str):
+        uriref = uuid_regex.sub(uuid_str, uriref)
+        return URIRef(uriref) if isinstance(uriref, URIRef) else Literal(uriref)
 
     def prettify_rdfs_label(literal_str):
         # Remove base data prefix
@@ -456,17 +461,27 @@ def __init__(schema_code, source_filename=None):
         triplesmap_name = re.sub(r'[^0-9a-z_-]', '_', str, flags=re.IGNORECASE)
         return triplesmap_name
 
-    def generate_triplesmap_name(row):
+    def generate_triplesmap_name(row, show_message=False):
+        def series(triplesmap_name, uuid_str):
+            map_series = pd.Series({
+                triplesmap_label: triplesmap_name,
+                uuid_label: uuid_str
+            })
+            return map_series
+        
         # This implementation assumes that subject URIs are unique
         subject_str = row[uriref_str_label]
         cleaned_subject = triplesmap_clean(subject_str)
-        return cleaned_subject
+        # Not showing message because we would only need to see it for rows with {UUID},
+        # and this is implemented in UUID substitution logic
+        uuid_str = generate_uuid_str(cleaned_subject, show_message=show_message)
+        return series(cleaned_subject, uuid_str)
     
     # Necessary to init namespace manager for uriref_str_to_map
     # Initialize an RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
     
-    def uriref_str_to_map(uriref_str):
+    def uriref_str_to_map(uriref_str, uuid_str=None):
         map_predicate = None
         map_object = None
 
@@ -498,6 +513,9 @@ def __init__(schema_code, source_filename=None):
         elif uriref_str.startswith(norm(rr[1].template)):
             map_predicate = rr[1].template
             cleaned_uri = remove(norm(map_predicate), uriref_str)
+            # This is where the actual UUID substitution happens when UUID accompanies mnemonics
+            if uuid_str:
+                cleaned_uri = substitute_uuid(cleaned_uri, uuid_str)
             encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=''))
             if isinstance(cleaned_uri, URIRef): # check if true URI or rr:template
                 map_object = URIRef(encoded_uri)
@@ -508,6 +526,9 @@ def __init__(schema_code, source_filename=None):
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
             cleaned_uri = remove(norm(map_predicate), uriref_str)
+            # This is where the actual UUID substitution happens when UUID is the only mask
+            if uuid_str:
+                cleaned_uri = substitute_uuid(cleaned_uri, uuid_str)
             encoded_uri = URIRef(urllib.parse.quote(cleaned_uri, safe=":/#?&="))
             if isinstance(encoded_uri, URIRef): # check if true URI or constant literal
                 map_object = URIRef(encoded_uri)
@@ -518,17 +539,11 @@ def __init__(schema_code, source_filename=None):
             map_object = Literal(uriref_str)
 
         return series(map_predicate, map_object)
-
-    def generate_rico_name(row):
-        object_uri = row['object']
-        object_str = str(normalize_uri(object_uri, g.namespace_manager))
-        cleaned_object = object_str
-        return cleaned_object
     
     def extract_mnemonic(row):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
-        #triplesmap_name = row[triplesmap_label]
+        uuid_str = row.get(uuid_label, None)
         if map_object:
             if map_predicate == rml[1].reference:
                 return map_object
@@ -537,19 +552,35 @@ def __init__(schema_code, source_filename=None):
             # Consider replacing this with more robust, findall logic
             # later on to allow for true multiple masks
             #map_object = substitute_rico_version_mask(map_object)
-            #map_object = substitute_uuid_mask(map_object, triplesmap_name)
+            if uuid_str:
+                map_object = substitute_uuid(map_object, uuid_str)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
                 if len(matches) > 1:
-                    other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
-                    print("At most one rr:template is allowed per subject map ",
-                          f"whereas multiple are given in: '{map_object}'. ",
-                          f"By default logic, the leftmost mnemonic is deliberately chosen as the main one.",
-                          f"Thus, {{{matches[0]}}} will be processed as the main mnemonic, "
-                          f"and all the others will be passed to RML as is: {other_mnemonics}", "\n")
+                    # If there is a predicate column set in row, then we are iterating over parsed_df objects,
+                    # which means we already saw the warning when iterating over disaggregated subjects_df
+                    # Then if there is no triplesmap name set, then this is subjects_df before disaggregation,
+                    # and we do not want to see the warning yet because URIs are not yet final
+                    show_warning = (row.get('predicate', None) is None and
+                                    row.get(triplesmap_label, None) is not None)
+                    if show_warning:
+                        other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
+                        if uuid_str:
+                            generate_triplesmap_name(row, show_message=True)  # just to show the message
+                        print("At most one rr:template is allowed per subject map ",
+                            f"whereas multiple are given in: '{map_object}'. ",
+                            f"By default logic, the leftmost mnemonic is deliberately chosen as the main one.",
+                            f"Thus, {{{matches[0]}}} will be processed as the main mnemonic, "
+                            f"and all the others will be passed to RML as is: {other_mnemonics}", "\n")
                     #return None
                 return matches[0]
         return None
+    
+    def generate_rico_name(row):
+        object_uri = row['object']
+        object_str = str(normalize_uri(object_uri, g.namespace_manager))
+        cleaned_object = object_str
+        return cleaned_object
     
     rico_name_label = 'RiC-O Name'.replace(' ','_')
     mnemonic_label = 'Authority Mnemonic'.replace(' ','_')
@@ -577,6 +608,7 @@ def __init__(schema_code, source_filename=None):
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
+    # Mnemonic is necessary for disaggregation logic that follows
     subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)\
     
     # Now that we have mnemonics generated, let's honor any increment requests
@@ -587,10 +619,11 @@ def __init__(schema_code, source_filename=None):
     subjects_df = pd.DataFrame(disaggregated_subject_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
-    subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
+    # Knowing TriplesMap name is necessary for UUID substitution at uriref_str_to_map and mnemonic extraction
+    subjects_df[[triplesmap_label, uuid_label]] = subjects_df.apply(generate_triplesmap_name, axis=1)
+    subjects_df[[map_predicate_label, map_object_label]] = subjects_df.apply(lambda row: uriref_str_to_map(row[uriref_str_label], row[uuid_label]), axis=1)
     subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
     # Now that all cols have been disaggregated, let's generate remaining useful cols
-    subjects_df[triplesmap_label] = subjects_df.apply(generate_triplesmap_name, axis=1)
     subjects_df[rico_name_label] = subjects_df.apply(generate_rico_name, axis=1)
     # Let's drop the object (i.e., rdf:type) because it's now in rico_name_label
     subjects_df.drop(['object', uriref_str_label], axis=1, inplace=True)
@@ -626,6 +659,7 @@ def __init__(schema_code, source_filename=None):
     parsed_df = pd.DataFrame(disaggregated_object_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
     parsed_df[uriref_str_label] = parsed_df['object'].apply(extract_uriref_str)
+    # Note that not reapplying TriplesMap to objects because it only works for subjects, and we are only interested in literals here anyway
     parsed_df[[map_predicate_label, map_object_label]] = parsed_df[uriref_str_label].apply(uriref_str_to_map)
     parsed_df[mnemonic_label] = parsed_df.apply(extract_mnemonic, axis=1)
 
@@ -848,7 +882,9 @@ def __init__(schema_code, source_filename=None):
         authtp_column_name = None # only set for RICO_AUTHTP replaced subjects
         if subject_uri in rico_authtp_subjects.keys():
             true_subject_uri, authtp_column_name = rico_authtp_subjects[subject_uri]
-            true_subject_po = uriref_str_to_map(extract_uriref_str(true_subject_uri))
+            true_subject_po = uriref_str_to_map(extract_uriref_str(true_subject_uri),
+                                                generate_uuid_str(triplesmap_name,
+                                                                  show_message=False)) # already saw these UUIDs
             subject_map_predicate = true_subject_po[map_predicate_label]
             uri_mask = true_subject_po[map_object_label]
         else:
@@ -856,10 +892,6 @@ def __init__(schema_code, source_filename=None):
             uri_mask = subject_row[map_object_label]
         #URIRef(urllib.parse.unquote(str(subject)))
         #uri_mask = construct_uri_mask(subjects_df, i)
-
-        # This is where the actual UUID substitution happens, right before writing to RML
-        # Commented out because we are not using UUIDs eventually, as of yet
-        #uri_mask = substitute_uuid(uri_mask, triplesmap_name)
         
         # Define an empty Subject Map
         subject_map = BNode()

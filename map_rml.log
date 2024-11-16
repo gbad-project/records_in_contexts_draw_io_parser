@@ -1,4 +1,4 @@
-Script started on 2024-11-15 17:24:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="22"]
+Script started on 2024-11-16 04:04:55-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-15_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
@@ -7,6 +7,6 @@ Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024
 
 Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-15_pz/mapped.ttl'
 
-Number of triples in the graph: 2751
+Number of triples in the graph: 1893
 
-Script done on 2024-11-15 17:24:52-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-16 04:05:04-05:00 [COMMAND_EXIT_CODE="0"]
