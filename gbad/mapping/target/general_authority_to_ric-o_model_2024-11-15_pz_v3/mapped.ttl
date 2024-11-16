@@ -2739,52 +2739,52 @@
 
 <https://data.archives.gov.on.ca/Schema/Authority/AgentIdentifier#Agency%20Reference%20Code>
   a rico:IdentifierType;
-  rdfs:label "Authority/AgentIdentifier#Agency Reference Code" .
+  rdfs:label "AgentIdentifier: Agency Reference Code" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityRecord> a rico:DocumentaryFormType;
-  rdfs:label "Authority/AuthorityRecord" .
+  rdfs:label "AuthorityRecord" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#A%20Ontario%20Government%20Name>
   a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#A Ontario Government Name" .
+  rdfs:label "AuthorityType: A Ontario Government Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#B%20Ontario%20Government%20Name>
   a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#B Ontario Government Name" .
+  rdfs:label "AuthorityType: B Ontario Government Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#C%20Ontario%20Government%20Name>
   a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#C Ontario Government Name" .
+  rdfs:label "AuthorityType: C Ontario Government Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Corporate%20Name>
   a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#Corporate Name" .
+  rdfs:label "AuthorityType: Corporate Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Family%20Name> a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#Family Name" .
+  rdfs:label "AuthorityType: Family Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Geographic%20Name>
   a rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#Geographic Name" .
+  rdfs:label "AuthorityType: Geographic Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#Personal%20Name> a
     rico:CorporateBodyType;
-  rdfs:label "Authority/AuthorityType#Personal Name" .
+  rdfs:label "AuthorityType: Personal Name" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/NaturalAgentName> a rico:Type;
-  rdfs:label "Authority/NaturalAgentName" .
+  rdfs:label "NaturalAgentName" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/ParallelAgentName> a rico:Type;
-  rdfs:label "Authority/ParallelAgentName" .
+  rdfs:label "ParallelAgentName" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/Status#Approved> a rico:RecordState;
-  rdfs:label "Authority/Status#Approved" .
+  rdfs:label "Status: Approved" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/Status#Review> a rico:RecordState;
-  rdfs:label "Authority/Status#Review" .
+  rdfs:label "Status: Review" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName> a rico:Type;
-  rdfs:label "Authority/VariantAgentName" .
+  rdfs:label "VariantAgentName" .
 
 <https://data.archives.gov.on.ca/Schema/Authority/WebReady#Y> a rico:RecordState;
-  rdfs:label "Authority/WebReady#Y" .
+  rdfs:label "WebReady: Y" .

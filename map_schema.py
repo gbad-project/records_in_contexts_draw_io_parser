@@ -99,7 +99,7 @@ def __init__(schema_code, source_filename=None):
             raise Exception(f"Fatal error: Schema code not supplied or supported.")
 
     # Any supported schema namespaces
-    schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/.*?/([^/]+)/?$'
+    schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/([A-Za-z_]+)(#.*|/.*)?$'
     schema_regex = re.compile(schema_regex_str, flags=re.IGNORECASE)
 
     # Any mnemonic-based URIs in GBAD URI syntax
@@ -192,11 +192,19 @@ def __init__(schema_code, source_filename=None):
             match = schema_regex.search(literal_str)
             if match:
                 literal_str = match.group(0)
-                last_term = match.group(2)
-                literal_str = last_term
-                #schema_group = match.group(1)
-                #literal_str = str(literal_str[len(schema_group)+1:])
-                #literal_str = literal_str + f' ({schema_group} Schema Entity)'
+                #auth_add_maps_term = match.group(1)
+                rico_class_ish_term = match.group(2)
+                last_term =  match.group(3)
+                if last_term is None:
+                    literal_str = rico_class_ish_term
+                elif str(last_term).startswith('#'):
+                    literal_str = f"{rico_class_ish_term}: {last_term[1:]}"
+                elif str(last_term).startswith('/'):
+                    literal_str = last_term[1:]
+                else:
+                    pass
+                #literal_str = str(literal_str[len(auth_add_maps_term)+1:])
+                #literal_str = literal_str + f' ({auth_add_maps_term} Schema Entity)'
 
         # KB entities
         if literal_str.lower().startswith(kb_term.lower() + '/'):
