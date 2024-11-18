@@ -1,14 +1,24 @@
 @prefix : <https://data.archives.gov.on.ca#> .
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix auth: <https://data.archives.gov.on.ca/Schema/Authority/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 @base <https://data.archives.gov.on.ca> .
 
 <https://data.archives.gov.on.ca> rdf:type owl:Ontology ;
-                                   owl:imports <https://www.ica.org/standards/RiC/ontology> .
+                                   owl:imports rico: .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes
+add:hiddenNotes rdf:type owl:DatatypeProperty .
+
 
 #################################################################
 #    Individuals
@@ -149,6 +159,7 @@
                                                                                                                 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D> ;
                                                                                       rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22> ,
                                                                                                               <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FFindingAidRecord%2F%7BREFD_FILE%7D%22> ;
+                                                                                      add:hiddenNotes "rml:reference \"HIDDENNOTES\"" ;
                                                                                       rico:accruals "rml:reference \"ACCRUAL\"" ;
                                                                                       rico:conditionsOfAccess "rml:reference  \"REST\"" ,
                                                                                                               "rml:reference  \"RESTRTX\"" ;
@@ -160,7 +171,6 @@
                                                                                                               "rml:reference \"ASSMAT\"" ,
                                                                                                               "rml:reference \"CMTD\"" ,
                                                                                                               "rml:reference \"FINDAID\"" ,
-                                                                                                              "rml:reference \"HIDDENNOTES\"" ,
                                                                                                               "rml:reference \"RELMAT\"" ;
                                                                                       rico:history "rml:reference  \"CUSTOD\"" ,
                                                                                                    "rml:reference  \"ISA\"" ,

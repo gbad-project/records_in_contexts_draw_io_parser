@@ -1,8 +1,13 @@
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: rico: <https://www.ica.org/standards/RiC/ontology#>
+Prefix: add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+Prefix: auth: <https://data.archives.gov.on.ca/Schema/Authority/>
 Prefix: : <https://data.archives.gov.on.ca/>
 Ontology: <https://data.archives.gov.on.ca>
-  Import: <https://www.ica.org/standards/RiC/ontology>
+  Import: <https://www.ica.org/standards/RiC/ontology#>
+
+DataProperty:
+  add:hiddenNotes
 
 Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
   Annotations:
@@ -23,7 +28,6 @@ Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
     rico:generalDescription "rml:reference \"ASSMAT\"",
     rico:generalDescription "rml:reference \"CMTD\"",
     rico:generalDescription "rml:reference \"FINDAID\"",
-    rico:generalDescription "rml:reference \"HIDDENNOTES\"",
     rico:generalDescription "rml:reference \"RELMAT\"",
     rico:isOrWasDescribedBy rr%3Atemplate%20%22KB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22,
     rico:isOrWasDescribedBy rr%3Atemplate%20%22KB%2FFindingAidRecord%2F%7BREFD_FILE%7D%22,
@@ -38,6 +42,7 @@ Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
     rico:creationDate "rml:reference \"DATECR\"",
     rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_HIGHER%7D,
     rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D,
+    add:hiddenNotes "rml:reference \"HIDDENNOTES\"",
     rico:date "rml:reference \"DATEACM\""
 
 Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22
