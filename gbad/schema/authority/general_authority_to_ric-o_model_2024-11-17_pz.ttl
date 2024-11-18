@@ -53,15 +53,34 @@
                                                                                                rico:hasOrHadAgentName <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22> ,
                                                                                                                       <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22> ,
                                                                                                                       <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> ;
-                                                                                               rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22> ;
+                                                                                               rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22> ;
                                                                                                rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> ;
                                                                                                rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22> ;
-                                                                                               rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BSUC_1..4%7D%22> ;
+                                                                                               rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22> ;
                                                                                                rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22> ;
-                                                                                               rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BPRED_1..5%7D%22> ;
+                                                                                               rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22> ;
                                                                                                rico:generalDescription "rml:reference \"FUN\"" ;
                                                                                                rico:history "rml:reference \"ADM\"" ;
                                                                                                rdfs:label "rr:template \"KB/{RICO_AUTHTP}/{HEADING}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                 rico:CorporateBody ;
+                                                                                        rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22> ;
+                                                                                        rdfs:label "rr:template \"KB/Agent/{CONTAG_1..14}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                              rico:CorporateBody ;
+                                                                                     rdfs:label "rr:template \"KB/Agent/{PRED_1..5}\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                             rico:CorporateBody ;
+                                                                                    rdfs:label "rr:template  \"KB/Agent/{SUC_1..4}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22
@@ -90,25 +109,6 @@
                                                                                              rico:isOrWasRegulatedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> ;
                                                                                              rico:generalDescription "rml:reference \"SOURCE\"" ;
                                                                                              rdfs:label "rr:template \"KB/AuthorityRecord/{HEADING}\"" .
-
-
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                         rico:CorporateBody ;
-                                                                                                rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22> ;
-                                                                                                rdfs:label "rr:template \"KB/CorporateBody/{CONTAG_1..14}\"" .
-
-
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BPRED_1..5%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BPRED_1..5%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                      rico:CorporateBody ;
-                                                                                             rdfs:label "rr:template \"KB/CorporateBody/{PRED_1..5}\"" .
-
-
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BSUC_1..4%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BSUC_1..4%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                     rico:CorporateBody ;
-                                                                                            rdfs:label "rr:template  \"KB/CorporateBody/{SUC_1..4}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22

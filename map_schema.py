@@ -27,10 +27,10 @@ auth_authtp_label = 'AUTHTP'
 rico_version_mask = r'{RICO_VERSION}'
 rico_authtp_mask = r'{RICO_AUTHTP}'
 rico_authtp_dict = {
-    'CorporateBody': r'/(Corporate Name|[ABC] Ontario Government Name)/',
-    'Family': r'/(Family Name)/',
-    'Place': r'/(Geographic Name)/',
-    'Person': r'/(Personal Name)/'
+    'CorporateBody': ('Agent', r'/(Corporate Name|[ABC] Ontario Government Name)/'),
+    'Family': ('Agent', r'/(Family Name)/'),
+    'Place': ('Place', r'/(Geographic Name)/'),
+    'Person': ('Agent', r'/(Personal Name)/')
 }
 uuid_label = 'UUID'
 
@@ -345,12 +345,13 @@ def __init__(schema_code, source_filename=None):
 
         # Replacing subject
         if subject_mask in str(subject_uri):
-            for authtp_rico_class in rico_authtp_dict.keys():
+            for authtp_rico_class, rico_authtp_tuple in rico_authtp_dict.items():
+                rico_authtp_uri_term, authtp_value = rico_authtp_tuple
                 # If contains {RICO_AUTHTP}
                 # Add two subjects for easy separate triplesmap creation later on
                 for authtp_i in [1, 2]:
                     authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
-                    replacement = f"{authtp_rico_class}_{authtp_column_name}"
+                    replacement = f"{authtp_rico_class}_{authtp_column_name}" # class is used for uniqueness
                     rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, replacement)
 
                     if isinstance(subject_uri, URIRef):
@@ -360,7 +361,7 @@ def __init__(schema_code, source_filename=None):
                     rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
                     # Keep an external list of these for future use
                     if not rico_disaggregated_subject_uri in rico_authtp_subjects.keys():
-                        true_rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, authtp_rico_class)
+                        true_rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, rico_authtp_uri_term) # actual term
                         if isinstance(subject_uri, URIRef):
                             true_rico_disaggregated_subject_uri = URIRef(true_rico_disaggregated_subject_uri)
                         else:
@@ -381,12 +382,13 @@ def __init__(schema_code, source_filename=None):
         if len(rico_disaggregated_triples) == 0: # if not a triple like ?s a rico:Thing
             # Replacing object
             if object_mask in str(object_uri):
-                for authtp_rico_class in rico_authtp_dict.keys():
+                for authtp_rico_class, rico_authtp_tuple in rico_authtp_dict.items():
+                    rico_authtp_uri_term, authtp_value = rico_authtp_tuple
                     # If contains {RICO_AUTHTP}
                     # Add two subjects for easy separate triplesmap creation later on
                     for authtp_i in [1, 2]:
                         authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
-                        replacement = f"{authtp_rico_class}_{authtp_column_name}"
+                        replacement = f"{authtp_rico_class}_{authtp_column_name}" # class is used for uniqueness
                         rico_disaggregated_object_uri = str(object_uri).replace(object_mask, replacement)
 
                         if isinstance(object_uri, URIRef):
@@ -961,7 +963,7 @@ def __init__(schema_code, source_filename=None):
             # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
             # so for entities defined as constants RICO_AUTHTP will be bugged
             if authtp_column_name:
-                authtp_value = rico_authtp_dict[rico_class]
+                rico_authtp_uri_term, authtp_value = rico_authtp_dict[rico_class]
                 authtp_column_tuples = [(rml[1].reference, Literal(authtp_column_name))]
                 authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
                                         (rr[1].termType, rr[1].Literal)]

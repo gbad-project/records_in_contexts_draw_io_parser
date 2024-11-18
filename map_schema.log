@@ -1,44 +1,50 @@
-Script started on 2024-11-16 13:11:00-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+Script started on 2024-11-17 19:12:17-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="14"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___INDEXPROV__Thing_1_': 8a2817a7-8420-5f32-876e-da346fcb4cb0
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{INDEXPROV}/Thing/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {INDEXPROV} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_1___HEADING___UUID__': 7719c708-66ca-52cf-a9df-1b81cbbd659f
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_1}/{HEADING}/7719c708-66ca-52cf-a9df-1b81cbbd659f'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_1} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___INDEXSUB__Thing_1_': 6e98adab-be8a-52d3-a4e8-3fe036888e63
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{INDEXSUB}/Thing/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {INDEXSUB} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_2___HEADING___UUID__': 19df1c2a-a5f7-5f7e-9f11-aebb1b4a371a
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_2}/{HEADING}/19df1c2a-a5f7-5f7e-9f11-aebb1b4a371a'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_2} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___INDEXGEO__Thing_1_': 18e1aa7c-b4ae-5d4a-a9e7-ca5b42a3dae9
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{INDEXGEO}/Thing/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {INDEXGEO} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_3___HEADING___UUID__': b5b54225-937e-58e4-9180-920ea9215141
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_3}/{HEADING}/b5b54225-937e-58e4-9180-920ea9215141'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_3} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Identifier_1_': 575e2fb3-7519-53f0-8282-5a89eaace53d
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Identifier/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_4___HEADING___UUID__': b2acbdb3-0cee-548b-90cb-054e3a7b0355
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_4}/{HEADING}/b2acbdb3-0cee-548b-90cb-054e3a7b0355'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_4} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__RecordSet_1': 5a26438c-b42d-5751-a32f-2d31bf71c055
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/RecordSet/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_5___HEADING___UUID__': 0b2e16f1-287f-5092-9ac7-2fd9f102f5c0
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_5}/{HEADING}/0b2e16f1-287f-5092-9ac7-2fd9f102f5c0'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_5} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD_HIGHER__RecordSet_1': f291f0a5-f6ba-5a38-b9c4-16f6da4a9622
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD_HIGHER}/RecordSet/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD_HIGHER} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_6___HEADING___UUID__': bc7c7ad4-462f-507d-9059-c2d26044790c
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_6}/{HEADING}/bc7c7ad4-462f-507d-9059-c2d26044790c'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_6} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REF_ADD__RecordSet_1': 2a8d03f2-0dcf-5553-8d84-aaa7769c5f11
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REF_ADD}/RecordSet/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REF_ADD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_7___HEADING___UUID__': 6d63d5ef-6053-5395-b209-45246ee3b7e0
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_7}/{HEADING}/6d63d5ef-6053-5395-b209-45246ee3b7e0'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_7} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Record_1_': 1ff38be8-0f69-5c5f-b870-66c987024f29
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Record/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_8___HEADING___UUID__': 1bcb2e70-81e2-58f8-9e55-f4407af9f0d1
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_8}/{HEADING}/1bcb2e70-81e2-58f8-9e55-f4407af9f0d1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_8} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Record_2_': 9ea421a3-6e55-50a5-80aa-07c9ba9098e2
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Record/2'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_9___HEADING___UUID__': b42cb4d3-124b-5fd1-bae5-2b7bc5435002
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_9}/{HEADING}/b42cb4d3-124b-5fd1-bae5-2b7bc5435002'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_9} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Identifier_2_': ae50c387-0ea9-5e8d-8437-d0e64a2bb5c5
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Identifier/2'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_10___HEADING___UUID__': 07489d75-af7e-5f28-ab77-f95137ffe1e9
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_10}/{HEADING}/07489d75-af7e-5f28-ab77-f95137ffe1e9'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_10} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Instantiation_1_': c9785bd4-1a08-5607-9539-ac09b238aa0f
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Instantiation/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_11___HEADING___UUID__': edc96652-3723-5d7e-8ee4-4ee622699e2a
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_11}/{HEADING}/edc96652-3723-5d7e-8ee4-4ee622699e2a'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_11} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
-UUID v5 generated from namespace and 'rr_template___RICO_VERSION___REFD__Title_1_': 243f0468-db98-5a1e-9ce9-90d8027eb67f
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{RICO_VERSION}/{REFD}/Title/1'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {RICO_VERSION} will be processed as the main mnemonic, and all the others will be passed to RML as is: {REFD} 
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_12___HEADING___UUID__': be5729a3-0e84-504c-b054-da098898e1ef
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_12}/{HEADING}/be5729a3-0e84-504c-b054-da098898e1ef'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_12} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_13___HEADING___UUID__': bccd23ce-5331-5915-a132-764d95003254
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_13}/{HEADING}/bccd23ce-5331-5915-a132-764d95003254'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_13} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_14___HEADING___UUID__': 6532095e-901c-54c9-a400-6bad9dbc9ac9
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_14}/{HEADING}/6532095e-901c-54c9-a400-6bad9dbc9ac9'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_14} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
 
 
-Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_to_ric-o_model_2024-11-16_pz.rml'
+Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml'
 
-Script done on 2024-11-16 13:11:02-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-17 19:12:21-05:00 [COMMAND_EXIT_CODE="0"]
