@@ -1,14 +1,16 @@
-Script started on 2024-11-17 20:18:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="15"]
+Script started on 2024-11-17 20:31:49-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="15"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl')
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl'
+Converted file is larger than 10 MB (21.25 MB) - trying to rename to LARGE...
+Successfully renamed to 'mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE.ttl'
 
-Number of triples in the graph: 2041
+Number of triples in the graph: 168124
 Postprocessing...
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
@@ -22,11 +24,11 @@ Executed a parametrized alternative of the following query:
             authtp:Personal%20Name ?p3 ?o3 .
         }
         
-69 triples were removed and dumped to: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/removed_triples.nt'
+4936 triples were removed and dumped to: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE_removed_triples.nt'
 
-Number of triples in the graph: 1972
+Number of triples in the graph: 163188
 
 
-Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_postprocessed.nt'
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE_postprocessed.nt'
 
-Script done on 2024-11-17 20:18:36-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-17 20:32:30-05:00 [COMMAND_EXIT_CODE="0"]

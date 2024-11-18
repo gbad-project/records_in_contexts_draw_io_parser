@@ -174,10 +174,11 @@ def postprocess(graph_path):
         return removed_count
     
     def remove_false_authtp(g):
+        # Set config
         triples_to_remove = []
         removed_graph = Graph()
-        removed_list_path = os.path.join(os.path.dirname(graph_path), 'removed_triples.nt')
-
+        removed_triples_output_format = 'nt'
+        removed_triples_output_encoding = 'utf-8'
         pseudo_sparql = """
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
         PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
@@ -191,6 +192,7 @@ def postprocess(graph_path):
         }
         """
 
+        # Run parametrized query
         authtp = ('authtp', Namespace(URIRef(f"{base_auth_uri}/AuthorityType#")))
         g.namespace_manager.bind(*authtp)
         authtp_list = [
@@ -209,9 +211,13 @@ def postprocess(graph_path):
             #print(*triple)
             removed_graph.add(triple)
 
+        # Save removed triples
+        ttl_filename = os.path.basename(graph_path)
+        removed_triples_filename = f'{ttl_filename[:-4]}_removed_triples.{removed_triples_output_format}'
+        removed_list_path = os.path.join(os.path.dirname(graph_path), removed_triples_filename)
         removed_graph.serialize(destination=removed_list_path,
-                                format='nt',
-                                encoding='utf-8')
+                                format=removed_triples_output_format,
+                                encoding=removed_triples_output_encoding)
         print("Executed a parametrized alternative of the following query:", pseudo_sparql)
         print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
         return removed_count
