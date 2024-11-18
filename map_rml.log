@@ -1,15 +1,32 @@
-Script started on 2024-11-17 19:17:01-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="14"]
+Script started on 2024-11-17 20:18:29-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="15"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl')
-Converted file is larger than 10 MB (21.25 MB) - trying to rename to LARGE...
-Successfully renamed to 'mapped_LARGE.ttl'
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-17_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_LARGE.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped.ttl'
 
-Number of triples in the graph: 168124
+Number of triples in the graph: 2041
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        DELETE WHERE {
+            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
+            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
+            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
+            authtp:Geographic%20Name ?p1 ?o1 .
+            authtp:Family%20Name ?p2 ?o2 .
+            authtp:Personal%20Name ?p3 ?o3 .
+        }
+        
+69 triples were removed and dumped to: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/removed_triples.nt'
 
-Script done on 2024-11-17 19:17:37-05:00 [COMMAND_EXIT_CODE="0"]
+Number of triples in the graph: 1972
+
+
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-17_pz/mapped_postprocessed.nt'
+
+Script done on 2024-11-17 20:18:36-05:00 [COMMAND_EXIT_CODE="0"]

@@ -96,6 +96,11 @@ def map_rml(schema_code):
 def postprocess(graph_path):
     # Create the input RDF graph
     base_uri = 'https://data.archives.gov.on.ca'
+    base_kb_uri = URIRef(f"{base_uri}/KB")
+    base_schema_uri = URIRef(f"{base_uri}/Schema")
+    base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
+    base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
+    base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
     format = 'turtle'  # Adjust the format as needed
     g = Graph()
 
@@ -167,12 +172,57 @@ def postprocess(graph_path):
         print("Executed a parametrized alternative of the following query:", pseudo_sparql)
         print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
         return removed_count
+    
+    def remove_false_authtp(g):
+        triples_to_remove = []
+        removed_graph = Graph()
+        removed_list_path = os.path.join(os.path.dirname(graph_path), 'removed_triples.nt')
+
+        pseudo_sparql = """
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        DELETE WHERE {
+            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
+            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
+            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
+            authtp:Geographic%20Name ?p1 ?o1 .
+            authtp:Family%20Name ?p2 ?o2 .
+            authtp:Personal%20Name ?p3 ?o3 .
+        }
+        """
+
+        authtp = ('authtp', Namespace(URIRef(f"{base_auth_uri}/AuthorityType#")))
+        g.namespace_manager.bind(*authtp)
+        authtp_list = [
+            authtp[1]['Geographic%20Name'],
+            authtp[1]['Family%20Name'],
+            authtp[1]['Personal%20Name']
+        ]
+        for authtp_name in authtp_list:
+            for s, p, o in g.triples((None, rico[1].hasOrHadCorporateBodyType, authtp_name)):
+                triples_to_remove.append((s, p, o))
+            for s, p, o in g.triples((authtp_name, None, None)):
+                triples_to_remove.append((s, p, o))
+        removed_count = len(triples_to_remove)
+        for triple in triples_to_remove:
+            g.remove(triple)
+            #print(*triple)
+            removed_graph.add(triple)
+
+        removed_graph.serialize(destination=removed_list_path,
+                                format='nt',
+                                encoding='utf-8')
+        print("Executed a parametrized alternative of the following query:", pseudo_sparql)
+        print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
+        return removed_count
 
     def run_postprocessing():
+        nonlocal total_count
         print("Postprocessing...")
-        total_count = total_count - remove_false_agentcontrolrelation(g)
+        #total_count = total_count - remove_false_agentcontrolrelation(g)
+        total_count = total_count - remove_false_authtp(g)
         print_total_count()
-    #run_postprocessing()
+    run_postprocessing()
 
     return g
 
@@ -190,25 +240,25 @@ if __name__ == '__main__':
             ttl_path = ttl_path):
         # Serialize and print the RDF graph
         #output_format = 'ttl' # more lightweight and readable
-        #output_encoding = 'utf-8' # just to be sure
+        output_encoding = 'utf-8' # just to be sure
         ttl_filename = os.path.basename(ttl_path)
         postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
         postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
-        postprocessed_serialized = graph.serialize(format=output_format)
+        #postprocessed_serialized = graph.serialize(format=output_format)
         # FYI, serialize returns:
         # bytes if destination is None and encoding is not None.
         # str if destination is None and encoding is None.
-        with open(postprocessed_path, 'w') as f:
-            f.write(postprocessed_serialized)
+        #with open(postprocessed_path, 'w') as f:
+        #    f.write(postprocessed_serialized)
         # Output to memory for speed
-        #postprocessed_serialized = BytesIO()
-        #graph.serialize(destination=postprocessed_serialized,
-        #                format=output_format,
-        #                encoding=output_encoding)
+        postprocessed_serialized = BytesIO()
+        graph.serialize(destination=postprocessed_serialized,
+                        format=output_format,
+                        encoding=output_encoding)
         # Save to a file from BytesIO
-        #with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
-        #    f.write(postprocessed_serialized.getvalue())
+        with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
+            f.write(postprocessed_serialized.getvalue())
         print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
         return postprocessed_serialized
-    #postprocessed_ttl_content = save_postprocessed_graph()
+    postprocessed_ttl_content = save_postprocessed_graph()
     #print(postprocessed_ttl_content)
