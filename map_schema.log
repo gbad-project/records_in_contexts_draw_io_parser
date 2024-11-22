@@ -1,8 +1,8 @@
-Script started on 2024-11-22 13:30:41-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+Script started on 2024-11-22 13:53:39-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
-UUID v5 generated from namespace and 'rr_template__KB_Title__REFD_FILE___UUID_INSTANTIATION_1__': 264d3ef0-74f3-56f2-8f2e-358de27bfbe8
-At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/Title/{REFD_FILE}/{UUID_INSTANTIATION_1}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {UUID_INSTANTIATION_1} 
+UUID v5 generated from namespace and 'rr_template__KB_Title__REFD_FILE___UUID_RECORDSET__': e5957f27-7dd9-5d98-b9d0-46aa79f18452
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/Title/{REFD_FILE}/{UUID_RECORDSET}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {UUID_RECORDSET} 
 
 UUID v5 generated from namespace and 'rr_template__KB_Instantiation__REFD_FILE___UUID_INSTANTIATION_1__': 33062f98-f7d4-52ef-af08-84d2258f8f17
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/Instantiation/{REFD_FILE}/{UUID_INSTANTIATION_1}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {UUID_INSTANTIATION_1} 
@@ -10,11 +10,11 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 UUID v5 generated from namespace and 'rr_template__KB_CreationRelation__REFD_FILE___OFFICEABC_1_': 499cf498-971d-5414-8e52-c5e5f2bd53e7
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/CreationRelation/{REFD_FILE}/{OFFICEABC_1}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_1} 
 
-UUID v5 generated from namespace and 'rr_template__KB_Title__REFD_FILE___UUID_RECORDSET__': e5957f27-7dd9-5d98-b9d0-46aa79f18452
-At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/Title/{REFD_FILE}/{UUID_RECORDSET}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {UUID_RECORDSET} 
+UUID v5 generated from namespace and 'rr_template__KB_Title__REFD_FILE___UUID_INSTANTIATION_1__': 264d3ef0-74f3-56f2-8f2e-358de27bfbe8
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/Title/{REFD_FILE}/{UUID_INSTANTIATION_1}'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {UUID_INSTANTIATION_1} 
 
 
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2024-11-22_pz.rml'
 
-Script done on 2024-11-22 13:30:43-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-22 13:53:41-05:00 [COMMAND_EXIT_CODE="0"]
