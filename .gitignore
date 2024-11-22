@@ -6,7 +6,7 @@ robot.sh
 # Large files
 AUTHORITY.csv
 DESCRIPTION.csv
-LISTINGS_*.csv
+LISTINGS_[0-9].csv
 mapped_LARGE*.*
 __pycache__
 *.backup
