@@ -212,25 +212,30 @@ def postprocess(graph_path):
             removed_graph.add(triple)
 
         # Save removed triples
-        ttl_filename = os.path.basename(graph_path)
-        removed_triples_filename = f'{ttl_filename[:-4]}_removed_triples.{removed_triples_output_format}'
-        removed_list_path = os.path.join(os.path.dirname(graph_path), removed_triples_filename)
-        removed_graph.serialize(destination=removed_list_path,
-                                format=removed_triples_output_format,
-                                encoding=removed_triples_output_encoding)
         print("Executed a parametrized alternative of the following query:", pseudo_sparql)
-        print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
+        if removed_count > 0:
+            ttl_filename = os.path.basename(graph_path)
+            removed_triples_filename = f'{ttl_filename[:-4]}_removed_triples.{removed_triples_output_format}'
+            removed_list_path = os.path.join(os.path.dirname(graph_path), removed_triples_filename)
+            removed_graph.serialize(destination=removed_list_path,
+                                    format=removed_triples_output_format,
+                                    encoding=removed_triples_output_encoding)
+            print(f"{removed_count} triples were removed and dumped to: '{removed_list_path}'")
+        else:
+            print(f"No triples were removed.")
         return removed_count
 
     def run_postprocessing():
         nonlocal total_count
+        original_set = set(g)
         print("Postprocessing...")
         #total_count = total_count - remove_false_agentcontrolrelation(g)
         total_count = total_count - remove_false_authtp(g)
         print_total_count()
-    run_postprocessing()
+        return set(g) != original_set
+    has_changed = run_postprocessing()
 
-    return g
+    return g, has_changed
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Map schema of choice")
@@ -239,7 +244,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
-    graph = postprocess(ttl_path)
+    graph, has_changed = postprocess(ttl_path)
 
     def save_postprocessed_graph(
             output_format = 'nt', # assumed to be quickest
@@ -266,5 +271,7 @@ if __name__ == '__main__':
             f.write(postprocessed_serialized.getvalue())
         print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
         return postprocessed_serialized
-    postprocessed_ttl_content = save_postprocessed_graph()
+    
+    if has_changed:
+        postprocessed_ttl_content = save_postprocessed_graph()
     #print(postprocessed_ttl_content)

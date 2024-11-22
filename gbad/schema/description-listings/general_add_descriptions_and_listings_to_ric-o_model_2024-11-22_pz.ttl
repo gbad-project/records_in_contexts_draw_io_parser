@@ -60,10 +60,10 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
                                                                                     rdfs:label "rr:template \"KB/Agent/{INDEXSUB}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D> rdf:type owl:NamedIndividual ,
-                                                                                                 rico:CorporateBody ;
-                                                                                        rdfs:label "rr:template \"KB/Agent/{OFFICEABC_1..20}" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D> rdf:type owl:NamedIndividual ,
+                                                                                                rico:CorporateBody ;
+                                                                                       rdfs:label "rr:template \"KB/Agent/{OFFICEABC_1..2}" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22
@@ -77,13 +77,13 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
                                                                                                          rdfs:label "rr:template \"KB/ArchivalDescriptionRecord/{REFD_FILE}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..20%7D
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..20%7D> rdf:type owl:NamedIndividual ,
-                                                                                                                              rico:CreationRelation ;
-                                                                                                                     rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22> ;
-                                                                                                                     rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22> ;
-                                                                                                                     rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D> ;
-                                                                                                                     rdfs:label "rr:template \"KB/CreationRelation/{REFD_FILE}/{OFFICEABC_1..20}" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..2%7D
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..2%7D> rdf:type owl:NamedIndividual ,
+                                                                                                                             rico:CreationRelation ;
+                                                                                                                    rico:hasBeginningDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_BEGINNING%7D%22> ;
+                                                                                                                    rico:hasEndDate <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_END%7D%22> ;
+                                                                                                                    rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D> ;
+                                                                                                                    rdfs:label "rr:template \"KB/CreationRelation/{REFD_FILE}/{OFFICEABC_1..2}" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22
@@ -93,16 +93,16 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
                                                                                                     rdfs:label "rr:template \"KB/CurrentReferenceCode/{REFD_FILE}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                           rico:Date ;
-                                                                                                  rdfs:label "rr:template    \"KB/Date/{DATEOFF_1..20_BEGINNING}\"" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_BEGINNING%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                          rico:Date ;
+                                                                                                 rdfs:label "rr:template    \"KB/Date/{DATEOFF_1..2_BEGINNING}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                     rico:Date ;
-                                                                                            rdfs:label "rr:template    \"KB/Date/{DATEOFF_1..20_END}\"" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_END%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_END%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                    rico:Date ;
+                                                                                           rdfs:label "rr:template    \"KB/Date/{DATEOFF_1..2_END}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BMODDATE%7D%22
@@ -146,7 +146,7 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D> rdf:type owl:NamedIndividual ,
                                                                                                rico:RecordSet ;
-                                                                                      rico:hasContentOfType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD%7D%22> ;
+                                                                                      rico:hasContentOfType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22> ;
                                                                                       rico:hasCreator <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXPROV%7D%22> ;
                                                                                       rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22> ,
                                                                                                               <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FFormerCode%2F%7BREFD_FILE%7D%22> ;
@@ -182,8 +182,8 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                   rico:RecordSet ;
-                                                                                         rico:hasCreator <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D> ;
-                                                                                         rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..20%7D> ;
+                                                                                         rico:hasCreator <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D> ;
+                                                                                         rico:thingIsSourceOfRelation <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..2%7D> ;
                                                                                          rdfs:label "rr:template \"KB/RecordSet/{REFD_FILE}\"" .
 
 
@@ -211,10 +211,10 @@ add:hiddenNotes rdf:type owl:DatatypeProperty .
                                                                                                             rdfs:label "rr:template \"KB/Title/{REFD_FILE}/{UUID_RECORDSET}\"" .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                         rico:ContentType ;
-                                                                                                                rdfs:label "rr:template  \"Schema/Description-Listings/ContentType#{GMD}\"" .
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                              rico:ContentType ;
+                                                                                                                     rdfs:label "rr:template  \"Schema/Description-Listings/ContentType#{GMD_1..8}\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22

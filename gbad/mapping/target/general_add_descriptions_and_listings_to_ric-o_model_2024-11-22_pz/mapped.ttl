@@ -1,0 +1,454 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<https://data.archives.gov.on.ca/KB/Agent/Burke%2C%20Edmund%2C%201850-1919> a rico:Agent;
+  rdfs:label "Burke, Edmund, 1850-1919 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Burke%2C%20Horwood%20and%20White%20%28firm%29>
+  a rico:Agent;
+  rdfs:label "Burke, Horwood and White (firm) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Burritt%2C%20Hamlett%2C%20fl.%201851Burritt%2C%20Hamlet%2C%201821-1893Burritt%2C%20Hamlet%2C%201821-1893>
+  a rico:Agent;
+  rdfs:label "Burritt, Hamlett, fl. 1851Burritt, Hamlet, 1821-1893Burritt, Hamlet, 1821-1893 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Cameron%2C%20Catherine%2C%201838%3F-1916>
+  a rico:Agent;
+  rdfs:label "Cameron, Catherine, 1838?-1916 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Charles%20Shirreff%20%28family%29%20%7C%20Shirreff%2C%20Charles%2C%201768-1849Shirreff%2C%20Robert%2C%201794-1870Shirreff%2C%20Alexander%2C%201802-1878>
+  a rico:Agent;
+  rdfs:label "Charles Shirreff (family) | Shirreff, Charles, 1768-1849Shirreff, Robert, 1794-1870Shirreff, Alexander, 1802-1878 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Dougall%2C%20James%2C%20fl.%201805-1869>
+  a rico:Agent;
+  rdfs:label "Dougall, James, fl. 1805-1869 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Gaelic%20Society%20of%20Toronto> a rico:Agent;
+  rdfs:label "Gaelic Society of Toronto (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Liquor%20Control%20Board%20of%20Ontario>
+  a rico:Agent;
+  rdfs:label "Liquor Control Board of Ontario (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Mitchell%2C%20George%20S.> a rico:Agent;
+  rdfs:label "Mitchell, George S. (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Development%20AgencyOntario%20Development%20Corporation>
+  a rico:Agent;
+  rdfs:label "Ontario Development AgencyOntario Development Corporation (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Heritage%20Foundation> a rico:Agent;
+  rdfs:label "Ontario Heritage Foundation (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Status%20of%20Women%20Council>
+  a rico:Agent;
+  rdfs:label "Ontario Status of Women Council (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Water%20Resources%20CommissionOntario.%20Ministry%20of%20the%20Environment%20%281972-1993%29Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29.%20Office%20of%20the%20Deputy%20Minister>
+  a rico:Agent;
+  rdfs:label "Ontario Water Resources CommissionOntario. Ministry of the Environment (1972-1993)Ontario. Ministry of the Environment (1972-1993). Office of the Deputy Minister (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Clerks%20of%20the%20Peace%20%281777-1968%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Clerks of the Peace (1777-1968) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Court%20of%20Queen%27s%20Bench>
+  a rico:Agent;
+  rdfs:label "Ontario. Court of Queen's Bench (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Courts%20of%20General%20Sessions%20of%20the%20PeaceOntario.%20Crown%20Attorneys%20%281857-1968%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Courts of General Sessions of the PeaceOntario. Crown Attorneys (1857-1968) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Crown%20Attorneys%20%281857-1968%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Crown Attorneys (1857-1968) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Crown%20Law%20Office%20-%20Civil>
+  a rico:Agent;
+  rdfs:label "Ontario. Crown Law Office - Civil (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20Agriculture%20and%20FoodOntario%20Food%20Council>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Agriculture and FoodOntario Food Council (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20AgricultureOntario.%20Dept.%20of%20Agriculture.%20Information%20BranchOntario.%20Dept.%20of%20Agriculture%20and%20Food>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of AgricultureOntario. Dept. of Agriculture. Information BranchOntario. Dept. of Agriculture and Food (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20AgricultureOntario.%20Dept.%20of%20EducationOntario.%20Ministry%20of%20Agriculture%20and%20Food.%20Extension%20BranchOntario.%20Dept.%20of%20Agriculture%20and%20FoodOntario.%20Agricultural%20Representative%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of AgricultureOntario. Dept. of EducationOntario. Ministry of Agriculture and Food. Extension BranchOntario. Dept. of Agriculture and FoodOntario. Agricultural Representative Branch (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20Education> a rico:Agent;
+  rdfs:label "Ontario. Dept. of Education (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20Social%20and%20Family%20ServicesOntario.%20Dept.%20of%20Social%20and%20Family%20Services.%20Office%20of%20the%20Deputy%20MinisterOntario.%20Dept.%20of%20Public%20WelfareOntario.%20Dept.%20of%20Social%20and%20Family%20ServicesOntario.%20Dept.%20of%20Social%20and%20Family%20Services.%20Office%20of%20the%20Deputy%20Minister>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Social and Family ServicesOntario. Dept. of Social and Family Services. Office of the Deputy MinisterOntario. Dept. of Public WelfareOntario. Dept. of Social and Family ServicesOntario. Dept. of Social and Family Services. Office of the Deputy Minister (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20the%20Attorney%20GeneralOntario.%20Probation%20Services%20BranchOntario.%20Dept.%20of%20JusticeOntario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29.%20Adult%20DivisionOntario.%20Probation%20and%20Parole%20ServiceOntario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29.%20Operations%20Division>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of the Attorney GeneralOntario. Probation Services BranchOntario. Dept. of JusticeOntario. Ministry of Correctional Services (1972-1993)Ontario. Ministry of Correctional Services (1972-1993). Adult DivisionOntario. Probation and Parole ServiceOntario. Ministry of Correctional Services (1972-1993). Operations Division (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Dept.%20of%20the%20Provincial%20SecretaryOntario.%20Recording%20Office>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of the Provincial SecretaryOntario. Recording Office (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20High%20Court%20of%20JusticeOntario.%20Supreme%20Court>
+  a rico:Agent;
+  rdfs:label "Ontario. High Court of JusticeOntario. Supreme Court (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Legislative%20AssemblyOntario.%20Legislative%20Assembly.%20Select%20Committee%20on%20Toll%20Roads%20and%20Highway%20Financing>
+  a rico:Agent;
+  rdfs:label "Ontario. Legislative AssemblyOntario. Legislative Assembly. Select Committee on Toll Roads and Highway Financing (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Legislative%20AssemblyOntario.%20Legislative%20Assembly.%20Standing%20Committee%20on%20General%20Government>
+  a rico:Agent;
+  rdfs:label "Ontario. Legislative AssemblyOntario. Legislative Assembly. Standing Committee on General Government (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Magistrates%27%20CourtsOntario.%20Clerks%20of%20the%20Peace%20%281777-1968%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Magistrates' CourtsOntario. Clerks of the Peace (1777-1968) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Colleges%20and%20UniversitiesOntario.%20Ministry%20of%20Colleges%20and%20Universities.%20Office%20of%20the%20Deputy%20MinisterOntario.%20Ministry%20of%20Colleges%20and%20UniversitiesOntario.%20Ministry%20of%20Colleges%20and%20Universities.%20Policy%20and%20Planning%20Coordination%20Office>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Colleges and UniversitiesOntario. Ministry of Colleges and Universities. Office of the Deputy MinisterOntario. Ministry of Colleges and UniversitiesOntario. Ministry of Colleges and Universities. Policy and Planning Coordination Office (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20HealthOntario.%20Ministry%20of%20Health.%20Information%20Systems%20Division>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of HealthOntario. Ministry of Health. Information Systems Division (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Industry%20and%20TradeOntario.%20Ministry%20of%20Industry%20and%20Trade.%20Trade%20DivisionOntario.%20Ministry%20of%20Industry%2C%20Trade%20and%20TechnologyOntario.%20Industry%20and%20Trade%20Expansion>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Industry and TradeOntario. Ministry of Industry and Trade. Trade DivisionOntario. Ministry of Industry, Trade and TechnologyOntario. Industry and Trade Expansion (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-%29Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing.%20Municipal%20Performance%20and%20Accountability%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Municipal Affairs and Housing (1995-)Ontario. Ministry of Municipal Affairs and Housing. Municipal Performance and Accountability Branch (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Office%20of%20the%20Athletics%20Commissioner>
+  a rico:Agent;
+  rdfs:label "Ontario. Office of the Athletics Commissioner (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Office%20of%20the%20Registrar%20General>
+  a rico:Agent;
+  rdfs:label "Ontario. Office of the Registrar General (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Sheriffs%20%281791-1968%29> a
+    rico:Agent;
+  rdfs:label "Ontario. Sheriffs (1791-1968) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Supreme%20Court> a rico:Agent;
+  rdfs:label "Ontario. Supreme Court (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Treasury%20Dept.Ontario.%20Office%20of%20the%20Provincial%20EconomistOntario.%20Dept.%20of%20EconomicsOntario.%20Dept.%20of%20Economics%20and%20Federal%20and%20Provincial%20RelationsOntario.%20Dept.%20of%20Economics%20and%20Development>
+  a rico:Agent;
+  rdfs:label "Ontario. Treasury Dept.Ontario. Office of the Provincial EconomistOntario. Dept. of EconomicsOntario. Dept. of Economics and Federal and Provincial RelationsOntario. Dept. of Economics and Development (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Playter%2C%20Ely%2C%201776-1858> a rico:Agent;
+  rdfs:label "Playter, Ely, 1776-1858 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Point%20Edward%20%28Ont.%29> a rico:Agent;
+  rdfs:label "Point Edward (Ont.) (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Purdy%2C%20Thomas%20Franklin%2C%201824-1899>
+  a rico:Agent;
+  rdfs:label "Purdy, Thomas Franklin, 1824-1899 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Quebec%20%28Province%2C%201763-1791%29.%20Surveyor%20General%27s%20OfficeUpper%20Canada.%20Surveyor%20General%27s%20Office>
+  a rico:Agent;
+  rdfs:label "Quebec (Province, 1763-1791). Surveyor General's OfficeUpper Canada. Surveyor General's Office (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Robertson%2C%20Archibald> a rico:Agent;
+  rdfs:label "Robertson, Archibald (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Smith%2C%20Peter%20J.%2C%201936-> a rico:Agent;
+  rdfs:label "Smith, Peter J., 1936- (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Storm%2C%20William%20George%2C%201826-1892>
+  a rico:Agent;
+  rdfs:label "Storm, William George, 1826-1892 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Date/02%2F26%2F2003> a rico:Date;
+  rdfs:label "02/26/2003 (Date)";
+  rico:normalizedDateValue "02/26/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F05%2F2001> a rico:Date;
+  rdfs:label "03/05/2001 (Date)";
+  rico:normalizedDateValue "03/05/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F06%2F2003> a rico:Date;
+  rdfs:label "03/06/2003 (Date)";
+  rico:normalizedDateValue "03/06/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/03%2F21%2F2000> a rico:Date;
+  rdfs:label "03/21/2000 (Date)";
+  rico:normalizedDateValue "03/21/2000" .
+
+<https://data.archives.gov.on.ca/KB/Date/04%2F01%2F2003> a rico:Date;
+  rdfs:label "04/01/2003 (Date)";
+  rico:normalizedDateValue "04/01/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/04%2F11%2F2003> a rico:Date;
+  rdfs:label "04/11/2003 (Date)";
+  rico:normalizedDateValue "04/11/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/06%2F03%2F2002> a rico:Date;
+  rdfs:label "06/03/2002 (Date)";
+  rico:normalizedDateValue "06/03/2002" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F26%2F2000> a rico:Date;
+  rdfs:label "07/26/2000 (Date)";
+  rico:normalizedDateValue "07/26/2000" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F30%2F2001> a rico:Date;
+  rdfs:label "07/30/2001 (Date)";
+  rico:normalizedDateValue "07/30/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/07%2F30%2F2003> a rico:Date;
+  rdfs:label "07/30/2003 (Date)";
+  rico:normalizedDateValue "07/30/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F01%2F2003> a rico:Date;
+  rdfs:label "08/01/2003 (Date)";
+  rico:normalizedDateValue "08/01/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F13%2F2002> a rico:Date;
+  rdfs:label "08/13/2002 (Date)";
+  rico:normalizedDateValue "08/13/2002" .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F25%2F2003> a rico:Date;
+  rdfs:label "08/25/2003 (Date)";
+  rico:normalizedDateValue "08/25/2003" .
+
+<https://data.archives.gov.on.ca/KB/Date/10%2F05%2F2001> a rico:Date;
+  rdfs:label "10/05/2001 (Date)";
+  rico:normalizedDateValue "10/05/2001" .
+
+<https://data.archives.gov.on.ca/KB/Date/12%2F19%2F2000> a rico:Date;
+  rdfs:label "12/19/2000 (Date)";
+  rico:normalizedDateValue "12/19/2000" .
+
+<https://data.archives.gov.on.ca/KB/Place/Huron%20%28Ont.%20%3A%20County%29> a rico:Place;
+  rdfs:label "Huron (Ont. : County) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/Place/Lennox%20and%20Addington%20%28Ont.%20%3A%20County%29>
+  a rico:Place;
+  rdfs:label "Lennox and Addington (Ont. : County) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/Place/Prince%20Edward%20%28Ont.%20%3A%20County%29>
+  a rico:Place;
+  rdfs:label "Prince Edward (Ont. : County) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/Place/Timiskaming%20%28Ont.%20%3A%20DIstrict%29>
+  a rico:Place;
+  rdfs:label "Timiskaming (Ont. : DIstrict) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/Place/Welland%20%28Ont.%20%3A%20County%29> a rico:Place;
+  rdfs:label "Welland (Ont. : County) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/Place/York%20%28Ont.%20%3A%20County%29> a rico:Place;
+  rdfs:label "York (Ont. : County) (Place)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011> a rico:RecordSet;
+  rdfs:label "C 11 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2020> a rico:RecordSet;
+  rdfs:label "C 20 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%20267> a rico:RecordSet;
+  rdfs:label "C 267 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%20303> a rico:RecordSet;
+  rdfs:label "C 303 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2043> a rico:RecordSet;
+  rdfs:label "C 43 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%208> a rico:RecordSet;
+  rdfs:label "C 8 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201150> a rico:RecordSet;
+  rdfs:label "F 1150 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201174> a rico:RecordSet;
+  rdfs:label "F 1174 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405> a rico:RecordSet;
+  rdfs:label "F 1405 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-10> a rico:RecordSet;
+  rdfs:label "F 1405-10 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-15> a rico:RecordSet;
+  rdfs:label "F 1405-15 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-23> a rico:RecordSet;
+  rdfs:label "F 1405-23 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-28> a rico:RecordSet;
+  rdfs:label "F 1405-28 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-35> a rico:RecordSet;
+  rdfs:label "F 1405-35 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-43> a rico:RecordSet;
+  rdfs:label "F 1405-43 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-5> a rico:RecordSet;
+  rdfs:label "F 1405-5 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-53> a rico:RecordSet;
+  rdfs:label "F 1405-53 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-54> a rico:RecordSet;
+  rdfs:label "F 1405-54 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-60> a rico:RecordSet;
+  rdfs:label "F 1405-60 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-62> a rico:RecordSet;
+  rdfs:label "F 1405-62 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-63> a rico:RecordSet;
+  rdfs:label "F 1405-63 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-72> a rico:RecordSet;
+  rdfs:label "F 1405-72 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-76> a rico:RecordSet;
+  rdfs:label "F 1405-76 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-92> a rico:RecordSet;
+  rdfs:label "F 1405-92 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-94> a rico:RecordSet;
+  rdfs:label "F 1405-94 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201405-99> a rico:RecordSet;
+  rdfs:label "F 1405-99 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%201410> a rico:RecordSet;
+  rdfs:label "F 1410 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%202093-4> a rico:RecordSet;
+  rdfs:label "F 2093-4 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%20229> a rico:RecordSet;
+  rdfs:label "F 229 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%20229-501> a rico:RecordSet;
+  rdfs:label "F 229-501 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204359> a rico:RecordSet;
+  rdfs:label "F 4359 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204414> a rico:RecordSet;
+  rdfs:label "F 4414 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204420-6> a rico:RecordSet;
+  rdfs:label "F 4420-6 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204443> a rico:RecordSet;
+  rdfs:label "F 4443 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204446> a rico:RecordSet;
+  rdfs:label "F 4446 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204499> a rico:RecordSet;
+  rdfs:label "F 4499 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204531> a rico:RecordSet;
+  rdfs:label "F 4531 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204566> a rico:RecordSet;
+  rdfs:label "F 4566 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%204593-1> a rico:RecordSet;
+  rdfs:label "F 4593-1 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%201-156> a rico:RecordSet;
+  rdfs:label "RG 1-156 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2020-128> a rico:RecordSet;
+  rdfs:label "RG 20-128 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2023-26> a rico:RecordSet;
+  rdfs:label "RG 23-26 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2047-27> a rico:RecordSet;
+  rdfs:label "RG 47-27 (RecordSet)" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord>
+  a rico:DocumentaryFormType;
+  rdfs:label "ArchivalDescriptionRecord" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>
+  a rico:ContentType;
+  rdfs:label "ContentType: Architectural and technical drawings" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Artifacts>
+  a rico:ContentType;
+  rdfs:label "ContentType: Artifacts" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>
+  a rico:ContentType;
+  rdfs:label "ContentType: Cartographic materials" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Electronic%20records>
+  a rico:ContentType;
+  rdfs:label "ContentType: Electronic records" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>
+  a rico:ContentType;
+  rdfs:label "ContentType: Graphic materials" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images>
+  a rico:ContentType;
+  rdfs:label "ContentType: Moving images" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings>
+  a rico:ContentType;
+  rdfs:label "ContentType: Sound recordings" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>
+  a rico:ContentType;
+  rdfs:label "ContentType: Textual records" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode>
+  a rico:IdentifierType;
+  rdfs:label "CurrentReferenceCode" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FindingAidRecord> a rico:DocumentaryFormType;
+  rdfs:label "FindingAidRecord" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> a rico:IdentifierType;
+  rdfs:label "FormerCode" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Fonds> a rico:RecordSetType;
+  rdfs:label "Level: Fonds" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
+  rdfs:label "Level: Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Sub-series> a rico:RecordSetType;
+  rdfs:label "Level: Sub-series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> a rico:RecordState;
+  rdfs:label "Status: Approved" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review> a rico:RecordState;
+  rdfs:label "Status: Review" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
+  rdfs:label "WebEnabled: Y" .
