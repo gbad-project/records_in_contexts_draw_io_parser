@@ -106,6 +106,10 @@ def __init__(schema_code, source_filename=None):
     # Any mnemonic-based URIs in GBAD URI syntax
     mnemonic_pattern = r"\{([A-Z:_\d\.]+)\}"
     mnemonic_regex = re.compile(rf"([a-zA-Z]+)/({mnemonic_pattern})/?(.*)")
+    # Camel case separation
+    camelcase_pattern = r"(?<=[a-z])(?=[A-Z])"
+    camelcase_regex = re.compile(camelcase_pattern)
+    def decamelize(s): return camelcase_regex.sub(' ', s)
     # Pattern to capture within-mnemonic iterators
     mnemonic_i_pattern = r"(\d+)\.\.(\d+)"
     mnemonic_i_regex = re.compile(mnemonic_i_pattern)
@@ -194,7 +198,7 @@ def __init__(schema_code, source_filename=None):
             if match:
                 literal_str = match.group(0)
                 #auth_add_maps_term = match.group(1)
-                rico_class_ish_term = match.group(2)
+                rico_class_ish_term = decamelize(match.group(2))
                 last_term =  match.group(3)
                 if last_term is None:
                     literal_str = rico_class_ish_term
@@ -213,7 +217,7 @@ def __init__(schema_code, source_filename=None):
             #literal_str = literal_str + ' (Knowledge Base Entity'
             match = re.search(mnemonic_regex, literal_str)
             if match:
-                rico_ish_class = match.group(1)
+                rico_ish_class = decamelize(match.group(1))
                 mnemonic = match.group(3)
                 optional_rest = match.group(4)
                 literal_str = f'{{{mnemonic}}} ({rico_ish_class})'
