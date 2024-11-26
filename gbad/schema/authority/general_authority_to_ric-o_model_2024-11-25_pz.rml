@@ -1,0 +1,2675 @@
+@base <https://data.archives.gov.on.ca/> .
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<Schema/Mapping#add_hiddenNotes> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes" ] .
+
+<Schema/Mapping#auth_functionNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/functionNote" ] .
+
+<Schema/Mapping#auth_privateNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/privateNote" ] .
+
+<Schema/Mapping#auth_sourceNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/sourceNote" ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_functionNote_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___www_ica_org_standards_RiC_ontology_generalDescription_> ] ;
+            rr:predicate rdfs:subPropertyOf ],
+        [ rr:objectMap [ rr:template "Function Note" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant <Schema/Authority/functionNote> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_privateNote_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___www_ica_org_standards_RiC_ontology_generalDescription_> ] ;
+            rr:predicate rdfs:subPropertyOf ],
+        [ rr:objectMap [ rr:template "Private Note" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant <Schema/Authority/privateNote> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_sourceNote_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Source Note" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___www_ica_org_standards_RiC_ontology_generalDescription_> ] ;
+            rr:predicate rdfs:subPropertyOf ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant <Schema/Authority/sourceNote> ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_10__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_10___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_10" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_10}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_11__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_11} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_11___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_11" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_11}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_12__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_12___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_12} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_12" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_12}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_13__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_13} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_13___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_13}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_13" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_14__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_14} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_14___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_14}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_14" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_2} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_2___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_2" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_3__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_3} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_3___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_3" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_3}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_4__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_4___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_4} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_4" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_4}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_5__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_5___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_5} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_5}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_5" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_6__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_6} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_6___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_6" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_6}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_7__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_7} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_7___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_7}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_7" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_8__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_8} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_8___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_8" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_8}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_9__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_9___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{CONTAG_9} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_9}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_9" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__PRED_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_2} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{PRED_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_2" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__PRED_3__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_3} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_3" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{PRED_3}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__PRED_4__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_4} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{PRED_4}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_4" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__PRED_5__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_5} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_5" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{PRED_5}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__SUC_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_2} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{SUC_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "SUC_2" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__SUC_3__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_3} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_3" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{SUC_3}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__SUC_4__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_4} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{SUC_4}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_4" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{PAR_2} (Parallel Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/ParallelAgentName/{PAR_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_3__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{PAR_3} (Parallel Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/ParallelAgentName/{PAR_3}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PAR_3" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_4__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{PAR_4} (Parallel Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/ParallelAgentName/{PAR_4}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_4" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_10__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_10} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_10" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_10}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_11__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_11} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_11}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_11" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_2} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_3__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{VAR_3} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_3}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_3" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_4__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{VAR_4} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_4}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_4" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_5__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_5} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_5}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_5" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_6__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_6} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_6}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_6" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_7__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_7} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_7" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_7}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_8__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{VAR_8} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "VAR_8" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_8}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_9__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{VAR_9} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_9}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_9" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_2__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Authority Type: {AUTHTP_2}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/AuthorityType#{AUTHTP_2}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBodyType ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AgentIdentifier_Agency_Reference_Code_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Agent Identifier: Agency Reference Code" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:constant <Schema/Authority/AgentIdentifier#Agency%20Reference%20Code> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AuthorityRecord_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Authority Record" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:DocumentaryFormType ;
+            rr:constant <Schema/Authority/AuthorityRecord> ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_NaturalAgentName_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Natural Agent Name" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant <Schema/Authority/NaturalAgentName> ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_10___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_10_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_10} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_10_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_10}/{HEADING}/07489d75-af7e-5f28-ab77-f95137ffe1e9" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_10" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_11___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_11_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_11_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_11} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_11}/{HEADING}/edc96652-3723-5d7e-8ee4-4ee622699e2a" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_11" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_12___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_12_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_12_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_12} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_12" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_12}/{HEADING}/be5729a3-0e84-504c-b054-da098898e1ef" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_13___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_13_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_13_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{CONTAG_13} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_13}/{HEADING}/bccd23ce-5331-5915-a132-764d95003254" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_13" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_14___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_14_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{CONTAG_14} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_14_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_14}/{HEADING}/6532095e-901c-54c9-a400-6bad9dbc9ac9" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_14" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_1___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_1} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_1_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_1_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_1}/{HEADING}/7719c708-66ca-52cf-a9df-1b81cbbd659f" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_2___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_2_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_2_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_2} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_2}/{HEADING}/19df1c2a-a5f7-5f7e-9f11-aebb1b4a371a" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_3___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_3_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_3_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_3} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_3" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_3}/{HEADING}/b5b54225-937e-58e4-9180-920ea9215141" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_4___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_4_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_4} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_4_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_4" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_4}/{HEADING}/b2acbdb3-0cee-548b-90cb-054e3a7b0355" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_5___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_5_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_5} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_5_END__> ] ;
+            rr:predicate rico:hasEndDate ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_5" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_5}/{HEADING}/0b2e16f1-287f-5092-9ac7-2fd9f102f5c0" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_6___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_6_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_6} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_6_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_6" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_6}/{HEADING}/bc7c7ad4-462f-507d-9059-c2d26044790c" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_7___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_7_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_7_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_7} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_7}/{HEADING}/6d63d5ef-6053-5395-b209-45246ee3b7e0" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_7" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_8___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_8_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_8_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{CONTAG_8} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_8}/{HEADING}/1bcb2e70-81e2-58f8-9e55-f4407af9f0d1" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_8" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_9___HEADING___UUID__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_9} (Agent Control Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_9_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATECONT_9_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> ] ;
+            rr:predicate rico:relationHasTarget ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "CONTAG_9" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AgentControlRelation/{CONTAG_9}/{HEADING}/b42cb4d3-124b-5fd1-bae5-2b7bc5435002" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentControlRelation ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_10_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_10_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_10_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_10_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_10_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_10_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_10_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_11_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_11_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_11_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_11_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_11_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_11_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_11_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_12_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_12_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_12_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_12_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_12_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_12_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_12_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_13_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_13_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_13_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_13_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_13_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_13_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_13_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_14_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_14_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_14_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_14_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_14_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_14_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_14_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_1_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_1_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_1_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_1_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_1_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_1_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_1_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_2_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_2_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_2_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_2_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_2_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_2_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_2_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_3_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_3_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_3_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_3_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_3_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_3_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_3_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_4_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_4_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_4_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_4_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_4_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_4_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_4_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_5_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_5_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_5_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_5_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_5_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_5_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_5_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_6_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_6_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_6_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_6_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_6_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_6_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_6_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_7_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_7_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_7_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_7_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_7_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_7_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_7_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_8_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_8_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_8_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_8_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_8_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_8_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_8_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATECONT_8_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_9_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_9_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_9_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATECONT_9_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATECONT_9_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "DATECONT_9_END" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATECONT_9_END}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Rule__RULES__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{RULES} (Rule)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "RULES" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Rule/{RULES}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Rule ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_Status__STATUSA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Status: {STATUSA}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "STATUSA" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/Status#{STATUSA}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:RecordState ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_WebReady__WEBA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Web Ready: {WEBA}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "WEBA" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/WebReady#{WEBA}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:RecordState ] .
+
+<Schema/Mapping#rr_constant__https___www_ica_org_standards_RiC_ontology_generalDescription_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "https://www.ica.org/standards/RiC/ontology#generalDescription" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant rico:generalDescription ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Parallel Agent Name" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant <Schema/Authority/ParallelAgentName> ] .
+
+<Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFA} (Agent Identifier)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "REFA" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AgentIdentifier_Agency_Reference_Code_> ] ;
+            rr:predicate rico:hasIdentifierType ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REFA" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/AgentIdentifier/{REFA}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Identifier ] .
+
+<Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{CONTAG_1} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_1___HEADING___UUID__> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "CONTAG_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{CONTAG_1}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__PRED_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PRED_1} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{PRED_1}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "PRED_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Agent__SUC_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{SUC_1} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{SUC_1}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "SUC_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_WebReady__WEBA__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Rule__RULES__> ] ;
+            rr:predicate rico:isOrWasRegulatedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_Status__STATUSA__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rml:reference "MOD_DATE" ] ;
+            rr:predicate rico:lastModificationDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AuthorityRecord_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Authority Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/AuthorityRecord/{HEADING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Record ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEEX_BEGINNING} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEEX_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEEX_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Date__DATEEX_END__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEEX_END} (Date)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEEX_END}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEEX_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Date ] .
+
+<Schema/Mapping#rr_template__KB_Mandate__AA__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{AA} (Mandate)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "AA" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Mandate/{AA}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Mandate ] .
+
+<Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "NAME" ] ;
+            rr:predicate rico:normalizedValue ],
+        [ rr:objectMap [ rr:template "{NAME} (Natural Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_NaturalAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/NaturalAgentName/{NAME}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "NAME" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{PAR_1} (Parallel Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "PAR_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/ParallelAgentName/{PAR_1}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> ] ;
+            rr:predicate rico:hasOrHadCategory ],
+        [ rr:objectMap [ rr:template "{VAR_1} (Variant Agent Name)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "VAR_1" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/VariantAgentName/{VAR_1}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:AgentName ] .
+
+<Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Authority Type: {AUTHTP_1}" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "Schema/Authority/AuthorityType#{AUTHTP_1}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:CorporateBodyType ] .
+
+<Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "Variant Agent Name" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant <Schema/Authority/VariantAgentName> ] .
+
+<Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_1__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "/(Corporate Name|[ABC] Ontario Government Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ],
+                                                                        [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ] ] ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ],
+                                                [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ] ] ] ;
+                                                    rr:predicate grel:bool_b ] ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_CorporateBody_AUTHTP_2__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ],
+                                                                        [ rr:objectMap [ rr:template "/(Corporate Name|[ABC] Ontario Government Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ] ] ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ] ] ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CorporateBody ] .
+
+<Schema/Mapping#rr_template__KB_Family_AUTHTP_1__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ] ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "/(Family Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ],
+                                                                        [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ] ] ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Family ] .
+
+<Schema/Mapping#rr_template__KB_Family_AUTHTP_2__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ],
+                                                                        [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ] ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
+                                                                                                    rr:predicate grel:p_any_e ],
+                                                                                                [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ],
+                                                                        [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rr:template "/(Family Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ] ] ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Family ] .
+
+<Schema/Mapping#rr_template__KB_Person_AUTHTP_1__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ],
+                                                                        [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ] ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rr:template "/(Personal Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ] ] ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Person ] .
+
+<Schema/Mapping#rr_template__KB_Person_AUTHTP_2__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Agent)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ],
+                                                [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ],
+                                                                        [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ] ] ] ;
+                                                    rr:predicate grel:bool_b ] ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rr:template "/(Personal Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ] ] ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Person ] .
+
+<Schema/Mapping#rr_template__KB_Place_AUTHTP_1__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "AUTHTP_1" ] ;
+                                                                                                    rr:predicate grel:p_any_e ],
+                                                                                                [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ],
+                                                                        [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rr:template "/(Geographic Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ] ] ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ],
+                                                                        [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Place ] .
+
+<Schema/Mapping#rr_template__KB_Place_AUTHTP_2__HEADING__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/authority_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Mandate__AA__> ] ;
+            rr:predicate rico:authorizedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__SUC_1__> ] ;
+            rr:predicate rico:hasSuccessor ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__PRED_1__> ] ;
+            rr:predicate rico:isSuccessorOf ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_NaturalAgentName__NAME__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AgentIdentifier__REFA__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "ADM" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Authority_AuthorityType__AUTHTP_1__> ] ;
+            rr:predicate rico:hasOrHadCorporateBodyType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ParallelAgentName__PAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_VariantAgentName__VAR_1__> ] ;
+            rr:predicate rico:hasOrHadAgentName ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__CONTAG_1__> ] ;
+            rr:predicate rico:hasOrHadController ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_AuthorityRecord__HEADING__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEEX_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "{HEADING} (Place)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "/(Geographic Name)/" ;
+                                                                                    rr:termType rr:Literal ] ;
+                                                                            rr:predicate grel:p_string_regex ],
+                                                                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:string_toString ] ;
+                                                                                                    rr:predicate fno:executes ],
+                                                                                                [ rr:objectMap [ rml:reference "AUTHTP_2" ] ;
+                                                                                                    rr:predicate grel:p_any_e ] ] ] ;
+                                                                            rr:predicate grel:valueParameter ],
+                                                                        [ rr:objectMap [ rr:constant grel:string_match ] ;
+                                                                            rr:predicate fno:executes ] ] ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                                            rr:predicate fno:executes ],
+                                                                        [ rr:objectMap [ rml:reference "HEADING" ] ;
+                                                                            rr:predicate idlab-fn:str ] ] ] ;
+                                                    rr:predicate grel:bool_b ],
+                                                [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rr:template "KB/Place/{HEADING}" ] ;
+                                                    rr:predicate grel:any_false ] ] ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Place ] .
+

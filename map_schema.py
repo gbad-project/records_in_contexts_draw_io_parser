@@ -109,7 +109,7 @@ def __init__(schema_code, source_filename=None):
     # Camel case separation
     camelcase_pattern = r"(?<=[a-z])(?=[A-Z])"
     camelcase_regex = re.compile(camelcase_pattern)
-    def decamelize(s): return camelcase_regex.sub(' ', s)
+    def decamelize(s): s = camelcase_regex.sub(' ', s); return s[0].upper() + s[1:] # uppercase custom properties
     # Pattern to capture within-mnemonic iterators
     mnemonic_i_pattern = r"(\d+)\.\.(\d+)"
     mnemonic_i_regex = re.compile(mnemonic_i_pattern)
@@ -443,9 +443,14 @@ def __init__(schema_code, source_filename=None):
         return None
 
     # SELECT ?s a ?o
+    allowed_non_rico_classes = [
+        owl[1].DatatypeProperty
+    ]
     subjects_df = parsed_df[
         (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x, g.namespace_manager))) == 'rdf:type') &
-        (parsed_df['object'].apply(lambda x: str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:")))
+        (parsed_df['object'].apply(lambda x:
+                                   (str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:") or
+                                    x in allowed_non_rico_classes)))
     ].loc[:,['subject','object']] # So to be sure, object is the rdf:type URI here
 
     def extract_uriref_str(uriref):
@@ -928,9 +933,13 @@ def __init__(schema_code, source_filename=None):
 
         # Remove prefix from RiC-O name from subject df and add to graph
         rico_name = subject_row[rico_name_label]
-        rico_class = rico_name[5:]
+        rico_class = rico_name.split(':')[1]
+        class_uri = rico[1][rico_class]
+        for non_rico_class_uri in allowed_non_rico_classes:
+            if rico_name == str(normalize_uri(non_rico_class_uri, mapping.namespace_manager)):
+                class_uri = non_rico_class_uri; break
         # So this adds the rdf:type definition
-        mapping.add((subject_map, rr[1]['class'], rico[1][rico_class]))
+        mapping.add((subject_map, rr[1]['class'], class_uri))
 
         # If no valid RML definitions in the graph
         if not subject_map_predicate:
@@ -1060,9 +1069,6 @@ def __init__(schema_code, source_filename=None):
                                 rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
                                 mapping.add(rdfs_label_triple)
                             continue
-                        
-                        mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
-                        continue
 
                     # This concerns only constant literals, meaning nodes
                     # in drawio graph for which no mapping logic is defined
@@ -1070,6 +1076,8 @@ def __init__(schema_code, source_filename=None):
                         # So these are simply added as predicate and object, no predicate-object map
                         if object_map_object: # sometimes it may be empty
                             mapping.add((object_map, rr[1].constant, object_map_object)) 
+                        else:
+                            mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
                         continue
                     
                     # Now let's finally attach the object to the object map
