@@ -288,6 +288,8 @@ def __init__(schema_code, source_filename=None):
     # Define custom prefixes
     rico = ('rico', Namespace(rico_uri))
     ns = ('data', Namespace(URIRef(f"{base_uri}/")))
+    auth = ('auth', Namespace(URIRef(f"{base_auth_uri}/")))
+    add = ('add', Namespace(URIRef(f"{base_add_uri}/")))
 
     # Define common prefixes
     rdf = ('rdf', RDF)
@@ -312,6 +314,8 @@ def __init__(schema_code, source_filename=None):
     g.namespace_manager.bind(*rdfs)
     g.namespace_manager.bind(*owl)
     g.namespace_manager.bind(*ns)
+    g.namespace_manager.bind(*auth)
+    g.namespace_manager.bind(*add)
     g.namespace_manager.bind(*rml)
     g.namespace_manager.bind(*rr)
     g.namespace_manager.bind(*ql)
@@ -748,6 +752,8 @@ def __init__(schema_code, source_filename=None):
     maps = ('', Namespace(URIRef(f"{base_mapping_uri}#")))
 
     # Bind prefixes to namespaces
+    mapping.namespace_manager.bind(*auth)
+    mapping.namespace_manager.bind(*add)
     mapping.namespace_manager.bind(*rico)
     mapping.namespace_manager.bind(*rdf)
     mapping.namespace_manager.bind(*rdfs)
@@ -1011,7 +1017,9 @@ def __init__(schema_code, source_filename=None):
             norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
             is_rico = (norm_predicate.startswith(f"{rico[0]}:"))
             is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
-            if (is_rico | is_rdfs):
+            is_auth = (norm_predicate.startswith(f"{auth[0]}:"))
+            is_add = (norm_predicate.startswith(f"{add[0]}:"))
+            if (is_rico | is_rdfs | is_auth | is_add):
                 # Now we can actually iterate over objects
                 object = parsed_result['object']
                 original_object = parsed_result['original_object']

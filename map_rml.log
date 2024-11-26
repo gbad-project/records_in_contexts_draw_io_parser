@@ -1,4 +1,4 @@
-Script started on 2024-11-25 22:25:34-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="20"]
+Script started on 2024-11-25 22:37:22-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="20"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-25_pz.rml',
@@ -8,7 +8,7 @@ Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024
 
 Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl'
 
-Number of triples in the graph: 1925
+Number of triples in the graph: 2053
 Postprocessing...
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
@@ -24,9 +24,9 @@ Executed a parametrized alternative of the following query:
         
 69 triples were removed and dumped to: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped_removed_triples.nt'
 
-Number of triples in the graph: 1856
+Number of triples in the graph: 1984
 
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped_postprocessed.nt'
 
-Script done on 2024-11-25 22:25:45-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2024-11-25 22:37:31-05:00 [COMMAND_EXIT_CODE="0"]
