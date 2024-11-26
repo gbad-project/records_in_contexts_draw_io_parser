@@ -47,121 +47,124 @@ from typing import Optional
 import urllib.parse
 import traceback
 
-_ric_classes = [
-    "AccumulationRelation",
-    "Activity",
-    "ActivityDocumentationRelation",
-    "ActivityType",
-    "Agent",
-    "AgentControlRelation",
-    "AgentHierarchicalRelation",
-    "AgentName",
-    "AgentTemporalRelation",
-    "AgentToAgentRelation",
-    "Appellation",
-    "AppellationRelation",
-    "AuthorityRelation",
-    "AuthorshipRelation",
-    "CarrierExtent",
-    "CarrierType",
-    "ChildRelation",
-    "Concept",
-    "ContentType",
-    "Coordinates",
-    "CorporateBody",
-    "CorporateBodyType",
-    "CorrespondenceRelation",
-    "CreationRelation",
-    "Date",
-    "DateType",
-    "DemographicGroup",
-    "DerivationRelation",
-    "DescendanceRelation",
-    "DocumentaryFormType",
-    "Event",
-    "EventRelation",
-    "EventType",
-    "Extent",
-    "ExtentType",
-    "Family",
-    "FamilyRelation",
-    "FamilyType",
-    "FunctionalEquivalenceRelation",
-    "Group",
-    "GroupSubdivisionRelation",
-    "Identifier",
-    "IdentifierType",
-    "Instantiation",
-    "InstantiationExtent",
-    "InstantiationToInstantiationRelation",
-    "IntellectualPropertyRightsRelation",
-    "KnowingOfRelation",
-    "KnowingRelation",
-    "Language",
-    "LeadershipRelation",
-    "LegalStatus",
-    "ManagementRelation",
-    "Mandate",
-    "MandateRelation",
-    "MandateType",
-    "Mechanism",
-    "MembershipRelation",
-    "MigrationRelation",
-    "Name",
-    "OccupationType",
-    "OrganicOrFunctionalProvenanceRelation",
-    "OrganicProvenanceRelation",
-    "OwnershipRelation",
-    "PerformanceRelation",
-    "Person",
-    "PhysicalLocation",
-    "Place",
-    "PlaceName",
-    "PlaceRelation",
-    "PlaceType",
-    "Position",
-    "PositionHoldingRelation",
-    "PositionToGroupRelation",
-    "ProductionTechniqueType",
-    "Proxy",
-    "Record",
-    "RecordPart",
-    "RecordResource",
-    "RecordResourceExtent",
-    "RecordResourceGeneticRelation",
-    "RecordResourceHoldingRelation",
-    "RecordResourceToInstantiationRelation",
-    "RecordResourceToRecordResourceRelation",
-    "RecordSet",
-    "RecordSetType",
-    "RecordState",
-    "Relation",
-    "RepresentationType",
-    "RoleType",
-    "Rule",
-    "RuleRelation",
-    "RuleType",
-    "SequentialRelation",
-    "SiblingRelation",
-    "SpouseRelation",
-    "TeachingRelation",
-    "TemporalRelation",
-    "Thing",
-    "Title",
-    "Type",
-    "TypeRelation",
-    "UnitOfMeasurement",
-    "WholePartRelation",
-    "WorkRelation"
-]
-
 _prefixes = {
     'rico': 'https://www.ica.org/standards/RiC/ontology#',
     'add': 'https://data.archives.gov.on.ca/Schema/Description-Listings/',
-    'auth': 'https://data.archives.gov.on.ca/Schema/Authority/'
+    'auth': 'https://data.archives.gov.on.ca/Schema/Authority/',
+    'owl': 'http://www.w3.org/2002/07/owl#'
 }
 
+_classes = [
+    "owl:DatatypeProperty",
+    "rico:AccumulationRelation",
+    "rico:Activity",
+    "rico:ActivityDocumentationRelation",
+    "rico:ActivityType",
+    "rico:Agent",
+    "rico:AgentControlRelation",
+    "rico:AgentHierarchicalRelation",
+    "rico:AgentName",
+    "rico:AgentTemporalRelation",
+    "rico:AgentToAgentRelation",
+    "rico:Appellation",
+    "rico:AppellationRelation",
+    "rico:AuthorityRelation",
+    "rico:AuthorshipRelation",
+    "rico:CarrierExtent",
+    "rico:CarrierType",
+    "rico:ChildRelation",
+    "rico:Concept",
+    "rico:ContentType",
+    "rico:Coordinates",
+    "rico:CorporateBody",
+    "rico:CorporateBodyType",
+    "rico:CorrespondenceRelation",
+    "rico:CreationRelation",
+    "rico:Date",
+    "rico:DateType",
+    "rico:DemographicGroup",
+    "rico:DerivationRelation",
+    "rico:DescendanceRelation",
+    "rico:DocumentaryFormType",
+    "rico:Event",
+    "rico:EventRelation",
+    "rico:EventType",
+    "rico:Extent",
+    "rico:ExtentType",
+    "rico:Family",
+    "rico:FamilyRelation",
+    "rico:FamilyType",
+    "rico:FunctionalEquivalenceRelation",
+    "rico:Group",
+    "rico:GroupSubdivisionRelation",
+    "rico:Identifier",
+    "rico:IdentifierType",
+    "rico:Instantiation",
+    "rico:InstantiationExtent",
+    "rico:InstantiationToInstantiationRelation",
+    "rico:IntellectualPropertyRightsRelation",
+    "rico:KnowingOfRelation",
+    "rico:KnowingRelation",
+    "rico:Language",
+    "rico:LeadershipRelation",
+    "rico:LegalStatus",
+    "rico:ManagementRelation",
+    "rico:Mandate",
+    "rico:MandateRelation",
+    "rico:MandateType",
+    "rico:Mechanism",
+    "rico:MembershipRelation",
+    "rico:MigrationRelation",
+    "rico:Name",
+    "rico:OccupationType",
+    "rico:OrganicOrFunctionalProvenanceRelation",
+    "rico:OrganicProvenanceRelation",
+    "rico:OwnershipRelation",
+    "rico:PerformanceRelation",
+    "rico:Person",
+    "rico:PhysicalLocation",
+    "rico:Place",
+    "rico:PlaceName",
+    "rico:PlaceRelation",
+    "rico:PlaceType",
+    "rico:Position",
+    "rico:PositionHoldingRelation",
+    "rico:PositionToGroupRelation",
+    "rico:ProductionTechniqueType",
+    "rico:Proxy",
+    "rico:Record",
+    "rico:RecordPart",
+    "rico:RecordResource",
+    "rico:RecordResourceExtent",
+    "rico:RecordResourceGeneticRelation",
+    "rico:RecordResourceHoldingRelation",
+    "rico:RecordResourceToInstantiationRelation",
+    "rico:RecordResourceToRecordResourceRelation",
+    "rico:RecordSet",
+    "rico:RecordSetType",
+    "rico:RecordState",
+    "rico:Relation",
+    "rico:RepresentationType",
+    "rico:RoleType",
+    "rico:Rule",
+    "rico:RuleRelation",
+    "rico:RuleType",
+    "rico:SequentialRelation",
+    "rico:SiblingRelation",
+    "rico:SpouseRelation",
+    "rico:TeachingRelation",
+    "rico:TemporalRelation",
+    "rico:Thing",
+    "rico:Title",
+    "rico:Type",
+    "rico:TypeRelation",
+    "rico:UnitOfMeasurement",
+    "rico:WholePartRelation",
+    "rico:WorkRelation"
+]
+
 _object_properties = [
+    "rdfs:subPropertyOf",
     "rico:affectsOrAffected",
     "rico:agentHasOrHadLocation",
     "rico:authorizedBy",
@@ -500,6 +503,9 @@ _object_properties = [
 
 _datatype_properties = [
     "add:hiddenNotes",
+    "auth:sourceNote",
+    "auth:functionNote",
+    "auth:privateNote",
     "rico:accruals",
     "rico:accrualsStatus",
     "rico:altimetricSystem",
@@ -1076,12 +1082,19 @@ class DrawIOXMLTree:
                 continue
             if not individual_identifier:
                 continue
-            for ric_class in cell_value.split("rico:")[1:]:
-                ric_class = ric_class.strip()
-                _verify_is_ric_class(ric_class)
-                individual = Individual(individual_identifier, ric_class)
-                self.individual_cells.append(
-                    (cell, individual, self._dimensions(parent)))
+            for prefix in _prefixes.keys():
+                for ric_class in cell_value.split(f"{prefix}:")[1:]:
+                    ric_class = f"{prefix}:" + ric_class.strip()
+                    _verify_is_ric_class(ric_class)
+                    individual = Individual(individual_identifier, ric_class)
+                    self.individual_cells.append(
+                        (cell, individual, self._dimensions(parent)))
+            #for ric_class in cell_value.split("rico:")[1:]:
+            #    ric_class = ric_class.strip()
+            #    _verify_is_ric_class(ric_class)
+            #    individual = Individual(individual_identifier, ric_class)
+            #    self.individual_cells.append(
+            #        (cell, individual, self._dimensions(parent)))
 
     @staticmethod
     def _close_enough(
@@ -1194,8 +1207,8 @@ class DrawIOXMLTree:
 
 
 def _verify_is_ric_class(ric_class: str):
-    if not ric_class in _ric_classes:
-        raise NotInKnownException(f"Not a RiC class: {ric_class}")
+    if not ric_class in _classes:
+        raise NotInKnownException(f"Not a known class: {ric_class}")
 
 
 def _handle_spaces(
@@ -1401,28 +1414,43 @@ def _serialise_block(
         prefix_string = prefix + ":"
     else:
         prefix_string = ""
-    header = f"Individual: {prefix_string}{individual_identifier}"
+    if any(str(x).startswith('owl:') for x in types_and_facts["Types"]):
+        keyword = 'DataProperty'
+    else:
+        keyword = 'Individual'
+    header = f"{keyword}: {prefix_string}{individual_identifier}"
     if include_label:
         header += f"\n{' '*indentation}Annotations:"
         header += f"\n{' '*(indentation*2)}rdfs:label \"{individual_label}\""
     types_string = ", ".join(
-        f"rico:{_type}" for _type in sorted(types_and_facts["Types"]))
+        _type for _type in sorted(types_and_facts["Types"]) if not _type.startswith('owl:'))
+        #f"rico:{_type}" for _type in sorted(types_and_facts["Types"]))
     facts = types_and_facts.copy()
     del facts["Types"]
+    types_string = f"{' '*indentation}Types: {types_string}" if types_string else ''
     if not facts:
         return f"""{header}
-{' '*indentation}Types: {types_string}
+{types_string}
+
+"""
+    subproperties = facts.get('rdfs:subPropertyOf', None)
+    if subproperties:
+        subproperties_string = f"{' '*indentation}SubPropertyOf:\n{' '*(indentation*2)}"
+        subproperties_string += f",\n{' '*(indentation*2)}".join(
+            subproperty for subproperty in sorted(subproperties))
+        return f"""{header}
+{subproperties_string}
 
 """
     serialised_facts = list(_serialise_facts(
         facts, infer_type_of_literals, prefix))
-    facts_string = f",\n{' '*(indentation*2)}".join(serialised_facts[:-1])
+    facts_string = f"{' '*indentation}Facts:\n{' '*(indentation*2)}"
+    facts_string += f",\n{' '*(indentation*2)}".join(serialised_facts[:-1])
     facts_string += f",\n{' '*(indentation*2)}{serialised_facts[-1]}" if len(
         serialised_facts) > 1 else f"{serialised_facts[-1]}"
     return f"""{header}
-{' '*indentation}Types: {types_string}
-{' '*indentation}Facts:
-{' '*(indentation*2)}{facts_string}
+{types_string}
+{facts_string}
 
 """
 
@@ -1455,14 +1483,14 @@ def _preamble(serialisation_config: SerialisationConfig) -> str:
     non_rico_object_properties = [prop for prop in _object_properties if not prop.startswith('rico:')]
     objectproperty_lines = ''
     if len(non_rico_object_properties) > 0:
-        objectproperty_lines = f"\n{' '*indentation}".join(non_rico_object_properties)
-        objectproperty_lines = f"\nObjectProperty:\n{' '*indentation}" + objectproperty_lines + "\n"
+        for non_rico_object_property in non_rico_object_properties:
+            objectproperty_lines += f"\nObjectProperty:\n{' '*indentation}" + non_rico_object_property + "\n"
     
     non_rico_datatype_properties = [prop for prop in _datatype_properties if not prop.startswith('rico:')]
     dataproperty_lines = ''
     if len(non_rico_datatype_properties) > 0:
-        dataproperty_lines = f"\n{' '*indentation}".join(non_rico_datatype_properties)
-        dataproperty_lines = f"\nDataProperty:\n{' '*indentation}" + dataproperty_lines + "\n"
+        for non_rico_datatype_property in non_rico_datatype_properties:
+            dataproperty_lines += f"\nDataProperty:\n{' '*indentation}" + non_rico_datatype_property + "\n"
     
     return preamble + f"""{preamble_lines}
 Prefix: {prefix_string}: {prefix_iri}
