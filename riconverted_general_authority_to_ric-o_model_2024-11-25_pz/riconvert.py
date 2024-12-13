@@ -1,5 +1,5 @@
-# Parent Commit: bc8d032c2de00b6e9ee3b2dd7f444aa09b901379
-# SHA1 Hash at Parent Commit: 91c172dc7d14a0fdc4cd757b910bb3b7f0a2adf4
+# Parent Commit: b6b459faf174763008bc356582825f81844ff7ad
+# SHA1 Hash at Parent Commit: unknown
 
 ### Begin logic borrowed from draw_io_parser.py
 # The following version was originally copied and pasted to riconvert:
@@ -2144,31 +2144,32 @@ def map_schema_init(graph_path, csv_path, output_dir, sanitized_filename, schema
     base_uri = base_data_uri
     suppl_graph_dir = None
 
+    # Commented out for riconvert
     # Set schema-specific params
-    if schema_code == 'add':
+    #if schema_code == 'add':
         # Assume the first file found
-        graph_dir = 'gbad/schema/description-listings'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-        
+    #    graph_dir = 'gbad/schema/description-listings'
+    #    graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+    #  
         # ADD: Choose source CSV for mapping
-        if source_filename is None:
-            source_path = 'gbad/mapping/source/description_head_6.csv'
+    #    if source_filename is None:
+    #        source_path = 'gbad/mapping/source/description_head_6.csv'
     
-    elif schema_code == 'auth':
+    #elif schema_code == 'auth':
         #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
         # Assume the first file found
-        graph_dir = 'gbad/schema/authority/'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-
+    #    graph_dir = 'gbad/schema/authority/'
+    #    graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+    #
         # Authority: Choose source CSV for mapping
-        if source_filename is None:
-            source_path = 'gbad/mapping/source/authority_head_6.csv'
-
-    else:
-        raise Exception(f"Fatal error: Schema code not supplied.")
-
-    if source_filename:
-        source_path = f'gbad/mapping/source/{source_filename}'
+    #    if source_filename is None:
+    #        source_path = 'gbad/mapping/source/authority_head_6.csv'
+    #
+    #else:
+    #    raise Exception(f"Fatal error: Schema code not supplied.")
+    #
+    #if source_filename:
+    #    source_path = f'gbad/mapping/source/{source_filename}'
 
     # Block that overrides everything for riconvert
     graph_path = graph_path
