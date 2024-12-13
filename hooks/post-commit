@@ -10,7 +10,7 @@ PARENT_LINE="# Parent Commit: $PARENT_HASH"
 
 # Calculate the file hash and prepare the line
 FILE_HASH=$(sha1sum "$PYTHON_FILE" | awk '{print $1}')
-FILE_HASH_LINE="# SHA1 Hash: $FILE_HASH"
+FILE_HASH_LINE="# SHA1 Hash at Parent Commit: $FILE_HASH"
 
 # Remove the first two lines from the Python file
 sed -i '1,2d' "$PYTHON_FILE"
