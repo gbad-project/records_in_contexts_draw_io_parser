@@ -15,8 +15,12 @@ FILE_HASH_LINE="# SHA1 Hash: $FILE_HASH"
 # Remove the first two lines from the Python file
 sed -i '1,2d' "$PYTHON_FILE"
 
-# Combine the lines and prepend them to the file
-echo -e "$PARENT_LINE\n$FILE_HASH_LINE\n$(cat $PYTHON_FILE)" > $PYTHON_FILE
+# Combine the lines and prepend them to the file without altering existing \n literals
+{
+  printf "%s\n" "$PARENT_LINE"
+  printf "%s\n" "$FILE_HASH_LINE"
+  cat "$PYTHON_FILE"
+} > temp_file && mv temp_file "$PYTHON_FILE"
 
 # Add the modified file to the commit
 #git add $PYTHON_FILE
