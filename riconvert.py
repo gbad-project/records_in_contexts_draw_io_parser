@@ -1,5 +1,5 @@
-# Parent Commit: b340eed8fe2b2513ddc7787089beb2ad2c8d2798
-# SHA1 Hash at Parent Commit: 2f7cd9f9f6f20de933159dfcc84c4239212d9389
+# Parent Commit: bc8d032c2de00b6e9ee3b2dd7f444aa09b901379
+# SHA1 Hash at Parent Commit: 91c172dc7d14a0fdc4cd757b910bb3b7f0a2adf4
 
 ### Begin logic borrowed from draw_io_parser.py
 # The following version was originally copied and pasted to riconvert:
@@ -3057,7 +3057,7 @@ import argparse
 import shutil
 from io import BytesIO
 
-def map_rml(schema_code):
+def map_rml(script_dir, output_dir, schema_code='auth'):
     """
     Returns a tuple of (rml, rmlmapper, ttl) paths.
     """
@@ -3073,6 +3073,11 @@ def map_rml(schema_code):
     ttl_root = "gbad/mapping/target"
     rmlmapper_dir = "."
 
+    # Override for riconvert
+    rml_dir = output_dir
+    ttl_root = output_dir
+    rmlmapper_dir = script_dir
+
     # Find the .rml file
     rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "*.rml"))
     rmlmapper_files = glob.glob(os.path.join(os.path.normpath(rmlmapper_dir), "rmlmapper*"))
@@ -3084,7 +3089,7 @@ def map_rml(schema_code):
         rml_filename = os.path.splitext(os.path.basename(rml))[0]
 
         # Create target directory if it does not exist
-        ttl_dir = os.path.join(os.path.normpath(ttl_root), rml_filename)
+        ttl_dir = os.path.join(os.path.normpath(ttl_root), f"mapped_from_{rml_filename}")
         os.makedirs(ttl_dir, exist_ok=True)
         
         # Define the output file
@@ -3281,44 +3286,45 @@ def postprocess(graph_path):
 
     return g, has_changed
 
-def map_rml_main():
-    parser = argparse.ArgumentParser(description="Map schema of choice")
-    parser.add_argument("schema", help="Choose one: add or auth.")
+def save_postprocessed_graph(
+        graph,
+        output_format = 'nt', # assumed to be quickest
+        ttl_path = None):
+    # Serialize and print the RDF graph
+    #output_format = 'ttl' # more lightweight and readable
+    output_encoding = 'utf-8' # just to be sure
+    ttl_filename = os.path.basename(ttl_path)
+    postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
+    postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
+    #postprocessed_serialized = graph.serialize(format=output_format)
+    # FYI, serialize returns:
+    # bytes if destination is None and encoding is not None.
+    # str if destination is None and encoding is None.
+    #with open(postprocessed_path, 'w') as f:
+    #    f.write(postprocessed_serialized)
+    # Output to memory for speed
+    postprocessed_serialized = BytesIO()
+    graph.serialize(destination=postprocessed_serialized,
+                    format=output_format,
+                    encoding=output_encoding)
+    # Save to a file from BytesIO
+    with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
+        f.write(postprocessed_serialized.getvalue())
+    print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
+    return postprocessed_serialized
 
-    args = parser.parse_args()
-
-    rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
-    graph, has_changed = postprocess(ttl_path)
-
-    def save_postprocessed_graph(
-            output_format = 'nt', # assumed to be quickest
-            ttl_path = ttl_path):
-        # Serialize and print the RDF graph
-        #output_format = 'ttl' # more lightweight and readable
-        output_encoding = 'utf-8' # just to be sure
-        ttl_filename = os.path.basename(ttl_path)
-        postprocessed_filename = f'{ttl_filename[:-4]}_postprocessed.{output_format}'
-        postprocessed_path = os.path.join(os.path.dirname(ttl_path), postprocessed_filename)
-        #postprocessed_serialized = graph.serialize(format=output_format)
-        # FYI, serialize returns:
-        # bytes if destination is None and encoding is not None.
-        # str if destination is None and encoding is None.
-        #with open(postprocessed_path, 'w') as f:
-        #    f.write(postprocessed_serialized)
-        # Output to memory for speed
-        postprocessed_serialized = BytesIO()
-        graph.serialize(destination=postprocessed_serialized,
-                        format=output_format,
-                        encoding=output_encoding)
-        # Save to a file from BytesIO
-        with open(postprocessed_path, 'wb') as f: # Use 'wb' for binary write mode
-            f.write(postprocessed_serialized.getvalue())
-        print(f"\n\nSuccessfully saved postprocessed graph at: '{postprocessed_path}'")
-        return postprocessed_serialized
-    
-    if has_changed:
-        postprocessed_ttl_content = save_postprocessed_graph()
-    #print(postprocessed_ttl_content)
+#def map_rml_main():
+#    parser = argparse.ArgumentParser(description="Map schema of choice")
+#    parser.add_argument("schema", help="Choose one: add or auth.")
+#
+#    args = parser.parse_args()
+#
+#    rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
+#    graph, has_changed = postprocess(ttl_path)
+#
+#    if has_changed:
+#        postprocessed_ttl_content = save_postprocessed_graph(ttl_path)
+#    #print(postprocessed_ttl_content)
 ### End logic from map_rml.py
 
 ### Begin own riconvert logic
@@ -3507,6 +3513,14 @@ def main():
         # Convert schema to RML
         csv_path = os.path.join(script_dir, 'authority_tailshuf_100.csv')
         map_schema_init(graph_path, csv_path, output_dir, sanitized_filename, schema_code='auth', source_filename=None)
+
+        # Map RML
+        rml_path, rmlmapper_path, ttl_path = map_rml(script_dir, output_dir, schema_code='auth')
+        graph, has_changed = postprocess(ttl_path)
+
+        if has_changed:
+            postprocessed_ttl_content = save_postprocessed_graph(graph, ttl_path)
+        #print(postprocessed_ttl_content)
 
         # Log the end time
         log_file.write(f"\nExecution ended at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n")

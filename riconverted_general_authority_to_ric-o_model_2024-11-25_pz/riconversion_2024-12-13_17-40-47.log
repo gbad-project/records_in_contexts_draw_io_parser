@@ -1,4 +1,4 @@
-Execution started at: 2024-12-13 17:28:13 UTC
+Execution started at: 2024-12-13 17:40:47 UTC
 
 Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.
 It detects a *.drawio and *.csv file in the same folder (only one of each must exist).
@@ -57,5 +57,28 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 
 Successfully saved RML map to: 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml'
+Initiated mapping params:
+('C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml',
+ 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\rmlmapper-7.0.0-r374-all.jar',
+ 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\\mapped.ttl')
+Successfully mapped 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml' to 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped.ttl'
 
-Execution ended at: 2024-12-13 17:28:23 UTC
+Successfully read a graph from 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped.ttl'
+
+Number of triples in the graph: 2053
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        DELETE WHERE {
+            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
+            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
+            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
+            authtp:Geographic%20Name ?p1 ?o1 .
+            authtp:Family%20Name ?p2 ?o2 .
+            authtp:Personal%20Name ?p3 ?o3 .
+        }
+        
+69 triples were removed and dumped to: 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped_removed_triples.nt'
+
+Number of triples in the graph: 1984
