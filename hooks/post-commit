@@ -1,0 +1,30 @@
+#!/bin/bash
+# Originally generated with ChatGPT-4o on 2024-12-13, modified
+
+# File to update
+PYTHON_FILE="riconvert.py"
+
+# Prepare the parent commit hash line
+PARENT_HASH=$(git rev-parse HEAD)
+PARENT_LINE="# Parent Commit: $PARENT_HASH"
+
+# Calculate the file hash and prepare the line
+FILE_HASH=$(sha1sum "$PYTHON_FILE" | awk '{print $1}')
+FILE_HASH_LINE="# SHA1 Hash: $FILE_HASH"
+
+# Remove the first two lines from the Python file
+sed -i '1,2d' "$PYTHON_FILE"
+
+# Combine the lines and prepend them to the file
+echo -e "$PARENT_LINE\n$FILE_HASH_LINE\n$(cat $PYTHON_FILE)" > $PYTHON_FILE
+
+# Add the modified file to the commit
+#git add $PYTHON_FILE
+#git commit --amend --no-edit#!/bin/sh
+#
+# An example hook script to prepare a packed repository for use over
+# dumb transports.
+#
+# To enable this hook, rename this file to "post-update".
+
+#exec git update-server-info
