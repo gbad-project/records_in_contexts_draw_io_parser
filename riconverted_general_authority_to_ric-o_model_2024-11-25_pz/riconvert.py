@@ -1,5 +1,5 @@
-# Parent Commit: 92b0f8909a1190e10a4d25ebd750431597b31116
-# SHA1 Hash at Parent Commit: 40167da6bf9d443f7e0c5d6c9812021f792555b1
+# Parent Commit: a5799ab71fc793b00b3ad9318d3408a2adc75ffd
+# SHA1 Hash at Parent Commit: 7844e8083f0077b840f137e2c93c9d1fa8aae18e
 
 ### Begin logic borrowed from draw_io_parser.py
 # The following version was originally copied and pasted to riconvert:
@@ -1816,7 +1816,66 @@ def _run() -> None:
         sys_exit(f"{exception}")
     print(serialise(blocks, serialisation_config).rstrip())
 
-
+def draw_io_parser_run(args) -> None:
+    # Skip the first argument (input file) and pass the rest to the argument parser
+    arguments = _arguments_parser().parse_args(args[1:])
+    serialisation_config = SerialisationConfig(
+        infer_type_of_literals=not arguments.infer_types_disable,
+        include_preamble=not arguments.preamble_disable,
+        ontology_iri=arguments.ontology_iri,
+        prefix=arguments.prefix,
+        prefix_iri=arguments.prefix_iri,
+        indentation=arguments.indentation,
+        include_label=not arguments.label_disable)
+    max_gap = arguments.max_gap
+    strict_mode = arguments.strict_mode
+    capitalisation_scheme = arguments.capitalisation_scheme
+    try:
+        space_substitute = _parse_space_substitute(
+            arguments.metacharacter_substitute)
+        metacharacter_substitutes = list(_parse_metacharacter_substitutes(
+            arguments.metacharacter_substitute))
+        _parse_capitalisation_scheme(capitalisation_scheme)
+    except (
+            _MetacharacterSubstituteParseException,
+            _InvalidCapitalisationSchemeException) as exception:
+        sys_exit(f"{exception}")
+    try:
+        with open(args[0], 'r') as f:
+            draw_io_xml_tree = DrawIOXMLTree(f.read())
+    except NothingToParseException:
+        sys_exit("The draw IO XML graph passed in appears to be empty")
+    except NotInKnownException as exception:
+        sys_exit(f"{exception}")
+    try:
+        blocks = individual_blocks(
+            draw_io_xml_tree.individuals_and_arrows(strict_mode, max_gap),
+            metacharacter_substitutes,
+            space_substitute,
+            capitalisation_scheme)
+    except NoSourceException as exception:
+        if arguments.strict_mode:
+            message = (
+                f"{exception}. If so, try to lock the arrow to an individual "
+                "node in the original graph; or the underlying XML could be "
+                "edited to indicate the source. Alternatively, try running the "
+                "parser in non-strict mode (without the '-s/--strict-mode' "
+                "flag), optionally making use of the '-g/--max-gap' option")
+        else:
+            message = (
+                f"{exception}. If so, consider using the '-g/--max gap' option "
+                "when running the script to increase the max recognised gap "
+                "between a node and an arrow end; or try to lock the arrow to "
+                "an individual node in the original graph; or the underlying "
+                "XML could be edited")
+        sys_exit(message)
+    except (
+            NotInKnownException,
+            ArrowWithoutIndividualAsSourceException,
+            MetacharacterException) as exception:
+        sys_exit(f"{exception}")
+    print(serialise(blocks, serialisation_config).rstrip())
+    
 def _main() -> None:
     try:
         _run()
@@ -3267,6 +3326,7 @@ import re
 import io
 import contextlib
 import shutil
+from datetime import datetime, timezone
 
 def sanitize_filename(filename):
     """
@@ -3286,18 +3346,7 @@ def sanitize_filename(filename):
     
     return sanitized
 
-def convert_drawio_file(script_dir):
-    """
-    Find and convert a single DrawIO file in the script directory
-    
-    Args:
-        script_dir (str): Directory to search for .drawio file
-    """
-    print("Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.")
-    print("It detects a *.drawio and *.csv file in the same folder (only one of each must exist).")
-    print("It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.")
-    print("It uses the RML file to map the CSV file into triples (Turtle or N3).")
-
+def find_input_file(script_dir):
     # Find the single .drawio file
     drawio_files = [
         f for f in os.listdir(script_dir) 
@@ -3313,26 +3362,45 @@ def convert_drawio_file(script_dir):
         sys.exit(1)
     
     input_file = os.path.join(script_dir, drawio_files[0])
+    return input_file
+
+def generate_output_dir(script_dir, input_file):
+    # Create output directory name based on DrawIO filename
+    base_filename = os.path.splitext(os.path.basename(input_file))[0]
+    sanitized_filename = sanitize_filename(base_filename)
+    riconverted_prefix = "riconverted_"
+    output_dir_name = riconverted_prefix + sanitized_filename
+    output_dir = os.path.join(script_dir, output_dir_name)
+    os.makedirs(output_dir, exist_ok=True)
+    return output_dir, sanitized_filename
+
+def convert_drawio_file(script_dir, input_file, output_dir, sanitized_filename):
+    """
+    Find and convert a single DrawIO file in the script directory
+    
+    Args:
+        script_dir (str): Directory to search for .drawio file
+    """
+    print("Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.")
+    print("It detects a *.drawio and *.csv file in the same folder (only one of each must exist).")
+    print("It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.")
+    print("It uses the RML file to map the CSV file into triples (Turtle or N3).")
+
     print("Input drawio file:")
     print(input_file)
     
-    # Create output directory name based on DrawIO filename
-    base_filename = os.path.splitext(drawio_files[0])[0]
-    output_dir_name = sanitize_filename(base_filename)
-    output_dir = os.path.join(script_dir, output_dir_name)
-
-    # Prepare output file paths
-    output_file = os.path.join(output_dir, f'drawio_{output_dir_name}.owl')
-    ttl_file = os.path.join(output_dir, f'drawio_{output_dir_name}.ttl')
-    
-    # Create output directory
-    os.makedirs(output_dir, exist_ok=True)
     print("Output directory:")
     print(output_dir)
 
+    # Prepare output file paths
+    drawio_to_owl_prefix = "owl_from_drawio_"
+    drawio_to_ttl_prefix = "turtle_from_drawio_owl_"
+    output_file = os.path.join(output_dir, f'{drawio_to_owl_prefix}{sanitized_filename}.owl')
+    ttl_file = os.path.join(output_dir, f'{drawio_to_ttl_prefix}{sanitized_filename}.ttl')
+
     # Make sure we do not inadvertently overwrite anything
-    if os.path.exists(output_file) or os.path.exists(ttl_file) or os.path.exists(os.path.join(output_dir, os.path.basename(os.path.abspath(__file__)))) or os.path.exists(input_file):
-        response = input("Some existing files already found in output directory. Do you really want to overwrite? (y/N): ").lower().strip()
+    if os.path.exists(output_file) or os.path.exists(ttl_file) or os.path.exists(os.path.join(output_dir, os.path.basename(os.path.abspath(__file__)))) or os.path.exists(os.path.join(output_dir, os.path.basename(input_file))):
+        response = input("Some existing files already found in the output directory. EVERYTHING in the output directory will be overwritten! Do you really want to proceed? (y/N): ").lower().strip()
         if response != 'y':
             print("Operation cancelled.")
             sys.exit(0)
@@ -3356,13 +3424,20 @@ def convert_drawio_file(script_dir):
         full_args = [input_file] + parser_commands
         
         # Call _run function (assuming it's defined in the parent context)
-        sys.argv = full_args
+        #sys.argv = full_args
         #import draw_io_parser  # Assuming this is imported in parent context
         
         # Capture stdout to write OWL file
         with open(output_file, 'w') as owl_out:
             with contextlib.redirect_stdout(owl_out):
-                draw_io_parser_main()
+                try:
+                    draw_io_parser_run(full_args)
+                except ParseException as exception:
+                    sys_exit(str(exception))
+                except Exception as exception:  # pylint: disable=broad-exception-caught
+                    error_type = type(exception).__name__
+                    error_traceback = traceback.format_exc()
+                    sys_exit(f"An unexpected error occurred: {error_type}: {exception}\n\nTraceback:\n{error_traceback}")
         
         print(f"OWL Output saved to: {output_file}")
         
@@ -3382,15 +3457,49 @@ def convert_drawio_file(script_dir):
     except Exception as e:
         print(f"Error processing {input_file}: {e}")
 
+class Tee:
+    def __init__(self, *streams):
+        self.streams = streams
+
+    def write(self, data):
+        for stream in self.streams:
+            stream.write(data)
+            stream.flush()  # Ensure the output is flushed to both streams
+
+    def flush(self):
+        for stream in self.streams:
+            stream.flush()
+
 def main():
     """
     Main function to convert a single DrawIO file
     """
-    # Get the directory of the script
+    # Read script dir and find input file
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    input_file = find_input_file(script_dir)
     
-    # Convert the DrawIO file
-    convert_drawio_file(script_dir)
+    # Set up output directory and log file
+    output_dir, sanitized_filename = generate_output_dir(script_dir, input_file)
+    datetime_now = datetime.now(timezone.utc)
+    log_file_path = os.path.join(output_dir, f"riconversion_{datetime_now.strftime('%Y-%m-%d_%H-%M-%S')}.log")
+    
+    # Open log file in write mode
+    with open(log_file_path, 'w') as log_file:
+         # Log the start time and command
+        log_file.write(f"Execution started at: {datetime_now.strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+
+        # Create a Tee object to capture both stdout and the log file
+        tee = Tee(sys.stdout, log_file)
+
+        # Redirect stdout and stderr to Tee
+        sys.stdout = tee
+        sys.stderr = tee
+        
+        # Convert the DrawIO file
+        convert_drawio_file(script_dir, input_file, output_dir, sanitized_filename)
+
+        # Log the end time
+        log_file.write(f"\nExecution ended at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
 
 if __name__ == '__main__':
     try:
@@ -3401,7 +3510,13 @@ if __name__ == '__main__':
         print("An error occurred:")
         traceback.print_exc()  # This will print the full error traceback
         input("Press Enter to exit...")  # Wait for user to press Enter
+        #os.system("pause")
     finally:
+        sys.stdout = sys.__stdout__
+        sys.stderr = sys.__stderr__
+        # Ensure the log captures the normal termination
+        # Restore stdout and stderr so that they are printed to the console again
+
         # Prevent the command window from closing automatically
         input("Press Enter to exit...")
         #os.system("pause")
