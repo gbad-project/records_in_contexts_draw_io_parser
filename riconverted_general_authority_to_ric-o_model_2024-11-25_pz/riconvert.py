@@ -1,5 +1,5 @@
-# Parent Commit: a5799ab71fc793b00b3ad9318d3408a2adc75ffd
-# SHA1 Hash at Parent Commit: 7844e8083f0077b840f137e2c93c9d1fa8aae18e
+# Parent Commit: b340eed8fe2b2513ddc7787089beb2ad2c8d2798
+# SHA1 Hash at Parent Commit: 2f7cd9f9f6f20de933159dfcc84c4239212d9389
 
 ### Begin logic borrowed from draw_io_parser.py
 # The following version was originally copied and pasted to riconvert:
@@ -1967,7 +1967,7 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
 
     return source_graph
 
-def __init__(schema_code, source_filename=None):
+def map_schema_init(graph_path, csv_path, output_dir, sanitized_filename, schema_code='auth', source_filename=None):
     # Define GBAD schema ontology
     base_data_uri = 'https://data.archives.gov.on.ca'
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
@@ -2170,7 +2170,11 @@ def __init__(schema_code, source_filename=None):
     if source_filename:
         source_path = f'gbad/mapping/source/{source_filename}'
 
-    rml_path = graph_path[:-3]+ "rml"
+    # Block that overrides everything for riconvert
+    graph_path = graph_path
+    source_path = csv_path
+    ttl_to_rml_prefix = "rml_from_drawio_turtle_"
+    rml_path = os.path.join(output_dir, f"{ttl_to_rml_prefix}{sanitized_filename}.rml")
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -3023,14 +3027,14 @@ def __init__(schema_code, source_filename=None):
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
     #print(ttl)
 
-def map_schema_main():
-    parser = argparse.ArgumentParser(description="Map schema of choice")
-    parser.add_argument("schema", help="Choose one: add or auth.")
-    parser.add_argument("source", nargs='?', help="Filename of source CSV without extension. Defaults to the head=6 version for chosen schema.")
-
-    args = parser.parse_args()
-
-    __init__(str(args.schema).lower(), args.source)
+#def map_schema_main():
+#    parser = argparse.ArgumentParser(description="Map schema of choice")
+#    parser.add_argument("schema", help="Choose one: add or auth.")
+#    parser.add_argument("source", nargs='?', help="Filename of source CSV without extension. Defaults to the head=6 version for chosen schema.")
+#
+#    args = parser.parse_args()
+#
+#    __init__(str(args.schema).lower(), args.source)
 ### End logic from map_schema.py
 
 ### Begin logic from map_rml.py
@@ -3457,6 +3461,8 @@ def convert_drawio_file(script_dir, input_file, output_dir, sanitized_filename):
     except Exception as e:
         print(f"Error processing {input_file}: {e}")
 
+    return ttl_file
+
 class Tee:
     def __init__(self, *streams):
         self.streams = streams
@@ -3496,7 +3502,11 @@ def main():
         sys.stderr = tee
         
         # Convert the DrawIO file
-        convert_drawio_file(script_dir, input_file, output_dir, sanitized_filename)
+        graph_path = convert_drawio_file(script_dir, input_file, output_dir, sanitized_filename)
+
+        # Convert schema to RML
+        csv_path = os.path.join(script_dir, 'authority_tailshuf_100.csv')
+        map_schema_init(graph_path, csv_path, output_dir, sanitized_filename, schema_code='auth', source_filename=None)
 
         # Log the end time
         log_file.write(f"\nExecution ended at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
