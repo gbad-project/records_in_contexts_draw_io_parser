@@ -1,0 +1,19 @@
+Execution started at: 2024-12-14 01:16:30 UTC
+
+Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.
+It detects a *.drawio and *.csv file in the same folder (only one of each must exist).
+It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.
+It uses the RML file to map the CSV file into triples (Turtle or N3).
+Input drawio file:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\General Authority to RiC-O Model_2024-11-25_PZ.drawio
+Output directory:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconvert.py:1059: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not self.draw_io_xml_tree[0][0][0]:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconvert.py:937: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not geometry:
+OWL Output saved to: C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\owl_from_drawio_general_authority_to_ric-o_model_2024-11-25_pz.owl
+Error processing C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\General Authority to RiC-O Model_2024-11-25_PZ.drawio: Command '['java', '-jar', 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\robot.jar', 'convert', '-i', 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\owl_from_drawio_general_authority_to_ric-o_model_2024-11-25_pz.owl', '-o', 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\turtle_from_drawio_owl_general_authority_to_ric-o_model_2024-11-25_pz.ttl']' returned non-zero exit status 1.
+Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
+
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\turtle_from_drawio_owl_general_authority_to_ric-o_model_2024-11-25_pz.ttl does not look like a valid URI, trying to serialize this will break.

@@ -1,0 +1,11 @@
+Execution started at: 2024-12-14 02:11:37 UTC
+
+Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.
+It detects a *.drawio and *.csv file in the same folder (only one of each must exist).
+It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.
+It uses the RML file to map the CSV file into triples (Turtle or N3).
+Input drawio file:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\General Authority to RiC-O Model_2024-11-25_PZ.drawio
+Output directory:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz
+Some existing files already found in the output directory. EVERYTHING in the output directory will be overwritten! Do you really want to proceed? (y/N): Operation cancelled.

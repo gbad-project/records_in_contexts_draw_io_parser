@@ -1,0 +1,242 @@
+@prefix : <http://gbad.archives.gov.on.ca#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://gbad.archives.gov.on.ca> .
+
+<http://gbad.archives.gov.on.ca> rdf:type owl:Ontology ;
+                                  owl:imports <https://www.ica.org/standards/RiC/ontology#> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+rdfs:subPropertyOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FfunctionNote%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FfunctionNote%22> rdf:type owl:DatatypeProperty ;
+                                                                                                                                 rdfs:subPropertyOf <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> ;
+                                                                                                                                 rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/functionNote\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FprivateNote%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FprivateNote%22> rdf:type owl:DatatypeProperty ;
+                                                                                                                                rdfs:subPropertyOf <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> ;
+                                                                                                                                rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/privateNote\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FsourceNote%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FsourceNote%22> rdf:type owl:DatatypeProperty ;
+                                                                                                                               rdfs:subPropertyOf <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> ;
+                                                                                                                               rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/sourceNote\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> rdf:type owl:DatatypeProperty ;
+                                                                                                                                   rdfs:label "rr:constant \"https://www.ica.org/standards/RiC/ontology#generalDescription\"" .
+
+
+###  https://data.archives.gov.on.ca/Schema/Authority/functionNote
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> rdf:type owl:DatatypeProperty .
+
+
+###  https://data.archives.gov.on.ca/Schema/Authority/privateNote
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> rdf:type owl:DatatypeProperty .
+
+
+###  https://data.archives.gov.on.ca/Schema/Authority/sourceNote
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> rdf:type owl:DatatypeProperty .
+
+
+###  https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes
+<https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                                         <https://www.ica.org/standards/RiC/ontology#IdentifierType> ;
+                                                                                                                                                                rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/AgentIdentifier#Agency Reference Code\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                             <https://www.ica.org/standards/RiC/ontology#DocumentaryFormType> ;
+                                                                                                                                    rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/AuthorityRecord\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                              <https://www.ica.org/standards/RiC/ontology#Type> ;
+                                                                                                                                     rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/NaturalAgentName\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                               <https://www.ica.org/standards/RiC/ontology#Type> ;
+                                                                                                                                      rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/ParallelAgentName\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22
+<http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                              <https://www.ica.org/standards/RiC/ontology#Type> ;
+                                                                                                                                     rdfs:label "rr:constant \"https://data.archives.gov.on.ca/Schema/Authority/VariantAgentName\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                       <https://www.ica.org/standards/RiC/ontology#Thing> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#authorizedBy> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasBeginningDate> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasEndDate> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasOrHadAgentName> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22> ,
+                                                                                                                                                             <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22> ,
+                                                                                                                                                             <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasOrHadController> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#hasSuccessor> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22> ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#isSuccessorOf> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22> ;
+                                                                                              <https://data.archives.gov.on.ca/Schema/Authority/functionNote> "rml:reference \"FUN\"" ;
+                                                                                              <https://data.archives.gov.on.ca/Schema/Authority/privateNote> "rml:reference \"CMTAU\"" ;
+                                                                                              <https://www.ica.org/standards/RiC/ontology#history> "rml:reference \"ADM\"" ;
+                                                                                              rdfs:label "rr:template \"KB/{RICO_AUTHTP}/{HEADING}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                <https://www.ica.org/standards/RiC/ontology#CorporateBody> ;
+                                                                                       <https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22> ;
+                                                                                       rdfs:label "rr:template \"KB/Agent/{CONTAG_1..14}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                             <https://www.ica.org/standards/RiC/ontology#CorporateBody> ;
+                                                                                    rdfs:label "rr:template \"KB/Agent/{PRED_1..5}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                            <https://www.ica.org/standards/RiC/ontology#CorporateBody> ;
+                                                                                   rdfs:label "rr:template  \"KB/Agent/{SUC_1..4}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                            <https://www.ica.org/standards/RiC/ontology#AgentControlRelation> ;
+                                                                                                                                   <https://www.ica.org/standards/RiC/ontology#hasBeginningDate> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> ;
+                                                                                                                                   <https://www.ica.org/standards/RiC/ontology#hasEndDate> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> ;
+                                                                                                                                   <https://www.ica.org/standards/RiC/ontology#relationHasTarget> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22> ;
+                                                                                                                                   rdfs:label "rr:template \"KB/AgentControlRelation/{CONTAG_1..14}/{HEADING}/{UUID}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                  <https://www.ica.org/standards/RiC/ontology#Identifier> ;
+                                                                                         <https://www.ica.org/standards/RiC/ontology#hasIdentifierType> <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22> ;
+                                                                                         <https://www.ica.org/standards/RiC/ontology#normalizedValue> "rml:reference \"REFA\"" ;
+                                                                                         rdfs:label "rr:template \"KB/AgentIdentifier/{REFA}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                     <https://www.ica.org/standards/RiC/ontology#Record> ;
+                                                                                            <https://www.ica.org/standards/RiC/ontology#hasDocumentaryFormType> <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22> ;
+                                                                                            <https://www.ica.org/standards/RiC/ontology#hasRecordState> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22> ,
+                                                                                                                                                        <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22> ;
+                                                                                            <https://www.ica.org/standards/RiC/ontology#isOrWasRegulatedBy> <http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> ;
+                                                                                            <https://data.archives.gov.on.ca/Schema/Authority/sourceNote> "rml:reference \"SOURCE\"" ;
+                                                                                            <https://www.ica.org/standards/RiC/ontology#lastModificationDate> "rml:reference \"MOD_DATE\"" ;
+                                                                                            rdfs:label "rr:template \"KB/AuthorityRecord/{HEADING}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                           <https://www.ica.org/standards/RiC/ontology#Date> ;
+                                                                                                  rdfs:label "rr:template  \"KB/Date/{DATECONT_1..14_BEGINNING}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                     <https://www.ica.org/standards/RiC/ontology#Date> ;
+                                                                                            rdfs:label "rr:template \"KB/Date/{DATECONT_1..14_END}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://www.ica.org/standards/RiC/ontology#Date> ;
+                                                                                          rdfs:label "rr:template  \"KB/Date/{DATEEX_BEGINNING}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                             <https://www.ica.org/standards/RiC/ontology#Date> ;
+                                                                                    rdfs:label "rr:template  \"KB/Date/{DATEEX_END}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                        <https://www.ica.org/standards/RiC/ontology#Mandate> ;
+                                                                               rdfs:label "rr:template \"KB/Mandate/{AA}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                   <https://www.ica.org/standards/RiC/ontology#AgentName> ;
+                                                                                          <https://www.ica.org/standards/RiC/ontology#hasOrHadCategory> <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22> ;
+                                                                                          <https://www.ica.org/standards/RiC/ontology#normalizedValue> "rml:reference \"NAME\"" ;
+                                                                                          rdfs:label "rr:template \"KB/NaturalAgentName/{NAME}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                        <https://www.ica.org/standards/RiC/ontology#AgentName> ;
+                                                                                               <https://www.ica.org/standards/RiC/ontology#hasOrHadCategory> <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22> ;
+                                                                                               rdfs:label "rr:template \"KB/ParallelAgentName/{PAR_1..4}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                        <https://www.ica.org/standards/RiC/ontology#Rule> ;
+                                                                               rdfs:label "rr:template  \"KB/Rule/{RULES}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                        <https://www.ica.org/standards/RiC/ontology#AgentName> ;
+                                                                                               <https://www.ica.org/standards/RiC/ontology#hasOrHadCategory> <http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22> ;
+                                                                                               rdfs:label "rr:template \"KB/VariantAgentName/{VAR_1..11}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                       <https://www.ica.org/standards/RiC/ontology#CorporateBodyType> ;
+                                                                                                              rdfs:label "rr:template \"Schema/Authority/AuthorityType#{AUTHTP_1..2}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                            <https://www.ica.org/standards/RiC/ontology#RecordState> ;
+                                                                                                   rdfs:label "rr:template  \"Schema/Authority/Status#{STATUSA}\"" .
+
+
+###  http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22
+<http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                           <https://www.ica.org/standards/RiC/ontology#RecordState> ;
+                                                                                                  rdfs:label "rr:template  \"Schema/Authority/WebReady#{WEBA}\"" .
+
+
+###  Generated by the OWL API (version 4.2.6) https://github.com/owlcs/owlapi

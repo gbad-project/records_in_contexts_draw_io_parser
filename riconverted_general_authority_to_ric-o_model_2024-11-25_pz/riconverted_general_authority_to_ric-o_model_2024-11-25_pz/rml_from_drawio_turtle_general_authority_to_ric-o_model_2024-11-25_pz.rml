@@ -1,0 +1,242 @@
+@base <https://data.archives.gov.on.ca/> .
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AgentIdentifier_Agency_Reference_Code__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:IdentifierType ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_AuthorityRecord__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:DocumentaryFormType ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_NaturalAgentName__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_ParallelAgentName__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_VariantAgentName__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Type ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_functionNote__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FfunctionNote%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_privateNote__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FprivateNote%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___data_archives_gov_on_ca_Schema_Authority_sourceNote__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FsourceNote%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_constant__https___www_ica_org_standards_RiC_ontology_generalDescription__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_AgentControlRelation__CONTAG_1___HEADING___UUID___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:AgentControlRelation ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_AgentIdentifier__REFA___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Identifier ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Agent__CONTAG_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Agent__PRED_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Agent__SUC_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_AuthorityRecord__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Record ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_CorporateBody_AUTHTP_1__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody_AUTHTP_1%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_CorporateBody_AUTHTP_2__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBody ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody_AUTHTP_2%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Date__DATECONT_1_BEGINNING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1_BEGINNING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Date__DATECONT_1_END___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1_END%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Date__DATEEX_BEGINNING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Date__DATEEX_END___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Date ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Family_AUTHTP_1__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Family ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FFamily_AUTHTP_1%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Family_AUTHTP_2__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Family ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FFamily_AUTHTP_2%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Mandate__AA___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Mandate ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_NaturalAgentName__NAME___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_ParallelAgentName__PAR_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Person_AUTHTP_1__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Person ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FPerson_AUTHTP_1%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Person_AUTHTP_2__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Person ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FPerson_AUTHTP_2%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Place_AUTHTP_1__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Place ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FPlace_AUTHTP_1%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Place_AUTHTP_2__HEADING___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Place ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FPlace_AUTHTP_2%2F%7BHEADING%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_Rule__RULES___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:Rule ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__KB_VariantAgentName__VAR_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:AgentName ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__Schema_Authority_AuthorityType__AUTHTP_1___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:CorporateBodyType ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__Schema_Authority_Status__STATUSA___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22" ] .
+
+<Schema/Mapping#_http___gbad_archives_gov_on_ca_rr_template__Schema_Authority_WebReady__WEBA___> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class rico:RecordState ;
+            rr:constant "http://gbad.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22" ] .
+
+<Schema/Mapping#add_hiddenNotes> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes" ] .
+
+<Schema/Mapping#auth_functionNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/functionNote" ] .
+
+<Schema/Mapping#auth_privateNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/privateNote" ] .
+
+<Schema/Mapping#auth_sourceNote> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\authority_tailshuf_100.csv" ] ;
+    rr:subjectMap [ rr:class owl:DatatypeProperty ;
+            rr:constant "https://data.archives.gov.on.ca/Schema/Authority/sourceNote" ] .
+

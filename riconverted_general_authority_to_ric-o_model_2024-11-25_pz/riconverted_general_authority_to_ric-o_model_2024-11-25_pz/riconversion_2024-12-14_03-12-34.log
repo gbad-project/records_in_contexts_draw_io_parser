@@ -1,0 +1,48 @@
+Execution started at: 2024-12-14 03:12:34 UTC
+
+Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.
+It detects a *.drawio and *.csv file in the same folder (only one of each must exist).
+It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.
+It uses the RML file to map the CSV file into triples (Turtle or N3).
+Input drawio file:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\General Authority to RiC-O Model_2024-11-25_PZ.drawio
+Output directory:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz
+Some existing files already found in the output directory. EVERYTHING in the output directory will be overwritten! Do you really want to proceed? (y/N): C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconvert.py:1059: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not self.draw_io_xml_tree[0][0][0]:
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconvert.py:937: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not geometry:
+OWL Output saved to: C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\owl_from_drawio_general_authority_to_ric-o_model_2024-11-25_pz.owl
+TTL Output saved to: C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\turtle_from_drawio_owl_general_authority_to_ric-o_model_2024-11-25_pz.ttl
+Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
+
+
+
+Successfully saved RML map to: 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml'
+Initiated mapping params:
+('C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml',
+ 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\rmlmapper-4.0.0.jar',
+ 'C:\\Users\\Anonymous\\records_in_contexts_draw_io_parser\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\\mapped.ttl')
+Successfully mapped 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml' to 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped.ttl'
+
+C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped.ttl does not look like a valid URI, trying to serialize this will break.
+Failed to read graph from 'C:\Users\Anonymous\records_in_contexts_draw_io_parser\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\riconverted_general_authority_to_ric-o_model_2024-11-25_pz\mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz\mapped.ttl' 
+Error: '<urlopen error unknown url type: c>'
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        DELETE WHERE {
+            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
+            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
+            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
+            authtp:Geographic%20Name ?p1 ?o1 .
+            authtp:Family%20Name ?p2 ?o2 .
+            authtp:Personal%20Name ?p3 ?o3 .
+        }
+        
+No triples were removed.
+
+Number of triples in the graph: 0
+
+Execution ended at: 2024-12-14 03:12:46 UTC
