@@ -13,8 +13,28 @@
                                    owl:imports rico: .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#subPropertyOf
+rdfs:subPropertyOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
 #    Data properties
 #################################################################
+
+###  https://data.archives.gov.on.ca/Schema/Authority/functionNote
+auth:functionNote rdf:type owl:DatatypeProperty .
+
+
+###  https://data.archives.gov.on.ca/Schema/Authority/privateNote
+auth:privateNote rdf:type owl:DatatypeProperty .
+
+
+###  https://data.archives.gov.on.ca/Schema/Authority/sourceNote
+auth:sourceNote rdf:type owl:DatatypeProperty .
+
 
 ###  https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes
 add:hiddenNotes rdf:type owl:DatatypeProperty .

@@ -26,6 +26,7 @@ private_mnemonics = ['ARCHAU', 'CMTAU']
 auth_authtp_label = 'AUTHTP'
 rico_version_mask = r'{RICO_VERSION}'
 rico_authtp_mask = r'{RICO_AUTHTP}'
+refd_file_mask = r'{REFD_FILE}'
 rico_authtp_dict = {
     'CorporateBody': ('Agent', r'/(Corporate Name|[ABC] Ontario Government Name)/'),
     'Family': ('Agent', r'/(Family Name)/'),
@@ -416,6 +417,67 @@ def __init__(schema_code, source_filename=None):
                                                     rico_disaggregated_object))
 
         return rico_disaggregated_triples
+    
+    def disaggregate_refd_file(spo):
+        subject_uri, predicate_uri, object_uri = spo
+        ref_disaggregated_subjects = []
+        ref_disaggregated_objects = []
+        ref_disaggregated_triples = []
+
+        # Substitute correct terms
+        ref_terms = []
+        if schema_code == 'auth': # no need to execute
+            return spo
+        elif schema_code == 'add': # add all options - empty fields will be skipped by RML mapper
+            ref_terms.extend([
+                f'{{{add_refd_label}}}',
+                f'{{{add_ref_add_label}}}/{{{add_ref_file_label}}}',
+                f'{{{add_ref_add_label}}}/{{{add_title_label}}}'
+            ])
+        else:
+            raise Exception(f"Fatal error: Schema code not supplied or supported.")
+
+        # Necessary to make matches and replacements work
+        refd_file_mask_encoded = urllib.parse.quote(refd_file_mask, safe='')
+        subject_mask = refd_file_mask_encoded if isinstance(subject_uri, URIRef) else refd_file_mask
+        object_mask = refd_file_mask_encoded if isinstance(object_uri, URIRef) else refd_file_mask
+
+        # Replacing subject
+        if subject_mask in str(subject_uri): # If contains {REFD_FILE}
+            for ref_term in ref_terms: # One with REFD, one with REF_FILE, and one with TITLE
+                ref_term_encoded = urllib.parse.quote(ref_term, safe='')
+                if isinstance(subject_uri, URIRef):
+                    ref_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, ref_term_encoded)
+                    ref_disaggregated_subject_uri = URIRef(ref_disaggregated_subject_uri)
+                else:
+                    ref_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, ref_term)
+                    ref_disaggregated_subject_uri = Literal(ref_disaggregated_subject_uri)
+                ref_disaggregated_subjects.append(ref_disaggregated_subject_uri)
+        else:
+            ref_disaggregated_subjects.append(subject_uri)
+
+        # Replacing object
+        if object_mask in str(object_uri): # If contains {REFD_FILE}
+            for ref_term in ref_terms: # One with REFD, one with REF_FILE, and one with TITLE
+                ref_term_encoded = urllib.parse.quote(ref_term, safe='')
+                if isinstance(object_uri, URIRef):
+                    ref_disaggregated_object_uri = str(object_uri).replace(object_mask, ref_term_encoded)
+                    ref_disaggregated_object_uri = URIRef(ref_disaggregated_object_uri)
+                else:
+                    ref_disaggregated_object_uri = str(object_uri).replace(object_mask, ref_term)
+                    ref_disaggregated_object_uri = Literal(ref_disaggregated_object_uri)
+                ref_disaggregated_objects.append(ref_disaggregated_object_uri)
+        else: 
+            ref_disaggregated_objects.append(object_uri)
+        
+        # Collect all subjects and objects
+        for ref_disaggregated_subject in ref_disaggregated_subjects:
+            for ref_disaggregated_object in ref_disaggregated_objects:
+                ref_disaggregated_triples.append((ref_disaggregated_subject,
+                                                predicate_uri,
+                                                ref_disaggregated_object))
+
+        return ref_disaggregated_triples
 
     # Process the results and create new triples
     for row in result:
@@ -423,13 +485,15 @@ def __init__(schema_code, source_filename=None):
         predicate = row.predicate
         object = row.object
 
-        rico_disaggregated_triples = disaggregate_rico_authtp((subject, predicate, object))
-        for s, p, o in rico_disaggregated_triples:
-            parsed_results.append({
-                'subject': s,
-                'predicate': p,
-                'object': o
-            })
+        ref_disaggregated_triples = disaggregate_refd_file((subject, predicate, object))
+        for ref_disaggregated_triple in ref_disaggregated_triples:
+            rico_disaggregated_triples = disaggregate_rico_authtp(ref_disaggregated_triple)
+            for s, p, o in rico_disaggregated_triples:
+                parsed_results.append({
+                    'subject': s,
+                    'predicate': p,
+                    'object': o
+                })
         
     #print(parsed_results[:5]) # debug
 

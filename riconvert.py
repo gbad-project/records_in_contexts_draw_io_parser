@@ -1,5 +1,5 @@
-# Parent Commit: b6b459faf174763008bc356582825f81844ff7ad
-# SHA1 Hash at Parent Commit: 3779c22107f38ac6db4d75c34e45575c9c5d98cd
+# Parent Commit: 7fcff5e53624ad6b869fbc9f20023ea8ebdd8cc0
+# SHA1 Hash at Parent Commit: 4d7c3b68529ce00be0930fceec878b1001c65bde
 
 ### Begin logic borrowed from draw_io_parser.py
 # The following version was originally copied and pasted to riconvert:
