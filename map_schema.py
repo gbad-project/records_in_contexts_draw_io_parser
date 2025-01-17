@@ -34,7 +34,8 @@ rico_authtp_dict = {
     'Person': ('Agent', r'/(Personal Name)/')
 }
 uuid_label = 'UUID'
-triplesmap_pattern = r'[^0-9a-z_-]'
+triplesmap_pattern = r'[0-9a-z_-]'
+antitriplesmap_pattern = r'[^0-9a-z_-]'
 
 triplesmap_label = 'TriplesMap'
 uriref_str_label = 'uriref_str'
@@ -173,6 +174,7 @@ def __init__(schema_code, source_filename=None):
     # That is, the UUID is only unique to the TriplesMap, so all entities generated from it have the same UUID
     # Define UUID replacement logic - support any prefix or suffix (to diversify UUIDs) but only allowed chars
     uuid_pattern = f"{{({uuid_label}({triplesmap_pattern}*)|({triplesmap_pattern}*){uuid_label})}}" # unencoded curly brackets because regex applied before encoding
+    print(uuid_pattern)
     uuid_regex = re.compile(uuid_pattern, flags=re.IGNORECASE) # let's make it case-insensitive to allow flexibility for different URI formats
     def generate_uuid_str(entity_name, show_message=True):
         uuid_str = str(uuid.uuid5(MAPPING_NS_UUID, entity_name))
@@ -549,7 +551,7 @@ def __init__(schema_code, source_filename=None):
     
     def triplesmap_clean(str):
         # Replace with underscores anything but Latin letters, numbers, hyphens, and underscores
-        triplesmap_name = re.sub(triplesmap_pattern, '_', str, flags=re.IGNORECASE)
+        triplesmap_name = re.sub(antitriplesmap_pattern, '_', str, flags=re.IGNORECASE)
         return triplesmap_name
 
     def generate_triplesmap_name(row, show_message=False):
