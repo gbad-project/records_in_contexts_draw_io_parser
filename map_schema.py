@@ -22,6 +22,7 @@ add_refd_label = 'REFD'
 add_ref_add_label = 'REF_ADD'
 add_ref_file_label = 'REF_FILE'
 add_title_label = 'TITLE'
+mnemonics_contain_title = False # this is used for some checks below
 private_mnemonics = ['ARCHAU', 'CMTAU']
 auth_authtp_label = 'AUTHTP'
 rico_version_mask = r'{RICO_VERSION}'
@@ -219,10 +220,27 @@ def __init__(schema_code, source_filename=None):
             #literal_str = literal_str + ' (Knowledge Base Entity'
             match = re.search(mnemonic_regex, literal_str)
             if match:
+                #print(match.groups()) # keeping this because I forget how to show all groups
                 rico_ish_class = decamelize(match.group(1))
+                mnemonic_mask = match.group(2)
                 mnemonic = match.group(3)
                 optional_rest = match.group(4)
-                literal_str = f'{{{mnemonic}}} ({rico_ish_class})'
+                # Hardcode a few cases for readability.
+                # If {TITLE} is not set for these, they'll be dropped by RML Mapper.
+                # I cannot check the value, which is bad. So they'll probably be dropped. Wicked warning added below.
+                # At least, here is a patch that {TITLE} is at least requested by user,
+                # or else it would be strange to receive this error:
+                if mnemonics_contain_title: # this will have been checked by the time this is invoked
+                    # So if {TITLE} is at least present, RML Mapper won't give an error
+                    # Case 1. Assumed to have full ref code
+                    if mnemonic in [add_refd_label,add_ref_file_label]:
+                        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}'
+                        print(f"Invoking rdfs:label replacement for '{literal_str}'. The following mask will be used: '{mnemonic_mask}'. Note that whenever any of the referenced columns is empty, these rdfs:label triples may be dropped by RML Mapper. To work around, ensure that all such records contain a value in all of the referenced columns.")
+                    # Case 2. Will only happen if no REF_FILE per disaggregate_refd_file logic,
+                    # or if the same is set manually in drawio
+                    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'): 
+                        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}-?' # hardcode for readability
+                literal_str = f'{mnemonic_mask} ({rico_ish_class})'
                 #literal_str = literal_str + f' from "{mnemonic}"'
             #literal_str = literal_str + ')'
 
@@ -632,6 +650,11 @@ def __init__(schema_code, source_filename=None):
 
         return series(map_predicate, map_object)
     
+    def review_mnemonics(matches):
+        global mnemonics_contain_title
+        if add_title_label in matches:
+            mnemonics_contain_title = True
+    
     def extract_mnemonic(row):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
@@ -648,6 +671,7 @@ def __init__(schema_code, source_filename=None):
                 map_object = substitute_uuid(map_object, uuid_str)
             matches = re.findall(mnemonic_pattern, map_object)
             if matches:
+                review_mnemonics(matches) # neat spot to check each mnemonic ever one by one
                 if len(matches) > 1:
                     # If there is a predicate column set in row, then we are iterating over parsed_df objects,
                     # which means we already saw the warning when iterating over disaggregated subjects_df
@@ -656,6 +680,7 @@ def __init__(schema_code, source_filename=None):
                     show_warning = (row.get('predicate', None) is None and
                                     row.get(triplesmap_label, None) is not None)
                     if show_warning:
+                        #print(set(matches)==set(['REF_ADD','TITLE'])) - this works btw; just in case want to put some logic here
                         other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
                         if uuid_str:
                             generate_triplesmap_name(row, show_message=True)  # just to show the message
@@ -707,7 +732,7 @@ def __init__(schema_code, source_filename=None):
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
     # Mnemonic is necessary for disaggregation logic that follows
-    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)\
+    subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
     
     # Now that we have mnemonics generated, let's honor any increment requests
     disaggregated_subject_rows = []

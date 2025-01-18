@@ -44,13 +44,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Agent/{OFFICEABC_2}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "OFFICEABC_2" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Agent/{OFFICEABC_2}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:CorporateBody ] .
 
 <Schema/Mapping#rr_template__KB_Date__DATEOFF_2_BEGINNING__> a rr:TriplesMap ;
@@ -59,15 +59,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEOFF_2_BEGINNING} (Date)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_2_BEGINNING}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_2_BEGINNING}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATEOFF_2_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEOFF_2_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
 <Schema/Mapping#rr_template__KB_Date__DATEOFF_2_END__> a rr:TriplesMap ;
@@ -80,10 +80,10 @@
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_2_END}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATEOFF_2_END" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEOFF_2_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ] ] ;
             rr:class rico:Date ] .
 
@@ -95,13 +95,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_10}" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_10" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_10}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_11__> a rr:TriplesMap ;
@@ -110,13 +110,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_11} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_11" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_11" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_11}" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Place ] .
@@ -127,15 +127,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_12} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_12}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_12}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_12" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_13__> a rr:TriplesMap ;
@@ -144,15 +144,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_13} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_13}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_13" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXGEO_13" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_13}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_14__> a rr:TriplesMap ;
@@ -161,15 +161,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_14} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_14}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXGEO_14" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_14}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_14" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_15__> a rr:TriplesMap ;
@@ -178,13 +178,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_15} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_15}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_15" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_15" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_15}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
@@ -200,10 +200,10 @@
                                                 [ rr:objectMap [ rml:reference "INDEXGEO_16" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_16}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_17__> a rr:TriplesMap ;
@@ -212,15 +212,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_17} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_17}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_17" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_17}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_18__> a rr:TriplesMap ;
@@ -229,15 +229,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_18} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_18" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_18}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_18" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_18}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_19__> a rr:TriplesMap ;
@@ -246,10 +246,10 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_19} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_19" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXGEO_19" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
@@ -263,15 +263,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_20} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_20" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_20}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_20" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_20}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_21__> a rr:TriplesMap ;
@@ -280,15 +280,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_21} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_21}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_21}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_21" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_2__> a rr:TriplesMap ;
@@ -297,15 +297,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_2} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_2" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_2}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_2" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_2}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_3__> a rr:TriplesMap ;
@@ -314,10 +314,10 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_3} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_3}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_3}" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_3" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
@@ -352,10 +352,10 @@
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "INDEXGEO_5" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_5" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
@@ -365,15 +365,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_6} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_6}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_6}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_6" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_7__> a rr:TriplesMap ;
@@ -382,15 +382,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_7} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_7}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXGEO_7" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_7}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_7" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_8__> a rr:TriplesMap ;
@@ -399,15 +399,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_8} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_8}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "INDEXGEO_8" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_8}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_9__> a rr:TriplesMap ;
@@ -430,103 +430,103 @@
 <Schema/Mapping#rr_template__KB_RecordSet__REFD_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXSUB__> ] ;
-            rr:predicate rico:hasOrHadSubject ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_ADD___TITLE__> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "DATECR" ] ;
-            rr:predicate rico:creationDate ],
-        [ rr:objectMap [ rml:reference "ISA" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REFD__> ] ;
             rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rml:reference "TGU" ] ;
-            rr:predicate rico:conditionsOfUse ],
-        [ rr:objectMap [ rml:reference "AVAIL" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
-            rr:predicate rico:hasRecordSetType ],
-        [ rr:objectMap [ rml:reference "RESTRTX" ] ;
-            rr:predicate rico:conditionsOfAccess ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
-            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rml:reference "RELMAT" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "CMTD" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "CUSTOD" ] ;
+        [ rr:objectMap [ rml:reference "ISA" ] ;
             rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rml:reference "ADMBIO" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rml:reference "NOTES" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> ] ;
-            rr:predicate rico:isAssociatedWithPlace ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
             rr:predicate rico:hasOrHadIdentifier ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> ] ;
             rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
         [ rr:objectMap [ rml:reference "SCOPE" ] ;
             rr:predicate rico:scopeAndContent ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXPROV__> ] ;
-            rr:predicate rico:hasCreator ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
+            rr:predicate rico:hasRecordSetType ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_1__> ] ;
             rr:predicate rico:hasContentOfType ],
+        [ rr:objectMap [ rml:reference "CMTD" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXPROV__> ] ;
+            rr:predicate rico:hasCreator ],
+        [ rr:objectMap [ rml:reference "NOTES" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "RELMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "RESTRTX" ] ;
+            rr:predicate rico:conditionsOfAccess ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
         [ rr:objectMap [ rml:reference "DATEACM" ] ;
             rr:predicate rico:date ],
-        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
-            rr:predicate rico:accruals ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
         [ rr:objectMap [ rml:reference "FINDAID" ] ;
             rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
+            rr:predicate rico:accruals ],
         [ rr:objectMap [ rml:reference "REST" ] ;
             rr:predicate rico:conditionsOfAccess ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
+        [ rr:objectMap [ rml:reference "CUSTOD" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "ADMBIO" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
+            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXSUB__> ] ;
+            rr:predicate rico:hasOrHadSubject ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rml:reference "AVAIL" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rml:reference "TGU" ] ;
+            rr:predicate rico:conditionsOfUse ],
+        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "DATECR" ] ;
+            rr:predicate rico:creationDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> ] ;
+            rr:predicate rico:isAssociatedWithPlace ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/RecordSet/{REFD}" ] ;
                             rr:predicate grel:any_false ],
@@ -539,128 +539,159 @@
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
     rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
             rr:predicate rico:hasCreator ],
-        [ rr:objectMap [ rr:template "{REFD} (Record Set)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/RecordSet/{REFD}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:RecordSet ] .
 
 <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD___TITLE_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
-            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
+    rr:predicateObjectMap [ rr:objectMap [ rml:reference "REST" ] ;
+            rr:predicate rico:conditionsOfAccess ],
+        [ rr:objectMap [ rml:reference "TGU" ] ;
+            rr:predicate rico:conditionsOfUse ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_ADD___TITLE__> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "NOTES" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> ] ;
+            rr:predicate rico:isAssociatedWithPlace ],
+        [ rr:objectMap [ rml:reference "DATEACM" ] ;
+            rr:predicate rico:date ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXSUB__> ] ;
+            rr:predicate rico:hasOrHadSubject ],
+        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
+            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
         [ rr:objectMap [ rml:reference "RESTRTX" ] ;
             rr:predicate rico:conditionsOfAccess ],
         [ rr:objectMap [ rml:reference "CUSTOD" ] ;
             rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rml:reference "RELMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "NOTES" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
+            rr:predicate rico:accruals ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REFD__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rml:reference "AVAIL" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rml:reference "DATECR" ] ;
+            rr:predicate rico:creationDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_1__> ] ;
+            rr:predicate rico:hasContentOfType ],
         [ rr:objectMap [ rml:reference "SCOPE" ] ;
             rr:predicate rico:scopeAndContent ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REFD__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "FINDAID" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
-            rr:predicate rico:hasRecordSetType ],
-        [ rr:objectMap [ rml:reference "AVAIL" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "REST" ] ;
-            rr:predicate rico:conditionsOfAccess ],
         [ rr:objectMap [ rml:reference "ADMBIO" ] ;
             rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_1__> ] ;
-            rr:predicate rico:hasContentOfType ],
-        [ rr:objectMap [ rml:reference "ISA" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> ] ;
-            rr:predicate rico:isAssociatedWithPlace ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rml:reference "RELMAT" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rml:reference "DATEACM" ] ;
-            rr:predicate rico:date ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXSUB__> ] ;
-            rr:predicate rico:hasOrHadSubject ],
-        [ rr:objectMap [ rml:reference "DATECR" ] ;
-            rr:predicate rico:creationDate ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXPROV__> ] ;
-            rr:predicate rico:hasCreator ],
-        [ rr:objectMap [ rml:reference "TGU" ] ;
-            rr:predicate rico:conditionsOfUse ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
+        [ rr:objectMap [ rml:reference "ISA" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
+            rr:predicate rico:hasRecordSetType ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
-            rr:predicate rico:accruals ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXPROV__> ] ;
+            rr:predicate rico:hasCreator ],
+        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
+            rr:predicate rico:generalDescription ],
         [ rr:objectMap [ rml:reference "CMTD" ] ;
             rr:predicate rico:generalDescription ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rml:reference "FINDAID" ] ;
+            rr:predicate rico:generalDescription ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/RecordSet/{REF_ADD}/{TITLE}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:RecordSet ] .
+
+<Schema/Mapping#rr_template__KB_RecordSet__REF_ADD___TITLE__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
+            rr:predicate rico:hasCreator ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/RecordSet/{REF_ADD}/{TITLE}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
@@ -672,162 +703,131 @@
                             rr:predicate fno:executes ] ] ;
             rr:class rico:RecordSet ] .
 
-<Schema/Mapping#rr_template__KB_RecordSet__REF_ADD___TITLE__> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
-            rr:predicate rico:hasCreator ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/RecordSet/{REF_ADD}/{TITLE}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
-            rr:class rico:RecordSet ] .
-
 <Schema/Mapping#rr_template__KB_RecordSet__REF_FILE_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
-            rr:predicate rico:hasRecordSetType ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REFD__> ] ;
             rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rml:reference "DATEACM" ] ;
-            rr:predicate rico:date ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rml:reference "AVAIL" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "NOTES" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "ISA" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "ADMBIO" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rml:reference "RELMAT" ] ;
             rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "CUSTOD" ] ;
+            rr:predicate rico:history ],
+        [ rr:objectMap [ rml:reference "TGU" ] ;
+            rr:predicate rico:conditionsOfUse ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_1__> ] ;
             rr:predicate rico:hasContentOfType ],
         [ rr:objectMap [ rml:reference "CMTD" ] ;
             rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> ] ;
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> ] ;
+        [ rr:objectMap [ rml:reference "FINDAID" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
+        [ rr:objectMap [ rml:reference "REST" ] ;
+            rr:predicate rico:conditionsOfAccess ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Level__LEVELDES__> ] ;
+            rr:predicate rico:hasRecordSetType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
+            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
+            rr:predicate rico:generalDescription ],
+        [ rr:objectMap [ rml:reference "RESTRTX" ] ;
+            rr:predicate rico:conditionsOfAccess ],
+        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
+            rr:predicate rico:accruals ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
             rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rml:reference "TGU" ] ;
-            rr:predicate rico:conditionsOfUse ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> ] ;
             rr:predicate rico:hasOrHadTitle ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> ] ;
             rr:predicate rico:isAssociatedWithPlace ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
-            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadInstantiation ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXPROV__> ] ;
             rr:predicate rico:hasCreator ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Instantiation__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadInstantiation ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rml:reference "ACCRUAL" ] ;
-            rr:predicate rico:accruals ],
-        [ rr:objectMap [ rml:reference "ASSMAT" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "REST" ] ;
-            rr:predicate rico:conditionsOfAccess ],
-        [ rr:objectMap [ rml:reference "RESTRTX" ] ;
-            rr:predicate rico:conditionsOfAccess ],
-        [ rr:objectMap [ rml:reference "SCOPE" ] ;
-            rr:predicate rico:scopeAndContent ],
-        [ rr:objectMap [ rml:reference "DATECR" ] ;
-            rr:predicate rico:creationDate ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REFD__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rml:reference "ADMBIO" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rml:reference "ISA" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rml:reference "AVAIL" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> ] ;
-            rr:predicate rico:isDirectlyIncludedIn ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> ] ;
-            rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> ] ;
-            rr:predicate rico:hasOrHadIdentifier ],
-        [ rr:objectMap [ rml:reference "CUSTOD" ] ;
-            rr:predicate rico:history ],
-        [ rr:objectMap [ rml:reference "FINDAID" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rml:reference "NOTES" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__INDEXSUB__> ] ;
             rr:predicate rico:hasOrHadSubject ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> ] ;
+            rr:predicate rico:hasOrHadIdentifier ],
+        [ rr:objectMap [ rml:reference "HIDDENNOTES" ] ;
+            rr:predicate <Schema/Description-Listings/hiddenNotes> ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_ADD___TITLE__> ] ;
             rr:predicate rico:isOrWasDescribedBy ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/RecordSet/{REF_FILE}" ] ;
+        [ rr:objectMap [ rml:reference "DATEACM" ] ;
+            rr:predicate rico:date ],
+        [ rr:objectMap [ rml:reference "DATECR" ] ;
+            rr:predicate rico:creationDate ],
+        [ rr:objectMap [ rml:reference "SCOPE" ] ;
+            rr:predicate rico:scopeAndContent ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> ] ;
+            rr:predicate rico:isOrWasDescribedBy ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/RecordSet/{REF_FILE}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:RecordSet ] .
 
 <Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> ] ;
+            rr:predicate rico:thingIsSourceOfRelation ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
+            rr:predicate rico:hasCreator ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> ] ;
             rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
-            rr:predicate rico:hasCreator ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> ] ;
-            rr:predicate rico:thingIsSourceOfRelation ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Record Set)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/RecordSet/{REF_FILE}" ] ;
@@ -849,13 +849,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "GMD_2" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_2}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_2" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_3__> a rr:TriplesMap ;
@@ -864,15 +864,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_3}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_3" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_3}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_3}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "GMD_3" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_4__> a rr:TriplesMap ;
@@ -883,13 +883,13 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_4}" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "GMD_4" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_5__> a rr:TriplesMap ;
@@ -898,15 +898,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_5}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "GMD_5" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_5}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_5}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_5" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_6__> a rr:TriplesMap ;
@@ -915,15 +915,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_6}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_6}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_6" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_6" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_6}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_7__> a rr:TriplesMap ;
@@ -932,15 +932,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_7}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_7}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "GMD_7" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_7}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_8__> a rr:TriplesMap ;
@@ -949,15 +949,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_8}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_8}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_8" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "GMD_8" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_8}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:ContentType ] .
 
 <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> a rr:TriplesMap ;
@@ -1002,13 +1002,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXPROV} (Agent)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXPROV" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXPROV" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Agent/{INDEXPROV}" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Agent ] .
@@ -1019,46 +1019,46 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXSUB} (Agent)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXSUB" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Agent/{INDEXSUB}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXSUB" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Agent ] .
 
 <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBL__> ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:template "{REFD} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> ] ;
-            rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:template "{REFD} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
             rr:predicate rico:wasLastUpdatedAtDate ],
-        [ rr:objectMap [ rr:template "{REFD} (Archival Description Record)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Archival Description Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Status__STATUSD__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBL__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
             rr:predicate rico:hasRecordState ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REFD}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "REFD" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REFD}" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:Record ] .
@@ -1066,26 +1066,117 @@
 <Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_ADD___TITLE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
+            rr:predicate rico:wasLastUpdatedAtDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
             rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Status__STATUSD__> ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Archival Description Record)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Archival Description Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> ] ;
             rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Status__STATUSD__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBL__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REF_ADD}/{TITLE}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:Record ] .
+
+<Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
             rr:predicate rico:wasLastUpdatedAtDate ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Archival Description Record)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Archival Description Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Status__STATUSD__> ] ;
+            rr:predicate rico:hasRecordState ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBL__> ] ;
-            rr:predicate rico:hasRecordState ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REF_ADD}/{TITLE}" ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
+            rr:predicate rico:hasRecordState ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Archival Description Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REF_FILE" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REF_FILE}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
+            rr:class rico:Record ] .
+
+<Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> ] ;
+            rr:predicate rico:hasEndDate ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/CreationRelation/{REFD}/{OFFICEABC_1}" ] ;
+                            rr:predicate grel:any_false ] ] ;
+            rr:class rico:CreationRelation ] .
+
+<Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
+            rr:predicate rico:hasBeginningDate ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
+            rr:predicate rico:relationHasTarget ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> ] ;
+            rr:predicate rico:hasEndDate ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/CreationRelation/{REF_ADD}/{TITLE}/{OFFICEABC_1}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
@@ -1094,201 +1185,110 @@
                                                 [ rr:objectMap [ rml:reference "REF_ADD" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ] ] ;
-            rr:class rico:Record ] .
-
-<Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_ArchivalDescriptionRecord_> ] ;
-            rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Archival Description Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__MODDATE__> ] ;
-            rr:predicate rico:wasLastUpdatedAtDate ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBL__> ] ;
-            rr:predicate rico:hasRecordState ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__Schema_Description-Listings_Status__STATUSD__> ] ;
-            rr:predicate rico:hasRecordState ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/ArchivalDescriptionRecord/{REF_FILE}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
-            rr:class rico:Record ] .
-
-<Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1_> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
-            rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
-            rr:predicate rico:relationHasTarget ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:template "{REFD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/CreationRelation/{REFD}/{OFFICEABC_1}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
-            rr:class rico:CreationRelation ] .
-
-<Schema/Mapping#rr_template__KB_CreationRelation__REF_ADD___TITLE___OFFICEABC_1_> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
-            rr:predicate rico:relationHasTarget ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
-            rr:predicate rico:hasBeginningDate ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/CreationRelation/{REF_ADD}/{TITLE}/{OFFICEABC_1}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
             rr:class rico:CreationRelation ] .
 
 <Schema/Mapping#rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_1_> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Creation Relation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> ] ;
             rr:predicate rico:hasBeginningDate ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Creation Relation)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Creation Relation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> ] ;
             rr:predicate rico:relationHasTarget ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Creation Relation)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Creation Relation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> ] ;
-            rr:predicate rico:hasEndDate ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Creation Relation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/CreationRelation/{REF_FILE}/{OFFICEABC_1}" ] ;
-                            rr:predicate grel:any_false ],
+            rr:predicate rico:hasEndDate ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REF_FILE" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                        [ rr:objectMap [ rr:template "KB/CreationRelation/{REF_FILE}/{OFFICEABC_1}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:CreationRelation ] .
 
 <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REFD__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD} (Current Reference Code)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Current Reference Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Current Reference Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_CurrentReferenceCode_> ] ;
-            rr:predicate rico:hasIdentifierType ],
-        [ rr:objectMap [ rr:template "{REFD} (Current Reference Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Current Reference Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+            rr:predicate rico:hasIdentifierType ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REFD}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REFD}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Identifier ] .
 
 <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_ADD___TITLE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Current Reference Code)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Current Reference Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Current Reference Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_CurrentReferenceCode_> ] ;
             rr:predicate rico:hasIdentifierType ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REF_ADD}/{TITLE}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REF_ADD}/{TITLE}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Identifier ] .
 
 <Schema/Mapping#rr_template__KB_CurrentReferenceCode__REF_FILE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_FILE} (Current Reference Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Current Reference Code)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_CurrentReferenceCode_> ] ;
             rr:predicate rico:hasIdentifierType ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Current Reference Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Current Reference Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Current Reference Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REF_FILE" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REF_FILE}" ] ;
-                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/CurrentReferenceCode/{REF_FILE}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Identifier ] .
 
 <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_BEGINNING__> a rr:TriplesMap ;
@@ -1297,15 +1297,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{DATEOFF_1_BEGINNING} (Date)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_1_BEGINNING}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATEOFF_1_BEGINNING" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEOFF_1_BEGINNING" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_1_BEGINNING}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:Date ] .
 
 <Schema/Mapping#rr_template__KB_Date__DATEOFF_1_END__> a rr:TriplesMap ;
@@ -1316,10 +1316,10 @@
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "DATEOFF_1_END" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "DATEOFF_1_END" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{DATEOFF_1_END}" ] ;
                             rr:predicate grel:any_false ] ] ;
@@ -1328,93 +1328,93 @@
 <Schema/Mapping#rr_template__KB_Date__MODDATE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "MODDATE" ] ;
-            rr:predicate rico:normalizedDateValue ],
-        [ rr:objectMap [ rr:template "{MODDATE} (Date)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{MODDATE} (Date)" ;
                     rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "MODDATE" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "MODDATE" ] ;
+            rr:predicate rico:normalizedDateValue ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "MODDATE" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/Date/{MODDATE}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Date ] .
 
 <Schema/Mapping#rr_template__KB_FindingAidRecord__REFD__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD} (Finding Aid Record)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Finding Aid Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FindingAidRecord_> ] ;
-            rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:template "{REFD} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/FindingAidRecord/{REFD}" ] ;
+            rr:predicate rico:hasDocumentaryFormType ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/FindingAidRecord/{REFD}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Record ] .
 
 <Schema/Mapping#rr_template__KB_FindingAidRecord__REF_ADD___TITLE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Finding Aid Record)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Finding Aid Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FindingAidRecord_> ] ;
             rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Finding Aid Record)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Finding Aid Record)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/FindingAidRecord/{REF_ADD}/{TITLE}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
+            rr:class rico:Record ] .
+
+<Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FindingAidRecord_> ] ;
+            rr:predicate rico:hasDocumentaryFormType ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Finding Aid Record)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/FindingAidRecord/{REF_ADD}/{TITLE}" ] ;
-                            rr:predicate grel:any_false ] ] ;
-            rr:class rico:Record ] .
-
-<Schema/Mapping#rr_template__KB_FindingAidRecord__REF_FILE__> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FindingAidRecord_> ] ;
-            rr:predicate rico:hasDocumentaryFormType ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Finding Aid Record)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_FILE" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/FindingAidRecord/{REF_FILE}" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Record ] .
@@ -1422,25 +1422,25 @@
 <Schema/Mapping#rr_template__KB_FormerCode__REFD__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FormerCode_> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Former Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FormerCode_> ] ;
             rr:predicate rico:hasIdentifierType ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Former Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rml:reference "FCODES" ] ;
             rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:template "{REFD} (Former Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Former Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Former Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/FormerCode/{REFD}" ] ;
                             rr:predicate grel:any_false ] ] ;
@@ -1449,26 +1449,26 @@
 <Schema/Mapping#rr_template__KB_FormerCode__REF_ADD___TITLE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "FCODES" ] ;
-            rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FormerCode_> ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FormerCode_> ] ;
             rr:predicate rico:hasIdentifierType ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Former Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Former Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Former Code)" ;
+        [ rr:objectMap [ rml:reference "FCODES" ] ;
+            rr:predicate rico:textualValue ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/FormerCode/{REF_ADD}/{TITLE}" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Identifier ] .
@@ -1476,23 +1476,23 @@
 <Schema/Mapping#rr_template__KB_FormerCode__REF_FILE__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "FCODES" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Former Code)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "FCODES" ] ;
             rr:predicate rico:textualValue ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Former Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Former Code)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Former Code)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Former Code)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_constant__https___data_archives_gov_on_ca_Schema_Description-Listings_FormerCode_> ] ;
             rr:predicate rico:hasIdentifierType ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/FormerCode/{REF_FILE}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/FormerCode/{REF_FILE}" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "REF_FILE" ] ;
@@ -1503,34 +1503,34 @@
 <Schema/Mapping#rr_template__KB_Instantiation__REFD___UUID_INSTANTIATION_1__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD} (Instantiation)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Instantiation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
-            rr:predicate rico:physicalCharacteristicsNote ],
-        [ rr:objectMap [ rml:reference "HOWTO" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:template "{REFD} (Instantiation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "PHDESC" ] ;
+            rr:predicate rico:instantiationExtent ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Instantiation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Instantiation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rml:reference "PHDESC" ] ;
-            rr:predicate rico:instantiationExtent ],
-        [ rr:objectMap [ rr:template "{REFD} (Instantiation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Instantiation/{REFD}/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952" ] ;
+        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
+            rr:predicate rico:physicalCharacteristicsNote ],
+        [ rr:objectMap [ rml:reference "HOWTO" ] ;
+            rr:predicate rico:generalDescription ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Instantiation/{REFD}/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ] ] ;
             rr:class rico:Instantiation ] .
@@ -1540,32 +1540,32 @@
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
     rr:predicateObjectMap [ rr:objectMap [ rml:reference "PHDESC" ] ;
             rr:predicate rico:instantiationExtent ],
-        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
-            rr:predicate rico:physicalCharacteristicsNote ],
-        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadTitle ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Instantiation)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Instantiation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Instantiation)" ;
+        [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_INSTANTIATION_1__> ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Instantiation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Instantiation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
+            rr:predicate rico:physicalCharacteristicsNote ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Instantiation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
         [ rr:objectMap [ rml:reference "HOWTO" ] ;
             rr:predicate rico:generalDescription ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Instantiation/{REF_ADD}/{TITLE}/5b2d37e4-9ac3-55bf-ad82-0d18bdc2c60a" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:Instantiation ] .
@@ -1573,36 +1573,36 @@
 <Schema/Mapping#rr_template__KB_Instantiation__REF_FILE___UUID_INSTANTIATION_1__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rml:reference "HOWTO" ] ;
-            rr:predicate rico:generalDescription ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Instantiation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Instantiation)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Instantiation)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Instantiation)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
-        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
-            rr:predicate rico:physicalCharacteristicsNote ],
-        [ rr:objectMap [ rml:reference "PHDESC" ] ;
-            rr:predicate rico:instantiationExtent ],
+        [ rr:objectMap [ rml:reference "HOWTO" ] ;
+            rr:predicate rico:generalDescription ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_INSTANTIATION_1__> ] ;
             rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "PHYSCO" ] ;
+            rr:predicate rico:physicalCharacteristicsNote ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Instantiation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Instantiation)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
         [ rr:objectMap [ rr:parentTriplesMap <Schema/Mapping#rr_template__KB_Title__REFD___UUID_INSTANTIATION_1__> ] ;
-            rr:predicate rico:hasOrHadTitle ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Instantiation/{REF_FILE}/d9a643df-6cfe-5438-a715-9853c1b84877" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
+            rr:predicate rico:hasOrHadTitle ],
+        [ rr:objectMap [ rml:reference "PHDESC" ] ;
+            rr:predicate rico:instantiationExtent ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ] ] ;
+                            rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:template "KB/Instantiation/{REF_FILE}/d9a643df-6cfe-5438-a715-9853c1b84877" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:Instantiation ] .
 
 <Schema/Mapping#rr_template__KB_Place__INDEXGEO_1__> a rr:TriplesMap ;
@@ -1611,15 +1611,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{INDEXGEO_1} (Place)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "INDEXGEO_1" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_1}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Place/{INDEXGEO_1}" ] ;
                             rr:predicate grel:any_false ],
                         [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "INDEXGEO_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Place ] .
 
 <Schema/Mapping#rr_template__KB_RecordSet__REFD_HIGHER_> a rr:TriplesMap ;
@@ -1628,15 +1628,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD_HIGHER} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD_HIGHER" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "REFD_HIGHER" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
                         [ rr:objectMap [ rr:template "KB/RecordSet/{REFD_HIGHER}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ] ] ;
             rr:class rico:RecordSet ] .
 
 <Schema/Mapping#rr_template__KB_RecordSet__REF_ADD_> a rr:TriplesMap ;
@@ -1645,56 +1645,56 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Record Set)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/RecordSet/{REF_ADD}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/RecordSet/{REF_ADD}" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ] ] ;
             rr:class rico:RecordSet ] .
 
 <Schema/Mapping#rr_template__KB_Title__REFD___UUID_INSTANTIATION_1__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REFD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "KB/Title/{REFD}/546ca043-d402-5da4-8f48-d220e8f07ba3" ] ;
                             rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Title ] .
 
 <Schema/Mapping#rr_template__KB_Title__REFD___UUID_RECORDSET__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REFD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REFD} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Title/{REFD}/631c14bc-e34f-5af3-a422-2271b0a8e8fc" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
                             rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Title/{REFD}/631c14bc-e34f-5af3-a422-2271b0a8e8fc" ] ;
+                            rr:predicate grel:any_false ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REFD" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
@@ -1705,36 +1705,13 @@
 <Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_INSTANTIATION_1__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ],
-                                                [ rr:objectMap [ rml:reference "REF_ADD" ] ;
-                                                    rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "KB/Title/{REF_ADD}/{TITLE}/e83542d6-bf8c-5d6c-b111-a2407d9f1112" ] ;
-                            rr:predicate grel:any_false ] ] ;
-            rr:class rico:Title ] .
-
-<Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> a rr:TriplesMap ;
-    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
-            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
-                    rr:termType rr:Literal ] ;
-            rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_ADD} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
@@ -1744,20 +1721,43 @@
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Title/{REF_ADD}/{TITLE}/5a2da353-a96f-5f22-aa3a-243f949388e4" ] ;
+                        [ rr:objectMap [ rr:template "KB/Title/{REF_ADD}/{TITLE}/e83542d6-bf8c-5d6c-b111-a2407d9f1112" ] ;
                             rr:predicate grel:any_false ] ] ;
+            rr:class rico:Title ] .
+
+<Schema/Mapping#rr_template__KB_Title__REF_ADD___TITLE___UUID_RECORDSET__> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ],
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_ADD}-? (Title)" ;
+                    rr:termType rr:Literal ] ;
+            rr:predicate rdfs:label ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Title/{REF_ADD}/{TITLE}/5a2da353-a96f-5f22-aa3a-243f949388e4" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_ADD" ] ;
+                                                    rr:predicate idlab-fn:str ],
+                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ] ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Title ] .
 
 <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_INSTANTIATION_1__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
     rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
@@ -1774,24 +1774,24 @@
 <Schema/Mapping#rr_template__KB_Title__REF_FILE___UUID_RECORDSET__> a rr:TriplesMap ;
     rml:logicalSource [ rml:referenceFormulation ql:CSV ;
             rml:source "gbad/mapping/source/listings_3_tailshuf_100.csv" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ],
-        [ rr:objectMap [ rr:template "{REF_FILE} (Title)" ;
+        [ rr:objectMap [ rr:template "{TITLE}. {REF_FILE} (Title)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "KB/Title/{REF_FILE}/21250d1e-5fc4-5d77-bd46-9ffef0ffea06" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "REF_FILE" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Title/{REF_FILE}/21250d1e-5fc4-5d77-bd46-9ffef0ffea06" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:Title ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_ContentType__GMD_1__> a rr:TriplesMap ;
@@ -1800,13 +1800,13 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Content Type: {GMD_1}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "GMD_1" ] ;
-                                                    rr:predicate idlab-fn:str ],
-                                                [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
-                                                    rr:predicate fno:executes ] ] ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+                                                    rr:predicate fno:executes ],
+                                                [ rr:objectMap [ rml:reference "GMD_1" ] ;
+                                                    rr:predicate idlab-fn:str ] ] ] ;
                             rr:predicate grel:bool_b ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ rr:template "Schema/Description-Listings/ContentType#{GMD_1}" ] ;
                             rr:predicate grel:any_false ] ] ;
             rr:class rico:ContentType ] .
@@ -1817,10 +1817,10 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Level: {LEVELDES}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/Level#{LEVELDES}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/Level#{LEVELDES}" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "LEVELDES" ] ;
@@ -1834,15 +1834,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Status: {STATUSD}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ rr:template "Schema/Description-Listings/Status#{STATUSD}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "STATUSD" ] ;
                                                     rr:predicate idlab-fn:str ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/Status#{STATUSD}" ] ;
-                            rr:predicate grel:any_false ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:RecordState ] .
 
 <Schema/Mapping#rr_template__Schema_Description-Listings_WebEnabled__WEBD__> a rr:TriplesMap ;
@@ -1851,10 +1851,10 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Web Enabled: {WEBD}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ],
-                        [ rr:objectMap [ rr:template "Schema/Description-Listings/WebEnabled#{WEBD}" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/WebEnabled#{WEBD}" ] ;
                             rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ],
                                                 [ rr:objectMap [ rml:reference "WEBD" ] ;
@@ -1868,15 +1868,15 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "Web Enabled: {WEBL}" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "Schema/Description-Listings/WebEnabled#{WEBL}" ] ;
-                            rr:predicate grel:any_false ],
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
                         [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "WEBL" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
                             rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                        [ rr:objectMap [ rr:template "Schema/Description-Listings/WebEnabled#{WEBL}" ] ;
+                            rr:predicate grel:any_false ] ] ;
             rr:class rico:RecordState ] .
 
 <Schema/Mapping#rr_template__KB_Agent__OFFICEABC_1_> a rr:TriplesMap ;
@@ -1885,14 +1885,14 @@
     rr:predicateObjectMap [ rr:objectMap [ rr:template "{OFFICEABC_1} (Agent)" ;
                     rr:termType rr:Literal ] ;
             rr:predicate rdfs:label ] ;
-    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "OFFICEABC_1" ] ;
+    rr:subjectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rr:template "KB/Agent/{OFFICEABC_1}" ] ;
+                            rr:predicate grel:any_false ],
+                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
+                            rr:predicate fno:executes ],
+                        [ rr:objectMap [ fnml:functionValue [ rr:predicateObjectMap [ rr:objectMap [ rml:reference "OFFICEABC_1" ] ;
                                                     rr:predicate idlab-fn:str ],
                                                 [ rr:objectMap [ rr:constant idlab-fn:isNull ] ;
                                                     rr:predicate fno:executes ] ] ] ;
-                            rr:predicate grel:bool_b ],
-                        [ rr:objectMap [ rr:template "KB/Agent/{OFFICEABC_1}" ] ;
-                            rr:predicate grel:any_false ],
-                        [ rr:objectMap [ rr:constant grel:controls_if ] ;
-                            rr:predicate fno:executes ] ] ;
+                            rr:predicate grel:bool_b ] ] ;
             rr:class rico:CorporateBody ] .
 
