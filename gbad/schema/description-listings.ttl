@@ -1,0 +1,53 @@
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Extensions to rico:generalDescription
+
+add:hiddenNotes rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:archivistComment rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:notes rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:relatedMaterial rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:associatedMaterial rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:findingAidNote rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:availabilityOfOtherFormats rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:howToOrder rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+# Extensions to rico:history
+
+add:immediateSourceOfAcquisition rdfs:subPropertyOf rico:history ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+add:custodialHistory rdfs:subPropertyOf rico:history ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .
+
+# Placeholder for rico:accumulationDate before RiC-O 1.1 is released
+
+add:accumulationDate rdfs:subPropertyOf rico:date ;
+                rdfs:domain rico:RecordResource, rico:Instantiation ;
+                rdfs:range rdfs:Literal .

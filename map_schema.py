@@ -58,7 +58,8 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
     }
 
     # Walk through the directory tree
-    for folder_path, _, filenames in os.walk(root_folder):
+    #for folder_path, _, filenames in os.walk(root_folder): # this is when want to enum all files from subdirs
+    def walk_root_folder(folder_path, filenames):
         for filename in filenames:
             # Get the file extension
             file_ext = filename.split('.')[-1]
@@ -71,6 +72,9 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
                     
                     # Parse the Turtle file and add its contents to the combined graph
                     source_graph.parse(file_path, format=format)
+
+    filenames = (filename for filename in os.listdir(root_folder) if os.path.isfile(os.path.join(root_folder, filename)))
+    walk_root_folder(root_folder, filenames)
 
     return source_graph
 
@@ -266,7 +270,7 @@ def __init__(schema_code, source_filename=None):
 
     # Choose ontology to map
     base_uri = base_data_uri
-    suppl_graph_dir = None
+    suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
 
     # Set schema-specific params
     if schema_code == 'add':
@@ -1027,13 +1031,40 @@ def __init__(schema_code, source_filename=None):
         subject_map = BNode()
         mapping.add((triples_map, rr[1].subjectMap, subject_map))
 
+        # This is when you simply want to port originals
+        def add_all_po_for_s(subject_uri):
+            owl_objectmap_df = parsed_df[(
+                (parsed_df['original_subject']==subject_uri)
+            )]
+            for k, parsed_result in owl_objectmap_df.iterrows():
+                # Only allow RDFS predicates for now
+                predicate = parsed_result['predicate']
+                norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
+                is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
+                if (is_rdfs):
+                    # Now we can actually iterate over objects
+                    object = parsed_result['original_object']
+                    predicate_object_map = BNode()
+                    pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
+                    mapping.add(pom_create_triple)
+
+                    # Add predicate to predicate-object map
+                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, URIRef(predicate))
+                    mapping.add(pom_predicate_triple)
+
+                    # Add object to predicate-object map
+                    pom_object_triple = (predicate_object_map, rr[1].object, URIRef(object))
+                    mapping.add(pom_object_triple)
+
         # Remove prefix from RiC-O name from subject df and add to graph
         rico_name = subject_row[rico_name_label]
         rico_class = rico_name.split(':')[1]
         class_uri = rico[1][rico_class]
         for non_rico_class_uri in allowed_non_rico_classes:
             if rico_name == str(normalize_uri(non_rico_class_uri, mapping.namespace_manager)):
-                class_uri = non_rico_class_uri; break
+                class_uri = non_rico_class_uri
+                add_all_po_for_s(subject_uri) # Preserve details for custom OWL datatype properties
+                break
         # So this adds the rdf:type definition
         mapping.add((subject_map, rr[1]['class'], class_uri))
 

@@ -1,0 +1,15 @@
+@prefix auth: <https://data.archives.gov.on.ca/Schema/Authority/> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+auth:sourceNote rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:Agent ;
+                rdfs:range rdfs:Literal .
+
+auth:functionNote rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:Agent ;
+                rdfs:range rdfs:Literal .
+
+auth:privateNote rdfs:subPropertyOf rico:generalDescription ;
+                rdfs:domain rico:Agent ;
+                rdfs:range rdfs:Literal .
