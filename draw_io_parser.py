@@ -503,6 +503,16 @@ _object_properties = [
 
 _datatype_properties = [
     "add:hiddenNotes",
+    "add:archivistComment",
+    "add:notes",
+    "add:relatedMaterial",
+    "add:associatedMaterial",
+    "add:findingAidNote",
+    "add:immediateSourceOfAcquisition",
+    "add:custodialHistory",
+    "add:availabilityOfOtherFormats",
+    "add:accumulationDate",
+    "add:howToOrder",
     "auth:sourceNote",
     "auth:functionNote",
     "auth:privateNote",
