@@ -11,3 +11,4 @@ mapped_LARGE*.*
 __pycache__
 *.backup
 enriched
+node_modules
