@@ -1,0 +1,17 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://data.archives.gov.on.ca/TriG/NewRiC-O_ObjectProperty_20250129> {
+    <https://www.ica.org/standards/RiC/ontology#isOrWasAttendedByStudent> a owl:ObjectProperty ;
+        rdfs:comment "Inverse of 'studies or studied at' object property." ;
+        rdfs:domain <https://www.ica.org/standards/RiC/ontology#Group> ;
+        rdfs:range <https://www.ica.org/standards/RiC/ontology#Person> ;
+        owl:inverseOf <https://www.ica.org/standards/RiC/ontology#studiesOrStudiedAt> .
+
+    <https://www.ica.org/standards/RiC/ontology#studiesOrStudiedAt> a owl:ObjectProperty ;
+        rdfs:comment "Connects a Person to an educational institution at which they studied or study. Both 'institution' and 'at' can be interpreted broadly." ;
+        rdfs:domain <https://www.ica.org/standards/RiC/ontology#Person> ;
+        rdfs:range <https://www.ica.org/standards/RiC/ontology#Group> ;
+        owl:inverseOf <https://www.ica.org/standards/RiC/ontology#isOrWasAttendedByStudent> .
+}
+
