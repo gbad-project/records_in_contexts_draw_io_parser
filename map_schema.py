@@ -191,6 +191,10 @@ def __init__(schema_code, source_filename=None):
         return URIRef(uriref) if isinstance(uriref, URIRef) else Literal(uriref)
 
     def prettify_rdfs_label(literal_str):
+        #return literal_str # no massive prettification anymore as of 2025-02-14 edition
+        # because draw io parser is now run with --label-disable, and thus
+        # rdfs:label template must be specified in drawio file or none is generated
+
         # Make sure no encoded chars remain, in particular those can come from rr:constant
         literal_str = urllib.parse.unquote(literal_str)
 
@@ -234,16 +238,16 @@ def __init__(schema_code, source_filename=None):
                 # I cannot check the value, which is bad. So they'll probably be dropped. Wicked warning added below.
                 # At least, here is a patch that {TITLE} is at least requested by user,
                 # or else it would be strange to receive this error:
-                if mnemonics_contain_title: # this will have been checked by the time this is invoked
+                #if mnemonics_contain_title: # this will have been checked by the time this is invoked
                     # So if {TITLE} is at least present, RML Mapper won't give an error
                     # Case 1. Assumed to have full ref code
-                    if mnemonic in [add_refd_label,add_ref_file_label]:
-                        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}'
-                        print(f"Invoking rdfs:label replacement for '{literal_str}'. The following mask will be used: '{mnemonic_mask}'. Note that whenever any of the referenced columns is empty, these rdfs:label triples may be dropped by RML Mapper. To work around, ensure that all such records contain a value in all of the referenced columns.")
+                #    if mnemonic in [add_refd_label,add_ref_file_label]:
+                #        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}'
+                #        print(f"Invoking rdfs:label replacement for '{literal_str}'. The following mask will be used: '{mnemonic_mask}'. Note that whenever any of the referenced columns is empty, these rdfs:label triples may be dropped by RML Mapper. To work around, ensure that all such records contain a value in all of the referenced columns.")
                     # Case 2. Will only happen if no REF_FILE per disaggregate_refd_file logic,
                     # or if the same is set manually in drawio
-                    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'): 
-                        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}-?' # hardcode for readability
+                #    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'): 
+                #        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}-?' # hardcode for readability
                 literal_str = f'{mnemonic_mask} ({rico_ish_class})'
                 #literal_str = literal_str + f' from "{mnemonic}"'
             #literal_str = literal_str + ')'
@@ -1132,6 +1136,31 @@ def __init__(schema_code, source_filename=None):
             (parsed_df['subject']==subject_uri) &
             (parsed_df[rico_name_label] == rico_name)
         )]
+        
+        # Auto-generate rdfs:label when not set in drawio
+        has_rdfs_label = (objectmap_df.loc[:, 'predicate'] == rdfs[1].label).any()
+        if not has_rdfs_label:
+            # Define a predicate-object map
+            predicate_object_map = BNode()
+            pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
+            mapping.add(pom_create_triple)
+
+            # Add predicate to predicate-object map
+            pom_predicate_triple = (predicate_object_map, rr[1].predicate, rdfs[1].label)
+            mapping.add(pom_predicate_triple)
+
+            # Define an empty object map within the predicate-object map
+            object_map = BNode()
+            om_create_triple = (predicate_object_map, rr[1].objectMap, object_map)
+            mapping.add(om_create_triple)
+
+            # Generate rdfs:label from uri_mask
+            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
+            pretty_omo = prettify_rdfs_label(uri_mask)
+            rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
+            mapping.add(rdfs_label_triple)
+        
+        # Now finally iterate over all predicates and objects
         for k, parsed_result in objectmap_df.iterrows():
             # Only focus on RiC-O or RDFS predicates
             predicate = parsed_result['predicate']
@@ -1156,7 +1185,7 @@ def __init__(schema_code, source_filename=None):
                     object_map_predicate = parsed_result[map_predicate_label]
                     object_map_object = parsed_result[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
-                rdfs_label_triple = None # to use later
+                #rdfs_label_triple = None # to use later - commented out since --label-disable
 
                 # Handle possible increment requests in object mnemonic
                 object_mnemonic_i_from, object_mnemonic_i_to = get_mnemonic_i_from_to(object_mnemonic)
@@ -1185,19 +1214,17 @@ def __init__(schema_code, source_filename=None):
                     # were fully supported by drawio parser.
                     if not is_rico: # any other namespace
                         if norm_predicate == 'rdfs:label': # handle labels from drawio parser
-                            if rdfs_label_triple: # already added - remove empty nodes and continue
-                                mapping.remove(pom_create_triple)
-                                mapping.remove(pom_predicate_triple)
-                                mapping.remove(om_create_triple)
-                            else:
-                                mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
-                                # Only using map object here because object_map_predicate is irrelevant.
-                                # But using uri_mask of subject as map object and not object_map_object
-                                # because the former has been disaggregated but the latter has not
-                                pretty_omo = prettify_rdfs_label(uri_mask) 
-                                rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
-                                mapping.add(rdfs_label_triple)
-                            continue
+                            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
+                            # The below line is for cases when neither rr predicate is found in the drawio node (so omp is None)
+                            rdfs_label_rr_predicate = object_map_predicate if object_map_predicate else rr[1].constant
+                            rdfs_label_triple = (object_map, URIRef(rdfs_label_rr_predicate), Literal(object_map_object))
+                            mapping.add(rdfs_label_triple)
+                        else:
+                            # remove already created empty nodes
+                            mapping.remove(pom_create_triple)
+                            mapping.remove(pom_predicate_triple)
+                            mapping.remove(om_create_triple)
+                        continue
 
                     # This concerns only constant literals, meaning nodes
                     # in drawio graph for which no mapping logic is defined

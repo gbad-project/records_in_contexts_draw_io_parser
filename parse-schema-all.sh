@@ -39,6 +39,7 @@ echo -e "Total number of *.drawio files found: $total_files"
 # Set desired args
 args="-m url \
       -c none \
+      --label-disable \
       -o https://data.archives.gov.on.ca \
       -p https://data.archives.gov.on.ca/"
 

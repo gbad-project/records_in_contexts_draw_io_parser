@@ -16,6 +16,7 @@ drawio_file=$(find "$graph_dir" -type f -name "*.drawio" | head -n 1)
 # Set desired args
 args="-m url \
       -c none \
+      --label-disable \
       -o https://data.archives.gov.on.ca \
       -p https://data.archives.gov.on.ca/"
 
