@@ -516,6 +516,7 @@ _datatype_properties = [
     "auth:sourceNote",
     "auth:functionNote",
     "auth:privateNote",
+    "rdfs:label",
     "rico:accruals",
     "rico:accrualsStatus",
     "rico:altimetricSystem",
