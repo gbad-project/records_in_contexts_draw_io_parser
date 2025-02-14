@@ -249,6 +249,8 @@ def __init__(schema_code, source_filename=None):
                 #    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'): 
                 #        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}-?' # hardcode for readability
                 literal_str = f'{mnemonic_mask} ({rico_ish_class})'
+                if optional_rest: # anything, importantly UUID
+                    literal_str = f'{mnemonic_mask} ({rico_ish_class} - {optional_rest})'
                 #literal_str = literal_str + f' from "{mnemonic}"'
             #literal_str = literal_str + ')'
 
@@ -1214,17 +1216,18 @@ def __init__(schema_code, source_filename=None):
                     # were fully supported by drawio parser.
                     if not is_rico: # any other namespace
                         if norm_predicate == 'rdfs:label': # handle labels from drawio parser
+                            # Legacy code commented out since --label-disable
+                            #if rdfs_label_triple: # already added - remove empty nodes and continue
+                            #    mapping.remove(pom_create_triple)
+                            #    mapping.remove(pom_predicate_triple)
+                            #    mapping.remove(om_create_triple)
+                            #else:
                             mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
                             # The below line is for cases when neither rr predicate is found in the drawio node (so omp is None)
                             rdfs_label_rr_predicate = object_map_predicate if object_map_predicate else rr[1].constant
                             rdfs_label_triple = (object_map, URIRef(rdfs_label_rr_predicate), Literal(object_map_object))
                             mapping.add(rdfs_label_triple)
-                        else:
-                            # remove already created empty nodes
-                            mapping.remove(pom_create_triple)
-                            mapping.remove(pom_predicate_triple)
-                            mapping.remove(om_create_triple)
-                        continue
+                            continue    
 
                     # This concerns only constant literals, meaning nodes
                     # in drawio graph for which no mapping logic is defined
