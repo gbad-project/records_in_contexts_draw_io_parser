@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.7">
   <diagram name="Page-1" id="_9r6geDOEYo5xFr4fmT0">
-    <mxGraphModel dx="2204" dy="1666" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+    <mxGraphModel dx="1978" dy="1572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -786,6 +786,88 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="30" y="-29" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-5" source="sWa0SD8Ajx1KSGOqKPP4-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="212" as="sourcePoint" />
+            <mxPoint x="929" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-4" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-5" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Record Set)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="154" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-11" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-13" source="nZdSzTGt5yp-Q97JLt56-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="-34" as="sourcePoint" />
+            <mxPoint x="879" y="-164" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-12" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-9" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-13" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Record Set)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="960" y="-629" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-14" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-16" source="nZdSzTGt5yp-Q97JLt56-61">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1670" y="328" as="sourcePoint" />
+            <mxPoint x="1649" y="624" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-15" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-16" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Record Set)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="170" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-19" source="nZdSzTGt5yp-Q97JLt56-63">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-35.5" y="-471" as="sourcePoint" />
+            <mxPoint x="-56.5" y="-175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-18" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-17">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-9" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-19" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Record Set)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="-90.5" y="-920" width="270" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-23" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-25" source="wiPwyt0miK05mvKJtJq--55">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="-127" as="sourcePoint" />
+            <mxPoint x="934" y="274" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-24" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-23">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-25" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Archival Description Record)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="930" y="-140" width="310" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-26" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="1HVjy-BaL8XtYFnHSrnf-28" source="vEi_3DjQt7wcUmB-cSFn-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1383" y="949" as="sourcePoint" />
+            <mxPoint x="984" y="1199" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-27" value="rdfs:label" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="1HVjy-BaL8XtYFnHSrnf-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-20" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1HVjy-BaL8XtYFnHSrnf-28" value="&lt;div&gt;rr:template&lt;br&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;{REFD_FILE} -&amp;nbsp;&lt;/span&gt;{TITLE} (Finding Aid Record)&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;&lt;/span&gt;&lt;/div&gt;" style="html=1;whiteSpace=wrap;rounded=1;arcSize=50;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="800" width="310" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
