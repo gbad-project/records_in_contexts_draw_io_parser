@@ -1,8 +1,14 @@
-Script started on 2025-02-14 16:19:42-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="20"]
+Script started on 2025-02-14 18:19:25-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="113" LINES="20"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
 Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
 Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
+UUID v5 generated from namespace and 'rr_template__KB_CreationRelation__REFD___OFFICEABC_2___UUID_OFFICEABC_': a2a823e8-699b-5b7e-8b58-73a78c3c4dce
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/CreationRelation/{REFD}/{OFFICEABC_2}/a2a823e8-699b-5b7e-8b58-73a78c3c4dce'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_2} 
+
+UUID v5 generated from namespace and 'rr_template__KB_CreationRelation__REF_FILE___OFFICEABC_2___UUID_OFFICEABC_': 7ef2743e-96c8-5833-9ac8-149941dccfaf
+At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/CreationRelation/{REF_FILE}/{OFFICEABC_2}/7ef2743e-96c8-5833-9ac8-149941dccfaf'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_2} 
+
 UUID v5 generated from namespace and 'rr_template__KB_CreationRelation__REFD___OFFICEABC_1___UUID_OFFICEABC_': b26d1ccc-569b-5b09-836f-f4bde79312eb
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/CreationRelation/{REFD}/{OFFICEABC_1}/b26d1ccc-569b-5b09-836f-f4bde79312eb'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_1} 
 
@@ -13,4 +19,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz.rml'
 
-Script done on 2025-02-14 16:19:46-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-02-14 18:19:28-05:00 [COMMAND_EXIT_CODE="0"]

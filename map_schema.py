@@ -729,7 +729,8 @@ def __init__(schema_code, source_filename=None):
             mnemonic_i_from = increment_number; mnemonic_i_to = increment_number
         for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
             new_row = row.copy()
-            new_row[increment_number_label] = mnemonic_i
+            if not (mnemonic_i_from == 1 and mnemonic_i_to == 1): # doesn't make sense to add this then
+                new_row[increment_number_label] = mnemonic_i
             column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
             if column_value:
                 new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)

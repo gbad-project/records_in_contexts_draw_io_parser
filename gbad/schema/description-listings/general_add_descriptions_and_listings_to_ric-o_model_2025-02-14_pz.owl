@@ -174,25 +174,43 @@ Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D
 Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22
   Types: rico:RecordSet
   Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..2%7D%2F%7BUUID_OFFICEABC%7D,
-    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D,
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D,
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D,
+    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D,
+    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D,
     rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Record Set)\""
 
-Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..2%7D%2F%7BUUID_OFFICEABC%7D
+Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D
   Types: rico:CreationRelation
   Facts:
-    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D,
-    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_BEGINNING%7D%22,
-    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_END%7D%22
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D,
+    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_BEGINNING%7D%22,
+    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_END%7D%22
 
-Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_BEGINNING%7D%22
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_BEGINNING%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..2_END%7D%22
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_END%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..2%7D
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D
   Types: rico:CorporateBody
 
 Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22
   Types: rico:RecordState
+
+Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D
+  Types: rico:CreationRelation
+  Facts:
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D,
+    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_BEGINNING%7D%22,
+    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_END%7D%22
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_BEGINNING%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_END%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D
+  Types: rico:CorporateBody

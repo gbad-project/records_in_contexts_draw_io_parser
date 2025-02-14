@@ -2922,7 +2922,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "There are no restrictions on access to this series.";
   rico:conditionsOfUse "Copyright held by Page & Steele Architects. These materials cannot be published without permission of the copyright holder. There are no restrictions on reproduction for research and private study. If you wish to use these records for purposes other than research and private study, please submit a Request for Permission to Publish, Exhibit or Broadcast form.";
   rico:creationDate "1955-1957";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2020-29>,
     <https://data.archives.gov.on.ca/KB/FormerCode/C%2020-29>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/C%2020-29/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -2943,7 +2944,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "Negatives in this sereis are closed for conservation reasons. No restrictions apply to the remainder of this series.";
   rico:conditionsOfUse "Records are in the public domain. There are no restrictions on reproduction, however permission from the Archives of Ontario is required for publication; submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1900-1928";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%20267-2>,
     <https://data.archives.gov.on.ca/KB/FormerCode/C%20267-2>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/C%20267-2/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -3691,7 +3693,9 @@ rdfs:label a owl:DatatypeProperty .
   rdfs:label "F 229-501-110 - Hamilton Eaton Centre and downtown store property management records (Record Set)";
   rico:conditionsOfAccess "No restrictions on access.";
   rico:creationDate "1970-1988";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20229-501-110>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%20229-501-110>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/F%20229-501-110/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -3816,7 +3820,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "Records in this sub-series are restricted until January 1, 2023.; Researchers seeking access must make written application to the donor through the Archives of Ontario. Consult a Reference Archivist for more information.";
   rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor.  Sub-series also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1973-1985";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%204420-6-5>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%204420-6-5>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/F%204420-6-5/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -3912,7 +3917,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "There are no restrictions on access.";
   rico:conditionsOfUse "The donor has transferred copyright to the Archives of Ontario, insofar as he owns it. Series may also contain material owned by various other copyright owners. To find out more about the copyright status of the material you wish to use, consult a Reference Archivist through the Reference Desk. There are no restrictions on reproduction for research and private study.  If you wish to use the material for purposes other than research and private study, please submit a Request for Permission to Publish, Exhibit, or Broadcast Form.";
   rico:creationDate "[ca. 1955]-1996";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%204531-15>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%204531-15>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/F%204531-15/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -3931,7 +3937,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "There are no restrictions on access.";
   rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor. Fonds also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist through the Reference Desk. There are no restrictions on reproduction for research and private study. If you wish to use any of this material for purposes other than research and private study, submit a Request for Permission to Publish, Exhibit, or Broadcast form.";
   rico:creationDate "1847-1920";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Artifacts>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Cameron%2C%20Catherine%2C%201838%3F-1916>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%204566-2>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%204566-2>;
@@ -3967,7 +3974,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "No restrictions on access.";
   rico:conditionsOfUse "Copyright has been transferred to the Archives by the donor. The sub-series also may contain material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study. If you wish to use any of this material other than for research and private study, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1989-1993";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%204593-1-217>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%204593-1-217>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/F%204593-1-217/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -4038,7 +4046,9 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "No restrictions on access.";
   rico:conditionsOfUse "Copyright held by creator. These materials cannot be published without permission from the copyright holder.";
   rico:creationDate "1694-1958, predominant 1723-1893";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Charles%20Shirreff%20%28family%29%20%7C%20Shirreff%2C%20Charles%2C%201768-1849Shirreff%2C%20Robert%2C%201794-1870Shirreff%2C%20Alexander%2C%201802-1878>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20604>,
     <https://data.archives.gov.on.ca/KB/FormerCode/F%20604>;
@@ -4116,7 +4126,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "Access to these records is governed by the Freedom of Information and Protection of Privacy Act. Requests for access to records 100 years old or less must be submitted in writing to the Information and Privacy Unit of the Archives of Ontario.";
   rico:conditionsOfUse "Copyright is primarily held by the Crown. Series also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1965-1980";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Ontario%20Water%20Resources%20CommissionOntario.%20Ministry%20of%20the%20Environment%20%281972-1993%29Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29.%20Office%20of%20the%20Deputy%20Minister>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2012-93>,
     <https://data.archives.gov.on.ca/KB/FormerCode/RG%2012-93>;
@@ -4293,7 +4304,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "Access to these records is governed by the Freedom of Information and Protection of Privacy Act. Requests for access to records 100 years old or less must be submitted in writing to the Information and Privacy Unit of the Archives of Ontario.";
   rico:conditionsOfUse "Copyright is primarily held by the Crown. There are no restrictions on reproduction. Permission of the Archives of Ontario is required for publication; submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1919-1951";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Crown%20Attorneys%20%281857-1968%29>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2022-3095>,
     <https://data.archives.gov.on.ca/KB/FormerCode/RG%2022-3095>;
@@ -4519,7 +4531,8 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "No restrictions on access, except for interview (tape and transcript) with Arthur Gelber (RG 47-27-2-6, RG 47-27-2-7).  Access to this interview is restricted, except with permission of interviewee or interviewee's estate, for 100 years from the date of interview (or for 30 years after death of interviewee).; Researchers must use reference copies in place of original sound recordings.";
   rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor for all interviews, with the exception of RG 47-27-2- 23 (CBC copyright). There are no restrictions on reproduction, however permission of the Archives of Ontario is required for publication; submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1964, 1975-1980";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2047-27-2>,
     <https://data.archives.gov.on.ca/KB/FormerCode/RG%2047-27-2>;
   rico:hasOrHadInstantiation <https://data.archives.gov.on.ca/KB/Instantiation/RG%2047-27-2/68c1f4f8-ac5a-5aec-bc5f-d7bf1fa8e952>;
@@ -4553,7 +4566,9 @@ rdfs:label a owl:DatatypeProperty .
   rico:conditionsOfAccess "No restrictions on access.";
   rico:conditionsOfUse "Copyright is primarily held by the Crown. Series also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study. If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
   rico:creationDate "1977-2010, lacking 1979-1986";
-  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Electronic%20records>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
   rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Legislative%20AssemblyOntario.%20Legislative%20Assembly.%20Standing%20Committee%20on%20General%20Government>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2049-233>,
     <https://data.archives.gov.on.ca/KB/FormerCode/RG%2049-233>;
