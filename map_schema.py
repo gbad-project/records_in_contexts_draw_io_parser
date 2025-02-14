@@ -460,8 +460,10 @@ def __init__(schema_code, source_filename=None):
         elif schema_code == 'add': # add all options - empty fields will be skipped by RML mapper
             ref_terms.extend([
                 f'{{{add_refd_label}}}',
-                f'{{{add_ref_file_label}}}',
-                f'{{{add_ref_add_label}}}/{{{add_title_label}}}'
+                f'{{{add_ref_file_label}}}' # decided on 2025-02-14 that REF_FILE must be present
+                # at all times and must contain REF_ADD already, and those records that don't have that
+                # must be isolated and dealt with separately
+                #f'{{{add_ref_add_label}}}/{{{add_title_label}}}'
             ])
         else:
             raise Exception(f"Fatal error: Schema code not supplied or supported.")
