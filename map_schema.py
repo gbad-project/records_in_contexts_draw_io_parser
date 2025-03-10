@@ -1,6 +1,7 @@
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, RDFS, OWL, DCTERMS
 import pandas as pd
+from numpy import nan
 import re
 import urllib.parse
 from pprint import pprint
@@ -77,6 +78,60 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
     walk_root_folder(root_folder, filenames)
 
     return source_graph
+
+def add_preprocess(source_csv_path, preprocessed_csv_path):
+    source_df = pd.read_csv(source_csv_path)
+
+    def split_by_colon(value: str, expect_num_cols: int):
+        value = value.replace(': :', ':  :')
+        separated_values = value.split(sep=' : ')
+        if len(separated_values) != expect_num_cols:
+            separated_values = [None] * expect_num_cols
+        return separated_values
+    
+    def split_by_adjacent_case(value: str, expect_num_cols: int):
+        value = re.sub(r'([^A-Z\s\(\[])([A-Z])', r'\1 : \2', value)
+        separated_values = value.split(sep=' : ')
+        if len(separated_values) < expect_num_cols:
+            separated_values.extend([None] * (expect_num_cols - len(separated_values)))
+        elif len(separated_values) != expect_num_cols:
+            separated_values = [None] * expect_num_cols
+        return separated_values
+    
+    def column_split(split_method, joint_col, separate_cols_list):
+        nonlocal source_df
+        source_df[separate_cols_list] = source_df[joint_col].apply(
+            lambda x: split_method('' if pd.isna(x) else str(x), len(separate_cols_list))
+        ).apply(pd.Series)
+        #source_df.drop(columns=[joint_col], inplace=True)
+    
+    # Column split #1
+    joint_findaid_col = 'FINDAID:FINDAIDLINK:FINDAID_URL'
+    separate_findaid_cols = ['FINDAID', 'FINDAIDLINK', 'FINDAID_URL']
+    column_split(split_by_colon, joint_findaid_col, separate_findaid_cols)
+
+    # Column split #2
+    joint_iil_col = 'IIL:IIL_URL'
+    separate_iil_cols = ['IIL', 'IIL_URL']
+    column_split(split_by_colon, joint_iil_col, separate_iil_cols)
+
+    # Column split #3
+    indexprov_col = 'INDEXPROV'
+    numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 21)]
+    column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
+
+    # Column split #4
+    indexname_col = 'INDEXNAME'
+    numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 21)]
+    column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
+
+    # Column split #5
+    indexsub_col = 'INDEXSUB'
+    numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 21)]
+    column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
+
+    os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
+    source_df.to_csv(preprocessed_csv_path, index=False, header=True)
 
 def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
@@ -303,6 +358,10 @@ def __init__(schema_code, source_filename=None):
 
     if source_filename:
         source_path = f'gbad/mapping/source/{source_filename}'
+        if schema_code == 'add':
+            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
+            add_preprocess(source_path, preprocessed_csv_path)
+            source_path = preprocessed_csv_path
 
     rml_path = graph_path[:-3]+ "rml"
 
