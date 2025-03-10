@@ -934,7 +934,7 @@ class DrawIOXMLTree:
         geometry = DrawIOXMLTree._geometry(cell)
         if as_attribute is None:
             return self._x_and_y_in_geometry(geometry, cell.attrib["id"])
-        if not geometry:
+        if len(geometry) == 0:
             raise ParseException(
                 "Expecting the mxGeometry element of the cell with the "
                 "following id to have sub-elements, but has no sub-elements "
@@ -1056,7 +1056,7 @@ class DrawIOXMLTree:
 
     def _extract_individual_and_arrow_and_literal_cells(self) -> None:
         try:
-            if not self.draw_io_xml_tree[0][0][0]:
+            if len(self.draw_io_xml_tree[0][0][0]) == 0:
                 raise NothingToParseException
         except IndexError as key_error:
             raise NothingToParseException from key_error
