@@ -90,8 +90,9 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         return separated_values
     
     def split_by_adjacent_case(value: str, expect_num_cols: int):
-        value = re.sub(r'([^A-Z\s\(\[])([A-Z])', r'\1 : \2', value)
-        separated_values = value.split(sep=' : ')
+        unique_separator = '<split-by-adjacent-case>'
+        value = re.sub(r'([^A-Z\s\(\[])([A-Z])', rf'\1{unique_separator}\2', value)
+        separated_values = value.split(sep=unique_separator)
         if len(separated_values) < expect_num_cols:
             separated_values.extend([None] * (expect_num_cols - len(separated_values)))
         elif len(separated_values) != expect_num_cols:

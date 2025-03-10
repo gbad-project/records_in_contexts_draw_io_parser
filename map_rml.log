@@ -1,5 +1,4 @@
-Script started on 2025-03-10 17:25:26-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
-File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
+Script started on 2025-03-10 17:42:33-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 Initiated mapping params:
 ('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
@@ -13,4 +12,4 @@ No postprocessing scheduled - none applied.
 
 Number of triples in the graph: 3735
 
-Script done on 2025-03-10 17:25:32-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-03-10 17:42:41-04:00 [COMMAND_EXIT_CODE="0"]

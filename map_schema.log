@@ -1,4 +1,4 @@
-Script started on 2025-03-10 17:24:59-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
+Script started on 2025-03-10 17:42:23-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
 Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
@@ -19,4 +19,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml'
 
-Script done on 2025-03-10 17:25:02-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-03-10 17:42:27-04:00 [COMMAND_EXIT_CODE="0"]
