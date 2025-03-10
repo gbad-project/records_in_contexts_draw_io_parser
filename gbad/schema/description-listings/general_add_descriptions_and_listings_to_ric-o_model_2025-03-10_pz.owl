@@ -54,7 +54,7 @@ DataProperty:
 DataProperty:
   rdfs:label
 
-Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
+Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22
   Types: rico:RecordSet
   Facts:
     rico:hasRecordSetType rr%3Atemplate%20%22Schema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22,
@@ -72,6 +72,8 @@ Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
     rico:hasOrHadIdentifier rr%3Atemplate%20%22KB%2FFormerCode%2F%7BFCODES%7D%22,
     rico:isOrWasDescribedBy rr%3Atemplate%20%22KB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22,
     rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXPROV_1..20%7D%22,
+    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D%22,
+    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D%22,
     rico:hasOrHadTitle rr%3Atemplate%20%22KB%2FTitle%2F%7BTITLE%7D%22,
     rico:hasOrHadSubject rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXSUB_1..20%7D%22,
     rico:isAssociatedWithPlace rr%3Atemplate%20%22KB%2FPlace%2F%7BINDEXGEO_1..21%7D%22,
@@ -81,15 +83,19 @@ Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D
     add:associatedMaterial "rml:reference \"ASSMAT\"",
     rico:creationDate "rml:reference \"DATECR\"",
     rico:history "rml:reference \"ADMBIO\"",
-    rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_HIGHER%7D,
-    rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D,
+    rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_HIGHER%7D%22,
+    rico:isDirectlyIncludedIn rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D%22,
     add:archivistComment "rml:reference \"CMTD\"",
     add:hiddenNotes "rml:reference \"HIDDENNOTES\"",
     add:accumulationDate "rml:reference \"DATEACM\"",
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D%22,
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D%22,
     rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Record Set)\""
 
 Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22
   Types: rico:RecordSetType
+  Facts:
+    rdfs:label "rml:reference  \"LEVELDES\""
 
 Individual: rr%3Atemplate%20%22KB%2FInstantiation%2F%7BREFD_FILE%7D%2F%7BUUID_INSTANTIATION_1%7D%22
   Types: rico:Instantiation
@@ -150,7 +156,7 @@ Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FWebEnabled%23%7BW
 Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22
   Types: rico:ContentType
 
-Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_HIGHER%7D
+Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_HIGHER%7D%22
   Types: rico:RecordSet
 
 Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BMODDATE%7D%22
@@ -158,22 +164,13 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BMODDATE%7D%22
   Facts:
     rico:normalizedDateValue "rml:reference \"MODDATE\""
 
-Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D
+Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREF_ADD%7D%22
   Types: rico:RecordSet
 
-Individual: rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22
-  Types: rico:RecordSet
-  Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D,
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D,
-    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D,
-    rico:hasCreator rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D,
-    rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Record Set)\""
-
-Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D
+Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1%7D%2F%7BUUID_OFFICEABC%7D%22
   Types: rico:CreationRelation
   Facts:
-    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D,
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D%22,
     rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_BEGINNING%7D%22,
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_END%7D%22
 
@@ -183,16 +180,16 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_BEGINNING%7D%22
 Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1_END%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1%7D%22
   Types: rico:CorporateBody
 
 Individual: rr%3Atemplate%20%22Schema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22
   Types: rico:RecordState
 
-Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D
+Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_2%7D%2F%7BUUID_OFFICEABC%7D%22
   Types: rico:CreationRelation
   Facts:
-    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D,
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D%22,
     rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_BEGINNING%7D%22,
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_END%7D%22
 
@@ -202,5 +199,5 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_BEGINNING%7D%22
 Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_2_END%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_2%7D%22
   Types: rico:CorporateBody

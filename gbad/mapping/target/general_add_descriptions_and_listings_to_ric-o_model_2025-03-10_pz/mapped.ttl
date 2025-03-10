@@ -4632,13 +4632,13 @@ add:FormerCode a rico:IdentifierType;
   rdfs:label "Former Code" .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Fonds> a rico:RecordSetType;
-  rdfs:label "Level: Fonds" .
+  rdfs:label "Fonds" .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
-  rdfs:label "Level: Series" .
+  rdfs:label "Series" .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Sub-series> a rico:RecordSetType;
-  rdfs:label "Level: Sub-series" .
+  rdfs:label "Sub-series" .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> a rico:RecordState;
   rdfs:label "Status: Approved" .

@@ -1,32 +1,16 @@
-Script started on 2025-02-14 18:29:09-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="113" LINES="20"]
+Script started on 2025-03-10 17:25:26-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
-('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz.rml',
+('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz/mapped.ttl')
-Converted file is larger than 10 MB (97.89 MB) - trying to rename to LARGE...
-Successfully renamed to 'mapped_LARGE.ttl'
-Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz/mapped_LARGE.ttl'
+ 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl')
+Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl'
 
+Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-02-14_pz/mapped_LARGE.ttl'
+Number of triples in the graph: 3735
+No postprocessing scheduled - none applied.
 
-Number of triples in the graph: 905039
-Postprocessing...
-Executed a parametrized alternative of the following query: 
-        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
-        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
-        DELETE WHERE {
-            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
-            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
-            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
-            authtp:Geographic%20Name ?p1 ?o1 .
-            authtp:Family%20Name ?p2 ?o2 .
-            authtp:Personal%20Name ?p3 ?o3 .
-        }
-        
-No triples were removed.
+Number of triples in the graph: 3735
 
-Number of triples in the graph: 905039
-
-Script done on 2025-02-14 18:31:57-05:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-03-10 17:25:32-04:00 [COMMAND_EXIT_CODE="0"]

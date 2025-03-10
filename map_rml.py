@@ -228,9 +228,10 @@ def postprocess(graph_path):
     def run_postprocessing():
         nonlocal total_count
         original_set = set(g)
-        print("Postprocessing...")
+        #print("Postprocessing...")
         #total_count = total_count - remove_false_agentcontrolrelation(g)
-        total_count = total_count - remove_false_authtp(g)
+        #total_count = total_count - remove_false_authtp(g)
+        print("No postprocessing scheduled - none applied.")
         print_total_count()
         return set(g) != original_set
     has_changed = run_postprocessing()
