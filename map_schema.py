@@ -617,10 +617,10 @@ def __init__(schema_code, source_filename=None):
         if not uriref_str:
             return series(map_predicate, map_object)
         
-        uriref_str = re.sub('\s+', ' ', uriref_str)
+        uriref_str = re.sub(r'\s+', ' ', uriref_str)
 
         def remove(predicate: URIRef, uriref_str):
-            sin_predicate = re.sub(f"^{str(predicate)}\s+", "", uriref_str)
+            sin_predicate = re.sub(rf"^{str(predicate)}\s+", "", uriref_str)
             sin_predicate = sin_predicate.strip('"')
             return sin_predicate
         
