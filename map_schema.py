@@ -516,7 +516,7 @@ def __init__(schema_code, source_filename=None):
         # Substitute correct terms
         ref_terms = []
         if schema_code == 'auth': # no need to execute
-            return spo
+            return [spo]
         elif schema_code == 'add': # add all options - empty fields will be skipped by RML mapper
             ref_terms.extend([
                 f'{{{add_refd_label}}}',
