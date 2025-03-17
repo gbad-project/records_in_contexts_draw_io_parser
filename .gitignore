@@ -1,5 +1,3 @@
-untracked/
-catalog-v001.xml
 # Dependencies
 *.jar
 robot.sh
@@ -8,7 +6,11 @@ AUTHORITY.csv
 DESCRIPTION.csv
 LISTINGS_[0-9].csv
 mapped_LARGE*.*
+# Other untracked
+untracked/
+catalog-v001.xml
 __pycache__
 *.backup
 enriched
 node_modules
+New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv

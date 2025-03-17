@@ -18,6 +18,9 @@ pd.set_option('display.width', 0)
 pd.set_option('display.max_colwidth', None)
 
 # Set labels for reference fields
+SISN = 'SISN'
+DATEEX_COLS = ['DATEEX_BEGINNING', 'DATEEX_END']
+DATECONT_PREFIX = 'DATECONT_'
 auth_heading_label = 'HEADING'
 add_refd_label = 'REFD'
 add_ref_add_label = 'REF_ADD'
@@ -133,6 +136,31 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
 
     os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
     source_df.to_csv(preprocessed_csv_path, index=False, header=True)
+
+def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
+    source_df = pd.read_csv(source_csv_path, index_col=SISN)
+    correct_dateex_path = kwargs.get('correct_dateex_path', None)
+
+    def pull_correct_dateex():
+        nonlocal source_df, correct_dateex_path
+        correct_dateex_name = os.path.basename(correct_dateex_path)
+        if correct_dateex_path is None:
+            return
+        try:
+            correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN)
+            source_df.update(correct_dateex_df[DATEEX_COLS])
+            # Force back to nullable integer from float whenever applicable
+            for col in [col for col in source_df.columns if ((col in DATEEX_COLS) or (DATECONT_PREFIX in col))]:
+                source_df[col] = source_df[col].astype('Int64')
+            print(f"Source preprocessed by updating {DATEEX_COLS} with values from '{correct_dateex_name}'\n")
+        except Exception as e:
+            print(f"Failed to update Authority DATEEX with correct values: '{e}'")
+    
+    # Update DATEEX with correct values
+    pull_correct_dateex()
+
+    os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
+    source_df.to_csv(preprocessed_csv_path, index=True, header=True)
 
 def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
@@ -354,6 +382,8 @@ def __init__(schema_code, source_filename=None):
         if source_filename is None:
             source_filename = 'authority_head_6.csv'
 
+        # Additional sources
+        correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
     else:
         raise Exception(f"Fatal error: Schema code not supplied.")
@@ -363,6 +393,12 @@ def __init__(schema_code, source_filename=None):
         if schema_code == 'add':
             preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
             add_preprocess(source_path, preprocessed_csv_path)
+            source_path = preprocessed_csv_path
+        elif schema_code == 'auth':
+            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
+            auth_preprocess(source_path,
+                            preprocessed_csv_path,
+                            correct_dateex_path=correct_dateex_path)
             source_path = preprocessed_csv_path
 
     rml_path = graph_path[:-3]+ "rml"
