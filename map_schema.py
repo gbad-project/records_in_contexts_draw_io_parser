@@ -83,7 +83,7 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
     return source_graph
 
 def add_preprocess(source_csv_path, preprocessed_csv_path):
-    source_df = pd.read_csv(source_csv_path)
+    source_df = pd.read_csv(source_csv_path, dtype='object')
 
     def split_by_colon(value: str, expect_num_cols: int):
         value = value.replace(': :', ':  :')
