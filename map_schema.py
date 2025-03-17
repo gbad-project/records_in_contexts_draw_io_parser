@@ -138,7 +138,7 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
     source_df.to_csv(preprocessed_csv_path, index=False, header=True)
 
 def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
-    source_df = pd.read_csv(source_csv_path, index_col=SISN)
+    source_df = pd.read_csv(source_csv_path, index_col=SISN, dtype='object')
     correct_dateex_path = kwargs.get('correct_dateex_path', None)
 
     def pull_correct_dateex():
@@ -147,11 +147,9 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
         if correct_dateex_path is None:
             return
         try:
-            correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN)
+            correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN, dtype='object')
             source_df.update(correct_dateex_df[DATEEX_COLS])
-            # Force back to nullable integer from float whenever applicable
-            for col in [col for col in source_df.columns if ((col in DATEEX_COLS) or (DATECONT_PREFIX in col))]:
-                source_df[col] = source_df[col].astype('Int64')
+            
             print(f"Source preprocessed by updating {DATEEX_COLS} with values from '{correct_dateex_name}'\n")
         except Exception as e:
             print(f"Failed to update Authority DATEEX with correct values: '{e}'")
