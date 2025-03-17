@@ -69,7 +69,7 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
             for format_name, extensions in formats.items():
                 if ((file_ext in extensions) & (format_name == format)):
                     file_path = os.path.join(folder_path, filename)
-                    print(f"Adding a supplemental '{format_name}' file: '{file_path}'")
+                    print(f"Adding a supplemental '{format_name}' file: '{file_path}'\n")
                     
                     # Parse the Turtle file and add its contents to the combined graph
                     source_graph.parse(file_path, format=format)
@@ -239,7 +239,7 @@ def __init__(schema_code, source_filename=None):
     def generate_uuid_str(entity_name, show_message=True):
         uuid_str = str(uuid.uuid5(MAPPING_NS_UUID, entity_name))
         if show_message:
-            print(f"UUID v5 generated from namespace and '{entity_name}': {uuid_str}")
+            print(f"UUID v5 generated from namespace and '{entity_name}': {uuid_str}\n")
         return uuid_str
 
     def substitute_uuid(uriref, uuid_str):
