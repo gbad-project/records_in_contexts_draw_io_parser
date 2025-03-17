@@ -1,9 +1,10 @@
-Script started on 2025-03-10 17:44:57-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
+Script started on 2025-03-17 12:29:02-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
  'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl')
+
 Converted file is larger than 10 MB (89.56 MB) - trying to rename to LARGE...
 Successfully renamed to 'mapped_LARGE.ttl'
 Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped_LARGE.ttl'
@@ -15,4 +16,4 @@ No postprocessing scheduled - none applied.
 
 Number of triples in the graph: 786730
 
-Script done on 2025-03-10 17:47:00-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-03-17 12:31:31-04:00 [COMMAND_EXIT_CODE="0"]
