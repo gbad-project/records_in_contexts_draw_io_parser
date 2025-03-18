@@ -107,6 +107,7 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         source_df[separate_cols_list] = source_df[joint_col].apply(
             lambda x: split_method('' if pd.isna(x) else str(x), len(separate_cols_list))
         ).apply(pd.Series)
+        print(f"Splitting column '{joint_col}' into {separate_cols_list}\n")
         #source_df.drop(columns=[joint_col], inplace=True)
     
     # Column split #1
@@ -134,6 +135,7 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
     numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 21)]
     column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
 
+    print(f"Saving preprocessed to: '{preprocessed_csv_path}'\n")
     os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
     source_df.to_csv(preprocessed_csv_path, index=False, header=True)
 
@@ -388,6 +390,8 @@ def __init__(schema_code, source_filename=None):
 
     if source_filename:
         source_path = f'gbad/mapping/source/{source_filename}'
+        print(f"Using source file: '{source_path}'\n")
+        print(f"Checking in for preprocessing...\n")
         if schema_code == 'add':
             preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
             add_preprocess(source_path, preprocessed_csv_path)
@@ -398,11 +402,15 @@ def __init__(schema_code, source_filename=None):
                             preprocessed_csv_path,
                             correct_dateex_path=correct_dateex_path)
             source_path = preprocessed_csv_path
+        else:
+            print("No preprocessing scheduled - none attempted.")
+    print(f"Using source file: '{source_path}'\n")
 
     rml_path = graph_path[:-3]+ "rml"
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
+    print(f"Using graph: '{graph_path}'\n")
     g.parse(graph_path,
             format="turtle")  # Adjust the format as needed
 
