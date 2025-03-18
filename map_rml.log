@@ -1,16 +1,40 @@
-Script started on 2025-03-17 12:50:24-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
+Script started on 2025-03-18 12:44:38-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="19"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
-('gbad/schema/authority/general_authority_to_ric-o_model_2024-11-25_pz.rml',
+('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl')
-Successfully mapped 'gbad/schema/authority/general_authority_to_ric-o_model_2024-11-25_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl'
+ 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl')
+Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl'
 
-Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped.ttl'
 
-Number of triples in the graph: 2221
-No postprocessing scheduled - none applied.
+Number of triples in the graph: 160
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+        
+        DELETE {
+        ?recordSet rdfs:label ?shorterLabel .
+        }
+        WHERE {
+        ?recordSet a rico:RecordSet ;
+                    rdfs:label ?label1, ?label2 .
+        FILTER(?label1 != ?label2)
+        ?recordSet rico:hasOrHadIdentifier ?identifier .
+        ?identifier a add:CurrentReferenceCode .
+        ?identifier rdfs:label ?identLabel .
+        BIND(REPLACE(?identLabel, "^(.*) \(Current Reference Code\)$", "$1") AS ?refCode)
+        FILTER(STRSTARTS(?label1, ?refCode) && STRSTARTS(?label2, ?refCode))
+        BIND(IF(STRLEN(?label1) < STRLEN(?label2), ?label1, ?label2) AS ?shorterLabel)
+        }
+        
+1 triple was removed and dumped to: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped_removed_triples.nt'
 
-Number of triples in the graph: 2221
+Number of triples in the graph: 159
 
-Script done on 2025-03-17 12:50:31-04:00 [COMMAND_EXIT_CODE="0"]
+
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz/mapped_postprocessed.nt'
+
+Script done on 2025-03-18 12:44:44-04:00 [COMMAND_EXIT_CODE="0"]
