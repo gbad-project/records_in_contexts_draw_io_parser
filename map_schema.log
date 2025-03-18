@@ -1,7 +1,7 @@
-Script started on 2025-03-18 13:07:15-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
+Script started on 2025-03-18 13:46:48-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
-Using source file: 'gbad/mapping/source/DESCRIPTION.csv'
+Using source file: 'gbad/mapping/source/description_tailshuf_100.csv'
 
 Checking in for preprocessing...
 
@@ -15,9 +15,9 @@ Splitting column 'INDEXNAME' into ['INDEXNAME_1', 'INDEXNAME_2', 'INDEXNAME_3', 
 
 Splitting column 'INDEXSUB' into ['INDEXSUB_1', 'INDEXSUB_2', 'INDEXSUB_3', 'INDEXSUB_4', 'INDEXSUB_5', 'INDEXSUB_6', 'INDEXSUB_7', 'INDEXSUB_8', 'INDEXSUB_9', 'INDEXSUB_10', 'INDEXSUB_11', 'INDEXSUB_12', 'INDEXSUB_13', 'INDEXSUB_14', 'INDEXSUB_15', 'INDEXSUB_16', 'INDEXSUB_17', 'INDEXSUB_18', 'INDEXSUB_19', 'INDEXSUB_20']
 
-Saving preprocessed to: 'gbad/mapping/source/preprocessed/DESCRIPTION.csv'
+Saving preprocessed to: 'gbad/mapping/source/preprocessed/description_tailshuf_100.csv'
 
-Using source file: 'gbad/mapping/source/preprocessed/DESCRIPTION.csv'
+Using source file: 'gbad/mapping/source/preprocessed/description_tailshuf_100.csv'
 
 Using graph: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.ttl'
 
@@ -45,4 +45,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-03-10_pz.rml'
 
-Script done on 2025-03-18 13:07:33-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-03-18 13:46:51-04:00 [COMMAND_EXIT_CODE="0"]

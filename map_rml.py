@@ -120,6 +120,7 @@ def postprocess(graph_path):
     total_count = 0
     def print_total_count(): print(f"\nNumber of triples in the graph: {total_count}")
 
+    print("Initiating postprocessing...")
     try:    
         g.parse(graph_path,
                 format=format)
