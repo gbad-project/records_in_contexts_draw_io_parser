@@ -14,3 +14,4 @@ __pycache__
 enriched
 node_modules
 New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv
+.env*
