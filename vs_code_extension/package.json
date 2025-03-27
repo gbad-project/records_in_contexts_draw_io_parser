@@ -1,15 +1,22 @@
 {
   "devDependencies": {
-    "@types/vscode": "^1.96.0",
-    "@vscode/vsce": "^3.2.2",
-    "typescript": "^5.7.3"
+    "@types/n3": "^1.24.2",
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.98.0",
+    "@vscode/vsce": "^3.3.1",
+    "typescript": "^5.8.2"
   },
   "name": "gbad-vsce",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2-prerelease",
+  "activationEvents": [
+    "onLanguage:trig",
+    "onLanguage:nq",
+    "onLanguage:turtle",
+    "onLanguage:nt"
+  ],
   "main": "out/extension.js",
   "engines": {
-    "vscode": "^1.96.0"
+    "vscode": "^1.98.0"
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -21,6 +28,10 @@
       {
         "command": "uuid-generator.generateUUID",
         "title": "Generate UUIDv5 from Selection"
+      },
+      {
+        "command": "rdfValidator.validate",
+        "title": "GBAD: Validate and Serialize"
       }
     ],
     "menus": {
@@ -29,12 +40,38 @@
           "command": "uuid-generator.generateUUID",
           "group": "uuid@1",
           "when": "editorHasSelection"
+        },
+        {
+          "command": "rdfValidator.validate",
+          "group": "rdf@1"
         }
       ]
+    },
+    "configuration": {
+      "title": "RDF Validator",
+      "properties": {
+        "rdfValidator.outputFormat": {
+          "type": "string",
+          "default": "trig",
+          "enum": [
+            "trig",
+            "nquads",
+            "n3",
+            "turtle",
+            "jsonld"
+          ],
+          "description": "Output serialization format"
+        }
+      }
     }
   },
   "dependencies": {
     "@types/uuid": "^10.0.0",
-    "uuid": "^11.0.5"
-  }
+    "n3": "^1.17.2",
+    "uuid": "^11.1.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "description": ""
 }

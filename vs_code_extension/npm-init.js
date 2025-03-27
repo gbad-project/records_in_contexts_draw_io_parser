@@ -6,6 +6,15 @@ module.exports = {
     engines: {
       vscode: '^1.98.0'
     },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:trig",
+        "onLanguage:nq",
+        "onLanguage:turtle",
+        "onLanguage:nt",
+    ],
     scripts: {
       "vscode:prepublish": "npm run compile",
       "compile": "tsc -p ./",
@@ -22,7 +31,7 @@ module.exports = {
         },
         {
           command: "rdfValidator.validate",
-          title: "RDF: Validate and Serialize"
+          title: "GBAD: Validate and Serialize"
         }
       ],
       menus: {
@@ -43,8 +52,8 @@ module.exports = {
         properties: {
           "rdfValidator.outputFormat": {
             "type": "string",
-            "default": "turtle",
-            "enum": ["turtle", "n3", "nquads", "jsonld"],
+            "default": "trig",
+            "enum": ["trig", "nquads", "n3", "turtle", "jsonld"],
             "description": "Output serialization format"
           }
         }
