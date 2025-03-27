@@ -1,6 +1,6 @@
 module.exports = {
     name: 'gbad-vsce',
-    version: '0.0.2-prerelease',
+    version: '0.0.2-prerelease.2',
     description: '',
     main: 'out/extension.js',
     engines: {

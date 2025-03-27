@@ -7,7 +7,7 @@
     "typescript": "^5.8.2"
   },
   "name": "gbad-vsce",
-  "version": "0.0.2-prerelease",
+  "version": "0.0.2-prerelease.2",
   "activationEvents": [
     "onLanguage:trig",
     "onLanguage:nq",

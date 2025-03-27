@@ -72,7 +72,12 @@ function activate(context) {
                 document.languageId === 'trig' ? 'application/trig' :
                     'application/n-quads';
         //vscode.window.showInformationMessage('Input Format: ' + inputFormat);
-        const fileContent = document.getText();
+        let fileContent = document.getText();
+        // Assume user wants to only check selection if text selected
+        const selection = editor.selection;
+        if (!selection.isEmpty) {
+            fileContent = editor.document.getText(selection);
+        }
         // Validate the file
         const validationResult = await rdfProcessor.validate(fileContent, inputFormat);
         if (validationResult.valid) {
