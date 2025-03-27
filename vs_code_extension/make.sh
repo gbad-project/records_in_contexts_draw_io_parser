@@ -2,7 +2,7 @@
 npm init -y --init-module ./npm-init.js
 
 # Install VS Code extension types and TypeScript
-npm install --save-dev typescript @types/vscode @vscode/vsce
+npm install --save-dev typescript @types/vscode @vscode/vsce @types/n3
 
 # Install uuid library
 npm install uuid @types/uuid
