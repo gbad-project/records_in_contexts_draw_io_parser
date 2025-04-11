@@ -370,7 +370,7 @@ def __init__(schema_code, source_filename=None):
         
         # ADD: Choose source CSV for mapping
         if source_filename is None:
-            source_filename = 'description_head_6.csv'
+            source_filename = 'description_tailshuf_100.csv'
     
     elif schema_code == 'auth':
         #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
@@ -380,7 +380,7 @@ def __init__(schema_code, source_filename=None):
 
         # Authority: Choose source CSV for mapping
         if source_filename is None:
-            source_filename = 'authority_head_6.csv'
+            source_filename = 'authority_tailshuf_100.csv'
 
         # Additional sources
         correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
