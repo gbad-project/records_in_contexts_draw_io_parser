@@ -1,0 +1,170 @@
+Prefix: rico: <https://www.ica.org/standards/RiC/ontology#>
+Prefix: add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+Prefix: auth: <https://data.archives.gov.on.ca/Schema/Authority/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: : <https://data.archives.gov.on.ca/>
+Ontology: <https://data.archives.gov.on.ca>
+  Import: <https://www.ica.org/standards/RiC/ontology#>
+
+ObjectProperty:
+  rdfs:subPropertyOf
+
+DataProperty:
+  add:hiddenNotes
+
+DataProperty:
+  add:archivistComment
+
+DataProperty:
+  add:notes
+
+DataProperty:
+  add:relatedMaterial
+
+DataProperty:
+  add:associatedMaterial
+
+DataProperty:
+  add:findingAidNote
+
+DataProperty:
+  add:immediateSourceOfAcquisition
+
+DataProperty:
+  add:custodialHistory
+
+DataProperty:
+  add:availabilityOfOtherFormats
+
+DataProperty:
+  add:accumulationDate
+
+DataProperty:
+  add:howToOrder
+
+DataProperty:
+  auth:sourceNote
+
+DataProperty:
+  auth:functionNote
+
+DataProperty:
+  auth:privateNote
+
+DataProperty:
+  rdfs:label
+
+Individual: rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22
+  Types: rico:Thing
+  Facts:
+    rico:hasOrHadIdentifier rr%3Atemplate%20%22KB%2FCorporateBodyIdentifier%2F%7BREFA%7D%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22,
+    rico:hasOrHadAgentName rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22,
+    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22,
+    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22,
+    rico:authorizedBy rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22,
+    rico:history "rml:reference \"ADM\"",
+    rico:isOrWasDescribedBy rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22,
+    auth:functionNote "rml:reference \"FUN\"",
+    rico:hasOrHadController rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22,
+    rico:isSuccessorOf rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22,
+    rico:hasSuccessor rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22,
+    rico:hasOrHadCorporateBodyType rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22,
+    auth:privateNote "rml:reference \"CMTAU\"",
+    rico:isEquivalentTo rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22
+
+Individual: rr%3Atemplate%20%22KB%2FCorporateBodyIdentifier%2F%7BREFA%7D%22
+  Types: rico:Identifier
+  Facts:
+    rico:hasIdentifierType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FCorporateBodyIdentifier%23Agency%20Reference%20Code%22,
+    rico:normalizedValue "rml:reference \"REFA\""
+
+Individual: rr%3Atemplate%20%22KB%2FNaturalAgentName%2F%7BNAME%7D%22
+  Types: rico:AgentName
+  Facts:
+    rico:normalizedValue "rml:reference \"NAME\"",
+    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_BEGINNING%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEEX_END%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FMandate%2F%7BAA%7D%22
+  Types: rico:Mandate
+
+Individual: rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22
+  Types: rico:Record
+  Facts:
+    auth:sourceNote "rml:reference \"SOURCE\"",
+    rico:hasDocumentaryFormType rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22,
+    rico:isOrWasRegulatedBy rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22,
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22,
+    rico:hasRecordState rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22,
+    rico:lastModificationDate "rml:reference \"MOD_DATE\""
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22
+  Types: rico:DocumentaryFormType
+
+Individual: rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22
+  Types: rico:Rule
+
+Individual: rr%3Atemplate%20%22Schema%2FAuthority%2FWebReady%23%7BWEBA%7D%22
+  Types: rico:RecordState
+
+Individual: rr%3Atemplate%20%22Schema%2FAuthority%2FStatus%23%7BSTATUSA%7D%22
+  Types: rico:RecordState
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FCorporateBodyIdentifier%23Agency%20Reference%20Code%22
+  Types: rico:IdentifierType
+
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22
+  Types: rico:CorporateBody
+  Facts:
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22
+
+Individual: rr%3Atemplate%20%22KB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2F%7BUUID%7D%22
+  Types: rico:AgentControlRelation
+  Facts:
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22,
+    rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22,
+    rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_END%7D%22
+  Types: rico:Date
+
+Individual: rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22
+  Types: rico:AgentName
+  Facts:
+    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22
+
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22
+  Types: rico:CorporateBody
+
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22
+  Types: rico:CorporateBody
+
+Individual: rr%3Atemplate%20%22KB%2FParallelAgentName%2F%7BPAR_1..4%7D%22
+  Types: rico:AgentName
+  Facts:
+    rico:hasOrHadCategory rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FParallelAgentName%22
+  Types: rico:Type
+
+Individual: rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22
+  Types: rico:CorporateBodyType
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FVariantAgentName%22
+  Types: rico:Type
+
+Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22
+  Types: rico:Type
+
+Individual: rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22
+  Types: rico:CorporateBody

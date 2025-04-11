@@ -84,37 +84,18 @@ add:notes rdf:type owl:DatatypeProperty .
 add:relatedMaterial rdf:type owl:DatatypeProperty .
 
 
-###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FfunctionNote%22
-<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FfunctionNote%22> rdf:type owl:DatatypeProperty ;
-                                                                                                                                  rdfs:subPropertyOf <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> .
-
-
-###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FprivateNote%22
-<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FprivateNote%22> rdf:type owl:DatatypeProperty ;
-                                                                                                                                 rdfs:subPropertyOf <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> .
-
-
-###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FsourceNote%22
-<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FsourceNote%22> rdf:type owl:DatatypeProperty ;
-                                                                                                                                rdfs:subPropertyOf <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> .
-
-
-###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22
-<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fwww.ica.org%2Fstandards%2FRiC%2Fontology%23generalDescription%22> rdf:type owl:DatatypeProperty .
-
-
 #################################################################
 #    Individuals
 #################################################################
 
-###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22
-<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22> rdf:type owl:NamedIndividual ,
-                                                                                                                                                                          rico:IdentifierType .
-
-
 ###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22
 <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAuthorityRecord%22> rdf:type owl:NamedIndividual ,
                                                                                                                                               rico:DocumentaryFormType .
+
+
+###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FCorporateBodyIdentifier%23Agency%20Reference%20Code%22
+<https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FCorporateBodyIdentifier%23Agency%20Reference%20Code%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                                                  rico:IdentifierType .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FNaturalAgentName%22
@@ -143,8 +124,9 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                       <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> ;
                                                                                                rico:hasOrHadController <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BCONTAG_1..14%7D%22> ;
                                                                                                rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.ca/rr%3Atemplate%20%22Schema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> ;
-                                                                                               rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22> ;
+                                                                                               rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBodyIdentifier%2F%7BREFA%7D%22> ;
                                                                                                rico:hasSuccessor <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BSUC_1..4%7D%22> ;
+                                                                                               rico:isEquivalentTo <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22> ;
                                                                                                rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22> ;
                                                                                                rico:isSuccessorOf <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgent%2F%7BPRED_1..5%7D%22> ;
                                                                                                auth:functionNote "rml:reference \"FUN\"" ;
@@ -176,13 +158,6 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                                     rico:relationHasTarget <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22> .
 
 
-###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22
-<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAgentIdentifier%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                   rico:Identifier ;
-                                                                                          rico:hasIdentifierType <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FAgentIdentifier%23Agency%20Reference%20Code%22> ;
-                                                                                          rico:normalizedValue "rml:reference \"REFA\"" .
-
-
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22
 <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FAuthorityRecord%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                       rico:Record ;
@@ -192,6 +167,18 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                              rico:isOrWasRegulatedBy <https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FRule%2F%7BRULES%7D%22> ;
                                                                                              auth:sourceNote "rml:reference \"SOURCE\"" ;
                                                                                              rico:lastModificationDate "rml:reference \"MOD_DATE\"" .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                 rico:CorporateBody .
+
+
+###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBodyIdentifier%2F%7BREFA%7D%22
+<https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FCorporateBodyIdentifier%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                           rico:Identifier ;
+                                                                                                  rico:hasIdentifierType <https://data.archives.gov.on.ca/rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FSchema%2FAuthority%2FCorporateBodyIdentifier%23Agency%20Reference%20Code%22> ;
+                                                                                                  rico:normalizedValue "rml:reference \"REFA\"" .
 
 
 ###  https://data.archives.gov.on.ca/rr%3Atemplate%20%22KB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22
