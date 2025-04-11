@@ -1,0 +1,32 @@
+{
+  "head": {
+    "vars": [
+      "p",
+      "s"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "p": {
+          "type": "uri",
+          "value": "https://www.ica.org/standards/RiC/ontology#isOrWasLocationOfAgent"
+        },
+        "s": {
+          "type": "uri",
+          "value": "https://data.archives.gov.on.ca/KB/Place/Walkerton%20%28Ont.%29"
+        }
+      },
+      {
+        "p": {
+          "type": "uri",
+          "value": "https://www.ica.org/standards/RiC/ontology#hasCreator"
+        },
+        "s": {
+          "type": "uri",
+          "value": "https://data.archives.gov.on.ca/KB/RecordSet/RG%2018-210"
+        }
+      }
+    ]
+  }
+}
