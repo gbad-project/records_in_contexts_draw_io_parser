@@ -4,12 +4,15 @@
 
 auth:sourceNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
-                rdfs:range rdfs:Literal .
+                rdfs:range rdfs:Literal ;
+                rdfs:label "Source Note" .
 
 auth:functionNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
-                rdfs:range rdfs:Literal .
+                rdfs:range rdfs:Literal ;
+                rdfs:label "Function Note" .
 
 auth:privateNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
-                rdfs:range rdfs:Literal .
+                rdfs:range rdfs:Literal ;
+                rdfs:label "Private Note" .
