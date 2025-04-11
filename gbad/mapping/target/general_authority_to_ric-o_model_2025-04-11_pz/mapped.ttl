@@ -3012,77 +3012,94 @@ auth:VariantAgentName a rico:Type;
   rdfs:label "Web Ready: Y" .
 
 auth:functionNote a owl:DatatypeProperty;
+  rdfs:comment "Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""@en;
   rdfs:domain rico:Agent;
-  rdfs:label "Function Note";
+  rdfs:label "function note"@en;
   rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf rico:generalDescription .
+  rdfs:subPropertyOf rico:generalDescription;
+  rico:identifier "FUN" .
 
 auth:privateNote a owl:DatatypeProperty;
+  rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"@en;
   rdfs:domain rico:Agent;
-  rdfs:label "Private Note";
+  rdfs:label "private note"@en;
   rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf rico:generalDescription .
+  rdfs:subPropertyOf rico:generalDescription;
+  rico:identifier "CMTAU" .
 
 auth:sourceNote a owl:DatatypeProperty;
+  rdfs:comment "AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."@en;
   rdfs:domain rico:Agent;
-  rdfs:label "Source Note";
+  rdfs:label "source note"@en;
   rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf rico:generalDescription .
+  rdfs:subPropertyOf rico:generalDescription;
+  rico:identifier "SOURCE" .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "accumulation date";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:date .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/archivistComment> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "private note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> a
     owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Associated Material";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats>
   a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Availability of Other Formats";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Private Note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:history .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Finding Aid Note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/hiddenNotes> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "private note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Private Note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition>
   a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Private Note";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:history .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/notes> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Public Notes";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
 
 <https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> a owl:DatatypeProperty;
   rdfs:domain rico:Instantiation, rico:RecordResource;
+  rdfs:label "Related Material";
   rdfs:range rdfs:Literal;
   rdfs:subPropertyOf rico:generalDescription .
