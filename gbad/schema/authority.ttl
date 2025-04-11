@@ -5,14 +5,20 @@
 auth:sourceNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
                 rdfs:range rdfs:Literal ;
-                rdfs:label "Source Note" .
+                rdfs:label "source note"@en ;
+                rdfs:comment """AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."""@en ;
+                rico:identifier "SOURCE" .
 
 auth:functionNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
                 rdfs:range rdfs:Literal ;
-                rdfs:label "Function Note" .
+                rdfs:label "function note"@en ;
+                rdfs:comment """Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""""@en ;
+                rico:identifier "FUN" .
 
 auth:privateNote rdfs:subPropertyOf rico:generalDescription ;
                 rdfs:domain rico:Agent ;
                 rdfs:range rdfs:Literal ;
-                rdfs:label "Private Note" .
+                rdfs:label "private note"@en ;
+                rdfs:comment """Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"""@en ;
+                rico:identifier "CMTAU" .
