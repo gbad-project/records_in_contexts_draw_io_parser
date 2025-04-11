@@ -1168,8 +1168,14 @@ def __init__(schema_code, source_filename=None):
                     mapping.add(pom_predicate_triple)
 
                     # Add object to predicate-object map
-                    pom_object_triple = (predicate_object_map, rr[1].object, object)
-                    mapping.add(pom_object_triple)
+                    if isinstance(object, Literal):
+                        object_map = BNode()
+                        mapping.add((predicate_object_map, rr[1].objectMap, object_map))
+                        mapping.add((object_map, rr[1].constant, Literal(object.value)))
+                        if object.language:
+                            mapping.add((object_map, rr[1].language, Literal(object.language)))
+                    else:
+                        mapping.add((predicate_object_map, rr[1].object, object))
 
         # Remove prefix from RiC-O name from subject df and add to graph
         rico_name = subject_row[rico_name_label]
