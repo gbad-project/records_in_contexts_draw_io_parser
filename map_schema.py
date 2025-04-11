@@ -1161,11 +1161,11 @@ def __init__(schema_code, source_filename=None):
                     mapping.add(pom_create_triple)
 
                     # Add predicate to predicate-object map
-                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, URIRef(predicate))
+                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, predicate)
                     mapping.add(pom_predicate_triple)
 
                     # Add object to predicate-object map
-                    pom_object_triple = (predicate_object_map, rr[1].object, URIRef(object))
+                    pom_object_triple = (predicate_object_map, rr[1].object, object)
                     mapping.add(pom_object_triple)
 
         # Remove prefix from RiC-O name from subject df and add to graph
