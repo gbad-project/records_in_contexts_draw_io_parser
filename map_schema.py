@@ -1152,8 +1152,11 @@ def __init__(schema_code, source_filename=None):
                 # Only allow RDFS predicates for now
                 predicate = parsed_result['predicate']
                 norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
+                is_rico = (norm_predicate.startswith(f"{rico[0]}:"))
                 is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
-                if (is_rdfs):
+                is_auth = (norm_predicate.startswith(f"{auth[0]}:"))
+                is_add = (norm_predicate.startswith(f"{add[0]}:"))
+                if (is_rico | is_rdfs | is_auth | is_add):
                     # Now we can actually iterate over objects
                     object = parsed_result['original_object']
                     predicate_object_map = BNode()
