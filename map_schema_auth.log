@@ -1,4 +1,4 @@
-Script started on 2025-04-11 13:38:14-04:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="120" LINES="20"]
+Script started on 2025-04-15 16:14:30-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="24"]
 Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
 
 Using source file: 'gbad/mapping/source/authority_tailshuf_100.csv'
@@ -14,6 +14,8 @@ Using graph: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-11_
 Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
 
 Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
+
+Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
 
 UUID v5 generated from namespace and 'rr_template__KB_AgentControlRelation__CONTAG_1___HEADING___UUID__': 7719c708-66ca-52cf-a9df-1b81cbbd659f
 
@@ -75,4 +77,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-11_pz.rml'
 
-Script done on 2025-04-11 13:38:18-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-15 16:14:35-04:00 [COMMAND_EXIT_CODE="0"]
