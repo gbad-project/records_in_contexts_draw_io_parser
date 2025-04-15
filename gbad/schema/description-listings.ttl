@@ -1,53 +1,123 @@
-@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
-@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rico: <https://www.ica.org/standards/RiC/ontology#>
+prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+prefix gbad: <https://data.gbad.ca/Schema/>
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings> a owl:Ontology .
+
+add:mnemonic
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf gbad:datatypeProperty ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "ADD mnemonic"@en ;
+    skos:scopeNote """An ADD mnemonic used in the legacy database."""@en .
 
 # Extensions to rico:generalDescription
 
-add:hiddenNotes rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:privateNote
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "private note"@en ;
+    rdfs:comment "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en, "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en ;
+    add:mnemonic "CMTD", "HIDDENNOTES" .
 
-add:archivistComment rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:notes
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "public notes"@en ;
+    rdfs:comment "Used for any generic, publicly accessible notes not otherwise accommodated."@en ;
+    add:mnemonic "NOTES" .
 
-add:notes rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:relatedMaterial
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "related material"@en ;
+    rdfs:comment "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en ;
+    add:mnemonic "RELMAT" .
 
-add:relatedMaterial rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:associatedMaterial
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "associated material"@en ;
+    rdfs:comment "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en ;
+    add:mnemonic "ASSMAT" .
 
-add:associatedMaterial rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:findingAidNote
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "finding aid note"@en ;
+    rdfs:comment "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en ;
+    add:mnemonic "FINDAID" .
 
-add:findingAidNote rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:availabilityOfOtherFormats
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "availability of other formats"@en ;
+    rdfs:comment "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en ;
+    add:mnemonic "AVAIL" .
 
-add:availabilityOfOtherFormats rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
-
-add:howToOrder rdfs:subPropertyOf rico:generalDescription ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:howToOrder
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "how to order"@en ;
+    rdfs:comment "Linked to the instantiation."@en ;
+    add:mnemonic "HOWTO" .
 
 # Extensions to rico:history
 
-add:immediateSourceOfAcquisition rdfs:subPropertyOf rico:history ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:immediateSourceOfAcquisition
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:history, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "immediate source of acquisition"@en ;
+    rdfs:comment "Same field used for custodial history (this can be a separate instance)."@en ;
+    add:mnemonic "ISA" .
 
-add:custodialHistory rdfs:subPropertyOf rico:history ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:custodialHistory
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:history, gbad:datatypeProperty ;
+    rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "custodial history"@en ;
+    rdfs:comment "Same field used for immediate source of aquisition (this can be a separate instance)."@en ;
+    add:mnemonic "CUSTOD" .
 
 # Placeholder for rico:accumulationDate before RiC-O 1.1 is released
 
-add:accumulationDate rdfs:subPropertyOf rico:date ;
-                rdfs:domain rico:RecordResource, rico:Instantiation ;
-                rdfs:range rdfs:Literal .
+add:accumulationDate
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:subPropertyOf rico:date, gbad:datatypeProperty ;
+    rdfs:domain rico:Thing ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "accumulation date"@en ;
+    rdfs:comment "There is no accumulation equivalent for the simple datatype property rico:creationDate. AH rasied this issue with EGAD on Github and there is agreement in principle to create one in due course."@en ;
+    add:mnemonic "DATEACM" .
