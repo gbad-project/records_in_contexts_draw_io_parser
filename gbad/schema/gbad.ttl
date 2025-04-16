@@ -8,7 +8,7 @@ prefix gbad: <https://data.gbad.ca/Schema/>
 gbad:datatypeProperty
     a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://data.gbad.ca/Schema> ;
-    rdfs:domain rdfs:Resource ;
+    #rdfs:domain rdfs:Resource ;  # implied for HermiT reasoner
     rdfs:range rdfs:Literal ;
     rdfs:label "datatype property" ;
     skos:scopeNote "An datatype property defined by the GBAD schema."@en .
@@ -16,7 +16,7 @@ gbad:datatypeProperty
 gbad:objectProperty
     a owl:ObjectProperty ;
     rdfs:isDefinedBy <https://data.gbad.ca/Schema> ;
-    rdfs:domain rdfs:Resource ;
+    #rdfs:domain rdfs:Resource ;  # implied for HermiT reasoner
     rdfs:range rdfs:Resource ;
     rdfs:label "object property" ;
     skos:scopeNote "An object property defined by the GBAD schema."@en .
