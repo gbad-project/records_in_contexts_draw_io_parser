@@ -1,11 +1,11 @@
-Script started on 2025-04-16 02:23:28-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="104" LINES="31"]
-Using source file: 'gbad/mapping/source/authority_tailshuf_100.csv'
+Script started on 2025-04-16 02:33:16-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="104" LINES="31"]
+Using source file: 'gbad/mapping/source/AUTHORITY.csv'
 
 Checking in for preprocessing...
 
 Source preprocessed by updating ['DATEEX_BEGINNING', 'DATEEX_END'] with values from 'New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
-Using source file: 'gbad/mapping/source/preprocessed/authority_tailshuf_100.csv'
+Using source file: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
 
 Using graph: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-15_pz.ttl'
 
@@ -131,4 +131,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-15_pz.rml'
 
-Script done on 2025-04-16 02:23:32-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-16 02:33:21-04:00 [COMMAND_EXIT_CODE="0"]
