@@ -170,4 +170,5 @@ Individual: rr%3Atemplate%20%22KB%2FCorporateBody%2F%7BREFA%7D%22
 Individual: rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FKB%2FRule%2FRules%20for%20Archival%20Description%22
   Types: rico:Rule
   Facts:
-    rico:title "rml:reference \"RULES\""
+    rico:title "rml:reference \"RULES\"",
+    rdfs:label "Rules for Archival Description"

@@ -1,11 +1,11 @@
-Script started on 2025-04-16 02:33:16-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="104" LINES="31"]
-Using source file: 'gbad/mapping/source/AUTHORITY.csv'
+Script started on 2025-04-16 02:41:29-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="104" LINES="31"]
+Using source file: 'gbad/mapping/source/authority_tailshuf_100.csv'
 
 Checking in for preprocessing...
 
 Source preprocessed by updating ['DATEEX_BEGINNING', 'DATEEX_END'] with values from 'New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
-Using source file: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
+Using source file: 'gbad/mapping/source/preprocessed/authority_tailshuf_100.csv'
 
 Using graph: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-15_pz.ttl'
 
@@ -14,62 +14,6 @@ Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
 Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
 
 Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_1___HEADING__urn_uuid__UUID__>: ec10ce2d-1ff9-5a75-a29e-5ce0614d4296
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_1} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ec10ce2d-1ff9-5a75-a29e-5ce0614d4296>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_1} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_2___HEADING__urn_uuid__UUID__>: ff844415-1f58-5ae0-b89a-8ba256bf0b86
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_2} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ff844415-1f58-5ae0-b89a-8ba256bf0b86>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_2} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_3___HEADING__urn_uuid__UUID__>: a6c2046a-60be-5fd2-bdea-4fdb5f2ba655
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_3} - {HEADING} (Agent Control Relation). Context: <urn:uuid:a6c2046a-60be-5fd2-bdea-4fdb5f2ba655>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_3} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_4___HEADING__urn_uuid__UUID__>: ffe7b846-c101-5f80-b308-838ef4ccc802
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_4} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ffe7b846-c101-5f80-b308-838ef4ccc802>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_4} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_5___HEADING__urn_uuid__UUID__>: 680b1e15-0868-5f28-bad0-123d7f0e385a
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_5} - {HEADING} (Agent Control Relation). Context: <urn:uuid:680b1e15-0868-5f28-bad0-123d7f0e385a>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_5} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_6___HEADING__urn_uuid__UUID__>: 99a226b1-94f6-52fd-85c6-9c5af3c0eaa3
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_6} - {HEADING} (Agent Control Relation). Context: <urn:uuid:99a226b1-94f6-52fd-85c6-9c5af3c0eaa3>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_6} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_7___HEADING__urn_uuid__UUID__>: 504afcc8-bc9a-5fd3-a862-6ed909e9dd49
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_7} - {HEADING} (Agent Control Relation). Context: <urn:uuid:504afcc8-bc9a-5fd3-a862-6ed909e9dd49>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_7} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_8___HEADING__urn_uuid__UUID__>: 392b1cdc-b00f-5a0b-bf7a-434ea164ae5f
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_8} - {HEADING} (Agent Control Relation). Context: <urn:uuid:392b1cdc-b00f-5a0b-bf7a-434ea164ae5f>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_8} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_9___HEADING__urn_uuid__UUID__>: 059ef9ea-ebea-503d-bb10-ac7fdd5f3195
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_9} - {HEADING} (Agent Control Relation). Context: <urn:uuid:059ef9ea-ebea-503d-bb10-ac7fdd5f3195>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_9} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_10___HEADING__urn_uuid__UUID__>: 3f4b8e9d-23c7-532e-adfe-69b8bdca0888
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_10} - {HEADING} (Agent Control Relation). Context: <urn:uuid:3f4b8e9d-23c7-532e-adfe-69b8bdca0888>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_10} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_11___HEADING__urn_uuid__UUID__>: 2494c2cb-a200-5670-85cd-229984a3081d
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_11} - {HEADING} (Agent Control Relation). Context: <urn:uuid:2494c2cb-a200-5670-85cd-229984a3081d>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_11} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_12___HEADING__urn_uuid__UUID__>: 0c81367d-9902-5a22-9ecb-1f11f381a664
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_12} - {HEADING} (Agent Control Relation). Context: <urn:uuid:0c81367d-9902-5a22-9ecb-1f11f381a664>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_12} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_13___HEADING__urn_uuid__UUID__>: 9a12974e-18bf-5f42-bc3f-3530923e135d
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_13} - {HEADING} (Agent Control Relation). Context: <urn:uuid:9a12974e-18bf-5f42-bc3f-3530923e135d>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_13} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_14___HEADING__urn_uuid__UUID__>: e5077683-3512-5199-84dc-d18a9cfb3f26
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_14} - {HEADING} (Agent Control Relation). Context: <urn:uuid:e5077683-3512-5199-84dc-d18a9cfb3f26>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_14} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_Agent__CONTAG_1__>: e1e09bdc-6fd2-5ae7-b2b5-43be617177b6
 
@@ -127,8 +71,64 @@ UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mappin
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/AgentControlRelation/{CONTAG_14}/{HEADING}/urn:uuid:5ae31978-ad9f-5861-877f-2cb12694a78c'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_14} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
 
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_1___HEADING__urn_uuid__UUID__>: ec10ce2d-1ff9-5a75-a29e-5ce0614d4296
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_1} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ec10ce2d-1ff9-5a75-a29e-5ce0614d4296>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_1} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_2___HEADING__urn_uuid__UUID__>: ff844415-1f58-5ae0-b89a-8ba256bf0b86
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_2} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ff844415-1f58-5ae0-b89a-8ba256bf0b86>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_2} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_3___HEADING__urn_uuid__UUID__>: a6c2046a-60be-5fd2-bdea-4fdb5f2ba655
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_3} - {HEADING} (Agent Control Relation). Context: <urn:uuid:a6c2046a-60be-5fd2-bdea-4fdb5f2ba655>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_3} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_4___HEADING__urn_uuid__UUID__>: ffe7b846-c101-5f80-b308-838ef4ccc802
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_4} - {HEADING} (Agent Control Relation). Context: <urn:uuid:ffe7b846-c101-5f80-b308-838ef4ccc802>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_4} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_5___HEADING__urn_uuid__UUID__>: 680b1e15-0868-5f28-bad0-123d7f0e385a
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_5} - {HEADING} (Agent Control Relation). Context: <urn:uuid:680b1e15-0868-5f28-bad0-123d7f0e385a>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_5} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_6___HEADING__urn_uuid__UUID__>: 99a226b1-94f6-52fd-85c6-9c5af3c0eaa3
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_6} - {HEADING} (Agent Control Relation). Context: <urn:uuid:99a226b1-94f6-52fd-85c6-9c5af3c0eaa3>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_6} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_7___HEADING__urn_uuid__UUID__>: 504afcc8-bc9a-5fd3-a862-6ed909e9dd49
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_7} - {HEADING} (Agent Control Relation). Context: <urn:uuid:504afcc8-bc9a-5fd3-a862-6ed909e9dd49>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_7} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_8___HEADING__urn_uuid__UUID__>: 392b1cdc-b00f-5a0b-bf7a-434ea164ae5f
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_8} - {HEADING} (Agent Control Relation). Context: <urn:uuid:392b1cdc-b00f-5a0b-bf7a-434ea164ae5f>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_8} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_9___HEADING__urn_uuid__UUID__>: 059ef9ea-ebea-503d-bb10-ac7fdd5f3195
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_9} - {HEADING} (Agent Control Relation). Context: <urn:uuid:059ef9ea-ebea-503d-bb10-ac7fdd5f3195>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_9} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_10___HEADING__urn_uuid__UUID__>: 3f4b8e9d-23c7-532e-adfe-69b8bdca0888
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_10} - {HEADING} (Agent Control Relation). Context: <urn:uuid:3f4b8e9d-23c7-532e-adfe-69b8bdca0888>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_10} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_11___HEADING__urn_uuid__UUID__>: 2494c2cb-a200-5670-85cd-229984a3081d
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_11} - {HEADING} (Agent Control Relation). Context: <urn:uuid:2494c2cb-a200-5670-85cd-229984a3081d>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_11} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_12___HEADING__urn_uuid__UUID__>: 0c81367d-9902-5a22-9ecb-1f11f381a664
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_12} - {HEADING} (Agent Control Relation). Context: <urn:uuid:0c81367d-9902-5a22-9ecb-1f11f381a664>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_12} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_13___HEADING__urn_uuid__UUID__>: 9a12974e-18bf-5f42-bc3f-3530923e135d
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_13} - {HEADING} (Agent Control Relation). Context: <urn:uuid:9a12974e-18bf-5f42-bc3f-3530923e135d>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_13} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_AgentControlRelation__CONTAG_14___HEADING__urn_uuid__UUID__>: e5077683-3512-5199-84dc-d18a9cfb3f26
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{CONTAG_14} - {HEADING} (Agent Control Relation). Context: <urn:uuid:e5077683-3512-5199-84dc-d18a9cfb3f26>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {CONTAG_14} will be processed as the main mnemonic, and all the others will be passed to RML as is: {HEADING} 
+
 
 
 Successfully saved RML map to: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-04-15_pz.rml'
 
-Script done on 2025-04-16 02:33:21-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-16 02:41:33-04:00 [COMMAND_EXIT_CODE="0"]

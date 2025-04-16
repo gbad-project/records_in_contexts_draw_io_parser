@@ -91,6 +91,7 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
 ###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FKB%2FRule%2FRules%20for%20Archival%20Description%22
 <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Aconstant%20%22https%3A%2F%2Fdata.archives.gov.on.ca%2FKB%2FRule%2FRules%20for%20Archival%20Description%22> rdf:type owl:NamedIndividual ,
                                                                                                                                                                          rico:Rule ;
+                                                                                                                                                                rdfs:label "Rules for Archival Description" ;
                                                                                                                                                                 rico:title "rml:reference \"RULES\"" .
 
 
