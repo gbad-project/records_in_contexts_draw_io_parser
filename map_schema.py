@@ -172,8 +172,9 @@ def __init__(schema_code, source_filename=None):
     base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
     base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
     base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
-    MAPPING_NS_UUID = uuid.uuid5(uuid.NAMESPACE_URL, f"{base_mapping_uri}#")
-    print(f"Namespace UUID v5 for <{base_mapping_uri}#>: {MAPPING_NS_UUID}\n")
+    # Not using these two below anymore because UUIDs are now from URL namespace
+    #MAPPING_NS_UUID = uuid.uuid5(uuid.NAMESPACE_URL, f"{base_mapping_uri}#")
+    #print(f"Namespace UUID v5 for <{base_mapping_uri}#>: {MAPPING_NS_UUID}\n")
 
     base_uri_prefix = f"{base_data_uri}/"
     schema_term = 'Schema'
@@ -264,10 +265,15 @@ def __init__(schema_code, source_filename=None):
     # Define UUID replacement logic - support any prefix or suffix (to diversify UUIDs) but only allowed chars
     uuid_pattern = f"{{({uuid_label}({triplesmap_pattern}*)|({triplesmap_pattern}*){uuid_label})}}" # unencoded curly brackets because regex applied before encoding
     uuid_regex = re.compile(uuid_pattern, flags=re.IGNORECASE) # let's make it case-insensitive to allow flexibility for different URI formats
+
+    def concat_full_mapping_entity_uri(entity_name):
+        return URIRef(f"{base_mapping_uri}#{entity_name}")
+
     def generate_uuid_str(entity_name, show_message=True):
-        uuid_str = str(uuid.uuid5(MAPPING_NS_UUID, entity_name))
+        full_uri = concat_full_mapping_entity_uri(entity_name)
+        uuid_str = str(uuid.uuid5(uuid.NAMESPACE_URL, full_uri))
         if show_message:
-            print(f"UUID v5 generated from namespace and '{entity_name}': {uuid_str}\n")
+            print(f"UUID v5 generated from ns:URL and <{full_uri}>: {uuid_str}\n")
         return uuid_str
 
     def substitute_uuid(uriref, uuid_str):
@@ -423,6 +429,10 @@ def __init__(schema_code, source_filename=None):
     ns = ('data', Namespace(URIRef(f"{base_uri}/")))
     auth = ('auth', Namespace(URIRef(f"{base_auth_uri}/")))
     add = ('add', Namespace(URIRef(f"{base_add_uri}/")))
+    maps = ('maps', Namespace(URIRef(f"{base_mapping_uri}#")))
+
+    # Prefix for prefix set when running drawio parser
+    DRAWIO_PREFIX = f"{maps[0]}:"  # used later in trimming
 
     # Define common prefixes
     rdf = ('rdf', RDF)
@@ -449,6 +459,7 @@ def __init__(schema_code, source_filename=None):
     g.namespace_manager.bind(*ns)
     g.namespace_manager.bind(*auth)
     g.namespace_manager.bind(*add)
+    g.namespace_manager.bind(*maps)
     g.namespace_manager.bind(*rml)
     g.namespace_manager.bind(*rr)
     g.namespace_manager.bind(*ql)
@@ -676,7 +687,7 @@ def __init__(schema_code, source_filename=None):
         # Replace namespace URIs with prefix codes
         uriref_str = str(norm_uri)
         # Remove base URI prefix
-        uriref_str = uriref_str.replace(f"{ns[0]}:", '')
+        uriref_str = uriref_str.replace(DRAWIO_PREFIX, '')
         # Decode special URI entities
         uriref_str = urllib.parse.unquote(uriref_str)
         return uriref_str
@@ -695,12 +706,15 @@ def __init__(schema_code, source_filename=None):
             return map_series
         
         # This implementation assumes that subject URIs are unique
-        subject_str = row[uriref_str_label]
-        cleaned_subject = triplesmap_clean(subject_str)
-        # Not showing message because we would only need to see it for rows with {UUID},
-        # and this is implemented in UUID substitution logic
-        uuid_str = generate_uuid_str(cleaned_subject, show_message=show_message)
-        return series(cleaned_subject, uuid_str)
+        subject_uri = row.get('subject', None)
+        if not pd.isna(subject_uri):
+            subject_str = extract_uriref_str(subject_uri)
+            cleaned_subject = triplesmap_clean(subject_str)
+            # Not showing message because we would only need to see it for rows with {UUID},
+            # and this is implemented in UUID substitution logic
+            uuid_str = generate_uuid_str(cleaned_subject, show_message=show_message)
+            return series(cleaned_subject, uuid_str)
+        return series(None, None)
     
     # Necessary to init namespace manager for uriref_str_to_map
     # Initialize an RDF graph
@@ -792,8 +806,10 @@ def __init__(schema_code, source_filename=None):
                     # which means we already saw the warning when iterating over disaggregated subjects_df
                     # Then if there is no triplesmap name set, then this is subjects_df before disaggregation,
                     # and we do not want to see the warning yet because URIs are not yet final
-                    show_warning = (row.get('predicate', None) is None and
-                                    row.get(triplesmap_label, None) is not None)
+                    #show_warning = (row.get('predicate', None) is None and
+                    #                row.get(triplesmap_label, None) is not None)
+                    # Means we're at disaggregated objects already:
+                    show_warning = (row.get('original_object', None) is not None)
                     if show_warning:
                         #print(set(matches)==set(['REF_ADD','TITLE'])) - this works btw; just in case want to put some logic here
                         other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
@@ -1292,15 +1308,17 @@ def __init__(schema_code, source_filename=None):
                 original_object = parsed_result['original_object']
                 if object in rico_authtp_subjects.keys(): # checking if the object is a subject among rico_authtp_subjects
                     true_object_uri, authtp_column_name = rico_authtp_subjects[object]
-                    object_triplesmap_name = parsed_result[triplesmap_label]
                     true_object_po = uriref_str_to_map(extract_uriref_str(true_object_uri),
-                                                        generate_uuid_str(object_triplesmap_name,
+                                                        generate_uuid_str(triplesmap_name, # subject triplesmap
                                                                           show_message=False)) # already saw these UUIDs
                     object_map_predicate = true_object_po[map_predicate_label]
                     object_map_object = true_object_po[map_object_label]
-                else:
-                    object_map_predicate = parsed_result[map_predicate_label]
-                    object_map_object = parsed_result[map_object_label]
+                else: # Still do UUID replacement
+                    object_po = uriref_str_to_map(extract_uriref_str(object),
+                                                    generate_uuid_str(triplesmap_name, # subject triplesmap
+                                                                        show_message=False)) # already saw these UUIDs
+                    object_map_predicate = object_po[map_predicate_label]
+                    object_map_object = object_po[map_object_label]
                 object_mnemonic = parsed_result[mnemonic_label]
                 #rdfs_label_triple = None # to use later - commented out since --label-disable
 
