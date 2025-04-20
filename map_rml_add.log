@@ -1,0 +1,38 @@
+Script started on 2025-04-17 10:55:01-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="15"]
+File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
+Initiated mapping params:
+('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml',
+ './rmlmapper-7.0.0-r374-all.jar',
+ 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/mapped.ttl')
+Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/mapped.ttl'
+
+Initiating postprocessing...
+Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/mapped.ttl'
+
+Number of triples in the graph: 3803
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+        
+        DELETE {
+        ?recordSet rdfs:label ?shorterLabel .
+        }
+        WHERE {
+        ?recordSet a rico:RecordSet ;
+                    rdfs:label ?label1, ?label2 .
+        FILTER(?label1 != ?label2)
+        ?recordSet rico:hasOrHadIdentifier ?identifier .
+        ?identifier a add:CurrentReferenceCode .
+        ?identifier rdfs:label ?identLabel .
+        BIND(REPLACE(?identLabel, "^(.*) \(Current Reference Code\)$", "$1") AS ?refCode)
+        FILTER(STRSTARTS(?label1, ?refCode) && STRSTARTS(?label2, ?refCode))
+        BIND(IF(STRLEN(?label1) < STRLEN(?label2), ?label1, ?label2) AS ?shorterLabel)
+        }
+        
+No triples were removed.
+
+Number of triples in the graph: 3803
+
+Script done on 2025-04-17 10:55:11-04:00 [COMMAND_EXIT_CODE="0"]
