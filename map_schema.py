@@ -106,6 +106,8 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         return preprocessor.separate_value(value, expect_num_cols, sep=unique_separator)
     
     def split_by_hyphen(value: str, expect_num_cols: int):
+        if re.fullmatch(r'\d{4}-\d{4}', value) is None:
+            value = ''  # won't try to separate these for now
         return preprocessor.separate_value(value, expect_num_cols, sep='-')
     
     # Column split #1
