@@ -502,8 +502,7 @@ _object_properties = [
 ]
 
 _datatype_properties = [
-    "add:hiddenNotes",
-    "add:archivistComment",
+    "add:privateNote",
     "add:notes",
     "add:relatedMaterial",
     "add:associatedMaterial",
