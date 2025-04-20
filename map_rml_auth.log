@@ -1,4 +1,4 @@
-Script started on 2025-04-16 02:41:36-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="104" LINES="31"]
+Script started on 2025-04-20 19:20:18-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
 File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
 Initiated mapping params:
 ('gbad/schema/authority/general_authority_to_ric-o_model_2025-04-15_pz.rml',
@@ -35,4 +35,4 @@ No triples were removed.
 
 Number of triples in the graph: 2384
 
-Script done on 2025-04-16 02:41:44-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-20 19:20:27-04:00 [COMMAND_EXIT_CODE="0"]

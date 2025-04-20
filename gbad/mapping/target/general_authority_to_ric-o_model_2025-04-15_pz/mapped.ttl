@@ -3056,7 +3056,7 @@ add:archivistComment a owl:DatatypeProperty .
 
 add:associatedMaterial a owl:DatatypeProperty;
   rdfs:comment "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a0028>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664925>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "associated material"@en;
   rdfs:range rdfs:Literal;
@@ -3065,7 +3065,7 @@ add:associatedMaterial a owl:DatatypeProperty;
 
 add:availabilityOfOtherFormats a owl:DatatypeProperty;
   rdfs:comment "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a0037>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664942>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "availability of other formats"@en;
   rdfs:range rdfs:Literal;
@@ -3074,7 +3074,7 @@ add:availabilityOfOtherFormats a owl:DatatypeProperty;
 
 add:custodialHistory a owl:DatatypeProperty;
   rdfs:comment "Same field used for immediate source of aquisition (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a0047>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664948>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "custodial history"@en;
   rdfs:range rdfs:Literal;
@@ -3083,7 +3083,7 @@ add:custodialHistory a owl:DatatypeProperty;
 
 add:findingAidNote a owl:DatatypeProperty;
   rdfs:comment "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a0069>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664960>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "finding aid note"@en;
   rdfs:range rdfs:Literal;
@@ -3094,7 +3094,7 @@ add:hiddenNotes a owl:DatatypeProperty .
 
 add:howToOrder a owl:DatatypeProperty;
   rdfs:comment "Linked to the instantiation."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a0076>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664986>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "how to order"@en;
   rdfs:range rdfs:Literal;
@@ -3103,7 +3103,7 @@ add:howToOrder a owl:DatatypeProperty;
 
 add:immediateSourceOfAcquisition a owl:DatatypeProperty;
   rdfs:comment "Same field used for custodial history (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a00100>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd971980664990>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "immediate source of acquisition"@en;
   rdfs:range rdfs:Literal;
@@ -3119,7 +3119,7 @@ add:mnemonic a owl:DatatypeProperty;
 
 add:notes a owl:DatatypeProperty;
   rdfs:comment "Used for any generic, publicly accessible notes not otherwise accommodated."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a00119>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd9719806649114>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "public notes"@en;
   rdfs:range rdfs:Literal;
@@ -3129,7 +3129,7 @@ add:notes a owl:DatatypeProperty;
 add:privateNote a owl:DatatypeProperty;
   rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en,
     "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a00137>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd9719806649132>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "private note"@en;
   rdfs:range rdfs:Literal;
@@ -3138,7 +3138,7 @@ add:privateNote a owl:DatatypeProperty;
 
 add:relatedMaterial a owl:DatatypeProperty;
   rdfs:comment "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/dc7053aa917e4261aaa127e935437a00145>;
+  rdfs:domain <https://data.archives.gov.on.ca/8d9a3eed69f849ee9855dd9719806649153>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "related material"@en;
   rdfs:range rdfs:Literal;

@@ -1342,6 +1342,9 @@ rdfs:label a owl:DatatypeProperty .
   rdfs:label "RG 9-99 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
+<https://data.archives.gov.on.ca/KB/Date/%2C%201977> a rico:Date;
+  rdfs:label ", 1977 (Date)" .
+
 <https://data.archives.gov.on.ca/KB/Date/02%2F26%2F2003> a rico:Date;
   rdfs:label "02/26/2003 (Date)";
   rico:normalizedDateValue "02/26/2003" .
@@ -1401,6 +1404,159 @@ rdfs:label a owl:DatatypeProperty .
 <https://data.archives.gov.on.ca/KB/Date/12%2F19%2F2000> a rico:Date;
   rdfs:label "12/19/2000 (Date)";
   rico:normalizedDateValue "12/19/2000" .
+
+<https://data.archives.gov.on.ca/KB/Date/1789> a rico:Date;
+  rdfs:label "1789 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1791> a rico:Date;
+  rdfs:label "1791 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1817> a rico:Date;
+  rdfs:label "1817 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1821> a rico:Date;
+  rdfs:label "1821 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1869> a rico:Date;
+  rdfs:label "1869 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1876> a rico:Date;
+  rdfs:label "1876 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1881> a rico:Date;
+  rdfs:label "1881 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1882> a rico:Date;
+  rdfs:label "1882 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1902> a rico:Date;
+  rdfs:label "1902 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1907> a rico:Date;
+  rdfs:label "1907 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1912> a rico:Date;
+  rdfs:label "1912 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1913> a rico:Date;
+  rdfs:label "1913 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1915> a rico:Date;
+  rdfs:label "1915 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1916> a rico:Date;
+  rdfs:label "1916 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1919> a rico:Date;
+  rdfs:label "1919 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1921> a rico:Date;
+  rdfs:label "1921 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1922> a rico:Date;
+  rdfs:label "1922 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1925> a rico:Date;
+  rdfs:label "1925 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1927> a rico:Date;
+  rdfs:label "1927 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1930> a rico:Date;
+  rdfs:label "1930 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1940> a rico:Date;
+  rdfs:label "1940 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1942> a rico:Date;
+  rdfs:label "1942 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1948> a rico:Date;
+  rdfs:label "1948 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1950> a rico:Date;
+  rdfs:label "1950 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1951> a rico:Date;
+  rdfs:label "1951 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1954> a rico:Date;
+  rdfs:label "1954 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1955> a rico:Date;
+  rdfs:label "1955 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1956> a rico:Date;
+  rdfs:label "1956 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1957> a rico:Date;
+  rdfs:label "1957 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1959> a rico:Date;
+  rdfs:label "1959 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1960> a rico:Date;
+  rdfs:label "1960 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1964> a rico:Date;
+  rdfs:label "1964 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1965> a rico:Date;
+  rdfs:label "1965 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1966> a rico:Date;
+  rdfs:label "1966 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1967> a rico:Date;
+  rdfs:label "1967 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1968> a rico:Date;
+  rdfs:label "1968 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1969> a rico:Date;
+  rdfs:label "1969 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1972> a rico:Date;
+  rdfs:label "1972 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1973> a rico:Date;
+  rdfs:label "1973 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1977> a rico:Date;
+  rdfs:label "1977 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1980> a rico:Date;
+  rdfs:label "1980 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1984> a rico:Date;
+  rdfs:label "1984 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1985> a rico:Date;
+  rdfs:label "1985 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1986> a rico:Date;
+  rdfs:label "1986 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1987> a rico:Date;
+  rdfs:label "1987 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1991> a rico:Date;
+  rdfs:label "1991 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/2000> a rico:Date;
+  rdfs:label "2000 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/2002> a rico:Date;
+  rdfs:label "2002 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/2010> a rico:Date;
+  rdfs:label "2010 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/2011> a rico:Date;
+  rdfs:label "2011 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/2013> a rico:Date;
+  rdfs:label "2013 (Date)" .
 
 <https://data.archives.gov.on.ca/KB/FormerCode/Accession%2013097%3B%20Lead%20number%202021-012>
   a rico:Identifier;
@@ -4680,7 +4836,7 @@ add:accumulationDate a owl:DatatypeProperty;
 
 add:associatedMaterial a owl:DatatypeProperty;
   rdfs:comment "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6525>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608825>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "associated material"@en;
   rdfs:range rdfs:Literal;
@@ -4689,7 +4845,7 @@ add:associatedMaterial a owl:DatatypeProperty;
 
 add:availabilityOfOtherFormats a owl:DatatypeProperty;
   rdfs:comment "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6534>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608835>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "availability of other formats"@en;
   rdfs:range rdfs:Literal;
@@ -4698,7 +4854,7 @@ add:availabilityOfOtherFormats a owl:DatatypeProperty;
 
 add:custodialHistory a owl:DatatypeProperty;
   rdfs:comment "Same field used for immediate source of aquisition (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6554>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608846>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "custodial history"@en;
   rdfs:range rdfs:Literal;
@@ -4707,7 +4863,7 @@ add:custodialHistory a owl:DatatypeProperty;
 
 add:findingAidNote a owl:DatatypeProperty;
   rdfs:comment "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6565>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608868>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "finding aid note"@en;
   rdfs:range rdfs:Literal;
@@ -4716,7 +4872,7 @@ add:findingAidNote a owl:DatatypeProperty;
 
 add:howToOrder a owl:DatatypeProperty;
   rdfs:comment "Linked to the instantiation."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6573>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608881>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "how to order"@en;
   rdfs:range rdfs:Literal;
@@ -4725,7 +4881,7 @@ add:howToOrder a owl:DatatypeProperty;
 
 add:immediateSourceOfAcquisition a owl:DatatypeProperty;
   rdfs:comment "Same field used for custodial history (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d6596>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd1072608887>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "immediate source of acquisition"@en;
   rdfs:range rdfs:Literal;
@@ -4741,7 +4897,7 @@ add:mnemonic a owl:DatatypeProperty;
 
 add:notes a owl:DatatypeProperty;
   rdfs:comment "Used for any generic, publicly accessible notes not otherwise accommodated."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d65116>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd10726088110>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "public notes"@en;
   rdfs:range rdfs:Literal;
@@ -4751,7 +4907,7 @@ add:notes a owl:DatatypeProperty;
 add:privateNote a owl:DatatypeProperty;
   rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en,
     "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d65129>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd10726088122>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "private note"@en;
   rdfs:range rdfs:Literal;
@@ -4760,7 +4916,7 @@ add:privateNote a owl:DatatypeProperty;
 
 add:relatedMaterial a owl:DatatypeProperty;
   rdfs:comment "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/7624a9fe16654c4da50c03dbd5d05d65146>;
+  rdfs:domain <https://data.archives.gov.on.ca/f0543f651d3841eab0fdf0bd10726088140>;
   rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
   rdfs:label "related material"@en;
   rdfs:range rdfs:Literal;

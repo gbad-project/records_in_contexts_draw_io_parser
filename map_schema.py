@@ -11,6 +11,8 @@ import glob
 import requests
 import uuid
 
+from gbad.converter.preprocessors import SourceCSVPreprocessor
+
 # Prohibit trimming pd prints in shell
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
@@ -20,6 +22,9 @@ pd.set_option('display.max_colwidth', None)
 # Set labels for reference fields
 SISN = 'SISN'
 DATEEX_COLS = ['DATEEX_BEGINNING', 'DATEEX_END']
+DATEOFF_COLNAME = 'DATEOFF'
+DATE_BEGINNING_SUFFIX = '_BEGINNING'
+DATE_END_SUFFIX = '_END'
 DATECONT_PREFIX = 'DATECONT_'
 auth_heading_label = 'HEADING'
 add_refd_label = 'REFD'
@@ -83,74 +88,80 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
     return source_graph
 
 def add_preprocess(source_csv_path, preprocessed_csv_path):
-    source_df = pd.read_csv(source_csv_path, dtype='object')
+    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
 
     def split_by_colon(value: str, expect_num_cols: int):
-        value = value.replace(': :', ':  :')
-        separated_values = value.split(sep=' : ')
-        if len(separated_values) != expect_num_cols:
-            separated_values = [None] * expect_num_cols
-        return separated_values
+        SEP = ' : '
+        def fix_colon_spacing(value: str) -> str:
+            while ': :' in value:
+                value = value.replace(': :', ':  :')
+            value = value[:-2] if value.endswith(' :') else value  # to fix any ending colon
+            value = value[2:] if value.startswith(': ') else value  # to fix any starting colon
+            return value
+        return preprocessor.separate_value(fix_colon_spacing(value), expect_num_cols, sep=SEP)
     
     def split_by_adjacent_case(value: str, expect_num_cols: int):
         unique_separator = '<split-by-adjacent-case>'
         value = re.sub(r'([^A-Z\s\(\[])([A-Z])', rf'\1{unique_separator}\2', value)
-        separated_values = value.split(sep=unique_separator)
-        if len(separated_values) < expect_num_cols:
-            separated_values.extend([None] * (expect_num_cols - len(separated_values)))
-        elif len(separated_values) != expect_num_cols:
-            separated_values = [None] * expect_num_cols
-        return separated_values
+        return preprocessor.separate_value(value, expect_num_cols, sep=unique_separator)
     
-    def column_split(split_method, joint_col, separate_cols_list):
-        nonlocal source_df
-        source_df[separate_cols_list] = source_df[joint_col].apply(
-            lambda x: split_method('' if pd.isna(x) else str(x), len(separate_cols_list))
-        ).apply(pd.Series)
-        print(f"Splitting column '{joint_col}' into {separate_cols_list}\n")
-        #source_df.drop(columns=[joint_col], inplace=True)
+    def split_by_hyphen(value: str, expect_num_cols: int):
+        return preprocessor.separate_value(value, expect_num_cols, sep='-')
     
     # Column split #1
     joint_findaid_col = 'FINDAID:FINDAIDLINK:FINDAID_URL'
     separate_findaid_cols = ['FINDAID', 'FINDAIDLINK', 'FINDAID_URL']
-    column_split(split_by_colon, joint_findaid_col, separate_findaid_cols)
+    preprocessor.column_split(split_by_colon, joint_findaid_col, separate_findaid_cols)
 
     # Column split #2
     joint_iil_col = 'IIL:IIL_URL'
     separate_iil_cols = ['IIL', 'IIL_URL']
-    column_split(split_by_colon, joint_iil_col, separate_iil_cols)
+    preprocessor.column_split(split_by_colon, joint_iil_col, separate_iil_cols)
 
     # Column split #3
     indexprov_col = 'INDEXPROV'
     numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 21)]
-    column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
+    preprocessor.column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
 
     # Column split #4
     indexname_col = 'INDEXNAME'
     numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 21)]
-    column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
+    preprocessor.column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
 
     # Column split #5
     indexsub_col = 'INDEXSUB'
     numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 21)]
-    column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
+    preprocessor.column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
 
-    print(f"Saving preprocessed to: '{preprocessed_csv_path}'\n")
-    os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
-    source_df.to_csv(preprocessed_csv_path, index=False, header=True)
+    # Column split #6
+    joint_office_col = 'DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA'
+    separate_office_cols = ['DATEOFF', 'OFFICEAB', 'AB_REFA', 'OFFICEC', 'C_REFA']
+    numbered_office_cols = []
+    for i in range(1, 21):
+        numbered_office_cols.extend([f"{col}_{i}" for col in separate_office_cols])
+    len(numbered_office_cols)
+    preprocessor.column_split(split_by_colon, joint_office_col, numbered_office_cols)
+
+    # Column split #7
+    joint_dateoff_colnames = [f'{DATEOFF_COLNAME}_{i}' for i in range(1, 21)]
+    for col in joint_dateoff_colnames:
+        separate_dateoff_cols = [f"{col}{DATE_BEGINNING_SUFFIX}", f"{col}{DATE_END_SUFFIX}"]
+        preprocessor.column_split(split_by_hyphen, col, separate_dateoff_cols)
+
+    preprocessor.dump()
 
 def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
-    source_df = pd.read_csv(source_csv_path, index_col=SISN, dtype='object')
+    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
     correct_dateex_path = kwargs.get('correct_dateex_path', None)
 
     def pull_correct_dateex():
-        nonlocal source_df, correct_dateex_path
+        nonlocal correct_dateex_path
         correct_dateex_name = os.path.basename(correct_dateex_path)
         if correct_dateex_path is None:
             return
         try:
             correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN, dtype='object')
-            source_df.update(correct_dateex_df[DATEEX_COLS])
+            preprocessor.update(correct_dateex_df[DATEEX_COLS])
             
             print(f"Source preprocessed by updating {DATEEX_COLS} with values from '{correct_dateex_name}'\n")
         except Exception as e:
@@ -159,8 +170,7 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
     # Update DATEEX with correct values
     pull_correct_dateex()
 
-    os.makedirs(os.path.dirname(preprocessed_csv_path), exist_ok=True)
-    source_df.to_csv(preprocessed_csv_path, index=True, header=True)
+    preprocessor.dump()
 
 def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology

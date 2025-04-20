@@ -1,4 +1,4 @@
-Script started on 2025-04-17 10:53:32-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="15"]
+Script started on 2025-04-20 19:19:12-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
 Using source file: 'gbad/mapping/source/description_tailshuf_100.csv'
 
 Checking in for preprocessing...
@@ -13,6 +13,48 @@ Splitting column 'INDEXNAME' into ['INDEXNAME_1', 'INDEXNAME_2', 'INDEXNAME_3', 
 
 Splitting column 'INDEXSUB' into ['INDEXSUB_1', 'INDEXSUB_2', 'INDEXSUB_3', 'INDEXSUB_4', 'INDEXSUB_5', 'INDEXSUB_6', 'INDEXSUB_7', 'INDEXSUB_8', 'INDEXSUB_9', 'INDEXSUB_10', 'INDEXSUB_11', 'INDEXSUB_12', 'INDEXSUB_13', 'INDEXSUB_14', 'INDEXSUB_15', 'INDEXSUB_16', 'INDEXSUB_17', 'INDEXSUB_18', 'INDEXSUB_19', 'INDEXSUB_20']
 
+Splitting column 'DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA' into ['DATEOFF_1', 'OFFICEAB_1', 'AB_REFA_1', 'OFFICEC_1', 'C_REFA_1', 'DATEOFF_2', 'OFFICEAB_2', 'AB_REFA_2', 'OFFICEC_2', 'C_REFA_2', 'DATEOFF_3', 'OFFICEAB_3', 'AB_REFA_3', 'OFFICEC_3', 'C_REFA_3', 'DATEOFF_4', 'OFFICEAB_4', 'AB_REFA_4', 'OFFICEC_4', 'C_REFA_4', 'DATEOFF_5', 'OFFICEAB_5', 'AB_REFA_5', 'OFFICEC_5', 'C_REFA_5', 'DATEOFF_6', 'OFFICEAB_6', 'AB_REFA_6', 'OFFICEC_6', 'C_REFA_6', 'DATEOFF_7', 'OFFICEAB_7', 'AB_REFA_7', 'OFFICEC_7', 'C_REFA_7', 'DATEOFF_8', 'OFFICEAB_8', 'AB_REFA_8', 'OFFICEC_8', 'C_REFA_8', 'DATEOFF_9', 'OFFICEAB_9', 'AB_REFA_9', 'OFFICEC_9', 'C_REFA_9', 'DATEOFF_10', 'OFFICEAB_10', 'AB_REFA_10', 'OFFICEC_10', 'C_REFA_10', 'DATEOFF_11', 'OFFICEAB_11', 'AB_REFA_11', 'OFFICEC_11', 'C_REFA_11', 'DATEOFF_12', 'OFFICEAB_12', 'AB_REFA_12', 'OFFICEC_12', 'C_REFA_12', 'DATEOFF_13', 'OFFICEAB_13', 'AB_REFA_13', 'OFFICEC_13', 'C_REFA_13', 'DATEOFF_14', 'OFFICEAB_14', 'AB_REFA_14', 'OFFICEC_14', 'C_REFA_14', 'DATEOFF_15', 'OFFICEAB_15', 'AB_REFA_15', 'OFFICEC_15', 'C_REFA_15', 'DATEOFF_16', 'OFFICEAB_16', 'AB_REFA_16', 'OFFICEC_16', 'C_REFA_16', 'DATEOFF_17', 'OFFICEAB_17', 'AB_REFA_17', 'OFFICEC_17', 'C_REFA_17', 'DATEOFF_18', 'OFFICEAB_18', 'AB_REFA_18', 'OFFICEC_18', 'C_REFA_18', 'DATEOFF_19', 'OFFICEAB_19', 'AB_REFA_19', 'OFFICEC_19', 'C_REFA_19', 'DATEOFF_20', 'OFFICEAB_20', 'AB_REFA_20', 'OFFICEC_20', 'C_REFA_20']
+
+Splitting column 'DATEOFF_1' into ['DATEOFF_1_BEGINNING', 'DATEOFF_1_END']
+
+Splitting column 'DATEOFF_2' into ['DATEOFF_2_BEGINNING', 'DATEOFF_2_END']
+
+Splitting column 'DATEOFF_3' into ['DATEOFF_3_BEGINNING', 'DATEOFF_3_END']
+
+Splitting column 'DATEOFF_4' into ['DATEOFF_4_BEGINNING', 'DATEOFF_4_END']
+
+Splitting column 'DATEOFF_5' into ['DATEOFF_5_BEGINNING', 'DATEOFF_5_END']
+
+Splitting column 'DATEOFF_6' into ['DATEOFF_6_BEGINNING', 'DATEOFF_6_END']
+
+Splitting column 'DATEOFF_7' into ['DATEOFF_7_BEGINNING', 'DATEOFF_7_END']
+
+Splitting column 'DATEOFF_8' into ['DATEOFF_8_BEGINNING', 'DATEOFF_8_END']
+
+Splitting column 'DATEOFF_9' into ['DATEOFF_9_BEGINNING', 'DATEOFF_9_END']
+
+Splitting column 'DATEOFF_10' into ['DATEOFF_10_BEGINNING', 'DATEOFF_10_END']
+
+Splitting column 'DATEOFF_11' into ['DATEOFF_11_BEGINNING', 'DATEOFF_11_END']
+
+Splitting column 'DATEOFF_12' into ['DATEOFF_12_BEGINNING', 'DATEOFF_12_END']
+
+Splitting column 'DATEOFF_13' into ['DATEOFF_13_BEGINNING', 'DATEOFF_13_END']
+
+Splitting column 'DATEOFF_14' into ['DATEOFF_14_BEGINNING', 'DATEOFF_14_END']
+
+Splitting column 'DATEOFF_15' into ['DATEOFF_15_BEGINNING', 'DATEOFF_15_END']
+
+Splitting column 'DATEOFF_16' into ['DATEOFF_16_BEGINNING', 'DATEOFF_16_END']
+
+Splitting column 'DATEOFF_17' into ['DATEOFF_17_BEGINNING', 'DATEOFF_17_END']
+
+Splitting column 'DATEOFF_18' into ['DATEOFF_18_BEGINNING', 'DATEOFF_18_END']
+
+Splitting column 'DATEOFF_19' into ['DATEOFF_19_BEGINNING', 'DATEOFF_19_END']
+
+Splitting column 'DATEOFF_20' into ['DATEOFF_20_BEGINNING', 'DATEOFF_20_END']
+
 Saving preprocessed to: 'gbad/mapping/source/preprocessed/description_tailshuf_100.csv'
 
 Using source file: 'gbad/mapping/source/preprocessed/description_tailshuf_100.csv'
@@ -24,22 +66,6 @@ Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
 Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
 
 Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
-
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
-
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
 
@@ -56,6 +82,22 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: 'KB/CreationRelation/{REF_FILE}/{OFFICEABC_1}/704ef57a-5abd-5c7f-b893-08f3d4aa1ba5'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_1} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
+
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
 
@@ -77,4 +119,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml'
 
-Script done on 2025-04-17 10:53:40-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-20 19:19:17-04:00 [COMMAND_EXIT_CODE="0"]
