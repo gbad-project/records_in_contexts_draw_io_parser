@@ -378,7 +378,7 @@ def __init__(schema_code, source_filename=None):
 
     # Choose ontology to map
     base_uri = base_data_uri
-    suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
+    #suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
 
     # Set schema-specific params
     if schema_code == 'add':
@@ -433,8 +433,8 @@ def __init__(schema_code, source_filename=None):
             format="turtle")  # Adjust the format as needed
 
     # Add additional triples
-    if suppl_graph_dir:
-        g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
+    #if suppl_graph_dir:
+    #    g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
 
     # Define custom prefixes
     rico = ('rico', Namespace(rico_uri))

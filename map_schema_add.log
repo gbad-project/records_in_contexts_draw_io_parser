@@ -1,4 +1,4 @@
-Script started on 2025-04-20 19:42:43-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
+Script started on 2025-04-20 20:12:48-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
 Using source file: 'gbad/mapping/source/description_tailshuf_100.csv'
 
 Checking in for preprocessing...
@@ -61,12 +61,6 @@ Using source file: 'gbad/mapping/source/preprocessed/description_tailshuf_100.cs
 
 Using graph: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.ttl'
 
-Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
-
-Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
-
-Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
-
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
@@ -119,4 +113,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml'
 
-Script done on 2025-04-20 19:42:46-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-20 20:12:51-04:00 [COMMAND_EXIT_CODE="0"]

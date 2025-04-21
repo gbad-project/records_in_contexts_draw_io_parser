@@ -331,14 +331,51 @@ def postprocess(graph_path):
         save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding)
         return removed_count
 
+    # combine_turtle_files generated with Claude 3.5 Sonnet
+    # on 2024-08-29, with modifications
+    def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
+        formats = {
+            'turtle': ['ttl', 'turtle'],
+            'nt': ['nt'],
+            'n3': ['n3'],
+            'xml': ['rdf', 'owl', 'xml'],
+            'json-ld': ['jsonld', 'json-ld'],
+            'nquads': ['nq'],
+            'trig': ['trig']
+        }
+
+        # Walk through the directory tree
+        #for folder_path, _, filenames in os.walk(root_folder): # this is when want to enum all files from subdirs
+        def walk_root_folder(folder_path, filenames):
+            for filename in filenames:
+                # Get the file extension
+                file_ext = filename.split('.')[-1]
+
+                # Iterate over formats and check if the extension matches
+                for format_name, extensions in formats.items():
+                    if ((file_ext in extensions) & (format_name == format)):
+                        file_path = os.path.join(folder_path, filename)
+                        print(f"\nAdding a supplemental '{format_name}' file: '{file_path}'")
+                        
+                        # Parse the Turtle file and add its contents to the combined graph
+                        source_graph.parse(file_path, format=format)
+
+        filenames = (filename for filename in os.listdir(root_folder) if os.path.isfile(os.path.join(root_folder, filename)))
+        walk_root_folder(root_folder, filenames)
+
+        return source_graph
+
     def run_postprocessing():
-        nonlocal total_count
+        nonlocal total_count, g
         original_set = set(g)
         print("Postprocessing...")
         total_count = total_count - remove_shorter_duplicate_labels(g)
         #total_count = total_count - remove_false_agentcontrolrelation(g)
         #total_count = total_count - remove_false_authtp(g)
         #print("No postprocessing scheduled - none applied.")
+        # Add additional triples
+        if suppl_graph_dir:
+            g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
         print_total_count()
         return set(g) != original_set
     has_changed = run_postprocessing()
@@ -350,6 +387,8 @@ if __name__ == '__main__':
     parser.add_argument("schema", help="Choose one: add or auth.")
 
     args = parser.parse_args()
+
+    suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
 
     rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
     graph, has_changed = postprocess(ttl_path)

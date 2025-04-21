@@ -1,6 +1,5 @@
 @prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
 @prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
-@prefix auth: <https://data.archives.gov.on.ca/Schema/Authority/> .
 @prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
 @prefix fno: <https://w3id.org/function/ontology#> .
 @prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
@@ -4729,39 +4728,11 @@ rdfs:label a owl:DatatypeProperty .
   a rico:Title;
   rdfs:label "William G. Storm architectural drawings for the J. C. Fitch residence in Toronto, Ontario (Title)" .
 
-auth:functionNote a owl:DatatypeProperty;
-  rdfs:comment "Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""@en;
-  rdfs:domain rico:Agent;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority>;
-  rdfs:label "function note"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  auth:mnemonic "FUN" .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
 
-auth:mnemonic a owl:DatatypeProperty;
-  rdfs:domain owl:DatatypeProperty;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority>;
-  rdfs:label "authority mnemonic"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> a owl:DatatypeProperty .
 
-auth:privateNote a owl:DatatypeProperty;
-  rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"@en;
-  rdfs:domain rico:Agent;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority>;
-  rdfs:label "private note"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  auth:mnemonic "CMTAU" .
-
-auth:sourceNote a owl:DatatypeProperty;
-  rdfs:comment "AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."@en;
-  rdfs:domain rico:Agent;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority>;
-  rdfs:label "source note"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  auth:mnemonic "SOURCE" .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> a owl:DatatypeProperty .
 
 add:ArchivalDescriptionRecord a rico:DocumentaryFormType;
   rdfs:label "Archival Description Record" .
@@ -4822,105 +4793,22 @@ add:FormerCode a rico:IdentifierType;
 <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
   rdfs:label "Web Enabled: Y" .
 
-add:accumulationDate a owl:DatatypeProperty;
-  rdfs:comment "There is no accumulation equivalent for the simple datatype property rico:creationDate. AH rasied this issue with EGAD on Github and there is agreement in principle to create one in due course."@en;
-  rdfs:domain rico:Thing;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "accumulation date"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:date;
-  add:mnemonic "DATEACM" .
+add:accumulationDate a owl:DatatypeProperty .
 
-add:associatedMaterial a owl:DatatypeProperty;
-  rdfs:comment "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70216>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "associated material"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "ASSMAT" .
+add:associatedMaterial a owl:DatatypeProperty .
 
-add:availabilityOfOtherFormats a owl:DatatypeProperty;
-  rdfs:comment "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70234>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "availability of other formats"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "AVAIL" .
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
 
-add:custodialHistory a owl:DatatypeProperty;
-  rdfs:comment "Same field used for immediate source of aquisition (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70244>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "custodial history"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:history;
-  add:mnemonic "CUSTOD" .
+add:custodialHistory a owl:DatatypeProperty .
 
-add:findingAidNote a owl:DatatypeProperty;
-  rdfs:comment "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70265>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "finding aid note"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "FINDAID" .
+add:findingAidNote a owl:DatatypeProperty .
 
-add:howToOrder a owl:DatatypeProperty;
-  rdfs:comment "Linked to the instantiation."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70280>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "how to order"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "HOWTO" .
+add:howToOrder a owl:DatatypeProperty .
 
-add:immediateSourceOfAcquisition a owl:DatatypeProperty;
-  rdfs:comment "Same field used for custodial history (this can be a separate instance)."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c70289>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "immediate source of acquisition"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:history;
-  add:mnemonic "ISA" .
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
 
-add:mnemonic a owl:DatatypeProperty;
-  rdfs:domain owl:DatatypeProperty;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "ADD mnemonic"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty> .
+add:notes a owl:DatatypeProperty .
 
-add:notes a owl:DatatypeProperty;
-  rdfs:comment "Used for any generic, publicly accessible notes not otherwise accommodated."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c702117>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "public notes"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "NOTES" .
+add:privateNote a owl:DatatypeProperty .
 
-add:privateNote a owl:DatatypeProperty;
-  rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en,
-    "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c702136>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "private note"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "CMTD", "HIDDENNOTES" .
-
-add:relatedMaterial a owl:DatatypeProperty;
-  rdfs:comment "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en;
-  rdfs:domain <https://data.archives.gov.on.ca/17db0058f3b141c1a265306373d5c702149>;
-  rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings>;
-  rdfs:label "related material"@en;
-  rdfs:range rdfs:Literal;
-  rdfs:subPropertyOf <https://data.gbad.ca/Schema/datatypeProperty>, rico:generalDescription;
-  add:mnemonic "RELMAT" .
-
-<https://data.gbad.ca/Schema/datatypeProperty> a owl:DatatypeProperty;
-  rdfs:isDefinedBy <https://data.gbad.ca/Schema>;
-  rdfs:label "datatype property";
-  rdfs:range rdfs:Literal .
+add:relatedMaterial a owl:DatatypeProperty .
