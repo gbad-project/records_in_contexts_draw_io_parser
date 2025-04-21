@@ -1,5 +1,4 @@
-Script started on 2025-04-20 20:12:55-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
-File 'mapped.ttl' already exists - renamed to 'mapped.ttl.backup'
+Script started on 2025-04-21 03:21:47-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="31"]
 Initiated mapping params:
 ('gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
@@ -9,7 +8,7 @@ Successfully mapped 'gbad/schema/description-listings/general_add_descriptions_a
 Initiating postprocessing...
 Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/mapped.ttl'
 
-Number of triples in the graph: 3783
+Number of triples in the graph: 3989
 Postprocessing...
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
@@ -39,9 +38,9 @@ Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
 
 Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
 
-Number of triples in the graph: 3783
+Number of triples in the graph: 3989
 
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/mapped_postprocessed.nt'
 
-Script done on 2025-04-20 20:13:02-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-21 03:21:57-04:00 [COMMAND_EXIT_CODE="0"]

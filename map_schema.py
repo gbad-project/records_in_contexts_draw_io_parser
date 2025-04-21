@@ -150,6 +150,42 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         separate_dateoff_cols = [f"{col}{DATE_BEGINNING_SUFFIX}", f"{col}{DATE_END_SUFFIX}"]
         preprocessor.column_split(split_by_hyphen, col, separate_dateoff_cols)
 
+    # Column logic (not split) #8, co-created with Claude 3.7 Sonnet on 2025-04-21
+    for i in range(1, 21):
+        # REFA based (main) logic
+        ab_refa_colname = f'AB_REFA_{i}'
+        c_refa_colname = f'C_REFA_{i}'
+        abc_refa_colname = f'ABC_REFA_{i}'
+        refa_df = preprocessor.get([ab_refa_colname, c_refa_colname])
+        abc_refa_series = refa_df[c_refa_colname].combine_first(refa_df[ab_refa_colname])
+        preprocessor.add(abc_refa_colname, abc_refa_series)
+
+        # 1. OFFICE_TYPE: determine by first character
+        office_type_colname = f'OFFICE_TYPE_{i}'
+        office_type_series = abc_refa_series.str[0].str.upper().map(
+            lambda x: x if x in {'A', 'B', 'C'} else None
+        )
+        preprocessor.add(office_type_colname, office_type_series)
+
+        # 2. OFFICEABC: pick office_ab or office_c based on office type
+        officeab_colname = f'OFFICEAB_{i}'
+        officec_colname = f'OFFICEC_{i}'
+        officeabc_colname = f'OFFICEABC_{i}'
+        office_df = preprocessor.get([officeab_colname, officec_colname])
+        
+        # Initialize the result series with None values (same index as other series)
+        officeabc_series = pd.Series(None, index=office_df.index, dtype='object')
+        
+        # Fill in values based on office type
+        # For A or B types, use OFFICEAB
+        officeabc_series.loc[office_type_series.isin(['A', 'B'])] = office_df.loc[office_type_series.isin(['A', 'B']), officeab_colname]
+        
+        # For C type, use OFFICEC
+        officeabc_series.loc[office_type_series == 'C'] = office_df.loc[office_type_series == 'C', officec_colname]
+
+        # Add the combined series to the preprocessor
+        preprocessor.add(officeabc_colname, officeabc_series)
+
     preprocessor.dump()
 
 def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
@@ -796,7 +832,7 @@ def __init__(schema_code, source_filename=None):
         if add_title_label in matches:
             mnemonics_contain_title = True
     
-    def extract_mnemonic(row):
+    def extract_mnemonic(row, all=False):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
         uuid_str = row.get(uuid_label, None)
@@ -827,13 +863,14 @@ def __init__(schema_code, source_filename=None):
                         other_mnemonics = ", ".join([f"{{{match}}}" for match in matches[1:]])
                         if uuid_str:
                             generate_triplesmap_name(row, show_message=True)  # just to show the message
-                        print("At most one rr:template is allowed per subject map ",
-                            f"whereas multiple are given in: '{map_object}'. ",
-                            f"By default logic, the leftmost mnemonic is deliberately chosen as the main one.",
-                            f"Thus, {{{matches[0]}}} will be processed as the main mnemonic, "
-                            f"and all the others will be passed to RML as is: {other_mnemonics}", "\n")
+                        if all is not True:
+                            print("At most one rr:template is allowed per subject map ",
+                                f"whereas multiple are given in: '{map_object}'. ",
+                                f"By default logic, the leftmost mnemonic is deliberately chosen as the main one.",
+                                f"Thus, {{{matches[0]}}} will be processed as the main mnemonic, "
+                                f"and all the others will be passed to RML as is: {other_mnemonics}", "\n")
                     #return None
-                return matches[0]
+                return matches if all is True else matches[0]
         return None
     
     def generate_rico_name(row):
@@ -847,25 +884,50 @@ def __init__(schema_code, source_filename=None):
 
     def collect_incremented_uri(row, column, disaggregated_series_list):
         #row_id = row.name
-        mnemonic = row[mnemonic_label]
-        column_uri = row[column]
-        # Uncomment the below if want to allow increments outside of mnemonics
-        #mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(column_uri)
-        mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
         row[f'original_{column}'] = row[column]
 
         # If increment number in row, then disaggregation already done (e.g., for subject)...
         increment_number = row.get(increment_number_label, None)
-        if isinstance(increment_number, int): # ...so will only generate one row with the inherited increment number (e.g., for object)
-            mnemonic_i_from = increment_number; mnemonic_i_to = increment_number
-        for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
-            new_row = row.copy()
-            if not (mnemonic_i_from == 1 and mnemonic_i_to == 1): # doesn't make sense to add this then
-                new_row[increment_number_label] = mnemonic_i
-            column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
-            if column_value:
-                new_row[column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)
-            disaggregated_series_list.append(new_row)
+
+        # Extract all mnemonics
+        mnemonics = extract_mnemonic(row, all=True)
+
+        # If not map_object, return unchanged
+        if mnemonics is None:
+            disaggregated_series_list.append(row)
+            return row
+
+        # Analyze i data for all mnemonics
+        mnemonic_dict = {}
+        mnemonic_to_max = 1
+        for mnemonic in mnemonics:
+            # Uncomment the below if want to allow increments outside of mnemonics
+            #mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(column_uri)
+            mnemonic_i_from, mnemonic_i_to = get_mnemonic_i_from_to(mnemonic)
+            if isinstance(increment_number, int): # ...so will only generate one row with the inherited increment number (e.g., for object)
+                mnemonic_i_from = increment_number; mnemonic_i_to = increment_number
+            if mnemonic_i_to > mnemonic_to_max:
+                mnemonic_to_max = mnemonic_i_to
+            mnemonic_dict[mnemonic] = (mnemonic_i_from, mnemonic_i_to)
+
+        # Iterate over and replace all mnemonics
+        new_rows = [None] * (mnemonic_to_max + 1)  # because counting mnemonics from 1
+        for mnemonic, mnemonic_i_tuple in mnemonic_dict.items():
+            mnemonic_i_from, mnemonic_i_to = mnemonic_i_tuple
+
+            for mnemonic_i in range(mnemonic_i_from, mnemonic_i_to + 1):
+                if new_rows[mnemonic_i] is None:  # then this mnemonic_i is not yet in new_rows
+                    new_rows[mnemonic_i] = row.copy()
+                column_uri = new_rows[mnemonic_i][column]
+                if not (mnemonic_i_from == 1 and mnemonic_i_to == 1): # doesn't make sense to add this then
+                    new_rows[mnemonic_i][increment_number_label] = mnemonic_i
+                column_value = mnemonic_i_regex.sub(str(mnemonic_i), str(column_uri))
+                if column_value:
+                    new_rows[mnemonic_i][column] = URIRef(column_value) if isinstance(column_uri, URIRef) else Literal(column_value)
+
+        dense_new_rows = [row for row in new_rows if row is not None]  # drop any None's
+        disaggregated_series_list.extend(dense_new_rows)
+
         return row
     
     disaggregated_subject_rows = []
@@ -1129,7 +1191,7 @@ def __init__(schema_code, source_filename=None):
         return None
     
     # Construct RML graph
-    for i, subject_row in subjects_df.iterrows():
+    for i, subject_row in subjects_df.drop_duplicates().iterrows():  # not sure why but drop dupes is needed now after adding support for multiple incremented mnemonics
         # This refers to the original subject URI from drawio graph
         # which is being used to uniquely identify subject
         subject_uri = subject_row['subject']

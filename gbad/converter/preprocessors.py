@@ -11,6 +11,12 @@ class SourceCSVPreprocessor():
     def update(self, df):
         self.source_df.update(df)
 
+    def get(self, colnames: list[str]):
+        return self.source_df[colnames].copy()
+
+    def add(self, colname: str, series: pd.Series):
+        self.source_df[colname] = series
+
     def dump(self):
         index = self.index_col is not False
         header = True
