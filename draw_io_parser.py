@@ -480,6 +480,7 @@ _object_properties = [
     "rico:proxyFor",
     "rico:proxyIn",
     "rico:regulatesOrRegulated",
+    "rico:relationHasSource",
     "rico:relationHasTarget",
     "rico:resultedFromTheMergerOf",
     "rico:resultedFromTheSplitOf",
