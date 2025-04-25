@@ -1,0 +1,229 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<KB/Instantiation/RG%201-429/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> a rico:Instantiation;
+  rdfs:label "RG 1-429 - Forest resource inventory records (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>";
+  add:howToOrder "Refer to sub-series descriptions for information on how to access the records.";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Forest%20resource%20inventory%20records>;
+  rico:instantiationExtent "ca. 26,596 maps; 15.9 metres of textual records; 205 volumes of textual records; ca.1607 maps : negatives; 964,335 photographs : black and white prints; 4737 remote-sensing reels (ca.895,560 photographs : black and white negatives)" .
+
+rdfs:label a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA507> a rico:CorporateBody;
+  rdfs:label "CA507 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA508> a rico:CorporateBody;
+  rdfs:label "CA508 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA509> a rico:CorporateBody;
+  rdfs:label "CA509 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA510> a rico:CorporateBody;
+  rdfs:label "CA510 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA511> a rico:CorporateBody;
+  rdfs:label "CA511 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA513> a rico:CorporateBody;
+  rdfs:label "CA513 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA514> a rico:CorporateBody;
+  rdfs:label "CA514 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%201-429> a rico:Record;
+  rdfs:label "RG 1-429 - Forest resource inventory records (Archival Description Record)";
+  rico:hasDocumentaryFormType add:ArchivalDescriptionRecord;
+  rico:hasRecordState <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y>;
+  rico:wasLastUpdatedAtDate <https://data.archives.gov.on.ca/KB/Date/08%2F13%2F2002> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Division%20of%20Surveys%20and%20Engineering/77e2152e-6983-56b3-88b4-1c9902f6e529>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Division of Surveys and Engineering (Creation Relation). Context: <urn:uuid:77e2152e-6983-56b3-88b4-1c9902f6e529>";
+  rico:date <https://data.archives.gov.on.ca/1944-1957>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1944>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1957>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA509> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Division%20of%20Surveys/cc007202-01d1-54d7-b4d2-b7a2c71801f5>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Division of Surveys (Creation Relation). Context: <urn:uuid:cc007202-01d1-54d7-b4d2-b7a2c71801f5>";
+  rico:date <https://data.archives.gov.on.ca/1941-1944>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1941>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1944>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA508> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Lands%20and%20Surveys%20Branch/64d5c892-9fb0-5c33-a44e-8d740b3e8588>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Lands and Surveys Branch (Creation Relation). Context: <urn:uuid:64d5c892-9fb0-5c33-a44e-8d740b3e8588>";
+  rico:date <https://data.archives.gov.on.ca/1957-1971>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1957>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1971>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA510> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Natural%20Resources%20Information%20Branch/5bcb0e3a-d02b-5555-8eef-6b9707262df3>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Natural Resources Information Branch (Creation Relation). Context: <urn:uuid:5bcb0e3a-d02b-5555-8eef-6b9707262df3>";
+  rico:date <https://data.archives.gov.on.ca/1990-1999>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1990>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1999>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA514> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Surveys%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Surveys Branch (Creation Relation). Context: <urn:uuid:4199b400-8cb7-5e83-b006-f7bde32234b1>";
+  rico:date <https://data.archives.gov.on.ca/1922-1941>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1922>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1941>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA507> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Surveys%20and%20Engineering%20Branch/eaa9fa13-4bf5-5c64-ba00-8adcbc012bfe>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Surveys and Engineering Branch (Creation Relation). Context: <urn:uuid:eaa9fa13-4bf5-5c64-ba00-8adcbc012bfe>";
+  rico:date <https://data.archives.gov.on.ca/1971-1972>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1971>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1972>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA511> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%201-429/Surveys%20and%20Mapping%20Branch/cd27bc43-ce0e-57cb-83ee-86b4adb6e0d8>
+  a rico:CreationRelation;
+  rdfs:label "Forest resource inventory records - Surveys and Mapping Branch (Creation Relation). Context: <urn:uuid:cd27bc43-ce0e-57cb-83ee-86b4adb6e0d8>";
+  rico:date <https://data.archives.gov.on.ca/1972-1990>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1972>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1990>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA513> .
+
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%201-429> a rico:Identifier;
+  rdfs:label "RG 1-429 (Current Reference Code)";
+  rico:hasIdentifierType add:CurrentReferenceCode .
+
+<https://data.archives.gov.on.ca/KB/Date/08%2F13%2F2002> a rico:Date;
+  rdfs:label "08/13/2002 (Date)";
+  rico:normalizedDateValue "08/13/2002" .
+
+<https://data.archives.gov.on.ca/KB/Date/1922> a rico:Date;
+  rdfs:label "1922 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1941> a rico:Date;
+  rdfs:label "1941 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1944> a rico:Date;
+  rdfs:label "1944 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1957> a rico:Date;
+  rdfs:label "1957 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1971> a rico:Date;
+  rdfs:label "1971 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1972> a rico:Date;
+  rdfs:label "1972 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1990> a rico:Date;
+  rdfs:label "1990 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1999> a rico:Date;
+  rdfs:label "1999 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%201-429> a rico:RecordSet;
+  rdfs:label "RG 1-429 - Forest resource inventory records (Record Set)";
+  add:findingAidNote "Refer to sub-series descriptions for further information on the availability of finding aids.";
+  add:immediateSourceOfAcquisition "Records were transferred to the Archives of Ontario from the Ministry of Natural Resources.";
+  rico:accruals "Further accruals are expected.";
+  rico:conditionsOfAccess "Access to some records within this series is closed for conservation reasons. Refer to sub-series descriptions for further information.";
+  rico:conditionsOfUse "Copyright is primarily held by the Crown. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
+  rico:creationDate "1922-1999";
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%201-429>;
+  rico:hasOrHadInstantiation <KB/Instantiation/RG%201-429/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>;
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Forest%20resource%20inventory%20records>;
+  rico:hasRecordSetType <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series>;
+  rico:history "Efforts at inventorying Ontario's forests began in the 1920s, but by the end of World War II the information accumulated offered only a general picture of conditions and was not detailed enough to enable the creation of forest management plans for specific areas.  In 1946 the production of a detailed forest resources inventory commenced when the Photographic Survey Company and Department of Lands and Forests staff began to produce aerial photographs and planimetric maps of an 140,000 square mile area of northern Ontario.  Armed with these photographs and maps, working teams of foresters laid out tenth-of-an-acre plots in the field, measuring trees and tallying species. Information on stand content was recorded on the aerial photographs;  subsequently, it was classified and typed onto 4 inch to a mile planimetric maps.In 1951 the federal government agreed to fund 50% of the cost, and the project area was doubled in size to include southern Ontario.   Originally, the plan was to reinventory areas every 10 years. Currently, reinventorying occurs every 20 years.  Inventorying is a three year process:  the first year, aerial photographs are taken;  the second year, plots are delineated by air photo interpreters, field work takes place, and stands are described; in the third year, maps are drafted.  In 1986 the mapping process was automated.";
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%201-429>;
+  rico:scopeAndContent "Series consists of records created in the different stages of forest resource inventory.  Series includes aerial photography and related key maps, indices and flight reports.  Series also includes forest resource inventory data and maps, showing the area, volume and type of forest resources in surveyed and unsurveyed areas of the province as well as reports and correspondence documenting how the forest resource inventory was conducted.  Series is arranged into sixteen sub-series based on record type or subject." .
+
+<https://data.archives.gov.on.ca/KB/Title/Forest%20resource%20inventory%20records>
+  a rico:Title;
+  rdfs:label "Forest resource inventory records (Title)" .
+
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> a owl:DatatypeProperty .
+
+add:ArchivalDescriptionRecord a rico:DocumentaryFormType;
+  rdfs:label "Archival Description Record" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>
+  a rico:ContentType;
+  rdfs:label "Cartographic materials" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>
+  a rico:ContentType;
+  rdfs:label "Graphic materials" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>
+  a rico:ContentType;
+  rdfs:label "Textual records" .
+
+add:CurrentReferenceCode a rico:IdentifierType;
+  rdfs:label "Current Reference Code" .
+
+add:FormerCode a rico:IdentifierType;
+  rdfs:label "Former Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
+  rdfs:label "Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> a rico:RecordState;
+  rdfs:label "Status: Approved" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
+  rdfs:label "Web Enabled: Y" .
+
+add:accumulationDate a owl:DatatypeProperty .
+
+add:associatedMaterial a owl:DatatypeProperty .
+
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
+
+add:custodialHistory a owl:DatatypeProperty .
+
+add:findingAidNote a owl:DatatypeProperty .
+
+add:howToOrder a owl:DatatypeProperty .
+
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
+
+add:notes a owl:DatatypeProperty .
+
+add:privateNote a owl:DatatypeProperty .
+
+add:relatedMaterial a owl:DatatypeProperty .
