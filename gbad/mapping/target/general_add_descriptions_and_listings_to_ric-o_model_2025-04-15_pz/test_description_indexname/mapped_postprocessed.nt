@@ -1,0 +1,257 @@
+<https://data.archives.gov.on.ca/KB/Agent/Blake%2C%20Edward%20%28Ned%29%20Francis%2C%201860-1905> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#history> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b7 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b8 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#label> "authority mnemonic"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#label> "public notes"@en .
+_:nf9526f12108447999bfb9a7ec9166798b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b12 .
+_:nf9526f12108447999bfb9a7ec9166798b19 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b20 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "Linked to the instantiation."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> <http://www.w3.org/2000/01/rdf-schema#label> "Former Code" .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#label> "how to order"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "RELMAT" .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.gbad.ca/Schema> .
+<https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> <https://www.ica.org/standards/RiC/ontology#textualValue> "Project number(s): 370" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b25 .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+_:nf9526f12108447999bfb9a7ec9166798b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordSet> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Thing> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<https://data.archives.gov.on.ca/KB/Agent/Blake%2C%20Edward%20%28Ned%29%20Francis%2C%201860-1905> <http://www.w3.org/2000/01/rdf-schema#label> "Blake, Edward (Ned) Francis, 1860-1905 (Agent)" .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://www.ica.org/standards/RiC/ontology#hasOrHadTitle> <https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "Same field used for custodial history (this can be a separate instance)."@en .
+_:nf9526f12108447999bfb9a7ec9166798b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:nf9526f12108447999bfb9a7ec9166798b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2004/02/skos/core#scopeNote> "An Authority mnemonic used in the legacy database."@en .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#comment> "AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."@en .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#label> "private note"@en .
+_:nf9526f12108447999bfb9a7ec9166798b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2004/02/skos/core#scopeNote> "An ADD mnemonic used in the legacy database."@en .
+<https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Title> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> <http://www.w3.org/2000/01/rdf-schema#label> "Web Enabled: Y" .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> <http://www.w3.org/2000/01/rdf-schema#label> "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Archival Description Record)" .
+_:nf9526f12108447999bfb9a7ec9166798b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.gbad.ca/Schema> .
+_:nf9526f12108447999bfb9a7ec9166798b1 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b2 .
+_:nf9526f12108447999bfb9a7ec9166798b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2004/02/skos/core#scopeNote> "An datatype property defined by the GBAD schema."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b4 .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> <https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> .
+_:nf9526f12108447999bfb9a7ec9166798b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b3 .
+_:nf9526f12108447999bfb9a7ec9166798b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy> <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "NOTES" .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "FUN" .
+_:nf9526f12108447999bfb9a7ec9166798b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b9 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#IdentifierType> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://www.ica.org/standards/RiC/ontology#instantiationExtent> "2 architectural drawings" .
+_:nf9526f12108447999bfb9a7ec9166798b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasRecordState> <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#isDirectlyIncludedIn> <https://data.archives.gov.on.ca/KB/RecordSet/C%2011> .
+_:nf9526f12108447999bfb9a7ec9166798b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b21 .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Record> .
+_:nf9526f12108447999bfb9a7ec9166798b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2004/02/skos/core#scopeNote> "An object property defined by the GBAD schema."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Archival Description Record" .
+_:nf9526f12108447999bfb9a7ec9166798b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Approved" .
+<https://data.archives.gov.on.ca/Schema/Authority/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#label> "source note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> <http://www.w3.org/2000/01/rdf-schema#label> "Series" .
+_:nf9526f12108447999bfb9a7ec9166798b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#date> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b7 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#label> "private note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "AVAIL" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#IdentifierType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "FINDAID" .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352> <http://www.w3.org/2000/01/rdf-schema#label> "C 11-352 (Current Reference Code)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#scopeAndContent> "Series consists of contract drawings depicting plans, elevations, sections and details for additions and alterations to a residence for Edward F. Blake at 449 Jarvis Street in Toronto." .
+_:nf9526f12108447999bfb9a7ec9166798b10 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b11 .
+_:nf9526f12108447999bfb9a7ec9166798b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""@en .
+_:nf9526f12108447999bfb9a7ec9166798b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b15 .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <http://www.w3.org/2000/01/rdf-schema#label> "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b16 .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#label> "object property" .
+_:nf9526f12108447999bfb9a7ec9166798b25 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b26 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasOrHadInstantiation> <file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordSet> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for any generic, publicly accessible notes not otherwise accommodated."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#label> "accumulation date"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Identifier> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> <http://www.w3.org/2000/01/rdf-schema#label> "Project number(s): 370 (Former Code)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:nf9526f12108447999bfb9a7ec9166798b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b24 .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Dick%2C%20David%20Brash%2C%201846-1925> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasIdentifierType> <https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+_:nf9526f12108447999bfb9a7ec9166798b4 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b5 .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Blake%2C%20Edward%20%28Ned%29%20Francis%2C%201860-1905> .
+_:nf9526f12108447999bfb9a7ec9166798b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+_:nf9526f12108447999bfb9a7ec9166798b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#label> "immediate source of acquisition"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b22 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b23 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#history> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#comment> "There is no accumulation equivalent for the simple datatype property rico:creationDate. AH rasied this issue with EGAD on Github and there is agreement in principle to create one in due course."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#conditionsOfAccess> "Access to these records is not restricted." .
+_:nf9526f12108447999bfb9a7ec9166798b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> "Material is stored onsite. Order using reference code C 11-352, container K-71 (barcode F006678) and container K-1584 (barcode F000825)." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "associated material"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b13 .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:nf9526f12108447999bfb9a7ec9166798b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#label> "availability of other formats"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "CUSTOD" .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <http://www.w3.org/2000/01/rdf-schema#label> "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Record Set)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b1 .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> "No finding aid is available for this series." .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasContentOfType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings> .
+_:nf9526f12108447999bfb9a7ec9166798b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordState> .
+_:nf9526f12108447999bfb9a7ec9166798b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b6 .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#conditionsOfUse> "Copyright has been transferred to the Archives of Ontario by the donor. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "ISA" .
+_:nf9526f12108447999bfb9a7ec9166798b13 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b14 .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "DATEACM" .
+<https://data.archives.gov.on.ca/KB/Agent/Dick%2C%20David%20Brash%2C%201846-1925> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasRecordSetType> <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "HIDDENNOTES" .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#creationDate> "1897" .
+_:nf9526f12108447999bfb9a7ec9166798b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> <https://www.ica.org/standards/RiC/ontology#hasIdentifierType> <https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+_:nf9526f12108447999bfb9a7ec9166798b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasRecordState> <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexname/KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+_:nf9526f12108447999bfb9a7ec9166798b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b18 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#label> "datatype property" .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasOrHadTitle> <https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Identifier> .
+_:nf9526f12108447999bfb9a7ec9166798b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.gbad.ca/Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordState> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#comment> "Same field used for immediate source of aquisition (this can be a separate instance)."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#label> "finding aid note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/Agent/Dick%2C%20David%20Brash%2C%201846-1925> <http://www.w3.org/2000/01/rdf-schema#label> "Dick, David Brash, 1846-1925 (Agent)" .
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011> <http://www.w3.org/2000/01/rdf-schema#label> "C 11 (Record Set)" .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#ContentType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordSetType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "CMTD" .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "SOURCE" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#label> "ADD mnemonic"@en .
+_:nf9526f12108447999bfb9a7ec9166798b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b22 .
+_:nf9526f12108447999bfb9a7ec9166798b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#comment> "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en .
+_:nf9526f12108447999bfb9a7ec9166798b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:nf9526f12108447999bfb9a7ec9166798b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario> <http://www.w3.org/2000/01/rdf-schema#label> "D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Title)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en .
+_:nf9526f12108447999bfb9a7ec9166798b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> <https://www.ica.org/standards/RiC/ontology#hasDocumentaryFormType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:nf9526f12108447999bfb9a7ec9166798b27 .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "related material"@en .
+_:nf9526f12108447999bfb9a7ec9166798b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> <http://www.w3.org/2000/01/rdf-schema#label> "Current Reference Code" .
+_:nf9526f12108447999bfb9a7ec9166798b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "HOWTO" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#DocumentaryFormType> .
+_:nf9526f12108447999bfb9a7ec9166798b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#label> "function note"@en .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:nf9526f12108447999bfb9a7ec9166798b16 <http://www.w3.org/2002/07/owl#unionOf> _:nf9526f12108447999bfb9a7ec9166798b17 .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "CMTAU" .
+_:nf9526f12108447999bfb9a7ec9166798b19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#label> "custodial history"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b19 .
+_:nf9526f12108447999bfb9a7ec9166798b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> _:nf9526f12108447999bfb9a7ec9166798b10 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "ASSMAT" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings> <http://www.w3.org/2000/01/rdf-schema#label> "Architectural and technical drawings" .

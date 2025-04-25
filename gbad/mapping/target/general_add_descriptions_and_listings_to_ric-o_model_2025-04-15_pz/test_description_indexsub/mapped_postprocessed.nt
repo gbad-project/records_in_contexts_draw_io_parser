@@ -1,0 +1,305 @@
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b25 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b26 .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <https://www.ica.org/standards/RiC/ontology#hasEndDate> <https://data.archives.gov.on.ca/KB/Date/1992> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#label> "private note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#ContentType> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Thing> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b25 .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#comment> "Linked to the instantiation."@en .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#conditionsOfUse> "Copyright is primarily held by the Crown. Series also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#history> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#label> "accumulation date"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b1 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b15 .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasRecordSetType> <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> .
+<https://data.archives.gov.on.ca/KB/Agent/CA2132> <https://www.ica.org/standards/RiC/ontology#isCreatorOf> <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <https://www.ica.org/standards/RiC/ontology#relationHasSource> <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.gbad.ca/Schema> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b21 .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> <http://www.w3.org/2000/01/rdf-schema#label> "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Archival Description Record)" .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2004/02/skos/core#scopeNote> "An object property defined by the GBAD schema."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#ContentType> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#conditionsOfAccess> "No restrictions on access." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2004/02/skos/core#scopeNote> "An Authority mnemonic used in the legacy database."@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> "An online list is available for this series." .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines.%20Communications%20Services%20Branch> .
+<https://data.archives.gov.on.ca/KB/Date/1992> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Date> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadTitle> <https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions> .
+<https://data.archives.gov.on.ca/KB/Agent/Harris%2C%20Michael%20Deane%2C%201945-> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b16 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b18 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b24 .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Northland%20Transportation%20Commission> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> <http://www.w3.org/2000/01/rdf-schema#label> "Web Enabled: Y" .
+<https://data.archives.gov.on.ca/KB/Date/1992> <http://www.w3.org/2000/01/rdf-schema#label> "1992 (Date)" .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#scopeAndContent> "Series consists of motion picture films, videocassettes, and audiotapes produced by and for the Ministry of Northern Affairs and the Ministry of Northern Development and Mines and discussing activities and events relevant to their mandate in representing northern issues to the government of Ontario.  Topics include medical recruitment, tourism promotion, economic development, sports, transportation, communications, the exploitation of mineral and forest resources, and the lives and livelihoods of individuals in various communities throughout Northern Ontario.  The series contains significant documentation of activities at Ontario North Now, a series of pavilions at Ontario Place which throughout the 1980s and early 1990s provided space for community groups to promote their individual locations to tourists visiting Toronto.  The series also contains a considerable amount of raw footage of northern places, events, and people which were used by the Ministry to create a variety of documentaries and public service announcements (PSAs) explaining their activities and aims.  Also documented are the political activities of four ministers who held this portfolio during the period, Leo Bernier (Minister of Northern Affairs 1977-1985), Rene Fontaine (Minister of Northern Affairs and Mines 1985-1986 and Minister of Northern Development 1987-1990), Hugh O'Neil (Minister of Mines 1989-1990), and Shelley Martel (Minister of Northern Development 1990 and Minister of Northern Development and Mines 1991-1994).  Other politicians who represented northern constituencies are also documented.  The series also contains a small collection of humorous items produced formally and informally by the Ministry as an antidote to their more serious pursuits, as well as material produced by student interns from Humber College employed by the Ministry in the early 1980s.  Some of these items cover issues tangential to the mandate of the Ministry.  The series contains some news items about Ministry activities, and third-party documentary and dramatic items on northern affairs and mining issues, collected by the Ministry and not confirmed to be preserved in other archival repositories. This includes a rare copy of the 1983 award-winning Canadian movie \"Papertown\".  The series includes some textual material, primarily scripts for PSAs and correspondence relating to the transfer of videos to and from the Ministry." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b10 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasContentOfType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.gbad.ca/Schema> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "HOWTO" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/Date/1977> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Date> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched using rico:hasGeneticLinktoRecordResource object property to link to another record resource external to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b1 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b2 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/KB/Date/1985> <http://www.w3.org/2000/01/rdf-schema#label> "1985 (Date)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for any generic, publicly accessible notes not otherwise accommodated."@en .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <http://www.w3.org/2000/01/rdf-schema#label> "Ministry of Northern Development and Mines film and video productions - Information Services Branch (Creation Relation). Context: <urn:uuid:4199b400-8cb7-5e83-b006-f7bde32234b1>" .
+<https://data.archives.gov.on.ca/KB/Agent/CA2132> <http://www.w3.org/2000/01/rdf-schema#label> "CA2132 (Agent)" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <https://www.ica.org/standards/RiC/ontology#relationHasTarget> <https://data.archives.gov.on.ca/KB/Agent/CA2244> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#label> "source note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#label> "availability of other formats"@en .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<https://data.archives.gov.on.ca/KB/Date/1985> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Date> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "associated material"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#comment> "There is no accumulation equivalent for the simple datatype property rico:creationDate. AH rasied this issue with EGAD on Github and there is agreement in principle to create one in due course."@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> <https://data.archives.gov.on.ca/KB/Agent/Ontario%20Place> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <https://www.ica.org/standards/RiC/ontology#relationHasSource> <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+<https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions> <http://www.w3.org/2000/01/rdf-schema#label> "Ministry of Northern Development and Mines film and video productions (Title)" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> "1977-1992" .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy> <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/Agent/Bernier%2C%20Leo%2C%201929-2010> <http://www.w3.org/2000/01/rdf-schema#label> "Bernier, Leo, 1929-2010 (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings> <http://www.w3.org/2000/01/rdf-schema#label> "Sound recordings" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records> <http://www.w3.org/2000/01/rdf-schema#label> "Textual records" .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#label> "datatype property" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Archival Description Record" .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordSet> .
+<https://data.archives.gov.on.ca/Schema/Authority/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines> .
+<https://data.archives.gov.on.ca/KB/Agent/Bernier%2C%20Leo%2C%201929-2010> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> "The material was received as a direct transfer from the Ministry of Northern Development and Mines." .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/notes> "Four of the videos are Sony 1/2 inch video reels.  The Archives does not have a reader for this material." .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b27 .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadInstantiation> <file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <https://www.ica.org/standards/RiC/ontology#hasBeginningDate> <https://data.archives.gov.on.ca/KB/Date/1977> .
+<https://data.archives.gov.on.ca/KB/Date/1977> <http://www.w3.org/2000/01/rdf-schema#label> "1977 (Date)" .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/KB/Agent/CA2244> <http://www.w3.org/2000/01/rdf-schema#label> "CA2244 (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#IdentifierType> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> <https://data.archives.gov.on.ca/KB/Agent/Harris%2C%20Michael%20Deane%2C%201945-> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b19 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b20 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines.%20Communications%20Services%20Branch> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario. Ministry of Northern Development and Mines. Communications Services Branch (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#label> "private note"@en .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs.%20Information%20Services%20Branch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <http://www.w3.org/2000/01/rdf-schema#label> "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>" .
+<https://data.archives.gov.on.ca/KB/Agent/CA2244> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#CorporateBody> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://www.ica.org/standards/RiC/ontology#hasOrHadTitle> <https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by using rico:hasGeneticLinktoRecordResource object property to link to another record resource internal to the AO with a provenance-based relationship. A super-property for a more generic link is rico:RecordResourcetoRecordResourceRelation, which has several other sub-properties."@en .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasRecordState> <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> "Some films are available as DVD or video reference copies or as digital files that will be made available upon request..  Some of the videotapes exist in duplicate copy.  Duplicate copies are available as reference copies through Customer Service. And DVD copies are available in the Reading Room." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b22 .
+<https://data.archives.gov.on.ca/KB/Agent/Harris%2C%20Michael%20Deane%2C%201945-> <http://www.w3.org/2000/01/rdf-schema#label> "Harris, Michael Deane, 1945- (Agent)" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review> <http://www.w3.org/2000/01/rdf-schema#label> "Status: Review" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b13 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b14 .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs.%20Information%20Services%20Branch> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario. Ministry of Northern Affairs. Information Services Branch (Agent)" .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasContentOfType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#creationDate> "1915-1992" .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasRecordState> <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review> .
+<https://data.archives.gov.on.ca/KB/Agent/CA2244> <https://www.ica.org/standards/RiC/ontology#isCreatorOf> <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario. Ministry of Northern Development and Mines (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#CreationRelation> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs> .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasDocumentaryFormType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#comment> "This generic datatype property seems the best fit for our finding aid notes, which merely indicate the existence (or not) of finding aids but do not identify a specific finding aid."@en .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "ASSMAT" .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <https://www.ica.org/standards/RiC/ontology#hasBeginningDate> <https://data.archives.gov.on.ca/KB/Date/1985> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Place> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario Place (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/FormerCode> <http://www.w3.org/2000/01/rdf-schema#label> "Former Code" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> <http://www.w3.org/2000/01/rdf-schema#label> "Current Reference Code" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "FINDAID" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "NOTES" .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#comment> "AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2004/02/skos/core#scopeNote> "An ADD mnemonic used in the legacy database."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#CreationRelation> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b19 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by adding links to relevant Instantiations using object properties rico:hasOrHadDigitalInstantiation, rico:hasOrHadAnalogueInstantiation or their super-property rico:hasOrHadInstantiation (among other options)."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#label> "how to order"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordSetType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "CMTD" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "AVAIL" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordState> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "HIDDENNOTES" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasContentOfType> <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Record> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#IdentifierType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#RecordState> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> <http://www.w3.org/2000/01/rdf-schema#label> "Series" .
+<https://data.gbad.ca/Schema> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "DATEACM" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images> <http://www.w3.org/2000/01/rdf-schema#label> "Moving images" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b10 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b11 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b12 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "FUN" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b13 .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines.%20Communications%20Services%20Branch> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadIdentifier> <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/availabilityOfOtherFormats> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#domain> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#label> "function note"@en .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "ISA" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b4 .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Identifier> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#comment> "Same field used for custodial history (this can be a separate instance)."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#domain> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b7 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b3 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <https://www.ica.org/standards/RiC/ontology#hasEndDate> <https://data.archives.gov.on.ca/KB/Date/1985> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1> <https://www.ica.org/standards/RiC/ontology#date> <https://data.archives.gov.on.ca/1977-1985> .
+<http://www.w3.org/2000/01/rdf-schema#label> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#label> "immediate source of acquisition"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#label> "authority mnemonic"@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b7 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b8 .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b4 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b5 .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> <https://data.archives.gov.on.ca/KB/Agent/Ontario%20Northland%20Transportation%20Commission> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b9 .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://www.ica.org/standards/RiC/ontology#physicalCharacteristicsNote> "Many of the motion picture films have shifted towards cyan." .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> <http://www.w3.org/2000/01/rdf-schema#label> "ADD mnemonic"@en .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> "Textual material related to Ontario North Now can be found in Series RG 68-28.  Certain slide decks can be located in Series RG 68-52." .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasCreator> <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs.%20Information%20Services%20Branch> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ArchivalDescriptionRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#DocumentaryFormType> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "RELMAT" .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.gbad.ca/Schema/objectProperty> <http://www.w3.org/2000/01/rdf-schema#label> "object property" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#date> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <https://www.ica.org/standards/RiC/ontology#date> <https://data.archives.gov.on.ca/1985-1992> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <http://www.w3.org/2000/01/rdf-schema#label> "Ministry of Northern Development and Mines film and video productions - Communications Services Branch (Creation Relation). Context: <urn:uuid:cc007202-01d1-54d7-b4d2-b7a2c71801f5>" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Agent> .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""@en .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .
+<https://data.archives.gov.on.ca/KB/Agent/CA2132> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#CorporateBody> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/2000/01/rdf-schema#label> "related material"@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/relatedMaterial> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#Title> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/immediateSourceOfAcquisition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Northland%20Transportation%20Commission> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario Northland Transportation Commission (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/notes> <http://www.w3.org/2000/01/rdf-schema#label> "public notes"@en .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#history> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasOrHadSubject> <https://data.archives.gov.on.ca/KB/Agent/Bernier%2C%20Leo%2C%201929-2010> .
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> <http://www.w3.org/2000/01/rdf-schema#label> "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Record Set)" .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://data.archives.gov.on.ca/Schema/Description-Listings/howToOrder> "Consult the online list to identify the records that you require. Order using reference code and barcode number.Please note that this material is stored off-site. A minimum of 1-2 business days is required to retrieve the material from storage. Please contact a Reference Archivist for more information." .
+<https://data.gbad.ca/Schema/datatypeProperty> <http://www.w3.org/2004/02/skos/core#scopeNote> "An datatype property defined by the GBAD schema."@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#Instantiation> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.ica.org/standards/RiC/ontology#ContentType> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b16 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b17 .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "CMTAU" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11> <https://www.ica.org/standards/RiC/ontology#hasIdentifierType> <https://data.archives.gov.on.ca/Schema/Description-Listings/CurrentReferenceCode> .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Authority> .
+<file:///mnt/c/home/anonymous/records_in_contexts_draw_io_parser/gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_indexsub/KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> <https://www.ica.org/standards/RiC/ontology#instantiationExtent> "21 items of textual records; 36 film reels (7 hours, 26 minutes); 4 audio reels (3 hours); 384 videocassettes (136 hours)" .
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11> <http://www.w3.org/2000/01/rdf-schema#label> "RG 68-11 (Current Reference Code)" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#label> "finding aid note"@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#comment> "Same field used for immediate source of aquisition (this can be a separate instance)."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/findingAidNote> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://data.archives.gov.on.ca/Schema/Description-Listings> .
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5> <https://www.ica.org/standards/RiC/ontology#relationHasTarget> <https://data.archives.gov.on.ca/KB/Agent/CA2132> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <https://data.archives.gov.on.ca/Schema/Description-Listings/mnemonic> "CUSTOD" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b6 .
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://data.gbad.ca/Schema/datatypeProperty> .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> <https://data.archives.gov.on.ca/Schema/Authority/mnemonic> "SOURCE" .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://www.ica.org/standards/RiC/ontology#RecordResource> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Hidden Notes in Listings database."@en .
+<https://data.archives.gov.on.ca/Schema/Authority/mnemonic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/accumulationDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database."@en .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/custodialHistory> <http://www.w3.org/2000/01/rdf-schema#label> "custodial history"@en .
+_:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b22 <http://www.w3.org/2002/07/owl#unionOf> _:n2bcbf6b5b4e2477d9a8c74fd6c6e2ed5b23 .
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> <http://www.w3.org/2000/01/rdf-schema#comment> "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"@en .
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs> <http://www.w3.org/2000/01/rdf-schema#label> "Ontario. Ministry of Northern Affairs (Agent)" .
+<https://data.archives.gov.on.ca/Schema/Description-Listings/associatedMaterial> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://www.ica.org/standards/RiC/ontology#generalDescription> .

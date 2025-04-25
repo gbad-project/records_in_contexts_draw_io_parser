@@ -1,0 +1,117 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> a rico:Instantiation;
+  rdfs:label "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>";
+  add:howToOrder "Material is stored onsite. Order using reference code C 11-352, container K-71 (barcode F006678) and container K-1584 (barcode F000825).";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario>;
+  rico:instantiationExtent "2 architectural drawings" .
+
+rdfs:label a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/KB/Agent/Blake%2C%20Edward%20%28Ned%29%20Francis%2C%201860-1905>
+  a rico:Agent;
+  rdfs:label "Blake, Edward (Ned) Francis, 1860-1905 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Dick%2C%20David%20Brash%2C%201846-1925>
+  a rico:Agent;
+  rdfs:label "Dick, David Brash, 1846-1925 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352> a rico:Record;
+  rdfs:label "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Archival Description Record)";
+  rico:hasDocumentaryFormType add:ArchivalDescriptionRecord;
+  rico:hasRecordState <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> .
+
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352> a rico:Identifier;
+  rdfs:label "C 11-352 (Current Reference Code)";
+  rico:hasIdentifierType add:CurrentReferenceCode .
+
+<https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370> a
+    rico:Identifier;
+  rdfs:label "Project number(s): 370 (Former Code)";
+  rico:hasIdentifierType add:FormerCode;
+  rico:textualValue "Project number(s): 370" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011> a rico:RecordSet;
+  rdfs:label "C 11 (Record Set)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/C%2011-352> a rico:RecordSet;
+  rdfs:label "C 11-352 - D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Record Set)";
+  add:findingAidNote "No finding aid is available for this series.";
+  rico:conditionsOfAccess "Access to these records is not restricted.";
+  rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
+  rico:creationDate "1897";
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>;
+  rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Blake%2C%20Edward%20%28Ned%29%20Francis%2C%201860-1905>,
+    <https://data.archives.gov.on.ca/KB/Agent/Dick%2C%20David%20Brash%2C%201846-1925>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/C%2011-352>,
+    <https://data.archives.gov.on.ca/KB/FormerCode/Project%20number%28s%29%3A%20370>;
+  rico:hasOrHadInstantiation <KB/Instantiation/C%2011-352/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>;
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario>;
+  rico:hasRecordSetType <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series>;
+  rico:isDirectlyIncludedIn <https://data.archives.gov.on.ca/KB/RecordSet/C%2011>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/C%2011-352>;
+  rico:scopeAndContent "Series consists of contract drawings depicting plans, elevations, sections and details for additions and alterations to a residence for Edward F. Blake at 449 Jarvis Street in Toronto." .
+
+<https://data.archives.gov.on.ca/KB/Title/D.B.%20Dick%27s%20architectural%20drawings%20of%20Edward%20F.%20Blake%20residence%20in%20Toronto%2C%20Ontario>
+  a rico:Title;
+  rdfs:label "D.B. Dick's architectural drawings of Edward F. Blake residence in Toronto, Ontario (Title)" .
+
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> a owl:DatatypeProperty .
+
+add:ArchivalDescriptionRecord a rico:DocumentaryFormType;
+  rdfs:label "Archival Description Record" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Architectural%20and%20technical%20drawings>
+  a rico:ContentType;
+  rdfs:label "Architectural and technical drawings" .
+
+add:CurrentReferenceCode a rico:IdentifierType;
+  rdfs:label "Current Reference Code" .
+
+add:FormerCode a rico:IdentifierType;
+  rdfs:label "Former Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
+  rdfs:label "Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> a rico:RecordState;
+  rdfs:label "Status: Approved" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
+  rdfs:label "Web Enabled: Y" .
+
+add:accumulationDate a owl:DatatypeProperty .
+
+add:associatedMaterial a owl:DatatypeProperty .
+
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
+
+add:custodialHistory a owl:DatatypeProperty .
+
+add:findingAidNote a owl:DatatypeProperty .
+
+add:howToOrder a owl:DatatypeProperty .
+
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
+
+add:notes a owl:DatatypeProperty .
+
+add:privateNote a owl:DatatypeProperty .
+
+add:relatedMaterial a owl:DatatypeProperty .

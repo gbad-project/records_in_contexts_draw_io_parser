@@ -1,0 +1,185 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> a rico:Instantiation;
+  rdfs:label "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>";
+  add:howToOrder "Consult the online list to identify the records that you require. Order using reference code and barcode number.Please note that this material is stored off-site. A minimum of 1-2 business days is required to retrieve the material from storage. Please contact a Reference Archivist for more information.";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions>;
+  rico:instantiationExtent "21 items of textual records; 36 film reels (7 hours, 26 minutes); 4 audio reels (3 hours); 384 videocassettes (136 hours)";
+  rico:physicalCharacteristicsNote "Many of the motion picture films have shifted towards cyan." .
+
+rdfs:label a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/KB/Agent/Bernier%2C%20Leo%2C%201929-2010> a rico:Agent;
+  rdfs:label "Bernier, Leo, 1929-2010 (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA2132> a rico:CorporateBody;
+  rdfs:label "CA2132 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+
+<https://data.archives.gov.on.ca/KB/Agent/CA2244> a rico:CorporateBody;
+  rdfs:label "CA2244 (Agent)";
+  rico:isCreatorOf <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> .
+
+<https://data.archives.gov.on.ca/KB/Agent/Harris%2C%20Michael%20Deane%2C%201945->
+  a rico:Agent;
+  rdfs:label "Harris, Michael Deane, 1945- (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Northland%20Transportation%20Commission>
+  a rico:Agent;
+  rdfs:label "Ontario Northland Transportation Commission (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario%20Place> a rico:Agent;
+  rdfs:label "Ontario Place (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Northern Affairs (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs.%20Information%20Services%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Northern Affairs. Information Services Branch (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Northern Development and Mines (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines.%20Communications%20Services%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Northern Development and Mines. Communications Services Branch (Agent)" .
+
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11> a rico:Record;
+  rdfs:label "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Archival Description Record)";
+  rico:hasDocumentaryFormType add:ArchivalDescriptionRecord;
+  rico:hasRecordState <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Communications%20Services%20Branch/cc007202-01d1-54d7-b4d2-b7a2c71801f5>
+  a rico:CreationRelation;
+  rdfs:label "Ministry of Northern Development and Mines film and video productions - Communications Services Branch (Creation Relation). Context: <urn:uuid:cc007202-01d1-54d7-b4d2-b7a2c71801f5>";
+  rico:date <https://data.archives.gov.on.ca/1985-1992>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1985>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1992>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA2132> .
+
+<https://data.archives.gov.on.ca/KB/CreationRelation/RG%2068-11/Information%20Services%20Branch/4199b400-8cb7-5e83-b006-f7bde32234b1>
+  a rico:CreationRelation;
+  rdfs:label "Ministry of Northern Development and Mines film and video productions - Information Services Branch (Creation Relation). Context: <urn:uuid:4199b400-8cb7-5e83-b006-f7bde32234b1>";
+  rico:date <https://data.archives.gov.on.ca/1977-1985>;
+  rico:hasBeginningDate <https://data.archives.gov.on.ca/KB/Date/1977>;
+  rico:hasEndDate <https://data.archives.gov.on.ca/KB/Date/1985>;
+  rico:relationHasSource <https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11>;
+  rico:relationHasTarget <https://data.archives.gov.on.ca/KB/Agent/CA2244> .
+
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11> a rico:Identifier;
+  rdfs:label "RG 68-11 (Current Reference Code)";
+  rico:hasIdentifierType add:CurrentReferenceCode .
+
+<https://data.archives.gov.on.ca/KB/Date/1977> a rico:Date;
+  rdfs:label "1977 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1985> a rico:Date;
+  rdfs:label "1985 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/Date/1992> a rico:Date;
+  rdfs:label "1992 (Date)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/RG%2068-11> a rico:RecordSet;
+  rdfs:label "RG 68-11 - Ministry of Northern Development and Mines film and video productions (Record Set)";
+  add:accumulationDate "1977-1992";
+  add:availabilityOfOtherFormats "Some films are available as DVD or video reference copies or as digital files that will be made available upon request..  Some of the videotapes exist in duplicate copy.  Duplicate copies are available as reference copies through Customer Service. And DVD copies are available in the Reading Room.";
+  add:custodialHistory "The material was received as a direct transfer from the Ministry of Northern Development and Mines.";
+  add:findingAidNote "An online list is available for this series.";
+  add:notes "Four of the videos are Sony 1/2 inch video reels.  The Archives does not have a reader for this material.";
+  add:relatedMaterial "Textual material related to Ontario North Now can be found in Series RG 68-28.  Certain slide decks can be located in Series RG 68-52.";
+  rico:conditionsOfAccess "No restrictions on access.";
+  rico:conditionsOfUse "Copyright is primarily held by the Crown. Series also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use other than for research and private study any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
+  rico:creationDate "1915-1992";
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasCreator <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs>,
+    <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Affairs.%20Information%20Services%20Branch>,
+    <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines>,
+    <https://data.archives.gov.on.ca/KB/Agent/Ontario.%20Ministry%20of%20Northern%20Development%20and%20Mines.%20Communications%20Services%20Branch>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/RG%2068-11>;
+  rico:hasOrHadInstantiation <KB/Instantiation/RG%2068-11/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>;
+  rico:hasOrHadSubject <https://data.archives.gov.on.ca/KB/Agent/Bernier%2C%20Leo%2C%201929-2010>,
+    <https://data.archives.gov.on.ca/KB/Agent/Harris%2C%20Michael%20Deane%2C%201945->,
+    <https://data.archives.gov.on.ca/KB/Agent/Ontario%20Northland%20Transportation%20Commission>,
+    <https://data.archives.gov.on.ca/KB/Agent/Ontario%20Place>;
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions>;
+  rico:hasRecordSetType <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/RG%2068-11>;
+  rico:scopeAndContent "Series consists of motion picture films, videocassettes, and audiotapes produced by and for the Ministry of Northern Affairs and the Ministry of Northern Development and Mines and discussing activities and events relevant to their mandate in representing northern issues to the government of Ontario.  Topics include medical recruitment, tourism promotion, economic development, sports, transportation, communications, the exploitation of mineral and forest resources, and the lives and livelihoods of individuals in various communities throughout Northern Ontario.  The series contains significant documentation of activities at Ontario North Now, a series of pavilions at Ontario Place which throughout the 1980s and early 1990s provided space for community groups to promote their individual locations to tourists visiting Toronto.  The series also contains a considerable amount of raw footage of northern places, events, and people which were used by the Ministry to create a variety of documentaries and public service announcements (PSAs) explaining their activities and aims.  Also documented are the political activities of four ministers who held this portfolio during the period, Leo Bernier (Minister of Northern Affairs 1977-1985), Rene Fontaine (Minister of Northern Affairs and Mines 1985-1986 and Minister of Northern Development 1987-1990), Hugh O'Neil (Minister of Mines 1989-1990), and Shelley Martel (Minister of Northern Development 1990 and Minister of Northern Development and Mines 1991-1994).  Other politicians who represented northern constituencies are also documented.  The series also contains a small collection of humorous items produced formally and informally by the Ministry as an antidote to their more serious pursuits, as well as material produced by student interns from Humber College employed by the Ministry in the early 1980s.  Some of these items cover issues tangential to the mandate of the Ministry.  The series contains some news items about Ministry activities, and third-party documentary and dramatic items on northern affairs and mining issues, collected by the Ministry and not confirmed to be preserved in other archival repositories. This includes a rare copy of the 1983 award-winning Canadian movie \"Papertown\".  The series includes some textual material, primarily scripts for PSAs and correspondence relating to the transfer of videos to and from the Ministry." .
+
+<https://data.archives.gov.on.ca/KB/Title/Ministry%20of%20Northern%20Development%20and%20Mines%20film%20and%20video%20productions>
+  a rico:Title;
+  rdfs:label "Ministry of Northern Development and Mines film and video productions (Title)" .
+
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> a owl:DatatypeProperty .
+
+add:ArchivalDescriptionRecord a rico:DocumentaryFormType;
+  rdfs:label "Archival Description Record" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Moving%20images>
+  a rico:ContentType;
+  rdfs:label "Moving images" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Sound%20recordings>
+  a rico:ContentType;
+  rdfs:label "Sound recordings" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>
+  a rico:ContentType;
+  rdfs:label "Textual records" .
+
+add:CurrentReferenceCode a rico:IdentifierType;
+  rdfs:label "Current Reference Code" .
+
+add:FormerCode a rico:IdentifierType;
+  rdfs:label "Former Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
+  rdfs:label "Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Review> a rico:RecordState;
+  rdfs:label "Status: Review" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
+  rdfs:label "Web Enabled: Y" .
+
+add:accumulationDate a owl:DatatypeProperty .
+
+add:associatedMaterial a owl:DatatypeProperty .
+
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
+
+add:custodialHistory a owl:DatatypeProperty .
+
+add:findingAidNote a owl:DatatypeProperty .
+
+add:howToOrder a owl:DatatypeProperty .
+
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
+
+add:notes a owl:DatatypeProperty .
+
+add:privateNote a owl:DatatypeProperty .
+
+add:relatedMaterial a owl:DatatypeProperty .
