@@ -1,4 +1,4 @@
-Script started on 2025-04-25 13:21:04-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="26"]
+Script started on 2025-04-25 13:56:31-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="26"]
 File 'mapped.ttl' already exists - copied to 'mapped.ttl.backup'
 Trying to extract source CSV path from RML...
 Extracted rml:source path: 'gbad/mapping/source/preprocessed/tests/test_description_rg_1-429.csv'
@@ -46,4 +46,4 @@ Number of triples in the graph: 155
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped_postprocessed.nt'
 
-Script done on 2025-04-25 13:21:11-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-04-25 13:56:38-04:00 [COMMAND_EXIT_CODE="0"]
