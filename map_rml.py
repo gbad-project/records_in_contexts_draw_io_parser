@@ -52,8 +52,9 @@ def map_rml(schema_code):
             mapped_backup_filename = "mapped.ttl.backup"
             ttl_backup = os.path.join(ttl_dir, mapped_backup_filename)
             try:
-                os.rename(ttl, ttl_backup)
-                print(f"File '{mapped_filename}' already exists - renamed to '{mapped_backup_filename}'")
+                #os.rename(ttl, ttl_backup)
+                shutil.copy2(ttl, ttl_backup)
+                print(f"File '{mapped_filename}' already exists - copied to '{mapped_backup_filename}'")
             except PermissionError:
                 print(f"Aborted: File '{mapped_filename}' already exists and cannot be renamed for backup due to a permission error.")
 
