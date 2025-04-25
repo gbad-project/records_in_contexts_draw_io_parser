@@ -1,0 +1,157 @@
+@prefix : <https://data.archives.gov.on.ca/Schema/Mapping#> .
+@prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix idlab-fn: <https://w3id.org/imec/idlab/function#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<KB/Instantiation/F%20223-1-1/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> a rico:Instantiation;
+  rdfs:label "F 223-1-1 - Conn Smythe personal photographs (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>";
+  add:howToOrder "To view this material, consult the file list to round down your request and order the appropriate box(es).";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20photographs>;
+  rico:instantiationExtent "488 photographs : black and white and colour; 13 photographs : black and white negatives; 1 photograph : black and white, mounted on metal button : 15.5 x 15.5 centimetres; 6 centimetres of textual records (6 pp.)" .
+
+<KB/Instantiation/F%20223-1/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2> a rico:Instantiation;
+  rdfs:label "F 223-1 - Conn Smythe personal files (Instantiation). Context: <urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>";
+  add:howToOrder "See the sub-series descriptions for information on how to view these records.";
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20files>;
+  rico:instantiationExtent "84 centimetres of textual records; 488 photographs : black and white and colour; 13 photographs : black and white negatives; 1 photograph : black and white, mounted on metal button : 15.5 x 15.5 centimetres; 6 centimetres of textual records" .
+
+rdfs:label a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/F%20223-1> a rico:Record;
+  rdfs:label "F 223-1 - Conn Smythe personal files (Archival Description Record)";
+  rico:hasDocumentaryFormType add:ArchivalDescriptionRecord;
+  rico:hasRecordState <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y>;
+  rico:wasLastUpdatedAtDate <https://data.archives.gov.on.ca/KB/Date/05%2F27%2F2003> .
+
+<https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/F%20223-1-1> a rico:Record;
+  rdfs:label "F 223-1-1 - Conn Smythe personal photographs (Archival Description Record)";
+  rico:hasDocumentaryFormType add:ArchivalDescriptionRecord;
+  rico:hasRecordState <https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y>;
+  rico:wasLastUpdatedAtDate <https://data.archives.gov.on.ca/KB/Date/05%2F27%2F2003> .
+
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20223-1> a rico:Identifier;
+  rdfs:label "F 223-1 (Current Reference Code)";
+  rico:hasIdentifierType add:CurrentReferenceCode .
+
+<https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20223-1-1> a rico:Identifier;
+  rdfs:label "F 223-1-1 (Current Reference Code)";
+  rico:hasIdentifierType add:CurrentReferenceCode .
+
+<https://data.archives.gov.on.ca/KB/Date/05%2F27%2F2003> a rico:Date;
+  rdfs:label "05/27/2003 (Date)";
+  rico:normalizedDateValue "05/27/2003" .
+
+<https://data.archives.gov.on.ca/KB/FormerCode/Series%20formerly%20described%20as%20series%20A%2C%20Personal%20Papers.>
+  a rico:Identifier;
+  rdfs:label "Series formerly described as series A, Personal Papers. (Former Code)";
+  rico:hasIdentifierType add:FormerCode;
+  rico:textualValue "Series formerly described as series A, Personal Papers." .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%20223> a rico:RecordSet;
+  rdfs:label "F 223 (Record Set)" .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%20223-1> a rico:RecordSet;
+  rdfs:label "F 223-1 (Record Set)", "F 223-1 - Conn Smythe personal files (Record Set)";
+  add:findingAidNote "See the sub-series descriptions for information about finding aids.";
+  add:notes "Title based on content of series.";
+  rico:conditionsOfAccess "No restrictions on access.";
+  rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor. Fonds also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use, other than research and private study, any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
+  rico:creationDate "[188-?]-1980";
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
+    <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20223-1>,
+    <https://data.archives.gov.on.ca/KB/FormerCode/Series%20formerly%20described%20as%20series%20A%2C%20Personal%20Papers.>;
+  rico:hasOrHadInstantiation <KB/Instantiation/F%20223-1/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>;
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20files>;
+  rico:hasRecordSetType <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series>;
+  rico:isDirectlyIncludedIn <https://data.archives.gov.on.ca/KB/RecordSet/F%20223>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/F%20223-1>;
+  rico:scopeAndContent "Series consists of personal records and photographs created and maintained by Conn Smythe that document his family life, military career and personal activities including philanthropic work, recreational pursuits and attendance at social functions.  The records are arranged into two sub-series." .
+
+<https://data.archives.gov.on.ca/KB/RecordSet/F%20223-1-1> a rico:RecordSet;
+  rdfs:label "F 223-1-1 - Conn Smythe personal photographs (Record Set)";
+  add:findingAidNote "An online list is available for this sub-series.";
+  add:notes "Title based on content of sub-series.";
+  rico:conditionsOfAccess "No restrictions on access.";
+  rico:conditionsOfUse "Copyright has been transferred to the Archives of Ontario by the donor. Fonds also contains material owned by various other copyright owners. To find out more about the copyright status of the particular material you wish to use, consult a Reference Archivist. There are no restrictions on reproduction for research and private study.  If you wish to use, other than research and private study, any of this material, submit a Request for Permission to Publish, Exhibit or Broadcast Form.";
+  rico:creationDate "[188-?]-1980";
+  rico:hasContentOfType <https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>;
+  rico:hasOrHadIdentifier <https://data.archives.gov.on.ca/KB/CurrentReferenceCode/F%20223-1-1>;
+  rico:hasOrHadInstantiation <KB/Instantiation/F%20223-1-1/urn:uuid:401325cb-aa28-5a1f-8b7d-6ac27002c4c2>;
+  rico:hasOrHadTitle <https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20photographs>;
+  rico:hasRecordSetType <https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Sub-series>;
+  rico:isDirectlyIncludedIn <https://data.archives.gov.on.ca/KB/RecordSet/F%20223-1>;
+  rico:isOrWasDescribedBy <https://data.archives.gov.on.ca/KB/ArchivalDescriptionRecord/F%20223-1-1>;
+  rico:scopeAndContent "Sub-series consists of personal photographs, proofs, negatives and some correspondence documenting Conn Smythe's family life and personal activities.  Sub-series contains portraits of Conn Smythe, of his ancestors and relatives, photographs of Conn Smythe's childhood, his wife Irene (Sands) Smythe, and children Stafford, Miriam, Hugh and Patricia Smythe and their extended families.  Sub-series also contains photographs of Conn Smythe's military service during World War I and II documenting his time spent in Prisoner of War camps during World War I, and the formation and activities of the 30th Light Anti-Aircraft Artillery (Sportsmen) Battery during World War II.  The latter contains photographs showing athletes (including some Maple Leaf hockey players) and sports personalities in a military context.  Other photographs included in this sub-series are: official gatherings attended by Conn Smythe; athletic activities and events outside of hockey and horseracing in which Conn Smythe participated (predominantly golf); photographs of Smythe's residence at Caledon Farm; and social events Conn Smythe attended (with Irene) such as the Metropolitan Opera and vacations to Palm Beach, Florida." .
+
+<https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20files> a rico:Title;
+  rdfs:label "Conn Smythe personal files (Title)" .
+
+<https://data.archives.gov.on.ca/KB/Title/Conn%20Smythe%20personal%20photographs>
+  a rico:Title;
+  rdfs:label "Conn Smythe personal photographs (Title)" .
+
+<https://data.archives.gov.on.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/privateNote> a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.ca/Schema/Authority/sourceNote> a owl:DatatypeProperty .
+
+add:ArchivalDescriptionRecord a rico:DocumentaryFormType;
+  rdfs:label "Archival Description Record" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Graphic%20materials>
+  a rico:ContentType;
+  rdfs:label "Graphic materials" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/ContentType#Textual%20records>
+  a rico:ContentType;
+  rdfs:label "Textual records" .
+
+add:CurrentReferenceCode a rico:IdentifierType;
+  rdfs:label "Current Reference Code" .
+
+add:FormerCode a rico:IdentifierType;
+  rdfs:label "Former Code" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Series> a rico:RecordSetType;
+  rdfs:label "Series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Level#Sub-series> a rico:RecordSetType;
+  rdfs:label "Sub-series" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/Status#Approved> a rico:RecordState;
+  rdfs:label "Status: Approved" .
+
+<https://data.archives.gov.on.ca/Schema/Description-Listings/WebEnabled#Y> a rico:RecordState;
+  rdfs:label "Web Enabled: Y" .
+
+add:accumulationDate a owl:DatatypeProperty .
+
+add:associatedMaterial a owl:DatatypeProperty .
+
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
+
+add:custodialHistory a owl:DatatypeProperty .
+
+add:findingAidNote a owl:DatatypeProperty .
+
+add:howToOrder a owl:DatatypeProperty .
+
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
+
+add:notes a owl:DatatypeProperty .
+
+add:privateNote a owl:DatatypeProperty .
+
+add:relatedMaterial a owl:DatatypeProperty .

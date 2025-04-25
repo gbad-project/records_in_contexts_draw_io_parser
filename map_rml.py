@@ -58,6 +58,35 @@ def map_rml(schema_code):
             except PermissionError:
                 print(f"Aborted: File '{mapped_filename}' already exists and cannot be renamed for backup due to a permission error.")
 
+        def extract_source_csv_path(rml_path):
+            try:
+                print("Trying to extract source CSV path from RML...")
+                with open(rml_path, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                
+                pattern = r'rml:source "(gbad/mapping/source/(.+).csv)"'
+                match = re.search(pattern, content)
+
+                if match:
+                    source_csv_path = match.group(1)
+                    source_csv_filename = os.path.splitext(os.path.basename(source_csv_path))[0]
+                    print(f"Extracted rml:source path: '{source_csv_path}'")
+                    return (source_csv_path, source_csv_filename)
+                else:
+                    raise Exception(f"Error: rml:source not found in the RML file.")
+            except FileNotFoundError:
+                print(f"Error: File '{rml_path}' not found.")
+                return (None, None)
+            except Exception as e:
+                print(f"Error: {e}")
+                return (None, None)
+
+        source_csv_path, source_csv_filename = extract_source_csv_path(rml)
+        if source_csv_filename:
+            subdir = os.path.join(ttl_dir, source_csv_filename)
+            os.makedirs(subdir, exist_ok=True)
+            ttl = os.path.join(subdir, mapped_filename)
+
         return_tuple = (rml, rmlmapper, ttl)
         print("Initiated mapping params:")
         pprint(return_tuple)
