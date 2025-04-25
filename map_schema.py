@@ -894,7 +894,8 @@ def __init__(schema_code, source_filename=None):
 
         # If not map_object, return unchanged
         if mnemonics is None:
-            disaggregated_series_list.append(row)
+            new_row = row.copy()  # because row is passed by reference, data are lost unless this is copied!
+            disaggregated_series_list.append(new_row)
             return row
 
         # Analyze i data for all mnemonics
@@ -930,9 +931,6 @@ def __init__(schema_code, source_filename=None):
 
         return row
     
-    disaggregated_subject_rows = []
-    def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
-
     # Note for next line that it is the only one that applies to series, all other to df
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
@@ -944,6 +942,7 @@ def __init__(schema_code, source_filename=None):
     disaggregated_subject_rows = []
     def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
     subjects_df = subjects_df.apply(collect_incremented_subject_uri, axis=1)
+    del subjects_df  # to collect garbage right away
     # Creating new frame so that there is no duplication wih previous
     subjects_df = pd.DataFrame(disaggregated_subject_rows)
     # Let's regenerate cols above for simplicity now that rows are disaggregated
