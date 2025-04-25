@@ -168,7 +168,7 @@ Individual: rr%3Atemplate%20%22KB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFI
   Types: rico:CreationRelation
   Facts:
     rico:relationHasSource rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22,
-    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D%22,
+    rico:relationHasTarget rr%3Atemplate%20%22KB%2FAgent%2F%7BABC_REFA_1..20%7D%22,
     rico:hasBeginningDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22,
     rico:hasEndDate rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22,
     rico:date "rr:template \"{DATEOFF_1..20}\"",
@@ -180,7 +180,7 @@ Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22
 Individual: rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D%22
+Individual: rr%3Atemplate%20%22KB%2FAgent%2F%7BABC_REFA_1..20%7D%22
   Types: rico:CorporateBody
   Facts:
     rico:isCreatorOf rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22

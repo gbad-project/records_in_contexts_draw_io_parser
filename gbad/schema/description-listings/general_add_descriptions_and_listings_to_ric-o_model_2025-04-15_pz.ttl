@@ -99,6 +99,12 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                                                                    rico:IdentifierType .
 
 
+###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BABC_REFA_1..20%7D%22
+<https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BABC_REFA_1..20%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                  rico:CorporateBody ;
+                                                                                                         rico:isCreatorOf <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22> .
+
+
 ###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXNAME_1..20%7D%22
 <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXNAME_1..20%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                                    rico:Agent .
@@ -112,12 +118,6 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
 ###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXSUB_1..20%7D%22
 <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BINDEXSUB_1..20%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                                   rico:Agent .
-
-
-###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D%22
-<https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                   rico:CorporateBody ;
-                                                                                                          rico:isCreatorOf <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22> .
 
 
 ###  https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22
@@ -137,7 +137,7 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                                                               rico:hasBeginningDate <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22> ;
                                                                                                                                                               rico:hasEndDate <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FDate%2F%7BDATEOFF_1..20_END%7D%22> ;
                                                                                                                                                               rico:relationHasSource <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FRecordSet%2F%7BREFD_FILE%7D%22> ;
-                                                                                                                                                              rico:relationHasTarget <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BOFFICEABC_1..20%7D%22> ;
+                                                                                                                                                              rico:relationHasTarget <https://data.archives.gov.on.ca/Schema/Mapping#rr%3Atemplate%20%22KB%2FAgent%2F%7BABC_REFA_1..20%7D%22> ;
                                                                                                                                                               rdfs:label "rr:template \"{TITLE} - {OFFICEABC_1..20} (Creation Relation). Context: <urn:uuid:{UUID_OFFICEABC}>\"" ;
                                                                                                                                                               rico:date "rr:template \"{DATEOFF_1..20}\"" .
 
