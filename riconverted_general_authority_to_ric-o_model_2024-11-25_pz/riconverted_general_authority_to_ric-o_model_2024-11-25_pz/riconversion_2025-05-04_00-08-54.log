@@ -1,0 +1,47 @@
+Execution started at: 2025-05-04 00:08:54 UTC
+
+Welcome to riconvert, a Records in Contexts Ontology (RiC-O) conversion utility.
+It detects a *.drawio and *.csv file in the same folder (only one of each must exist).
+It uses the DrawIO file to create a Manchester OWL, Turtle, and RML (RDF Mapping language) file.
+It uses the RML file to map the CSV file into triples (Turtle or N3).
+Input drawio file:
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/General Authority to RiC-O Model_2024-11-25_PZ.drawio
+Output directory:
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz
+Some existing files already found in the output directory. EVERYTHING in the output directory will be overwritten! Do you really want to proceed? (y/N): /Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconvert.py:1059: DeprecationWarning: Testing an element's truth value will raise an exception in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not self.draw_io_xml_tree[0][0][0]:
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconvert.py:937: DeprecationWarning: Testing an element's truth value will raise an exception in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not geometry:
+OWL Output saved to: /Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/owl_from_drawio_general_authority_to_ric-o_model_2024-11-25_pz.owl
+TTL Output saved to: /Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/turtle_from_drawio_owl_general_authority_to_ric-o_model_2024-11-25_pz.ttl
+Namespace UUID v5 for <https://data.archives.gov.on.ca/Schema/Mapping#>: bc7e68a3-3e02-5a2a-836b-589f9993b2bb
+
+
+
+Successfully saved RML map to: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml'
+Initiated mapping params:
+('/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml',
+ '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/rmlmapper-4.0.0.jar',
+ '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl')
+Successfully mapped '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz.rml' to '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl'
+
+Failed to read graph from '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl' 
+Error: '[Errno 2] No such file or directory: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/riconverted_general_authority_to_ric-o_model_2024-11-25_pz/mapped_from_rml_from_drawio_turtle_general_authority_to_ric-o_model_2024-11-25_pz/mapped.ttl''
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        DELETE WHERE {
+            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
+            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
+            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
+            authtp:Geographic%20Name ?p1 ?o1 .
+            authtp:Family%20Name ?p2 ?o2 .
+            authtp:Personal%20Name ?p3 ?o3 .
+        }
+        
+No triples were removed.
+
+Number of triples in the graph: 0
+
+Execution ended at: 2025-05-04 00:08:59 UTC
