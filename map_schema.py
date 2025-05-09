@@ -461,6 +461,8 @@ def __init__(schema_code, source_filename=None):
     print(f"Using source file: '{source_path}'\n")
 
     rml_path = graph_path[:-3]+ "rml"
+    if source_filename:  # Override default
+        rml_path = f'{graph_dir}/{source_filename[:-3]}'+ "rml"
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -1479,6 +1481,7 @@ def __init__(schema_code, source_filename=None):
 
     # Serialize and print the RDF graph
     ttl = mapping.serialize(format='turtle')
+    os.makedirs(os.path.dirname(rml_path), exist_ok=True)
     with open(rml_path, 'w') as f:
         f.write(ttl)
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
