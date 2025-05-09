@@ -14,7 +14,7 @@ import shutil
 from io import BytesIO
 import re
 
-def map_rml(schema_code):
+def map_rml(schema_code, rml_path=None):
     """
     Returns a tuple of (rml, rmlmapper, ttl) paths.
     """
@@ -37,6 +37,8 @@ def map_rml(schema_code):
     return_tuple = (None, None, None)
     if (rml_files and rmlmapper_files):
         rml = rml_files[0]  # Assuming you want the first .rml file found
+        if rml_path:  # Override anything found and assume it is relative
+            rml = os.path.join(os.path.normpath(rml_dir), rml_path)
         rmlmapper = rmlmapper_files[0] # Same assumption for mapper jar
         rml_filename = os.path.splitext(os.path.basename(rml))[0]
 
@@ -415,12 +417,13 @@ def postprocess(graph_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Map schema of choice")
     parser.add_argument("schema", help="Choose one: add or auth.")
+    parser.add_argument("rml_path", nargs='?', help="Optional path to an RML file")
 
     args = parser.parse_args()
 
     suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
 
-    rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower())
+    rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower(), str(args.rml_path).lower())
     graph, has_changed = postprocess(ttl_path)
 
     def save_postprocessed_graph(
