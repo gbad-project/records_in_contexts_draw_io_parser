@@ -1,0 +1,68 @@
+# Step 1: Create a counting query to determine total triples to replace
+# Rerun this query against /query endpoint repeatedly after each DELETE/INSERT below
+
+SELECT (COUNT(*) AS ?count)
+WHERE {
+  GRAPH ?g {
+    ?s ?p ?o .
+    FILTER(STRSTARTS(STR(?g), "https://data.archives.gov.on.ca") || 
+           STRSTARTS(STR(?s), "https://data.archives.gov.on.ca") || 
+           STRSTARTS(STR(?p), "https://data.archives.gov.on.ca") || 
+           (ISIRI(?o) && STRSTARTS(STR(?o), "https://data.archives.gov.on.ca")))
+  }
+}
+
+# Step 2: Batched DELETE/INSERT query with LIMIT and OFFSET
+# Run this query against /update endpoint repeatedly, changing the OFFSET each time
+
+DELETE {
+  GRAPH ?old_g {
+    ?old_s ?old_p ?old_o
+  }
+}
+INSERT {
+  GRAPH ?new_g {
+    ?new_s ?new_p ?new_o
+  }
+}
+WHERE {
+  {
+    SELECT ?old_g ?old_s ?old_p ?old_o
+    WHERE {
+      GRAPH ?old_g {
+        ?old_s ?old_p ?old_o
+      }
+      FILTER(STRSTARTS(STR(?old_g), "https://data.archives.gov.on.ca") || 
+             STRSTARTS(STR(?old_s), "https://data.archives.gov.on.ca") || 
+             STRSTARTS(STR(?old_p), "https://data.archives.gov.on.ca") || 
+             (ISIRI(?old_o) && STRSTARTS(STR(?old_o), "https://data.archives.gov.on.ca")))
+    }
+    ORDER BY ?old_g ?old_s ?old_p ?old_o
+    LIMIT 100000
+    OFFSET 0  # Change this value for each batch (0, 100000, 200000, etc.)
+  }
+  
+  BIND(
+    IF(STRSTARTS(STR(?old_g), "https://data.archives.gov.on.ca"),
+       IRI(REPLACE(STR(?old_g), "https://data.archives.gov.on.ca", "https://data.archives.gov.on.test.gbad.ca")),
+       ?old_g
+    ) AS ?new_g)
+  
+  BIND(
+    IF(STRSTARTS(STR(?old_s), "https://data.archives.gov.on.ca"),
+       IRI(REPLACE(STR(?old_s), "https://data.archives.gov.on.ca", "https://data.archives.gov.on.test.gbad.ca")),
+       ?old_s
+    ) AS ?new_s)
+  
+  BIND(
+    IF(STRSTARTS(STR(?old_p), "https://data.archives.gov.on.ca"),
+       IRI(REPLACE(STR(?old_p), "https://data.archives.gov.on.ca", "https://data.archives.gov.on.test.gbad.ca")),
+       ?old_p
+    ) AS ?new_p)
+  
+  BIND(
+    IF(ISIRI(?old_o) && STRSTARTS(STR(?old_o), "https://data.archives.gov.on.ca"),
+       IRI(REPLACE(STR(?old_o), "https://data.archives.gov.on.ca", "https://data.archives.gov.on.test.gbad.ca")),
+       ?old_o
+    ) AS ?new_o)
+}
