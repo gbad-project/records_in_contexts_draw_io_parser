@@ -462,7 +462,8 @@ def __init__(schema_code, source_filename=None):
 
     rml_path = graph_path[:-3]+ "rml"
     if source_filename:  # Override default
-        rml_path = f'{graph_dir}/{source_filename[:-3]}'+ "rml"
+        graph_name = os.path.splitext(os.path.basename(graph_path))[0]
+        rml_path = f'{graph_dir}/{os.path.splitext(source_filename)[0]}/{graph_name}'+ ".rml"
 
     # Create the input RDF graph
     g = Graph(base = base_uri)

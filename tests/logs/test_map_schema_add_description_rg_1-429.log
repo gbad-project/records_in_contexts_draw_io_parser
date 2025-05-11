@@ -1,4 +1,5 @@
-Script started on 2025-04-25 13:56:22-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="26"]
+Script started on Sun May 11 19:53:59 2025
+Command: sh -c python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py add tests/test_description_rg_1-429.csv
 Using source file: 'gbad/mapping/source/tests/test_description_rg_1-429.csv'
 
 Checking in for preprocessing...
@@ -77,21 +78,21 @@ UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mappin
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Instantiation). Context: <urn:uuid:c5cefc30-2e3b-596e-bb04-932b25be9537>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__>: a3785807-ee0a-50d5-a9dd-15ccd2d574b6
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__>: a3785807-ee0a-50d5-a9dd-15ccd2d574b6
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
 UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_CreationRelation__REFD___OFFICEABC_1__urn_uuid__UUID_OFFICEABC__>: 446fc1bb-fdc5-53f5-aad4-16f7e19197ac
 
@@ -253,24 +254,25 @@ UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mappin
 
 At most one rr:template is allowed per subject map  whereas multiple are given in: '{TITLE} - {OFFICEABC_20} (Creation Relation). Context: <urn:uuid:c83de0d7-c0b6-5cc2-804a-83f932431933>'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {TITLE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {OFFICEABC_20} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REFD__>: 60255382-17c4-5d0a-a6af-03c968e02287
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REFD__>: 0236c622-2ac9-541c-8f32-39dda88bacc3
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__>: a3785807-ee0a-50d5-a9dd-15ccd2d574b6
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REFD} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REFD} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
-UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_ArchivalDescriptionRecord__REF_FILE__>: a3785807-ee0a-50d5-a9dd-15ccd2d574b6
+UUID v5 generated from ns:URL and <https://data.archives.gov.on.ca/Schema/Mapping#rr_template__KB_RecordSet__REF_FILE__>: 704ef57a-5abd-5c7f-b893-08f3d4aa1ba5
 
-At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Archival Description Record)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
+At most one rr:template is allowed per subject map  whereas multiple are given in: '{REF_FILE} - {TITLE} (Record Set)'.  By default logic, the leftmost mnemonic is deliberately chosen as the main one. Thus, {REF_FILE} will be processed as the main mnemonic, and all the others will be passed to RML as is: {TITLE} 
 
 
 
-Successfully saved RML map to: 'gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml'
+Successfully saved RML map to: 'gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml'
 
-Script done on 2025-04-25 13:56:28-04:00 [COMMAND_EXIT_CODE="0"]
+Command exit status: 0
+Script done on Sun May 11 19:54:00 2025
