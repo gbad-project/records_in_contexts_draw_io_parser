@@ -1,0 +1,431 @@
+import * as vscode from 'vscode';
+import * as path from 'path';
+import { Parser, Store, Quad, NamedNode, BlankNode, Literal, DataFactory } from 'n3';
+
+export class TrigDatasetsProvider implements vscode.TreeDataProvider<TrigDatasetItem> {
+    private _onDidChangeTreeData: vscode.EventEmitter<TrigDatasetItem | undefined | null | void> = new vscode.EventEmitter<TrigDatasetItem | undefined | null | void>();
+    readonly onDidChangeTreeData: vscode.Event<TrigDatasetItem | undefined | null | void> = this._onDidChangeTreeData.event;
+
+    constructor(private context: vscode.ExtensionContext) {}
+
+    refresh(): void {
+        this._onDidChangeTreeData.fire();
+    }
+
+    getTreeItem(element: TrigDatasetItem): vscode.TreeItem {
+        return element;
+    }
+
+    async getChildren(element?: TrigDatasetItem): Promise<TrigDatasetItem[]> {
+        if (!element) {
+            // Root level - show all .trig files
+            return this.getTrigFiles();
+        }
+
+        if (element.type === 'file') {
+            // File level - show named graphs category
+            try {
+                const store = await this.parseTriGFile(element.resourceUri!);
+                const namedGraphsItem = new TrigDatasetItem(
+                    'Named Graphs',
+                    vscode.TreeItemCollapsibleState.Collapsed,
+                    'namedGraphsCategory',
+                    element.resourceUri,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined
+                );
+                namedGraphsItem.contextValue = 'namedGraphsCategory';
+                return [namedGraphsItem];
+            } catch (error) {
+                // If parsing fails, don't show any children
+                return [];
+            }
+        }
+
+        if (element.type === 'namedGraphsCategory') {
+            // Named graphs category - show all named graphs
+            return this.getNamedGraphs(element.resourceUri!);
+        }
+
+        if (element.type === 'namedGraph') {
+            // Named graph - show subjects category
+            const subjectsItem = new TrigDatasetItem(
+                'Subjects',
+                vscode.TreeItemCollapsibleState.Collapsed,
+                'subjectsCategory',
+                element.resourceUri,
+                element.namedGraph,
+                undefined,
+                undefined,
+                undefined
+            );
+            subjectsItem.contextValue = 'subjectsCategory';
+            return [subjectsItem];
+        }
+
+        if (element.type === 'subjectsCategory') {
+            // Subjects category - show all subjects
+            return this.getSubjects(element.resourceUri!, element.namedGraph!);
+        }
+
+        if (element.type === 'subject') {
+            // Subject - show predicate-object pairs category
+            const predicateObjectsItem = new TrigDatasetItem(
+                'Predicate-Object Pairs',
+                vscode.TreeItemCollapsibleState.Collapsed,
+                'predicateObjectsCategory',
+                element.resourceUri,
+                element.namedGraph,
+                element.subject,
+                undefined,
+                undefined
+            );
+            predicateObjectsItem.contextValue = 'predicateObjectsCategory';
+            return [predicateObjectsItem];
+        }
+
+        if (element.type === 'predicateObjectsCategory') {
+            // Predicate-object pairs category - show all pairs
+            return this.getPredicateObjectPairs(element.resourceUri!, element.namedGraph!, element.subject!);
+        }
+
+        return [];
+    }
+
+    private async getTrigFiles(): Promise<TrigDatasetItem[]> {
+        const workspaceFolders = vscode.workspace.workspaceFolders;
+        if (!workspaceFolders) {
+            return [];
+        }
+
+        const extensions = vscode.workspace.getConfiguration('trigDatasets').get<string[]>('fileExtensions', ['trig']);
+        const files: TrigDatasetItem[] = [];
+
+        for (const folder of workspaceFolders) {
+            const trigFiles = await this.findFilesWithExtensions(folder.uri, extensions);
+            for (const file of trigFiles) {
+                const relativePath = vscode.workspace.asRelativePath(file);
+                const fileName = path.basename(file.fsPath);
+                
+                // Try to parse the file to determine if it's valid
+                let collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
+                try {
+                    await this.parseTriGFile(file);
+                } catch (error) {
+                    collapsibleState = vscode.TreeItemCollapsibleState.None;
+                }
+
+                const item = new TrigDatasetItem(
+                    fileName,
+                    collapsibleState,
+                    'file',
+                    file,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined
+                );
+                item.contextValue = 'trigFile';
+                item.tooltip = relativePath;
+                item.command = {
+                    command: 'vscode.open',
+                    title: 'Open',
+                    arguments: [vscode.Uri.parse(`trig-editor:${file.toString()}`)]
+                };
+                files.push(item);
+            }
+        }
+
+        return files;
+    }
+
+    private async findFilesWithExtensions(folderUri: vscode.Uri, extensions: string[]): Promise<vscode.Uri[]> {
+        const patterns = extensions.map(ext => `**/*.${ext}`);
+        const files: vscode.Uri[] = [];
+
+        for (const pattern of patterns) {
+            const foundFiles = await vscode.workspace.findFiles(
+                new vscode.RelativePattern(folderUri, pattern)
+            );
+            files.push(...foundFiles);
+        }
+
+        return files;
+    }
+
+    private async parseTriGFile(uri: vscode.Uri): Promise<Store> {
+        const document = await vscode.workspace.openTextDocument(uri);
+        const content = document.getText();
+        
+        // Add global prefixes
+        const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+        const fullContent = globalPrefixes + '\n' + content;
+
+        const parser = new Parser({ format: 'TriG' });
+        const store = new Store();
+        
+        return new Promise((resolve, reject) => {
+            parser.parse(fullContent, (error, quad, prefixes) => {
+                if (error) {
+                    reject(error);
+                } else if (quad) {
+                    store.addQuad(quad);
+                } else {
+                    // Parsing complete
+                    resolve(store);
+                }
+            });
+        });
+    }
+
+    private async getNamedGraphs(uri: vscode.Uri): Promise<TrigDatasetItem[]> {
+        try {
+            const store = await this.parseTriGFile(uri);
+            const graphNames = new Set<string>();
+            
+            for (const quad of store) {
+                if (quad.graph.value === '') {
+                    graphNames.add('default');
+                } else {
+                    graphNames.add(quad.graph.value);
+                }
+            }
+
+            const items: TrigDatasetItem[] = [];
+            for (const graphName of Array.from(graphNames).sort()) {
+                const displayName = graphName === 'default' ? 'default' : this.shortenUri(graphName);
+                const item = new TrigDatasetItem(
+                    displayName,
+                    vscode.TreeItemCollapsibleState.Collapsed,
+                    'namedGraph',
+                    uri,
+                    graphName,
+                    undefined,
+                    undefined,
+                    undefined
+                );
+                item.contextValue = 'namedGraph';
+                item.tooltip = graphName;
+                items.push(item);
+            }
+
+            return items;
+        } catch (error) {
+            return [];
+        }
+    }
+
+    private async getSubjects(uri: vscode.Uri, namedGraph: string): Promise<TrigDatasetItem[]> {
+        try {
+            const store = await this.parseTriGFile(uri);
+            const subjects = new Set<string>();
+            
+            const graphFilter = namedGraph === 'default' ? '' : namedGraph;
+            
+            for (const quad of store) {
+                if (quad.graph.value === graphFilter) {
+                    subjects.add(quad.subject.value);
+                }
+            }
+
+            const items: TrigDatasetItem[] = [];
+            for (const subject of Array.from(subjects).sort()) {
+                const displayName = this.shortenUri(subject);
+                const item = new TrigDatasetItem(
+                    displayName,
+                    vscode.TreeItemCollapsibleState.Collapsed,
+                    'subject',
+                    uri,
+                    namedGraph,
+                    subject,
+                    undefined,
+                    undefined
+                );
+                item.contextValue = 'subject';
+                item.tooltip = subject;
+                items.push(item);
+            }
+
+            return items;
+        } catch (error) {
+            return [];
+        }
+    }
+
+    private async getPredicateObjectPairs(uri: vscode.Uri, namedGraph: string, subject: string): Promise<TrigDatasetItem[]> {
+        try {
+            const store = await this.parseTriGFile(uri);
+            const pairs: Array<{predicate: string, object: string}> = [];
+            
+            const graphFilter = namedGraph === 'default' ? '' : namedGraph;
+            
+            for (const quad of store) {
+                if (quad.graph.value === graphFilter && quad.subject.value === subject) {
+                    pairs.push({
+                        predicate: quad.predicate.value,
+                        object: quad.object.value
+                    });
+                }
+            }
+
+            const items: TrigDatasetItem[] = [];
+            for (const pair of pairs) {
+                const predicateShort = this.shortenUri(pair.predicate);
+                const objectShort = this.shortenUri(pair.object);
+                const displayName = `${predicateShort} → ${objectShort}`;
+                
+                const item = new TrigDatasetItem(
+                    displayName,
+                    vscode.TreeItemCollapsibleState.None,
+                    'predicateObject',
+                    uri,
+                    namedGraph,
+                    subject,
+                    pair.predicate,
+                    pair.object
+                );
+                item.contextValue = 'predicateObject';
+                item.tooltip = `${pair.predicate} → ${pair.object}`;
+                items.push(item);
+            }
+
+            return items;
+        } catch (error) {
+            return [];
+        }
+    }
+
+    private shortenUri(uri: string): string {
+        // Try to shorten URIs by extracting the local part
+        const lastSlash = uri.lastIndexOf('/');
+        const lastHash = uri.lastIndexOf('#');
+        const lastSeparator = Math.max(lastSlash, lastHash);
+        
+        if (lastSeparator > -1 && lastSeparator < uri.length - 1) {
+            return uri.substring(lastSeparator + 1);
+        }
+        
+        return uri;
+    }
+
+    // Methods for modifying the dataset
+    async removeNamedGraph(uri: vscode.Uri, namedGraph: string): Promise<void> {
+        const store = await this.parseTriGFile(uri);
+        const graphFilter = namedGraph === 'default' ? '' : namedGraph;
+        
+        // Remove all quads in the named graph
+        const quadsToRemove = store.getQuads(null, null, null, graphFilter === '' ? DataFactory.defaultGraph() : DataFactory.namedNode(graphFilter));
+        
+        for (const quad of quadsToRemove) {
+            store.removeQuad(quad);
+        }
+        
+        await this.writeStoreToFile(uri, store);
+        this.refresh();
+    }
+
+    async removeSubject(uri: vscode.Uri, namedGraph: string, subject: string): Promise<void> {
+        const store = await this.parseTriGFile(uri);
+        const graphFilter = namedGraph === 'default' ? '' : namedGraph;
+        const graphTerm = graphFilter === '' ? DataFactory.defaultGraph() : DataFactory.namedNode(graphFilter);
+        const subjectTerm = subject.startsWith('_:') ? DataFactory.blankNode(subject.substring(2)) : DataFactory.namedNode(subject);
+        
+        // Remove all quads with this subject
+        const quadsToRemove = store.getQuads(subjectTerm, null, null, graphTerm);
+        
+        for (const quad of quadsToRemove) {
+            store.removeQuad(quad);
+        }
+        
+        await this.writeStoreToFile(uri, store);
+        this.refresh();
+    }
+
+    async removePredicateObject(uri: vscode.Uri, namedGraph: string, subject: string, predicate: string, object: string): Promise<void> {
+        const store = await this.parseTriGFile(uri);
+        const graphFilter = namedGraph === 'default' ? '' : namedGraph;
+        const graphTerm = graphFilter === '' ? DataFactory.defaultGraph() : DataFactory.namedNode(graphFilter);
+        const subjectTerm = subject.startsWith('_:') ? DataFactory.blankNode(subject.substring(2)) : DataFactory.namedNode(subject);
+        const predicateTerm = DataFactory.namedNode(predicate);
+        
+        let objectTerm;
+        if (object.startsWith('_:')) {
+            objectTerm = DataFactory.blankNode(object.substring(2));
+        } else if (object.startsWith('"')) {
+            // Parse literal
+            const match = object.match(/^"(.*)"\^\^<(.*)>$|^"(.*)"@(.*)$|^"(.*)"$/);
+            if (match) {
+                if (match[2]) {
+                    objectTerm = DataFactory.literal(match[1], DataFactory.namedNode(match[2]));
+                } else if (match[4]) {
+                    objectTerm = DataFactory.literal(match[3], match[4]);
+                } else {
+                    objectTerm = DataFactory.literal(match[5] || match[3] || match[1]);
+                }
+            } else {
+                objectTerm = DataFactory.literal(object);
+            }
+        } else {
+            objectTerm = DataFactory.namedNode(object);
+        }
+        
+        // Remove the specific quad
+        const quadsToRemove = store.getQuads(subjectTerm, predicateTerm, objectTerm, graphTerm);
+        
+        for (const quad of quadsToRemove) {
+            store.removeQuad(quad);
+        }
+        
+        await this.writeStoreToFile(uri, store);
+        this.refresh();
+    }
+
+    private async writeStoreToFile(uri: vscode.Uri, store: Store): Promise<void> {
+        const { Writer } = await import('n3');
+        const writer = new Writer({ format: 'TriG' });
+        
+        // Add global prefixes
+        const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+        
+        return new Promise((resolve, reject) => {
+            writer.end((error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    const content = globalPrefixes + '\n\n' + result;
+                    const edit = new vscode.WorkspaceEdit();
+                    edit.replace(uri, new vscode.Range(0, 0, Number.MAX_VALUE, Number.MAX_VALUE), content);
+                    vscode.workspace.applyEdit(edit).then(() => {
+                        resolve();
+                    }, reject);
+                }
+            });
+            
+            // Add all quads to writer
+            store.forEach((quad) => {
+                writer.addQuad(quad);
+            });
+        });
+    }
+}
+
+export class TrigDatasetItem extends vscode.TreeItem {
+    constructor(
+        public readonly label: string,
+        public readonly collapsibleState: vscode.TreeItemCollapsibleState,
+        public readonly type: 'file' | 'namedGraphsCategory' | 'namedGraph' | 'subjectsCategory' | 'subject' | 'predicateObjectsCategory' | 'predicateObject',
+        public readonly resourceUri?: vscode.Uri,
+        public readonly namedGraph?: string,
+        public readonly subject?: string,
+        public readonly predicate?: string,
+        public readonly object?: string
+    ) {
+        super(label, collapsibleState);
+        
+        if (type === 'file') {
+            this.iconPath = new vscode.ThemeIcon('database');
+        } else if (type === 'namedGraphsCategory' || type === 'subjectsCategory' || type === 'predicateObjectsCategory') {
+            this.iconPath = new vscode.ThemeIcon('folder');
+        } else if (

@@ -1,0 +1,186 @@
+import * as vscode from 'vscode';
+import { TrigDatasetsProvider } from './providers/TrigDatasetsProvider';
+import { TrigDocumentProvider } from './providers/TrigDocumentProvider';
+import { FormPanelProvider } from './providers/FormPanelProvider';
+
+export function activate(context: vscode.ExtensionContext) {
+    console.log('Trig Dataset Editor extension is now active');
+
+    // Register the tree data provider for the Datasets view
+    const trigDatasetsProvider = new TrigDatasetsProvider(context);
+    vscode.window.registerTreeDataProvider('trigDatasets', trigDatasetsProvider);
+
+    // Register the custom document provider for .trig files
+    const trigDocumentProvider = new TrigDocumentProvider(context);
+    context.subscriptions.push(
+        vscode.workspace.registerTextDocumentContentProvider('trig-editor', trigDocumentProvider)
+    );
+
+    // Register the form panel provider for editing forms
+    const formPanelProvider = new FormPanelProvider(context, trigDatasetsProvider);
+
+    // Register all commands
+    context.subscriptions.push(
+        vscode.commands.registerCommand('trigDatasets.refresh', () => {
+            trigDatasetsProvider.refresh();
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.createNewFile', async () => {
+            const workspaceFolders = vscode.workspace.workspaceFolders;
+            if (!workspaceFolders) {
+                vscode.window.showErrorMessage('No workspace folder open');
+                return;
+            }
+
+            const fileName = await vscode.window.showInputBox({
+                prompt: 'Enter filename for new dataset',
+                value: 'dataset.trig',
+                validateInput: (value) => {
+                    if (!value || !value.trim()) {
+                        return 'Filename cannot be empty';
+                    }
+                    const extensions = vscode.workspace.getConfiguration('trigDatasets').get<string[]>('fileExtensions', ['trig']);
+                    const hasValidExtension = extensions.some(ext => value.endsWith(`.${ext}`));
+                    if (!hasValidExtension) {
+                        return `File must have one of these extensions: ${extensions.map(ext => `.${ext}`).join(', ')}`;
+                    }
+                    return null;
+                }
+            });
+
+            if (fileName) {
+                const filePath = vscode.Uri.joinPath(workspaceFolders[0].uri, fileName);
+                const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+                
+                try {
+                    await vscode.workspace.fs.writeFile(filePath, Buffer.from(globalPrefixes + '\n\n'));
+                    trigDatasetsProvider.refresh();
+                    vscode.window.showInformationMessage(`Created new dataset: ${fileName}`);
+                } catch (error) {
+                    vscode.window.showErrorMessage(`Failed to create file: ${error}`);
+                }
+            }
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.openInTextEditor', async (uri: vscode.Uri) => {
+            try {
+                const document = await vscode.workspace.openTextDocument(uri);
+                await vscode.window.showTextDocument(document);
+            } catch (error) {
+                vscode.window.showErrorMessage(`Failed to open file: ${error}`);
+            }
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.addNamedGraph', (item: any) => {
+            formPanelProvider.showAddNamedGraphForm(item.resourceUri);
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.editNamedGraph', (item: any) => {
+            formPanelProvider.showEditNamedGraphForm(item.resourceUri, item.namedGraph);
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.removeNamedGraph', async (item: any) => {
+            const confirm = await vscode.window.showWarningMessage(
+                `Are you sure you want to remove the named graph "${item.namedGraph}"?`,
+                { modal: true },
+                'Remove'
+            );
+            
+            if (confirm === 'Remove') {
+                try {
+                    await trigDatasetsProvider.removeNamedGraph(item.resourceUri, item.namedGraph);
+                    vscode.window.showInformationMessage('Named graph removed successfully');
+                } catch (error) {
+                    vscode.window.showErrorMessage(`Failed to remove named graph: ${error}`);
+                }
+            }
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.addSubject', (item: any) => {
+            formPanelProvider.showAddSubjectForm(item.resourceUri, item.namedGraph);
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.editSubject', (item: any) => {
+            formPanelProvider.showEditSubjectForm(item.resourceUri, item.namedGraph, item.subject);
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.removeSubject', async (item: any) => {
+            const confirm = await vscode.window.showWarningMessage(
+                `Are you sure you want to remove the subject "${item.subject}"?`,
+                { modal: true },
+                'Remove'
+            );
+            
+            if (confirm === 'Remove') {
+                try {
+                    await trigDatasetsProvider.removeSubject(item.resourceUri, item.namedGraph, item.subject);
+                    vscode.window.showInformationMessage('Subject removed successfully');
+                } catch (error) {
+                    vscode.window.showErrorMessage(`Failed to remove subject: ${error}`);
+                }
+            }
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.addPredicateObject', (item: any) => {
+            formPanelProvider.showAddPredicateObjectForm(item.resourceUri, item.namedGraph, item.subject);
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.editPredicateObject', (item: any) => {
+            formPanelProvider.showEditPredicateObjectForm(
+                item.resourceUri, 
+                item.namedGraph, 
+                item.subject, 
+                item.predicate, 
+                item.object
+            );
+        }),
+
+        vscode.commands.registerCommand('trigDatasets.removePredicateObject', async (item: any) => {
+            const confirm = await vscode.window.showWarningMessage(
+                `Are you sure you want to remove the predicate-object pair "${item.predicate}" - "${item.object}"?`,
+                { modal: true },
+                'Remove'
+            );
+            
+            if (confirm === 'Remove') {
+                try {
+                    await trigDatasetsProvider.removePredicateObject(
+                        item.resourceUri, 
+                        item.namedGraph, 
+                        item.subject, 
+                        item.predicate, 
+                        item.object
+                    );
+                    vscode.window.showInformationMessage('Predicate-object pair removed successfully');
+                } catch (error) {
+                    vscode.window.showErrorMessage(`Failed to remove predicate-object pair: ${error}`);
+                }
+            }
+        })
+    );
+
+    // Watch for file changes
+    context.subscriptions.push(
+        vscode.workspace.onDidSaveTextDocument((document) => {
+            const extensions = vscode.workspace.getConfiguration('trigDatasets').get<string[]>('fileExtensions', ['trig']);
+            const hasValidExtension = extensions.some(ext => document.fileName.endsWith(`.${ext}`));
+            
+            if (hasValidExtension) {
+                trigDatasetsProvider.refresh();
+            }
+        })
+    );
+
+    // Watch for configuration changes
+    context.subscriptions.push(
+        vscode.workspace.onDidChangeConfiguration((event) => {
+            if (event.affectsConfiguration('trigDatasets')) {
+                trigDatasetsProvider.refresh();
+            }
+        })
+    );
+}
+
+export function deactivate() {
+    console.log('Trig Dataset Editor extension is now deactivated');
+}

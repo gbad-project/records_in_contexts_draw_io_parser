@@ -1,0 +1,144 @@
+{
+  "name": "trig-dataset-editor",
+  "displayName": "Trig Dataset Editor",
+  "description": "Form-based editor for RDF Trig datasets with intuitive interface",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["rdf", "trig", "semantic web", "linked data", "datasets"],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "views": {
+      "explorer": [
+        {
+          "id": "trigDatasets",
+          "name": "Datasets",
+          "when": "workbenchState != empty"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "trigDatasets",
+        "contents": "No .trig files found in workspace.\n[Create New Dataset](command:trigDatasets.createNewFile)"
+      }
+    ],
+    "commands": [
+      {
+        "command": "trigDatasets.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "trigDatasets.createNewFile",
+        "title": "Create New Dataset",
+        "icon": "$(add)"
+      },
+      {
+        "command": "trigDatasets.openInTextEditor",
+        "title": "Open in Text Editor"
+      },
+      {
+        "command": "trigDatasets.addNamedGraph",
+        "title": "Add Named Graph"
+      },
+      {
+        "command": "trigDatasets.editNamedGraph",
+        "title": "Edit Named Graph"
+      },
+      {
+        "command": "trigDatasets.removeNamedGraph",
+        "title": "Remove Named Graph"
+      },
+      {
+        "command": "trigDatasets.addSubject",
+        "title": "Add Subject"
+      },
+      {
+        "command": "trigDatasets.editSubject",
+        "title": "Edit Subject"
+      },
+      {
+        "command": "trigDatasets.removeSubject",
+        "title": "Remove Subject"
+      },
+      {
+        "command": "trigDatasets.addPredicateObject",
+        "title": "Add Predicate-Object Pair"
+      },
+      {
+        "command": "trigDatasets.editPredicateObject",
+        "title": "Edit Predicate-Object Pair"
+      },
+      {
+        "command": "trigDatasets.removePredicateObject",
+        "title": "Remove Predicate-Object Pair"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "trigDatasets.refresh",
+          "when": "view == trigDatasets",
+          "group": "navigation"
+        },
+        {
+          "command": "trigDatasets.createNewFile",
+          "when": "view == trigDatasets",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Trig Dataset Editor",
+      "properties": {
+        "trigDatasets.fileExtensions": {
+          "type": "array",
+          "default": ["trig"],
+          "description": "File extensions to show in the Datasets view",
+          "items": {
+            "type": "string"
+          }
+        },
+        "trigDatasets.namedGraphBaseUri": {
+          "type": "string",
+          "default": "https://data.test.gbad.ca/graphs/",
+          "description": "Base URI for named graphs (must be a valid URI)",
+          "pattern": "^https?://.*/$"
+        },
+        "trigDatasets.globalPrefixes": {
+          "type": "string",
+          "default": "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
+          "description": "Global prefixes to be automatically added to all datasets (Trig format)",
+          "editPresentation": "multilineText"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "n3": "^1.17.2",
+    "rdf-ext": "^2.5.0"
+  }
+}

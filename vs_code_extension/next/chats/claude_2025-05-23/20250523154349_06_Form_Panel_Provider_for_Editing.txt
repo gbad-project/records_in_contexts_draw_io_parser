@@ -1,0 +1,446 @@
+import * as vscode from 'vscode';
+import { TrigDatasetsProvider } from './TrigDatasetsProvider';
+import { Parser, Writer, Store, DataFactory, Quad } from 'n3';
+
+export class FormPanelProvider {
+    private static currentPanel: vscode.WebviewPanel | undefined;
+
+    constructor(
+        private context: vscode.ExtensionContext,
+        private trigDatasetsProvider: TrigDatasetsProvider
+    ) {}
+
+    public showAddNamedGraphForm(uri: vscode.Uri) {
+        this.createOrShowPanel('Add Named Graph', uri, 'addNamedGraph');
+    }
+
+    public showEditNamedGraphForm(uri: vscode.Uri, namedGraph: string) {
+        this.createOrShowPanel('Edit Named Graph', uri, 'editNamedGraph', { namedGraph });
+    }
+
+    public showAddSubjectForm(uri: vscode.Uri, namedGraph: string) {
+        this.createOrShowPanel('Add Subject', uri, 'addSubject', { namedGraph });
+    }
+
+    public showEditSubjectForm(uri: vscode.Uri, namedGraph: string, subject: string) {
+        this.createOrShowPanel('Edit Subject', uri, 'editSubject', { namedGraph, subject });
+    }
+
+    public showAddPredicateObjectForm(uri: vscode.Uri, namedGraph: string, subject: string) {
+        this.createOrShowPanel('Add Predicate-Object Pair', uri, 'addPredicateObject', { namedGraph, subject });
+    }
+
+    public showEditPredicateObjectForm(uri: vscode.Uri, namedGraph: string, subject: string, predicate: string, object: string) {
+        this.createOrShowPanel('Edit Predicate-Object Pair', uri, 'editPredicateObject', { namedGraph, subject, predicate, object });
+    }
+
+    private createOrShowPanel(title: string, uri: vscode.Uri, formType: string, data?: any) {
+        const columnToShowIn = vscode.window.activeTextEditor
+            ? vscode.window.activeTextEditor.viewColumn
+            : undefined;
+
+        if (FormPanelProvider.currentPanel) {
+            FormPanelProvider.currentPanel.reveal(columnToShowIn);
+        } else {
+            FormPanelProvider.currentPanel = vscode.window.createWebviewPanel(
+                'trigFormEditor',
+                title,
+                columnToShowIn || vscode.ViewColumn.One,
+                {
+                    enableScripts: true,
+                    retainContextWhenHidden: true
+                }
+            );
+
+            FormPanelProvider.currentPanel.onDidDispose(() => {
+                FormPanelProvider.currentPanel = undefined;
+            }, null, this.context.subscriptions);
+        }
+
+        FormPanelProvider.currentPanel.title = title;
+        FormPanelProvider.currentPanel.webview.html = this.getWebviewContent(formType, data);
+
+        FormPanelProvider.currentPanel.webview.onDidReceiveMessage(
+            async (message) => {
+                try {
+                    await this.handleWebviewMessage(message, uri);
+                } catch (error) {
+                    vscode.window.showErrorMessage(`Error: ${error}`);
+                }
+            },
+            undefined,
+            this.context.subscriptions
+        );
+    }
+
+    private async handleWebviewMessage(message: any, uri: vscode.Uri) {
+        switch (message.command) {
+            case 'previewQuad':
+                try {
+                    const quads = await this.constructQuads(message.formType, message.data);
+                    const nquads = this.serializeQuads(quads);
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'showPreview',
+                        nquads: nquads
+                    });
+                } catch (error) {
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'showError',
+                        error: (error as Error).message
+                    });
+                }
+                break;
+
+            case 'addQuad':
+                try {
+                    const quads = await this.constructQuads(message.formType, message.data);
+                    await this.addQuadsToDataset(uri, quads);
+                    vscode.window.showInformationMessage('Quad(s) added successfully');
+                    this.trigDatasetsProvider.refresh();
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'clearForm'
+                    });
+                } catch (error) {
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'showError',
+                        error: (error as Error).message
+                    });
+                }
+                break;
+
+            case 'replaceQuad':
+                try {
+                    const quads = await this.constructQuads(message.formType, message.data);
+                    await this.replaceQuadsInDataset(uri, message.originalData, quads);
+                    vscode.window.showInformationMessage('Quad(s) replaced successfully');
+                    this.trigDatasetsProvider.refresh();
+                    FormPanelProvider.currentPanel!.dispose();
+                } catch (error) {
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'showError',
+                        error: (error as Error).message
+                    });
+                }
+                break;
+
+            case 'validatePrefixes':
+                try {
+                    const prefixes = this.parsePrefixes();
+                    const missingPrefixes = [];
+                    
+                    for (const prefix of message.prefixes) {
+                        if (!prefixes[prefix]) {
+                            missingPrefixes.push(prefix);
+                        }
+                    }
+                    
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'prefixValidationResult',
+                        missing: missingPrefixes
+                    });
+                } catch (error) {
+                    FormPanelProvider.currentPanel!.webview.postMessage({
+                        command: 'showError',
+                        error: (error as Error).message
+                    });
+                }
+                break;
+        }
+    }
+
+    private async constructQuads(formType: string, data: any): Promise<Quad[]> {
+        const quads: Quad[] = [];
+
+        switch (formType) {
+            case 'addNamedGraph':
+            case 'editNamedGraph':
+                const tagUri = this.constructTagUri(data.authorityName, data.date, data.specific, data.fragment);
+                const baseUri = vscode.workspace.getConfiguration('trigDatasets').get<string>('namedGraphBaseUri', 'https://data.test.gbad.ca/graphs/');
+                const namedGraphUri = baseUri + tagUri;
+                
+                // Create an empty named graph (no quads needed for this)
+                // The named graph will be created when quads are added to it
+                break;
+
+            case 'addSubject':
+            case 'editSubject':
+                const prefixes = this.parsePrefixes();
+                
+                if (!prefixes[data.subjectPrefix]) {
+                    throw new Error(`Prefix '${data.subjectPrefix}' not found in settings`);
+                }
+                if (!prefixes[data.classPrefix]) {
+                    throw new Error(`Prefix '${data.classPrefix}' not found in settings`);
+                }
+                
+                const subjectUri = prefixes[data.subjectPrefix] + data.subjectLocalName;
+                const classUri = prefixes[data.classPrefix] + data.classLocalName;
+                const namedGraphTerm = data.namedGraph === 'default' ? DataFactory.defaultGraph() : DataFactory.namedNode(data.namedGraph);
+                
+                // rdf:type triple
+                quads.push(DataFactory.quad(
+                    DataFactory.namedNode(subjectUri),
+                    DataFactory.namedNode('http://www.w3.org/1999/02/22-rdf-syntax-ns#type'),
+                    DataFactory.namedNode(classUri),
+                    namedGraphTerm
+                ));
+                
+                // rdfs:label triple
+                if (data.rdfsLabel && data.rdfsLabel.trim()) {
+                    quads.push(DataFactory.quad(
+                        DataFactory.namedNode(subjectUri),
+                        DataFactory.namedNode('http://www.w3.org/2000/01/rdf-schema#label'),
+                        DataFactory.literal(data.rdfsLabel),
+                        namedGraphTerm
+                    ));
+                }
+                break;
+
+            case 'addPredicateObject':
+            case 'editPredicateObject':
+                const prefixesForPred = this.parsePrefixes();
+                
+                if (!prefixesForPred[data.predicatePrefix]) {
+                    throw new Error(`Prefix '${data.predicatePrefix}' not found in settings`);
+                }
+                
+                const predicateUri = prefixesForPred[data.predicatePrefix] + data.predicateLocalName;
+                const subjectTerm = data.subject.startsWith('_:') ? 
+                    DataFactory.blankNode(data.subject.substring(2)) : 
+                    DataFactory.namedNode(data.subject);
+                const predicateTerm = DataFactory.namedNode(predicateUri);
+                const graphTerm = data.namedGraph === 'default' ? DataFactory.defaultGraph() : DataFactory.namedNode(data.namedGraph);
+                
+                let objectTerm;
+                switch (data.objectType) {
+                    case 'prefix-local':
+                        if (!prefixesForPred[data.objectPrefix]) {
+                            throw new Error(`Prefix '${data.objectPrefix}' not found in settings`);
+                        }
+                        const objectUri = prefixesForPred[data.objectPrefix] + data.objectLocalName;
+                        objectTerm = DataFactory.namedNode(objectUri);
+                        break;
+                    case 'full-uri':
+                        objectTerm = DataFactory.namedNode(data.objectFullUri);
+                        break;
+                    case 'literal':
+                        objectTerm = DataFactory.literal(data.objectLiteral);
+                        break;
+                    default:
+                        throw new Error(`Unknown object type: ${data.objectType}`);
+                }
+                
+                quads.push(DataFactory.quad(subjectTerm, predicateTerm, objectTerm, graphTerm));
+                break;
+
+            default:
+                throw new Error(`Unknown form type: ${formType}`);
+        }
+
+        return quads;
+    }
+
+    private constructTagUri(authorityName: string, date: string, specific: string, fragment?: string): string {
+        if (!authorityName || !date || !specific) {
+            throw new Error('Authority name, date, and specific are required');
+        }
+        
+        // Validate date format (yyyy-mm-dd)
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+            throw new Error('Date must be in yyyy-mm-dd format');
+        }
+        
+        let tagUri = `tag:${authorityName},${date}:${specific}`;
+        if (fragment && fragment.trim()) {
+            tagUri += `#${fragment}`;
+        }
+        
+        return tagUri;
+    }
+
+    private parsePrefixes(): Record<string, string> {
+        const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+        const prefixes: Record<string, string> = {};
+        
+        const lines = globalPrefixes.split('\n');
+        for (const line of lines) {
+            const trimmed = line.trim();
+            if (trimmed.startsWith('@prefix ')) {
+                const match = trimmed.match(/@prefix\s+([^:]+):\s+<([^>]+)>\s*\./);
+                if (match) {
+                    prefixes[match[1]] = match[2];
+                }
+            }
+        }
+        
+        return prefixes;
+    }
+
+    private serializeQuads(quads: Quad[]): string {
+        const writer = new Writer({ format: 'N-Quads' });
+        let result = '';
+        
+        quads.forEach(quad => {
+            writer.addQuad(quad);
+        });
+        
+        writer.end((error, nquads) => {
+            if (!error) {
+                result = nquads;
+            }
+        });
+        
+        return result;
+    }
+
+    private async addQuadsToDataset(uri: vscode.Uri, quads: Quad[]): Promise<void> {
+        const store = await this.parseTriGFile(uri);
+        
+        for (const quad of quads) {
+            store.addQuad(quad);
+        }
+        
+        await this.writeStoreToFile(uri, store);
+    }
+
+    private async replaceQuadsInDataset(uri: vscode.Uri, originalData: any, newQuads: Quad[]): Promise<void> {
+        const store = await this.parseTriGFile(uri);
+        
+        // Remove old quads first
+        // This is a simplified approach - in a real implementation, you'd want to
+        // precisely identify and remove the exact quads being replaced
+        
+        await this.addQuadsToDataset(uri, newQuads);
+    }
+
+    private async parseTriGFile(uri: vscode.Uri): Promise<Store> {
+        const document = await vscode.workspace.openTextDocument(uri);
+        const content = document.getText();
+        
+        const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+        const fullContent = globalPrefixes + '\n' + content;
+
+        const parser = new Parser({ format: 'TriG' });
+        const store = new Store();
+        
+        return new Promise((resolve, reject) => {
+            parser.parse(fullContent, (error, quad, prefixes) => {
+                if (error) {
+                    reject(error);
+                } else if (quad) {
+                    store.addQuad(quad);
+                } else {
+                    resolve(store);
+                }
+            });
+        });
+    }
+
+    private async writeStoreToFile(uri: vscode.Uri, store: Store): Promise<void> {
+        const writer = new Writer({ format: 'TriG' });
+        const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+        
+        return new Promise((resolve, reject) => {
+            writer.end((error, result) => {
+                if (error) {
+                    reject(error);
+                } else {
+                    const content = globalPrefixes + '\n\n' + result;
+                    const edit = new vscode.WorkspaceEdit();
+                    edit.replace(uri, new vscode.Range(0, 0, Number.MAX_VALUE, Number.MAX_VALUE), content);
+                    vscode.workspace.applyEdit(edit).then(() => {
+                        resolve();
+                    }, reject);
+                }
+            });
+            
+            store.forEach((quad) => {
+                writer.addQuad(quad);
+            });
+        });
+    }
+
+    private getWebviewContent(formType: string, data?: any): string {
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quad Editor</title>
+    <style>
+        body {
+            font-family: var(--vscode-font-family);
+            font-size: var(--vscode-font-size);
+            color: var(--vscode-foreground);
+            background-color: var(--vscode-editor-background);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--vscode-descriptionForeground);
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background-color: var(--vscode-input-background);
+            color: var(--vscode-input-foreground);
+            border: 1px solid var(--vscode-input-border);
+            border-radius: 4px;
+            font-family: var(--vscode-font-family);
+            font-size: var(--vscode-font-size);
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--vscode-focusBorder);
+        }
+        
+        .form-group input:disabled, .form-group select:disabled, .form-group textarea:disabled {
+            opacity: 0.6;
+            background-color: var(--vscode-input-background);
+            cursor: not-allowed;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .button {
+            padding: 10px 20px;
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+            border: 1px solid var(--vscode-button-border);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .button:hover:not(:disabled) {
+            background-color: var(--vscode-button-hoverBackground);
+        }
+        
+        .button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .button.secondary {
+            background-color

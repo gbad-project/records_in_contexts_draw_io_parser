@@ -1,0 +1,330 @@
+import * as vscode from 'vscode';
+import { Parser } from 'n3';
+
+export class TrigDocumentProvider implements vscode.TextDocumentContentProvider {
+    private _onDidChange = new vscode.EventEmitter<vscode.Uri>();
+    readonly onDidChange = this._onDidChange.event;
+
+    constructor(private context: vscode.ExtensionContext) {}
+
+    async provideTextDocumentContent(uri: vscode.Uri): Promise<string> {
+        // Extract the actual file URI from the custom scheme
+        const actualUri = vscode.Uri.parse(uri.path);
+        
+        try {
+            const document = await vscode.workspace.openTextDocument(actualUri);
+            const content = document.getText();
+            
+            // Add global prefixes for validation
+            const globalPrefixes = vscode.workspace.getConfiguration('trigDatasets').get<string>('globalPrefixes', '');
+            const fullContent = globalPrefixes + '\n' + content;
+            
+            // Validate the TriG content
+            const isValid = await this.validateTriGContent(fullContent);
+            
+            if (isValid) {
+                return this.generateValidationSuccessPage(actualUri);
+            } else {
+                return this.generateValidationFailurePage(actualUri);
+            }
+        } catch (error) {
+            return this.generateValidationFailurePage(actualUri, error as Error);
+        }
+    }
+
+    private async validateTriGContent(content: string): Promise<boolean> {
+        return new Promise((resolve) => {
+            const parser = new Parser({ format: 'TriG' });
+            let hasError = false;
+            
+            parser.parse(content, (error, quad, prefixes) => {
+                if (error) {
+                    hasError = true;
+                    resolve(false);
+                } else if (!quad && !hasError) {
+                    // Parsing complete without errors
+                    resolve(true);
+                }
+            });
+        });
+    }
+
+    private generateValidationSuccessPage(uri: vscode.Uri): string {
+        const fileName = uri.fsPath.split('/').pop() || uri.fsPath.split('\\').pop() || 'Unknown';
+        
+        return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trig Dataset - ${fileName}</title>
+    <style>
+        body {
+            font-family: var(--vscode-font-family);
+            font-size: var(--vscode-font-size);
+            color: var(--vscode-foreground);
+            background-color: var(--vscode-editor-background);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 48px;
+            color: var(--vscode-testing-iconPassed);
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--vscode-testing-iconPassed);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--vscode-descriptionForeground);
+        }
+        
+        .instructions {
+            background-color: var(--vscode-textBlockQuote-background);
+            border-left: 4px solid var(--vscode-textBlockQuote-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid var(--vscode-button-border);
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .button:hover {
+            background-color: var(--vscode-button-hoverBackground);
+        }
+        
+        .button.secondary {
+            background-color: var(--vscode-button-secondaryBackground);
+            color: var(--vscode-button-secondaryForeground);
+        }
+        
+        .button.secondary:hover {
+            background-color: var(--vscode-button-secondaryHoverBackground);
+        }
+        
+        .file-info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: var(--vscode-editor-inactiveSelectionBackground);
+            border-radius: 4px;
+            font-family: var(--vscode-editor-font-family);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✓</div>
+        <div class="title">Validation Successful</div>
+        <div class="subtitle">The TriG dataset "${fileName}" is valid and ready for editing</div>
+        
+        <div class="instructions">
+            <strong>Next Steps:</strong><br>
+            Use the left side pane (Datasets view) to browse and edit the structure of your dataset using the form-based interface.
+        </div>
+        
+        <button class="button" onclick="openInTextEditor()">Open in Text Editor</button>
+        <button class="button secondary" onclick="refreshView()">Refresh View</button>
+        
+        <div class="file-info">
+            <strong>File:</strong> ${uri.fsPath}<br>
+            <strong>Status:</strong> Valid TriG format<br>
+            <strong>Last Validated:</strong> ${new Date().toLocaleString()}
+        </div>
+    </div>
+    
+    <script>
+        const vscode = acquireVsCodeApi();
+        
+        function openInTextEditor() {
+            vscode.postMessage({
+                command: 'openInTextEditor',
+                uri: '${uri.toString()}'
+            });
+        }
+        
+        function refreshView() {
+            vscode.postMessage({
+                command: 'refresh'
+            });
+        }
+    </script>
+</body>
+</html>`;
+    }
+
+    private generateValidationFailurePage(uri: vscode.Uri, error?: Error): string {
+        const fileName = uri.fsPath.split('/').pop() || uri.fsPath.split('\\').pop() || 'Unknown';
+        const errorMessage = error ? error.message : 'Unknown validation error';
+        
+        return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trig Dataset - ${fileName}</title>
+    <style>
+        body {
+            font-family: var(--vscode-font-family);
+            font-size: var(--vscode-font-size);
+            color: var(--vscode-foreground);
+            background-color: var(--vscode-editor-background);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .error-icon {
+            font-size: 48px;
+            color: var(--vscode-errorForeground);
+            margin-bottom: 20px;
+        }
+        
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--vscode-errorForeground);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: var(--vscode-descriptionForeground);
+        }
+        
+        .error-details {
+            background-color: var(--vscode-inputValidation-errorBackground);
+            border: 1px solid var(--vscode-inputValidation-errorBorder);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            font-family: var(--vscode-editor-font-family);
+            font-size: 13px;
+            white-space: pre-wrap;
+        }
+        
+        .instructions {
+            background-color: var(--vscode-textBlockQuote-background);
+            border-left: 4px solid var(--vscode-textBlockQuote-border);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: var(--vscode-button-background);
+            color: var(--vscode-button-foreground);
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid var(--vscode-button-border);
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .button:hover {
+            background-color: var(--vscode-button-hoverBackground);
+        }
+        
+        .button.secondary {
+            background-color: var(--vscode-button-secondaryBackground);
+            color: var(--vscode-button-secondaryForeground);
+        }
+        
+        .button.secondary:hover {
+            background-color: var(--vscode-button-secondaryHoverBackground);
+        }
+        
+        .file-info {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: var(--vscode-editor-inactiveSelectionBackground);
+            border-radius: 4px;
+            font-family: var(--vscode-editor-font-family);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-icon">⚠</div>
+        <div class="title">Validation Failed</div>
+        <div class="subtitle">The TriG dataset "${fileName}" contains syntax errors</div>
+        
+        <div class="error-details">${errorMessage}</div>
+        
+        <div class="instructions">
+            <strong>What to do:</strong><br>
+            Open the file in the text editor to fix the syntax errors, then refresh this view to try again.
+        </div>
+        
+        <button class="button" onclick="openInTextEditor()">Open in Text Editor</button>
+        <button class="button secondary" onclick="refreshView()">Refresh View</button>
+        
+        <div class="file-info">
+            <strong>File:</strong> ${uri.fsPath}<br>
+            <strong>Status:</strong> Invalid TriG format<br>
+            <strong>Last Validated:</strong> ${new Date().toLocaleString()}
+        </div>
+    </div>
+    
+    <script>
+        const vscode = acquireVsCodeApi();
+        
+        function openInTextEditor() {
+            vscode.postMessage({
+                command: 'openInTextEditor',
+                uri: '${uri.toString()}'
+            });
+        }
+        
+        function refreshView() {
+            vscode.postMessage({
+                command: 'refresh'
+            });
+        }
+    </script>
+</body>
+</html>`;
+    }
+
+    update(uri: vscode.Uri): void {
+        this._onDidChange.fire(uri);
+    }
+}
