@@ -2,7 +2,7 @@
 
 ROOT_DIR="$(pwd)"
 
-CONDA_ENV='gbad'
+CONDA_ENV='gbad-next'
 
 LOG_FILE="$ROOT_DIR/tests/logs/test_map_schema_add_description_rg_1-429.log"
 

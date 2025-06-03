@@ -1,0 +1,11 @@
+name: gbad-next
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - openjdk=21.0.6
+  - python=3.12.2
+  - pip=25.1.1
+  - pop
+  - pip:
+      - poetry==2.1.3

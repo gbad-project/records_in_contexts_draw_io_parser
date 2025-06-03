@@ -156,7 +156,7 @@ def postprocess(graph_path):
     print("Initiating postprocessing...")
     try:    
         g.parse(graph_path,
-                format=format)
+                publicID=BASE_URI)
         total_count = len(g)
         print(f"Successfully read a graph from '{graph_path}'")
         print_total_count()
