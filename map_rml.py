@@ -30,18 +30,17 @@ def map_rml(schema_code, rml_path=None):
         raise Exception(f"Fatal error: Schema code not supplied.")
     
     ttl_root = "gbad/mapping/target"
+    #rmlmapper_dir = "riconverted_general_authority_to_ric-o_model_2024-11-25_pz"
     rmlmapper_dir = "."
 
     # Find the .rml file
     rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "*.rml"))
-    rmlmapper_files = glob.glob(os.path.join(os.path.normpath(rmlmapper_dir), "rmlmapper*"))
 
     return_tuple = (None, None, None)
-    if (rml_files and rmlmapper_files):
+    if (rml_files):
         rml = rml_files[0]  # Assuming you want the first .rml file found
         if rml_path:  # Override anything found and assume it is relative
             rml = os.path.join(os.path.normpath(rml_dir), rml_path)
-        rmlmapper = rmlmapper_files[0] # Same assumption for mapper jar
         rml_filename = os.path.splitext(os.path.basename(rml))[0]
 
         # Create target directory if it does not exist
@@ -91,15 +90,69 @@ def map_rml(schema_code, rml_path=None):
             os.makedirs(subdir, exist_ok=True)
             ttl = os.path.join(subdir, mapped_filename)
 
-        return_tuple = (rml, rmlmapper, ttl)
-        print("Initiated mapping params:")
-        pprint(return_tuple)
+        def map_using_rmlmapper(rml, ttl):
+            """Run the RMLMapper Java command."""
+            nonlocal rmlmapper_dir
+            rmlmapper_files = glob.glob(os.path.join(os.path.normpath(rmlmapper_dir), "rmlmapper*"))
+            
+            if (rml_files and rmlmapper_files):
+                rmlmapper = rmlmapper_files[0] # Same assumption for mapper jar
+            else:
+                raise Exception("No mapper file found in specified path.")
 
-        # Run the Java command
-        java_command = ["java", "-jar", rmlmapper, "-s", "turtle", "-m", rml, "-o", ttl]
+            return_tuple = (rml, rmlmapper, ttl)
+            print("Initiated mapping params:")
+            pprint(return_tuple)
+
+            java_command = [
+                "java", "-jar", rmlmapper,
+                "-s", "turtle",
+                "-m", rml,
+                "-o", ttl,
+                "-b", BASE_URI
+            ]
+            try:
+                print(f"\n\nRunning Java command: '{" ".join(java_command)}'\n\n")
+                subprocess.run(java_command, check=True, capture_output=True, text=True)
+            # Catch CalledProcessError specifically for command failures
+            except subprocess.CalledProcessError as e:
+                print(f"Failed to run mapper jar (exit code: {e.returncode}):")
+                print(f"Command: {e.cmd}")
+                if e.stdout:
+                    print(f"STDOUT:\n{e.stdout}")
+                if e.stderr:
+                    print(f"STDERR:\n{e.stderr}")
+                # You can re-raise the exception if you want to propagate it after logging
+                raise
+            except Exception as e:
+                print(f"Failed to run mapper jar: '{e}'")
+                raise
+            return return_tuple
+
+        def map_using_pyrml(rml, ttl):
+            """Create an instance of RML Mapper with PyRML."""
+            raise NotImplementedError()
+            return_tuple = (rml, 'pyrml', ttl)
+            print("Initiated mapping params:")
+            pprint(return_tuple)
+
+            try:
+                from pyrml import PyRML
+                mapper = PyRML.get_mapper()
+                mapped_graph = mapper.convert(rml)
+                mapped = mapped_graph.serialize(format='turtle')
+                os.makedirs(os.path.dirname(ttl), exist_ok=True)
+                with open(ttl, 'w') as f:
+                    f.write(mapped)
+            except Exception as e:
+                print(f"Failed to map using pyrml: '{e}'")
+                raise
+            return return_tuple
+        
         try:
-            subprocess.run(java_command, check=True)
-
+            return_tuple = map_using_rmlmapper(rml, ttl)
+            #return_tuple = map_using_pyrml(rml, ttl)
+            rml, rmlmapper, ttl = return_tuple
             if os.path.exists(ttl):
                 file_size_bytes = os.path.getsize(ttl)
                 file_size_mb = file_size_bytes / (1024 * 1024)
@@ -118,13 +171,11 @@ def map_rml(schema_code, rml_path=None):
                         print(f"Aborted: Could not rename due to a permission error.")
                 else:
                     pass
-            
             print(f"Successfully mapped '{rml}' to '{ttl}'\n")
-        
         except Exception as e:
-            print(f"Failed to run mapper jar: '{e}'")
+            print(f"\n\nException occurred: {e}\n\n")
     else:
-        print("No .rml and/or mapper files found in specified paths.")
+        print("No .rml file found in specified path.")
     
     return return_tuple
     
@@ -156,6 +207,7 @@ def postprocess(graph_path):
     print("Initiating postprocessing...")
     try:    
         g.parse(graph_path,
+                format=format,
                 publicID=BASE_URI)
         total_count = len(g)
         print(f"Successfully read a graph from '{graph_path}'")
