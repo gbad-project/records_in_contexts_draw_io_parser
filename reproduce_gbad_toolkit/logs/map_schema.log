@@ -1,0 +1,9 @@
+Script started on 2025-06-02 19:49:59-04:00 [COMMAND="python source/map_schema.py" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/reproduce_gbad_toolkit/source/map_schema.py:612: SyntaxWarning: invalid escape sequence '\s'
+  uriref_str = re.sub('\s+', ' ', uriref_str)
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/reproduce_gbad_toolkit/source/map_schema.py:615: SyntaxWarning: invalid escape sequence '\s'
+  sin_predicate = re.sub(f"^{str(predicate)}\s+", "", uriref_str)
+usage: map_schema.py [-h] schema [source]
+map_schema.py: error: the following arguments are required: schema
+
+Script done on 2025-06-02 19:50:00-04:00 [COMMAND_EXIT_CODE="2"]

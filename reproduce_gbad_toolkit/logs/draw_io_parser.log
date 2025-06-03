@@ -1,0 +1,7 @@
+Script started on 2025-06-02 19:44:48-04:00 [COMMAND="cat 'source/CA1853 Chest Disease Service.drawio' | python source/draw_io_parser.py -m=url > results/CA1853.owl" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/reproduce_gbad_toolkit/source/draw_io_parser.py:1058: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not self.draw_io_xml_tree[0][0][0]:
+/Volumes/home/anonymous/records_in_contexts_draw_io_parser/reproduce_gbad_toolkit/source/draw_io_parser.py:936: DeprecationWarning: Testing an element's truth value will always return True in future versions.  Use specific 'len(elem)' or 'elem is not None' test instead.
+  if not geometry:
+
+Script done on 2025-06-02 19:44:48-04:00 [COMMAND_EXIT_CODE="0"]
