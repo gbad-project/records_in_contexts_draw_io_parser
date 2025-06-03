@@ -1,0 +1,9 @@
+name: gbad
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - openjdk=8.0.282
+  - python=3.12.2
+  - pip:
+      - poetry
