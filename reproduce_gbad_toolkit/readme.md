@@ -64,7 +64,7 @@ The Toolkit specifies that three scripts must be run:
 
 Here is the approximate sequence in which I tried to run scripts (trying to follow the Toolkit, but I am of course biased because I already know the sequence).
 
-### ✅ 1\. Draw_io_parser.py
+### ⚠️ 1\. Draw_io_parser.py
 
 > Parses draw.io file and generates .rml, an intermediary .ttl file representing visual schema.
 
