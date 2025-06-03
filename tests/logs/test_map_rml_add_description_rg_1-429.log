@@ -1,4 +1,4 @@
-Script started on 2025-06-03 12:23:13-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+Script started on 2025-06-03 12:27:28-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
 File 'mapped.ttl' already exists - copied to 'mapped.ttl.backup'
 Trying to extract source CSV path from RML...
 Extracted rml:source path: 'gbad/mapping/source/preprocessed/tests/test_description_rg_1-429.csv'
@@ -51,4 +51,4 @@ Number of triples in the graph: 155
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped_postprocessed.nt'
 
-Script done on 2025-06-03 12:23:14-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-03 12:27:29-04:00 [COMMAND_EXIT_CODE="0"]
