@@ -5,5 +5,7 @@ channels:
 dependencies:
   - openjdk=8.0.282
   - python=3.12.2
+  - pip=25.1.1
+  - pop
   - pip:
       - poetry==2.1.3
