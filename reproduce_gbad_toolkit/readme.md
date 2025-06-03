@@ -136,7 +136,7 @@ script -c "$COMMAND" logs/draw_io_parser.log
 
 > Applies preprocessing to .csv if necessary (e.g., separate/merge columns or replace/clean some values according to pre-specified rules). Links the preprocessed dataset .csv to .rml.
 
-It was not clear where I can get a sample *.csv file. So just tried to run the script:
+It was not clear where I could get a sample *.csv file. So I just tried to run the script:
 
 ```bash
 COMMAND="python source/map_schema.py"
@@ -166,7 +166,7 @@ usage: map_schema.py [-h] schema [source]
 map_schema.py: error: the following arguments are required: schema
 ```
 
-I was thus obvious that a `schema` argument had to be specified, with an optional `[source]` argument. How these work, I had no idea from the Toolkit.
+It was thus obvious that a `schema` argument had to be specified, with an optional `[source]` argument. How these work, I had no idea from the Toolkit.
 
 No other reference where I could look this up was listed, so the reproduction was halted at this point without exploring the source code, which was not the intention of the Toolkit.
 
