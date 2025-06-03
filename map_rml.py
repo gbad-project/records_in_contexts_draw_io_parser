@@ -14,6 +14,8 @@ import shutil
 from io import BytesIO
 import re
 
+BASE_URI = 'https://data.archives.gov.on.ca/'
+
 def map_rml(schema_code, rml_path=None):
     """
     Returns a tuple of (rml, rmlmapper, ttl) paths.
@@ -128,21 +130,20 @@ def map_rml(schema_code, rml_path=None):
     
 def postprocess(graph_path):
     # Create the input RDF graph
-    base_uri = 'https://data.archives.gov.on.ca'
-    base_kb_uri = URIRef(f"{base_uri}/KB")
-    base_schema_uri = URIRef(f"{base_uri}/Schema")
-    base_auth_uri = URIRef(f"{base_schema_uri}/Authority")
-    base_add_uri = URIRef(f"{base_schema_uri}/Description-Listings")
-    base_mapping_uri = URIRef(f"{base_schema_uri}/Mapping")
+    base_kb_uri = URIRef(os.path.join(BASE_URI, "KB"))
+    base_schema_uri = URIRef(os.path.join(BASE_URI, "Schema"))
+    base_auth_uri = URIRef(os.path.join(base_schema_uri, "Authority"))
+    base_add_uri = URIRef(os.path.join(base_schema_uri, "Description-Listings"))
+    base_mapping_uri = URIRef(os.path.join(base_schema_uri, "Mapping"))
     format = 'turtle'  # Adjust the format as needed
     g = Graph()
 
     # Define custom prefixes
     rico_uri = 'https://www.ica.org/standards/RiC/ontology#'
     rico = ('rico', Namespace(rico_uri))
-    ns = ('', Namespace(URIRef(f"{base_uri}/")))
-    auth = ('auth', Namespace(URIRef(f"{base_auth_uri}/")))
-    add = ('add', Namespace(URIRef(f"{base_add_uri}/")))
+    ns = ('', Namespace(BASE_URI))
+    auth = ('auth', Namespace(f"{base_auth_uri}/"))
+    add = ('add', Namespace(f"{base_add_uri}/"))
 
     # Define common prefixes
     rdf = ('rdf', RDF)
