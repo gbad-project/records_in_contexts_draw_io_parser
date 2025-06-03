@@ -37,11 +37,11 @@ conda activate "$CONDA_ENV" || { echo "Failed to activate conda environment: $CO
 
 # Execute the script command
 echo "Running command and logging output..."
-script "$LOG_FILE" sh -c "$COMMAND"
+script -c "$COMMAND" "$LOG_FILE"
 
 # Execute the script command
 echo "\nRunning command 2 and logging output..."
-script "$LOG_FILE_2" sh -c "$COMMAND_2"
+script -c "$COMMAND_2" "$LOG_FILE_2"
 
 # Note: cleanup will be called automatically thanks to the trap
 echo "Done!"
