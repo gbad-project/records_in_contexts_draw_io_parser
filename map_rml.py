@@ -29,18 +29,26 @@ def map_rml(schema_code, rml_path=None):
     else:
         raise Exception(f"Fatal error: Schema code not supplied.")
     
+    rml_files = []
+    if rml_path:  # Assume it is relative to rml_dir
+        try_rml_subdir = os.path.join(os.path.normpath(rml_dir),
+                                      os.path.normpath(rml_path))
+        if os.path.isdir(try_rml_subdir):
+            rml_dir = try_rml_subdir
+        else:  # this is actually a path to RML file
+            rml_files.append(try_rml_subdir)
+    
     ttl_root = "gbad/mapping/target"
     #rmlmapper_dir = "riconverted_general_authority_to_ric-o_model_2024-11-25_pz"
     rmlmapper_dir = "."
 
     # Find the .rml file
-    rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "*.rml"))
+    if len(rml_files) == 0:
+        rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "*.rml"))
 
     return_tuple = (None, None, None)
     if (rml_files):
         rml = rml_files[0]  # Assuming you want the first .rml file found
-        if rml_path:  # Override anything found and assume it is relative
-            rml = os.path.join(os.path.normpath(rml_dir), rml_path)
         rml_filename = os.path.splitext(os.path.basename(rml))[0]
 
         # Create target directory if it does not exist

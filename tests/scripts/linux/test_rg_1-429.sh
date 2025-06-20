@@ -10,7 +10,7 @@ COMMAND="python $ROOT_DIR/map_schema.py add tests/test_description_rg_1-429.csv"
 
 LOG_FILE_2="$ROOT_DIR/tests/logs/test_map_rml_add_description_rg_1-429.log"
 
-COMMAND_2="python $ROOT_DIR/map_rml.py add tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml"
+COMMAND_2="python $ROOT_DIR/map_rml.py add tests/test_description_rg_1-429/"
 
 # Exit on error
 set -e
