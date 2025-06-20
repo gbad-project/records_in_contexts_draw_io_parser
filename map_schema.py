@@ -11,6 +11,8 @@ import glob
 import requests
 import uuid
 
+BASE_URI = 'https://data.archives.gov.on.test.gbad.ca/'
+
 from gbad.converter.preprocessors import SourceCSVPreprocessor
 
 # Prohibit trimming pd prints in shell
@@ -212,7 +214,7 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
 
 def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
-    base_data_uri = 'https://data.archives.gov.on.ca'
+    base_data_uri = BASE_URI[:-1]
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
     base_gbad_uri = base_data_uri
     base_schema_uri = URIRef(f"{base_data_uri}/Schema")

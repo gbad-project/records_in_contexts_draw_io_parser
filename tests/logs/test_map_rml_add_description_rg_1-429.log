@@ -1,27 +1,26 @@
-Script started on 2025-06-03 12:27:28-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
-File 'mapped.ttl' already exists - copied to 'mapped.ttl.backup'
+Script started on 2025-06-20 13:55:42-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_rg_1-429/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
 Trying to extract source CSV path from RML...
 Extracted rml:source path: 'gbad/mapping/source/preprocessed/tests/test_description_rg_1-429.csv'
 Initiated mapping params:
-('gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml',
+('gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.rml',
  './rmlmapper-7.0.0-r374-all.jar',
- 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped.ttl')
+ 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_rg_1-429/mapped.ttl')
 
 
-Running Java command: 'java -jar ./rmlmapper-7.0.0-r374-all.jar -s turtle -m gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml -o gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped.ttl -b https://data.archives.gov.on.ca/'
+Running Java command: 'java -jar ./rmlmapper-7.0.0-r374-all.jar -s turtle -m gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.rml -o gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_rg_1-429/mapped.ttl -b https://data.archives.gov.on.test.gbad.ca'
 
 
-Successfully mapped 'gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped.ttl'
+Successfully mapped 'gbad/schema/description-listings/tests/test_description_rg_1-429/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.rml' to 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_rg_1-429/mapped.ttl'
 
 Initiating postprocessing...
-Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped.ttl'
+Successfully read a graph from 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_rg_1-429/mapped.ttl'
 
 Number of triples in the graph: 155
 Postprocessing...
 Executed a parametrized alternative of the following query: 
         PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+        PREFIX add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/>
         
         DELETE {
         ?recordSet rdfs:label ?shorterLabel .
@@ -49,6 +48,6 @@ Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
 Number of triples in the graph: 155
 
 
-Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-04-15_pz/test_description_rg_1-429/mapped_postprocessed.nt'
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_rg_1-429/mapped_postprocessed.nt'
 
-Script done on 2025-06-03 12:27:29-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-20 13:55:43-04:00 [COMMAND_EXIT_CODE="0"]

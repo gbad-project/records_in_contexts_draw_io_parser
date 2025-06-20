@@ -14,7 +14,7 @@ import shutil
 from io import BytesIO
 import re
 
-BASE_URI = 'https://data.archives.gov.on.ca/'
+BASE_URI = 'https://data.archives.gov.on.test.gbad.ca/'
 
 def map_rml(schema_code, rml_path=None):
     """

@@ -2,14 +2,14 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix rico: <https://www.ica.org/standards/RiC/ontology#>
-prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/>
+prefix add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/>
 prefix gbad: <https://data.gbad.ca/Schema/>
 
-<https://data.archives.gov.on.ca/Schema/Description-Listings> a owl:Ontology .
+<https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> a owl:Ontology .
 
 add:mnemonic
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf gbad:datatypeProperty ;
     rdfs:domain owl:DatatypeProperty ;
     rdfs:range rdfs:Literal ;
@@ -20,7 +20,7 @@ add:mnemonic
 
 add:privateNote
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -30,7 +30,7 @@ add:privateNote
 
 add:notes
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -40,7 +40,7 @@ add:notes
 
 add:relatedMaterial
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -50,7 +50,7 @@ add:relatedMaterial
 
 add:associatedMaterial
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -60,7 +60,7 @@ add:associatedMaterial
 
 add:findingAidNote
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -70,7 +70,7 @@ add:findingAidNote
 
 add:availabilityOfOtherFormats
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -80,7 +80,7 @@ add:availabilityOfOtherFormats
 
 add:howToOrder
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -92,7 +92,7 @@ add:howToOrder
 
 add:immediateSourceOfAcquisition
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:history, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -102,7 +102,7 @@ add:immediateSourceOfAcquisition
 
 add:custodialHistory
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:history, gbad:datatypeProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf (rico:RecordResource rico:Instantiation) ] ;
     rdfs:range rdfs:Literal ;
@@ -114,7 +114,7 @@ add:custodialHistory
 
 add:accumulationDate
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Description-Listings> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings> ;
     rdfs:subPropertyOf rico:date, gbad:datatypeProperty ;
     rdfs:domain rico:Thing ;
     rdfs:range rdfs:Literal ;

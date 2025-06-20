@@ -2,14 +2,14 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix skos: <http://www.w3.org/2004/02/skos/core#>
 prefix rico: <https://www.ica.org/standards/RiC/ontology#>
-prefix auth: <https://data.archives.gov.on.ca/Schema/Authority/>
+prefix auth: <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/>
 prefix gbad: <https://data.gbad.ca/Schema/>
 
-<https://data.archives.gov.on.ca/Schema/Authority/> a owl:Ontology .
+<https://data.archives.gov.on.test.gbad.ca/Schema/Authority/> a owl:Ontology .
 
 auth:mnemonic
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
     rdfs:subPropertyOf gbad:datatypeProperty ;
     rdfs:domain owl:DatatypeProperty ;
     rdfs:range rdfs:Literal ;
@@ -18,7 +18,7 @@ auth:mnemonic
 
 auth:sourceNote
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain rico:Agent ;
     rdfs:range rdfs:Literal ;
@@ -28,7 +28,7 @@ auth:sourceNote
 
 auth:functionNote
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain rico:Agent ;
     rdfs:range rdfs:Literal ;
@@ -38,7 +38,7 @@ auth:functionNote
 
 auth:privateNote
     a owl:DatatypeProperty ;
-    rdfs:isDefinedBy <https://data.archives.gov.on.ca/Schema/Authority> ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
     rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
     rdfs:domain rico:Agent ;
     rdfs:range rdfs:Literal ;
