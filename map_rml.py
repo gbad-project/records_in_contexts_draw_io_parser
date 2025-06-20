@@ -117,7 +117,7 @@ def map_rml(schema_code, rml_path=None):
                 "-s", "turtle",
                 "-m", rml,
                 "-o", ttl,
-                "-b", BASE_URI
+                "-b", BASE_URI[:-1]
             ]
             try:
                 print(f"\n\nRunning Java command: '{" ".join(java_command)}'\n\n")
@@ -216,7 +216,7 @@ def postprocess(graph_path):
     try:    
         g.parse(graph_path,
                 format=format,
-                publicID=BASE_URI)
+                publicID=BASE_URI[:-1])
         total_count = len(g)
         print(f"Successfully read a graph from '{graph_path}'")
         print_total_count()
