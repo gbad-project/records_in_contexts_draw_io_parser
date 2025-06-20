@@ -272,7 +272,7 @@ def postprocess(graph_path):
             #print(*triple)
             removed_graph.add(triple)
         pseudo_sparql = """
-        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX rico: <{}>
 
         DELETE WHERE {
             ?s a rico:AgentControlRelation .
@@ -280,7 +280,7 @@ def postprocess(graph_path):
                 ?subject rico:thingIsSourceOfRelation ?s .
             }
         }
-        """ # generated with ChatGPT based on parametrized
+        """.format(rico_uri) # generated with ChatGPT based on parametrized
         save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding)
         return removed_count
     
@@ -291,8 +291,8 @@ def postprocess(graph_path):
         removed_triples_output_format = 'nt'
         removed_triples_output_encoding = 'utf-8'
         pseudo_sparql = """
-        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
-        PREFIX authtp: <https://data.archives.gov.on.ca/Schema/Authority/AuthorityType#>
+        PREFIX rico: <{}>
+        PREFIX authtp: <{}/AuthorityType#>
         DELETE WHERE {
             ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
             ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
@@ -301,7 +301,7 @@ def postprocess(graph_path):
             authtp:Family%20Name ?p2 ?o2 .
             authtp:Personal%20Name ?p3 ?o3 .
         }
-        """
+        """.format(rico_uri, base_auth_uri)
 
         # Run parametrized query
         authtp = ('authtp', Namespace(URIRef(f"{base_auth_uri}/AuthorityType#")))
