@@ -46,11 +46,14 @@ from xml.etree.ElementTree import Element, fromstring
 from typing import Optional
 import urllib.parse
 import traceback
+import os
+
+BASE_URI = os.getenv('BASE_URI', 'https://example.com')
 
 _prefixes = {
     'rico': 'https://www.ica.org/standards/RiC/ontology#',
-    'add': 'https://data.archives.gov.on.ca/Schema/Description-Listings/',
-    'auth': 'https://data.archives.gov.on.ca/Schema/Authority/',
+    'add': f'{BASE_URI}/Schema/Description-Listings/',
+    'auth': f'{BASE_URI}/Schema/Authority/',
     'owl': 'http://www.w3.org/2002/07/owl#'
 }
 
