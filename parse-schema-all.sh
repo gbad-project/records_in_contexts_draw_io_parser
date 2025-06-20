@@ -36,12 +36,14 @@ total_files=${#drawio_files_array[@]}
 # Print the total number of files
 echo -e "Total number of *.drawio files found: $total_files"
 
+export BASE_URI='https://data.archives.gov.on.test.gbad.ca'
+
 # Set desired args
 args="-m url \
       -c none \
       --label-disable \
-      -o https://data.archives.gov.on.ca \
-      -p https://data.archives.gov.on.ca/"
+      -o $BASE_URI \
+      -p $BASE_URI/"
 
 # Loop through each Draw.io file and call the original script
 for i in "${!drawio_files_array[@]}"; do

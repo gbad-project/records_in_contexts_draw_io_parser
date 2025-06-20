@@ -65,11 +65,13 @@ for arg in "$@"; do
     optional_commands+=( "$(quote_argument "$arg")" )
 done
 
+export BASE_URI='https://data.archives.gov.on.test.gbad.ca'
+
 # Check if optional_commands is empty and set it to a particular value if empty
 if [ ${#optional_commands[@]} -eq 0 ]; then
     optional_commands="-m url \
-                       -o http://gbad.archives.gov.on.ca \
-                       -p http://gbad.archives.gov.on.ca/"
+                       -o $BASE_URI \
+                       -p $BASE_URI/"
 fi
 
 # Construct the python command

@@ -13,12 +13,14 @@ graph_dir="gbad/schema/description-listings"
 # Find the first *.drawio file in the graph directory
 drawio_file=$(find "$graph_dir" -type f -name "*.drawio" | head -n 1)
 
+export BASE_URI='https://data.archives.gov.on.test.gbad.ca'
+
 # Set desired args
 args="-m url \
       -c none \
       --label-disable \
-      -o https://data.archives.gov.on.ca/Schema/Mapping \
-      -p https://data.archives.gov.on.ca/Schema/Mapping#"
+      -o $BASE_URI/Schema/Mapping \
+      -p $BASE_URI/Schema/Mapping#"
 
 # Construct the python command
 python_command="\"$ORIGINAL_SCRIPT_PATH\" \"$drawio_file\" $args"
