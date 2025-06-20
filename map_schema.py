@@ -816,6 +816,8 @@ def __init__(schema_code, source_filename=None):
         elif uriref_str.startswith(norm(rr[1].constant)):
             map_predicate = rr[1].constant
             cleaned_uri = remove(norm(map_predicate), uriref_str)
+            if cleaned_uri.startswith('/') or cleaned_uri.startswith('#') :
+                cleaned_uri = base_data_uri + cleaned_uri
             # This is where the actual UUID substitution happens when UUID is the only mask
             if uuid_str:
                 cleaned_uri = substitute_uuid(cleaned_uri, uuid_str)
