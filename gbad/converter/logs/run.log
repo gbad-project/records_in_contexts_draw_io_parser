@@ -1,12 +1,12 @@
-Script started on 2025-06-25 17:28:11-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/merge_graphs.py /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Script started on 2025-06-25 19:08:29-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/merge_graphs.py /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
 
 Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt
 
-SHA256 hash '1e29ae55e499c289d5674dac791e225b3c505629ab1d759ec5437c2ec6a39b83' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt'
-Base64: HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M=
-Valid ni URI (RFC6920-compliant): <ni:///sha-256;HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M>
-UUID v5 generated from ns:URL and <ni:///sha-256;HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M>: d82238b7-833f-5cf3-aecb-b91fb7f63f21
-Graph URI to be used for 'description.nt' (1e29ae55): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:d82238b7-833f-5cf3-aecb-b91fb7f63f21>
+SHA256 hash 'ceb62c9a3126e6695cc6703df8cc2858e7aba2a869e29ee584870a60f5c5c175' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt'
+Base64: zrYsmjEm5mlcxnA9+MwoWOeroqhp4p7lhIcKYPXFwXU=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;zrYsmjEm5mlcxnA9-MwoWOeroqhp4p7lhIcKYPXFwXU>
+UUID v5 generated from ns:URL and <ni:///sha-256;zrYsmjEm5mlcxnA9-MwoWOeroqhp4p7lhIcKYPXFwXU>: 4d29e08b-ed85-53f3-b85a-d74d8dd97449
+Graph URI to be used for 'description.nt' (ceb62c9a): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:4d29e08b-ed85-53f3-b85a-d74d8dd97449>
 Steps to verify (ONLY for public data!):
 1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
 2. Make sure input encoding is set to UTF-8 and output encoding to Base64
@@ -17,11 +17,11 @@ Steps to verify (ONLY for public data!):
 
 Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt
 
-SHA256 hash '25dba8ab0765aa0fae9f0f49466dfea960273d7a0b38d17e99abb5ef93367908' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt'
-Base64: Jduoqwdlqg+unw9JRm3+qWAnPXoLONF+mau175M2eQg=
-Valid ni URI (RFC6920-compliant): <ni:///sha-256;Jduoqwdlqg-unw9JRm3-qWAnPXoLONF-mau175M2eQg>
-UUID v5 generated from ns:URL and <ni:///sha-256;Jduoqwdlqg-unw9JRm3-qWAnPXoLONF-mau175M2eQg>: 13202964-c694-59e4-84f8-24fddca37c8b
-Graph URI to be used for 'authority.nt' (25dba8ab): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:13202964-c694-59e4-84f8-24fddca37c8b>
+SHA256 hash '0738f20b50d285db31d40fd6348938ac7be0e78e87c6625c8a44574ce151ab69' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt'
+Base64: BzjyC1DShdsx1A/WNIk4rHvg546HxmJcikRXTOFRq2k=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;BzjyC1DShdsx1A_WNIk4rHvg546HxmJcikRXTOFRq2k>
+UUID v5 generated from ns:URL and <ni:///sha-256;BzjyC1DShdsx1A_WNIk4rHvg546HxmJcikRXTOFRq2k>: 63583a71-1d2a-59d3-86e7-c36949d752ba
+Graph URI to be used for 'authority.nt' (0738f20b): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:63583a71-1d2a-59d3-86e7-c36949d752ba>
 Steps to verify (ONLY for public data!):
 1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
 2. Make sure input encoding is set to UTF-8 and output encoding to Base64
@@ -30,8 +30,8 @@ Steps to verify (ONLY for public data!):
 5. Make sure you select 'Enter identifier for pre-defined UUIDs' and choose 'ns:URL - for URLs'
 6. The UUID should match that in the graph URI
 
-Writing 1091557 quads to /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq
+Writing 1086539 quads to /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq
 Consolidated 2 files successfully
 
 
-Script done on 2025-06-25 17:28:54-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 19:09:13-04:00 [COMMAND_EXIT_CODE="0"]

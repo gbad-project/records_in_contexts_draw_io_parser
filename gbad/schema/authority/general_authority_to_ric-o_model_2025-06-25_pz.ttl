@@ -129,7 +129,7 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                            rico:hasOrHadController <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22> ;
                                                                                                                            rico:hasOrHadIdentifier <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgencyReferenceCode%2F%7BREFA%7D%22> ;
                                                                                                                            rico:hasSuccessor <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22> ;
-                                                                                                                           rico:isEquivalentTo <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22> ;
+                                                                                                                           rico:isEquivalentTo <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BREFA%7D%22> ;
                                                                                                                            rico:isOrWasDescribedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAuthorityRecord%2F%7BHEADING%7D%22> ;
                                                                                                                            rico:isSuccessorOf <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22> ;
                                                                                                                            rdfs:label "" ;
@@ -183,6 +183,11 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                  rdfs:label "rr:template \"{PRED_1..5} (Corporate Body)\"" .
 
 
+###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BREFA%7D%22
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                     rico:CorporateBody .
+
+
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22
 <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                                          rico:CorporateBody ;
@@ -207,11 +212,6 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                          rico:isOrWasRegulatedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Aconstant%20%22%2FKB%2FRule%2FRulesForArchivalDescription%22> ;
                                                                                                                          auth:sourceNote "rml:reference \"SOURCE\"" ;
                                                                                                                          rico:lastModificationDate "rml:reference \"MOD_DATE\"" .
-
-
-###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22
-<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                             rico:CorporateBody .
 
 
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATECONT_1..14_BEGINNING%7D%22

@@ -1,4 +1,4 @@
-Script started on 2025-06-25 17:28:01-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py auth AUTHORITY/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Script started on 2025-06-25 19:08:20-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py auth AUTHORITY/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
 Trying to extract source CSV path from RML...
 Extracted rml:source path: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
 Initiated mapping params:
@@ -10,7 +10,7 @@ Initiated mapping params:
 Running Java command: 'java -jar ./rmlmapper-7.0.0-r374-all.jar -s turtle -m gbad/schema/authority/authority/general_authority_to_ric-o_model_2025-06-25_pz.rml -o gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped.ttl -b https://data.archives.gov.on.test.gbad.ca'
 
 
-Converted file is larger than 10 MB (22.49 MB) - trying to rename to LARGE...
+Converted file is larger than 10 MB (22.41 MB) - trying to rename to LARGE...
 Successfully renamed to 'mapped_LARGE.ttl'
 Successfully mapped 'gbad/schema/authority/authority/general_authority_to_ric-o_model_2025-06-25_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped_LARGE.ttl'
 
@@ -52,4 +52,4 @@ Number of triples in the graph: 181600
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped_LARGE_postprocessed.nt'
 
-Script done on 2025-06-25 17:28:10-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 19:08:28-04:00 [COMMAND_EXIT_CODE="0"]

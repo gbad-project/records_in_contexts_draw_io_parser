@@ -68,7 +68,7 @@ Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22
     rico:isSuccessorOf rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22,
     rico:hasSuccessor rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22,
     auth:privateNote "rml:reference \"CMTAU\"",
-    rico:isEquivalentTo rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22,
+    rico:isEquivalentTo rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BREFA%7D%22,
     rdfs:label ""
 
 Individual: rr%3Atemplate%20%22%2FKB%2FAgencyReferenceCode%2F%7BREFA%7D%22
@@ -166,7 +166,7 @@ Individual: rr%3Aconstant%20%22%2FSchema%2FAuthority%2FVariantAgentName%22
 Individual: rr%3Aconstant%20%22%2FSchema%2FAuthority%2FNaturalAgentName%22
   Types: rico:Type
 
-Individual: rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22
+Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BREFA%7D%22
   Types: rico:CorporateBody
 
 Individual: rr%3Aconstant%20%22%2FKB%2FRule%2FRulesForArchivalDescription%22

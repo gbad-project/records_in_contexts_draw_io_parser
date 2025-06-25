@@ -1,4 +1,4 @@
-Script started on 2025-06-25 17:28:00-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth AUTHORITY.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Script started on 2025-06-25 19:08:18-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth AUTHORITY.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
 Using source file: 'gbad/mapping/source/AUTHORITY.csv'
 
 Checking in for preprocessing...
@@ -129,4 +129,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/authority//AUTHORITY/general_authority_to_ric-o_model_2025-06-25_pz.rml'
 
-Script done on 2025-06-25 17:28:01-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 19:08:20-04:00 [COMMAND_EXIT_CODE="0"]
