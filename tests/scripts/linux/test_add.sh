@@ -4,6 +4,10 @@ ROOT_DIR="$(pwd)"
 
 CONDA_ENV='gbad-next'
 
+LOG_FILE_PARSE="$ROOT_DIR/tests/logs/test_parse_add.log"
+
+COMMAND_PARSE="${ROOT_DIR}/parse-add.sh"
+
 LOG_FILE="$ROOT_DIR/tests/logs/test_map_schema_add_description_tailshuf_100.log"
 
 COMMAND="python $ROOT_DIR/map_schema.py add tests/test_description_tailshuf_100.csv"
@@ -34,6 +38,10 @@ trap cleanup EXIT
 echo "Activating conda environment: $CONDA_ENV"
 eval "$(conda shell.bash hook)"
 conda activate "$CONDA_ENV" || { echo "Failed to activate conda environment: $CONDA_ENV" >&2; exit 1; }
+
+# Parse and convert drawio
+echo "Running parse command and logging output..."
+script -c "$COMMAND_PARSE" "$LOG_FILE_PARSE"
 
 # Execute the script command
 echo "Running command and logging output..."
