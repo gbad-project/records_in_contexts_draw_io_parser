@@ -40,11 +40,11 @@ fi
 
 # Construct the output file path
 output_file_dir=$(dirname "$input_file")
-output_file_name=$(basename "$input_file" .drawio | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr -d "()[]/,:.\"'").owl
+output_file_name=$(basename "$input_file" .drawio | tr '[:upper:]' '[:lower:]' | tr ' ' '_' | tr -d "()[]/,:.\"'").omn
 output_file="$output_file_dir/$output_file_name"
 
 # Construct the TTL file path
-ttl_file="$output_file_dir/$(basename "$output_file" .owl).ttl"
+ttl_file="$output_file_dir/$(basename "$output_file" .omn).ttl"
 
 ttl_file_hash=''
 # Check if the TTL file exists
