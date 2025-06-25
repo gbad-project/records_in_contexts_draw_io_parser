@@ -1406,6 +1406,11 @@ def __init__(schema_code, source_filename=None):
                 object_mnemonic = parsed_result[mnemonic_label]
                 #rdfs_label_triple = None # to use later - commented out since --label-disable
 
+                # Support empty literal nodes - e.g., to
+                # forcefully discard rdfs:label generation
+                if object_map_object is None:
+                    continue
+
                 # Handle possible increment requests in object mnemonic
                 object_mnemonic_i_from, object_mnemonic_i_to = get_mnemonic_i_from_to(object_mnemonic)
                 for object_mnemonic_i in range(object_mnemonic_i_from, object_mnemonic_i_to + 1):
