@@ -50,7 +50,7 @@ mkdir -p "$(dirname "$LOG_FILE_MAP_SCHEMA_AUTH")"
 script -c "$COMMAND_MAP_SCHEMA_AUTH" "$LOG_FILE_MAP_SCHEMA_AUTH"
 
 # Execute the script command
-echo "\nRunning map rml auth command and logging output..."
+echo -e "Running map rml auth command and logging output..."
 mkdir -p "$(dirname "$LOG_FILE_MAP_RML_AUTH")"
 script -c "$COMMAND_MAP_RML_AUTH" "$LOG_FILE_MAP_RML_AUTH"
 

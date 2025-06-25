@@ -50,7 +50,7 @@ mkdir -p "$(dirname "$LOG_FILE_MAP_SCHEMA_ADD")"
 script -c "$COMMAND_MAP_SCHEMA_ADD" "$LOG_FILE_MAP_SCHEMA_ADD"
 
 # Execute the script command
-echo "\nRunning map rml add command and logging output..."
+echo -e "\nRunning map rml add command and logging output..."
 mkdir -p "$(dirname "$LOG_FILE_MAP_RML_ADD")"
 script -c "$COMMAND_MAP_RML_ADD" "$LOG_FILE_MAP_RML_ADD"
 

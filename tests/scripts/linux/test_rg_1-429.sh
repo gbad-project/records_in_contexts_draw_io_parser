@@ -40,7 +40,7 @@ echo "Running command and logging output..."
 script -c "$COMMAND" "$LOG_FILE"
 
 # Execute the script command
-echo "\nRunning command 2 and logging output..."
+echo -e "\nRunning command 2 and logging output..."
 script -c "$COMMAND_2" "$LOG_FILE_2"
 
 # Note: cleanup will be called automatically thanks to the trap
