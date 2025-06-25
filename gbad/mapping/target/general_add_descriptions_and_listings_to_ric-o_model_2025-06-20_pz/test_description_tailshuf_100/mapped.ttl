@@ -1090,473 +1090,473 @@
 rdfs:label a owl:DatatypeProperty .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/%20%3A%2C%201961> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/ :, 1961";
+  rdfs:label " :, 1961 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%206-115> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/1961-1962> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/1961-1962";
+  rdfs:label "1961-1962 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%206-115> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/AA3> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/AA3";
+  rdfs:label "AA3 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-66>,
     <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%202-91> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/AA59> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/AA59";
+  rdfs:label "AA59 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-66> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA12> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA12";
+  rdfs:label "BA12 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%209-99> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA125> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA125";
+  rdfs:label "BA125 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2080-13> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA126> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA126";
+  rdfs:label "BA126 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2081-2> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA127> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA127";
+  rdfs:label "BA127 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2012-93> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA13> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA13";
+  rdfs:label "BA13 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%209-99> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA139> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA139";
+  rdfs:label "BA139 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-30> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA143> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA143";
+  rdfs:label "BA143 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2069-7> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA34> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA34";
+  rdfs:label "BA34 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-139> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA4> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA4";
+  rdfs:label "BA4 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2047-177> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA50> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA50";
+  rdfs:label "BA50 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-2405> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA504> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA504";
+  rdfs:label "BA504 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-3673> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA505> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA505";
+  rdfs:label "BA505 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-4524>,
     <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-5886> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA506> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA506";
+  rdfs:label "BA506 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-3095> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA51> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA51";
+  rdfs:label "BA51 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-2405>,
     <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-5109>, <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-5512> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA52> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA52";
+  rdfs:label "BA52 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2022-4524> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA75> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA75";
+  rdfs:label "BA75 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2041-3> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/BA84> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/BA84";
+  rdfs:label "BA84 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-30> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Burke%2C%20Edmund%2C%201850-1919>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Burke, Edmund, 1850-1919" .
+  rdfs:label "Burke, Edmund, 1850-1919 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Burke%2C%20Horwood%20and%20White%20%28firm%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Burke, Horwood and White (firm)" .
+  rdfs:label "Burke, Horwood and White (firm) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Burritt%2C%20Hamlet%2C%201821-1893>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Burritt, Hamlet, 1821-1893" .
+  rdfs:label "Burritt, Hamlet, 1821-1893 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Burritt%2C%20Hamlett%2C%20fl.%201851>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Burritt, Hamlett, fl. 1851" .
+  rdfs:label "Burritt, Hamlett, fl. 1851 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1027> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1027";
+  rdfs:label "CA1027 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-307> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1058> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1058";
+  rdfs:label "CA1058 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-123> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1065> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1065";
+  rdfs:label "CA1065 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-66> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA143> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA143";
+  rdfs:label "CA143 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2032-78> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA149> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA149";
+  rdfs:label "CA149 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2032-78> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1492> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1492";
+  rdfs:label "CA1492 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-126> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1495> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1495";
+  rdfs:label "CA1495 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-126> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1496> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1496";
+  rdfs:label "CA1496 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-126> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1497> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1497";
+  rdfs:label "CA1497 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-126> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1522> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1522";
+  rdfs:label "CA1522 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2010-34> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA1582> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA1582";
+  rdfs:label "CA1582 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%206-115> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA210> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA210";
+  rdfs:label "CA210 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%204-156> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA2173> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA2173";
+  rdfs:label "CA2173 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2012-93> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA2336> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA2336";
+  rdfs:label "CA2336 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2019-205> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA39> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA39";
+  rdfs:label "CA39 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2016-66> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA402> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA402";
+  rdfs:label "CA402 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2049-137> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA737> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA737";
+  rdfs:label "CA737 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2053-31>,
     <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2053-69> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA837> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA837";
+  rdfs:label "CA837 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%209-75> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA933> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA933";
+  rdfs:label "CA933 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%209-75> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA973> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA973";
+  rdfs:label "CA973 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2029-3> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Cameron%2C%20Catherine%2C%201838%3F-1916>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Cameron, Catherine, 1838?-1916" .
+  rdfs:label "Cameron, Catherine, 1838?-1916 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Charles%20Shirreff%20%28family%29%20%7C%20Shirreff%2C%20Charles%2C%201768-1849>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Charles Shirreff (family) | Shirreff, Charles, 1768-1849" .
+  rdfs:label "Charles Shirreff (family) | Shirreff, Charles, 1768-1849 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Dougall%2C%20James%2C%20fl.%201805-1869>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Dougall, James, fl. 1805-1869" .
+  rdfs:label "Dougall, James, fl. 1805-1869 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Gaelic%20Society%20of%20Toronto>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Gaelic Society of Toronto" .
+  rdfs:label "Gaelic Society of Toronto (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Liquor%20Control%20Board%20of%20Ontario>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Liquor Control Board of Ontario" .
+  rdfs:label "Liquor Control Board of Ontario (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Mitchell%2C%20George%20S.> a rico:Agent;
-  rdfs:label "/KB/Agent/Mitchell, George S." .
+  rdfs:label "Mitchell, George S. (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Development%20Agency>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Development Agency" .
+  rdfs:label "Ontario Development Agency (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Development%20Corporation>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Development Corporation" .
+  rdfs:label "Ontario Development Corporation (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Food%20Council> a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Food Council" .
+  rdfs:label "Ontario Food Council (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Heritage%20Foundation>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Heritage Foundation" .
+  rdfs:label "Ontario Heritage Foundation (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Status%20of%20Women%20Council>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Status of Women Council" .
+  rdfs:label "Ontario Status of Women Council (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario%20Water%20Resources%20Commission>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario Water Resources Commission" .
+  rdfs:label "Ontario Water Resources Commission (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Agricultural%20Representative%20Branch>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Agricultural Representative Branch" .
+  rdfs:label "Ontario. Agricultural Representative Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Clerks%20of%20the%20Peace%20%281777-1968%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Clerks of the Peace (1777-1968)" .
+  rdfs:label "Ontario. Clerks of the Peace (1777-1968) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Court%20of%20Queen%27s%20Bench>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Court of Queen's Bench" .
+  rdfs:label "Ontario. Court of Queen's Bench (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Courts%20of%20General%20Sessions%20of%20the%20Peace>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Courts of General Sessions of the Peace" .
+  rdfs:label "Ontario. Courts of General Sessions of the Peace (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Crown%20Attorneys%20%281857-1968%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Crown Attorneys (1857-1968)" .
+  rdfs:label "Ontario. Crown Attorneys (1857-1968) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Crown%20Law%20Office%20-%20Civil>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Crown Law Office - Civil" .
+  rdfs:label "Ontario. Crown Law Office - Civil (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Agriculture>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Agriculture" .
+  rdfs:label "Ontario. Dept. of Agriculture (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Agriculture%20and%20Food>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Agriculture and Food" .
+  rdfs:label "Ontario. Dept. of Agriculture and Food (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Agriculture.%20Information%20Branch>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Agriculture. Information Branch" .
+  rdfs:label "Ontario. Dept. of Agriculture. Information Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Economics>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Economics" .
+  rdfs:label "Ontario. Dept. of Economics (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Economics%20and%20Development>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Economics and Development" .
+  rdfs:label "Ontario. Dept. of Economics and Development (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Economics%20and%20Federal%20and%20Provincial%20Relations>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Economics and Federal and Provincial Relations" .
+  rdfs:label "Ontario. Dept. of Economics and Federal and Provincial Relations (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Education>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Education" .
+  rdfs:label "Ontario. Dept. of Education (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Justice>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Justice" .
+  rdfs:label "Ontario. Dept. of Justice (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Public%20Welfare>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Public Welfare" .
+  rdfs:label "Ontario. Dept. of Public Welfare (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Social and Family Services" .
+  rdfs:label "Ontario. Dept. of Social and Family Services (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Social%20and%20Family%20Services.%20Office%20of%20the%20Deputy%20Minister>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of Social and Family Services. Office of the Deputy Minister" .
+  rdfs:label "Ontario. Dept. of Social and Family Services. Office of the Deputy Minister (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20the%20Attorney%20General>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of the Attorney General" .
+  rdfs:label "Ontario. Dept. of the Attorney General (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20the%20Provincial%20Secretary>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Dept. of the Provincial Secretary" .
+  rdfs:label "Ontario. Dept. of the Provincial Secretary (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20High%20Court%20of%20Justice>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. High Court of Justice" .
+  rdfs:label "Ontario. High Court of Justice (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Industry%20and%20Trade%20Expansion>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Industry and Trade Expansion" .
+  rdfs:label "Ontario. Industry and Trade Expansion (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Legislative%20Assembly>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Legislative Assembly" .
+  rdfs:label "Ontario. Legislative Assembly (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Legislative%20Assembly.%20Select%20Committee%20on%20Toll%20Roads%20and%20Highway%20Financing>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Legislative Assembly. Select Committee on Toll Roads and Highway Financing" .
+  rdfs:label "Ontario. Legislative Assembly. Select Committee on Toll Roads and Highway Financing (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Legislative%20Assembly.%20Standing%20Committee%20on%20General%20Government>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Legislative Assembly. Standing Committee on General Government" .
+  rdfs:label "Ontario. Legislative Assembly. Standing Committee on General Government (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Magistrates%27%20Courts>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Magistrates' Courts" .
+  rdfs:label "Ontario. Magistrates' Courts (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Agriculture%20and%20Food.%20Extension%20Branch>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Agriculture and Food. Extension Branch" .
+  rdfs:label "Ontario. Ministry of Agriculture and Food. Extension Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Colleges%20and%20Universities>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Colleges and Universities" .
+  rdfs:label "Ontario. Ministry of Colleges and Universities (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Colleges%20and%20Universities.%20Office%20of%20the%20Deputy%20Minister>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Colleges and Universities. Office of the Deputy Minister" .
+  rdfs:label "Ontario. Ministry of Colleges and Universities. Office of the Deputy Minister (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Colleges%20and%20Universities.%20Policy%20and%20Planning%20Coordination%20Office>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Colleges and Universities. Policy and Planning Coordination Office" .
+  rdfs:label "Ontario. Ministry of Colleges and Universities. Policy and Planning Coordination Office (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Correctional Services (1972-1993)" .
+  rdfs:label "Ontario. Ministry of Correctional Services (1972-1993) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29.%20Adult%20Division>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Correctional Services (1972-1993). Adult Division" .
+  rdfs:label "Ontario. Ministry of Correctional Services (1972-1993). Adult Division (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Correctional%20Services%20%281972-1993%29.%20Operations%20Division>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Correctional Services (1972-1993). Operations Division" .
+  rdfs:label "Ontario. Ministry of Correctional Services (1972-1993). Operations Division (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Health>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Health" .
+  rdfs:label "Ontario. Ministry of Health (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Health.%20Information%20Systems%20Division>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Health. Information Systems Division" .
+  rdfs:label "Ontario. Ministry of Health. Information Systems Division (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Industry%20and%20Trade>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Industry and Trade" .
+  rdfs:label "Ontario. Ministry of Industry and Trade (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Industry%20and%20Trade.%20Trade%20Division>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Industry and Trade. Trade Division" .
+  rdfs:label "Ontario. Ministry of Industry and Trade. Trade Division (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Industry%2C%20Trade%20and%20Technology>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Industry, Trade and Technology" .
+  rdfs:label "Ontario. Ministry of Industry, Trade and Technology (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing%20%281995-%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Municipal Affairs and Housing (1995-)" .
+  rdfs:label "Ontario. Ministry of Municipal Affairs and Housing (1995-) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Municipal%20Affairs%20and%20Housing.%20Municipal%20Performance%20and%20Accountability%20Branch>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of Municipal Affairs and Housing. Municipal Performance and Accountability Branch" .
+  rdfs:label "Ontario. Ministry of Municipal Affairs and Housing. Municipal Performance and Accountability Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of the Environment (1972-1993)" .
+  rdfs:label "Ontario. Ministry of the Environment (1972-1993) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20the%20Environment%20%281972-1993%29.%20Office%20of%20the%20Deputy%20Minister>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Ministry of the Environment (1972-1993). Office of the Deputy Minister" .
+  rdfs:label "Ontario. Ministry of the Environment (1972-1993). Office of the Deputy Minister (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Office%20of%20the%20Athletics%20Commissioner>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Office of the Athletics Commissioner" .
+  rdfs:label "Ontario. Office of the Athletics Commissioner (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Office%20of%20the%20Provincial%20Economist>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Office of the Provincial Economist" .
+  rdfs:label "Ontario. Office of the Provincial Economist (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Office%20of%20the%20Registrar%20General>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Office of the Registrar General" .
+  rdfs:label "Ontario. Office of the Registrar General (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Probation%20Services%20Branch>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Probation Services Branch" .
+  rdfs:label "Ontario. Probation Services Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Probation%20and%20Parole%20Service>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Probation and Parole Service" .
+  rdfs:label "Ontario. Probation and Parole Service (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Recording%20Office>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Recording Office" .
+  rdfs:label "Ontario. Recording Office (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Sheriffs%20%281791-1968%29>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Sheriffs (1791-1968)" .
+  rdfs:label "Ontario. Sheriffs (1791-1968) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Supreme%20Court> a
     rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Supreme Court" .
+  rdfs:label "Ontario. Supreme Court (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Treasury%20Dept.> a
     rico:Agent;
-  rdfs:label "/KB/Agent/Ontario. Treasury Dept." .
+  rdfs:label "Ontario. Treasury Dept. (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Playter%2C%20Ely%2C%201776-1858>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Playter, Ely, 1776-1858" .
+  rdfs:label "Playter, Ely, 1776-1858 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Point%20Edward%20%28Ont.%29> a
     rico:Agent;
-  rdfs:label "/KB/Agent/Point Edward (Ont.)" .
+  rdfs:label "Point Edward (Ont.) (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Purdy%2C%20Thomas%20Franklin%2C%201824-1899>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Purdy, Thomas Franklin, 1824-1899" .
+  rdfs:label "Purdy, Thomas Franklin, 1824-1899 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Quebec%20%28Province%2C%201763-1791%29.%20Surveyor%20General%27s%20Office>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Quebec (Province, 1763-1791). Surveyor General's Office" .
+  rdfs:label "Quebec (Province, 1763-1791). Surveyor General's Office (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Robertson%2C%20Archibald> a rico:Agent;
-  rdfs:label "/KB/Agent/Robertson, Archibald" .
+  rdfs:label "Robertson, Archibald (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Shirreff%2C%20Alexander%2C%201802-1878>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Shirreff, Alexander, 1802-1878" .
+  rdfs:label "Shirreff, Alexander, 1802-1878 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Shirreff%2C%20Robert%2C%201794-1870>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Shirreff, Robert, 1794-1870" .
+  rdfs:label "Shirreff, Robert, 1794-1870 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Smith%2C%20Peter%20J.%2C%201936->
   a rico:Agent;
-  rdfs:label "/KB/Agent/Smith, Peter J., 1936-" .
+  rdfs:label "Smith, Peter J., 1936- (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Storm%2C%20William%20George%2C%201826-1892>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Storm, William George, 1826-1892" .
+  rdfs:label "Storm, William George, 1826-1892 (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Upper%20Canada.%20Surveyor%20General%27s%20Office>
   a rico:Agent;
-  rdfs:label "/KB/Agent/Upper Canada. Surveyor General's Office" .
+  rdfs:label "Upper Canada. Surveyor General's Office (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/ArchivalDescriptionRecord/C%2011-34>
   a rico:Record;
@@ -2305,962 +2305,962 @@ rdfs:label a owl:DatatypeProperty .
   rico:wasLastUpdatedAtDate <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F25%2F2003> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2011-34> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 11-34";
+  rdfs:label "C 11-34 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2011-762> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 11-762";
+  rdfs:label "C 11-762 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2011-984> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 11-984";
+  rdfs:label "C 11-984 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2020-29> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 20-29";
+  rdfs:label "C 20-29 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%20267-2> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 267-2";
+  rdfs:label "C 267-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%20303-2> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 303-2";
+  rdfs:label "C 303-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%20307> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 307";
+  rdfs:label "C 307 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%204> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 4";
+  rdfs:label "C 4 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2043-19> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 43-19";
+  rdfs:label "C 43-19 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2043-90> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 43-90";
+  rdfs:label "C 43-90 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%2043-96> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 43-96";
+  rdfs:label "C 43-96 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/C%208-4> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/C 8-4";
+  rdfs:label "C 8-4 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201028> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1028";
+  rdfs:label "F 1028 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201061> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1061";
+  rdfs:label "F 1061 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201150-2> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1150-2";
+  rdfs:label "F 1150-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201174-5> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1174-5";
+  rdfs:label "F 1174-5 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201186> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1186";
+  rdfs:label "F 1186 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-10-8>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-10-8";
+  rdfs:label "F 1405-10-8 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-15-75>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-15-75";
+  rdfs:label "F 1405-15-75 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-23-27>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-23-27";
+  rdfs:label "F 1405-23-27 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-28-15>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-28-15";
+  rdfs:label "F 1405-28-15 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-35-100>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-35-100";
+  rdfs:label "F 1405-35-100 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-4> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-4";
+  rdfs:label "F 1405-4 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-43-18>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-43-18";
+  rdfs:label "F 1405-43-18 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-5-4> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-5-4";
+  rdfs:label "F 1405-5-4 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-53-15>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-53-15";
+  rdfs:label "F 1405-53-15 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-54-289>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-54-289";
+  rdfs:label "F 1405-54-289 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-60-33>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-60-33";
+  rdfs:label "F 1405-60-33 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-62-44>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-62-44";
+  rdfs:label "F 1405-62-44 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-62-9>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-62-9";
+  rdfs:label "F 1405-62-9 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-63-28>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-63-28";
+  rdfs:label "F 1405-63-28 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-72-11>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-72-11";
+  rdfs:label "F 1405-72-11 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-76-18>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-76-18";
+  rdfs:label "F 1405-76-18 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-92-14>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-92-14";
+  rdfs:label "F 1405-92-14 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-94-22>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-94-22";
+  rdfs:label "F 1405-94-22 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-94-52>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-94-52";
+  rdfs:label "F 1405-94-52 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201405-99-4>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1405-99-4";
+  rdfs:label "F 1405-99-4 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201410-41> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1410-41";
+  rdfs:label "F 1410-41 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201410-8-12>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1410-8-12";
+  rdfs:label "F 1410-8-12 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%201869> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 1869";
+  rdfs:label "F 1869 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%202093-4-2> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 2093-4-2";
+  rdfs:label "F 2093-4-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20229-230> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 229-230";
+  rdfs:label "F 229-230 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20229-255> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 229-255";
+  rdfs:label "F 229-255 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20229-310> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 229-310";
+  rdfs:label "F 229-310 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20229-501-110>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 229-501-110";
+  rdfs:label "F 229-501-110 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20229-501-123>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 229-501-123";
+  rdfs:label "F 229-501-123 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204267> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4267";
+  rdfs:label "F 4267 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204304> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4304";
+  rdfs:label "F 4304 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204359-28> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4359-28";
+  rdfs:label "F 4359-28 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204359-72> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4359-72";
+  rdfs:label "F 4359-72 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204414-35> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4414-35";
+  rdfs:label "F 4414-35 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204420-6-5> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4420-6-5";
+  rdfs:label "F 4420-6-5 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204443-8> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4443-8";
+  rdfs:label "F 4443-8 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204446-210> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4446-210";
+  rdfs:label "F 4446-210 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204499-10> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4499-10";
+  rdfs:label "F 4499-10 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204527> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4527";
+  rdfs:label "F 4527 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204531-15> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4531-15";
+  rdfs:label "F 4531-15 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204566-2> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4566-2";
+  rdfs:label "F 4566-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204593-1-1> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4593-1-1";
+  rdfs:label "F 4593-1-1 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204593-1-217>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4593-1-217";
+  rdfs:label "F 4593-1-217 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%204593-1-353>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 4593-1-353";
+  rdfs:label "F 4593-1-353 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20494> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 494";
+  rdfs:label "F 494 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20556> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 556";
+  rdfs:label "F 556 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/F%20604> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/F 604";
+  rdfs:label "F 604 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%201-156-2> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 1-156-2";
+  rdfs:label "RG 1-156-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%201-30> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 1-30";
+  rdfs:label "RG 1-30 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2010-34> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 10-34";
+  rdfs:label "RG 10-34 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2012-93> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 12-93";
+  rdfs:label "RG 12-93 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2016-123> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 16-123";
+  rdfs:label "RG 16-123 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2016-307> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 16-307";
+  rdfs:label "RG 16-307 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2016-66> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 16-66";
+  rdfs:label "RG 16-66 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2019-205> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 19-205";
+  rdfs:label "RG 19-205 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%202-91> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 2-91";
+  rdfs:label "RG 2-91 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2020-126> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 20-126";
+  rdfs:label "RG 20-126 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2020-128-3>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 20-128-3";
+  rdfs:label "RG 20-128-3 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-139> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-139";
+  rdfs:label "RG 22-139 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-2405> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-2405";
+  rdfs:label "RG 22-2405 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-3095> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-3095";
+  rdfs:label "RG 22-3095 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-3673> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-3673";
+  rdfs:label "RG 22-3673 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-4524> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-4524";
+  rdfs:label "RG 22-4524 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-5109> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-5109";
+  rdfs:label "RG 22-5109 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-5512> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-5512";
+  rdfs:label "RG 22-5512 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2022-5886> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 22-5886";
+  rdfs:label "RG 22-5886 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2023-26-61>
   a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 23-26-61";
+  rdfs:label "RG 23-26-61 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2029-3> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 29-3";
+  rdfs:label "RG 29-3 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2032-78> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 32-78";
+  rdfs:label "RG 32-78 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%204-156> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 4-156";
+  rdfs:label "RG 4-156 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2041-3> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 41-3";
+  rdfs:label "RG 41-3 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2047-177> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 47-177";
+  rdfs:label "RG 47-177 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2047-27-2> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 47-27-2";
+  rdfs:label "RG 47-27-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2049-137> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 49-137";
+  rdfs:label "RG 49-137 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2049-233> a
     rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 49-233";
+  rdfs:label "RG 49-233 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2053-31> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 53-31";
+  rdfs:label "RG 53-31 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2053-69> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 53-69";
+  rdfs:label "RG 53-69 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%206-115> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 6-115";
+  rdfs:label "RG 6-115 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2069-7> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 69-7";
+  rdfs:label "RG 69-7 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2080-13> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 80-13";
+  rdfs:label "RG 80-13 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%2081-2> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 81-2";
+  rdfs:label "RG 81-2 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%209-75> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 9-75";
+  rdfs:label "RG 9-75 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%209-99> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 9-99";
+  rdfs:label "RG 9-99 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/02%2F26%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/02/26/2003";
+  rdfs:label "02/26/2003 (Date)";
   rico:normalizedDateValue "02/26/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/03%2F05%2F2001> a rico:Date;
-  rdfs:label "/KB/Date/03/05/2001";
+  rdfs:label "03/05/2001 (Date)";
   rico:normalizedDateValue "03/05/2001" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/03%2F06%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/03/06/2003";
+  rdfs:label "03/06/2003 (Date)";
   rico:normalizedDateValue "03/06/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/03%2F21%2F2000> a rico:Date;
-  rdfs:label "/KB/Date/03/21/2000";
+  rdfs:label "03/21/2000 (Date)";
   rico:normalizedDateValue "03/21/2000" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/04%2F01%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/04/01/2003";
+  rdfs:label "04/01/2003 (Date)";
   rico:normalizedDateValue "04/01/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/04%2F11%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/04/11/2003";
+  rdfs:label "04/11/2003 (Date)";
   rico:normalizedDateValue "04/11/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/06%2F03%2F2002> a rico:Date;
-  rdfs:label "/KB/Date/06/03/2002";
+  rdfs:label "06/03/2002 (Date)";
   rico:normalizedDateValue "06/03/2002" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/07%2F26%2F2000> a rico:Date;
-  rdfs:label "/KB/Date/07/26/2000";
+  rdfs:label "07/26/2000 (Date)";
   rico:normalizedDateValue "07/26/2000" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/07%2F30%2F2001> a rico:Date;
-  rdfs:label "/KB/Date/07/30/2001";
+  rdfs:label "07/30/2001 (Date)";
   rico:normalizedDateValue "07/30/2001" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/07%2F30%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/07/30/2003";
+  rdfs:label "07/30/2003 (Date)";
   rico:normalizedDateValue "07/30/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F01%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/08/01/2003";
+  rdfs:label "08/01/2003 (Date)";
   rico:normalizedDateValue "08/01/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F13%2F2002> a rico:Date;
-  rdfs:label "/KB/Date/08/13/2002";
+  rdfs:label "08/13/2002 (Date)";
   rico:normalizedDateValue "08/13/2002" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F25%2F2003> a rico:Date;
-  rdfs:label "/KB/Date/08/25/2003";
+  rdfs:label "08/25/2003 (Date)";
   rico:normalizedDateValue "08/25/2003" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/10%2F05%2F2001> a rico:Date;
-  rdfs:label "/KB/Date/10/05/2001";
+  rdfs:label "10/05/2001 (Date)";
   rico:normalizedDateValue "10/05/2001" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/12%2F19%2F2000> a rico:Date;
-  rdfs:label "/KB/Date/12/19/2000";
+  rdfs:label "12/19/2000 (Date)";
   rico:normalizedDateValue "12/19/2000" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1789> a rico:Date;
-  rdfs:label "/KB/Date/1789" .
+  rdfs:label "1789 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1791> a rico:Date;
-  rdfs:label "/KB/Date/1791" .
+  rdfs:label "1791 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1801> a rico:Date;
-  rdfs:label "/KB/Date/1801" .
+  rdfs:label "1801 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1817> a rico:Date;
-  rdfs:label "/KB/Date/1817" .
+  rdfs:label "1817 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1821> a rico:Date;
-  rdfs:label "/KB/Date/1821" .
+  rdfs:label "1821 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1869> a rico:Date;
-  rdfs:label "/KB/Date/1869" .
+  rdfs:label "1869 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1876> a rico:Date;
-  rdfs:label "/KB/Date/1876" .
+  rdfs:label "1876 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1881> a rico:Date;
-  rdfs:label "/KB/Date/1881" .
+  rdfs:label "1881 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1882> a rico:Date;
-  rdfs:label "/KB/Date/1882" .
+  rdfs:label "1882 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1902> a rico:Date;
-  rdfs:label "/KB/Date/1902" .
+  rdfs:label "1902 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1907> a rico:Date;
-  rdfs:label "/KB/Date/1907" .
+  rdfs:label "1907 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1912> a rico:Date;
-  rdfs:label "/KB/Date/1912" .
+  rdfs:label "1912 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1913> a rico:Date;
-  rdfs:label "/KB/Date/1913" .
+  rdfs:label "1913 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1915> a rico:Date;
-  rdfs:label "/KB/Date/1915" .
+  rdfs:label "1915 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1916> a rico:Date;
-  rdfs:label "/KB/Date/1916" .
+  rdfs:label "1916 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1919> a rico:Date;
-  rdfs:label "/KB/Date/1919" .
+  rdfs:label "1919 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1920> a rico:Date;
-  rdfs:label "/KB/Date/1920" .
+  rdfs:label "1920 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1921> a rico:Date;
-  rdfs:label "/KB/Date/1921" .
+  rdfs:label "1921 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1922> a rico:Date;
-  rdfs:label "/KB/Date/1922" .
+  rdfs:label "1922 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1925> a rico:Date;
-  rdfs:label "/KB/Date/1925" .
+  rdfs:label "1925 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1927> a rico:Date;
-  rdfs:label "/KB/Date/1927" .
+  rdfs:label "1927 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1930> a rico:Date;
-  rdfs:label "/KB/Date/1930" .
+  rdfs:label "1930 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1940> a rico:Date;
-  rdfs:label "/KB/Date/1940" .
+  rdfs:label "1940 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1942> a rico:Date;
-  rdfs:label "/KB/Date/1942" .
+  rdfs:label "1942 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1948> a rico:Date;
-  rdfs:label "/KB/Date/1948" .
+  rdfs:label "1948 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1950> a rico:Date;
-  rdfs:label "/KB/Date/1950" .
+  rdfs:label "1950 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1951> a rico:Date;
-  rdfs:label "/KB/Date/1951" .
+  rdfs:label "1951 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1954> a rico:Date;
-  rdfs:label "/KB/Date/1954" .
+  rdfs:label "1954 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1955> a rico:Date;
-  rdfs:label "/KB/Date/1955" .
+  rdfs:label "1955 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1956> a rico:Date;
-  rdfs:label "/KB/Date/1956" .
+  rdfs:label "1956 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1957> a rico:Date;
-  rdfs:label "/KB/Date/1957" .
+  rdfs:label "1957 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1959> a rico:Date;
-  rdfs:label "/KB/Date/1959" .
+  rdfs:label "1959 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1960> a rico:Date;
-  rdfs:label "/KB/Date/1960" .
+  rdfs:label "1960 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1961> a rico:Date;
-  rdfs:label "/KB/Date/1961" .
+  rdfs:label "1961 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1964> a rico:Date;
-  rdfs:label "/KB/Date/1964" .
+  rdfs:label "1964 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1965> a rico:Date;
-  rdfs:label "/KB/Date/1965" .
+  rdfs:label "1965 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1966> a rico:Date;
-  rdfs:label "/KB/Date/1966" .
+  rdfs:label "1966 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1967> a rico:Date;
-  rdfs:label "/KB/Date/1967" .
+  rdfs:label "1967 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1968> a rico:Date;
-  rdfs:label "/KB/Date/1968" .
+  rdfs:label "1968 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1969> a rico:Date;
-  rdfs:label "/KB/Date/1969" .
+  rdfs:label "1969 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1972> a rico:Date;
-  rdfs:label "/KB/Date/1972" .
+  rdfs:label "1972 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1973> a rico:Date;
-  rdfs:label "/KB/Date/1973" .
+  rdfs:label "1973 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1975> a rico:Date;
-  rdfs:label "/KB/Date/1975" .
+  rdfs:label "1975 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1977> a rico:Date;
-  rdfs:label "/KB/Date/1977" .
+  rdfs:label "1977 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1978> a rico:Date;
-  rdfs:label "/KB/Date/1978" .
+  rdfs:label "1978 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1980> a rico:Date;
-  rdfs:label "/KB/Date/1980" .
+  rdfs:label "1980 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1984> a rico:Date;
-  rdfs:label "/KB/Date/1984" .
+  rdfs:label "1984 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1985> a rico:Date;
-  rdfs:label "/KB/Date/1985" .
+  rdfs:label "1985 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1986> a rico:Date;
-  rdfs:label "/KB/Date/1986" .
+  rdfs:label "1986 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1987> a rico:Date;
-  rdfs:label "/KB/Date/1987" .
+  rdfs:label "1987 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1990> a rico:Date;
-  rdfs:label "/KB/Date/1990" .
+  rdfs:label "1990 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1991> a rico:Date;
-  rdfs:label "/KB/Date/1991" .
+  rdfs:label "1991 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1992> a rico:Date;
-  rdfs:label "/KB/Date/1992" .
+  rdfs:label "1992 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/2000> a rico:Date;
-  rdfs:label "/KB/Date/2000" .
+  rdfs:label "2000 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/2002> a rico:Date;
-  rdfs:label "/KB/Date/2002" .
+  rdfs:label "2002 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/2010> a rico:Date;
-  rdfs:label "/KB/Date/2010" .
+  rdfs:label "2010 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/2011> a rico:Date;
-  rdfs:label "/KB/Date/2011" .
+  rdfs:label "2011 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/2013> a rico:Date;
-  rdfs:label "/KB/Date/2013" .
+  rdfs:label "2013 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%2013097%3B%20Lead%20number%202021-012>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession 13097; Lead number 2021-012";
+  rdfs:label "Accession 13097; Lead number 2021-012 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession 13097; Lead number 2021-012" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20Number%3A%2013238.MU%203289.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession Number: 13238.MU 3289.";
+  rdfs:label "Accession Number: 13238.MU 3289. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession Number: 13238.MU 3289." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20Number%3A%201529.%20MU%205901%20-%20MU%205902.%20MS%2087.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession Number: 1529. MU 5901 - MU 5902. MS 87.";
+  rdfs:label "Accession Number: 1529. MU 5901 - MU 5902. MS 87. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession Number: 1529. MU 5901 - MU 5902. MS 87." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20Numbers%3A%20497%2C%202982.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession Numbers: 497, 2982.";
+  rdfs:label "Accession Numbers: 497, 2982. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession Numbers: 497, 2982." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20number%20%3A%2016657>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession number : 16657";
+  rdfs:label "Accession number : 16657 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession number : 16657" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20number%2016910>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession number 16910";
+  rdfs:label "Accession number 16910 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession number 16910" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20numbers%3A%2015615%3B%2016263%3B%2016304%3B%2022740>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession numbers: 15615; 16263; 16304; 22740";
+  rdfs:label "Accession numbers: 15615; 16263; 16304; 22740 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession numbers: 15615; 16263; 16304; 22740" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Accession%20numbers%3A%202108%2C%202122%2C%2015954.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Accession numbers: 2108, 2122, 15954.";
+  rdfs:label "Accession numbers: 2108, 2122, 15954. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Accession numbers: 2108, 2122, 15954." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/D888> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/D888";
+  rdfs:label "D888 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "D888" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/D889%20to%20D898> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/D889 to D898";
+  rdfs:label "D889 to D898 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "D889 to D898" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Item%2013> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Item 13";
+  rdfs:label "Item 13 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Item 13" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Items%205%2C%2023%2C%2027%2C%2036%2C%2060%2C%2061%20and%2067-3-26.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Items 5, 23, 27, 36, 60, 61 and 67-3-26.";
+  rdfs:label "Items 5, 23, 27, 36, 60, 61 and 67-3-26. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Items 5, 23, 27, 36, 60, 61 and 67-3-26." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Items%2071%2C%2072> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Items 71, 72";
+  rdfs:label "Items 71, 72 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Items 71, 72" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%2010109> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 10109";
+  rdfs:label "MSR 10109 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 10109" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%2010366> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 10366";
+  rdfs:label "MSR 10366 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 10366" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%2010640> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 10640";
+  rdfs:label "MSR 10640 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 10640" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%2012233> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 12233";
+  rdfs:label "MSR 12233 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 12233" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%2012353> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 12353";
+  rdfs:label "MSR 12353 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 12353" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%201548%2C%208736> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 1548, 8736";
+  rdfs:label "MSR 1548, 8736 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 1548, 8736" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%202367%2C%20MSR%202379%2C%20MSR%202380>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 2367, MSR 2379, MSR 2380";
+  rdfs:label "MSR 2367, MSR 2379, MSR 2380 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 2367, MSR 2379, MSR 2380" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%202430> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 2430";
+  rdfs:label "MSR 2430 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 2430" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%202679> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 2679";
+  rdfs:label "MSR 2679 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 2679" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%202708> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 2708";
+  rdfs:label "MSR 2708 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 2708" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%203223> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 3223";
+  rdfs:label "MSR 3223 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 3223" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%203721%2C%20MSR%203722>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 3721, MSR 3722";
+  rdfs:label "MSR 3721, MSR 3722 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 3721, MSR 3722" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%204773%2C%20MSR%204790%20and%20MSR%204795>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 4773, MSR 4790 and MSR 4795";
+  rdfs:label "MSR 4773, MSR 4790 and MSR 4795 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 4773, MSR 4790 and MSR 4795" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%204870%2C%20MSR%2011230>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 4870, MSR 11230";
+  rdfs:label "MSR 4870, MSR 11230 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 4870, MSR 11230" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%205113> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 5113";
+  rdfs:label "MSR 5113 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 5113" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%207378> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 7378";
+  rdfs:label "MSR 7378 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 7378" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%207383> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 7383";
+  rdfs:label "MSR 7383 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 7383" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%207460> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 7460";
+  rdfs:label "MSR 7460 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 7460" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MSR%208135> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MSR 8135";
+  rdfs:label "MSR 8135 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MSR 8135" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/MU%20930.> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/MU 930.";
+  rdfs:label "MU 930. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "MU 930." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Project%20number%3A%201224>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Project number: 1224";
+  rdfs:label "Project number: 1224 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Project number: 1224" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Project%20number%3A%2037a.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Project number: 37a.";
+  rdfs:label "Project number: 37a. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Project number: 37a." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Project%20numbers%3A%20684%2C%20764>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Project numbers: 684, 764";
+  rdfs:label "Project numbers: 684, 764 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Project numbers: 684, 764" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/RG%2018%20D-I-58> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/RG 18 D-I-58";
+  rdfs:label "RG 18 D-I-58 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "RG 18 D-I-58" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/RG%2018%20F-1> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/RG 18 F-1";
+  rdfs:label "RG 18 F-1 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "RG 18 F-1" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/RG%2023%2C%20series%20E-61.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/RG 23, series E-61.";
+  rdfs:label "RG 23, series E-61. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "RG 23, series E-61." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/This%20series%20was%20formerly%20RG%2054-24.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/This series was formerly RG 54-24.";
+  rdfs:label "This series was formerly RG 54-24. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "This series was formerly RG 54-24." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/This%20series%20was%20formerly%20described%20as%20RG%202%2C%20Series%20I-1.%3B%20Accession%20number%3A%203881.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/This series was formerly described as RG 2, Series I-1.; Accession number: 3881.";
+  rdfs:label "This series was formerly described as RG 2, Series I-1.; Accession number: 3881. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "This series was formerly described as RG 2, Series I-1.; Accession number: 3881." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Volume%20RG%201-156-2-1%20formerly%20was%20RG%201%20C-I-3%2C%20volume%20152.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Volume RG 1-156-2-1 formerly was RG 1 C-I-3, volume 152.";
+  rdfs:label "Volume RG 1-156-2-1 formerly was RG 1 C-I-3, volume 152. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Volume RG 1-156-2-1 formerly was RG 1 C-I-3, volume 152." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/Volume%20RG%201-30-0-1%20formerly%20was%20Series%20RG%201%20A-IV%2C%20volume%207.%3B%20Volume%20RG%201-30-0-2%20formerly%20was%20Series%20RG%201%20A-IV%2C%20volume%208.%3B%20Volume%20RG%201-30-0-3%20formerly%20was%20Series%20RG%201%20A-IV%2C%20volume%209.%3B%20Volume%20RG%201-30-0-4%20formerly%20was%20Series%20RG%201%20A-IV%2C%20volume%2010.%3B%20Volume%20RG%201-30-0-5%20formerly%20was%20Series%20RG%201%20A-IV%2C%20volume%2011.%3B%20Volume%20RG%201-30-0-6%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%208.%3B%20Volume%20RG%201-30-0-7%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%209.%3B%20Volume%20RG%201-30-0-8%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%2011.%3B%20Volume%20RG%201-30-0-9%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%2010.%3B%20Volume%20RG%201-30-0-10%20formerly%20was%20Series%20RG%20C-I-4%2C%20volume%207.%3B%20Volume%20RG%201-30-0-11%20formerly%20was%20Series%20RG%201%20C-I-9%2C%20volume%2016.%3B%20Volume%20RG%201-30-0-12%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%2048.%3B%20Volume%20RG%201-30-0-13%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%2040.%3B%20Volume%20RG%201-30-0-14%20formerly%20was%20Series%20RG%201%20C-I-4%2C%20volume%2045.%3B%20Volume%20RG%201-30-0-15%20contains%20previously%20unprocessed%20material.>
   a rico:Identifier;
-  rdfs:label "/KB/FormerCode/Volume RG 1-30-0-1 formerly was Series RG 1 A-IV, volume 7.; Volume RG 1-30-0-2 formerly was Series RG 1 A-IV, volume 8.; Volume RG 1-30-0-3 formerly was Series RG 1 A-IV, volume 9.; Volume RG 1-30-0-4 formerly was Series RG 1 A-IV, volume 10.; Volume RG 1-30-0-5 formerly was Series RG 1 A-IV, volume 11.; Volume RG 1-30-0-6 formerly was Series RG 1 C-I-4, volume 8.; Volume RG 1-30-0-7 formerly was Series RG 1 C-I-4, volume 9.; Volume RG 1-30-0-8 formerly was Series RG 1 C-I-4, volume 11.; Volume RG 1-30-0-9 formerly was Series RG 1 C-I-4, volume 10.; Volume RG 1-30-0-10 formerly was Series RG C-I-4, volume 7.; Volume RG 1-30-0-11 formerly was Series RG 1 C-I-9, volume 16.; Volume RG 1-30-0-12 formerly was Series RG 1 C-I-4, volume 48.; Volume RG 1-30-0-13 formerly was Series RG 1 C-I-4, volume 40.; Volume RG 1-30-0-14 formerly was Series RG 1 C-I-4, volume 45.; Volume RG 1-30-0-15 contains previously unprocessed material.";
+  rdfs:label "Volume RG 1-30-0-1 formerly was Series RG 1 A-IV, volume 7.; Volume RG 1-30-0-2 formerly was Series RG 1 A-IV, volume 8.; Volume RG 1-30-0-3 formerly was Series RG 1 A-IV, volume 9.; Volume RG 1-30-0-4 formerly was Series RG 1 A-IV, volume 10.; Volume RG 1-30-0-5 formerly was Series RG 1 A-IV, volume 11.; Volume RG 1-30-0-6 formerly was Series RG 1 C-I-4, volume 8.; Volume RG 1-30-0-7 formerly was Series RG 1 C-I-4, volume 9.; Volume RG 1-30-0-8 formerly was Series RG 1 C-I-4, volume 11.; Volume RG 1-30-0-9 formerly was Series RG 1 C-I-4, volume 10.; Volume RG 1-30-0-10 formerly was Series RG C-I-4, volume 7.; Volume RG 1-30-0-11 formerly was Series RG 1 C-I-9, volume 16.; Volume RG 1-30-0-12 formerly was Series RG 1 C-I-4, volume 48.; Volume RG 1-30-0-13 formerly was Series RG 1 C-I-4, volume 40.; Volume RG 1-30-0-14 formerly was Series RG 1 C-I-4, volume 45.; Volume RG 1-30-0-15 contains previously unprocessed material. (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "Volume RG 1-30-0-1 formerly was Series RG 1 A-IV, volume 7.; Volume RG 1-30-0-2 formerly was Series RG 1 A-IV, volume 8.; Volume RG 1-30-0-3 formerly was Series RG 1 A-IV, volume 9.; Volume RG 1-30-0-4 formerly was Series RG 1 A-IV, volume 10.; Volume RG 1-30-0-5 formerly was Series RG 1 A-IV, volume 11.; Volume RG 1-30-0-6 formerly was Series RG 1 C-I-4, volume 8.; Volume RG 1-30-0-7 formerly was Series RG 1 C-I-4, volume 9.; Volume RG 1-30-0-8 formerly was Series RG 1 C-I-4, volume 11.; Volume RG 1-30-0-9 formerly was Series RG 1 C-I-4, volume 10.; Volume RG 1-30-0-10 formerly was Series RG C-I-4, volume 7.; Volume RG 1-30-0-11 formerly was Series RG 1 C-I-9, volume 16.; Volume RG 1-30-0-12 formerly was Series RG 1 C-I-4, volume 48.; Volume RG 1-30-0-13 formerly was Series RG 1 C-I-4, volume 40.; Volume RG 1-30-0-14 formerly was Series RG 1 C-I-4, volume 45.; Volume RG 1-30-0-15 contains previously unprocessed material." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/FormerCode/accession%2050705> a rico:Identifier;
-  rdfs:label "/KB/FormerCode/accession 50705";
+  rdfs:label "accession 50705 (Former Code)";
   rico:hasIdentifierType add:FormerCode;
   rico:textualValue "accession 50705" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/Huron%20%28Ont.%20%3A%20County%29>
   a rico:Place;
-  rdfs:label "/KB/Place/Huron (Ont. : County)" .
+  rdfs:label "Huron (Ont. : County) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/Lennox%20and%20Addington%20%28Ont.%20%3A%20County%29>
   a rico:Place;
-  rdfs:label "/KB/Place/Lennox and Addington (Ont. : County)" .
+  rdfs:label "Lennox and Addington (Ont. : County) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/Prince%20Edward%20%28Ont.%20%3A%20County%29>
   a rico:Place;
-  rdfs:label "/KB/Place/Prince Edward (Ont. : County)" .
+  rdfs:label "Prince Edward (Ont. : County) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/Timiskaming%20%28Ont.%20%3A%20DIstrict%29>
   a rico:Place;
-  rdfs:label "/KB/Place/Timiskaming (Ont. : DIstrict)" .
+  rdfs:label "Timiskaming (Ont. : DIstrict) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/Welland%20%28Ont.%20%3A%20County%29>
   a rico:Place;
-  rdfs:label "/KB/Place/Welland (Ont. : County)" .
+  rdfs:label "Welland (Ont. : County) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Place/York%20%28Ont.%20%3A%20County%29>
   a rico:Place;
-  rdfs:label "/KB/Place/York (Ont. : County)" .
+  rdfs:label "York (Ont. : County) (Place)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2011> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 11" .
+  rdfs:label "C 11 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2011-34> a rico:RecordSet;
   rdfs:label "C 11-34 - Edmund Burke architectural drawing of Inglewood in Toronto, Ontario (Record Set)";
@@ -3315,7 +3315,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of plans, elevations, sections and details for a store at the corner of Yonge and St. Mary streets." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2020> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 20" .
+  rdfs:label "C 20 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2020-29> a rico:RecordSet;
   rdfs:label "C 20-29 - Page & Steele Architects project files for the Ottawa Police Building (Record Set)";
@@ -3334,7 +3334,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of architectural drawings prepared by Page & Steele Architects for the Ottawa Police Building project located on Waller St., Ottawa, Ontario.  Includes photographs of the building under construction." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%20267> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 267" .
+  rdfs:label "C 267 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%20267-2> a rico:RecordSet;
   rdfs:label "C 267-2 - Toronto - Sudbury railroad construction : prints and negatives (Record Set)";
@@ -3355,7 +3355,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of 366 prints in two albums, and 94 cellulose nitrate film negatives, mainly depicting the construction of the Canadian Pacific Railway's Toronto-Sudbury line from 1904-1908, taken by Alexander Isbester and fellow workers. A few date from some of Isbester's earlier work on the Algoma Central Railway (1900), the Ottawa Northern and Western Railway, and the Canadian Pacific Railway in Saskatoon. Also found in the second album (C 267-2-1-2) are photos from Isbester's later projects, such as the Grand Trunk Railway (1920) and breakwater construction in Port Arthur (1928).  Images in this series portray various aspects of the life and work of construction engineers in Northern Ontario. Geographic locations include Byng Inlet, Whitefish Creek, and the French River. There are also family photos of the Isbesters. The photos are grouped by location and event, but are not in alphabetical or chronological order.  Series is divided into three sub-series: albums, negatives and captions/cross-references. The albums contain prints which were numbered by James Isbester. For each numbered print there is a corresponding caption, see description for sub-series C 267-2-3. In some cases, however, captions contain no information about the prints. Cross-reference indexes indicate which prints have negatives and which have duplicates in other albums. Corresponding negatives for some of the prints are listed in sub-series C 267-2-2.  See the sub-series descriptions for further information and for item listings." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%20303> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 303" .
+  rdfs:label "C 303 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%20303-2> a rico:RecordSet;
   rdfs:label "C 303-2 - Abraham Groves correspondence (Record Set)";
@@ -3411,7 +3411,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Collection consists of photographs either taken or collected by George S. Mitchell including 33 glass plate negatives and approximately 21 prints depicting Cobourg, Ontario store interiors ca. March 1910.  The collection also includes 3 images of damage caused by an earthquake in Cornwall in 1944." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2043> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 43" .
+  rdfs:label "C 43 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%2043-19> a rico:RecordSet;
   rdfs:label "C 43-19 - Specifications for Manning Chambers (Toronto, Ont.) (Record Set)";
@@ -3464,7 +3464,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of trade catalogues from builders and suppliers, pattern books used for Lennox's projects, and annotated items from his library." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%208> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/C 8" .
+  rdfs:label "C 8 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/C%208-4> a rico:RecordSet;
   rdfs:label "C 8-4 - Albums of tugs, barges, lighters, wreckers, and government vessels (Record Set)";
@@ -3524,7 +3524,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Fonds consists of four handwritten survey journals kept by Hamlet Burritt, a land surveyor who surveyed the route for the Opeongo Colonization Road, from the Ottawa River to Lake Opeongo from 10 April 1851 to 7 April 1852. The journals document Burritt�s observations on camp life, the landscape, daily activities, weather, working conditions, his relationships with the crew, and his interactions with the locals.  Three of the four journals were hand-made by Burritt out of lined school notebook paper and all are bound together with thread. Journal 3 consists of a store-bought notebook with a red and blue marble cover. It also contains a thin piece of birch bark with some notes on it placed between two pages and a bit of blotting paper between other pages.  The journals have been arranged numerically and chronologically." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201150> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1150" .
+  rdfs:label "F 1150 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201150-2> a rico:RecordSet;
   rdfs:label "F 1150-2 - Burns Monument Committee reports, records of meetings and subscriptions (Record Set)";
@@ -3543,7 +3543,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of meeting and subscription records created by the Burns Monument Committee, as well as the Committee's reports.  Included is a minute book recording the details of Burns Monument Committee meetings, held at the following venues in Toronto, Ontario: the residence of Committee President, Mr. David Walker; St. George's Hall; the Crown Hotel; the McKinnon Building; and the Confederation Life Building.  Also included are lists of subscribers to the Burns Monument Fund, indicating their amounts paid, as well as eleven subscription books issued to members of the Burns Monument Committee, authorizing them to obtain subscriptions in aid of the Burns Monument Fund. The books are assigned to William Adamson, William Burton, Alex Fraser, G.W. Grant, John Morrison, Charles Walker, William G. Scott, and Geoffrey Vair.  The series also contains two reports from 1899 from the Burns Memorial Fund's Committee on Printing and Supplies to the General Committee, as well as two copies of a 1904 auditor's report to the president and officers of the Burns Monument Committee." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201174> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1174" .
+  rdfs:label "F 1174 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201174-5> a rico:RecordSet;
   rdfs:label "F 1174-5 - Robertson family legal and land papers (Record Set)";
@@ -3580,10 +3580,10 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Fonds consists of the minute books of the Toronto Gaelic Society, 1880-1943, which also contain press clippings regarding the Society's activities, and several versions of the constitution and bylaws, including those of 1948." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405" .
+  rdfs:label "F 1405 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-10> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-10" .
+  rdfs:label "F 1405-10 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-10-8> a rico:RecordSet;
   rdfs:label "F 1405-10-8 - Blue Mountain Resorts photographs (Record Set)";
@@ -3602,7 +3602,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of photographs taken in the Collingwood area of Ontario. Photographs depict structures and activities at Blue Mountain Resorts Inc., members of the Weider family, and paintings by Walter Trier. A caption sheet is included." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-15> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-15" .
+  rdfs:label "F 1405-15 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-15-75> a rico:RecordSet;
   rdfs:label "F 1405-15-75 - Sain Pukkala photographs (Record Set)";
@@ -3622,7 +3622,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of photographs taken in Toronto and Port Arthur, Ontario of the Finnish Organization of Canada, Camp Tarmola, 1967, and theatrical productions, 1950-1960." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-23> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-23" .
+  rdfs:label "F 1405-23 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-23-27> a rico:RecordSet;
   rdfs:label "F 1405-23-27 - Percy Saiger photographs (Record Set)";
@@ -3641,7 +3641,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of phtographs of Jewish-Canadians donated by Percy Saiger.  Photographs depict Cantor Harry Saiger of Toronto, and activities of the Workmen's Circle, including a mandolin orchestra of the Hirsch Lekert Club." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-28> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-28" .
+  rdfs:label "F 1405-28 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-28-15> a rico:RecordSet;
   rdfs:label "F 1405-28-15 - John French photographs (Record Set)";
@@ -3661,7 +3661,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of photographs of members of the Fenech and Aguis families and of religious activities at St. Paul the Apostle Church in Toronto." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-35> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-35" .
+  rdfs:label "F 1405-35 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-35-100> a rico:RecordSet;
   rdfs:label "F 1405-35-100 - Jan Pasternak photographs (Record Set)";
@@ -3696,7 +3696,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of photographs documenting Belgian Canadian tobacco farmers near Delhi, Ontario.   Series consists of 2 sub-series arranged by individual donors." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-43> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-43" .
+  rdfs:label "F 1405-43 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-43-18> a rico:RecordSet;
   rdfs:label "F 1405-43-18 - Stefan John Kuris photographs (Record Set)";
@@ -3715,7 +3715,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of unidentified photographs, primarily family portraits, either created or accumulated by Stefan John Kuris." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-5> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-5" .
+  rdfs:label "F 1405-5 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-5-4> a rico:RecordSet;
   rdfs:label "F 1405-5-4 - Jackson family photographs (Record Set)";
@@ -3734,7 +3734,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of portraits of the Jackson family taken in Toronto, Ontario." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-53> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-53" .
+  rdfs:label "F 1405-53 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-53-15> a rico:RecordSet;
   rdfs:label "F 1405-53-15 - Jonas Yla photographs (Record Set)";
@@ -3754,7 +3754,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of photographs of a visit by Lithuanian Canadians to Lithuania, 1957, a picnic of the Canadian Lithuanian Freethinkers Youth Association, 1930, and a branch charter for the Sons and Daughters Canadian Lithuanian Mutual Benefit Society, 1936." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-54> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-54" .
+  rdfs:label "F 1405-54 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-54-289> a rico:RecordSet;
   rdfs:label "F 1405-54-289 - Teresa Rakowska-Harmstone curriculum vitae (Record Set)";
@@ -3773,7 +3773,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of the curriculum vitae of Dr. Teresa Rakowska-Harmstone, an expert in international relations at Carleton University." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-60> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-60" .
+  rdfs:label "F 1405-60 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-60-33> a rico:RecordSet;
   rdfs:label "F 1405-60-33 - Frank Kempf textual records (Record Set)";
@@ -3792,7 +3792,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of two photocopied immigration identification cards belong to Mr. and Mrs. Frank Kempf." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-62> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-62" .
+  rdfs:label "F 1405-62 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-62-44> a rico:RecordSet;
   rdfs:label "F 1405-62-44 - Aaro Kinnunen textual records (Record Set)";
@@ -3827,7 +3827,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of records pertaining to the Finnish United Church such as minutes of the Finnish Evangelical Presbyterian Congregation, minutes and records of the Young People's Association \"Toivon tahti\", and minutes of the Ladies' Guild \"Sisarliitto\". Also includes annual reports, brochures, financial records, copies of \"Kanadan Viesti\", and registers regarding membership, baptisms, funerals, and marriages." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-63> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-63" .
+  rdfs:label "F 1405-63 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-63-28> a rico:RecordSet;
   rdfs:label "F 1405-63-28 - Barkev Khojajian textual records (Record Set)";
@@ -3847,7 +3847,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of a copy of the telephone directory of the Armenian Church Youth Organization of America." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-72> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-72" .
+  rdfs:label "F 1405-72 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-72-11> a rico:RecordSet;
   rdfs:label "F 1405-72-11 - Nava and Isaak Shterenberg textual records (Record Set)";
@@ -3867,7 +3867,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of a certificate of chess championships in the Soviet Union and articles on the woman chess champion, Nava Gordon." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-76> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-76" .
+  rdfs:label "F 1405-76 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-76-18> a rico:RecordSet;
   rdfs:label "F 1405-76-18 - Rolf Buschardt Christensen textual records (Record Set)";
@@ -3886,7 +3886,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of records pertaining to the Federation of Danish Associations in Canada and the Danish Club in Ottawa, Ontario.  The types of records include minutes, proposals, correspondence, notices, by-laws, financial statements, membership lists, and newsletters." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-92> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-92" .
+  rdfs:label "F 1405-92 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-92-14> a rico:RecordSet;
   rdfs:label "F 1405-92-14 - Fidalgo Rodrigues passports (Record Set)";
@@ -3905,7 +3905,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of two Portuguese passports of Julio Conde Marques Diniz." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-94> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-94" .
+  rdfs:label "F 1405-94 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-94-22> a rico:RecordSet;
   rdfs:label "F 1405-94-22 - Harry Young textual records (Record Set)";
@@ -3938,7 +3938,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of newspaper clippings from the Toronto-based newspaper Shing Wan Daily." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-99> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1405-99" .
+  rdfs:label "F 1405-99 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201405-99-4> a rico:RecordSet;
   rdfs:label "F 1405-99-4 - National Association of Canadians of Origin in India textual records (Record Set)";
@@ -3957,7 +3957,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub series consists of records documenting activities of the National Association of Canadians of Origin in India (NACOI) - an organization dedicated to advocacy on behalf of all Canadians with origins in the Indian subcontinent. Records include drafts of the organization's constitution, meeting minutes, events announcements, newsletters, collected statistics and other organizational records. The organization was established in 1976." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201410> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 1410" .
+  rdfs:label "F 1410 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%201410-41> a rico:RecordSet;
   rdfs:label "F 1410-41 - Ukrainian National Federation (National Executive) records on Ukrainian Women's Organization central executive (Record Set)";
@@ -4010,7 +4010,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "This fonds consists of official records of Point Edward, as follows: the Census of Children, 1946." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%202093-4> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 2093-4" .
+  rdfs:label "F 2093-4 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%202093-4-2> a rico:RecordSet;
   rdfs:label "F 2093-4-2 - Constituency correspondence (Record Set)";
@@ -4030,7 +4030,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of files containing constituency correspondence and records of telephone calls and office visits. Most files include additional records such as follow-up sheets and copies of correspondence sent to constituents. The sub-series is arranged alphabetically by year." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%20229> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 229" .
+  rdfs:label "F 229 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%20229-230> a rico:RecordSet;
   rdfs:label "F 229-230 - Eaton's Archives Office newsclippings (Record Set)";
@@ -4075,7 +4075,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of two photograph albums documenting Eaton's stores across Canada, compiled by Eaton's Consumer and Corporate Affairs Department. The albums contain a variety of photographs as well as related textual material. Included in the albums is both visual and textual information concerning the stores' date of construction, puchase and renovations; related buildings; store productivity; market and trade areas; and management personnel." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%20229-501> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 229-501" .
+  rdfs:label "F 229-501 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%20229-501-110> a rico:RecordSet;
   rdfs:label "F 229-501-110 - Hamilton Eaton Centre and downtown store property management records (Record Set)";
@@ -4139,7 +4139,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Fonds consists of the photocopy of a handwritten account book of general merchant, Thomas Franklin Purdy, listing goods sold and accounts for a homestead near Brandon, Manitoba." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204359> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4359" .
+  rdfs:label "F 4359 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204359-28> a rico:RecordSet;
   rdfs:label "F 4359-28 - Drawings for Knox Presbyterian Church in Ottawa, Ontario (Record Set)";
@@ -4176,7 +4176,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "This series consists of plans, an elevation and a section for a new tower for a Wesleyan Methodist church, later George Street United Church, located at George and McDonnell Streets in Peterborough, Ontario. The tower is an extension to the original 1873 church designed by Henry Langley, Architect." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204414> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4414" .
+  rdfs:label "F 4414 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204414-35> a rico:RecordSet;
   rdfs:label "F 4414-35 - Project file for addition to building at 50 Tremont Avenue in North York, Ontario by Zdzislaw Przygoda Consulting Engineers Ltd. (Record Set)";
@@ -4195,7 +4195,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of one architectural drawing for alterations to an existing building owned by Mr. George Lourie at 50 Tremont Ave., in North York, Ontario.              Architectural drawing consists of a site plan, elevations, floor plans, connection details, sections and a lintel schedule." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204420-6> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4420-6" .
+  rdfs:label "F 4420-6 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204420-6-5> a rico:RecordSet;
   rdfs:label "F 4420-6-5 - William G. Davis international visits: photographs and textual records (Record Set)";
@@ -4215,7 +4215,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Sub-series consists of photographs, letters and invitations documenting the visiting dignitaries William G. Davis escorted and accompanied during their visit to Ontario. Photographs depict guests that include American politicians, foreign heads of state and royalty, including Jimmy Carter, Alexander Haig, Chancellor Helmut Schmidt, Pierre Mauroy, Pope John Paul II and several members of the British Royal Family." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204443> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4443" .
+  rdfs:label "F 4443 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204443-8> a rico:RecordSet;
   rdfs:label "F 4443-8 - Browne Church Interiors advertising records (Record Set)";
@@ -4233,7 +4233,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists primarily of invoices and receipts for Thomas G. Browne Church Interiors' advertisements, as well as some examples of small advertisements.  Most of the advertisements appeared in denomination-specific publications such as, \"The Canadian Churchman [for the Anglican Church of Canada]\", \"The United Church Observer\", \"The Presbyterian Record\",  and \"The Ontario Catholic Directory\". Advertisements for Browne Church Interiors were also published in \"The Toronto Telegram\", \"The Globe and Mail\", and \"The Simcoe Reporter\"." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204446> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4446" .
+  rdfs:label "F 4446 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204446-210> a rico:RecordSet;
   rdfs:label "F 4446-210 - Peter J. Smith photographs of the Gypsy Theatre in Fort Erie, Ontario (Record Set)";
@@ -4253,7 +4253,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of Peter Smith's personal records relating to renovations to the Gypsy Theatre. The records consist of slides depicting design drawings." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204499> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4499" .
+  rdfs:label "F 4499 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204499-10> a rico:RecordSet;
   rdfs:label "F 4499-10 - Nicholas Goldschmidt's collection of published material (Record Set)";
@@ -4287,7 +4287,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "This item is a birds-eye-view of the Cockshutt Plow Company Limited located on Mohawk Street, Brantford, Ontario.    The print shows a coloured stylized view of factory buildings and several vehicles, with nothing in the surrounding area.  The edges of the print were cropped and there is no information identifying the artist or the publisher." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204531> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4531" .
+  rdfs:label "F 4531 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204531-15> a rico:RecordSet;
   rdfs:label "F 4531-15 - Fred W. Hotson's Grumman CP-121 Tracker research files (Record Set)";
@@ -4307,7 +4307,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of Fred W. Hotson's research files on the Grumman CP-121 Tracker aircraft, created and accumulated in the course of writing books on de Havilland Canada.  Records include magazine articles, a news release, research notes, and photographs. Photographs depict the interior and exterior of the aircraft, including details of the cockpit and controls. Also included are official photographs of the 100th Tracker, made for the Royal Canadian Navy. Several photographs show the Tracker in flight and in formation.  Note that most of the photographs in this series are professional photographs, taken for public relations or advertising purposes; there are very few amateur snapshots included in this series.   De Havilland Canada produced 100 Grumman Trackers under licence, between 1955 and 1957.  Some parts were manufactured by other Canadian companies, with the forward fuselage and cockpit built by de Havilland Canada.  DHC assembled and tested the aircraft.   The Tracker was an anti-submarine aircraft, and was the first Canadian-built aircraft ordered by the Royal Canadian Navy." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204566> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4566" .
+  rdfs:label "F 4566 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204566-2> a rico:RecordSet;
   rdfs:label "F 4566-2 - Catherine Cameron records (Record Set)";
@@ -4327,7 +4327,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of the personal papers of Catherine Cameron, primarily composed of correspondence with her sons and other relations. Also included are a variety of printed materials and other records concerning the Cameron family, especially her brothers Rev. James Cameron and John Cameron. Materials concern the communities of Durham and Puslinch in Ontario and their immediate surroundings, as well as places in Invernesshire, Scotland.  Series includes a bank draught, correspondence, a deed of land, a wallet, and various printed materials, including an issue of a newspaper, a poster, and a library catalogue.  Series arranged alphabetically by subject." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204593-1> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/F 4593-1" .
+  rdfs:label "F 4593-1 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/F%204593-1-1> a rico:RecordSet;
   rdfs:label "F 4593-1-1 - 220 Bay Management Incorporated photographs (Record Set)";
@@ -4435,7 +4435,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Fonds consists of personal and professional records of Charles Shirreff and other Shirreff family members. Included are correspondence, land records, genealogical information and biographical information regarding the Shirreff family, notices of appointments, diaries, and other records.  Correspondence includes: letters received by Charles Sherriff before his emigration from Scotland; letters regarding Colonel John By; letters detailing Alexander Shirreff�s expenses while exploring the land between the Ottawa River and Lake Huron; letters regarding the purchase of land and the purchase of the Bytown Gazette; and letters regarding the Shirreff family�s claim to the earldom of Stirling.  Land records consist of: land grants; a Scottish property transfer; a rent roll of Fitzroy Harbour lots; a statement of property at Fitzroy Harbour; maps of the land by the Carp River and part of Fitzroy Township; and a plan of the Fitzroy Harbour.  Genealogical and biographical material includes newspaper clippings, manuscript histories of the family, and a history of St. Andrew�s Presbyterian Church at Fitzroy Harbour.  Fonds also includes notices of Charles Shirreff�s appointment as a Justice of the Peace for the Ottawa and Bathurst Districts, and of his temporary appointment as a local agent of the Canada Company.  Diaries contain entries relating to: Ottawa River improvements, Lake Nipissing exploration, Gatineau timber, and proposed settlements in the Ottawa District and at Lake Nipissing.  Fonds also includes: notices regarding timber duties and the construction of roads; printed copies of Charles Shirreff�s letter to the Bytown Gazette entitled \"Arguments for Bytown being made the Seat of the Government in Canada\"; wills and a marriage contract; tax bills, contracts, and property valuations of property belonging to Charles Shirreff and Company, Leith; and photographs of sites around Fitzroy Harbour.  Fonds contains the following series: General Correspondence, 1723-1893, N.D. (Series A); Land Records, 1694- 1958 (Series B); Genealogy (Series C); Appointments, 1835, N.D. (Series D); Diaries, 1831, N.D. (Series E); Memoranda (Series F); Ottawa-Bytown, 1842, N.D. (Series G); Biographical (Series H); Wills And Marriage Contract, 1702, 1853, 1881 (Series I); Scottish Miscellaneous (Series J)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-156> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/RG 1-156" .
+  rdfs:label "RG 1-156 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-156-2> a rico:RecordSet;
   rdfs:label "RG 1-156-2 - Register of warrants for land grants - regulations of 21 November 1825 (Record Set)";
@@ -4632,7 +4632,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of case files created and maintained by the Sault Ste. Marie Probation and Parole Office. Records include adult and young offender case files.  The series has been arranged in two sub-series." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-128> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/RG 20-128" .
+  rdfs:label "RG 20-128 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2020-128-3> a rico:RecordSet;
   rdfs:label "RG 20-128-3 - Sudbury Probation and Parole Office young offender case files (Record Set)";
@@ -4789,7 +4789,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of letters received by the Clerk of the Peace for York County from various officials, most notably the Deputy Attorney General, Assistant Provincial Secretary, Crown Attorneys, Sheriffs and municipal Clerks. The correspondence deals with matters relating to the Clerk's duties, particularly regarding the General Sessions / Justices of the Peace, subpoenas, naturalization, jurors' and voters' lists, returns of convictions, and Coroners.  The correspondence is arranged by year, or portions thereof, and then alphabetically by name of correspondent and then chronologically." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2023-26> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/RG 23-26" .
+  rdfs:label "RG 23-26 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2023-26-61> a rico:RecordSet;
   rdfs:label "RG 23-26-61 - Ontario Provincial Police criminal investigation records - grave robbery file (Record Set)";
@@ -4901,7 +4901,7 @@ rdfs:label a owl:DatatypeProperty .
   rico:scopeAndContent "Series consists of property management and lease and license files pertaining to Ontario Heritage Foundation (OHF) properties. The records are created, received, and used by the Heritage Programs Branch to ensure that OHF properties are maintained to standard.  Records include leases, licenses, past and current agreements, correspondence, board minutes, background information, insurance documents, work orders, tax documents, feasibility studies, and future use studies.  Correspondents include legal counsel, the tenant, and contractors for repairs.  The files are arranged alphabetically by property." .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2047-27> a rico:RecordSet;
-  rdfs:label "/KB/RecordSet/RG 47-27" .
+  rdfs:label "RG 47-27 (Record Set)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%2047-27-2> a rico:RecordSet;
   rdfs:label "RG 47-27-2 - Ontario Historical Studies Series arts interviews (Record Set)";
@@ -5102,399 +5102,399 @@ rdfs:label a owl:DatatypeProperty .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/220%20Bay%20Management%20Incorporated%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/220 Bay Management Incorporated photographs" .
+  rdfs:label "220 Bay Management Incorporated photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Aaro%20Kinnunen%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Aaro Kinnunen textual records" .
+  rdfs:label "Aaro Kinnunen textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Abraham%20Groves%20correspondence>
   a rico:Title;
-  rdfs:label "/KB/Title/Abraham Groves correspondence" .
+  rdfs:label "Abraham Groves correspondence (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Administrative%20records%20of%20the%20General%20Manager%20of%20the%20Liquor%20Control%20Board%20of%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Administrative records of the General Manager of the Liquor Control Board of Ontario" .
+  rdfs:label "Administrative records of the General Manager of the Liquor Control Board of Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Agricultural%20Representatives%27%20field%20reports>
   a rico:Title;
-  rdfs:label "/KB/Title/Agricultural Representatives' field reports" .
+  rdfs:label "Agricultural Representatives' field reports (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Albums%20of%20tugs%2C%20barges%2C%20lighters%2C%20wreckers%2C%20and%20government%20vessels>
   a rico:Title;
-  rdfs:label "/KB/Title/Albums of tugs, barges, lighters, wreckers, and government vessels" .
+  rdfs:label "Albums of tugs, barges, lighters, wreckers, and government vessels (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Archibald%20Robertson%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Archibald Robertson fonds" .
+  rdfs:label "Archibald Robertson fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Barkev%20Khojajian%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Barkev Khojajian textual records" .
+  rdfs:label "Barkev Khojajian textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Belgian%20Canadian%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Belgian Canadian photographs" .
+  rdfs:label "Belgian Canadian photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Birds-eye-view%20of%20the%20Cockshutt%20Plow%20Company%20Ltd.>
   a rico:Title;
-  rdfs:label "/KB/Title/Birds-eye-view of the Cockshutt Plow Company Ltd." .
+  rdfs:label "Birds-eye-view of the Cockshutt Plow Company Ltd. (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Blue%20Mountain%20Resorts%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Blue Mountain Resorts photographs" .
+  rdfs:label "Blue Mountain Resorts photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Browne%20Church%20Interiors%20advertising%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Browne Church Interiors advertising records" .
+  rdfs:label "Browne Church Interiors advertising records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Burke%2C%20Horwood%20and%20White%20architectural%20drawings%20for%20the%20John%20Northway%20and%20Sons%20store%20in%20Toronto%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Burke, Horwood and White architectural drawings for the John Northway and Sons store in Toronto, Ontario" .
+  rdfs:label "Burke, Horwood and White architectural drawings for the John Northway and Sons store in Toronto, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Burns%20Monument%20Committee%20reports%2C%20records%20of%20meetings%20and%20subscriptions>
   a rico:Title;
-  rdfs:label "/KB/Title/Burns Monument Committee reports, records of meetings and subscriptions" .
+  rdfs:label "Burns Monument Committee reports, records of meetings and subscriptions (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/CBC%20television%20productions%20in%20cooperation%20with%20the%20Ontario%20Department%20of%20Agriculture%20and%20Food>
   a rico:Title;
-  rdfs:label "/KB/Title/CBC television productions in cooperation with the Ontario Department of Agriculture and Food" .
+  rdfs:label "CBC television productions in cooperation with the Ontario Department of Agriculture and Food (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Catherine%20Cameron%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Catherine Cameron records" .
+  rdfs:label "Catherine Cameron records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Charles%20Shirreff%20family%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Charles Shirreff family fonds" .
+  rdfs:label "Charles Shirreff family fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Commissions%20for%20Licence%20Inspectors>
   a rico:Title;
-  rdfs:label "/KB/Title/Commissions for Licence Inspectors" .
+  rdfs:label "Commissions for Licence Inspectors (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Constituency%20correspondence>
   a rico:Title;
-  rdfs:label "/KB/Title/Constituency correspondence" .
+  rdfs:label "Constituency correspondence (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Correspondence%20and%20administrative%20files%20of%20the%20Executive%20Director%20of%20the%20Ontario%20Development%20Corporation>
   a rico:Title;
-  rdfs:label "/KB/Title/Correspondence and administrative files of the Executive Director of the Ontario Development Corporation" .
+  rdfs:label "Correspondence and administrative files of the Executive Director of the Ontario Development Corporation (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Correspondence%20of%20the%20Assistant%20to%20the%20Deputy%20Minister%20of%20Social%20and%20Family%20Services>
   a rico:Title;
-  rdfs:label "/KB/Title/Correspondence of the Assistant to the Deputy Minister of Social and Family Services" .
+  rdfs:label "Correspondence of the Assistant to the Deputy Minister of Social and Family Services (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Correspondence%20of%20the%20Executive%20Director%20of%20the%20Information%20Systems%20Division%20of%20the%20Ministry%20of%20Health>
   a rico:Title;
-  rdfs:label "/KB/Title/Correspondence of the Executive Director of the Information Systems Division of the Ministry of Health" .
+  rdfs:label "Correspondence of the Executive Director of the Information Systems Division of the Ministry of Health (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Court%20of%20King%27s%20Bench%20writs%20of%20dedimus%20potestatum>
   a rico:Title;
-  rdfs:label "/KB/Title/Court of King's Bench writs of dedimus potestatum" .
+  rdfs:label "Court of King's Bench writs of dedimus potestatum (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Division%20Registrar%20vital%20statistics%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Division Registrar vital statistics records" .
+  rdfs:label "Division Registrar vital statistics records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Drawing%20of%20a%20Wesleyan%20Methodist%20church%20in%20Peterborough%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Drawing of a Wesleyan Methodist church in Peterborough, Ontario" .
+  rdfs:label "Drawing of a Wesleyan Methodist church in Peterborough, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Drawings%20for%20Knox%20Presbyterian%20Church%20in%20Ottawa%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Drawings for Knox Presbyterian Church in Ottawa, Ontario" .
+  rdfs:label "Drawings for Knox Presbyterian Church in Ottawa, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Drawings%20of%20Old%20City%20Hall%20%28Toronto%2C%20Ont.%29>
   a rico:Title;
-  rdfs:label "/KB/Title/Drawings of Old City Hall (Toronto, Ont.)" .
+  rdfs:label "Drawings of Old City Hall (Toronto, Ont.) (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Eaton%27s%20Archives%20Office%20newsclippings>
   a rico:Title;
-  rdfs:label "/KB/Title/Eaton's Archives Office newsclippings" .
+  rdfs:label "Eaton's Archives Office newsclippings (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Eaton%27s%20Company%20Legal%20Office%20general%20agreement%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Eaton's Company Legal Office general agreement files" .
+  rdfs:label "Eaton's Company Legal Office general agreement files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Eaton%27s%20Consumer%20and%20Corporate%20Affairs%20Deparment%20store%20and%20properties%20photographic%20albums>
   a rico:Title;
-  rdfs:label "/KB/Title/Eaton's Consumer and Corporate Affairs Deparment store and properties photographic albums" .
+  rdfs:label "Eaton's Consumer and Corporate Affairs Deparment store and properties photographic albums (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Edmund%20Burke%20architectural%20drawing%20of%20Inglewood%20in%20Toronto%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Edmund Burke architectural drawing of Inglewood in Toronto, Ontario" .
+  rdfs:label "Edmund Burke architectural drawing of Inglewood in Toronto, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Elementary%20and%20secondary%20school%20annual%20music%20reports>
   a rico:Title;
-  rdfs:label "/KB/Title/Elementary and secondary school annual music reports" .
+  rdfs:label "Elementary and secondary school annual music reports (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ely%20Playter%20fonds> a rico:Title;
-  rdfs:label "/KB/Title/Ely Playter fonds" .
+  rdfs:label "Ely Playter fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Federal-Provincial%20relations%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Federal-Provincial relations files" .
+  rdfs:label "Federal-Provincial relations files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Fidalgo%20Rodrigues%20passports>
   a rico:Title;
-  rdfs:label "/KB/Title/Fidalgo Rodrigues passports" .
+  rdfs:label "Fidalgo Rodrigues passports (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Frank%20Kempf%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Frank Kempf textual records" .
+  rdfs:label "Frank Kempf textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Fred%20W.%20Hotson%27s%20Grumman%20CP-121%20Tracker%20research%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Fred W. Hotson's Grumman CP-121 Tracker research files" .
+  rdfs:label "Fred W. Hotson's Grumman CP-121 Tracker research files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Gaelic%20Society%20of%20Toronto%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Gaelic Society of Toronto fonds" .
+  rdfs:label "Gaelic Society of Toronto fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/George%20S.%20Mitchell%20collection>
   a rico:Title;
-  rdfs:label "/KB/Title/George S. Mitchell collection" .
+  rdfs:label "George S. Mitchell collection (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Hamilton%20Eaton%20Centre%20and%20downtown%20store%20property%20management%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Hamilton Eaton Centre and downtown store property management records" .
+  rdfs:label "Hamilton Eaton Centre and downtown store property management records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Hamlet%20Burritt%20fonds> a rico:Title;
-  rdfs:label "/KB/Title/Hamlet Burritt fonds" .
+  rdfs:label "Hamlet Burritt fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Harry%20Young%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Harry Young textual records" .
+  rdfs:label "Harry Young textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Huron%20County%20Local%20Registrar%20judgment%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Huron County Local Registrar judgment files" .
+  rdfs:label "Huron County Local Registrar judgment files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Index%20of%20Warrants%20of%20Estates%20of%20Intestates>
   a rico:Title;
-  rdfs:label "/KB/Title/Index of Warrants of Estates of Intestates" .
+  rdfs:label "Index of Warrants of Estates of Intestates (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Industry%20and%20Trade%20Expansion%20administration%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Industry and Trade Expansion administration files" .
+  rdfs:label "Industry and Trade Expansion administration files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Jackson%20family%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Jackson family photographs" .
+  rdfs:label "Jackson family photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/James%20Dougall%20fonds> a rico:Title;
-  rdfs:label "/KB/Title/James Dougall fonds" .
+  rdfs:label "James Dougall fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Jan%20Pasternak%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Jan Pasternak photographs" .
+  rdfs:label "Jan Pasternak photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/John%20French%20photographs> a
     rico:Title;
-  rdfs:label "/KB/Title/John French photographs" .
+  rdfs:label "John French photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Jonas%20Yla%20photographs> a rico:Title;
-  rdfs:label "/KB/Title/Jonas Yla photographs" .
+  rdfs:label "Jonas Yla photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Kallo%20Developments%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Kallo Developments photographs" .
+  rdfs:label "Kallo Developments photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Lennox%20and%20Addington%20Coroner%20investigations%20and%20inquests>
   a rico:Title;
-  rdfs:label "/KB/Title/Lennox and Addington Coroner investigations and inquests" .
+  rdfs:label "Lennox and Addington Coroner investigations and inquests (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Letters%20received%20by%20the%20York%20County%20Clerk%20of%20the%20Peace>
   a rico:Title;
-  rdfs:label "/KB/Title/Letters received by the York County Clerk of the Peace" .
+  rdfs:label "Letters received by the York County Clerk of the Peace (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Lo%20Lim%20Sing%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Lo Lim Sing textual records" .
+  rdfs:label "Lo Lim Sing textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ministry%20of%20Municipal%20Affairs%20and%20Housing%20municipal%20service%20delivery%20program%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Ministry of Municipal Affairs and Housing municipal service delivery program files" .
+  rdfs:label "Ministry of Municipal Affairs and Housing municipal service delivery program files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ministry%20of%20the%20Environment%20General%20Counsel%27s%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Ministry of the Environment General Counsel's files" .
+  rdfs:label "Ministry of the Environment General Counsel's files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/National%20Association%20of%20Canadians%20of%20Origin%20in%20India%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/National Association of Canadians of Origin in India textual records" .
+  rdfs:label "National Association of Canadians of Origin in India textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Nava%20and%20Isaak%20Shterenberg%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Nava and Isaak Shterenberg textual records" .
+  rdfs:label "Nava and Isaak Shterenberg textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Nicholas%20Goldschmidt%27s%20collection%20of%20published%20material>
   a rico:Title;
-  rdfs:label "/KB/Title/Nicholas Goldschmidt's collection of published material" .
+  rdfs:label "Nicholas Goldschmidt's collection of published material (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Norfolk%20County%20Sheriff%27s%20correspondence%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Norfolk County Sheriff's correspondence files" .
+  rdfs:label "Norfolk County Sheriff's correspondence files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ontario%20Heritage%20Foundation%20property%20management%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Ontario Heritage Foundation property management records" .
+  rdfs:label "Ontario Heritage Foundation property management records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ontario%20Historical%20Studies%20Series%20arts%20interviews>
   a rico:Title;
-  rdfs:label "/KB/Title/Ontario Historical Studies Series arts interviews" .
+  rdfs:label "Ontario Historical Studies Series arts interviews (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ontario%20Provincial%20Police%20criminal%20investigation%20records%20-%20grave%20robbery%20file>
   a rico:Title;
-  rdfs:label "/KB/Title/Ontario Provincial Police criminal investigation records - grave robbery file" .
+  rdfs:label "Ontario Provincial Police criminal investigation records - grave robbery file (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ontario%20Status%20of%20Women%20Council%20publications%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Ontario Status of Women Council publications files" .
+  rdfs:label "Ontario Status of Women Council publications files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Page%20%26%20Steele%20Architects%20project%20files%20for%20the%20Ottawa%20Police%20Building>
   a rico:Title;
-  rdfs:label "/KB/Title/Page & Steele Architects project files for the Ottawa Police Building" .
+  rdfs:label "Page & Steele Architects project files for the Ottawa Police Building (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Paul%20Reuber%20Architect%20project%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Paul Reuber Architect project files" .
+  rdfs:label "Paul Reuber Architect project files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Percy%20Saiger%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Percy Saiger photographs" .
+  rdfs:label "Percy Saiger photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Peter%20J.%20Smith%20photographs%20of%20the%20Gypsy%20Theatre%20in%20Fort%20Erie%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/Peter J. Smith photographs of the Gypsy Theatre in Fort Erie, Ontario" .
+  rdfs:label "Peter J. Smith photographs of the Gypsy Theatre in Fort Erie, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Prince%20Edward%20County%20Magistrates%27%20Court%20conviction%20returns>
   a rico:Title;
-  rdfs:label "/KB/Title/Prince Edward County Magistrates' Court conviction returns" .
+  rdfs:label "Prince Edward County Magistrates' Court conviction returns (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Professional%20boxing%20regulatory%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Professional boxing regulatory files" .
+  rdfs:label "Professional boxing regulatory files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Project%20file%20for%20addition%20to%20building%20at%2050%20Tremont%20Avenue%20in%20North%20York%2C%20Ontario%20by%20Zdzislaw%20Przygoda%20Consulting%20Engineers%20Ltd.>
   a rico:Title;
-  rdfs:label "/KB/Title/Project file for addition to building at 50 Tremont Avenue in North York, Ontario by Zdzislaw Przygoda Consulting Engineers Ltd." .
+  rdfs:label "Project file for addition to building at 50 Tremont Avenue in North York, Ontario by Zdzislaw Przygoda Consulting Engineers Ltd. (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Published%20works%20and%20printed%20catalogues%20used%20by%20E.%20J.%20Lennox>
   a rico:Title;
-  rdfs:label "/KB/Title/Published works and printed catalogues used by E. J. Lennox" .
+  rdfs:label "Published works and printed catalogues used by E. J. Lennox (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Records%20of%20the%20Commission%20of%20Inquiry%20Into%20Matters%20Relating%20to%20the%20Sale%20and%20Distribution%20of%20Fruits%20and%20Vegetables>
   a rico:Title;
-  rdfs:label "/KB/Title/Records of the Commission of Inquiry Into Matters Relating to the Sale and Distribution of Fruits and Vegetables" .
+  rdfs:label "Records of the Commission of Inquiry Into Matters Relating to the Sale and Distribution of Fruits and Vegetables (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Records%20of%20the%20Policy%20and%20Planning%20Coordination%20office%20pertaining%20to%20the%20Council%20of%20Ministers%20of%20Education>
   a rico:Title;
-  rdfs:label "/KB/Title/Records of the Policy and Planning Coordination office pertaining to the Council of Ministers of Education" .
+  rdfs:label "Records of the Policy and Planning Coordination office pertaining to the Council of Ministers of Education (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Records%20of%20the%20Select%20Committee%20on%20Toll%20Roads%20and%20Highway%20Financing>
   a rico:Title;
-  rdfs:label "/KB/Title/Records of the Select Committee on Toll Roads and Highway Financing" .
+  rdfs:label "Records of the Select Committee on Toll Roads and Highway Financing (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Records%20of%20the%20Standing%20Committee%20on%20General%20Government>
   a rico:Title;
-  rdfs:label "/KB/Title/Records of the Standing Committee on General Government" .
+  rdfs:label "Records of the Standing Committee on General Government (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Register%20of%20warrants%20for%20land%20grants%20-%20regulations%20of%2021%20November%201825>
   a rico:Title;
-  rdfs:label "/KB/Title/Register of warrants for land grants - regulations of 21 November 1825" .
+  rdfs:label "Register of warrants for land grants - regulations of 21 November 1825 (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Reverend%20R.%20Hepolehto%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Reverend R. Hepolehto textual records" .
+  rdfs:label "Reverend R. Hepolehto textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Robertson%20family%20legal%20and%20land%20papers>
   a rico:Title;
-  rdfs:label "/KB/Title/Robertson family legal and land papers" .
+  rdfs:label "Robertson family legal and land papers (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Rolf%20Buschardt%20Christensen%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Rolf Buschardt Christensen textual records" .
+  rdfs:label "Rolf Buschardt Christensen textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Sain%20Pukkala%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Sain Pukkala photographs" .
+  rdfs:label "Sain Pukkala photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Samuel%20%26%20Edward%20Merrill%20family%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Samuel & Edward Merrill family fonds" .
+  rdfs:label "Samuel & Edward Merrill family fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Sault%20Ste.%20Marie%20Probation%20and%20Parole%20Office%20case%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Sault Ste. Marie Probation and Parole Office case files" .
+  rdfs:label "Sault Ste. Marie Probation and Parole Office case files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Schedules%2C%20returns%20and%20lists%20of%20certificates%20of%20occupation%20issued%20by%20magistrates%2C%20surveyors%20and%20First%20District%20Land%20Boards>
   a rico:Title;
-  rdfs:label "/KB/Title/Schedules, returns and lists of certificates of occupation issued by magistrates, surveyors and First District Land Boards" .
+  rdfs:label "Schedules, returns and lists of certificates of occupation issued by magistrates, surveyors and First District Land Boards (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Southwestern%20Regional%20Centre%20class%20action%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Southwestern Regional Centre class action records" .
+  rdfs:label "Southwestern Regional Centre class action records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Specifications%20for%20Manning%20Chambers%20%28Toronto%2C%20Ont.%29>
   a rico:Title;
-  rdfs:label "/KB/Title/Specifications for Manning Chambers (Toronto, Ont.)" .
+  rdfs:label "Specifications for Manning Chambers (Toronto, Ont.) (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Stefan%20John%20Kuris%20photographs>
   a rico:Title;
-  rdfs:label "/KB/Title/Stefan John Kuris photographs" .
+  rdfs:label "Stefan John Kuris photographs (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Sudbury%20Probation%20and%20Parole%20Office%20young%20offender%20case%20files>
   a rico:Title;
-  rdfs:label "/KB/Title/Sudbury Probation and Parole Office young offender case files" .
+  rdfs:label "Sudbury Probation and Parole Office young offender case files (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Teresa%20Rakowska-Harmstone%20curriculum%20vitae>
   a rico:Title;
-  rdfs:label "/KB/Title/Teresa Rakowska-Harmstone curriculum vitae" .
+  rdfs:label "Teresa Rakowska-Harmstone curriculum vitae (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Thomas%20Franklin%20Purdy%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Thomas Franklin Purdy fonds" .
+  rdfs:label "Thomas Franklin Purdy fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Timiskaming%20District%20Supreme%20Court%20criminal%20assize%20minute%20book>
   a rico:Title;
-  rdfs:label "/KB/Title/Timiskaming District Supreme Court criminal assize minute book" .
+  rdfs:label "Timiskaming District Supreme Court criminal assize minute book (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Toronto%20-%20Sudbury%20railroad%20construction%20%3A%20prints%20and%20negatives>
   a rico:Title;
-  rdfs:label "/KB/Title/Toronto - Sudbury railroad construction : prints and negatives" .
+  rdfs:label "Toronto - Sudbury railroad construction : prints and negatives (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ukrainian%20National%20Federation%20%28National%20Executive%29%20branch%20records%20of%20Kirkland%20Lake>
   a rico:Title;
-  rdfs:label "/KB/Title/Ukrainian National Federation (National Executive) branch records of Kirkland Lake" .
+  rdfs:label "Ukrainian National Federation (National Executive) branch records of Kirkland Lake (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Ukrainian%20National%20Federation%20%28National%20Executive%29%20records%20on%20Ukrainian%20Women%27s%20Organization%20central%20executive>
   a rico:Title;
-  rdfs:label "/KB/Title/Ukrainian National Federation (National Executive) records on Ukrainian Women's Organization central executive" .
+  rdfs:label "Ukrainian National Federation (National Executive) records on Ukrainian Women's Organization central executive (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Unidentified%20account%20book%2C%201846-1858>
   a rico:Title;
-  rdfs:label "/KB/Title/Unidentified account book, 1846-1858" .
+  rdfs:label "Unidentified account book, 1846-1858 (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Village%20of%20Point%20Edward%20fonds>
   a rico:Title;
-  rdfs:label "/KB/Title/Village of Point Edward fonds" .
+  rdfs:label "Village of Point Edward fonds (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Welland%20County%20Local%20Master%27s%20minute%20books>
   a rico:Title;
-  rdfs:label "/KB/Title/Welland County Local Master's minute books" .
+  rdfs:label "Welland County Local Master's minute books (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Westmount%20Mall%20%28London%2C%20Ont.%29%20expansion%20architectural%20drawings>
   a rico:Title;
-  rdfs:label "/KB/Title/Westmount Mall (London, Ont.) expansion architectural drawings" .
+  rdfs:label "Westmount Mall (London, Ont.) expansion architectural drawings (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/William%20G.%20Davis%20international%20visits%3A%20photographs%20and%20textual%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/William G. Davis international visits: photographs and textual records" .
+  rdfs:label "William G. Davis international visits: photographs and textual records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/William%20G.%20Storm%20architectural%20drawings%20for%20the%20J.%20C.%20Fitch%20residence%20in%20Toronto%2C%20Ontario>
   a rico:Title;
-  rdfs:label "/KB/Title/William G. Storm architectural drawings for the J. C. Fitch residence in Toronto, Ontario" .
+  rdfs:label "William G. Storm architectural drawings for the J. C. Fitch residence in Toronto, Ontario (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
 
@@ -5557,15 +5557,15 @@ add:FormerCode a rico:IdentifierType;
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/Status#Approved>
   a rico:RecordState;
-  rdfs:label "/Schema/Description-Listings/Status#Approved" .
+  rdfs:label "Status: Approved" .
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/Status#Review>
   a rico:RecordState;
-  rdfs:label "/Schema/Description-Listings/Status#Review" .
+  rdfs:label "Status: Review" .
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/WebEnabled#Y>
   a rico:RecordState;
-  rdfs:label "/Schema/Description-Listings/WebEnabled#Y" .
+  rdfs:label "Web Enabled: Y" .
 
 add:accumulationDate a owl:DatatypeProperty .
 

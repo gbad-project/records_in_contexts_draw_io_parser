@@ -1,4 +1,4 @@
-Script started on 2025-06-20 13:55:49-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_tailshuf_100/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+Script started on 2025-06-25 00:19:32-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py add tests/test_description_tailshuf_100/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
 Trying to extract source CSV path from RML...
 Extracted rml:source path: 'gbad/mapping/source/preprocessed/tests/test_description_tailshuf_100.csv'
 Initiated mapping params:
@@ -50,4 +50,4 @@ Number of triples in the graph: 4273
 
 Successfully saved postprocessed graph at: 'gbad/mapping/target/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz/test_description_tailshuf_100/mapped_postprocessed.nt'
 
-Script done on 2025-06-20 13:55:50-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 00:19:33-04:00 [COMMAND_EXIT_CODE="0"]

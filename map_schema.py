@@ -342,6 +342,10 @@ def __init__(schema_code, source_filename=None):
         if literal_str.startswith(base_uri_prefix):
             literal_str = str(literal_str[len(base_uri_prefix):])
 
+        # Remove any relative URI indicator
+        if literal_str.startswith('/') or literal_str.startswith('#'):
+            literal_str = str(literal_str[1:])
+
         # Schema entities
         if literal_str.lower().startswith(schema_term.lower() + '/'):
             literal_str = str(literal_str[len(schema_term)+1:])
