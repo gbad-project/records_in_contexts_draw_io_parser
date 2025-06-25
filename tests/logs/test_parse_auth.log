@@ -1,0 +1,7 @@
+Script started on 2025-06-25 01:41:49-04:00 [COMMAND="/Volumes/home/anonymous/records_in_contexts_draw_io_parser/parse-auth.sh" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+Executing command: cat "gbad/schema/authority/General Authority to RiC-O Model_2025-06-25_PZ.drawio" | python draw_io_parser.py -m url -c none --label-disable -o https://data.archives.gov.on.test.gbad.ca/Schema/Mapping -p https://data.archives.gov.on.test.gbad.ca/Schema/Mapping# > "gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.omn"
+Manchester OWL Output saved to: gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.omn
+Executing command: ./robot.sh convert -i "gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.omn" -o "gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.ttl"
+TTL Output saved to: gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.ttl
+
+Script done on 2025-06-25 01:41:51-04:00 [COMMAND_EXIT_CODE="0"]
