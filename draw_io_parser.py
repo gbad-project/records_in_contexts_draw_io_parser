@@ -245,6 +245,7 @@ _object_properties = [
     "rico:hasOrHadAppellation",
     "rico:hasOrHadAuthorityOver",
     "rico:hasOrHadCategory",
+    "rico:hasOrHadType",
     "rico:hasOrHadComponent",
     "rico:hasOrHadConstituent",
     "rico:hasOrHadController",
