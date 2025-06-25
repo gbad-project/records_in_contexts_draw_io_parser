@@ -67,9 +67,9 @@ Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP%7D%2F%7BHEADING%7D%22
     rico:hasOrHadController rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22,
     rico:isSuccessorOf rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22,
     rico:hasSuccessor rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22,
-    rico:hasOrHadCorporateBodyType rr%3Atemplate%20%22%2FSchema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22,
     auth:privateNote "rml:reference \"CMTAU\"",
-    rico:isEquivalentTo rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22
+    rico:isEquivalentTo rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22,
+    rdfs:label ""
 
 Individual: rr%3Atemplate%20%22%2FKB%2FAgencyReferenceCode%2F%7BREFA%7D%22
   Types: rico:Identifier
@@ -117,7 +117,8 @@ Individual: rr%3Aconstant%20%22%2FSchema%2FAuthority%2FAgencyReferenceCode%22
 Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22
   Types: rico:CorporateBody
   Facts:
-    rico:thingIsSourceOfRelation rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22
+    rico:thingIsSourceOfRelation rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22,
+    rdfs:label "rr:template \"{CONTAG_1..14} (Corporate Body)\""
 
 Individual: rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22
   Types: rico:AgentControlRelation
@@ -140,9 +141,13 @@ Individual: rr%3Atemplate%20%22%2FKB%2FVariantAgentName%2F%7BVAR_1..11%7D%22
 
 Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22
   Types: rico:CorporateBody
+  Facts:
+    rdfs:label "rr:template \"{PRED_1..5} (Corporate Body)\""
 
 Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22
   Types: rico:CorporateBody
+  Facts:
+    rdfs:label "rr:template \"{SUC_1..4} (Corporate Body)\""
 
 Individual: rr%3Atemplate%20%22%2FKB%2FParallelAgentName%2F%7BPAR_1..4%7D%22
   Types: rico:AgentName
@@ -169,3 +174,24 @@ Individual: rr%3Aconstant%20%22%2FKB%2FRule%2FRulesForArchivalDescription%22
   Facts:
     rico:title "rml:reference \"RULES\"",
     rdfs:label "Rules for Archival Description"
+
+Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_CORPORATEBODY_1..2%7D%2F%7BHEADING%7D%22
+  Types: rico:CorporateBody
+  Facts:
+    rico:hasOrHadCorporateBodyType rr%3Atemplate%20%22%2FSchema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22,
+    rdfs:label "rr:template \"{HEADING} (Corporate Body)\""
+
+Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_FAMILY_1..2%7D%2F%7BHEADING%7D%22
+  Types: rico:Family
+  Facts:
+    rdfs:label "rr:template \"{HEADING} (Family)\""
+
+Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PLACE_1..2%7D%2F%7BHEADING%7D%22
+  Types: rico:Place
+  Facts:
+    rdfs:label "rr:template \"{HEADING} (Place)\""
+
+Individual: rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PERSON_1..2%7D%2F%7BHEADING%7D%22
+  Types: rico:Person
+  Facts:
+    rdfs:label "rr:template \"{HEADING} (Person)\""

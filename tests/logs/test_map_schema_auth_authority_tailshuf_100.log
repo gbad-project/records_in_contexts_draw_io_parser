@@ -1,7 +1,9 @@
-Script started on 2025-06-25 01:41:51-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth tests/test_authority_tailshuf_100.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+Script started on 2025-06-25 03:16:24-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth tests/test_authority_tailshuf_100.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
 Using source file: 'gbad/mapping/source/tests/test_authority_tailshuf_100.csv'
 
 Checking in for preprocessing...
+
+Source preprocessed by adding columns: ['RICO_AUTHTP_NEW_1', 'RICO_AUTHTP_LABEL_1', 'RICO_AUTHTP_CORPORATEBODY_1', 'RICO_AUTHTP_FAMILY_1', 'RICO_AUTHTP_PLACE_1', 'RICO_AUTHTP_PERSON_1', 'RICO_AUTHTP_NEW_2', 'RICO_AUTHTP_LABEL_2', 'RICO_AUTHTP_CORPORATEBODY_2', 'RICO_AUTHTP_FAMILY_2', 'RICO_AUTHTP_PLACE_2', 'RICO_AUTHTP_PERSON_2'] 
 
 Source preprocessed by updating ['DATEEX_BEGINNING', 'DATEEX_END'] with values from 'New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
@@ -127,4 +129,4 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 Successfully saved RML map to: 'gbad/schema/authority//tests/test_authority_tailshuf_100/general_authority_to_ric-o_model_2025-06-25_pz.rml'
 
-Script done on 2025-06-25 01:41:52-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 03:16:25-04:00 [COMMAND_EXIT_CODE="0"]

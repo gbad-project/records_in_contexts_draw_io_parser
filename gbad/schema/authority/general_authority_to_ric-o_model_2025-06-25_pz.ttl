@@ -127,15 +127,40 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
                                                                                                                                                   <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FParallelAgentName%2F%7BPAR_1..4%7D%22> ,
                                                                                                                                                   <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FVariantAgentName%2F%7BVAR_1..11%7D%22> ;
                                                                                                                            rico:hasOrHadController <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22> ;
-                                                                                                                           rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FSchema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> ;
                                                                                                                            rico:hasOrHadIdentifier <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgencyReferenceCode%2F%7BREFA%7D%22> ;
                                                                                                                            rico:hasSuccessor <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22> ;
                                                                                                                            rico:isEquivalentTo <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FCorporateBody%2F%7BREFA%7D%22> ;
                                                                                                                            rico:isOrWasDescribedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAuthorityRecord%2F%7BHEADING%7D%22> ;
                                                                                                                            rico:isSuccessorOf <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22> ;
+                                                                                                                           rdfs:label "" ;
                                                                                                                            auth:functionNote "rml:reference \"FUN\"" ;
                                                                                                                            auth:privateNote "rml:reference \"CMTAU\"" ;
                                                                                                                            rico:history "rml:reference \"ADM\"" .
+
+
+###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_CORPORATEBODY_1..2%7D%2F%7BHEADING%7D%22
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_CORPORATEBODY_1..2%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                       rico:CorporateBody ;
+                                                                                                                                              rico:hasOrHadCorporateBodyType <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FSchema%2FAuthority%2FAuthorityType%23%7BAUTHTP_1..2%7D%22> ;
+                                                                                                                                              rdfs:label "rr:template \"{HEADING} (Corporate Body)\"" .
+
+
+###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_FAMILY_1..2%7D%2F%7BHEADING%7D%22
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_FAMILY_1..2%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                rico:Family ;
+                                                                                                                                       rdfs:label "rr:template \"{HEADING} (Family)\"" .
+
+
+###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PERSON_1..2%7D%2F%7BHEADING%7D%22
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PERSON_1..2%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                                rico:Person ;
+                                                                                                                                       rdfs:label "rr:template \"{HEADING} (Person)\"" .
+
+
+###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PLACE_1..2%7D%2F%7BHEADING%7D%22
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2F%7BRICO_AUTHTP_PLACE_1..2%7D%2F%7BHEADING%7D%22> rdf:type owl:NamedIndividual ,
+                                                                                                                                               rico:Place ;
+                                                                                                                                      rdfs:label "rr:template \"{HEADING} (Place)\"" .
 
 
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgencyReferenceCode%2F%7BREFA%7D%22
@@ -148,17 +173,20 @@ add:relatedMaterial rdf:type owl:DatatypeProperty .
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22
 <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BCONTAG_1..14%7D%22> rdf:type owl:NamedIndividual ,
                                                                                                                              rico:CorporateBody ;
-                                                                                                                    rico:thingIsSourceOfRelation <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22> .
+                                                                                                                    rico:thingIsSourceOfRelation <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22> ;
+                                                                                                                    rdfs:label "rr:template \"{CONTAG_1..14} (Corporate Body)\"" .
 
 
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22
 <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BPRED_1..5%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                          rico:CorporateBody .
+                                                                                                                          rico:CorporateBody ;
+                                                                                                                 rdfs:label "rr:template \"{PRED_1..5} (Corporate Body)\"" .
 
 
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22
 <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BSUC_1..4%7D%22> rdf:type owl:NamedIndividual ,
-                                                                                                                         rico:CorporateBody .
+                                                                                                                         rico:CorporateBody ;
+                                                                                                                rdfs:label "rr:template \"{SUC_1..4} (Corporate Body)\"" .
 
 
 ###  https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FAgentControlRelation%2F%7BCONTAG_1..14%7D%2F%7BHEADING%7D%2Furn%3Auuid%3A%7BUUID%7D%22

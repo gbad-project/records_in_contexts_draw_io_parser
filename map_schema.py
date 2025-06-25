@@ -194,6 +194,82 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
     preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
     correct_dateex_path = kwargs.get('correct_dateex_path', None)
 
+    def generate_rico_authtp():
+        """Originally generated with Claude Sonnet 4 on 2025-06-25, modified"""
+        # Get the authtp columns
+        authtp_df = preprocessor.get(['AUTHTP_1', 'AUTHTP_2'])
+
+        added_cols = []
+        
+        # Process AUTHTP_1 and AUTHTP_2 separately
+        for authtp_num in [1, 2]:
+            authtp_col = f'AUTHTP_{authtp_num}'
+            
+            # Initialize result columns for this authtp
+            rico_authtp_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            rico_authtp_label_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            rico_corporatebody_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            rico_family_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            rico_place_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            rico_person_series = pd.Series(None, index=authtp_df.index, dtype='object')
+            
+            # Process each row for this authtp column
+            for idx in authtp_df.index:
+                authtp_value = authtp_df.loc[idx, authtp_col]
+                
+                if pd.notna(authtp_value):
+                    # Check against each regex pattern
+                    for key, (value, pattern) in rico_authtp_dict.items():
+                        pythonic_regex_pattern = pattern[1:-1]
+                        if re.search(pythonic_regex_pattern, str(authtp_value)):
+                            rico_authtp_series.loc[idx] = value
+                            
+                            # Set the corresponding specific column
+                            if key == 'CorporateBody':
+                                rico_corporatebody_series.loc[idx] = value
+                                rico_authtp_label_series.loc[idx] = 'Corporate Body'
+                            elif key == 'Family':
+                                rico_family_series.loc[idx] = value
+                                rico_authtp_label_series.loc[idx] = key
+                            elif key == 'Place':
+                                rico_place_series.loc[idx] = value
+                                rico_authtp_label_series.loc[idx] = key
+                            elif key == 'Person':
+                                rico_person_series.loc[idx] = value
+                                rico_authtp_label_series.loc[idx] = key
+                            
+                            break  # Stop after first match
+            
+            # Add all the new columns to the preprocessor with appropriate suffix
+            rico_authtp_colname = f'RICO_AUTHTP_NEW_{authtp_num}'
+            preprocessor.add(rico_authtp_colname, rico_authtp_series)
+            added_cols.append(rico_authtp_colname)
+
+            rico_authtp_label_colname = f'RICO_AUTHTP_LABEL_{authtp_num}'
+            preprocessor.add(rico_authtp_label_colname, rico_authtp_label_series)
+            added_cols.append(rico_authtp_label_colname)
+
+            rico_corporatebody_colname = f'RICO_AUTHTP_CORPORATEBODY_{authtp_num}'
+            preprocessor.add(rico_corporatebody_colname, rico_corporatebody_series)
+            added_cols.append(rico_corporatebody_colname)
+
+            rico_family_colname = f'RICO_AUTHTP_FAMILY_{authtp_num}'
+            preprocessor.add(rico_family_colname, rico_family_series)
+            added_cols.append(rico_family_colname)
+
+            rico_place_colname = f'RICO_AUTHTP_PLACE_{authtp_num}'
+            preprocessor.add(rico_place_colname, rico_place_series)
+            added_cols.append(rico_place_colname)
+
+            rico_person_colname = f'RICO_AUTHTP_PERSON_{authtp_num}'
+            preprocessor.add(rico_person_colname, rico_person_series)
+            added_cols.append(rico_person_colname)
+
+        print(f"Source preprocessed by adding columns: {added_cols} \n")
+
+    # Add columns necessary for RICO_AUTHTP logic
+    generate_rico_authtp()
+
     def pull_correct_dateex():
         nonlocal correct_dateex_path
         correct_dateex_name = os.path.basename(correct_dateex_path)
