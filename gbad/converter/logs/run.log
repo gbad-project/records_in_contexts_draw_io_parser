@@ -1,12 +1,12 @@
-Script started on 2025-06-25 12:19:15-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/merge_graphs.py /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Script started on 2025-06-25 17:28:11-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/merge_graphs.py /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp /Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/data/store.nq" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
 
 Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt
 
-SHA256 hash '72af091c6e07d62445cf2d72da3c76b5df93ecd11ffb73198d2aec0a6ce9c003' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt'
-Base64: cq8JHG4H1iRFzy1y2jx2td+T7NEf+3MZjSrsCmzpwAM=
-Valid ni URI (RFC6920-compliant): <ni:///sha-256;cq8JHG4H1iRFzy1y2jx2td-T7NEf-3MZjSrsCmzpwAM>
-UUID v5 generated from ns:URL and <ni:///sha-256;cq8JHG4H1iRFzy1y2jx2td-T7NEf-3MZjSrsCmzpwAM>: ed3b5c99-1318-5e2b-8367-147dfe4da4ca
-Graph URI to be used for 'description.nt' (72af091c): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:ed3b5c99-1318-5e2b-8367-147dfe4da4ca>
+SHA256 hash '1e29ae55e499c289d5674dac791e225b3c505629ab1d759ec5437c2ec6a39b83' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt'
+Base64: HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M>
+UUID v5 generated from ns:URL and <ni:///sha-256;HimuVeSZwonVZ02seR4iWzxQVimrHXWexUN8Lsajm4M>: d82238b7-833f-5cf3-aecb-b91fb7f63f21
+Graph URI to be used for 'description.nt' (1e29ae55): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:d82238b7-833f-5cf3-aecb-b91fb7f63f21>
 Steps to verify (ONLY for public data!):
 1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
 2. Make sure input encoding is set to UTF-8 and output encoding to Base64
@@ -17,11 +17,11 @@ Steps to verify (ONLY for public data!):
 
 Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt
 
-SHA256 hash '36f51c2dd142a789230807d563ee8a8441bf0e5648d2968c37fe9b5930e347e9' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt'
-Base64: NvUcLdFCp4kjCAfVY+6KhEG/DlZI0paMN/6bWTDjR+k=
-Valid ni URI (RFC6920-compliant): <ni:///sha-256;NvUcLdFCp4kjCAfVY-6KhEG_DlZI0paMN_6bWTDjR-k>
-UUID v5 generated from ns:URL and <ni:///sha-256;NvUcLdFCp4kjCAfVY-6KhEG_DlZI0paMN_6bWTDjR-k>: 66c7d0d4-40b3-510c-99e4-9a5d2cb57d5d
-Graph URI to be used for 'authority.nt' (36f51c2d): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:66c7d0d4-40b3-510c-99e4-9a5d2cb57d5d>
+SHA256 hash '25dba8ab0765aa0fae9f0f49466dfea960273d7a0b38d17e99abb5ef93367908' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt'
+Base64: Jduoqwdlqg+unw9JRm3+qWAnPXoLONF+mau175M2eQg=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;Jduoqwdlqg-unw9JRm3-qWAnPXoLONF-mau175M2eQg>
+UUID v5 generated from ns:URL and <ni:///sha-256;Jduoqwdlqg-unw9JRm3-qWAnPXoLONF-mau175M2eQg>: 13202964-c694-59e4-84f8-24fddca37c8b
+Graph URI to be used for 'authority.nt' (25dba8ab): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:13202964-c694-59e4-84f8-24fddca37c8b>
 Steps to verify (ONLY for public data!):
 1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
 2. Make sure input encoding is set to UTF-8 and output encoding to Base64
@@ -34,4 +34,4 @@ Writing 1091557 quads to /Volumes/home/anonymous/records_in_contexts_draw_io_par
 Consolidated 2 files successfully
 
 
-Script done on 2025-06-25 12:19:57-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 17:28:54-04:00 [COMMAND_EXIT_CODE="0"]
