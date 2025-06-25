@@ -83,32 +83,88 @@
 rdfs:label a owl:DatatypeProperty .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA507> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA507";
+  rdfs:label "CA507 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA508> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA508";
+  rdfs:label "CA508 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA509> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA509";
+  rdfs:label "CA509 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA510> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA510";
+  rdfs:label "CA510 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA511> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA511";
+  rdfs:label "CA511 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA513> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA513";
+  rdfs:label "CA513 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Agent/CA514> a rico:CorporateBody;
-  rdfs:label "/KB/Agent/CA514";
+  rdfs:label "CA514 (Agent)";
   rico:isCreatorOf <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Lands and Forests (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Division%20of%20Surveys>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Lands and Forests. Division of Surveys (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Division%20of%20Surveys%20and%20Engineering>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Lands and Forests. Division of Surveys and Engineering (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Surveys%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Dept. of Lands and Forests. Surveys Branch (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Division%20of%20Timber>
+  a rico:Agent;
+  rdfs:label "Ontario. Division of Timber (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Division%20of%20Timber%20Management>
+  a rico:Agent;
+  rdfs:label "Ontario. Division of Timber Management (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forest%20Management%20Branch%20%281972-1978%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Forest Management Branch (1972-1978) (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forest%20Resources%20Branch%20%281978-1989%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Forest Resources Branch (1978-1989) (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forestry%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Forestry Branch (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Lands%20and%20Surveys%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Lands and Surveys Branch (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Natural%20Resources>
+  a rico:Agent;
+  rdfs:label "Ontario. Ministry of Natural Resources (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Surveys%20and%20Engineering%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Surveys and Engineering Branch (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Timber%20Branch%20%281959-1971%29>
+  a rico:Agent;
+  rdfs:label "Ontario. Timber Branch (1959-1971) (Agent)" .
+
+<https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Timber%20Management%20Branch>
+  a rico:Agent;
+  rdfs:label "Ontario. Timber Management Branch (Agent)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/ArchivalDescriptionRecord/RG%201-429>
   a rico:Record;
@@ -119,36 +175,36 @@ rdfs:label a owl:DatatypeProperty .
   rico:wasLastUpdatedAtDate <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F13%2F2002> .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%201-429> a rico:Identifier;
-  rdfs:label "/KB/CurrentReferenceCode/RG 1-429";
+  rdfs:label "RG 1-429 (Current Reference Code)";
   rico:hasIdentifierType add:CurrentReferenceCode .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/08%2F13%2F2002> a rico:Date;
-  rdfs:label "/KB/Date/08/13/2002";
+  rdfs:label "08/13/2002 (Date)";
   rico:normalizedDateValue "08/13/2002" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1922> a rico:Date;
-  rdfs:label "/KB/Date/1922" .
+  rdfs:label "1922 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1941> a rico:Date;
-  rdfs:label "/KB/Date/1941" .
+  rdfs:label "1941 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1944> a rico:Date;
-  rdfs:label "/KB/Date/1944" .
+  rdfs:label "1944 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1957> a rico:Date;
-  rdfs:label "/KB/Date/1957" .
+  rdfs:label "1957 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1971> a rico:Date;
-  rdfs:label "/KB/Date/1971" .
+  rdfs:label "1971 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1972> a rico:Date;
-  rdfs:label "/KB/Date/1972" .
+  rdfs:label "1972 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1990> a rico:Date;
-  rdfs:label "/KB/Date/1990" .
+  rdfs:label "1990 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Date/1999> a rico:Date;
-  rdfs:label "/KB/Date/1999" .
+  rdfs:label "1999 (Date)" .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/RecordSet/RG%201-429> a rico:RecordSet;
   rdfs:label "RG 1-429 - Forest resource inventory records (Record Set)";
@@ -161,6 +217,20 @@ rdfs:label a owl:DatatypeProperty .
   rico:hasContentOfType <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/ContentType#Cartographic%20materials>,
     <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/ContentType#Graphic%20materials>,
     <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/ContentType#Textual%20records>;
+  rico:hasCreator <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Division%20of%20Surveys>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Division%20of%20Surveys%20and%20Engineering>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Dept.%20of%20Lands%20and%20Forests.%20Surveys%20Branch>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Division%20of%20Timber>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Division%20of%20Timber%20Management>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forest%20Management%20Branch%20%281972-1978%29>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forest%20Resources%20Branch%20%281978-1989%29>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Forestry%20Branch>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Lands%20and%20Surveys%20Branch>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Ministry%20of%20Natural%20Resources>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Surveys%20and%20Engineering%20Branch>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Timber%20Branch%20%281959-1971%29>,
+    <https://data.archives.gov.on.test.gbad.ca/KB/Agent/Ontario.%20Timber%20Management%20Branch>;
   rico:hasOrHadIdentifier <https://data.archives.gov.on.test.gbad.ca/KB/CurrentReferenceCode/RG%201-429>;
   rico:hasOrHadInstantiation </KB/Instantiation/RG%201-429/urn:uuid:1a45e63b-7295-54c4-8496-f1cd46eef108>;
   rico:hasOrHadTitle <https://data.archives.gov.on.test.gbad.ca/KB/Title/Forest%20resource%20inventory%20records>;
@@ -171,7 +241,7 @@ rdfs:label a owl:DatatypeProperty .
 
 <https://data.archives.gov.on.test.gbad.ca/KB/Title/Forest%20resource%20inventory%20records>
   a rico:Title;
-  rdfs:label "/KB/Title/Forest resource inventory records" .
+  rdfs:label "Forest resource inventory records (Title)" .
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/functionNote> a owl:DatatypeProperty .
 
@@ -206,11 +276,11 @@ add:FormerCode a rico:IdentifierType;
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/Status#Approved>
   a rico:RecordState;
-  rdfs:label "/Schema/Description-Listings/Status#Approved" .
+  rdfs:label "Status: Approved" .
 
 <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/WebEnabled#Y>
   a rico:RecordState;
-  rdfs:label "/Schema/Description-Listings/WebEnabled#Y" .
+  rdfs:label "Web Enabled: Y" .
 
 add:accumulationDate a owl:DatatypeProperty .
 

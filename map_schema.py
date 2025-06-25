@@ -124,17 +124,17 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
 
     # Column split #3
     indexprov_col = 'INDEXPROV'
-    numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 21)]
+    numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
 
     # Column split #4
     indexname_col = 'INDEXNAME'
-    numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 21)]
+    numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
 
     # Column split #5
     indexsub_col = 'INDEXSUB'
-    numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 21)]
+    numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
 
     # Column split #6
