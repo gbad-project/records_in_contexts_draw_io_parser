@@ -1,5 +1,5 @@
-Script started on 2025-06-25 12:23:31-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth tests/test_authority_tailshuf_100.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
-Using source file: 'gbad/mapping/source/tests/test_authority_tailshuf_100.csv'
+Script started on 2025-06-25 12:24:34-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_schema.py auth AUTHORITY.csv" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Using source file: 'gbad/mapping/source/AUTHORITY.csv'
 
 Checking in for preprocessing...
 
@@ -7,9 +7,9 @@ Source preprocessed by adding columns: ['RICO_AUTHTP_NEW_1', 'RICO_AUTHTP_LABEL_
 
 Source preprocessed by updating ['DATEEX_BEGINNING', 'DATEEX_END'] with values from 'New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
-Saving preprocessed to: 'gbad/mapping/source/preprocessed/tests/test_authority_tailshuf_100.csv'
+Saving preprocessed to: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
 
-Using source file: 'gbad/mapping/source/preprocessed/tests/test_authority_tailshuf_100.csv'
+Using source file: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
 
 Using graph: 'gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.ttl'
 
@@ -127,6 +127,6 @@ At most one rr:template is allowed per subject map  whereas multiple are given i
 
 
 
-Successfully saved RML map to: 'gbad/schema/authority//tests/test_authority_tailshuf_100/general_authority_to_ric-o_model_2025-06-25_pz.rml'
+Successfully saved RML map to: 'gbad/schema/authority//AUTHORITY/general_authority_to_ric-o_model_2025-06-25_pz.rml'
 
-Script done on 2025-06-25 12:23:32-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 12:24:35-04:00 [COMMAND_EXIT_CODE="0"]

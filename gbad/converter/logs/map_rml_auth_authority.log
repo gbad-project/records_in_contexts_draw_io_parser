@@ -1,0 +1,55 @@
+Script started on 2025-06-25 12:00:01-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/map_rml.py auth AUTHORITY/" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Trying to extract source CSV path from RML...
+Extracted rml:source path: 'gbad/mapping/source/preprocessed/AUTHORITY.csv'
+Initiated mapping params:
+('gbad/schema/authority/authority/general_authority_to_ric-o_model_2025-06-25_pz.rml',
+ './rmlmapper-7.0.0-r374-all.jar',
+ 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped.ttl')
+
+
+Running Java command: 'java -jar ./rmlmapper-7.0.0-r374-all.jar -s turtle -m gbad/schema/authority/authority/general_authority_to_ric-o_model_2025-06-25_pz.rml -o gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped.ttl -b https://data.archives.gov.on.test.gbad.ca'
+
+
+Converted file is larger than 10 MB (22.49 MB) - trying to rename to LARGE...
+Successfully renamed to 'mapped_LARGE.ttl'
+Successfully mapped 'gbad/schema/authority/authority/general_authority_to_ric-o_model_2025-06-25_pz.rml' to 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped_LARGE.ttl'
+
+Initiating postprocessing...
+Successfully read a graph from 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped_LARGE.ttl'
+
+Number of triples in the graph: 181600
+Postprocessing...
+Executed a parametrized alternative of the following query: 
+        PREFIX rico: <https://www.ica.org/standards/RiC/ontology#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/>
+        
+        DELETE {
+        ?recordSet rdfs:label ?shorterLabel .
+        }
+        WHERE {
+        ?recordSet a rico:RecordSet ;
+                    rdfs:label ?label1, ?label2 .
+        FILTER(?label1 != ?label2)
+        ?recordSet rico:hasOrHadIdentifier ?identifier .
+        ?identifier a add:CurrentReferenceCode .
+        ?identifier rdfs:label ?identLabel .
+        BIND(REPLACE(?identLabel, "^(.*) \(Current Reference Code\)$", "$1") AS ?refCode)
+        FILTER(STRSTARTS(?label1, ?refCode) && STRSTARTS(?label2, ?refCode))
+        BIND(IF(STRLEN(?label1) < STRLEN(?label2), ?label1, ?label2) AS ?shorterLabel)
+        }
+        
+No triples were removed.
+
+Adding a supplemental 'turtle' file: 'gbad/schema/authority.ttl'
+
+Adding a supplemental 'turtle' file: 'gbad/schema/gbad.ttl'
+
+Adding a supplemental 'turtle' file: 'gbad/schema/description-listings.ttl'
+
+Number of triples in the graph: 181600
+
+
+Successfully saved postprocessed graph at: 'gbad/mapping/target/general_authority_to_ric-o_model_2025-06-25_pz/AUTHORITY/mapped_LARGE_postprocessed.nt'
+
+Script done on 2025-06-25 12:00:10-04:00 [COMMAND_EXIT_CODE="0"]

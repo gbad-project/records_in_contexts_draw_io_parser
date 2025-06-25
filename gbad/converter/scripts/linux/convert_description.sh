@@ -4,17 +4,17 @@ ROOT_DIR="$(pwd)"
 
 CONDA_ENV='gbad-next'
 
-LOG_FILE_PARSE_ADD="$ROOT_DIR/tests/logs/test_parse_add.log"
+LOG_FILE_PARSE_ADD="$ROOT_DIR/gbad/converter/logs/parse_add.log"
 
 COMMAND_PARSE_ADD="${ROOT_DIR}/parse-add.sh"
 
-LOG_FILE_MAP_SCHEMA_ADD="$ROOT_DIR/tests/logs/test_map_schema_add_description_tailshuf_100.log"
+LOG_FILE_MAP_SCHEMA_ADD="$ROOT_DIR/gbad/converter/logs/map_schema_add_description.log"
 
-COMMAND_MAP_SCHEMA_ADD="python $ROOT_DIR/map_schema.py add tests/test_description_tailshuf_100.csv"
+COMMAND_MAP_SCHEMA_ADD="python $ROOT_DIR/map_schema.py add DESCRIPTION.csv"
 
-export LOG_FILE_MAP_RML_ADD="$ROOT_DIR/tests/logs/test_map_rml_add_description_tailshuf_100.log"
+export LOG_FILE_MAP_RML_ADD="$ROOT_DIR/gbad/converter/logs/map_rml_add_description.log"
 
-COMMAND_MAP_RML_ADD="python $ROOT_DIR/map_rml.py add tests/test_description_tailshuf_100/"
+COMMAND_MAP_RML_ADD="python $ROOT_DIR/map_rml.py add DESCRIPTION/"
 
 # Exit on error
 set -e
@@ -41,14 +41,17 @@ conda activate "$CONDA_ENV" || { echo "Failed to activate conda environment: $CO
 
 # Parse and convert drawio
 echo "Running parse command and logging output..."
+mkdir -p "$(dirname "$LOG_FILE_PARSE_ADD")"
 script -c "$COMMAND_PARSE_ADD" "$LOG_FILE_PARSE_ADD"
 
 # Execute the script command
-echo "Running command and logging output..."
+echo "Running map schema add command and logging output..."
+mkdir -p "$(dirname "$LOG_FILE_MAP_SCHEMA_ADD")"
 script -c "$COMMAND_MAP_SCHEMA_ADD" "$LOG_FILE_MAP_SCHEMA_ADD"
 
 # Execute the script command
 echo "\nRunning map rml add command and logging output..."
+mkdir -p "$(dirname "$LOG_FILE_MAP_RML_ADD")"
 script -c "$COMMAND_MAP_RML_ADD" "$LOG_FILE_MAP_RML_ADD"
 
 # Note: cleanup will be called automatically thanks to the trap

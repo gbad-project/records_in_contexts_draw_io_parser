@@ -6,8 +6,10 @@ AUTHORITY.csv
 DESCRIPTION.csv
 LISTINGS_[0-9].csv
 mapped_LARGE*.*
+data/
 # Other untracked
 untracked/
+tmp/
 catalog-v001.xml
 __pycache__
 *.backup

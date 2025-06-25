@@ -1,0 +1,37 @@
+Script started on 2025-06-25 12:23:34-04:00 [COMMAND="python /Volumes/home/anonymous/records_in_contexts_draw_io_parser/merge_graphs.py /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tests/data/store.nq" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+
+Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt
+
+SHA256 hash '7e54e5403fdc313bcd41b898908694d1ed5961a9fca24a4640b09fea314808f9' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/description.nt'
+Base64: flTlQD/cMTvNQbiYkIaU0e1ZYan8okpGQLCf6jFICPk=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;flTlQD_cMTvNQbiYkIaU0e1ZYan8okpGQLCf6jFICPk>
+UUID v5 generated from ns:URL and <ni:///sha-256;flTlQD_cMTvNQbiYkIaU0e1ZYan8okpGQLCf6jFICPk>: 359754fb-4eef-5df4-aef5-c475ccbb4a5f
+Graph URI to be used for 'description.nt' (7e54e540): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:359754fb-4eef-5df4-aef5-c475ccbb4a5f>
+Steps to verify (ONLY for public data!):
+1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
+2. Make sure input encoding is set to UTF-8 and output encoding to Base64
+3. Review the output - should be identical to Base64
+4. Once the hash is verified, copy and paste entire ni URI here: https://www.uuidtools.com/v5
+5. Make sure you select 'Enter identifier for pre-defined UUIDs' and choose 'ns:URL - for URLs'
+6. The UUID should match that in the graph URI
+
+Loading /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt
+
+SHA256 hash '9ff9923c2d7a30b6194d2a478238028357aad439b72465d9011910d488088c82' generated for 'utf-8' encoded plain text contents of: '/Volumes/home/anonymous/records_in_contexts_draw_io_parser/tmp/authority.nt'
+Base64: n/mSPC16MLYZTSpHgjgCg1eq1Dm3JGXZARkQ1IgIjII=
+Valid ni URI (RFC6920-compliant): <ni:///sha-256;n_mSPC16MLYZTSpHgjgCg1eq1Dm3JGXZARkQ1IgIjII>
+UUID v5 generated from ns:URL and <ni:///sha-256;n_mSPC16MLYZTSpHgjgCg1eq1Dm3JGXZARkQ1IgIjII>: aa7c74ec-cfd2-5a77-a333-d77039aad22b
+Graph URI to be used for 'authority.nt' (9ff9923c): <https://data.archives.gov.on.test.gbad.ca/graph/urn:uuid:aa7c74ec-cfd2-5a77-a333-d77039aad22b>
+Steps to verify (ONLY for public data!):
+1. Copy and paste file contents into: https://emn178.github.io/online-tools/sha256.html
+2. Make sure input encoding is set to UTF-8 and output encoding to Base64
+3. Review the output - should be identical to Base64
+4. Once the hash is verified, copy and paste entire ni URI here: https://www.uuidtools.com/v5
+5. Make sure you select 'Enter identifier for pre-defined UUIDs' and choose 'ns:URL - for URLs'
+6. The UUID should match that in the graph URI
+
+Writing 6660 quads to /Volumes/home/anonymous/records_in_contexts_draw_io_parser/tests/data/store.nq
+Consolidated 2 files successfully
+
+
+Script done on 2025-06-25 12:23:34-04:00 [COMMAND_EXIT_CODE="0"]

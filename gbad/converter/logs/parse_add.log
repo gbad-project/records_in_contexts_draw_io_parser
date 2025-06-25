@@ -1,7 +1,7 @@
-Script started on 2025-06-25 12:23:23-04:00 [COMMAND="/Volumes/home/anonymous/records_in_contexts_draw_io_parser/parse-add.sh" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+Script started on 2025-06-25 12:23:49-04:00 [COMMAND="/Volumes/home/anonymous/records_in_contexts_draw_io_parser/parse-add.sh" TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
 Executing command: cat "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio" | python draw_io_parser.py -m url -c none --label-disable -o https://data.archives.gov.on.test.gbad.ca/Schema/Mapping -p https://data.archives.gov.on.test.gbad.ca/Schema/Mapping# > "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.omn"
 Manchester OWL Output saved to: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.omn
 Executing command: ./robot.sh convert -i "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.omn" -o "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.ttl"
 Warning: This TTL exists but is unchanged: gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.ttl
 
-Script done on 2025-06-25 12:23:26-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-06-25 12:23:51-04:00 [COMMAND_EXIT_CODE="0"]

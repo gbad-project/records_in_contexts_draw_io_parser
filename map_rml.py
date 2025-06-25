@@ -169,7 +169,7 @@ def map_rml(schema_code, rml_path=None):
                     print(f"Converted file is larger than 10 MB ({file_size_mb:.2f} MB) - trying to rename to LARGE...")
                     try:
                         mapped_large_filename = "mapped_LARGE.ttl"
-                        large_ttl = os.path.join(ttl_dir, mapped_large_filename)
+                        large_ttl = os.path.join(os.path.dirname(ttl), mapped_large_filename)
                         os.rename(ttl, large_ttl)
                         print(f"Successfully renamed to '{mapped_large_filename}'")
                         # Update returned params
