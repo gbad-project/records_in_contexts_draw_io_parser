@@ -1,0 +1,33 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.3">
+  <diagram name="Page-1" id="_9r6geDOEYo5xFr4fmT0">
+    <mxGraphModel dx="2627" dy="1714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-1" value="rr:template&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;/&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;KB&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;RecordSet/&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;{REFD_FILE}&quot;&lt;/span&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="370" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-2" value="rico:RecordSet" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sWa0SD8Ajx1KSGOqKPP4-1" vertex="1">
+          <mxGeometry y="26" width="170" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-3" value="&lt;div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;rr:template&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&quot;/Schema&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/Description-Listings/Level#&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;{&lt;/span&gt;LEVELDES&lt;span style=&quot;background-color: initial;&quot;&gt;}&quot;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="273" width="390" height="52" as="geometry">
+            <mxRectangle x="981" y="570" width="50" height="40" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-4" value="rico:RecordSetType&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="sWa0SD8Ajx1KSGOqKPP4-3" vertex="1">
+          <mxGeometry y="26" width="390" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="1" source="sWa0SD8Ajx1KSGOqKPP4-1" target="sWa0SD8Ajx1KSGOqKPP4-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="380" as="sourcePoint" />
+            <mxPoint x="610" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sWa0SD8Ajx1KSGOqKPP4-6" value="rico:hasRecordSetType" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" parent="sWa0SD8Ajx1KSGOqKPP4-5" connectable="0" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

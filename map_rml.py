@@ -13,21 +13,22 @@ import argparse
 import shutil
 from io import BytesIO
 import re
+import json
+import importlib.util
 
 BASE_URI = 'https://data.archives.gov.on.test.gbad.ca/'
 
-def map_rml(schema_code, rml_path=None):
+def map_rml(config_path, dataset_name, rml_path=None):
     """
     Returns a tuple of (rml, rmlmapper, ttl) paths.
     """
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+
+    dataset_config = config[dataset_name]
 
     # Define directories
-    if schema_code == 'add':
-        rml_dir = "gbad/schema/description-listings"
-    elif schema_code == 'auth':
-        rml_dir = "gbad/schema/authority"
-    else:
-        raise Exception(f"Fatal error: Schema code not supplied.")
+    rml_dir = os.path.dirname(dataset_config['drawio_file'])
     
     rml_files = []
     if rml_path:  # Assume it is relative to rml_dir
@@ -44,7 +45,7 @@ def map_rml(schema_code, rml_path=None):
 
     # Find the .rml file
     if len(rml_files) == 0:
-        rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "*.rml"))
+        rml_files = glob.glob(os.path.join(os.path.normpath(rml_dir), "**/*.rml"), recursive=True)
 
     return_tuple = (None, None, None)
     if (rml_files):
@@ -75,7 +76,7 @@ def map_rml(schema_code, rml_path=None):
                 with open(rml_path, 'r', encoding='utf-8') as f:
                     content = f.read()
                 
-                pattern = r'rml:source "(gbad/mapping/source/(.+).csv)"'
+                pattern = r'rml:source "(.+)"'
                 match = re.search(pattern, content)
 
                 if match:
@@ -187,7 +188,7 @@ def map_rml(schema_code, rml_path=None):
     
     return return_tuple
     
-def postprocess(graph_path):
+def postprocess(graph_path, postprocessor_path=None):
     # Create the input RDF graph
     base_kb_uri = URIRef(os.path.join(BASE_URI, "KB"))
     base_schema_uri = URIRef(os.path.join(BASE_URI, "Schema"))
@@ -236,256 +237,32 @@ def postprocess(graph_path):
     #for prefix, uri in g.namespace_manager.namespaces():
     #    print(f"Prefix: {prefix}, URI: {uri}")
 
-    def save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding):
-        print("Executed a parametrized alternative of the following query:", pseudo_sparql)
-        if removed_count > 0:
-            ttl_filename = os.path.basename(graph_path)
-            removed_triples_filename = f'{ttl_filename[:-4]}_removed_triples.{removed_triples_output_format}'
-            removed_list_path = os.path.join(os.path.dirname(graph_path), removed_triples_filename)
-            removed_graph.serialize(destination=removed_list_path,
-                                    format=removed_triples_output_format,
-                                    encoding=removed_triples_output_encoding)
-            was_or_were = " was" if removed_count == 1 else "s were"
-            print(f"{removed_count} triple{was_or_were} removed and dumped to: '{removed_list_path}'")
-        else:
-            print(f"No triples were removed.")
-
-    def remove_false_agentcontrolrelation(g: Graph):
-        # Parametrized query to find all rico:AgentControlRelation instances that are not
-        # objects of rico:thingIsSourceOfRelation (empty, false entities generated from
-        # drawio logic), and remove any triples where these are subjects or objects
-        triples_to_remove = []
-        removed_graph = Graph()
-        removed_triples_output_format = 'nt'
-        removed_triples_output_encoding = 'utf-8'
-        removed_list_path = os.path.join(os.path.dirname(graph_path), 'removed_triples.nt')
-        for s, p, o in g.triples((None, RDF.type, rico[1].AgentControlRelation)):
-            if not (s, None, None) in g.triples((None, rico[1].thingIsSourceOfRelation, s)):
-                for triple in g.triples((s, None, None)):
-                    triples_to_remove.append(triple)
-                # This part below is not needed really because none should exist
-                #for triple in g.triples((s, None, None)):
-                #   triples_to_remove.append(triple)
-        removed_count = len(triples_to_remove)
-        for triple in triples_to_remove:
-            g.remove(triple)
-            #print(*triple)
-            removed_graph.add(triple)
-        pseudo_sparql = """
-        PREFIX rico: <{}>
-
-        DELETE WHERE {
-            ?s a rico:AgentControlRelation .
-            FILTER NOT EXISTS {
-                ?subject rico:thingIsSourceOfRelation ?s .
-            }
-        }
-        """.format(rico_uri) # generated with ChatGPT based on parametrized
-        save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding)
-        return removed_count
-    
-    def remove_false_authtp(g: Graph):
-        # Set config
-        triples_to_remove = []
-        removed_graph = Graph()
-        removed_triples_output_format = 'nt'
-        removed_triples_output_encoding = 'utf-8'
-        pseudo_sparql = """
-        PREFIX rico: <{}>
-        PREFIX authtp: <{}/AuthorityType#>
-        DELETE WHERE {
-            ?s1 rico:hasOrHadCorporateBodyType authtp:Geographic%20Name .
-            ?s2 rico:hasOrHadCorporateBodyType authtp:Family%20Name .
-            ?s3 rico:hasOrHadCorporateBodyType authtp:Personal%20Name .
-            authtp:Geographic%20Name ?p1 ?o1 .
-            authtp:Family%20Name ?p2 ?o2 .
-            authtp:Personal%20Name ?p3 ?o3 .
-        }
-        """.format(rico_uri, base_auth_uri)
-
-        # Run parametrized query
-        authtp = ('authtp', Namespace(URIRef(f"{base_auth_uri}/AuthorityType#")))
-        g.namespace_manager.bind(*authtp)
-        authtp_list = [
-            authtp[1]['Geographic%20Name'],
-            authtp[1]['Family%20Name'],
-            authtp[1]['Personal%20Name']
-        ]
-        for authtp_name in authtp_list:
-            for s, p, o in g.triples((None, rico[1].hasOrHadCorporateBodyType, authtp_name)):
-                triples_to_remove.append((s, p, o))
-            for s, p, o in g.triples((authtp_name, None, None)):
-                triples_to_remove.append((s, p, o))
-        removed_count = len(triples_to_remove)
-        for triple in triples_to_remove:
-            g.remove(triple)
-            #print(*triple)
-            removed_graph.add(triple)
-
-        # Save removed triples
-        save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding)
-        return removed_count
-    
-    def remove_shorter_duplicate_labels(g: Graph):
-        # Function originally generated with Claude 3.7 Sonnet on 2025-03-18, modified
-        # Initial prompt:
-        # below is an example of a set of triples with duplicate rdfs label. write me a sparql query that will iterate over all rico:recordset, find those that have 2 labels, get the literal value of their CurrentReferenceCode identifier, then see if indeed both labels start with it, and if yes, remove the label which is shorter. use the most efficient yet straightforward sparql strategy without overcomplicating syntax {selected triples for C 119 (Record Set)}
-        # Follow-up prompt:
-        # rewrite this line and only it "# Extract just the literal value of the reference code from its URI" so that it instead took the value of rdfs:label associated with the CurrentReferenceCode entity, which will be in the format: "{ref code literal} (Current Reference Code)". also, here is the correct uri for current reference code type: @prefix add: <https://data.archives.gov.on.ca/Schema/Description-Listings/> . add:CurrentReferenceCode
-        # Concluding prompt:
-        # ok. now pls rewrite it accurately, preserving all functionality intact, in parametrized format to conform with this example below: {def remove_false_authtp(g) and def run_postprocessing()}
-
-        # Set config
-        triples_to_remove = []
-        removed_graph = Graph()
-        removed_triples_output_format = 'nt'
-        removed_triples_output_encoding = 'utf-8'
-
-        curr_ref_code_label_pattern = r'^(.*) \(Current Reference Code\)$'
-        pseudo_sparql = """
-        PREFIX {}: <{}>
-        PREFIX {}: <{}>
-        PREFIX {}: <{}>
-        """.format(rico[0], rico[1], rdfs[0], rdfs[1], add[0], add[1]) + """
-        DELETE {
-        ?recordSet rdfs:label ?shorterLabel .
-        }
-        WHERE {
-        ?recordSet a rico:RecordSet ;
-                    rdfs:label ?label1, ?label2 .
-        FILTER(?label1 != ?label2)
-        ?recordSet rico:hasOrHadIdentifier ?identifier .
-        ?identifier a add:CurrentReferenceCode .
-        ?identifier rdfs:label ?identLabel .""" + f"""
-        BIND(REPLACE(?identLabel, "{curr_ref_code_label_pattern}", "$1") AS ?refCode)""" + """
-        FILTER(STRSTARTS(?label1, ?refCode) && STRSTARTS(?label2, ?refCode))
-        BIND(IF(STRLEN(?label1) < STRLEN(?label2), ?label1, ?label2) AS ?shorterLabel)
-        }
-        """
-        
-        g.namespace_manager.bind(*rico)
-        g.namespace_manager.bind(*rdfs)
-        g.namespace_manager.bind(*add)
-        
-        # Find all RecordSets
-        record_sets = set()
-        for s, p, o in g.triples((None, RDF.type, rico[1].RecordSet)):
-            record_sets.add(s)
-        
-        # Process each RecordSet
-        for rs in record_sets:
-            # Get all labels for this RecordSet
-            labels = []
-            for s, p, o in g.triples((rs, RDFS.label, None)):
-                if isinstance(o, Literal):
-                    labels.append(o)
-            
-            # Skip if not exactly 2 labels
-            if len(labels) != 2:
-                continue
-            
-            # Get the identifier
-            ref_code = None
-            for s, p, o in g.triples((rs, rico[1].hasOrHadIdentifier, None)):
-                # Check if it's a CurrentReferenceCode
-                if (o, rico[1].hasIdentifierType, add[1].CurrentReferenceCode) in g:
-                    # Get the label of the identifier
-                    for s2, p2, o2 in g.triples((o, RDFS.label, None)):
-                        if isinstance(o2, Literal):
-                            # Extract the reference code from the label
-                            ref_code_match = re.match(curr_ref_code_label_pattern, str(o2))
-                            if ref_code_match:
-                                ref_code = ref_code_match.group(1)
-                                break
-            
-            # Skip if no reference code found
-            if not ref_code:
-                continue
-            
-            # Check if both labels start with the reference code
-            label1, label2 = labels
-            if str(label1).startswith(ref_code) and str(label2).startswith(ref_code):
-                # Determine which label is shorter
-                if len(str(label1)) < len(str(label2)):
-                    shorter_label = label1
-                else:
-                    shorter_label = label2
-                
-                # Add to removal list
-                triples_to_remove.append((rs, RDFS.label, shorter_label))
-        
-        # Remove the triples
-        removed_count = len(triples_to_remove)
-        for triple in triples_to_remove:
-            g.remove(triple)
-            removed_graph.add(triple)
-        
-        # Save removed triples
-        save_removed_triples(graph_path, removed_graph, removed_count, pseudo_sparql, removed_triples_output_format, removed_triples_output_encoding)
-        return removed_count
-
-    # combine_turtle_files generated with Claude 3.5 Sonnet
-    # on 2024-08-29, with modifications
-    def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
-        formats = {
-            'turtle': ['ttl', 'turtle'],
-            'nt': ['nt'],
-            'n3': ['n3'],
-            'xml': ['rdf', 'owl', 'xml'],
-            'json-ld': ['jsonld', 'json-ld'],
-            'nquads': ['nq'],
-            'trig': ['trig']
-        }
-
-        # Walk through the directory tree
-        #for folder_path, _, filenames in os.walk(root_folder): # this is when want to enum all files from subdirs
-        def walk_root_folder(folder_path, filenames):
-            for filename in filenames:
-                # Get the file extension
-                file_ext = filename.split('.')[-1]
-
-                # Iterate over formats and check if the extension matches
-                for format_name, extensions in formats.items():
-                    if ((file_ext in extensions) & (format_name == format)):
-                        file_path = os.path.join(folder_path, filename)
-                        print(f"\nAdding a supplemental '{format_name}' file: '{file_path}'")
-                        
-                        # Parse the Turtle file and add its contents to the combined graph
-                        source_graph.parse(file_path, format=format)
-
-        filenames = (filename for filename in os.listdir(root_folder) if os.path.isfile(os.path.join(root_folder, filename)))
-        walk_root_folder(root_folder, filenames)
-
-        return source_graph
-
-    def run_postprocessing():
-        nonlocal total_count, g
-        original_set = set(g)
-        print("Postprocessing...")
-        total_count = total_count - remove_shorter_duplicate_labels(g)
-        #total_count = total_count - remove_false_agentcontrolrelation(g)
-        #total_count = total_count - remove_false_authtp(g)
-        #print("No postprocessing scheduled - none applied.")
-        # Add additional triples
-        if suppl_graph_dir:
-            g = add_suppl_triples(g, suppl_graph_dir, format="turtle")
-        print_total_count()
-        return set(g) != original_set
-    has_changed = run_postprocessing()
+    if postprocessor_path:
+        spec = importlib.util.spec_from_file_location("postprocessor", postprocessor_path)
+        postprocessor_module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(postprocessor_module)
+        g, has_changed = postprocessor_module.postprocess(g)
+    else:
+        has_changed = False
 
     return g, has_changed
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Map schema of choice")
-    parser.add_argument("schema", help="Choose one: add or auth.")
+    parser.add_argument("--config", help="Path to the configuration file.")
+    parser.add_argument("--dataset", help="The name of the dataset to process.")
     parser.add_argument("rml_path", nargs='?', help="Optional path to an RML file")
 
     args = parser.parse_args()
 
-    suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
+    with open(args.config, 'r') as f:
+        config = json.load(f)
 
-    rml_path, rmlmapper_path, ttl_path = map_rml(str(args.schema).lower(), str(args.rml_path).lower())
-    graph, has_changed = postprocess(ttl_path)
+    dataset_config = config[args.dataset]
+    postprocessor_path = dataset_config.get('postprocessor')
+
+    rml_path, rmlmapper_path, ttl_path = map_rml(args.config, args.dataset, str(args.rml_path).lower())
+    graph, has_changed = postprocess(ttl_path, postprocessor_path)
 
     def save_postprocessed_graph(
             output_format = 'nt', # assumed to be quickest

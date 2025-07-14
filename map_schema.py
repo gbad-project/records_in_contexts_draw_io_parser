@@ -10,6 +10,8 @@ import argparse
 import glob
 import requests
 import uuid
+import json
+import importlib.util
 
 BASE_URI = 'https://data.archives.gov.on.test.gbad.ca/'
 
@@ -89,206 +91,15 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
 
     return source_graph
 
-def add_preprocess(source_csv_path, preprocessed_csv_path):
-    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
-
-    def split_by_colon(value: str, expect_num_cols: int):
-        SEP = ' : '
-        def fix_colon_spacing(value: str) -> str:
-            while ': :' in value:
-                value = value.replace(': :', ':  :')
-            value = value[:-2] if value.endswith(' :') else value  # to fix any ending colon
-            value = value[2:] if value.startswith(': ') else value  # to fix any starting colon
-            return value
-        return preprocessor.separate_value(fix_colon_spacing(value), expect_num_cols, sep=SEP)
+def __init__(config_path, dataset_name):
+    with open(config_path, 'r') as f:
+        config = json.load(f)
     
-    def split_by_adjacent_case(value: str, expect_num_cols: int):
-        unique_separator = '<split-by-adjacent-case>'
-        value = re.sub(r'([^A-Z\s\(\[])([A-Z])', rf'\1{unique_separator}\2', value)
-        return preprocessor.separate_value(value, expect_num_cols, sep=unique_separator)
+    dataset_config = config[dataset_name]
     
-    def split_by_hyphen(value: str, expect_num_cols: int):
-        if re.fullmatch(r'\d{4}-\d{4}', value) is None:
-            value = ''  # won't try to separate these for now
-        return preprocessor.separate_value(value, expect_num_cols, sep='-')
+    source_filename = dataset_config['csv_file']
+    preprocessor_path = dataset_config.get('preprocessor')
     
-    # Column split #1
-    joint_findaid_col = 'FINDAID:FINDAIDLINK:FINDAID_URL'
-    separate_findaid_cols = ['FINDAID', 'FINDAIDLINK', 'FINDAID_URL']
-    preprocessor.column_split(split_by_colon, joint_findaid_col, separate_findaid_cols)
-
-    # Column split #2
-    joint_iil_col = 'IIL:IIL_URL'
-    separate_iil_cols = ['IIL', 'IIL_URL']
-    preprocessor.column_split(split_by_colon, joint_iil_col, separate_iil_cols)
-
-    # Column split #3
-    indexprov_col = 'INDEXPROV'
-    numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 31)]
-    preprocessor.column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
-
-    # Column split #4
-    indexname_col = 'INDEXNAME'
-    numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 31)]
-    preprocessor.column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
-
-    # Column split #5
-    indexsub_col = 'INDEXSUB'
-    numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 31)]
-    preprocessor.column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
-
-    # Column split #6
-    joint_office_col = 'DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA'
-    separate_office_cols = ['DATEOFF', 'OFFICEAB', 'AB_REFA', 'OFFICEC', 'C_REFA']
-    numbered_office_cols = []
-    for i in range(1, 21):
-        numbered_office_cols.extend([f"{col}_{i}" for col in separate_office_cols])
-    len(numbered_office_cols)
-    preprocessor.column_split(split_by_colon, joint_office_col, numbered_office_cols)
-
-    # Column split #7
-    joint_dateoff_colnames = [f'{DATEOFF_COLNAME}_{i}' for i in range(1, 21)]
-    for col in joint_dateoff_colnames:
-        separate_dateoff_cols = [f"{col}{DATE_BEGINNING_SUFFIX}", f"{col}{DATE_END_SUFFIX}"]
-        preprocessor.column_split(split_by_hyphen, col, separate_dateoff_cols)
-
-    # Column logic (not split) #8, co-created with Claude 3.7 Sonnet on 2025-04-21
-    for i in range(1, 21):
-        # REFA based (main) logic
-        ab_refa_colname = f'AB_REFA_{i}'
-        c_refa_colname = f'C_REFA_{i}'
-        abc_refa_colname = f'ABC_REFA_{i}'
-        refa_df = preprocessor.get([ab_refa_colname, c_refa_colname])
-        abc_refa_series = refa_df[c_refa_colname].combine_first(refa_df[ab_refa_colname])
-        preprocessor.add(abc_refa_colname, abc_refa_series)
-
-        # 1. OFFICE_TYPE: determine by first character
-        office_type_colname = f'OFFICE_TYPE_{i}'
-        office_type_series = abc_refa_series.str[0].str.upper().map(
-            lambda x: x if x in {'A', 'B', 'C'} else None
-        )
-        preprocessor.add(office_type_colname, office_type_series)
-
-        # 2. OFFICEABC: pick office_ab or office_c based on office type
-        officeab_colname = f'OFFICEAB_{i}'
-        officec_colname = f'OFFICEC_{i}'
-        officeabc_colname = f'OFFICEABC_{i}'
-        office_df = preprocessor.get([officeab_colname, officec_colname])
-        
-        # Initialize the result series with None values (same index as other series)
-        officeabc_series = pd.Series(None, index=office_df.index, dtype='object')
-        
-        # Fill in values based on office type
-        # For A or B types, use OFFICEAB
-        officeabc_series.loc[office_type_series.isin(['A', 'B'])] = office_df.loc[office_type_series.isin(['A', 'B']), officeab_colname]
-        
-        # For C type, use OFFICEC
-        officeabc_series.loc[office_type_series == 'C'] = office_df.loc[office_type_series == 'C', officec_colname]
-
-        # Add the combined series to the preprocessor
-        preprocessor.add(officeabc_colname, officeabc_series)
-
-    preprocessor.dump()
-
-def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
-    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
-    correct_dateex_path = kwargs.get('correct_dateex_path', None)
-
-    def generate_rico_authtp():
-        """Originally generated with Claude Sonnet 4 on 2025-06-25, modified"""
-        # Get the authtp columns
-        authtp_df = preprocessor.get(['AUTHTP_1', 'AUTHTP_2'])
-
-        added_cols = []
-        
-        # Process AUTHTP_1 and AUTHTP_2 separately
-        for authtp_num in [1, 2]:
-            authtp_col = f'AUTHTP_{authtp_num}'
-            
-            # Initialize result columns for this authtp
-            rico_authtp_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_authtp_label_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_corporatebody_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_family_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_place_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_person_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            
-            # Process each row for this authtp column
-            for idx in authtp_df.index:
-                authtp_value = authtp_df.loc[idx, authtp_col]
-                
-                if pd.notna(authtp_value):
-                    # Check against each regex pattern
-                    for key, (value, pattern) in rico_authtp_dict.items():
-                        pythonic_regex_pattern = pattern[1:-1]
-                        if re.search(pythonic_regex_pattern, str(authtp_value)):
-                            rico_authtp_series.loc[idx] = value
-                            
-                            # Set the corresponding specific column
-                            if key == 'CorporateBody':
-                                rico_corporatebody_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = 'Corporate Body'
-                            elif key == 'Family':
-                                rico_family_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            elif key == 'Place':
-                                rico_place_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            elif key == 'Person':
-                                rico_person_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            
-                            break  # Stop after first match
-            
-            # Add all the new columns to the preprocessor with appropriate suffix
-            rico_authtp_colname = f'RICO_AUTHTP_NEW_{authtp_num}'
-            preprocessor.add(rico_authtp_colname, rico_authtp_series)
-            added_cols.append(rico_authtp_colname)
-
-            rico_authtp_label_colname = f'RICO_AUTHTP_LABEL_{authtp_num}'
-            preprocessor.add(rico_authtp_label_colname, rico_authtp_label_series)
-            added_cols.append(rico_authtp_label_colname)
-
-            rico_corporatebody_colname = f'RICO_AUTHTP_CORPORATEBODY_{authtp_num}'
-            preprocessor.add(rico_corporatebody_colname, rico_corporatebody_series)
-            added_cols.append(rico_corporatebody_colname)
-
-            rico_family_colname = f'RICO_AUTHTP_FAMILY_{authtp_num}'
-            preprocessor.add(rico_family_colname, rico_family_series)
-            added_cols.append(rico_family_colname)
-
-            rico_place_colname = f'RICO_AUTHTP_PLACE_{authtp_num}'
-            preprocessor.add(rico_place_colname, rico_place_series)
-            added_cols.append(rico_place_colname)
-
-            rico_person_colname = f'RICO_AUTHTP_PERSON_{authtp_num}'
-            preprocessor.add(rico_person_colname, rico_person_series)
-            added_cols.append(rico_person_colname)
-
-        print(f"Source preprocessed by adding columns: {added_cols} \n")
-
-    # Add columns necessary for RICO_AUTHTP logic
-    generate_rico_authtp()
-
-    def pull_correct_dateex():
-        nonlocal correct_dateex_path
-        correct_dateex_name = os.path.basename(correct_dateex_path)
-        if correct_dateex_path is None:
-            return
-        try:
-            correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN, dtype='object')
-            preprocessor.update(correct_dateex_df[DATEEX_COLS])
-            
-            print(f"Source preprocessed by updating {DATEEX_COLS} with values from '{correct_dateex_name}'\n")
-        except Exception as e:
-            print(f"Failed to update Authority DATEEX with correct values: '{e}'")
-    
-    # Update DATEEX with correct values
-    pull_correct_dateex()
-
-    preprocessor.dump()
-
-def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
     base_data_uri = BASE_URI[:-1]
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
@@ -308,14 +119,6 @@ def __init__(schema_code, source_filename=None):
     add_term = 'Description-Listings'
     maps_term = 'Mapping'
     kb_term = 'KB'
-
-    def get_second_term():
-        if schema_code == 'auth':
-            return auth_term
-        elif schema_code == 'add':
-            return add_term
-        else:
-            raise Exception(f"Fatal error: Schema code not supplied or supported.")
 
     # Any supported schema namespaces
     schema_regex_str = rf'^({auth_term}|{add_term}|{maps_term})/([A-Za-z_]+)(#.*|/.*)?$'
@@ -497,55 +300,29 @@ def __init__(schema_code, source_filename=None):
     # Choose ontology to map
     base_uri = base_data_uri
     #suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
-
-    # Set schema-specific params
-    if schema_code == 'add':
-        # Assume the first file found
-        graph_dir = 'gbad/schema/description-listings'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-        
-        # ADD: Choose source CSV for mapping
-        if source_filename is None:
-            source_filename = 'description_tailshuf_100.csv'
-    
-    elif schema_code == 'auth':
-        #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
-        # Assume the first file found
-        graph_dir = 'gbad/schema/authority/'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-
-        # Authority: Choose source CSV for mapping
-        if source_filename is None:
-            source_filename = 'authority_tailshuf_100.csv'
-
-        # Additional sources
-        correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
-
-    else:
-        raise Exception(f"Fatal error: Schema code not supplied.")
+    graph_path = dataset_config['drawio_file'].replace('.drawio', '.ttl')
 
     if source_filename:
-        source_path = f'gbad/mapping/source/{source_filename}'
+        source_path = source_filename
         print(f"Using source file: '{source_path}'\n")
-        print(f"Checking in for preprocessing...\n")
-        if schema_code == 'add':
-            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
-            add_preprocess(source_path, preprocessed_csv_path)
-            source_path = preprocessed_csv_path
-        elif schema_code == 'auth':
-            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
-            auth_preprocess(source_path,
-                            preprocessed_csv_path,
-                            correct_dateex_path=correct_dateex_path)
+        if preprocessor_path:
+            print(f"Checking in for preprocessing...\n")
+            spec = importlib.util.spec_from_file_location("preprocessor", preprocessor_path)
+            preprocessor_module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(preprocessor_module)
+
+            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{os.path.basename(source_filename)}'
+            preprocessor_module.preprocess(source_path, preprocessed_csv_path)
             source_path = preprocessed_csv_path
         else:
             print("No preprocessing scheduled - none attempted.")
+
     print(f"Using source file: '{source_path}'\n")
 
     rml_path = graph_path[:-3]+ "rml"
     if source_filename:  # Override default
         graph_name = os.path.splitext(os.path.basename(graph_path))[0]
-        rml_path = f'{graph_dir}/{os.path.splitext(source_filename)[0]}/{graph_name}'+ ".rml"
+        rml_path = f'{os.path.dirname(graph_path)}/{os.path.splitext(os.path.basename(source_filename))[0]}/{graph_name}'+ ".rml"
 
     # Create the input RDF graph
     g = Graph(base = base_uri)
@@ -605,178 +382,26 @@ def __init__(schema_code, source_filename=None):
     #print(g.serialize(format='turtle'))
 
     # Query to get all subjects, predicates, and objects
-    query = f"""
-    SELECT ?subject ?predicate ?object
-    WHERE {{
-    ?subject ?predicate ?object.
-    }}
-    """
-    # Execute the query
-    result = g.query(query)
+    result = g.triples((None, None, None))
 
     # List to hold the parsed results
     parsed_results = []
-
-    rico_authtp_subjects = dict() # keeping these out for future use
-    def disaggregate_rico_authtp(spo):
-        subject_uri, predicate_uri, object_uri = spo
-        rico_disaggregated_subjects = []
-        rico_disaggregated_objects = []
-        rico_disaggregated_triples = []
-
-        # Necessary to make matches and replacements work
-        rico_authtp_mask_encoded = urllib.parse.quote(rico_authtp_mask, safe='')
-        subject_mask = rico_authtp_mask_encoded if isinstance(subject_uri, URIRef) else rico_authtp_mask
-        object_mask = rico_authtp_mask_encoded if isinstance(object_uri, URIRef) else rico_authtp_mask
-
-        # Replacing subject
-        if subject_mask in str(subject_uri):
-            for authtp_rico_class, rico_authtp_tuple in rico_authtp_dict.items():
-                rico_authtp_uri_term, authtp_value = rico_authtp_tuple
-                # If contains {RICO_AUTHTP}
-                # Add two subjects for easy separate triplesmap creation later on
-                for authtp_i in [1, 2]:
-                    authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
-                    replacement = f"{authtp_rico_class}_{authtp_column_name}" # class is used for uniqueness
-                    rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, replacement)
-
-                    if isinstance(subject_uri, URIRef):
-                        rico_disaggregated_subject_uri = URIRef(rico_disaggregated_subject_uri)
-                    else:
-                        rico_disaggregated_subject_uri = Literal(rico_disaggregated_subject_uri)
-                    rico_disaggregated_subjects.append(rico_disaggregated_subject_uri)
-                    # Keep an external list of these for future use
-                    if not rico_disaggregated_subject_uri in rico_authtp_subjects.keys():
-                        true_rico_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, rico_authtp_uri_term) # actual term
-                        if isinstance(subject_uri, URIRef):
-                            true_rico_disaggregated_subject_uri = URIRef(true_rico_disaggregated_subject_uri)
-                        else:
-                            true_rico_disaggregated_subject_uri = Literal(true_rico_disaggregated_subject_uri)
-                        rico_authtp_subjects[rico_disaggregated_subject_uri] = (true_rico_disaggregated_subject_uri, authtp_column_name)
-
-                    # If is a triple like ?s a rico:Thing
-                    if ((predicate_uri == rdf[1].type) and
-                        (object_uri == rico[1].Thing)):
-                        rico_disaggregated_object_uri = URIRef(str(object_uri).replace('Thing',
-                                                                                        authtp_rico_class))
-                        rico_disaggregated_triples.append((rico_disaggregated_subject_uri,
-                                                        predicate_uri,
-                                                        rico_disaggregated_object_uri))
-        else:
-            rico_disaggregated_subjects.append(subject_uri)
-
-        if len(rico_disaggregated_triples) == 0: # if not a triple like ?s a rico:Thing
-            # Replacing object
-            if object_mask in str(object_uri):
-                for authtp_rico_class, rico_authtp_tuple in rico_authtp_dict.items():
-                    rico_authtp_uri_term, authtp_value = rico_authtp_tuple
-                    # If contains {RICO_AUTHTP}
-                    # Add two subjects for easy separate triplesmap creation later on
-                    for authtp_i in [1, 2]:
-                        authtp_column_name = f"{auth_authtp_label}_{authtp_i}"
-                        replacement = f"{authtp_rico_class}_{authtp_column_name}" # class is used for uniqueness
-                        rico_disaggregated_object_uri = str(object_uri).replace(object_mask, replacement)
-
-                        if isinstance(object_uri, URIRef):
-                            rico_disaggregated_object_uri = URIRef(rico_disaggregated_object_uri)
-                        else:
-                            rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
-                        rico_disaggregated_objects.append(rico_disaggregated_object_uri)
-            elif len(rico_disaggregated_objects) == 0: 
-                rico_disaggregated_objects.append(object_uri)
-            
-            # Collect all subjects and objects
-            for rico_disaggregated_subject in rico_disaggregated_subjects:
-                for rico_disaggregated_object in rico_disaggregated_objects:
-                    rico_disaggregated_triples.append((rico_disaggregated_subject,
-                                                    predicate_uri,
-                                                    rico_disaggregated_object))
-
-        return rico_disaggregated_triples
     
-    def disaggregate_refd_file(spo):
-        subject_uri, predicate_uri, object_uri = spo
-        ref_disaggregated_subjects = []
-        ref_disaggregated_objects = []
-        ref_disaggregated_triples = []
-
-        # Substitute correct terms
-        ref_terms = []
-        if schema_code == 'auth': # no need to execute
-            return [spo]
-        elif schema_code == 'add': # add all options - empty fields will be skipped by RML mapper
-            ref_terms.extend([
-                f'{{{add_refd_label}}}',
-                f'{{{add_ref_file_label}}}' # decided on 2025-02-14 that REF_FILE must be present
-                # at all times and must contain REF_ADD already, and those records that don't have that
-                # must be isolated and dealt with separately
-                #f'{{{add_ref_add_label}}}/{{{add_title_label}}}'
-            ])
-        else:
-            raise Exception(f"Fatal error: Schema code not supplied or supported.")
-
-        # Necessary to make matches and replacements work
-        refd_file_mask_encoded = urllib.parse.quote(refd_file_mask, safe='')
-        subject_mask = refd_file_mask_encoded if isinstance(subject_uri, URIRef) else refd_file_mask
-        object_mask = refd_file_mask_encoded if isinstance(object_uri, URIRef) else refd_file_mask
-
-        # Replacing subject
-        if subject_mask in str(subject_uri): # If contains {REFD_FILE}
-            for ref_term in ref_terms: # One with REFD, one with REF_FILE, and one with TITLE
-                ref_term_encoded = urllib.parse.quote(ref_term, safe='')
-                if isinstance(subject_uri, URIRef):
-                    ref_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, ref_term_encoded)
-                    ref_disaggregated_subject_uri = URIRef(ref_disaggregated_subject_uri)
-                else:
-                    ref_disaggregated_subject_uri = str(subject_uri).replace(subject_mask, ref_term)
-                    ref_disaggregated_subject_uri = Literal(ref_disaggregated_subject_uri)
-                ref_disaggregated_subjects.append(ref_disaggregated_subject_uri)
-        else:
-            ref_disaggregated_subjects.append(subject_uri)
-
-        # Replacing object
-        if object_mask in str(object_uri): # If contains {REFD_FILE}
-            for ref_term in ref_terms: # One with REFD, one with REF_FILE, and one with TITLE
-                ref_term_encoded = urllib.parse.quote(ref_term, safe='')
-                if isinstance(object_uri, URIRef):
-                    ref_disaggregated_object_uri = str(object_uri).replace(object_mask, ref_term_encoded)
-                    ref_disaggregated_object_uri = URIRef(ref_disaggregated_object_uri)
-                else:
-                    ref_disaggregated_object_uri = str(object_uri).replace(object_mask, ref_term)
-                    ref_disaggregated_object_uri = Literal(ref_disaggregated_object_uri)
-                ref_disaggregated_objects.append(ref_disaggregated_object_uri)
-        else: 
-            ref_disaggregated_objects.append(object_uri)
-        
-        # Collect all subjects and objects
-        for ref_disaggregated_subject in ref_disaggregated_subjects:
-            for ref_disaggregated_object in ref_disaggregated_objects:
-                ref_disaggregated_triples.append((ref_disaggregated_subject,
-                                                predicate_uri,
-                                                ref_disaggregated_object))
-
-        return ref_disaggregated_triples
-
-    # Process the results and create new triples
-    for row in result:
-        subject = row.subject
-        predicate = row.predicate
-        object = row.object
-
-        ref_disaggregated_triples = disaggregate_refd_file((subject, predicate, object))
-        for ref_disaggregated_triple in ref_disaggregated_triples:
-            rico_disaggregated_triples = disaggregate_rico_authtp(ref_disaggregated_triple)
-            for s, p, o in rico_disaggregated_triples:
-                parsed_results.append({
-                    'subject': s,
-                    'predicate': p,
-                    'object': o
-                })
+    for subject, predicate, object in result:
+        parsed_results.append({
+            'subject': subject,
+            'predicate': predicate,
+            'object': object
+        })
         
     #print(parsed_results[:5]) # debug
 
     # Convert the parsed results to a dataframe
     parsed_df = pd.DataFrame(parsed_results)
+    if parsed_df.empty:
+        print("No triples found in the graph. Exiting.")
+        return
+    print("parsed_df columns:", parsed_df.columns)
     # Dropping duplicates is necessary due to the duplicated classes
     # in rico_authtp_dict as this duplicates #rr_template__KB_CorporateBody__HEADING__
     # thus producing an error at RML mapping
@@ -792,12 +417,12 @@ def __init__(schema_code, source_filename=None):
     allowed_non_rico_classes = [
         owl[1].DatatypeProperty
     ]
+    print(parsed_df)
     subjects_df = parsed_df[
-        (parsed_df['predicate'].apply(lambda x: str(normalize_uri(x, g.namespace_manager))) == 'rdf:type') &
-        (parsed_df['object'].apply(lambda x:
-                                   (str(normalize_uri(x, g.namespace_manager)).startswith(f"{rico[0]}:") or
-                                    x in allowed_non_rico_classes)))
-    ].loc[:,['subject','object']] # So to be sure, object is the rdf:type URI here
+        (parsed_df['predicate'].astype(str) == str(RDF.type)) &
+        (parsed_df['object'].apply(lambda x: isinstance(x, URIRef)))
+    ].loc[:,['subject','object']]
+    print(subjects_df)
 
     def extract_uriref_str(uriref):
         norm_uri = normalize_uri(uriref, g.namespace_manager)
@@ -867,6 +492,7 @@ def __init__(schema_code, source_filename=None):
         if not uriref_str:
             return series(map_predicate, map_object)
         
+        print(f"uriref_str: {uriref_str}")
         uriref_str = re.sub(r'\s+', ' ', uriref_str)
 
         def remove(predicate: URIRef, uriref_str):
@@ -1232,7 +858,7 @@ def __init__(schema_code, source_filename=None):
             rml_g.add((nested_tostring_fno_wrapper, rr[1].predicateObjectMap, nested_tostring_def_pomap))
             rml_g.add((nested_tostring_def_pomap, rr[1].predicate, fno[1].executes))
             nested_tostring_def_omap = BNode()
-            rml_g.add((nested_tostring_def_pomap, rr[1].objectMap, nested_tostring_def_omap))
+            rml_g.add((nested_tostring_def_omap, rr[1].objectMap, nested_tostring_def_omap))
             rml_g.add((nested_tostring_def_omap, rr[1].constant, grel[1].string_toString))
             # Nested function argument 1
             nested_tostring_fun_arg_1_pomap = BNode()
@@ -1248,7 +874,7 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_2_pomap))
         rml_g.add((nested_fun_arg_2_pomap, rr[1].predicate, grel[1].p_string_regex))
         nested_fun_arg_2_omap = BNode()
-        rml_g.add((nested_fun_arg_2_pomap, rr[1].objectMap, nested_fun_arg_2_omap))
+        rml_g.add((nested_fun_arg_2_omap, rr[1].objectMap, nested_fun_arg_2_omap))
         # Here goes the climax of checking - the input_value_2
         for input_value_tuple_2 in regex_tuples:
             rml_g.add((nested_fun_arg_2_omap, input_value_tuple_2[0], input_value_tuple_2[1]))
@@ -1579,9 +1205,9 @@ def __init__(schema_code, source_filename=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Map schema of choice")
-    parser.add_argument("schema", help="Choose one: add or auth.")
-    parser.add_argument("source", nargs='?', help="Filename of source CSV without extension. Defaults to the head=6 version for chosen schema.")
+    parser.add_argument("--config", help="Path to the configuration file.")
+    parser.add_argument("--dataset", help="The name of the dataset to process.")
 
     args = parser.parse_args()
 
-    __init__(str(args.schema).lower(), args.source)
+    __init__(args.config, args.dataset)

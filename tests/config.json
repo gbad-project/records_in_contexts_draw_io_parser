@@ -1,0 +1,26 @@
+{
+  "dummy_1": {
+    "drawio_file": "tests/dummy_1/dummy_1.drawio",
+    "csv_file": "tests/dummy_1/dummy_1.csv",
+    "preprocessor": "tests/dummy_1/preprocess.py",
+    "postprocessor": "tests/dummy_1/postprocess.py",
+    "ontologies": [
+      "gbad/schema/dummy.ttl"
+    ],
+    "prefixes": {
+      "dummy": "https://example.com/dummy#"
+    }
+  },
+  "dummy_2": {
+    "drawio_file": "tests/dummy_2/dummy_2.drawio",
+    "csv_file": "tests/dummy_2/dummy_2.csv",
+    "preprocessor": "tests/dummy_2/preprocess.py",
+    "postprocessor": "tests/dummy_2/postprocess.py",
+    "ontologies": [
+      "gbad/schema/dummy.ttl"
+    ],
+    "prefixes": {
+      "dummy": "https://example.com/dummy#"
+    }
+  }
+}

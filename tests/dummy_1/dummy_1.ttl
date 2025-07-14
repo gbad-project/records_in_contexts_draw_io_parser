@@ -1,0 +1,6 @@
+@prefix ns1: <rico:> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<#KBRecordSetREFD_FILE> rdfs:label "\"/KB/RecordSet/{REFD_FILE}\"" ;
+    <> "ricoRecordSetType" ;
+    ns1:hasRecordSetType "ricoRecordSetType" .
