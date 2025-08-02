@@ -57,12 +57,20 @@ _classes = []
 _object_properties = []
 _datatype_properties = []
 
-def _load_ontologies_and_populate_lists(prefixes: list[str], prefix_iris: list[str]):
+def _load_ontologies(prefixes: list[str], prefix_iris: list[str]):
     """
-    Loads ontologies from the given IRIs and populates the global lists of
-    classes, object properties, and datatype properties.
+    Loads ontologies from the given IRIs and return a tuple with
+    classes, object properties, and datatype properties to populate global objects.
     """
-    global _prefixes, _classes, _object_properties, _datatype_properties
+    _prefixes = {}
+    # Note that the order is critically important
+    # as it affects the order in the return tuple
+    qname_map = {
+        OWL.Class: [],
+        OWL.ObjectProperty: [],
+        OWL.DatatypeProperty: []
+    }
+
     ds = Dataset()
     ds.namespace_manager.reset()
 
@@ -73,24 +81,29 @@ def _load_ontologies_and_populate_lists(prefixes: list[str], prefix_iris: list[s
 
     # Parse all but the first prefix IRI, which is for the output ontology
     for prefix_iri in prefix_iris[1:]:
-        if prefix_iri.startswith("file:///"):
-            # rdflib's parse can handle file:// URIs directly.
+        #if prefix_iri.startswith("file:///"):
+        #    # rdflib's parse can handle file:// URIs directly.
+        #    ds.parse(source=prefix_iri)
+        #if prefix_iri.startswith("file:///"):
+            #ds.parse(source=prefix_iri)
+            #sys_exit(str([f"{s},{p},{o}" for s, p, o, _ in ds.quads()]))
+        #else:
+        #    pass#continue
+        try:
             ds.parse(source=prefix_iri)
-        else:
-            ds.parse(source=prefix_iri)
-
-    for s, p, o in ds.triples((None, RDF.type, OWL.Class)):
-        if isinstance(s, URIRef):
-            _classes.append(ds.qname(s))
-    for s, p, o in ds.triples((None, RDF.type, RDFS.Class)):
-        if isinstance(s, URIRef):
-            _classes.append(ds.qname(s))
-    for s, p, o in ds.triples((None, RDF.type, OWL.ObjectProperty)):
-        if isinstance(s, URIRef):
-            _object_properties.append(ds.qname(s))
-    for s, p, o in ds.triples((None, RDF.type, OWL.DatatypeProperty)):
-        if isinstance(s, URIRef):
-            _datatype_properties.append(ds.qname(s))
+        except:
+            pass  # <rdf:Description rdf:about="tag:pzhelnov@p1m.org,2025-08-02:AICODE-TODO"><skos:note>implement a message. note that NO prints pass through currently as the script is run from shell</skos:note></rdf:Description>
+    
+    for rdf_type in qname_map.keys():
+        for s, _, _ in ds.triples((None, RDF.type, rdf_type)):
+            if isinstance(s, URIRef):
+                qname = ds.qname(s)
+                prefix = qname.split(":")[0]
+                if prefix in prefixes:
+                    qname_map[rdf_type].append(qname)
+    
+    # _prefixes, _classes, _object_properties, _datatype_properties
+    return (_prefixes,) + tuple(qname_map.values())
 
 Blocks = dict[tuple[str, str], dict[str, set[str]]]
 Cell = Element
@@ -998,10 +1011,10 @@ def _preamble(serialisation_config: SerialisationConfig) -> str:
         prefix_iri = f"<{prefix_iri}>"
     else:
         prefix_iri = f"<{ontology_iri_string}#>"
-    if include_label:
-        preamble = "Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
-    else:
-        preamble = ""
+    #if include_label:
+    #    preamble = "Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
+    #else:
+    #    preamble = ""
     preamble_lines = "\n".join([f"Prefix: {prefix}: <{uri}>" for prefix, uri in _prefixes.items()])
 
     non_rico_object_properties = [prop for prop in _object_properties if not prop.startswith('rico:')]
@@ -1016,10 +1029,13 @@ def _preamble(serialisation_config: SerialisationConfig) -> str:
         for non_rico_datatype_property in non_rico_datatype_properties:
             dataproperty_lines += f"\nDataProperty:\n{' '*indentation}" + non_rico_datatype_property + "\n"
     
-    return preamble + f"""{preamble_lines}
-Prefix: {prefix_string}: {prefix_iri}
+#    return preamble + f"""{preamble_lines}
+#Ontology: <{ontology_iri_string}>
+#{' '*indentation}Import: <{_prefixes['rico']}>
+#{objectproperty_lines}{dataproperty_lines}
+#"""
+    return f"""{preamble_lines}
 Ontology: <{ontology_iri_string}>
-{' '*indentation}Import: <{_prefixes['rico']}>
 {objectproperty_lines}{dataproperty_lines}
 """
 
@@ -1278,11 +1294,13 @@ def _arguments_parser():
 
 
 def _run() -> None:
+    global _prefixes, _classes, _object_properties, _datatype_properties
     raw_xml_from_stdin = stdin.read()
     arguments = _arguments_parser().parse_args()
+    _prefixes, _classes, _object_properties, _datatype_properties = _load_ontologies(arguments.prefix, arguments.prefix_iri)
     if len(arguments.prefix) != len(arguments.prefix_iri):
-        sys_exit("The number of prefixes and prefix IRIs must be the same")
-    _load_ontologies_and_populate_lists(arguments.prefix, arguments.prefix_iri)
+        sys_exit("Exiting. Fatal Error: The number of prefixes and prefix IRIs must be the same")
+
     serialisation_config = SerialisationConfig(
         infer_type_of_literals=not arguments.infer_types_disable,
         include_preamble=not arguments.preamble_disable,

@@ -1,192 +1,158 @@
+Prefix: map: <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#>
 Prefix: rico: <https://www.ica.org/standards/RiC/ontology#>
-Prefix: add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/>
-Prefix: auth: <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
-Prefix: : <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#>
+Prefix: add: <file:////Volumes/home/anonymous/records_in_contexts_draw_io_parser/gbad/schema/description-listings.ttl>
 Ontology: <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping>
-  Import: <https://www.ica.org/standards/RiC/ontology#>
 
 ObjectProperty:
-  rdfs:subPropertyOf
+  owl:bottomObjectProperty
+
+ObjectProperty:
+  owl:topObjectProperty
 
 DataProperty:
-  add:privateNote
+  owl:bottomDataProperty
 
 DataProperty:
-  add:notes
+  owl:topDataProperty
 
-DataProperty:
-  add:relatedMaterial
-
-DataProperty:
-  add:associatedMaterial
-
-DataProperty:
-  add:findingAidNote
-
-DataProperty:
-  add:immediateSourceOfAcquisition
-
-DataProperty:
-  add:custodialHistory
-
-DataProperty:
-  add:availabilityOfOtherFormats
-
-DataProperty:
-  add:accumulationDate
-
-DataProperty:
-  add:howToOrder
-
-DataProperty:
-  auth:sourceNote
-
-DataProperty:
-  auth:functionNote
-
-DataProperty:
-  auth:privateNote
-
-DataProperty:
-  rdfs:label
-
-Individual: rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22
   Types: rico:RecordSet
   Facts:
-    rico:hasRecordSetType rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22,
-    rico:scopeAndContent "rml:reference   \"SCOPE\"",
-    add:custodialHistory "rml:reference  \"CUSTOD\"",
-    add:immediateSourceOfAcquisition "rml:reference  \"ISA\"",
-    rico:hasOrHadInstantiation rr%3Atemplate%20%22%2FKB%2FInstantiation%2F%7BREFD_FILE%7D%2Furn%3Auuid%3A%7BUUID_INSTANTIATION_1%7D%22,
-    rico:conditionsOfAccess "rml:reference  \"REST\"",
-    rico:conditionsOfAccess "rml:reference  \"RESTRTX\"",
-    rico:conditionsOfUse "rml:reference \"TGU\"",
-    add:findingAidNote "rml:reference \"FINDAID\"",
-    rico:accruals "rml:reference \"ACCRUAL\"",
-    add:notes "rml:reference  \"NOTES\"",
-    rico:hasOrHadIdentifier rr%3Atemplate%20%22%2FKB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22,
-    rico:hasOrHadIdentifier rr%3Atemplate%20%22%2FKB%2FFormerCode%2F%7BFCODES%7D%22,
-    rico:isOrWasDescribedBy rr%3Atemplate%20%22%2FKB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22,
-    rico:hasCreator rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXNAME_1..20%7D%22,
-    rico:hasCreator rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXPROV_1..20%7D%22,
-    rico:hasOrHadTitle rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22,
-    rico:hasOrHadSubject rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXSUB_1..20%7D%22,
-    rico:isAssociatedWithPlace rr%3Atemplate%20%22%2FKB%2FPlace%2F%7BINDEXGEO_1..20%7D%22,
-    rico:hasContentOfType rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22,
-    add:availabilityOfOtherFormats "rml:reference  \"AVAIL\"",
-    add:relatedMaterial "rml:reference \"RELMAT\"",
-    add:associatedMaterial "rml:reference \"ASSMAT\"",
-    rico:creationDate "rml:reference \"DATECR\"",
-    rico:history "rml:reference \"ADMBIO\"",
-    rico:isDirectlyIncludedIn rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_HIGHER%7D%22,
-    rico:isDirectlyIncludedIn rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREF_ADD%7D%22,
-    add:privateNote "rml:reference \"CMTD\"",
-    add:privateNote "rml:reference \"HIDDENNOTES\"",
-    add:accumulationDate "rml:reference \"DATEACM\"",
-    rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Record Set)\""
+    rico:hasRecordSetType map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22,
+    rico:scopeAndContent "rml%3Areference%20%22SCOPE%22",
+    add:custodialHistory map:rml%3Areference%20%22CUSTOD%22,
+    add:immediateSourceOfAcquisition map:rml%3Areference%20%22ISA%22,
+    rico:hasOrHadInstantiation map:rr%3Atemplate%20%22%2FKB%2FInstantiation%2F%7BREFD_FILE%7D%2Furn%3Auuid%3A%7BUUID_INSTANTIATION_1%7D%22,
+    rico:conditionsOfAccess "rml%3Areference%20%22REST%22",
+    rico:conditionsOfAccess "rml%3Areference%20%22RESTRTX%22",
+    rico:conditionsOfUse "rml%3Areference%20%22TGU%22",
+    add:findingAidNote map:rml%3Areference%20%22FINDAID%22,
+    rico:accruals "rml%3Areference%20%22ACCRUAL%22",
+    add:notes map:rml%3Areference%20%22NOTES%22,
+    rico:hasOrHadIdentifier map:rr%3Atemplate%20%22%2FKB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22,
+    rico:hasOrHadIdentifier map:rr%3Atemplate%20%22%2FKB%2FFormerCode%2F%7BFCODES%7D%22,
+    rico:isOrWasDescribedBy map:rr%3Atemplate%20%22%2FKB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22,
+    rico:hasCreator map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXNAME_1..20%7D%22,
+    rico:hasCreator map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXPROV_1..20%7D%22,
+    rico:hasOrHadTitle map:rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22,
+    rico:hasOrHadSubject map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXSUB_1..20%7D%22,
+    rico:isAssociatedWithPlace map:rr%3Atemplate%20%22%2FKB%2FPlace%2F%7BINDEXGEO_1..20%7D%22,
+    rico:hasContentOfType map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22,
+    add:availabilityOfOtherFormats map:rml%3Areference%20%22AVAIL%22,
+    add:relatedMaterial map:rml%3Areference%20%22RELMAT%22,
+    add:associatedMaterial map:rml%3Areference%20%22ASSMAT%22,
+    rico:creationDate "rml%3Areference%20%22DATECR%22",
+    rico:history "rml%3Areference%20%22ADMBIO%22",
+    rico:isDirectlyIncludedIn map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_HIGHER%7D%22,
+    rico:isDirectlyIncludedIn map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREF_ADD%7D%22,
+    add:privateNote map:rml%3Areference%20%22CMTD%22,
+    add:privateNote map:rml%3Areference%20%22HIDDENNOTES%22,
+    add:accumulationDate map:rml%3Areference%20%22DATEACM%22,
+    rdfs:label map:rr%3Atemplate%20%22%7BREFD_FILE%7D%20-%20%7BTITLE%7D%20%28Record%20Set%29%22
 
-Individual: rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22
+Individual: map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FLevel%23%7BLEVELDES%7D%22
   Types: rico:RecordSetType
   Facts:
-    rdfs:label "rml:reference  \"LEVELDES\""
+    rdfs:label map:rml%3Areference%20%22LEVELDES%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FInstantiation%2F%7BREFD_FILE%7D%2Furn%3Auuid%3A%7BUUID_INSTANTIATION_1%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FInstantiation%2F%7BREFD_FILE%7D%2Furn%3Auuid%3A%7BUUID_INSTANTIATION_1%7D%22
   Types: rico:Instantiation
   Facts:
-    rico:instantiationExtent "rml:reference \"PHDESC\"",
-    rico:physicalCharacteristicsNote "rml:reference \"PHYSCO\"",
-    add:howToOrder "rml:reference \"HOWTO\"",
-    rico:hasOrHadTitle rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22,
-    rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Instantiation). Context: <urn:uuid:{UUID_INSTANTIATION_1}>\""
+    rico:instantiationExtent "rml%3Areference%20%22PHDESC%22",
+    rico:physicalCharacteristicsNote "rml%3Areference%20%22PHYSCO%22",
+    add:howToOrder map:rml%3Areference%20%22HOWTO%22,
+    rico:hasOrHadTitle map:rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22,
+    rdfs:label map:rr%3Atemplate%20%22%7BREFD_FILE%7D%20-%20%7BTITLE%7D%20%28Instantiation%29.%20Context%3A%20<urn%3Auuid%3A%7BUUID_INSTANTIATION_1%7D>%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FCurrentReferenceCode%2F%7BREFD_FILE%7D%22
   Types: rico:Identifier
   Facts:
-    rico:hasIdentifierType rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FCurrentReferenceCode%22
+    rico:hasIdentifierType map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FCurrentReferenceCode%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FFormerCode%2F%7BFCODES%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FFormerCode%2F%7BFCODES%7D%22
   Types: rico:Identifier
   Facts:
-    rico:hasIdentifierType rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FFormerCode%22,
-    rico:textualValue "rml:reference \"FCODES\""
+    rico:hasIdentifierType map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FFormerCode%22,
+    rico:textualValue "rml%3Areference%20%22FCODES%22"
 
-Individual: rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FCurrentReferenceCode%22
+Individual: map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FCurrentReferenceCode%22
   Types: rico:IdentifierType
 
-Individual: rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FFormerCode%22
+Individual: map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FFormerCode%22
   Types: rico:IdentifierType
 
-Individual: rr%3Atemplate%20%22%2FKB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FArchivalDescriptionRecord%2F%7BREFD_FILE%7D%22
   Types: rico:Record
   Facts:
-    rico:hasDocumentaryFormType rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FArchivalDescriptionRecord%22,
-    rico:hasRecordState rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FStatus%23%7BSTATUSD%7D%22,
-    rico:hasRecordState rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBD%7D%22,
-    rico:hasRecordState rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22,
-    rico:wasLastUpdatedAtDate rr%3Atemplate%20%22%2FKB%2FDate%2F%7BMODDATE%7D%22,
-    rdfs:label "rr:template \"{REFD_FILE} - {TITLE} (Archival Description Record)\""
+    rico:hasDocumentaryFormType map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FArchivalDescriptionRecord%22,
+    rico:hasRecordState map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FStatus%23%7BSTATUSD%7D%22,
+    rico:hasRecordState map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBD%7D%22,
+    rico:hasRecordState map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22,
+    rico:wasLastUpdatedAtDate map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BMODDATE%7D%22,
+    rdfs:label map:rr%3Atemplate%20%22%7BREFD_FILE%7D%20-%20%7BTITLE%7D%20%28Archival%20Description%20Record%29%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXPROV_1..20%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXPROV_1..20%7D%22
   Types: rico:Agent
 
-Individual: rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FTitle%2F%7BTITLE%7D%22
   Types: rico:Title
 
-Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXSUB_1..20%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXSUB_1..20%7D%22
   Types: rico:Agent
 
-Individual: rr%3Atemplate%20%22%2FKB%2FPlace%2F%7BINDEXGEO_1..20%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FPlace%2F%7BINDEXGEO_1..20%7D%22
   Types: rico:Place
 
-Individual: rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FArchivalDescriptionRecord%22
+Individual: map:rr%3Aconstant%20%22%2FSchema%2FDescription-Listings%2FArchivalDescriptionRecord%22
   Types: rico:DocumentaryFormType
 
-Individual: rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FStatus%23%7BSTATUSD%7D%22
+Individual: map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FStatus%23%7BSTATUSD%7D%22
   Types: rico:RecordState
 
-Individual: rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBD%7D%22
+Individual: map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBD%7D%22
   Types: rico:RecordState
 
-Individual: rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22
+Individual: map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FContentType%23%7BGMD_1..8%7D%22
   Types: rico:ContentType
   Facts:
-    rdfs:label "rr:template  \"{GMD_1..8}\""
+    rdfs:label map:rr%3Atemplate%20%22%7BGMD_1..8%7D%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_HIGHER%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_HIGHER%7D%22
   Types: rico:RecordSet
 
-Individual: rr%3Atemplate%20%22%2FKB%2FDate%2F%7BMODDATE%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BMODDATE%7D%22
   Types: rico:Date
   Facts:
-    rico:normalizedDateValue "rml:reference \"MODDATE\""
+    rico:normalizedDateValue "rml%3Areference%20%22MODDATE%22"
 
-Individual: rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREF_ADD%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREF_ADD%7D%22
   Types: rico:RecordSet
 
-Individual: rr%3Atemplate%20%22%2FKB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..20%7D%2Furn%3Auuid%3A%7BUUID_OFFICEABC%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FCreationRelation%2F%7BREFD_FILE%7D%2F%7BOFFICEABC_1..20%7D%2Furn%3Auuid%3A%7BUUID_OFFICEABC%7D%22
   Types: rico:CreationRelation
   Facts:
-    rico:relationHasSource rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22,
-    rico:relationHasTarget rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BABC_REFA_1..20%7D%22,
-    rico:hasBeginningDate rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22,
-    rico:hasEndDate rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_END%7D%22,
-    rico:date "rr:template \"{DATEOFF_1..20}\"",
-    rdfs:label "rr:template \"{TITLE} - {OFFICEABC_1..20} (Creation Relation). Context: <urn:uuid:{UUID_OFFICEABC}>\""
+    rico:relationHasSource map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22,
+    rico:relationHasTarget map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BABC_REFA_1..20%7D%22,
+    rico:hasBeginningDate map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22,
+    rico:hasEndDate map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_END%7D%22,
+    rico:date "rr%3Atemplate%20%22%7BDATEOFF_1..20%7D%22",
+    rdfs:label map:rr%3Atemplate%20%22%7BTITLE%7D%20-%20%7BOFFICEABC_1..20%7D%20%28Creation%20Relation%29.%20Context%3A%20<urn%3Auuid%3A%7BUUID_OFFICEABC%7D>%22
 
-Individual: rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_BEGINNING%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_END%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FDate%2F%7BDATEOFF_1..20_END%7D%22
   Types: rico:Date
 
-Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BABC_REFA_1..20%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BABC_REFA_1..20%7D%22
   Types: rico:CorporateBody
   Facts:
-    rico:isCreatorOf rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22
+    rico:isCreatorOf map:rr%3Atemplate%20%22%2FKB%2FRecordSet%2F%7BREFD_FILE%7D%22
 
-Individual: rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22
+Individual: map:rr%3Atemplate%20%22%2FSchema%2FDescription-Listings%2FWebEnabled%23%7BWEBL%7D%22
   Types: rico:RecordState
 
-Individual: rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXNAME_1..20%7D%22
+Individual: map:rr%3Atemplate%20%22%2FKB%2FAgent%2F%7BINDEXNAME_1..20%7D%22
   Types: rico:Agent

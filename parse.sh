@@ -19,7 +19,7 @@
 
 # Function to display usage
 usage() {
-  echo "Usage: $0 <input_drawio_file> [optional commands for the parser]"
+  echo "Usage: $0 <input_drawio_file> [-vvv] [optional commands for the parser]"
   exit 1
 }
 
@@ -30,7 +30,15 @@ fi
 
 # Get the input file path
 input_file="$1"
-shift
+verbose=""
+
+# Check for optional -vvv as second arg
+if [ "$2" = "-vvv" ]; then
+  verbose="$2"
+  shift 2
+else
+  shift 1
+fi
 
 # Check if the input file exists
 if [ ! -f "$input_file" ]; then
@@ -88,7 +96,7 @@ echo "Manchester OWL Output saved to: $output_file"
 
 # Convert the OWL file to TTL
 robot_sh_path="./robot.sh"
-conversion_command="$robot_sh_path convert -i \"$output_file\" -o \"$ttl_file\""
+conversion_command="$robot_sh_path convert -i \"$output_file\" -o \"$ttl_file\" $verbose"
 
 # Print the conversion command
 echo "Executing command: $conversion_command"
