@@ -137,3 +137,16 @@ A comprehensive testing strategy is crucial to ensure the quality and correctnes
 - **Action:** Implement the unit tests for all modules in the `gbad_core` package.
 - **Action:** Implement the integration tests for the full pipeline.
 - **Action:** Implement the regression testing framework, including the generation of golden files and the comparison script.
+
+## 6. Collaboration with Human Staff
+
+Effective collaboration between agentic and human staff is essential for the success of this project. As an agent, your role is to execute the tasks outlined in this plan, while the human staff will provide oversight, direction, and domain expertise.
+
+### Your Responsibilities:
+
+-   **Follow the Plan:** Adhere to the tasks and architecture outlined in this document.
+-   **Provide Clear Updates:** Use the `plan_step_complete` tool to provide clear and concise updates on your progress.
+-   **Ask for Clarification:** If you encounter any ambiguity in the requirements or need additional information, use the `request_user_input` tool to ask for clarification from the human staff.
+-   **Propose Solutions:** When faced with a technical challenge, propose a solution and explain your reasoning.
+
+For detailed guidance for the human staff, please refer to the `HUMANS.md` file.

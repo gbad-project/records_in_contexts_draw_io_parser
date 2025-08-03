@@ -81,6 +81,18 @@ This script is the heart of the current RML generation process. It reads a TTL f
     -   **`AGENTS.md` Reflection:** These are useful patterns and will be preserved as helper functions within the `gbad_core/rml.py` module, to be used by the `RMLGenerator`.
 -   **Argument Parsing**: The command-line argument parsing will be replaced by the new CLI in `main.py` (Task 8).
 
+## Human-Agent Collaboration Analysis
+
+The success of this refactoring project depends not only on the technical implementation but also on the effectiveness of the collaboration between the human and agentic staff. The original workflow was a series of manual steps, with implicit knowledge and ad-hoc communication. This is not a scalable or reliable model for a complex project.
+
+The new collaboration model, as defined in `AGENTS.md` and `HUMANS.md`, addresses this by establishing a clear division of labor and communication protocols:
+
+-   **Clear Roles and Responsibilities:** The `HUMANS.md` file defines the roles of the human staff (providing direction, oversight, and domain expertise), while the `AGENTS.md` file defines the roles of the agentic staff (executing the plan, providing updates, and asking for clarification). This clear division of labor ensures that everyone knows what is expected of them.
+-   **Structured Communication:** The use of tools like `plan_step_complete` and `request_user_input` provides a structured and auditable communication channel. This is a significant improvement over the ad-hoc communication of the original workflow.
+-   **Explicit Planning and Approval:** The new workflow requires the agentic staff to create detailed plans that are reviewed and approved by the human staff. This ensures that the agent's work is aligned with the project goals and reduces the risk of rework.
+
+By formalizing the collaboration model, we can ensure that the project is executed efficiently and effectively, with a high degree of transparency and accountability.
+
 ## Testing Strategy Analysis
 
 The original scripts have no automated tests. This is a major shortcoming that makes it difficult to verify the correctness of the code, and makes it risky to make changes, as there is no way to know if a change has introduced a regression.
