@@ -4,17 +4,16 @@ This document outlines the refactoring plan for the GBAD project, organized as a
 
 ## In Progress
 
-(no tickets in progress)
+-   **TICKET-1:** Refactor Global Variables from `draw_io_parser.py` ([Details](tickets/TICKET-1.xml))
+    -   **Description:** Move hardcoded global variables (`BASE_URI`, `_prefixes`, `_classes`, `_object_properties`, `_datatype_properties`, `DEFAULT_...`, `OWL_METACHARACTERS`) to the new `gbad_core/config.py` and `gbad_core/ric_ontology.py` modules.
+    -   **Assignee:** Agent
+    -   **Status:** Planned
 
 ## Backlog
 
 ### `draw_io_parser.py`
 
 <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Global Variables from draw_io_parser.py</skos:note></rdf:Description> -->
--   **TICKET-1:** Refactor Global Variables from `draw_io_parser.py` ([Details](tickets/TICKET-1.xml))
-    -   **Description:** Move hardcoded global variables (`BASE_URI`, `_prefixes`, `_classes`, `_object_properties`, `_datatype_properties`, `DEFAULT_...`, `OWL_METACHARACTERS`) to the new `gbad_core/config.py` and `gbad_core/ric_ontology.py` modules.
-    -   **Assignee:** Agent
-    -   **Status:** Backlog
 
 <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Preserve Custom Exceptions from draw_io_parser.py</skos:note></rdf:Description> -->
 -   **TICKET-2:** Preserve Custom Exceptions from `draw_io_parser.py` ([Details](tickets/TICKET-2.xml))

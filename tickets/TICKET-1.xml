@@ -34,19 +34,60 @@
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
-      1.  **Create `gbad_core/config.py`:**
-          -   Create a new file `gbad_core/config.py`.
-          -   In this file, define a class `DrawIOParserConfig` that inherits from a base configuration class (to be defined in TICKET-23).
-          -   Move `BASE_URI`, `DEFAULT_CAPITALISATION_SCHEME`, `DEFAULT_INDENTATION`, `DEFAULT_MAX_GAP`, and `OWL_METACHARACTERS` as class attributes of `DrawIOParserConfig`.
-      2.  **Create `gbad_core/ric_ontology.py`:**
-          -   Create a new file `gbad_core/ric_ontology.py`.
-          -   Define a class `RiCOntology` in this file.
-          -   Move `_prefixes`, `_classes`, `_object_properties`, and `_datatype_properties` as class attributes of `RiCOntology`.
-      3.  **Update `gbad_core/drawio.py`:**
-          -   In the `DrawIOParser` class, import `DrawIOParserConfig` and `RiCOntology`.
-          -   The `DrawIOParser`'s `__init__` method should accept instances of `DrawIOParserConfig` and `RiCOntology` as arguments.
-          -   Replace all references to the old global variables with references to the attributes of the new configuration and ontology objects.
+      <rdf:Description>
+        <rdf:value>
+          <![CDATA[
+          **Research and Reflections:**
+
+          The `draw_io_parser.py` script currently hardcodes a significant number of global variables that fall into two categories: pipeline configuration and ontology definitions.
+          - **Configuration variables** (`BASE_URI`, `DEFAULT_...`, `OWL_METACHARACTERS`) control the behavior of the parser and serializer.
+          - **Ontology variables** (`_prefixes`, `_classes`, `_object_properties`, `_datatype_properties`) define the schema and vocabulary (RiC-O) that the script operates on.
+
+          This tight coupling makes the script difficult to maintain, configure, and extend. The proposed refactoring correctly separates these concerns into dedicated modules. `TICKET-1` is the first step in this process. My analysis confirms that the variables listed in the ticket are the correct ones to be moved.
+
+          The implementation will create the foundational `gbad_core` package and populate it with the first two modules: `config.py` and `ric_ontology.py`. This work will be self-contained and will not introduce breaking changes to the existing scripts, as the new modules will not be imported until later tickets (e.g., TICKET-5) are implemented.
+
+          **Detailed Implementation Plan:**
+
+          1.  **Create `gbad_core` Package Structure:**
+              -   Create a new directory `gbad_core` in the project root.
+              -   Create an empty `gbad_core/__init__.py` file to mark the directory as a Python package.
+              <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><skos:note>Create gbad_core package structure.</skos:note></rdf:Description> -->
+
+          2.  **Create `gbad_core/config.py`:**
+              -   Create the file `gbad_core/config.py`.
+              -   Inside this file, define a `DrawIOParserConfig` class.
+              -   Move the following global variables from `draw_io_parser.py` to become attributes of the `DrawIOParserConfig` class:
+                  - `BASE_URI = os.getenv('BASE_URI', 'https://example.com')`
+                  - `DEFAULT_CAPITALISATION_SCHEME = "upper-camel"`
+                  - `DEFAULT_INDENTATION = 2`
+                  - `DEFAULT_MAX_GAP = 10`
+                  - `OWL_METACHARACTERS = ["(", ")", "[", "]", "{", "}", "/", ",", ":", ".", "'", '"', ' ', '#']`
+              -   Add necessary imports (e.g., `os`).
+              <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><skos:note>Create gbad_core/config.py and move configuration variables.</skos:note></rdf:Description> -->
+
+          3.  **Create `gbad_core/ric_ontology.py`:**
+              -   Create the file `gbad_core/ric_ontology.py`.
+              -   Inside this file, define a `RiCOntology` class.
+              -   Import `DrawIOParserConfig` from `gbad_core.config`.
+              -   Instantiate the config: `_config = DrawIOParserConfig()`.
+              -   Move the following global variables from `draw_io_parser.py` to become attributes of the `RiCOntology` class. The `_prefixes` dictionary should use `_config.BASE_URI`.
+                  - `_prefixes`
+                  - `_classes`
+                  - `_object_properties`
+                  - `_datatype_properties`
+              <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><skos:note>Create gbad_core/ric_ontology.py and move ontology variables.</skos:note></rdf:Description> -->
+
+          4.  **Update `draw_io_parser.py`:**
+              -   Remove the definitions of all the global variables that were moved in the previous steps.
+              -   This step will be completed as part of **TICKET-5**, which refactors the `DrawIOXMLTree` into the `DrawIOParser` and can then import the new configuration. Attempting to modify `draw_io_parser.py` now would break the script without a consumer for the new modules.
+              <!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-NOTE"><skos:note>The removal of the old global variables from draw_io_parser.py and the import of the new config objects will be handled in TICKET-5.</skos:note></rdf:Description> -->
+
+          **Human Input Analysis:**
+          - **AICODE-ASK:** None required at this time. The task is a straightforward refactoring based on a clear plan.
+          ]]>
+        </rdf:value>
+      </rdf:Description>
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>
