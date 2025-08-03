@@ -1,156 +1,173 @@
 # GBAD Refactoring Plan
 
-## 1. Project Goal
+This document outlines the refactoring plan for the GBAD project, organized as a series of tickets in a backlog.
 
-The primary goal of this project is to refactor a collection of Python scripts into a clean, modular, and extensible pipeline for converting Draw.io diagrams and CSV files into N-Quads. This new pipeline will be designed to be highly configurable and free of hardcoded logic, enabling its use in a variety of scenarios, including a user-friendly Streamlit application and as a library for developers.
+## In Progress
 
-The final pipeline will support the following workflow:
-- **Input:** Multiple Draw.io diagrams and multiple CSV files.
-- **Configuration:** A flexible configuration mechanism to define the mapping and transformation rules.
-- **Processing:** A series of well-defined steps to parse the diagrams, preprocess the CSVs, generate and execute RML mappings, and merge the resulting RDF graphs.
-- **Output:** A single, consolidated N-Quads file.
+(no tickets in progress)
 
-## 2. Current Architecture and Problems
+## Backlog
 
-The existing solution is comprised of four main Python scripts that form a sequential pipeline: `draw_io_parser.py`, `map_schema.py`, `map_rml.py`, and `merge_graphs.py`.
+### `draw_io_parser.py`
 
-### Current Pipeline:
-1.  A Draw.io diagram is manually created to represent the mapping logic.
-2.  `draw_io_parser.py` converts the diagram into a base TTL/OWL file.
-3.  `map_schema.py` uses this TTL file and a source CSV to generate an RML mapping file.
-4.  `map_rml.py` executes the RML mapping to produce a TTL file.
-5.  `merge_graphs.py` combines multiple TTL files into a single N-Quads dataset.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Global Variables from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-1:** Refactor Global Variables from `draw_io_parser.py`
+    -   **Description:** Move hardcoded global variables (`BASE_URI`, `_prefixes`, `_classes`, `_object_properties`, `_datatype_properties`, `DEFAULT_...`, `OWL_METACHARACTERS`) to the new `gbad_core/config.py` and `gbad_core/ric_ontology.py` modules.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Key Problems:
-- **Hardcoding:** The scripts are replete with hardcoded file paths, schema-specific logic (e.g., for `add` and `auth` schemas), and data cleaning steps. This makes the pipeline inflexible and difficult to adapt to new use cases.
-- **Tight Coupling:** The scripts are tightly coupled, with implicit dependencies and shared logic that is not clearly defined. This makes it difficult to modify or extend any part of the pipeline without affecting other parts.
-- **Lack of Modularity:** The logic is not well-encapsulated, making it hard to reuse or test individual components.
-- **Command-Line Interface:** The entire pipeline is designed to be run from the command line, which is not suitable for integration into a web application or for use as a library.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Preserve Custom Exceptions from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-2:** Preserve Custom Exceptions from `draw_io_parser.py`
+    -   **Description:** Move the custom exception classes (`NothingToParseException`, `NotInKnownException`, etc.) to the `gbad_core/drawio.py` module.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-## 3. Proposed Architecture
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Data Classes from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-3:** Refactor Data Classes from `draw_io_parser.py`
+    -   **Description:** Move the `Individual` and `Arrow` data classes to `gbad_core/drawio.py` to be used as the structured representation of the parsed graph. The `SerialisationConfig` class will be replaced by the new configuration object from `gbad_core/config.py`.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-To address these issues, we will refactor the existing codebase into a new Python package named `gbad_core`. This package will feature a modular architecture with a clear separation of concerns, making it easy to configure, extend, and maintain.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor NodeHTMLParser from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-4:** Refactor `NodeHTMLParser` from `draw_io_parser.py`
+    -   **Description:** Move the `NodeHTMLParser` class to `gbad_core/drawio.py` as a private helper class for the new `DrawIOParser`.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-The new architecture will be composed of the following main components:
-- **`gbad_core` package:** The root package for all the refactored code.
-- **`drawio` module:** For parsing Draw.io diagrams.
-- **`rml` module:** For generating RML mappings.
-- **`preprocessing` module:** For configurable CSV preprocessing.
-- **`mapper` module:** For executing RML mappings.
-- **`postprocessing` module:** For configurable RDF graph cleanup.
-- **`graph_merger` module:** For merging multiple RDF graphs.
-- **`pipeline` module:** A high-level facade to orchestrate the entire pipeline.
-- **`config` module:** For managing all pipeline configurations.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor DrawIOXMLTree into DrawIOParser</skos:note></rdf:Description> -->
+-   **TICKET-5:** Refactor `DrawIOXMLTree` into `DrawIOParser`
+    -   **Description:** Create the new `DrawIOParser` class in `gbad_core/drawio.py` and move the core parsing logic from `DrawIOXMLTree` into it. The new `parse()` method should return a structured representation of the graph using the `Individual` and `Arrow` data classes.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-## 4. Refactoring Tasks
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Define Behavior for Ambiguous Node Structures</skos:note></rdf:Description> -->
+-   **TICKET-6:** Define Behavior for Ambiguous Node Structures
+    -   **Description:** The current parser assumes a specific structure for individual nodes. The human staff needs to decide how the system should handle nodes that do not follow this structure.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-The following tasks will be executed by junior agents to implement the new architecture.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Define Handling for Non-RiC-O Properties</skos:note></rdf:Description> -->
+-   **TICKET-7:** Define Handling for Non-RiC-O Properties
+    -   **Description:** The current parser can be configured to allow arrows with labels that are not known RiC-O properties. The human staff needs to decide how these non-standard properties should be handled in the refactored pipeline.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-### Task 1: Create the `gbad_core` package
-- **Action:** Create a new directory named `gbad_core` in the root of the repository.
-- **Action:** Add an empty `__init__.py` file to the `gbad_core` directory to mark it as a Python package.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Identifier Cleaning Functions from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-8:** Refactor Identifier Cleaning Functions from `draw_io_parser.py`
+    -   **Description:** Move the identifier cleaning functions (`_handle_spaces`, `_replace_metacharacter`, `_replace_metacharacters`) to the `DrawIOParser` class and make them more configurable.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 2: Refactor `draw_io_parser.py`
-- **Action:** Create a new module `gbad_core/drawio.py`.
-- **Action:** Implement a `DrawIOParser` class in `gbad_core/drawio.py` that encapsulates the core parsing logic from `draw_io_parser.py`.
-- **Details:**
-    - The `__init__` method should accept the Draw.io XML content as a string.
-    - The `parse()` method should return a structured representation of the graph (e.g., a list of node and edge objects) instead of the current OWL Manchester string.
-    - The hardcoded RiC-O terms should be moved to a separate, configurable module (`gbad_core/ric_ontology.py`).
-- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 1" and "Action Item 2" in `HUMANS.md`.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Remove Serialization Logic from draw_io_parser.py</skos:note></rdf:Description> -->
+-   **TICKET-9:** Remove Serialization Logic from `draw_io_parser.py`
+    -   **Description:** The serialization functions (`_infer_type`, `_serialise_facts`, `_serialise_block`, `_preamble`, `serialise`) will be removed from the refactored `drawio` module. The `DrawIOParser` will only parse, not serialize.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 3: Refactor `map_schema.py`
-- **Action:** Create a new module `gbad_core/rml.py`.
-- **Action:** Implement an `RMLGenerator` class in `gbad_core/rml.py` to generate RML mappings.
-- **Details:**
-    - The `RMLGenerator` class will take the parsed Draw.io graph from `DrawIOParser` and a configuration object as input.
-    - The logic for handling placeholders like `{RICO_AUTHTP}` will be generalized and made configurable.
-- **Action:** Create a new module `gbad_core/preprocessing.py`.
-- **Action:** Implement a `CSVPreprocessor` class in `gbad_core/preprocessing.py` to handle CSV preprocessing.
-- **Details:**
-    - The `CSVPreprocessor` class will be configurable with a series of preprocessing steps (e.g., column splitting, data correction).
-    - The configuration for these steps will be externalized and not hardcoded.
-- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 3", "Action Item 4", and "Action Item 5" in `HUMANS.md`.
+### `map_schema.py`
 
-### Task 4: Refactor `map_rml.py`
-- **Action:** Create a new module `gbad_core/mapper.py`.
-- **Action:** Implement an `RMLMapper` class in `gbad_core/mapper.py` to execute RML mappings.
-- **Details:**
-    - The `RMLMapper` class will take an RML mapping and a source CSV as input.
-    - It will be designed to be independent of the specific RML mapper implementation (e.g., it will support the existing JAR file, but could be extended to use other mappers).
-- **Action:** Create a new module `gbad_core/postprocessing.py`.
-- **Action:** Move the RDF graph cleanup logic to `gbad_core/postprocessing.py`, with configurable cleanup steps.
-- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 6" in `HUMANS.md`.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Global Variables from map_schema.py</skos:note></rdf:Description> -->
+-   **TICKET-10:** Refactor Global Variables from `map_schema.py`
+    -   **Description:** Move hardcoded global variables (`BASE_URI`, CSV column names, placeholder masks, `rico_authtp_dict`, etc.) to the new `gbad_core/config.py` module.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 5: Refactor `merge_graphs.py`
-- **Action:** Create a new module `gbad_core/graph_merger.py`.
-- **Action:** Implement a `GraphMerger` class in `gbad_core/graph_merger.py` to merge RDF graphs.
-- **Details:**
-    - The `GraphMerger` class will accept a list of RDF graph files or `rdflib.Graph` objects.
-    - It will merge them into a single `rdflib.Dataset`, creating a named graph for each input for provenance.
-- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 7" in `HUMANS.md`.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Preprocessing Logic from map_schema.py</skos:note></rdf:Description> -->
+-   **TICKET-11:** Refactor Preprocessing Logic from `map_schema.py`
+    -   **Description:** Move the `add_preprocess` and `auth_preprocess` functions into a new `CSVPreprocessor` class in `gbad_core/preprocessing.py`. The preprocessing steps should be made generic and configurable.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 6: Create a Pipeline Facade
-- **Action:** Create a new module `gbad_core/pipeline.py`.
-- **Action:** Implement a `Pipeline` class in `gbad_core/pipeline.py` to orchestrate the entire conversion process.
-- **Details:**
-    - The `Pipeline` class will provide a simple, high-level interface, such as a `run(drawio_files, csv_files, config)` method.
-    - This will serve as the main entry point for the Streamlit application and for developers using the library.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Provide Rationale for Preprocessing Logic</skos:note></rdf:Description> -->
+-   **TICKET-12:** Provide Rationale for Preprocessing Logic
+    -   **Description:** The human staff needs to provide a detailed explanation of the business rules and data semantics for the preprocessing steps.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-### Task 7: Create a Configuration Module
-- **Action:** Create a new module `gbad_core/config.py`.
-- **Action:** This module will manage all configuration for the pipeline, including RiC-O ontology terms, preprocessing steps, post-processing steps, and paths to external tools.
+<!-- <rdf:Description rdf:about="tag:jules_google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor RML Generation Logic from map_schema.py</skos:note></rdf:Description> -->
+-   **TICKET-13:** Refactor RML Generation Logic from `map_schema.py`
+    -   **Description:** Create a new `RMLGenerator` class in `gbad_core/rml.py` to handle the core RML generation logic. This includes generalizing the placeholder handling mechanism (`disaggregate_rico_authtp`, `disaggregate_refd_file`) and preserving the FnO mapping patterns.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 8: Create a CLI and a Streamlit App
-- **Action:** Create a new `main.py` file in the root of the repository that uses the `gbad_core` library to provide a command-line interface.
-- **Action:** Create a new `streamlit_app.py` file in the root of the repository that uses the `gbad_core` library to build the user-facing web application.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Define Requirements for Disaggregation Logic</skos:note></rdf:Description> -->
+-   **TICKET-14:** Define Requirements for Disaggregation Logic
+    -   **Description:** The human staff needs to provide a clear definition of the different entity types and reference schemes that the system needs to support to generalize the disaggregation logic.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-This plan provides a clear path to refactoring the existing codebase into a robust and flexible pipeline. Junior agents should follow these tasks sequentially to ensure a smooth and successful implementation.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Identify Additional Conditional Mapping Scenarios</skos:note></rdf:Description> -->
+-   **TICKET-15:** Identify Additional Conditional Mapping Scenarios
+    -   **Description:** The human staff needs to provide a list of any additional conditional mapping scenarios that the refactored system should support.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-## 5. Testing Strategy
+### `map_rml.py`
 
-A comprehensive testing strategy is crucial to ensure the quality and correctness of the refactored pipeline. The following testing layers will be implemented:
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor RML Execution Logic from map_rml.py</skos:note></rdf:Description> -->
+-   **TICKET-16:** Refactor RML Execution Logic from `map_rml.py`
+    -   **Description:** Move the RML mapping execution logic into a new `RMLMapper` class in `gbad_core/mapper.py`. The class should be independent of the specific RML mapper implementation.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Unit Tests
-- **Goal:** To verify the functionality of individual components (classes and methods) in isolation.
-- **Framework:** `pytest`
-- **Implementation:** Each module in the `gbad_core` package will have a corresponding test module (e.g., `tests/unit/test_drawio.py`). These tests will cover the public API of each component and will use mock objects and test data to isolate the component from its dependencies.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Post-processing Logic from map_rml.py</skos:note></rdf:Description> -->
+-   **TICKET-17:** Refactor Post-processing Logic from `map_rml.py`
+    -   **Description:** Move the post-processing logic into a new `gbad_core/postprocessing.py` module, with configurable cleanup steps.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Integration Tests
-- **Goal:** To verify that the different components of the pipeline work together as expected.
-- **Framework:** `pytest`
-- **Implementation:** Integration tests will cover the entire pipeline, from parsing the Draw.io diagrams to generating the final N-Quads file. These tests will use a small, representative set of test data to exercise the full pipeline.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Provide Rationale for Post-processing Rules</skos:note></rdf:Description> -->
+-   **TICKET-18:** Provide Rationale for Post-processing Rules
+    -   **Description:** The human staff needs to provide a list of all known data quality issues and the desired resolution for each, to inform the configuration of the post-processing module.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-### Regression Tests
-- **Goal:** To ensure that the refactored pipeline produces the same output as the original scripts for a given set of inputs.
-- **Implementation:**
-    1. A suite of test cases will be created, each consisting of a set of input Draw.io diagrams and CSV files.
-    2. The original pipeline will be run on these test cases, and the output N-Quads files will be stored as "golden" reference files.
-    3. The refactored pipeline will be run on the same test cases, and its output will be compared to the golden files. Any differences will be flagged as a regression.
-    4. A helper script will be created to automate this comparison, ignoring irrelevant differences (e.g., in the order of triples).
+### `merge_graphs.py`
 
-### Test Data
-- A `tests/data` directory will be created to store all necessary test data, including:
-    - Sample Draw.io files.
-    - Sample CSV files.
-    - Expected output files for unit and integration tests.
-    - "Golden" reference files for regression tests.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Refactor Graph Merging Logic from merge_graphs.py</skos:note></rdf:Description> -->
+-   **TICKET-19:** Refactor Graph Merging Logic from `merge_graphs.py`
+    -   **Description:** Move the graph merging logic into a new `GraphMerger` class in `gbad_core/graph_merger.py`. The class should be able to merge a list of RDF graph files or `rdflib.Graph` objects into a single `rdflib.Dataset`.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Task 9: Implement the Testing Pipeline
-- **Action:** Create the necessary directory structure for tests (e.g., `tests/unit`, `tests/integration`, `tests/data`).
-- **Action:** Implement the unit tests for all modules in the `gbad_core` package.
-- **Action:** Implement the integration tests for the full pipeline.
-- **Action:** Implement the regression testing framework, including the generation of golden files and the comparison script.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-ASK"><assignee>human</assignee><skos:note>Define Provenance Requirements</skos:note></rdf:Description> -->
+-   **TICKET-20:** Define Provenance Requirements
+    -   **Description:** The human staff needs to provide a list of all metadata that should be included in the named graph for provenance.
+    -   **Assignee:** Human
+    -   **Status:** Backlog
 
-## 6. Collaboration with Human Staff
+### Infrastructure and Testing
 
-Effective collaboration between agentic and human staff is essential for the success of this project. As an agent, your role is to execute the tasks outlined in this plan, while the human staff will provide oversight, direction, and domain expertise.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Create gbad_core Package</skos:note></rdf:Description> -->
+-   **TICKET-21:** Create `gbad_core` Package
+    -   **Description:** Create the `gbad_core` directory and `__init__.py` file.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-### Your Responsibilities:
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Create Pipeline Facade</skos:note></rdf:Description> -->
+-   **TICKET-22:** Create Pipeline Facade
+    -   **Description:** Create the `Pipeline` class in `gbad_core/pipeline.py` to orchestrate the entire conversion process.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
--   **Follow the Plan:** Adhere to the tasks and architecture outlined in this document.
--   **Provide Clear Updates:** Use the `plan_step_complete` tool to provide clear and concise updates on your progress.
--   **Request Human Input:** For tasks that require human input (as noted in the task descriptions), use the `request_user_input` tool to ask for clarification from the human staff. Be sure to reference the specific "Action Item" from the `HUMANS.md` file.
--   **Propose Solutions:** When faced with a technical challenge, propose a solution and explain your reasoning.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Create Configuration Module</skos:note></rdf:Description> -->
+-   **TICKET-23:** Create Configuration Module
+    -   **Description:** Create the `gbad_core/config.py` module to manage all pipeline configuration.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
 
-For a detailed list of the specific action items and decision points that require human input, please refer to the `HUMANS.md` file.
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Create CLI and Streamlit App</skos:note></rdf:Description> -->
+-   **TICKET-24:** Create CLI and Streamlit App
+    -   **Description:** Create the `main.py` and `streamlit_app.py` files to provide a command-line interface and a user-facing web application.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
+
+<!-- <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TODO"><assignee>agent</assignee><skos:note>Implement Testing Pipeline</skos:note></rdf:Description> -->
+-   **TICKET-25:** Implement Testing Pipeline
+    -   **Description:** Create the necessary directory structure for tests (`tests/unit`, `tests/integration`, `tests/data`) and implement the unit, integration, and regression tests for the `gbad_core` library.
+    -   **Assignee:** Agent
+    -   **Status:** Backlog
+
+## Completed
+
+(no tickets completed)
