@@ -57,6 +57,7 @@ The following tasks will be executed by junior agents to implement the new archi
     - The `__init__` method should accept the Draw.io XML content as a string.
     - The `parse()` method should return a structured representation of the graph (e.g., a list of node and edge objects) instead of the current OWL Manchester string.
     - The hardcoded RiC-O terms should be moved to a separate, configurable module (`gbad_core/ric_ontology.py`).
+- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 1" and "Action Item 2" in `HUMANS.md`.
 
 ### Task 3: Refactor `map_schema.py`
 - **Action:** Create a new module `gbad_core/rml.py`.
@@ -69,6 +70,7 @@ The following tasks will be executed by junior agents to implement the new archi
 - **Details:**
     - The `CSVPreprocessor` class will be configurable with a series of preprocessing steps (e.g., column splitting, data correction).
     - The configuration for these steps will be externalized and not hardcoded.
+- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 3", "Action Item 4", and "Action Item 5" in `HUMANS.md`.
 
 ### Task 4: Refactor `map_rml.py`
 - **Action:** Create a new module `gbad_core/mapper.py`.
@@ -78,6 +80,7 @@ The following tasks will be executed by junior agents to implement the new archi
     - It will be designed to be independent of the specific RML mapper implementation (e.g., it will support the existing JAR file, but could be extended to use other mappers).
 - **Action:** Create a new module `gbad_core/postprocessing.py`.
 - **Action:** Move the RDF graph cleanup logic to `gbad_core/postprocessing.py`, with configurable cleanup steps.
+- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 6" in `HUMANS.md`.
 
 ### Task 5: Refactor `merge_graphs.py`
 - **Action:** Create a new module `gbad_core/graph_merger.py`.
@@ -85,6 +88,7 @@ The following tasks will be executed by junior agents to implement the new archi
 - **Details:**
     - The `GraphMerger` class will accept a list of RDF graph files or `rdflib.Graph` objects.
     - It will merge them into a single `rdflib.Dataset`, creating a named graph for each input for provenance.
+- **Human Input Needed:** Before finalizing the implementation, request input from the human staff on "Action Item 7" in `HUMANS.md`.
 
 ### Task 6: Create a Pipeline Facade
 - **Action:** Create a new module `gbad_core/pipeline.py`.
@@ -146,7 +150,7 @@ Effective collaboration between agentic and human staff is essential for the suc
 
 -   **Follow the Plan:** Adhere to the tasks and architecture outlined in this document.
 -   **Provide Clear Updates:** Use the `plan_step_complete` tool to provide clear and concise updates on your progress.
--   **Ask for Clarification:** If you encounter any ambiguity in the requirements or need additional information, use the `request_user_input` tool to ask for clarification from the human staff.
+-   **Request Human Input:** For tasks that require human input (as noted in the task descriptions), use the `request_user_input` tool to ask for clarification from the human staff. Be sure to reference the specific "Action Item" from the `HUMANS.md` file.
 -   **Propose Solutions:** When faced with a technical challenge, propose a solution and explain your reasoning.
 
-For detailed guidance for the human staff, please refer to the `HUMANS.md` file.
+For a detailed list of the specific action items and decision points that require human input, please refer to the `HUMANS.md` file.

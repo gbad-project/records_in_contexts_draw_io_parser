@@ -85,13 +85,16 @@ This script is the heart of the current RML generation process. It reads a TTL f
 
 The success of this refactoring project depends not only on the technical implementation but also on the effectiveness of the collaboration between the human and agentic staff. The original workflow was a series of manual steps, with implicit knowledge and ad-hoc communication. This is not a scalable or reliable model for a complex project.
 
-The new collaboration model, as defined in `AGENTS.md` and `HUMANS.md`, addresses this by establishing a clear division of labor and communication protocols:
+The new collaboration model, as defined in `AGENTS.md` and `HUMANS.md`, addresses this by establishing a clear division of labor and a structured communication protocol. The `HUMANS.md` file now contains a list of specific, actionable questions and decision points that are directly tied to the ambiguities and hardcoded logic in the original scripts.
 
--   **Clear Roles and Responsibilities:** The `HUMANS.md` file defines the roles of the human staff (providing direction, oversight, and domain expertise), while the `AGENTS.md` file defines the roles of the agentic staff (executing the plan, providing updates, and asking for clarification). This clear division of labor ensures that everyone knows what is expected of them.
--   **Structured Communication:** The use of tools like `plan_step_complete` and `request_user_input` provides a structured and auditable communication channel. This is a significant improvement over the ad-hoc communication of the original workflow.
--   **Explicit Planning and Approval:** The new workflow requires the agentic staff to create detailed plans that are reviewed and approved by the human staff. This ensures that the agent's work is aligned with the project goals and reduces the risk of rework.
+This new, more detailed collaboration model will improve the project's outcome in several key ways:
 
-By formalizing the collaboration model, we can ensure that the project is executed efficiently and effectively, with a high degree of transparency and accountability.
+-   **Reduces Ambiguity:** By asking specific questions about the business logic and data semantics, we can ensure that the refactored code is based on a correct and complete understanding of the requirements. This reduces the risk of building the wrong thing.
+-   **Improves Code Quality:** The input from the human staff will enable the agentic staff to write code that is more robust, configurable, and maintainable. For example, by understanding the rationale behind the preprocessing steps, the agent can create a more generic and powerful preprocessing module.
+-   **Increases Transparency:** The explicit listing of action items and decision points in `HUMANS.md` makes the collaboration process more transparent. Both the human and agentic staff have a clear understanding of what is needed from each other.
+-   **Empowers a Data-Driven Approach:** The new model encourages a data-driven approach to decision-making. By asking for the rationale behind the existing logic, we can ensure that the new system is based on sound principles and not just on historical precedent.
+
+By formalizing the collaboration model and making it more specific and actionable, we can ensure that the project is executed efficiently and effectively, with a high degree of transparency and accountability.
 
 ## Testing Strategy Analysis
 
