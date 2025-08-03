@@ -81,6 +81,18 @@ This script is the heart of the current RML generation process. It reads a TTL f
     -   **`AGENTS.md` Reflection:** These are useful patterns and will be preserved as helper functions within the `gbad_core/rml.py` module, to be used by the `RMLGenerator`.
 -   **Argument Parsing**: The command-line argument parsing will be replaced by the new CLI in `main.py` (Task 8).
 
+## Testing Strategy Analysis
+
+The original scripts have no automated tests. This is a major shortcoming that makes it difficult to verify the correctness of the code, and makes it risky to make changes, as there is no way to know if a change has introduced a regression.
+
+The new testing strategy outlined in `AGENTS.md` addresses this by introducing a comprehensive, multi-layered testing pipeline:
+
+-   **Unit Tests:** By breaking the monolithic scripts into smaller, more focused modules, we can write unit tests for each component. For example, we can test the `DrawIOParser` with a variety of sample Draw.io XML files to ensure it handles all cases correctly. Similarly, we can test the `CSVPreprocessor` with different CSV inputs to verify that the preprocessing steps are applied correctly.
+-   **Integration Tests:** These will test the entire pipeline, ensuring that the new modular components work together correctly. For example, an integration test would take a sample Draw.io file and a CSV, run them through the full pipeline, and verify that the final N-Quads output is correct.
+-   **Regression Tests:** This is the most critical part of the testing strategy for this refactoring project. By comparing the output of the refactored pipeline with the output of the original scripts, we can be confident that the refactoring has not introduced any unintended changes in behavior. This provides a safety net that allows us to refactor with confidence.
+
+The implementation of this testing strategy (Task 9 in `AGENTS.md`) is a crucial part of the refactoring effort. It will ensure that the new `gbad_core` library is robust, reliable, and maintainable.
+
 ## `map_rml.py` Analysis
 
 This script is responsible for executing the RML mapping using an external JAR file and then post-processing the resulting RDF graph.

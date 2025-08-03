@@ -102,3 +102,38 @@ The following tasks will be executed by junior agents to implement the new archi
 - **Action:** Create a new `streamlit_app.py` file in the root of the repository that uses the `gbad_core` library to build the user-facing web application.
 
 This plan provides a clear path to refactoring the existing codebase into a robust and flexible pipeline. Junior agents should follow these tasks sequentially to ensure a smooth and successful implementation.
+
+## 5. Testing Strategy
+
+A comprehensive testing strategy is crucial to ensure the quality and correctness of the refactored pipeline. The following testing layers will be implemented:
+
+### Unit Tests
+- **Goal:** To verify the functionality of individual components (classes and methods) in isolation.
+- **Framework:** `pytest`
+- **Implementation:** Each module in the `gbad_core` package will have a corresponding test module (e.g., `tests/unit/test_drawio.py`). These tests will cover the public API of each component and will use mock objects and test data to isolate the component from its dependencies.
+
+### Integration Tests
+- **Goal:** To verify that the different components of the pipeline work together as expected.
+- **Framework:** `pytest`
+- **Implementation:** Integration tests will cover the entire pipeline, from parsing the Draw.io diagrams to generating the final N-Quads file. These tests will use a small, representative set of test data to exercise the full pipeline.
+
+### Regression Tests
+- **Goal:** To ensure that the refactored pipeline produces the same output as the original scripts for a given set of inputs.
+- **Implementation:**
+    1. A suite of test cases will be created, each consisting of a set of input Draw.io diagrams and CSV files.
+    2. The original pipeline will be run on these test cases, and the output N-Quads files will be stored as "golden" reference files.
+    3. The refactored pipeline will be run on the same test cases, and its output will be compared to the golden files. Any differences will be flagged as a regression.
+    4. A helper script will be created to automate this comparison, ignoring irrelevant differences (e.g., in the order of triples).
+
+### Test Data
+- A `tests/data` directory will be created to store all necessary test data, including:
+    - Sample Draw.io files.
+    - Sample CSV files.
+    - Expected output files for unit and integration tests.
+    - "Golden" reference files for regression tests.
+
+### Task 9: Implement the Testing Pipeline
+- **Action:** Create the necessary directory structure for tests (e.g., `tests/unit`, `tests/integration`, `tests/data`).
+- **Action:** Implement the unit tests for all modules in the `gbad_core` package.
+- **Action:** Implement the integration tests for the full pipeline.
+- **Action:** Implement the regression testing framework, including the generation of golden files and the comparison script.
