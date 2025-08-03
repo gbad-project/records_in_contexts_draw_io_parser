@@ -15,16 +15,18 @@
       **Question:**
       What are the different entity types and reference schemes that the system needs to support?
 
-      **Input Needed:**
-      A clear definition of the different entity types and reference schemes that the system needs to support.
+      **Please provide a clear definition of the different entity types and reference schemes that the system needs to support in the space below:**
+      ```
+      <your definition here>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on the requirements for the disaggregation logic.
+          -   Wait for the human staff to edit this file and provide the requested information.
       2.  **Incorporate Requirements into `RMLGenerator`:**
-          -   Once the human staff has provided the requirements, the agent will use this information to design the configurable placeholder handling mechanism in the `RMLGenerator`.
+          -   Use the provided requirements to design the configurable placeholder handling mechanism in the `RMLGenerator`.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

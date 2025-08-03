@@ -15,14 +15,15 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `config.py`:**
+      1.  **Create `gbad_core/config.py`:**
           -   Create a new file `gbad_core/config.py`.
-      2.  **Define Configuration Structure:**
-          -   Design a clear and extensible structure for the configuration. This could be a set of dataclasses or a nested dictionary.
-      3.  **Populate with Default Configuration:**
-          -   Populate the configuration module with the default values extracted from the original scripts.
-      4.  **Load Configuration from File:**
-          -   Implement a mechanism to load the configuration from an external file (e.g., a YAML or TOML file), allowing users to easily customize the pipeline's behavior.
+      2.  **Define Base Configuration Class:**
+          -   Create a base class `GBADConfig` that defines the overall structure of the configuration.
+      3.  **Define Component-Specific Configuration Classes:**
+          -   Create separate configuration classes for each component of the pipeline (e.g., `DrawIOParserConfig`, `MapSchemaConfig`, `MapRMLConfig`, `MergeGraphsConfig`), inheriting from `GBADConfig`.
+          -   Populate these classes with the default configuration values extracted from the original scripts.
+      4.  **Implement Loading from File:**
+          -   Implement a function `load_config(path)` that can load the configuration from a YAML or TOML file and return a `GBADConfig` object. This will allow users to easily customize the pipeline's behavior.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

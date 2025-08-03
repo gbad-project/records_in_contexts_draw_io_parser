@@ -15,18 +15,26 @@
       **Question:**
       How should these non-standard properties be handled in the refactored pipeline?
 
-      **Options:**
-      a) Map them to a default property (e.g., `rdfs:seeAlso`).
-      b) Make this a configurable option in the pipeline, allowing the user to specify the desired behavior.
-      c) Treat them as errors.
+      **Please select one of the following options by editing this file and replacing "[ ]" with "[x]":**
+      [ ] a) Map them to a default property (e.g., `rdfs:seeAlso`).
+      [ ] b) Make this a configurable option in the pipeline, allowing the user to specify the desired behavior.
+      [ ] c) Treat them as errors.
+
+      **If you selected (a), please specify the default property to use:**
+      ```
+      <your default property here, e.g., rdfs:seeAlso>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on the desired behavior.
+          -   Wait for the human staff to edit this file and make a selection.
       2.  **Implement Chosen Behavior:**
-          -   Once the human staff has provided their decision, the agent will implement the chosen behavior in the `DrawIOParser` class and the configuration module.
+          -   Based on the selection, implement the corresponding logic in the `DrawIOParser` class and the configuration module.
+          -   If (a), use the specified default property.
+          -   If (b), add a configuration option to `DrawIOParserConfig` to control the behavior.
+          -   If (c), raise a specific exception (e.g., `UnknownPropertyError`).
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

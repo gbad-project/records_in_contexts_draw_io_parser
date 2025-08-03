@@ -17,17 +17,18 @@
       **Implementation Plan:**
       1.  **Create Test Directory Structure:**
           -   Create the following directories: `tests/unit`, `tests/integration`, `tests/data`.
-      2.  **Implement Unit Tests:**
-          -   For each module in `gbad_core`, create a corresponding test module in `tests/unit` (e.g., `tests/unit/test_drawio.py`).
-          -   Write unit tests for all public methods of each class, using mock objects and test data to isolate the component from its dependencies.
-      3.  **Implement Integration Tests:**
-          -   Create a test module `tests/integration/test_pipeline.py`.
-          -   Write integration tests that cover the entire pipeline, from parsing the Draw.io diagrams to generating the final N-Quads file.
-      4.  **Implement Regression Tests:**
-          -   Create a test module `tests/integration/test_regression.py`.
-          -   Create a suite of test cases, each with input Draw.io diagrams and CSV files.
-          -   Run the original pipeline on these test cases and store the output as "golden" reference files in `tests/data`.
-          -   Write a regression test that runs the refactored pipeline on the same test cases and compares its output to the golden files.
+      2.  **Implement Unit Tests (`tests/unit`):**
+          -   For each module in `gbad_core`, create a corresponding test file (e.g., `test_drawio.py`).
+          -   Write unit tests using `pytest` and `unittest.mock` to test each class and method in isolation.
+          -   Use sample files from `tests/data` as input.
+      3.  **Implement Integration Tests (`tests/integration`):**
+          -   Create a test file `test_pipeline.py`.
+          -   Write integration tests that exercise the full `gbad_core.pipeline.Pipeline` with a variety of sample Draw.io files, CSV files, and configurations.
+          -   Assert that the output graph is isomorphic to an expected output graph.
+      4.  **Implement Regression Tests (`tests/integration`):**
+          -   Create a test file `test_regression.py`.
+          -   Create a set of "golden" output files by running the original scripts on a set of representative input files.
+          -   Write a test that runs the refactored pipeline with the same inputs and compares the output graph to the golden file using `rdflib.compare.isomorphic`.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

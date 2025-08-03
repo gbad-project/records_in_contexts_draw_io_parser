@@ -15,19 +15,14 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `Pipeline` Class:**
-          -   Create a new class `Pipeline` in `gbad_core/pipeline.py`.
+      1.  **Create `Pipeline` Class in `gbad_core/pipeline.py`:**
+          -   The `__init__` method will take a configuration object.
+          -   It will instantiate all the necessary components (`DrawIOParser`, `CSVPreprocessor`, `RMLGenerator`, `RMLMapper`, `Postprocessor`, `GraphMerger`) and store them as instance variables.
       2.  **Implement `run()` Method:**
-          -   The `Pipeline` class will have a `run()` method that takes a list of Draw.io files, a list of CSV files, and a configuration object as input.
-      3.  **Orchestrate the Pipeline:**
-          -   The `run()` method will instantiate and call the other components of the `gbad_core` library in the correct order:
-              1.  `DrawIOParser`
-              2.  `CSVPreprocessor`
-              3.  `RMLGenerator`
-              4.  `RMLMapper`
-              5.  `Postprocessor`
-              6.  `GraphMerger`
-          -   The `run()` method will return the final, merged `rdflib.Dataset`.
+          -   This method will take a list of Draw.io file paths and a list of CSV file paths.
+          -   It will read the content of the files.
+          -   It will then call the methods of the instantiated components in the correct order to execute the full pipeline.
+          -   It will return the final, merged `rdflib.Dataset`.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

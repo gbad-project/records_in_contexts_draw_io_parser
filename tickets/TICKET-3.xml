@@ -39,12 +39,15 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Move `Individual` and `Arrow`:**
-          -   Copy the `Individual` and `Arrow` data class definitions to the `gbad_core/drawio.py` module.
-      2.  **Update `DrawIOParser`:**
+      1.  **Create `gbad_core/models.py`:**
+          -   Create a new file `gbad_core/models.py` to house all data models for the library.
+      2.  **Move `Individual` and `Arrow`:**
+          -   Move the `Individual` and `Arrow` data class definitions to the `gbad_core/models.py` module.
+      3.  **Update `gbad_core/drawio.py`:**
+          -   Import `Individual` and `Arrow` from `gbad_core.models`.
           -   The `parse()` method of the new `DrawIOParser` class will return a list or generator of `Individual` and `Arrow` objects.
-      3.  **Remove `SerialisationConfig`:**
-          -   The `SerialisationConfig` class will be removed. Its functionality will be replaced by the new central configuration object that will be passed to the pipeline.
+      4.  **Remove `SerialisationConfig`:**
+          -   The `SerialisationConfig` class will be removed. Its functionality will be replaced by the new central configuration object defined in `gbad_core/config.py`.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

@@ -24,13 +24,17 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `Postprocessor` Class:**
-          -   Create a new class `Postprocessor` in `gbad_core/postprocessing.py`.
-      2.  **Generalize Cleanup Steps:**
-          -   The logic from the various `remove_...` functions will be broken down into a series of generic cleanup steps (e.g., `remove_triples_by_sparql`, `apply_sparql_update`).
-          -   Each of these steps will be implemented as a method in the `Postprocessor` class.
-      3.  **Make it Configurable:**
-          -   The `Postprocessor` will be configured with a list of cleanup steps to apply to a given RDF graph. This configuration will be passed in from the central configuration object.
+      1.  **Create `Postprocessor` Class in `gbad_core/postprocessing.py`:**
+          -   The `__init__` method will take a configuration object.
+      2.  **Implement `process()` Method:**
+          -   This method will take an `rdflib.Graph` as input.
+          -   It will iterate through a list of configured post-processing steps and apply them to the graph.
+      3.  **Implement Generic Cleanup Methods:**
+          -   Create private methods for each generic cleanup step, for example:
+              -   `_apply_sparql_update(self, graph, query)`
+              -   `_remove_triples_by_query(self, graph, query)`
+      4.  **Define Configuration for Post-processing:**
+          -   The configuration for the post-processing steps will be defined in the `MapRMLConfig` class in `gbad_core/config.py`. It will be a list of dictionaries, where each dictionary defines a post-processing step and its parameters (e.g., the SPARQL query to execute).
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

@@ -31,14 +31,14 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `RMLMapper` Class:**
-          -   Create a new class `RMLMapper` in `gbad_core/mapper.py`.
+      1.  **Create `RMLMapper` Class in `gbad_core/mapper.py`:**
+          -   The `__init__` method will take a configuration object that specifies the mapper strategy (e.g., "rmlmapper-jar", "pyrml") and the path to the mapper executable if needed.
       2.  **Implement `map()` Method:**
-          -   The `RMLMapper` class will have a `map()` method that takes an RML mapping and a source CSV as input.
-      3.  **Abstract Away Implementation:**
-          -   The `map()` method will be designed to be independent of the specific RML mapper implementation. It will use a configurable "mapper strategy" (e.g., "rmlmapper-jar", "pyrml") to execute the mapping.
-      4.  **Implement JAR Strategy:**
-          -   The initial implementation will support the existing RMLMapper JAR file. The logic for calling the JAR file will be moved into a private method of the `RMLMapper` class.
+          -   This method will take the RML graph and the source DataFrame as input.
+          -   It will use a strategy pattern to call the appropriate private method for the configured mapper (e.g., `_map_with_jar`, `_map_with_pyrml`).
+      3.  **Implement `_map_with_jar()` Method:**
+          -   This private method will contain the logic for executing the RMLMapper JAR file using `subprocess.run`.
+          -   It will need to write the source DataFrame to a temporary CSV file to be used by the JAR mapper.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

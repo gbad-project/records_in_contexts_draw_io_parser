@@ -23,14 +23,15 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `RMLGenerator` Class:**
-          -   Create a new class `RMLGenerator` in `gbad_core/rml.py`.
-      2.  **Move RML Generation Logic:**
-          -   Move the core RML generation logic from the main loop of `map_schema.py` to the `RMLGenerator` class.
+      1.  **Create `RMLGenerator` Class in `gbad_core/rml.py`:**
+          -   The `__init__` method will take the parsed graph from the `DrawIOParser` and a configuration object.
+      2.  **Implement `generate()` Method:**
+          -   This method will iterate through the parsed graph and generate an `rdflib.Graph` containing the RML mapping.
       3.  **Generalize Placeholder Handling:**
-          -   The logic from `disaggregate_rico_authtp` and `disaggregate_refd_file` will be refactored into a more generic and configurable placeholder handling mechanism within the `RMLGenerator`.
+          -   Create a private method, e.g., `_handle_placeholders`, that takes a string and a set of placeholder definitions from the configuration.
+          -   This method will replace the logic from `disaggregate_rico_authtp` and `disaggregate_refd_file` with a generic placeholder replacement mechanism.
       4.  **Preserve FnO Patterns:**
-          -   The FnO mapping patterns (`fno_map_value_unless_isnull`, `fno_map_this_string_match`) will be preserved as helper functions within the `gbad_core/rml.py` module.
+          -   The FnO mapping patterns will be implemented as private helper methods in the `RMLGenerator` class, to be called by the `generate()` method when needed.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

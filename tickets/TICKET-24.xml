@@ -15,15 +15,19 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `main.py`:**
-          -   Create a new file `main.py` in the root of the repository.
-          -   Use a library like `argparse` or `click` to create a command-line interface that uses the `gbad_core.pipeline.Pipeline` class to run the conversion process.
-      2.  **Create `streamlit_app.py`:**
-          -   Create a new file `streamlit_app.py` in the root of the repository.
-          -   Use the `streamlit` library to create a web application that allows users to:
-              -   Upload Draw.io and CSV files.
-              -   Configure the conversion process.
-              -   Run the pipeline and download the resulting N-Quads file.
+      1.  **Create `main.py` for CLI:**
+          -   Use the `click` library to create a command-line interface.
+          -   The CLI should accept arguments for the Draw.io files, CSV files, a configuration file, and the output file path.
+          -   It will then instantiate the `gbad_core.pipeline.Pipeline` with the loaded configuration and run the conversion process.
+      2.  **Create `streamlit_app.py` for Web App:**
+          -   Use the `streamlit` library to create the web application.
+          -   The UI should allow users to:
+              -   Upload one or more Draw.io files.
+              -   Upload one or more CSV files.
+              -   Optionally, upload a custom configuration file.
+              -   Click a "Run" button to start the conversion process.
+              -   Download the resulting N-Quads file.
+          -   The app will use the `gbad_core.pipeline.Pipeline` to run the conversion process in the background.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

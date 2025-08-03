@@ -15,18 +15,26 @@
       **Question:**
       How should the system handle nodes that do not follow this structure?
 
-      **Options:**
-      a) Ignore the node and log a warning.
-      b) Raise an error and stop the parsing process.
-      c) Attempt to infer the structure based on a set of predefined rules.
+      **Please select one of the following options by editing this file and replacing "[ ]" with "[x]":**
+      [ ] a) Ignore the node and log a warning.
+      [ ] b) Raise an error and stop the parsing process.
+      [ ] c) Attempt to infer the structure based on a set of predefined rules.
+
+      **If you selected (c), please provide the rules for inference below:**
+      ```
+      <your rules here>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on the desired behavior.
+          -   Wait for the human staff to edit this file and make a selection.
       2.  **Implement Chosen Behavior:**
-          -   Once the human staff has provided their decision, the agent will implement the chosen behavior in the `DrawIOParser` class.
+          -   Based on the selection, implement the corresponding logic in the `DrawIOParser` class.
+          -   If (a), add logging for ignored nodes.
+          -   If (b), raise a specific exception (e.g., `InvalidNodeStructureError`).
+          -   If (c), implement the inference logic based on the provided rules.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

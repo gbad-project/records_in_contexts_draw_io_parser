@@ -15,16 +15,18 @@
       **Question:**
       What are the data quality issues that these rules are trying to address? Are there other known issues that should be handled?
 
-      **Input Needed:**
-      A list of all known data quality issues and the desired resolution for each.
+      **Please provide a list of all known data quality issues and the desired resolution for each in the space below:**
+      ```
+      <your list of issues and resolutions here>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on the rationale for the post-processing rules.
+          -   Wait for the human staff to edit this file and provide the requested information.
       2.  **Incorporate Rationale into Configuration:**
-          -   Once the human staff has provided the rationale, the agent will use this information to design the configuration for the new `Postprocessor` module.
+          -   Use the provided information to design the configuration for the `Postprocessor` module, ensuring that it accurately reflects the desired data quality rules.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

@@ -37,9 +37,11 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Remove Serialization Functions:**
-          -   The functions `_infer_type`, `_serialise_facts`, `_serialise_block`, `_preamble`, and `serialise` will be completely removed from the `gbad_core/drawio.py` module.
-      2.  **Confirm `DrawIOParser` Output:**
+      1.  **Delete Serialization Functions:**
+          -   Delete the functions `_infer_type`, `_serialise_facts`, `_serialise_block`, `_preamble`, and `serialise` from the `gbad_core/drawio.py` module.
+      2.  **Delete Related Functions:**
+          -   Delete the `individual_blocks` and `_add_individual_type` functions, as their logic will be incorporated into the `DrawIOParser`'s `parse` method.
+      3.  **Confirm `DrawIOParser` Output:**
           -   Ensure that the `DrawIOParser`'s `parse()` method returns a structured representation of the graph (a list or generator of `Individual` and `Arrow` objects), as this will be the input to the new `RMLGenerator`.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>

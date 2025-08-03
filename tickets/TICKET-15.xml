@@ -14,16 +14,18 @@
       **Question:**
       Are there other scenarios where conditional logic is needed? For example, should we be able to define rules like "if column A has value X, then create property Y"?
 
-      **Input Needed:**
-      A list of any additional conditional mapping scenarios that the refactored system should support.
+      **Please provide a list of any additional conditional mapping scenarios that the refactored system should support in the space below:**
+      ```
+      <your scenarios here>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on additional conditional mapping scenarios.
+          -   Wait for the human staff to edit this file and provide the requested information.
       2.  **Incorporate Scenarios into `RMLGenerator`:**
-          -   Once the human staff has provided the scenarios, the agent will extend the `RMLGenerator` to support them, possibly by creating new configurable FnO patterns.
+          -   Extend the `RMLGenerator` to support the new scenarios, possibly by creating new configurable FnO patterns.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

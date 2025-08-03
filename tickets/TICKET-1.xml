@@ -36,12 +36,17 @@
     <skos:changeNote>
       **Implementation Plan:**
       1.  **Create `gbad_core/config.py`:**
-          -   Move `BASE_URI`, `DEFAULT_CAPITALISATION_SCHEME`, `DEFAULT_INDENTATION`, `DEFAULT_MAX_GAP`, and `OWL_METACHARACTERS` to this file.
+          -   Create a new file `gbad_core/config.py`.
+          -   In this file, define a class `DrawIOParserConfig` that inherits from a base configuration class (to be defined in TICKET-23).
+          -   Move `BASE_URI`, `DEFAULT_CAPITALISATION_SCHEME`, `DEFAULT_INDENTATION`, `DEFAULT_MAX_GAP`, and `OWL_METACHARACTERS` as class attributes of `DrawIOParserConfig`.
       2.  **Create `gbad_core/ric_ontology.py`:**
-          -   Move `_prefixes`, `_classes`, `_object_properties`, and `_datatype_properties` to this file.
-          -   These can be stored as Python variables or in a more structured format like a dictionary or a set of dataclasses.
+          -   Create a new file `gbad_core/ric_ontology.py`.
+          -   Define a class `RiCOntology` in this file.
+          -   Move `_prefixes`, `_classes`, `_object_properties`, and `_datatype_properties` as class attributes of `RiCOntology`.
       3.  **Update `gbad_core/drawio.py`:**
-          -   Import the configuration values and ontology terms from the new modules instead of defining them locally.
+          -   In the `DrawIOParser` class, import `DrawIOParserConfig` and `RiCOntology`.
+          -   The `DrawIOParser`'s `__init__` method should accept instances of `DrawIOParserConfig` and `RiCOntology` as arguments.
+          -   Replace all references to the old global variables with references to the attributes of the new configuration and ontology objects.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

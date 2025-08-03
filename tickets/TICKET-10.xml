@@ -21,11 +21,11 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Move to `gbad_core/config.py`:**
-          -   Move all hardcoded global variables (`BASE_URI`, CSV column names, placeholder masks, `rico_authtp_dict`, etc.) to the new `gbad_core/config.py` module.
-          -   These can be stored in a structured format, such as a dictionary or a set of dataclasses, to make them easier to manage.
+      1.  **Create `gbad_core/config.py` (if not already created):**
+          -   Define a class `MapSchemaConfig` that inherits from a base configuration class.
+          -   Move all hardcoded global variables from `map_schema.py` (e.g., `BASE_URI`, `SISN`, `DATEEX_COLS`, `rico_authtp_dict`) as class attributes of `MapSchemaConfig`.
       2.  **Update Refactored Code:**
-          -   The new `CSVPreprocessor` and `RMLGenerator` classes will import these configuration values from `gbad_core/config.py`.
+          -   The new `CSVPreprocessor` and `RMLGenerator` classes will import `MapSchemaConfig` and use its attributes instead of the old global variables.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

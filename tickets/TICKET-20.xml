@@ -14,16 +14,18 @@
       **Question:**
       Is this sufficient for all use cases? Would it be useful to also include other metadata in the named graph, such as the file name, creation date, or the user who uploaded it?
 
-      **Input Needed:**
-      A list of all metadata that should be included in the named graph for provenance.
+      **Please provide a list of all metadata that should be included in the named graph for provenance in the space below:**
+      ```
+      <your list of metadata here>
+      ```
       ]]>
     </skos:scopeNote>
     <skos:changeNote>
-      **Implementation Plan:**
+      **Implementation Plan (for Agent):**
       1.  **Await Human Input:**
-          -   The agent assigned to this ticket will await input from the human staff on the provenance requirements.
+          -   Wait for the human staff to edit this file and provide the requested information.
       2.  **Incorporate Requirements into `GraphMerger`:**
-          -   Once the human staff has provided the requirements, the agent will extend the `GraphMerger` to include the specified metadata in the named graph.
+          -   Extend the `_create_named_graph_uri` method in the `GraphMerger` class to include the specified metadata in the named graph URI.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
   </rdf:Description>

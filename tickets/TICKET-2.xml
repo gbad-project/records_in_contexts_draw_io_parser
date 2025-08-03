@@ -29,10 +29,14 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Copy Exception Classes:**
-          -   Copy the class definitions for all custom exceptions (`NothingToParseException`, `NotInKnownException`, `_NoCellCloseEnoughException`, `NoSourceException`, `NoTargetException`, `_NoValueException`, `_SourceNotIndividualException`, `ArrowWithoutIndividualAsSourceException`, `_MetacharacterSubstituteParseException`, `MetacharacterException`, `_InvalidCapitalisationSchemeException`, `ParseException`) from `draw_io_parser.py` to the new `gbad_core/drawio.py` module.
-      2.  **Update References:**
-          -   Ensure that the new `DrawIOParser` class and its methods raise these exceptions where appropriate.
+      1.  **Create `gbad_core/exceptions.py`:**
+          -   Create a new file `gbad_core/exceptions.py` to house all custom exceptions for the library.
+      2.  **Move Exception Classes:**
+          -   Move the class definitions for all custom exceptions from `draw_io_parser.py` to the new `gbad_core/exceptions.py` module.
+          -   Create a base exception class, `GBADException`, and have all other exceptions inherit from it.
+      3.  **Update `gbad_core/drawio.py`:**
+          -   Import the custom exceptions from `gbad_core.exceptions`.
+          -   Update the `DrawIOParser` class and its methods to raise these exceptions where appropriate.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

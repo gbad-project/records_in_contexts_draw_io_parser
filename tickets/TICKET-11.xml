@@ -21,13 +21,19 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `CSVPreprocessor` Class:**
-          -   Create a new class `CSVPreprocessor` in `gbad_core/preprocessing.py`.
-      2.  **Generalize Preprocessing Steps:**
-          -   The logic from `add_preprocess` and `auth_preprocess` will be broken down into a series of generic preprocessing steps (e.g., `split_column`, `rename_column`, `apply_function`).
-          -   Each of these steps will be implemented as a method in the `CSVPreprocessor` class.
-      3.  **Make it Configurable:**
-          -   The `CSVPreprocessor` will be configured with a list of preprocessing steps to apply to a given CSV file. This configuration will be passed in from the central configuration object.
+      1.  **Create `CSVPreprocessor` Class in `gbad_core/preprocessing.py`:**
+          -   The `__init__` method will take a pandas DataFrame as input.
+          -   The class will have a `preprocess` method that takes a list of preprocessing steps as input.
+      2.  **Implement Generic Preprocessing Methods:**
+          -   Create private methods for each generic preprocessing step, for example:
+              -   `_split_column(self, column, new_columns, separator, ...)`
+              -   `_rename_column(self, old_name, new_name)`
+              -   `_apply_function(self, column, func)`
+              -   `_update_from_csv(self, other_csv_path, columns_to_update)`
+      3.  **Define Configuration for Preprocessing:**
+          -   The configuration for the preprocessing steps will be defined in the `MapSchemaConfig` class in `gbad_core/config.py`. It will be a list of dictionaries, where each dictionary defines a preprocessing step and its parameters.
+      4.  **Update `Pipeline` Facade:**
+          -   The `Pipeline` facade will instantiate the `CSVPreprocessor` and call its `preprocess` method with the appropriate configuration.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

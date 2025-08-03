@@ -15,9 +15,9 @@
     <skos:changeNote>
       **Implementation Plan:**
       1.  **Create Directory:**
-          -   Create a new directory named `gbad_core` in the root of the repository.
+          -   In the root of the repository, create a new directory named `gbad_core`.
       2.  **Create `__init__.py`:**
-          -   Add an empty `__init__.py` file to the `gbad_core` directory to mark it as a Python package.
+          -   Inside the `gbad_core` directory, create an empty file named `__init__.py`. This will make the directory a Python package.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

@@ -24,12 +24,15 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Create `GraphMerger` Class:**
-          -   Create a new class `GraphMerger` in `gbad_core/graph_merger.py`.
+      1.  **Create `GraphMerger` Class in `gbad_core/graph_merger.py`:**
+          -   The `__init__` method will take a configuration object.
       2.  **Implement `merge()` Method:**
-          -   The `GraphMerger` class will have a `merge()` method that takes a list of file paths or `rdflib.Graph` objects and merges them into a single `rdflib.Dataset`.
-      3.  **Preserve Provenance Logic:**
-          -   The logic for generating named graph URIs based on a SHA256 hash of the file content will be preserved in the new `GraphMerger` class.
+          -   This method will take a list of file paths or `rdflib.Graph` objects.
+          -   It will iterate through the list, parsing each file into an `rdflib.Dataset`.
+          -   For each file, it will call a private method, e.g., `_create_named_graph_uri`, to generate a named graph URI.
+          -   It will then merge all the triples/quads into a single `rdflib.Dataset` and return it.
+      3.  **Implement `_create_named_graph_uri()` Method:**
+          -   This private method will contain the logic for generating a named graph URI for each file, based on the configured provenance requirements (from TICKET-20).
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>

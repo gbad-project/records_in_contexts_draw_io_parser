@@ -35,12 +35,12 @@
     </skos:scopeNote>
     <skos:changeNote>
       **Implementation Plan:**
-      1.  **Move `NodeHTMLParser`:**
+      1.  **Move `NodeHTMLParser` to `gbad_core/drawio.py`:**
           -   Copy the `NodeHTMLParser` class definition to the `gbad_core/drawio.py` module.
       2.  **Make it a Private Class:**
           -   Rename the class to `_NodeHTMLParser` to indicate that it is a private helper class for the `DrawIOParser`.
-      3.  **Update `DrawIOParser`:**
-          -   The `DrawIOParser` class will use the `_NodeHTMLParser` internally to parse HTML content from the Draw.io XML.
+      3.  **Instantiate in `DrawIOParser`:**
+          -   The `DrawIOParser` class will instantiate `_NodeHTMLParser` in its `__init__` method and use it to parse HTML content from the Draw.io XML.
     </skos:changeNote>
     <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
   </rdf:Description>
