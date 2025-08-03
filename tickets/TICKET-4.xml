@@ -1,0 +1,48 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-4">
+    <skos:prefLabel>Refactor NodeHTMLParser from draw_io_parser.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the `NodeHTMLParser` class from `draw_io_parser.py`.
+      This class is a utility for parsing HTML content within Draw.io nodes and should be moved to the new `gbad_core/drawio.py` module as a private helper class.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      class NodeHTMLParser(HTMLParser):
+          """
+          Subclasses HTMLParser to define its behaviour with respect to 'handle_data',
+          'handle_starttag', and 'handle_endtag' (this is the usage pattern expected
+          by HTMLParser).
+          # ...
+          """
+          def __init__(self):
+              # ...
+          def handle_starttag(self, tag: str, _: list[tuple[str, str | None]]) -> None:
+              # ...
+          def handle_endtag(self, tag: str) -> None:
+              # ...
+          def handle_data(self, data: str) -> None:
+              # ...
+          def content(self) -> str:
+              # ...
+          def clear(self) -> None:
+              # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Move `NodeHTMLParser`:**
+          -   Copy the `NodeHTMLParser` class definition to the `gbad_core/drawio.py` module.
+      2.  **Make it a Private Class:**
+          -   Rename the class to `_NodeHTMLParser` to indicate that it is a private helper class for the `DrawIOParser`.
+      3.  **Update `DrawIOParser`:**
+          -   The `DrawIOParser` class will use the `_NodeHTMLParser` internally to parse HTML content from the Draw.io XML.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

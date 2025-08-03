@@ -1,0 +1,45 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-5">
+    <skos:prefLabel>Refactor DrawIOXMLTree into DrawIOParser</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the `DrawIOXMLTree` class into a new `DrawIOParser` class in `gbad_core/drawio.py`.
+      The new class will encapsulate the core parsing logic and will return a structured representation of the graph.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      @dataclass(frozen=True)
+      class DrawIOXMLTree:
+          # ...
+          def individuals_and_arrows(
+                  self, strict_mode: bool, max_gap: float) -> Generator[
+                  Individual | Arrow, None, None]:
+              """
+              Returns as a generator all Individual and Arrow instances obtained
+              when parsing the nodes and arrows of the draw.io XML graph fed into the
+              DrawIOXMLTree instance upon its construction
+              """
+              # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `DrawIOParser` Class:**
+          -   Create a new class `DrawIOParser` in `gbad_core/drawio.py`.
+      2.  **Move Core Logic:**
+          -   Move the core parsing logic from the `DrawIOXMLTree` class to the new `DrawIOParser` class.
+          -   The `__init__` method of `DrawIOParser` should take the Draw.io XML content as a string.
+      3.  **Implement `parse()` Method:**
+          -   Create a `parse()` method in `DrawIOParser` that encapsulates the logic from the old `individuals_and_arrows` method.
+          -   The `parse()` method should return a list or generator of `Individual` and `Arrow` objects.
+      4.  **Refactor Helper Methods:**
+          -   The various helper methods from `DrawIOXMLTree` (e.g., `_cell_with_id`, `_value_of`) should be moved to `DrawIOParser` as private methods.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,30 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-23">
+    <skos:prefLabel>Create Configuration Module</skos:prefLabel>
+    <skos:description>
+      This ticket covers the creation of the `gbad_core/config.py` module.
+      This module will manage all configuration for the pipeline, including ontology terms, preprocessing steps, post-processing steps, and paths to external tools.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      To make the pipeline flexible and extensible, all hardcoded values need to be moved to a central configuration module.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `config.py`:**
+          -   Create a new file `gbad_core/config.py`.
+      2.  **Define Configuration Structure:**
+          -   Design a clear and extensible structure for the configuration. This could be a set of dataclasses or a nested dictionary.
+      3.  **Populate with Default Configuration:**
+          -   Populate the configuration module with the default values extracted from the original scripts.
+      4.  **Load Configuration from File:**
+          -   Implement a mechanism to load the configuration from an external file (e.g., a YAML or TOML file), allowing users to easily customize the pipeline's behavior.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

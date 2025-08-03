@@ -1,0 +1,25 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-21">
+    <skos:prefLabel>Create gbad_core Package</skos:prefLabel>
+    <skos:description>
+      This ticket covers the creation of the `gbad_core` package, which will house all the refactored code.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The refactoring plan calls for a new Python package to organize the refactored code in a modular and maintainable way.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create Directory:**
+          -   Create a new directory named `gbad_core` in the root of the repository.
+      2.  **Create `__init__.py`:**
+          -   Add an empty `__init__.py` file to the `gbad_core` directory to mark it as a Python package.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

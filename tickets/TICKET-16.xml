@@ -1,0 +1,46 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-16">
+    <skos:prefLabel>Refactor RML Execution Logic from map_rml.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the RML execution logic from `map_rml.py`.
+      The logic will be moved into a new `RMLMapper` class in `gbad_core/mapper.py`, which will be independent of the specific RML mapper implementation.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def map_using_rmlmapper(rml, ttl):
+          """Run the RMLMapper Java command."""
+          # ...
+          java_command = [
+              "java", "-jar", rmlmapper,
+              "-s", "turtle",
+              "-m", rml,
+              "-o", ttl,
+              "-b", BASE_URI[:-1]
+          ]
+          # ...
+
+      def map_using_pyrml(rml, ttl):
+          """Create an instance of RML Mapper with PyRML."""
+          raise NotImplementedError()
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `RMLMapper` Class:**
+          -   Create a new class `RMLMapper` in `gbad_core/mapper.py`.
+      2.  **Implement `map()` Method:**
+          -   The `RMLMapper` class will have a `map()` method that takes an RML mapping and a source CSV as input.
+      3.  **Abstract Away Implementation:**
+          -   The `map()` method will be designed to be independent of the specific RML mapper implementation. It will use a configurable "mapper strategy" (e.g., "rmlmapper-jar", "pyrml") to execute the mapping.
+      4.  **Implement JAR Strategy:**
+          -   The initial implementation will support the existing RMLMapper JAR file. The logic for calling the JAR file will be moved into a private method of the `RMLMapper` class.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

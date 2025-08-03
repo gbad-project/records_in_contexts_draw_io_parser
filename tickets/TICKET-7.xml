@@ -1,0 +1,34 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-7">
+    <skos:prefLabel>Define Handling for Non-RiC-O Properties</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to define the desired behavior for handling non-RiC-O properties in the Draw.io XML.
+      The current parser can be configured to allow arrows with labels that are not known RiC-O properties.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The parser needs to know how to handle arrows with labels that do not correspond to known RiC-O properties. This decision will affect the flexibility and extensibility of the pipeline.
+
+      **Question:**
+      How should these non-standard properties be handled in the refactored pipeline?
+
+      **Options:**
+      a) Map them to a default property (e.g., `rdfs:seeAlso`).
+      b) Make this a configurable option in the pipeline, allowing the user to specify the desired behavior.
+      c) Treat them as errors.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on the desired behavior.
+      2.  **Implement Chosen Behavior:**
+          -   Once the human staff has provided their decision, the agent will implement the chosen behavior in the `DrawIOParser` class and the configuration module.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>

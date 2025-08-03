@@ -1,0 +1,40 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-2">
+    <skos:prefLabel>Preserve Custom Exceptions from draw_io_parser.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the preservation of the custom exception classes from `draw_io_parser.py`.
+      These exceptions are well-defined and should be moved to the new `gbad_core/drawio.py` module to maintain robust error handling.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      class NothingToParseException(Exception):
+          """
+          Can be thrown when calling the constructor of the DrawIOXMLTree class if the
+          passed-in XML appears to define an empty graph
+          """
+
+      class NotInKnownException(Exception):
+          """
+          Can be thrown if an arrow has a label which does not correspond to an
+          object or datatype property in RiC-O, and if it has been specified that this
+          is not to be permitted
+          """
+      # ... and so on for all other custom exceptions
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Copy Exception Classes:**
+          -   Copy the class definitions for all custom exceptions (`NothingToParseException`, `NotInKnownException`, `_NoCellCloseEnoughException`, `NoSourceException`, `NoTargetException`, `_NoValueException`, `_SourceNotIndividualException`, `ArrowWithoutIndividualAsSourceException`, `_MetacharacterSubstituteParseException`, `MetacharacterException`, `_InvalidCapitalisationSchemeException`, `ParseException`) from `draw_io_parser.py` to the new `gbad_core/drawio.py` module.
+      2.  **Update References:**
+          -   Ensure that the new `DrawIOParser` class and its methods raise these exceptions where appropriate.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

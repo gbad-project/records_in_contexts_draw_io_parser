@@ -1,0 +1,48 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-9">
+    <skos:prefLabel>Remove Serialization Logic from draw_io_parser.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the removal of the serialization logic from the refactored `drawio` module.
+      The `DrawIOParser` will only be responsible for parsing the Draw.io XML, not for serializing the output to OWL Manchester syntax.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def _infer_type(literal: str) -> str:
+          # ...
+
+      def _serialise_facts(
+              facts: dict[str, set[str]],
+              infer_type_of_literals: bool = True,
+              prefix: str | None = None) -> Generator[str, None, None]:
+          # ...
+
+      def _serialise_block(
+              individual_identifier: str,
+              individual_label: str,
+              types_and_facts: dict[str, set[str]],
+              serialisation_config: SerialisationConfig) -> str:
+          # ...
+
+      def _preamble(serialisation_config: SerialisationConfig) -> str:
+          # ...
+
+      def serialise(blocks: Blocks, serialisation_config: SerialisationConfig) -> str:
+          # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Remove Serialization Functions:**
+          -   The functions `_infer_type`, `_serialise_facts`, `_serialise_block`, `_preamble`, and `serialise` will be completely removed from the `gbad_core/drawio.py` module.
+      2.  **Confirm `DrawIOParser` Output:**
+          -   Ensure that the `DrawIOParser`'s `parse()` method returns a structured representation of the graph (a list or generator of `Individual` and `Arrow` objects), as this will be the input to the new `RMLGenerator`.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

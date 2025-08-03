@@ -1,0 +1,35 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-25">
+    <skos:prefLabel>Implement Testing Pipeline</skos:prefLabel>
+    <skos:description>
+      This ticket covers the implementation of the testing pipeline for the `gbad_core` library.
+      This includes creating the necessary directory structure and implementing unit, integration, and regression tests.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      A comprehensive testing strategy is crucial to ensure the quality and correctness of the refactored pipeline.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create Test Directory Structure:**
+          -   Create the following directories: `tests/unit`, `tests/integration`, `tests/data`.
+      2.  **Implement Unit Tests:**
+          -   For each module in `gbad_core`, create a corresponding test module in `tests/unit` (e.g., `tests/unit/test_drawio.py`).
+          -   Write unit tests for all public methods of each class, using mock objects and test data to isolate the component from its dependencies.
+      3.  **Implement Integration Tests:**
+          -   Create a test module `tests/integration/test_pipeline.py`.
+          -   Write integration tests that cover the entire pipeline, from parsing the Draw.io diagrams to generating the final N-Quads file.
+      4.  **Implement Regression Tests:**
+          -   Create a test module `tests/integration/test_regression.py`.
+          -   Create a suite of test cases, each with input Draw.io diagrams and CSV files.
+          -   Run the original pipeline on these test cases and store the output as "golden" reference files in `tests/data`.
+          -   Write a regression test that runs the refactored pipeline on the same test cases and compares its output to the golden files.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

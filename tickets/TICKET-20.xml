@@ -1,0 +1,31 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-20">
+    <skos:prefLabel>Define Provenance Requirements</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to define the provenance requirements for the merged graph.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The current script uses a SHA256 hash of the file content to generate a named graph URI for provenance. The agentic staff needs to know if this is sufficient for all use cases.
+
+      **Question:**
+      Is this sufficient for all use cases? Would it be useful to also include other metadata in the named graph, such as the file name, creation date, or the user who uploaded it?
+
+      **Input Needed:**
+      A list of all metadata that should be included in the named graph for provenance.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on the provenance requirements.
+      2.  **Incorporate Requirements into `GraphMerger`:**
+          -   Once the human staff has provided the requirements, the agent will extend the `GraphMerger` to include the specified metadata in the named graph.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>

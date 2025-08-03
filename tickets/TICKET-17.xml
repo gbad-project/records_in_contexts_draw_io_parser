@@ -1,0 +1,38 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-17">
+    <skos:prefLabel>Refactor Post-processing Logic from map_rml.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the post-processing logic from `map_rml.py`.
+      The logic will be moved into a new `gbad_core/postprocessing.py` module, with configurable cleanup steps.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def remove_false_agentcontrolrelation(g: Graph):
+          # ...
+
+      def remove_false_authtp(g: Graph):
+          # ...
+
+      def remove_shorter_duplicate_labels(g: Graph):
+          # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `Postprocessor` Class:**
+          -   Create a new class `Postprocessor` in `gbad_core/postprocessing.py`.
+      2.  **Generalize Cleanup Steps:**
+          -   The logic from the various `remove_...` functions will be broken down into a series of generic cleanup steps (e.g., `remove_triples_by_sparql`, `apply_sparql_update`).
+          -   Each of these steps will be implemented as a method in the `Postprocessor` class.
+      3.  **Make it Configurable:**
+          -   The `Postprocessor` will be configured with a list of cleanup steps to apply to a given RDF graph. This configuration will be passed in from the central configuration object.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

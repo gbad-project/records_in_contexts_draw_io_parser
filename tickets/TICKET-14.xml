@@ -1,0 +1,32 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-14">
+    <skos:prefLabel>Define Requirements for Disaggregation Logic</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to define the requirements for the disaggregation logic in `map_schema.py`.
+      This information is crucial for generalizing the placeholder handling mechanism in the new `RMLGenerator`.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The `disaggregate_rico_authtp` and `disaggregate_refd_file` functions are highly specific to the current dataset. To generalize this logic, the agentic staff needs to understand the underlying requirements.
+
+      **Question:**
+      What are the different entity types and reference schemes that the system needs to support?
+
+      **Input Needed:**
+      A clear definition of the different entity types and reference schemes that the system needs to support.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on the requirements for the disaggregation logic.
+      2.  **Incorporate Requirements into `RMLGenerator`:**
+          -   Once the human staff has provided the requirements, the agent will use this information to design the configurable placeholder handling mechanism in the `RMLGenerator`.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>

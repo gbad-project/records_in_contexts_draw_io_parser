@@ -1,0 +1,35 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-22">
+    <skos:prefLabel>Create Pipeline Facade</skos:prefLabel>
+    <skos:description>
+      This ticket covers the creation of a high-level `Pipeline` facade class in `gbad_core/pipeline.py`.
+      This class will orchestrate the entire conversion process and provide a simple interface for users and developers.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The refactored components need to be brought together into a single, easy-to-use pipeline. The `Pipeline` facade will serve as the main entry point for the library.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `Pipeline` Class:**
+          -   Create a new class `Pipeline` in `gbad_core/pipeline.py`.
+      2.  **Implement `run()` Method:**
+          -   The `Pipeline` class will have a `run()` method that takes a list of Draw.io files, a list of CSV files, and a configuration object as input.
+      3.  **Orchestrate the Pipeline:**
+          -   The `run()` method will instantiate and call the other components of the `gbad_core` library in the correct order:
+              1.  `DrawIOParser`
+              2.  `CSVPreprocessor`
+              3.  `RMLGenerator`
+              4.  `RMLMapper`
+              5.  `Postprocessor`
+              6.  `GraphMerger`
+          -   The `run()` method will return the final, merged `rdflib.Dataset`.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

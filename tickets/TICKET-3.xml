@@ -1,0 +1,52 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-3">
+    <skos:prefLabel>Refactor Data Classes from draw_io_parser.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the data classes from `draw_io_parser.py`.
+      The `Individual` and `Arrow` data classes will be moved to `gbad_core/drawio.py` to serve as the structured representation of the parsed graph.
+      The `SerialisationConfig` class will be replaced by the new central configuration object.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      @dataclass(frozen=True)
+      class Individual:
+          """
+          Represents an OWL individual with type a RiC-O class, coming from a node in
+          the parsed graph
+          """
+          identifier: str
+          ric_class: str
+
+      @dataclass(frozen=True)
+      class Arrow:
+          """
+          Represents an OWL object or datatype property with type a RiC-O class,
+          coming from an arrow in the parsed graph
+          """
+          identifier: str
+          source: str
+          target: str
+
+      @dataclass(frozen=True)
+      class SerialisationConfig:
+          # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Move `Individual` and `Arrow`:**
+          -   Copy the `Individual` and `Arrow` data class definitions to the `gbad_core/drawio.py` module.
+      2.  **Update `DrawIOParser`:**
+          -   The `parse()` method of the new `DrawIOParser` class will return a list or generator of `Individual` and `Arrow` objects.
+      3.  **Remove `SerialisationConfig`:**
+          -   The `SerialisationConfig` class will be removed. Its functionality will be replaced by the new central configuration object that will be passed to the pipeline.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

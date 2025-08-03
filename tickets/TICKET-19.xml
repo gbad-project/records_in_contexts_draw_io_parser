@@ -1,0 +1,37 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-19">
+    <skos:prefLabel>Refactor Graph Merging Logic from merge_graphs.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the graph merging logic from `merge_graphs.py`.
+      The logic will be moved into a new `GraphMerger` class in `gbad_core/graph_merger.py`.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def consolidate_rdf_files(input_dir, output_file):
+          """
+          Read all supported RDF files in a directory and combine them into a single N-Quads file.
+          """
+          # ...
+          def create_named_graph_uri_from_file(file_path: Path,
+                                                       graph_uri_path: URIRef):
+              # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `GraphMerger` Class:**
+          -   Create a new class `GraphMerger` in `gbad_core/graph_merger.py`.
+      2.  **Implement `merge()` Method:**
+          -   The `GraphMerger` class will have a `merge()` method that takes a list of file paths or `rdflib.Graph` objects and merges them into a single `rdflib.Dataset`.
+      3.  **Preserve Provenance Logic:**
+          -   The logic for generating named graph URIs based on a SHA256 hash of the file content will be preserved in the new `GraphMerger` class.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

@@ -1,0 +1,33 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-10">
+    <skos:prefLabel>Refactor Global Variables from map_schema.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of hardcoded global variables from `map_schema.py`.
+      The goal is to move them to a central, configurable location to improve maintainability and flexibility.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      BASE_URI = 'https://data.archives.gov.on.test.gbad.ca/'
+
+      SISN = 'SISN'
+      DATEEX_COLS = ['DATEEX_BEGINNING', 'DATEEX_END']
+      # ... and so on for all other global variables
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Move to `gbad_core/config.py`:**
+          -   Move all hardcoded global variables (`BASE_URI`, CSV column names, placeholder masks, `rico_authtp_dict`, etc.) to the new `gbad_core/config.py` module.
+          -   These can be stored in a structured format, such as a dictionary or a set of dataclasses, to make them easier to manage.
+      2.  **Update Refactored Code:**
+          -   The new `CSVPreprocessor` and `RMLGenerator` classes will import these configuration values from `gbad_core/config.py`.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

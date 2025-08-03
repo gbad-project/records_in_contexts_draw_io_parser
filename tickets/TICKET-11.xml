@@ -1,0 +1,35 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-11">
+    <skos:prefLabel>Refactor Preprocessing Logic from map_schema.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the preprocessing logic from `map_schema.py`.
+      The `add_preprocess` and `auth_preprocess` functions will be moved into a new `CSVPreprocessor` class in `gbad_core/preprocessing.py`, and the preprocessing steps will be made generic and configurable.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def add_preprocess(source_csv_path, preprocessed_csv_path):
+          # ...
+
+      def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
+          # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `CSVPreprocessor` Class:**
+          -   Create a new class `CSVPreprocessor` in `gbad_core/preprocessing.py`.
+      2.  **Generalize Preprocessing Steps:**
+          -   The logic from `add_preprocess` and `auth_preprocess` will be broken down into a series of generic preprocessing steps (e.g., `split_column`, `rename_column`, `apply_function`).
+          -   Each of these steps will be implemented as a method in the `CSVPreprocessor` class.
+      3.  **Make it Configurable:**
+          -   The `CSVPreprocessor` will be configured with a list of preprocessing steps to apply to a given CSV file. This configuration will be passed in from the central configuration object.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

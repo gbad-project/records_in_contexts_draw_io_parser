@@ -1,0 +1,31 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-15">
+    <skos:prefLabel>Identify Additional Conditional Mapping Scenarios</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to identify any additional conditional mapping scenarios that the refactored system should support.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The current script uses FnO to create conditional mappings. The agentic staff needs to know if there are other scenarios where conditional logic is needed.
+
+      **Question:**
+      Are there other scenarios where conditional logic is needed? For example, should we be able to define rules like "if column A has value X, then create property Y"?
+
+      **Input Needed:**
+      A list of any additional conditional mapping scenarios that the refactored system should support.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on additional conditional mapping scenarios.
+      2.  **Incorporate Scenarios into `RMLGenerator`:**
+          -   Once the human staff has provided the scenarios, the agent will extend the `RMLGenerator` to support them, possibly by creating new configurable FnO patterns.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>

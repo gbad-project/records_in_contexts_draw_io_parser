@@ -1,0 +1,32 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-12">
+    <skos:prefLabel>Provide Rationale for Preprocessing Logic</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to provide the business rationale and data semantics for the preprocessing steps in `map_schema.py`.
+      This information is crucial for creating a robust and configurable preprocessing module.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The `add_preprocess` and `auth_preprocess` functions contain complex, hardcoded logic for transforming CSV columns. To generalize this logic, the agentic staff needs to understand the "why" behind these transformations.
+
+      **Question:**
+      What is the business rationale behind these transformations? For example, why is the `INDEXPROV` column split by adjacent case?
+
+      **Input Needed:**
+      A detailed explanation of the business rules and data semantics for the preprocessing steps.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on the rationale for the preprocessing logic.
+      2.  **Incorporate Rationale into Configuration:**
+          -   Once the human staff has provided the rationale, the agent will use this information to design the configuration for the new `CSVPreprocessor` module.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>

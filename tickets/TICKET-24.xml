@@ -1,0 +1,31 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-24">
+    <skos:prefLabel>Create CLI and Streamlit App</skos:prefLabel>
+    <skos:description>
+      This ticket covers the creation of the `main.py` and `streamlit_app.py` files.
+      These files will provide a command-line interface and a user-facing web application for the `gbad_core` library.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The refactored `gbad_core` library needs user-friendly interfaces to make it accessible to both developers and non-technical users.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `main.py`:**
+          -   Create a new file `main.py` in the root of the repository.
+          -   Use a library like `argparse` or `click` to create a command-line interface that uses the `gbad_core.pipeline.Pipeline` class to run the conversion process.
+      2.  **Create `streamlit_app.py`:**
+          -   Create a new file `streamlit_app.py` in the root of the repository.
+          -   Use the `streamlit` library to create a web application that allows users to:
+              -   Upload Draw.io and CSV files.
+              -   Configure the conversion process.
+              -   Run the pipeline and download the resulting N-Quads file.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

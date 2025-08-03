@@ -1,0 +1,38 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-13">
+    <skos:prefLabel>Refactor RML Generation Logic from map_schema.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the RML generation logic from `map_schema.py`.
+      A new `RMLGenerator` class will be created in `gbad_core/rml.py` to handle the core RML generation logic, including a generalized placeholder handling mechanism.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def disaggregate_rico_authtp(spo):
+          # ...
+
+      def disaggregate_refd_file(spo):
+          # ...
+
+      # ... and the main loop that iterates through the parsed triples and generates the RML
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Create `RMLGenerator` Class:**
+          -   Create a new class `RMLGenerator` in `gbad_core/rml.py`.
+      2.  **Move RML Generation Logic:**
+          -   Move the core RML generation logic from the main loop of `map_schema.py` to the `RMLGenerator` class.
+      3.  **Generalize Placeholder Handling:**
+          -   The logic from `disaggregate_rico_authtp` and `disaggregate_refd_file` will be refactored into a more generic and configurable placeholder handling mechanism within the `RMLGenerator`.
+      4.  **Preserve FnO Patterns:**
+          -   The FnO mapping patterns (`fno_map_value_unless_isnull`, `fno_map_this_string_match`) will be preserved as helper functions within the `gbad_core/rml.py` module.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

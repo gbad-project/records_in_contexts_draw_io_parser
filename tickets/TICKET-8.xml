@@ -1,0 +1,44 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-8">
+    <skos:prefLabel>Refactor Identifier Cleaning Functions from draw_io_parser.py</skos:prefLabel>
+    <skos:description>
+      This ticket covers the refactoring of the identifier cleaning functions from `draw_io_parser.py`.
+      These functions are responsible for cleaning up node labels to create valid IRIs and should be moved to the new `DrawIOParser` class and made more configurable.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Relevant Code Snippets:**
+      ```python
+      def _handle_spaces(
+              identifier: str,
+              space_substitute: Replacement,
+              capitalisation_scheme: str) -> str:
+          # ...
+
+      def _replace_metacharacter(
+              metacharacter: str, identifier: str, metacharacter_substitutes: list[
+              tuple[Metacharacter, Replacement]]) -> str:
+          # ...
+
+      def _replace_metacharacters(
+              identifier: str,
+              metacharacter_substitutes: list[tuple[Metacharacter, Replacement]],
+              space_substitute: Replacement | None,
+              capitalisation_scheme: str) -> str:
+          # ...
+      ```
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Move Functions to `DrawIOParser`:**
+          -   Move the logic from `_handle_spaces`, `_replace_metacharacter`, and `_replace_metacharacters` into private methods of the `DrawIOParser` class.
+      2.  **Make them Configurable:**
+          -   The behavior of these methods (e.g., the space substitute, the capitalisation scheme) should be controlled by the configuration object passed to the `DrawIOParser`.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-TODO"/>
+  </rdf:Description>
+
+</rdf:RDF>

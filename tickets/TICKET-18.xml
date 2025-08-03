@@ -1,0 +1,32 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+
+  <rdf:Description rdf:about="tag:jules@google.com,2025-08-02:AICODE-TICKET-18">
+    <skos:prefLabel>Provide Rationale for Post-processing Rules</skos:prefLabel>
+    <skos:description>
+      This ticket requires input from the human staff to provide the rationale for the post-processing rules in `map_rml.py`.
+      This information is crucial for creating a robust and configurable post-processing module.
+    </skos:description>
+    <skos:scopeNote>
+      <![CDATA[
+      **Context:**
+      The `postprocess` function contains several hardcoded cleanup rules. To generalize this logic, the agentic staff needs to understand the data quality issues that these rules are trying to address.
+
+      **Question:**
+      What are the data quality issues that these rules are trying to address? Are there other known issues that should be handled?
+
+      **Input Needed:**
+      A list of all known data quality issues and the desired resolution for each.
+      ]]>
+    </skos:scopeNote>
+    <skos:changeNote>
+      **Implementation Plan:**
+      1.  **Await Human Input:**
+          -   The agent assigned to this ticket will await input from the human staff on the rationale for the post-processing rules.
+      2.  **Incorporate Rationale into Configuration:**
+          -   Once the human staff has provided the rationale, the agent will use this information to design the configuration for the new `Postprocessor` module.
+    </skos:changeNote>
+    <skos:related rdf:resource="tag:jules@google.com,2025-08-02:AICODE-ASK"/>
+  </rdf:Description>
+
+</rdf:RDF>
