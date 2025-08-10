@@ -1277,6 +1277,87 @@ def _arguments_parser():
     return argument_parser
 
 
+class DrawioParser:
+    """
+    A class to parse draw.io XML files and generate OWL output.
+    This class is intended to be used as a module.
+    """
+
+    def run(self, raw_xml: str, args: 'argparse.Namespace') -> str:
+        """
+        Parses a draw.io XML file and returns the OWL output as a string.
+
+        :param raw_xml: The raw XML content of the draw.io file.
+        :param args: An argparse.Namespace object with the same arguments as the command-line script.
+        :return: The OWL output as a string.
+        """
+        if len(args.prefix) != len(args.prefix_iri):
+            raise ValueError("The number of prefixes and prefix IRIs must be the same")
+
+        _load_ontologies_and_populate_lists(args.prefix, args.prefix_iri)
+
+        serialisation_config = SerialisationConfig(
+            infer_type_of_literals=not args.infer_types_disable,
+            include_preamble=not args.preamble_disable,
+            ontology_iri=args.ontology_iri,
+            prefix=args.prefix[0] if args.prefix else None,
+            prefix_iri=args.prefix_iri[0] if args.prefix_iri else None,
+            indentation=args.indentation,
+            include_label=not args.label_disable)
+
+        max_gap = args.max_gap
+        strict_mode = args.strict_mode
+        capitalisation_scheme = args.capitalisation_scheme
+
+        try:
+            space_substitute = _parse_space_substitute(
+                args.metacharacter_substitute)
+            metacharacter_substitutes = list(_parse_metacharacter_substitutes(
+                args.metacharacter_substitute))
+            _parse_capitalisation_scheme(capitalisation_scheme)
+        except (
+                _MetacharacterSubstituteParseException,
+                _InvalidCapitalisationSchemeException) as exception:
+            raise exception
+
+        try:
+            draw_io_xml_tree = DrawIOXMLTree(raw_xml)
+        except NothingToParseException:
+            raise NothingToParseException("The draw IO XML graph passed in appears to be empty")
+        except NotInKnownException as exception:
+            raise exception
+
+        try:
+            blocks = individual_blocks(
+                draw_io_xml_tree.individuals_and_arrows(strict_mode, max_gap),
+                metacharacter_substitutes,
+                space_substitute,
+                capitalisation_scheme)
+        except NoSourceException as exception:
+            if args.strict_mode:
+                message = (
+                    f"{exception}. If so, try to lock the arrow to an individual "
+                    "node in the original graph; or the underlying XML could be "
+                    "edited to indicate the source. Alternatively, try running the "
+                    "parser in non-strict mode (without the '-s/--strict-mode' "
+                    "flag), optionally making use of the '-g/--max-gap' option")
+            else:
+                message = (
+                    f"{exception}. If so, consider using the '-g/--max gap' option "
+                    "when running the script to increase the max recognised gap "
+                    "between a node and an arrow end; or try to lock the arrow to "
+                    "an individual node in the original graph; or the underlying "
+                    "XML could be edited")
+            raise NoSourceException(message)
+        except (
+                NotInKnownException,
+                ArrowWithoutIndividualAsSourceException,
+                MetacharacterException) as exception:
+            raise exception
+
+        return serialise(blocks, serialisation_config).rstrip()
+
+
 def _run() -> None:
     raw_xml_from_stdin = stdin.read()
     arguments = _arguments_parser().parse_args()
