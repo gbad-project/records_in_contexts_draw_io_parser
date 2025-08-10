@@ -1,0 +1,22 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix gbad: <https://data.gbad.ca/Schema/>
+
+<https://data.gbad.ca/Schema> a owl:Ontology .
+
+gbad:datatypeProperty
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.gbad.ca/Schema> ;
+    #rdfs:domain rdfs:Resource ;  # implied for HermiT reasoner
+    rdfs:range rdfs:Literal ;
+    rdfs:label "datatype property" ;
+    skos:scopeNote "An datatype property defined by the GBAD schema."@en .
+
+gbad:objectProperty
+    a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://data.gbad.ca/Schema> ;
+    #rdfs:domain rdfs:Resource ;  # implied for HermiT reasoner
+    rdfs:range rdfs:Resource ;
+    rdfs:label "object property" ;
+    skos:scopeNote "An object property defined by the GBAD schema."@en .

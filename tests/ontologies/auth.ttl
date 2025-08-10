@@ -1,0 +1,47 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rico: <https://www.ica.org/standards/RiC/ontology#>
+prefix auth: <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/>
+prefix gbad: <https://data.gbad.ca/Schema/>
+
+<https://data.archives.gov.on.test.gbad.ca/Schema/Authority/> a owl:Ontology .
+
+auth:mnemonic
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
+    rdfs:subPropertyOf gbad:datatypeProperty ;
+    rdfs:domain owl:DatatypeProperty ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "authority mnemonic"@en ;
+    skos:scopeNote "An Authority mnemonic used in the legacy database."@en .
+
+auth:sourceNote
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain rico:Agent ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "source note"@en ;
+    rdfs:comment "AH asked RiC user group for advice on this. Currently no relevant object property available, but noted for future revision. Meanwhile, rico:generalDescription is best option, linked to the representation of the authority as rico:Record."@en ;
+    auth:mnemonic "SOURCE" .
+
+auth:functionNote
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain rico:Agent ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "function note"@en ;
+    rdfs:comment "Can be enriched by using rico:Activty class and a functional classification scheme. According to RiC: \"In a corporate or government context an Activity may also be called a 'function'.\""@en ;
+    auth:mnemonic "FUN" .
+
+auth:privateNote
+    a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <https://data.archives.gov.on.test.gbad.ca/Schema/Authority> ;
+    rdfs:subPropertyOf rico:generalDescription, gbad:datatypeProperty ;
+    rdfs:domain rico:Agent ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "private note"@en ;
+    rdfs:comment "Used for non-public generic notes. Serves same function as Archivist's Comment in Description database and Hidden Notes in Listings database"@en ;
+    auth:mnemonic "CMTAU" .
