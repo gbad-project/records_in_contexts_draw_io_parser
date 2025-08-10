@@ -47,15 +47,20 @@ from typing import Optional
 import urllib.parse
 import traceback
 import os
+from rdflib import Graph, URIRef, Literal, Namespace
+from rdflib.namespace import RDF, RDFS, OWL, XSD
 
-BASE_URI = os.getenv('BASE_URI', 'https://example.com')
+def get_prefixes():
+    BASE_URI = os.getenv('BASE_URI', 'https://example.com')
+    return {
+        'rico': 'https://www.ica.org/standards/RiC/ontology#',
+        'add': f'{BASE_URI}/Schema/Description-Listings/',
+        'auth': f'{BASE_URI}/Schema/Authority/',
+        'owl': 'http://www.w3.org/2002/07/owl#',
+        'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'
+    }
 
-_prefixes = {
-    'rico': 'https://www.ica.org/standards/RiC/ontology#',
-    'add': f'{BASE_URI}/Schema/Description-Listings/',
-    'auth': f'{BASE_URI}/Schema/Authority/',
-    'owl': 'http://www.w3.org/2002/07/owl#'
-}
+_prefixes = get_prefixes()
 
 _classes = [
     "owl:DatatypeProperty",
@@ -835,14 +840,15 @@ class DrawIOXMLTree:
     literal_cells: list[tuple[Cell, Dimensions]] = field(init=False)
 
     raw_xml: InitVar[str]
+    prefixes: InitVar[dict]
 
-    def __post_init__(self, raw_xml):
+    def __post_init__(self, raw_xml, prefixes):
         object.__setattr__(self, "literal_node_html_parser", NodeHTMLParser())
         object.__setattr__(self, "draw_io_xml_tree", fromstring(raw_xml))
         object.__setattr__(self, "individual_cells", [])
         object.__setattr__(self, "arrow_cells", [])
         object.__setattr__(self, "literal_cells", [])
-        self._extract_individual_and_arrow_and_literal_cells()
+        self._extract_individual_and_arrow_and_literal_cells(prefixes)
 
     def _cell_with_id(self, _id: str) -> Element:
         cell = self.draw_io_xml_tree.find(f".//*[@id='{_id}']")
@@ -1058,7 +1064,7 @@ class DrawIOXMLTree:
         except _NoValueException:
             pass
 
-    def _extract_individual_and_arrow_and_literal_cells(self) -> None:
+    def _extract_individual_and_arrow_and_literal_cells(self, prefixes) -> None:
         try:
             if len(self.draw_io_xml_tree[0][0][0]) == 0:
                 raise NothingToParseException
@@ -1076,7 +1082,7 @@ class DrawIOXMLTree:
             if not cell_value:
                 self._add_arrow_if_find_label(cell)
                 continue
-            if not cell_value.split(":")[0] in _prefixes.keys():
+            if not cell_value.split(":")[0] in prefixes.keys():
                 if self._is_possible_literal(cell):
                     self.literal_cells.append((cell, self._dimensions(cell)))
                 continue
@@ -1097,7 +1103,7 @@ class DrawIOXMLTree:
                 continue
             if not individual_identifier:
                 continue
-            for prefix in _prefixes.keys():
+            for prefix in prefixes.keys():
                 for ric_class in cell_value.split(f"{prefix}:")[1:]:
                     ric_class = f"{prefix}:" + ric_class.strip()
                     _verify_is_ric_class(ric_class)
@@ -1361,182 +1367,93 @@ def individual_blocks(
     return blocks
 
 
-def _infer_type(literal: str) -> str:
-    if literal.isnumeric():
-        return "\"" + literal + "\"^^xsd:integer"
-    try:
-        datetime.strptime(literal, "%Y-%m-%d")
-        return "\"" + literal + "\"^^xsd:date"
-    except ValueError:
-        pass
-    try:
-        if literal[-1] == "Z":
-            try:
-                datetime.strptime(literal[-1], "%Y-%m-%dT%H-%M-%S")
-                return "\"" + literal + "\"^^xsd:dateTime"
-            except ValueError:
-                pass
-        elif literal[-6] == "+" or literal[-6] == "-":
-            try:
-                datetime.strptime(literal[:-6], "%Y-%m-%dT%H-%M-%S")
-                datetime.strptime(literal[-5:], "%H:%M")
-                return "\"" + literal + "\"^^xsd:dateTime"
-            except ValueError:
-                pass
-        else:
-            try:
-                datetime.strptime("%Y-%m-%dT%H-%M-%S", literal)
-                return "\"" + literal + "\"^^xsd:dateTime"
-            except ValueError:
-                pass
-    except IndexError:
-        # Short literals
-        pass
-    literal = literal.replace('"', r'\"')
-    return "\"" + literal + "\""
+def serialise_to_graph(blocks: Blocks, serialisation_config: SerialisationConfig, prefixes: dict) -> Graph:
+    g = Graph()
+
+    # Bind prefixes
+    for prefix, uri in prefixes.items():
+        g.bind(prefix, Namespace(uri))
+    if serialisation_config.prefix:
+        g.bind(serialisation_config.prefix, Namespace(serialisation_config.prefix_iri or f"{serialisation_config.ontology_iri}#"))
 
 
-def _serialise_facts(
-        facts: dict[str, set[str]],
-        infer_type_of_literals: bool = True,
-        prefix: str | None = None) -> Generator[str, None, None]:
-    if prefix:
-        prefix_string = prefix + ":"
-    else:
-        prefix_string = ""
-    for _property, values in facts.items():
-        for value in sorted(values):
-            if _property in _datatype_properties:
-                if infer_type_of_literals:
-                    formatted_value = _infer_type(value)
-                else:
-                    formatted_value = "\"" + value + "\""
-            else:
-                formatted_value = prefix_string + value
-            yield f"{_property} {formatted_value}"
-
-
-def _serialise_block(
-        individual_identifier: str,
-        individual_label: str,
-        types_and_facts: dict[str, set[str]],
-        serialisation_config: SerialisationConfig) -> str:
-    prefix = serialisation_config.prefix
-    indentation = serialisation_config.indentation
-    infer_type_of_literals = serialisation_config.infer_type_of_literals
-    include_label = serialisation_config.include_label
-    if prefix:
-        prefix_string = prefix + ":"
-    else:
-        prefix_string = ""
-    if any(str(x).startswith('owl:') for x in types_and_facts["Types"]):
-        keyword = 'DataProperty'
-    else:
-        keyword = 'Individual'
-    header = f"{keyword}: {prefix_string}{individual_identifier}"
-    if include_label:
-        header += f"\n{' '*indentation}Annotations:"
-        header += f"\n{' '*(indentation*2)}rdfs:label \"{individual_label}\""
-    types_string = ", ".join(
-        _type for _type in sorted(types_and_facts["Types"]) if not _type.startswith('owl:'))
-        #f"rico:{_type}" for _type in sorted(types_and_facts["Types"]))
-    facts = types_and_facts.copy()
-    del facts["Types"]
-    types_string = f"{' '*indentation}Types: {types_string}" if types_string else ''
-    if not facts:
-        return f"""{header}
-{types_string}
-
-"""
-    subproperties = facts.get('rdfs:subPropertyOf', None)
-    if subproperties:
-        subproperties_string = f"{' '*indentation}SubPropertyOf:\n{' '*(indentation*2)}"
-        subproperties_string += f",\n{' '*(indentation*2)}".join(
-            subproperty for subproperty in sorted(subproperties))
-        return f"""{header}
-{subproperties_string}
-
-"""
-    serialised_facts = list(_serialise_facts(
-        facts, infer_type_of_literals, prefix))
-    facts_string = f"{' '*indentation}Facts:\n{' '*(indentation*2)}"
-    facts_string += f",\n{' '*(indentation*2)}".join(serialised_facts[:-1])
-    facts_string += f",\n{' '*(indentation*2)}{serialised_facts[-1]}" if len(
-        serialised_facts) > 1 else f"{serialised_facts[-1]}"
-    return f"""{header}
-{types_string}
-{facts_string}
-
-"""
-
-
-def _preamble(serialisation_config: SerialisationConfig) -> str:
-    ontology_iri = serialisation_config.ontology_iri
-    prefix = serialisation_config.prefix
-    prefix_iri = serialisation_config.prefix_iri
-    indentation = serialisation_config.indentation
-    include_label = serialisation_config.include_label
-    if ontology_iri:
-        ontology_iri_string = ontology_iri
-    else:
-        current_time = datetime.strftime(datetime.now(), "%Y-%m-%dT%H-%M-%S")
-        ontology_iri_string = f"ontology://generated-from-draw-io/{current_time}"
-    if prefix:
-        prefix_string = prefix
-    else:
-        prefix_string = ""
-    if prefix_iri:
-        prefix_iri = f"<{prefix_iri}>"
-    else:
-        prefix_iri = f"<{ontology_iri_string}#>"
-    if include_label:
-        preamble = "Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
-    else:
-        preamble = ""
-    preamble_lines = "\n".join([f"Prefix: {prefix}: <{uri}>" for prefix, uri in _prefixes.items()])
-
-    non_rico_object_properties = [prop for prop in _object_properties if not prop.startswith('rico:')]
-    objectproperty_lines = ''
-    if len(non_rico_object_properties) > 0:
-        for non_rico_object_property in non_rico_object_properties:
-            objectproperty_lines += f"\nObjectProperty:\n{' '*indentation}" + non_rico_object_property + "\n"
-    
-    non_rico_datatype_properties = [prop for prop in _datatype_properties if not prop.startswith('rico:')]
-    dataproperty_lines = ''
-    if len(non_rico_datatype_properties) > 0:
-        for non_rico_datatype_property in non_rico_datatype_properties:
-            dataproperty_lines += f"\nDataProperty:\n{' '*indentation}" + non_rico_datatype_property + "\n"
-    
-    return preamble + f"""{preamble_lines}
-Prefix: {prefix_string}: {prefix_iri}
-Ontology: <{ontology_iri_string}>
-{' '*indentation}Import: <{_prefixes['rico']}>
-{objectproperty_lines}{dataproperty_lines}
-"""
-
-
-def serialise(blocks: Blocks, serialisation_config: SerialisationConfig) -> str:
-    """
-    Takes such a dictionary of individuals and their facts and types such as
-    that outputted by the 'individual_blocks' function, arranges each pair of a
-    key (individual) and its values (facts and types) into an Individual block
-    in OWL Manchester syntax, and concatenates all of these into one large
-    string.
-    """
     if serialisation_config.include_preamble:
-        serialised = _preamble(serialisation_config)
-    else:
-        serialised = ""
-    for individual, types_and_facts in blocks.items():
-        individual_id, individual_label = individual
-        # Ensure that quotation marks are escaped properly in values for rdfs:label
-        individual_label = individual_label.replace('"', r'\"')
-        serialised += _serialise_block(
-            individual_id,
-            individual_label,
-            types_and_facts,
-            serialisation_config)
-    return serialised
+        # Add ontology definition
+        ontology_iri = serialisation_config.ontology_iri
+        if not ontology_iri:
+            current_time = datetime.strftime(datetime.now(), "%Y-%m-%dT%H-%M-%S")
+            ontology_iri = f"ontology://generated-from-draw-io/{current_time}"
+        g.add((URIRef(ontology_iri), RDF.type, OWL.Ontology))
+        g.add((URIRef(ontology_iri), OWL.imports, URIRef(prefixes['rico'])))
+
+    # Add property definitions
+    non_rico_object_properties = [prop for prop in _object_properties if not prop.startswith('rico:')]
+    for prop in non_rico_object_properties:
+        prop_prefix, prop_name = prop.split(":")
+        prop_uri = Namespace(prefixes[prop_prefix])[prop_name]
+        g.add((prop_uri, RDF.type, OWL.ObjectProperty))
+
+    non_rico_datatype_properties = [prop for prop in _datatype_properties if not prop.startswith('rico:')]
+    for prop in non_rico_datatype_properties:
+        prop_prefix, prop_name = prop.split(":")
+        prop_uri = Namespace(prefixes[prop_prefix])[prop_name]
+        g.add((prop_uri, RDF.type, OWL.DatatypeProperty))
+
+    # Add individuals and their properties
+    for (individual_id, individual_label), types_and_facts in blocks.items():
+
+        prefix = serialisation_config.prefix
+        prefix_iri = serialisation_config.prefix_iri or (f"{serialisation_config.ontology_iri}#" if serialisation_config.ontology_iri else None)
+
+        if prefix and prefix_iri:
+            individual_uri = Namespace(prefix_iri)[individual_id]
+        else:
+            # Fallback to a default base URI if no prefix is defined
+            base_uri = prefix_iri or "https://example.com/id/"
+            individual_uri = URIRef(f"{base_uri}{individual_id}")
+
+        g.add((individual_uri, RDF.type, OWL.NamedIndividual))
+
+        # Add types
+        for rdf_type in types_and_facts.get("Types", set()):
+            prefix, name = rdf_type.split(":")
+            g.add((individual_uri, RDF.type, Namespace(_prefixes[prefix])[name]))
+
+        # Add label
+        if serialisation_config.include_label:
+            g.add((individual_uri, RDFS.label, Literal(individual_label)))
+
+        # Add facts
+        for prop, values in types_and_facts.items():
+            if prop == "Types":
+                continue
+
+            prop_prefix, prop_name = prop.split(":")
+            prop_uri = Namespace(_prefixes[prop_prefix])[prop_name]
+
+            for value in values:
+                if prop in _object_properties:
+                    if prefix and prefix_iri:
+                        target_uri = Namespace(prefix_iri)[value]
+                    else:
+                        base_uri = prefix_iri or "https://example.com/id/"
+                        target_uri = URIRef(f"{base_uri}{value}")
+                    g.add((individual_uri, prop_uri, target_uri))
+                elif prop in _datatype_properties:
+                    # Simplified type inference
+                    if isinstance(value, int) or value.isnumeric():
+                        literal_value = Literal(value, datatype=XSD.integer)
+                    elif isinstance(value, float):
+                        literal_value = Literal(value, datatype=XSD.float)
+                    else:
+                        try:
+                            datetime.strptime(value, "%Y-%m-%d")
+                            literal_value = Literal(value, datatype=XSD.date)
+                        except (ValueError, TypeError):
+                            literal_value = Literal(value)
+                    g.add((individual_uri, prop_uri, literal_value))
+
+    return g
 
 
 def _parse_space_substitute(
@@ -1619,6 +1536,53 @@ def _parse_capitalisation_scheme(capitalisation_scheme: str) -> None:
             f"option, which is not a permitted value: "
             f"{capitalisation_scheme}. See the documentation of the "
             "-c/--capitalisation-scheme option for the permitted values")
+
+
+def parse_drawio_to_graph(drawio_file_path: str, **kwargs) -> Graph:
+    """
+    Parses a draw.io file and returns an rdflib.Graph.
+    """
+    with open(drawio_file_path, "r", encoding="utf-8") as f:
+        raw_xml = f.read()
+
+    # Default settings, can be overridden by kwargs
+    config_args = {
+        'infer_type_of_literals': True,
+        'include_preamble': True,
+        'ontology_iri': None,
+        'prefix': None,
+        'prefix_iri': None,
+        'indentation': DEFAULT_INDENTATION,
+        'include_label': True,
+        'max_gap': DEFAULT_MAX_GAP,
+        'strict_mode': False,
+        'metacharacter_substitute': [],
+        'capitalisation_scheme': DEFAULT_CAPITALISATION_SCHEME,
+    }
+    config_args.update(kwargs)
+
+    prefixes = get_prefixes()
+
+    serialisation_config = SerialisationConfig(
+        infer_type_of_literals=config_args['infer_type_of_literals'],
+        include_preamble=config_args['include_preamble'],
+        ontology_iri=config_args['ontology_iri'],
+        prefix=config_args['prefix'],
+        prefix_iri=config_args['prefix_iri'],
+        indentation=config_args['indentation'],
+        include_label=config_args['include_label'])
+
+    space_substitute = _parse_space_substitute(config_args['metacharacter_substitute'])
+    metacharacter_substitutes = list(_parse_metacharacter_substitutes(config_args['metacharacter_substitute']))
+
+    draw_io_xml_tree = DrawIOXMLTree(raw_xml, prefixes)
+    blocks = individual_blocks(
+        draw_io_xml_tree.individuals_and_arrows(config_args['strict_mode'], config_args['max_gap']),
+        metacharacter_substitutes,
+        space_substitute,
+        config_args['capitalisation_scheme'])
+
+    return serialise_to_graph(blocks, serialisation_config, prefixes)
 
 
 def _arguments_parser():
@@ -1759,11 +1723,20 @@ def _arguments_parser():
             "every word except the first, which is made lower-case; 'flat' "
             "makes every word lower-case; and 'none' leaves the words "
             "untouched"))
+    argument_parser.add_argument(
+        "file",
+        nargs='?',
+        type=argparse.FileType('r'),
+        default=None,
+        help="A draw.io file to parse. If not provided, reads from stdin."
+    )
     return argument_parser
 
 
-def _run() -> None:
-    arguments = _arguments_parser().parse_args()
+def _run(args=None) -> None:
+    parser = _arguments_parser()
+    arguments = parser.parse_args(args)
+
     serialisation_config = SerialisationConfig(
         infer_type_of_literals=not arguments.infer_types_disable,
         include_preamble=not arguments.preamble_disable,
@@ -1772,9 +1745,11 @@ def _run() -> None:
         prefix_iri=arguments.prefix_iri,
         indentation=arguments.indentation,
         include_label=not arguments.label_disable)
+
     max_gap = arguments.max_gap
     strict_mode = arguments.strict_mode
     capitalisation_scheme = arguments.capitalisation_scheme
+
     try:
         space_substitute = _parse_space_substitute(
             arguments.metacharacter_substitute)
@@ -1785,12 +1760,21 @@ def _run() -> None:
             _MetacharacterSubstituteParseException,
             _InvalidCapitalisationSchemeException) as exception:
         sys_exit(f"{exception}")
+
+    if arguments.file:
+        raw_xml = arguments.file.read()
+    else:
+        raw_xml = stdin.read()
+
+    prefixes = get_prefixes()
+
     try:
-        draw_io_xml_tree = DrawIOXMLTree(stdin.read())
+        draw_io_xml_tree = DrawIOXMLTree(raw_xml, prefixes)
     except NothingToParseException:
         sys_exit("The draw IO XML graph passed in appears to be empty")
     except NotInKnownException as exception:
         sys_exit(f"{exception}")
+
     try:
         blocks = individual_blocks(
             draw_io_xml_tree.individuals_and_arrows(strict_mode, max_gap),
@@ -1818,12 +1802,14 @@ def _run() -> None:
             ArrowWithoutIndividualAsSourceException,
             MetacharacterException) as exception:
         sys_exit(f"{exception}")
-    print(serialise(blocks, serialisation_config).rstrip())
+
+    graph = serialise_to_graph(blocks, serialisation_config, prefixes)
+    print(graph.serialize(format="turtle"))
 
 
-def _main() -> None:
+def main(args=None) -> None:
     try:
-        _run()
+        _run(args)
     except ParseException as exception:
         sys_exit(str(exception))
     except Exception as exception:  # pylint: disable=broad-exception-caught
@@ -1832,4 +1818,4 @@ def _main() -> None:
         sys_exit(f"An unexpected error occurred: {error_type}: {exception}\n\nTraceback:\n{error_traceback}")
 
 if __name__ == "__main__":
-    _main()
+    main()
