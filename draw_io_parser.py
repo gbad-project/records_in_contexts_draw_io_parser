@@ -605,13 +605,19 @@ class DrawIOXMLTree:
                 continue
             if not individual_identifier:
                 continue
-            for prefix in _prefixes.keys():
-                for ric_class in cell_value.split(f"{prefix}:")[1:]:
-                    ric_class = f"{prefix}:" + ric_class.strip()
-                    _verify_is_ric_class(ric_class)
-                    individual = Individual(individual_identifier, ric_class)
-                    self.individual_cells.append(
-                        (cell, individual, self._dimensions(parent)))
+            for qname in cell_value.split():
+                try:
+                    prefix, _ = qname.split(':', 1)
+                    if prefix in _prefixes:
+                        _verify_is_ric_class(qname)
+                        individual = Individual(individual_identifier, qname)
+                        self.individual_cells.append(
+                            (cell, individual, self._dimensions(parent)))
+                except ValueError:
+                    # This happens if qname has no ':', so it's not a prefixed name.
+                    # The original code was buggy and would mis-parse this in some cases.
+                    # We ignore it here, assuming types must have prefixes.
+                    pass
             #for ric_class in cell_value.split("rico:")[1:]:
             #    ric_class = ric_class.strip()
             #    _verify_is_ric_class(ric_class)
@@ -840,18 +846,14 @@ def individual_blocks(
                 space_substitute,
                 capitalisation_scheme)
             continue
-        # if individual_or_arrow.identifier in _object_properties:
-        target_identifier = _replace_metacharacters(
-            individual_or_arrow.target,
-            metacharacter_substitutes,
-            space_substitute,
-            capitalisation_scheme)
-        # elif individual_or_arrow.identifier in _datatype_properties:
-        #     target_identifier = individual_or_arrow.target
-        # else:
-        #     raise NotInKnownException(
-        #         f"An arrow has label '{individual_or_arrow.identifier}', "
-        #         "which is not a known object property or datatype property")
+        if individual_or_arrow.identifier in _datatype_properties or individual_or_arrow.identifier == "rdfs:label":
+            target_identifier = individual_or_arrow.target
+        else:
+            target_identifier = _replace_metacharacters(
+                individual_or_arrow.target,
+                metacharacter_substitutes,
+                space_substitute,
+                capitalisation_scheme)
         source_identifier = _replace_metacharacters(
             individual_or_arrow.source,
             metacharacter_substitutes,
@@ -915,11 +917,11 @@ def _serialise_facts(
         prefix_string = ""
     for _property, values in facts.items():
         for value in sorted(values):
-            if _property in _datatype_properties:
+            if _property in _datatype_properties or _property == "rdfs:label":
                 if infer_type_of_literals:
                     formatted_value = _infer_type(value)
                 else:
-                    formatted_value = "\"" + value + "\""
+                    formatted_value = "\"" + value.replace('"', r'\"') + "\""
             else:
                 formatted_value = prefix_string + value
             yield f"{_property} {formatted_value}"
@@ -1017,7 +1019,6 @@ def _preamble(serialisation_config: SerialisationConfig) -> str:
             dataproperty_lines += f"\nDataProperty:\n{' '*indentation}" + non_rico_datatype_property + "\n"
     
     return preamble + f"""{preamble_lines}
-Prefix: {prefix_string}: {prefix_iri}
 Ontology: <{ontology_iri_string}>
 {' '*indentation}Import: <{_prefixes['rico']}>
 {objectproperty_lines}{dataproperty_lines}
@@ -1278,84 +1279,113 @@ def _arguments_parser():
 
 
 class DrawioParser:
-    """
-    A class to parse draw.io XML files and generate OWL output.
-    This class is intended to be used as a module.
-    """
-
     def run(self, raw_xml: str, args: 'argparse.Namespace') -> str:
-        """
-        Parses a draw.io XML file and returns the OWL output as a string.
+        global _prefixes, _classes, _object_properties, _datatype_properties
 
-        :param raw_xml: The raw XML content of the draw.io file.
-        :param args: An argparse.Namespace object with the same arguments as the command-line script.
-        :return: The OWL output as a string.
-        """
-        if len(args.prefix) != len(args.prefix_iri):
-            raise ValueError("The number of prefixes and prefix IRIs must be the same")
+        original_prefixes = _prefixes.copy()
+        original_classes = _classes.copy()
+        original_object_properties = _object_properties.copy()
+        original_datatype_properties = _datatype_properties.copy()
 
-        _load_ontologies_and_populate_lists(args.prefix, args.prefix_iri)
-
-        serialisation_config = SerialisationConfig(
-            infer_type_of_literals=not args.infer_types_disable,
-            include_preamble=not args.preamble_disable,
-            ontology_iri=args.ontology_iri,
-            prefix=args.prefix[0] if args.prefix else None,
-            prefix_iri=args.prefix_iri[0] if args.prefix_iri else None,
-            indentation=args.indentation,
-            include_label=not args.label_disable)
-
-        max_gap = args.max_gap
-        strict_mode = args.strict_mode
-        capitalisation_scheme = args.capitalisation_scheme
+        _prefixes.clear()
+        _classes.clear()
+        _object_properties.clear()
+        _datatype_properties.clear()
 
         try:
+            if len(args.prefix) != len(args.prefix_iri):
+                raise ValueError("The number of prefixes and prefix IRIs must be the same")
+
+            _load_ontologies_and_populate_lists(args.prefix, args.prefix_iri)
+
+            serialisation_config = SerialisationConfig(
+                infer_type_of_literals=not args.infer_types_disable,
+                include_preamble=not args.preamble_disable,
+                ontology_iri=args.ontology_iri,
+                prefix=args.prefix[0] if args.prefix else None,
+                prefix_iri=args.prefix_iri[0] if args.prefix_iri else None,
+                indentation=args.indentation,
+                include_label=not args.label_disable)
+
+            max_gap = args.max_gap
+            strict_mode = args.strict_mode
+            capitalisation_scheme = args.capitalisation_scheme
+
             space_substitute = _parse_space_substitute(
                 args.metacharacter_substitute)
             metacharacter_substitutes = list(_parse_metacharacter_substitutes(
                 args.metacharacter_substitute))
             _parse_capitalisation_scheme(capitalisation_scheme)
-        except (
-                _MetacharacterSubstituteParseException,
-                _InvalidCapitalisationSchemeException) as exception:
-            raise exception
 
-        try:
             draw_io_xml_tree = DrawIOXMLTree(raw_xml)
-        except NothingToParseException:
-            raise NothingToParseException("The draw IO XML graph passed in appears to be empty")
-        except NotInKnownException as exception:
-            raise exception
 
-        try:
             blocks = individual_blocks(
                 draw_io_xml_tree.individuals_and_arrows(strict_mode, max_gap),
                 metacharacter_substitutes,
                 space_substitute,
                 capitalisation_scheme)
-        except NoSourceException as exception:
-            if args.strict_mode:
-                message = (
-                    f"{exception}. If so, try to lock the arrow to an individual "
-                    "node in the original graph; or the underlying XML could be "
-                    "edited to indicate the source. Alternatively, try running the "
-                    "parser in non-strict mode (without the '-s/--strict-mode' "
-                    "flag), optionally making use of the '-g/--max-gap' option")
-            else:
-                message = (
-                    f"{exception}. If so, consider using the '-g/--max gap' option "
-                    "when running the script to increase the max recognised gap "
-                    "between a node and an arrow end; or try to lock the arrow to "
-                    "an individual node in the original graph; or the underlying "
-                    "XML could be edited")
-            raise NoSourceException(message)
-        except (
-                NotInKnownException,
-                ArrowWithoutIndividualAsSourceException,
-                MetacharacterException) as exception:
-            raise exception
 
-        return serialise(blocks, serialisation_config).rstrip()
+            return serialise(blocks, serialisation_config).rstrip()
+
+        finally:
+            _prefixes = original_prefixes
+            _classes = original_classes
+            _object_properties = original_object_properties
+            _datatype_properties = original_datatype_properties
+
+class DrawioParser:
+    def run(self, raw_xml: str, args: 'argparse.Namespace') -> str:
+        global _prefixes, _classes, _object_properties, _datatype_properties
+
+        original_prefixes = _prefixes.copy()
+        original_classes = list(_classes)
+        original_object_properties = list(_object_properties)
+        original_datatype_properties = list(_datatype_properties)
+
+        _prefixes.clear()
+        _classes.clear()
+        _object_properties.clear()
+        _datatype_properties.clear()
+
+        try:
+            if len(args.prefix) != len(args.prefix_iri):
+                raise ValueError("The number of prefixes and prefix IRIs must be the same")
+
+            _load_ontologies_and_populate_lists(args.prefix, args.prefix_iri)
+
+            serialisation_config = SerialisationConfig(
+                infer_type_of_literals=not args.infer_types_disable,
+                include_preamble=not args.preamble_disable,
+                ontology_iri=args.ontology_iri,
+                prefix=args.prefix[0] if args.prefix else None,
+                prefix_iri=args.prefix_iri[0] if args.prefix_iri else None,
+                indentation=args.indentation,
+                include_label=not args.label_disable)
+
+            max_gap = args.max_gap
+            strict_mode = args.strict_mode
+            capitalisation_scheme = args.capitalisation_scheme
+
+            space_substitute = _parse_space_substitute(
+                args.metacharacter_substitute)
+            metacharacter_substitutes = list(_parse_metacharacter_substitutes(
+                args.metacharacter_substitute))
+            _parse_capitalisation_scheme(capitalisation_scheme)
+
+            draw_io_xml_tree = DrawIOXMLTree(raw_xml)
+
+            blocks = individual_blocks(
+                draw_io_xml_tree.individuals_and_arrows(strict_mode, max_gap),
+                metacharacter_substitutes,
+                space_substitute,
+                capitalisation_scheme)
+
+            return serialise(blocks, serialisation_config).rstrip()
+        finally:
+            _prefixes = original_prefixes
+            _classes = original_classes
+            _object_properties = original_object_properties
+            _datatype_properties = original_datatype_properties
 
 
 def _run() -> None:
