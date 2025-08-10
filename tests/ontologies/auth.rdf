@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:auth="https://data.archives.gov.on.test.gbad.ca/Schema/Authority/">
+
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Authority/sourceNote"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Authority/functionNote"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Authority/privateNote"/>
+</rdf:RDF>

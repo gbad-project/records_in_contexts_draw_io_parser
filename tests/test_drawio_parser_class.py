@@ -93,6 +93,8 @@ class TestDrawioParserClass(unittest.TestCase):
                 "https://www.ica.org/standards/RiC/ontology/": "tests/ontologies/rico.rdf",
                 "http://www.w3.org/2000/01/rdf-schema#": "tests/ontologies/rdfs.rdf",
                 "http://www.w3.org/2002/07/owl#": "tests/ontologies/owl.rdf",
+                "https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/": "tests/ontologies/add.rdf",
+                "https://data.archives.gov.on.test.gbad.ca/Schema/Authority/": "tests/ontologies/auth.rdf",
             }
             if source in uri_map:
                 source = uri_map[source]
