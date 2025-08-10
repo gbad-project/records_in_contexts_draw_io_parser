@@ -60,8 +60,6 @@ def get_prefixes():
         'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'
     }
 
-_prefixes = get_prefixes()
-
 _classes = [
     "owl:DatatypeProperty",
     "rico:AccumulationRelation",
@@ -843,6 +841,7 @@ class DrawIOXMLTree:
     prefixes: InitVar[dict]
 
     def __post_init__(self, raw_xml, prefixes):
+        object.__setattr__(self, "prefixes", prefixes)
         object.__setattr__(self, "literal_node_html_parser", NodeHTMLParser())
         object.__setattr__(self, "draw_io_xml_tree", fromstring(raw_xml))
         object.__setattr__(self, "individual_cells", [])
@@ -1082,7 +1081,7 @@ class DrawIOXMLTree:
             if not cell_value:
                 self._add_arrow_if_find_label(cell)
                 continue
-            if not cell_value.split(":")[0] in prefixes.keys():
+            if not cell_value.split(":")[0] in self.prefixes.keys():
                 if self._is_possible_literal(cell):
                     self.literal_cells.append((cell, self._dimensions(cell)))
                 continue
@@ -1103,7 +1102,7 @@ class DrawIOXMLTree:
                 continue
             if not individual_identifier:
                 continue
-            for prefix in prefixes.keys():
+            for prefix in self.prefixes.keys():
                 for ric_class in cell_value.split(f"{prefix}:")[1:]:
                     ric_class = f"{prefix}:" + ric_class.strip()
                     _verify_is_ric_class(ric_class)
@@ -1156,7 +1155,7 @@ class DrawIOXMLTree:
             value = self._value_of(source_or_target_cell)
         except KeyError as key_error:
             raise _NoValueException from key_error
-        if value.split(":")[0] in _prefixes.keys():
+        if value.split(":")[0] in self.prefixes.keys():
             return self._value_of(self._parent_of(source_or_target_cell))
         if must_be_individual and not self._defines_individual(value):
             raise _SourceNotIndividualException
@@ -1417,7 +1416,7 @@ def serialise_to_graph(blocks: Blocks, serialisation_config: SerialisationConfig
         # Add types
         for rdf_type in types_and_facts.get("Types", set()):
             prefix, name = rdf_type.split(":")
-            g.add((individual_uri, RDF.type, Namespace(_prefixes[prefix])[name]))
+            g.add((individual_uri, RDF.type, Namespace(prefixes[prefix])[name]))
 
         # Add label
         if serialisation_config.include_label:
@@ -1429,7 +1428,7 @@ def serialise_to_graph(blocks: Blocks, serialisation_config: SerialisationConfig
                 continue
 
             prop_prefix, prop_name = prop.split(":")
-            prop_uri = Namespace(_prefixes[prop_prefix])[prop_name]
+            prop_uri = Namespace(prefixes[prop_prefix])[prop_name]
 
             for value in values:
                 if prop in _object_properties:

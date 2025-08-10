@@ -75,3 +75,22 @@ The initial test runs failed with several errors.
 ### 4. Final Success
 
 After these fixes, the test passed, confirming that the refactored script correctly generates a graph that is isomorphic to the ground truth. This successful test run validates the correctness of the refactoring.
+
+## Code Review Response
+
+Thank you for the detailed code review. I agree with all your suggestions. Here are my responses to each comment and the actions I will take.
+
+### Comments 1 & 2: Avoid Global `_prefixes`
+
+*   **Comment**: The `serialise_to_graph` function uses the global `_prefixes` variable instead of a passed argument, which is not ideal for testability and predictability.
+*   **Response**: I completely agree. Relying on global state makes the code harder to reason about and test. My initial refactoring attempts involved passing the `prefixes` dictionary as an argument, but I reverted it due to some difficulties and a misunderstanding of the constraints. I will now proceed with this refactoring as it is the cleanest solution. This will address both comments 1 and 2.
+
+### Comment 3: Use Absolute Paths in Tests
+
+*   **Comment**: The test uses hardcoded relative paths, which can be brittle.
+*   **Response**: This is an excellent point. I will update the test to construct absolute paths based on the test file's location to make it more robust.
+
+### Comment 4: Modifying Global State in Tests
+
+*   **Comment**: The test modifies the global `_prefixes` variable, which is bad practice. The comment suggests either a larger refactoring to avoid the global state or using `unittest.mock.patch`.
+*   **Response**: I agree that modifying global state in tests is a code smell. It indicates that the code under test is not designed for easy testing. While `mock.patch` is a good tool for isolating tests, in this case, I believe the "larger refactoring" is the right approach. By passing the `prefixes` dictionary as an argument to the functions that need it (as suggested in comments 1 and 2), I can eliminate the reliance on the global variable altogether. This will make the main code more robust and the test cleaner, as it will no longer need to modify any global state.

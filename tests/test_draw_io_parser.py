@@ -9,7 +9,7 @@ from unittest import TestCase
 from rdflib import Graph
 from rdflib.compare import isomorphic, graph_diff
 
-from draw_io_parser import parse_drawio_to_graph, get_prefixes
+from draw_io_parser import parse_drawio_to_graph
 
 
 class TestDrawIOParser(TestCase):
@@ -29,9 +29,6 @@ class TestDrawIOParser(TestCase):
 
         # Set the base URI for the test
         os.environ['BASE_URI'] = 'https://data.archives.gov.on.test.gbad.ca'
-        # Update the global prefixes dictionary
-        from draw_io_parser import _prefixes
-        _prefixes.update(get_prefixes())
 
 
         # Generate the graph from the draw.io file
