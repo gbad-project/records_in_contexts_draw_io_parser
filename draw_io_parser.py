@@ -1363,37 +1363,37 @@ def individual_blocks(
 
 def _infer_type(literal: str) -> str:
     if literal.isnumeric():
-        return "\"" + literal + "\"^^xsd:integer"
+        return f'"{literal}"^^xsd:integer'
     try:
         datetime.strptime(literal, "%Y-%m-%d")
-        return "\"" + literal + "\"^^xsd:date"
+        return f'"{literal}"^^xsd:date'
     except ValueError:
         pass
     try:
         if literal[-1] == "Z":
             try:
                 datetime.strptime(literal[-1], "%Y-%m-%dT%H-%M-%S")
-                return "\"" + literal + "\"^^xsd:dateTime"
+                return f'"{literal}"^^xsd:dateTime'
             except ValueError:
                 pass
         elif literal[-6] == "+" or literal[-6] == "-":
             try:
                 datetime.strptime(literal[:-6], "%Y-%m-%dT%H-%M-%S")
                 datetime.strptime(literal[-5:], "%H:%M")
-                return "\"" + literal + "\"^^xsd:dateTime"
+                return f'"{literal}"^^xsd:dateTime'
             except ValueError:
                 pass
         else:
             try:
                 datetime.strptime("%Y-%m-%dT%H-%M-%S", literal)
-                return "\"" + literal + "\"^^xsd:dateTime"
+                return f'"{literal}"^^xsd:dateTime'
             except ValueError:
                 pass
     except IndexError:
         # Short literals
         pass
     literal = literal.replace('"', r'\"')
-    return "\"" + literal + "\""
+    return f'"{literal}"'
 
 
 def _serialise_facts(
@@ -1429,45 +1429,33 @@ def _serialise_block(
         prefix_string = prefix + ":"
     else:
         prefix_string = ""
-    if any(str(x).startswith('owl:') for x in types_and_facts["Types"]):
-        keyword = 'DataProperty'
-    else:
-        keyword = 'Individual'
-    header = f"{keyword}: {prefix_string}{individual_identifier}"
-    if include_label:
-        header += f"\n{' '*indentation}Annotations:"
-        header += f"\n{' '*(indentation*2)}rdfs:label \"{individual_label}\""
-    types_string = ", ".join(
-        _type for _type in sorted(types_and_facts["Types"]) if not _type.startswith('owl:'))
-        #f"rico:{_type}" for _type in sorted(types_and_facts["Types"]))
+
+    types = types_and_facts.get("Types", set())
+    types_string = " , ".join(sorted(types)) if types else ""
+
+    block = f":{individual_identifier} a {types_string}"
+
     facts = types_and_facts.copy()
-    del facts["Types"]
-    types_string = f"{' '*indentation}Types: {types_string}" if types_string else ''
-    if not facts:
-        return f"""{header}
-{types_string}
+    if "Types" in facts:
+        del facts["Types"]
 
-"""
-    subproperties = facts.get('rdfs:subPropertyOf', None)
-    if subproperties:
-        subproperties_string = f"{' '*indentation}SubPropertyOf:\n{' '*(indentation*2)}"
-        subproperties_string += f",\n{' '*(indentation*2)}".join(
-            subproperty for subproperty in sorted(subproperties))
-        return f"""{header}
-{subproperties_string}
+    if include_label:
+        block += f" ;\n{' '*indentation}rdfs:label \"{individual_label}\""
 
-"""
-    serialised_facts = list(_serialise_facts(
-        facts, infer_type_of_literals, prefix))
-    facts_string = f"{' '*indentation}Facts:\n{' '*(indentation*2)}"
-    facts_string += f",\n{' '*(indentation*2)}".join(serialised_facts[:-1])
-    facts_string += f",\n{' '*(indentation*2)}{serialised_facts[-1]}" if len(
-        serialised_facts) > 1 else f"{serialised_facts[-1]}"
-    return f"""{header}
-{types_string}
-{facts_string}
+    for i, (_property, values) in enumerate(facts.items()):
+        for j, value in enumerate(sorted(values)):
+            block += f" ;\n{' '*indentation}"
+            if _property in _datatype_properties:
+                if infer_type_of_literals:
+                    formatted_value = _infer_type(value)
+                else:
+                    formatted_value = f'"{value}"'
+            else:
+                formatted_value = f":{value}"
 
-"""
+            block += f"{_property} {formatted_value}"
+
+    return block + " .\n\n"
 
 
 def _preamble(serialisation_config: SerialisationConfig) -> str:
@@ -1490,28 +1478,28 @@ def _preamble(serialisation_config: SerialisationConfig) -> str:
     else:
         prefix_iri = f"<{ontology_iri_string}#>"
     if include_label:
-        preamble = "Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"
+        preamble = "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
     else:
         preamble = ""
-    preamble_lines = "\n".join([f"Prefix: {prefix}: <{uri}>" for prefix, uri in _prefixes.items()])
+    preamble_lines = "\n".join([f"@prefix {prefix}: <{uri}> ." for prefix, uri in _prefixes.items()])
 
     non_rico_object_properties = [prop for prop in _object_properties if not prop.startswith('rico:')]
     objectproperty_lines = ''
     if len(non_rico_object_properties) > 0:
         for non_rico_object_property in non_rico_object_properties:
-            objectproperty_lines += f"\nObjectProperty:\n{' '*indentation}" + non_rico_object_property + "\n"
+            objectproperty_lines += f"\nObjectProperty: {non_rico_object_property}\n"
     
     non_rico_datatype_properties = [prop for prop in _datatype_properties if not prop.startswith('rico:')]
     dataproperty_lines = ''
     if len(non_rico_datatype_properties) > 0:
         for non_rico_datatype_property in non_rico_datatype_properties:
-            dataproperty_lines += f"\nDataProperty:\n{' '*indentation}" + non_rico_datatype_property + "\n"
+            dataproperty_lines += f"\nDataProperty: {non_rico_datatype_property}\n"
     
     return preamble + f"""{preamble_lines}
-Prefix: {prefix_string}: {prefix_iri}
-Ontology: <{ontology_iri_string}>
-{' '*indentation}Import: <{_prefixes['rico']}>
-{objectproperty_lines}{dataproperty_lines}
+@prefix {prefix_string}: {prefix_iri} .
+
+<{ontology_iri_string}> a owl:Ontology ;
+    owl:imports <{_prefixes['rico']}> .
 """
 
 

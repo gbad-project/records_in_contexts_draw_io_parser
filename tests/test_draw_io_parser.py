@@ -2,10 +2,12 @@
 Tests the DrawIOXMLTree class in the way it would be used when running
 draw_io_parser.py
 """
-
+import sys
+import os
 from pathlib import Path
 from unittest import TestCase
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from draw_io_parser import (
     DEFAULT_CAPITALISATION_SCHEME, DEFAULT_INDENTATION, DEFAULT_MAX_GAP,
     DrawIOXMLTree, SerialisationConfig, individual_blocks, serialise)
