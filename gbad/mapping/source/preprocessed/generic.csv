@@ -1,4 +1,4 @@
-ID,ID2,LiteralValue
-1,a,hello
-2,b,world
-3,c,test
+,ID,ID2,LiteralValue
+0,1,a,hello
+1,2,b,world
+2,3,c,test

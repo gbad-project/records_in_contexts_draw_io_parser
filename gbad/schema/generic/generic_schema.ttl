@@ -1,12 +1,46 @@
-@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
-@prefix add: <https://example.com/Schema/Description-Listings/> .
-@prefix auth: <https://example.com/Schema/Authority/> .
+@prefix add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/> .
+@prefix auth: <https://data.archives.gov.on.test.gbad.ca/Schema/Authority/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix : <https://data.archives.gov.on.ca/test/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
 
-<https://data.archives.gov.on.ca/test/ontology> a owl:Ontology ;
-    owl:imports <https://www.ica.org/standards/RiC/ontology#> .
-:rrtemplateKBTestID a rico:Thing ;
-  rico:title "rml:reference \"LiteralValue\"" .
+rdfs:label a owl:DatatypeProperty .
 
-:rrtemplateKBTest2ID2 a rico:Thing .
+rdfs:subPropertyOf a owl:ObjectProperty .
+
+auth:functionNote a owl:DatatypeProperty .
+
+auth:privateNote a owl:DatatypeProperty .
+
+auth:sourceNote a owl:DatatypeProperty .
+
+add:accumulationDate a owl:DatatypeProperty .
+
+add:associatedMaterial a owl:DatatypeProperty .
+
+add:availabilityOfOtherFormats a owl:DatatypeProperty .
+
+add:custodialHistory a owl:DatatypeProperty .
+
+add:findingAidNote a owl:DatatypeProperty .
+
+add:howToOrder a owl:DatatypeProperty .
+
+add:immediateSourceOfAcquisition a owl:DatatypeProperty .
+
+add:notes a owl:DatatypeProperty .
+
+add:privateNote a owl:DatatypeProperty .
+
+add:relatedMaterial a owl:DatatypeProperty .
+
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping> a owl:Ontology ;
+    owl:imports rico: .
+
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FTest%2F%7BID%7D%22> a owl:NamedIndividual,
+        rico:Thing ;
+    rico:title "rml:reference \"LiteralValue\"" .
+
+<https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#rr%3Atemplate%20%22%2FKB%2FTest2%2F%7BID2%7D%22> a owl:NamedIndividual,
+        rico:Thing .
+

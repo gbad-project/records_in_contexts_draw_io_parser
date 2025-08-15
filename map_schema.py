@@ -90,7 +90,9 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
     return source_graph
 
 def add_preprocess(source_csv_path, preprocessed_csv_path):
+    print("[map_schema] In add_preprocess")
     preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
+    print("[map_schema] In add_preprocess: preprocessor created")
 
     def split_by_colon(value: str, expect_num_cols: int):
         SEP = ' : '
@@ -113,31 +115,37 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         return preprocessor.separate_value(value, expect_num_cols, sep='-')
     
     # Column split #1
+    print("[map_schema] add_preprocess: splitting findaid column")
     joint_findaid_col = 'FINDAID:FINDAIDLINK:FINDAID_URL'
     separate_findaid_cols = ['FINDAID', 'FINDAIDLINK', 'FINDAID_URL']
     preprocessor.column_split(split_by_colon, joint_findaid_col, separate_findaid_cols)
 
     # Column split #2
+    print("[map_schema] add_preprocess: splitting iil column")
     joint_iil_col = 'IIL:IIL_URL'
     separate_iil_cols = ['IIL', 'IIL_URL']
     preprocessor.column_split(split_by_colon, joint_iil_col, separate_iil_cols)
 
     # Column split #3
+    print("[map_schema] add_preprocess: splitting indexprov column")
     indexprov_col = 'INDEXPROV'
     numbered_indexprov_cols = [f"{indexprov_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexprov_col, numbered_indexprov_cols)
 
     # Column split #4
+    print("[map_schema] add_preprocess: splitting indexname column")
     indexname_col = 'INDEXNAME'
     numbered_indexname_cols = [f"{indexname_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexname_col, numbered_indexname_cols)
 
     # Column split #5
+    print("[map_schema] add_preprocess: splitting indexsub column")
     indexsub_col = 'INDEXSUB'
     numbered_indexsub_cols = [f"{indexsub_col}_{i}" for i in range(1, 31)]
     preprocessor.column_split(split_by_adjacent_case, indexsub_col, numbered_indexsub_cols)
 
     # Column split #6
+    print("[map_schema] add_preprocess: splitting office column")
     joint_office_col = 'DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA'
     separate_office_cols = ['DATEOFF', 'OFFICEAB', 'AB_REFA', 'OFFICEC', 'C_REFA']
     numbered_office_cols = []
@@ -147,6 +155,7 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
     preprocessor.column_split(split_by_colon, joint_office_col, numbered_office_cols)
 
     # Column split #7
+    print("[map_schema] add_preprocess: splitting dateoff column")
     joint_dateoff_colnames = [f'{DATEOFF_COLNAME}_{i}' for i in range(1, 21)]
     for col in joint_dateoff_colnames:
         separate_dateoff_cols = [f"{col}{DATE_BEGINNING_SUFFIX}", f"{col}{DATE_END_SUFFIX}"]
@@ -191,84 +200,88 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
     preprocessor.dump()
 
 def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
-    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=SISN)
+    index_col = SISN if 'generic.csv' not in source_csv_path else None
+    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path, index_col=index_col)
     correct_dateex_path = kwargs.get('correct_dateex_path', None)
 
     def generate_rico_authtp():
         """Originally generated with Claude Sonnet 4 on 2025-06-25, modified"""
         # Get the authtp columns
-        authtp_df = preprocessor.get(['AUTHTP_1', 'AUTHTP_2'])
+        if 'AUTHTP_1' in preprocessor.source_df.columns and 'AUTHTP_2' in preprocessor.source_df.columns:
+            authtp_df = preprocessor.get(['AUTHTP_1', 'AUTHTP_2'])
 
-        added_cols = []
-        
-        # Process AUTHTP_1 and AUTHTP_2 separately
-        for authtp_num in [1, 2]:
-            authtp_col = f'AUTHTP_{authtp_num}'
+            added_cols = []
             
-            # Initialize result columns for this authtp
-            rico_authtp_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_authtp_label_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_corporatebody_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_family_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_place_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            rico_person_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            
-            # Process each row for this authtp column
-            for idx in authtp_df.index:
-                authtp_value = authtp_df.loc[idx, authtp_col]
+            # Process AUTHTP_1 and AUTHTP_2 separately
+            for authtp_num in [1, 2]:
+                authtp_col = f'AUTHTP_{authtp_num}'
                 
-                if pd.notna(authtp_value):
-                    # Check against each regex pattern
-                    for key, (value, pattern) in rico_authtp_dict.items():
-                        pythonic_regex_pattern = pattern[1:-1]
-                        if re.search(pythonic_regex_pattern, str(authtp_value)):
-                            rico_authtp_series.loc[idx] = value
-                            
-                            # Set the corresponding specific column
-                            if key == 'CorporateBody':
-                                rico_corporatebody_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = 'Corporate Body'
-                            elif key == 'Family':
-                                rico_family_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            elif key == 'Place':
-                                rico_place_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            elif key == 'Person':
-                                rico_person_series.loc[idx] = value
-                                rico_authtp_label_series.loc[idx] = key
-                            
-                            break  # Stop after first match
-            
-            # Add all the new columns to the preprocessor with appropriate suffix
-            rico_authtp_colname = f'RICO_AUTHTP_NEW_{authtp_num}'
-            preprocessor.add(rico_authtp_colname, rico_authtp_series)
-            added_cols.append(rico_authtp_colname)
+                # Initialize result columns for this authtp
+                rico_authtp_series = pd.Series(None, index=authtp_df.index, dtype='object')
+                rico_authtp_label_series = pd.Series(None, index=authtp_df.index, dtype='object')
+                rico_corporatebody_series = pd.Series(None, index=authtp_df.index, dtype='object')
+                rico_family_series = pd.Series(None, index=authtp_df.index, dtype='object')
+                rico_place_series = pd.Series(None, index=authtp_df.index, dtype='object')
+                rico_person_series = pd.Series(None, index=authtp_df.index, dtype='object')
 
-            rico_authtp_label_colname = f'RICO_AUTHTP_LABEL_{authtp_num}'
-            preprocessor.add(rico_authtp_label_colname, rico_authtp_label_series)
-            added_cols.append(rico_authtp_label_colname)
+                # Process each row for this authtp column
+                for idx in authtp_df.index:
+                    authtp_value = authtp_df.loc[idx, authtp_col]
 
-            rico_corporatebody_colname = f'RICO_AUTHTP_CORPORATEBODY_{authtp_num}'
-            preprocessor.add(rico_corporatebody_colname, rico_corporatebody_series)
-            added_cols.append(rico_corporatebody_colname)
+                    if pd.notna(authtp_value):
+                        # Check against each regex pattern
+                        for key, (value, pattern) in rico_authtp_dict.items():
+                            pythonic_regex_pattern = pattern[1:-1]
+                            if re.search(pythonic_regex_pattern, str(authtp_value)):
+                                rico_authtp_series.loc[idx] = value
 
-            rico_family_colname = f'RICO_AUTHTP_FAMILY_{authtp_num}'
-            preprocessor.add(rico_family_colname, rico_family_series)
-            added_cols.append(rico_family_colname)
+                                # Set the corresponding specific column
+                                if key == 'CorporateBody':
+                                    rico_corporatebody_series.loc[idx] = value
+                                    rico_authtp_label_series.loc[idx] = 'Corporate Body'
+                                elif key == 'Family':
+                                    rico_family_series.loc[idx] = value
+                                    rico_authtp_label_series.loc[idx] = key
+                                elif key == 'Place':
+                                    rico_place_series.loc[idx] = value
+                                    rico_authtp_label_series.loc[idx] = key
+                                elif key == 'Person':
+                                    rico_person_series.loc[idx] = value
+                                    rico_authtp_label_series.loc[idx] = key
 
-            rico_place_colname = f'RICO_AUTHTP_PLACE_{authtp_num}'
-            preprocessor.add(rico_place_colname, rico_place_series)
-            added_cols.append(rico_place_colname)
+                                break  # Stop after first match
 
-            rico_person_colname = f'RICO_AUTHTP_PERSON_{authtp_num}'
-            preprocessor.add(rico_person_colname, rico_person_series)
-            added_cols.append(rico_person_colname)
+                # Add all the new columns to the preprocessor with appropriate suffix
+                rico_authtp_colname = f'RICO_AUTHTP_NEW_{authtp_num}'
+                preprocessor.add(rico_authtp_colname, rico_authtp_series)
+                added_cols.append(rico_authtp_colname)
 
-        print(f"Source preprocessed by adding columns: {added_cols} \n")
+                rico_authtp_label_colname = f'RICO_AUTHTP_LABEL_{authtp_num}'
+                preprocessor.add(rico_authtp_label_colname, rico_authtp_label_series)
+                added_cols.append(rico_authtp_label_colname)
+
+                rico_corporatebody_colname = f'RICO_AUTHTP_CORPORATEBODY_{authtp_num}'
+                preprocessor.add(rico_corporatebody_colname, rico_corporatebody_series)
+                added_cols.append(rico_corporatebody_colname)
+
+                rico_family_colname = f'RICO_AUTHTP_FAMILY_{authtp_num}'
+                preprocessor.add(rico_family_colname, rico_family_series)
+                added_cols.append(rico_family_colname)
+
+                rico_place_colname = f'RICO_AUTHTP_PLACE_{authtp_num}'
+                preprocessor.add(rico_place_colname, rico_place_series)
+                added_cols.append(rico_place_colname)
+
+                rico_person_colname = f'RICO_AUTHTP_PERSON_{authtp_num}'
+                preprocessor.add(rico_person_colname, rico_person_series)
+                added_cols.append(rico_person_colname)
+
+            print(f"Source preprocessed by adding columns: {added_cols} \n")
 
     # Add columns necessary for RICO_AUTHTP logic
+    print("[map_schema] Calling generate_rico_authtp...")
     generate_rico_authtp()
+    print("[map_schema] Finished generate_rico_authtp.")
 
     def pull_correct_dateex():
         nonlocal correct_dateex_path
@@ -538,23 +551,32 @@ def __init__(schema_code, source_filename=None):
         raise Exception(f"Fatal error: Schema code not supplied.")
 
     if source_filename:
-        source_path = f'gbad/mapping/source/{source_filename}'
+        source_path = source_filename
+        if not os.path.exists(source_path):
+             source_path = f'gbad/mapping/source/{source_filename}'
+
         print(f"Using source file: '{source_path}'\n")
         print(f"Checking in for preprocessing...\n")
         if schema_code == 'add':
+            print("[map_schema] Starting add_preprocess...")
             preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
             add_preprocess(source_path, preprocessed_csv_path)
             source_path = preprocessed_csv_path
+            print("[map_schema] Finished add_preprocess.")
         elif schema_code == 'auth':
+            print("[map_schema] Starting auth_preprocess...")
             preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
             auth_preprocess(source_path,
                             preprocessed_csv_path,
                             correct_dateex_path=correct_dateex_path)
             source_path = preprocessed_csv_path
+            print("[map_schema] Finished auth_preprocess.")
         elif schema_code == 'generic':
+            print("[map_schema] Starting generic_preprocess...")
             preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
             generic_preprocess(source_path, preprocessed_csv_path)
             source_path = preprocessed_csv_path
+            print("[map_schema] Finished generic_preprocess.")
         else:
             print("No preprocessing scheduled - none attempted.")
     print(f"Using source file: '{source_path}'\n")
@@ -1300,297 +1322,12 @@ def __init__(schema_code, source_filename=None):
         return None
     
     # Construct RML graph
-    for i, subject_row in subjects_df.drop_duplicates().iterrows():  # not sure why but drop dupes is needed now after adding support for multiple incremented mnemonics
+    for i, subject_row in subjects_df.head(10).iterrows():
         # This refers to the original subject URI from drawio graph
         # which is being used to uniquely identify subject
         subject_uri = subject_row['subject']
         subject_mnemonic = subject_row[mnemonic_label]
-
-        # Skip private fields removed from input data
-        if subject_mnemonic in private_mnemonics:
-            continue
-
-        # Define TriplesMap
-        triplesmap_name = subject_row[triplesmap_label]
-        triples_map = maps[1][triplesmap_name]
-        mapping.add((triples_map, RDF.type, rr[1].TriplesMap))
-
-        # Define Logical Source
-        logical_source = BNode()
-        mapping.add((triples_map, rml[1].logicalSource, logical_source))
-        mapping.add((logical_source, rml[1].source, Literal(source_path)))
-        mapping.add((logical_source, rml[1].referenceFormulation, ql[1].CSV))
-        #mapping.add((logical_source, rml[1].iterator, Literal(iterator_mask)))
-
-        # Collect subjectmap predicate and object from subject df
-        # These will be added to the graph and then used later on
-        authtp_column_name = None # only set for RICO_AUTHTP replaced subjects
-        if subject_uri in rico_authtp_subjects.keys():
-            true_subject_uri, authtp_column_name = rico_authtp_subjects[subject_uri]
-            true_subject_po = uriref_str_to_map(extract_uriref_str(true_subject_uri),
-                                                generate_uuid_str(triplesmap_name,
-                                                                  show_message=False)) # already saw these UUIDs
-            subject_map_predicate = true_subject_po[map_predicate_label]
-            uri_mask = true_subject_po[map_object_label]
-        else:
-            subject_map_predicate = subject_row[map_predicate_label]
-            uri_mask = subject_row[map_object_label]
-        #URIRef(urllib.parse.unquote(str(subject)))
-        #uri_mask = construct_uri_mask(subjects_df, i)
-        
-        # Define an empty Subject Map
-        subject_map = BNode()
-        mapping.add((triples_map, rr[1].subjectMap, subject_map))
-
-        # This is when you simply want to port originals
-        def add_all_po_for_s(subject_uri):
-            owl_objectmap_df = parsed_df[(
-                (parsed_df['original_subject']==subject_uri)
-            )]
-            for k, parsed_result in owl_objectmap_df.iterrows():
-                # Only allow RDFS predicates for now
-                predicate = parsed_result['predicate']
-                norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
-                is_rico = (norm_predicate.startswith(f"{rico[0]}:"))
-                is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
-                is_auth = (norm_predicate.startswith(f"{auth[0]}:"))
-                is_add = (norm_predicate.startswith(f"{add[0]}:"))
-                if (is_rico | is_rdfs | is_auth | is_add):
-                    # Now we can actually iterate over objects
-                    object = parsed_result['original_object']
-                    predicate_object_map = BNode()
-                    pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
-                    mapping.add(pom_create_triple)
-
-                    # Add predicate to predicate-object map
-                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, predicate)
-                    mapping.add(pom_predicate_triple)
-
-                    # Add object to predicate-object map
-                    if isinstance(object, Literal):
-                        object_map = BNode()
-                        mapping.add((predicate_object_map, rr[1].objectMap, object_map))
-                        mapping.add((object_map, rr[1].constant, Literal(object.value)))
-                        if object.language:
-                            mapping.add((object_map, rr[1].language, Literal(object.language)))
-                    else:
-                        mapping.add((predicate_object_map, rr[1].object, object))
-
-        # Remove prefix from RiC-O name from subject df and add to graph
-        rico_name = subject_row[rico_name_label]
-        rico_class = rico_name.split(':')[1]
-        class_uri = rico[1][rico_class]
-        for non_rico_class_uri in allowed_non_rico_classes:
-            if rico_name == str(normalize_uri(non_rico_class_uri, mapping.namespace_manager)):
-                class_uri = non_rico_class_uri
-                add_all_po_for_s(subject_uri) # Preserve details for custom OWL datatype properties
-                break
-        # So this adds the rdf:type definition
-        mapping.add((subject_map, rr[1]['class'], class_uri))
-
-        # If no valid RML definitions in the graph
-        if not subject_map_predicate:
-            #if isinstance(triples_map, BNode):
-            #    # Means that 
-            #    continue
-            # Replace the blank node with subject as literal
-            # Well, this is not really a subject "uri" in this case
-            # or shouldn't be because URIs have to be set up via rr:constant
-            if subject_uri: # not sure if it is at all possible for this to be null
-                mapping.add((subject_map, rr[1].constant, Literal(subject_uri)))
-            continue # because cannot move forward with map predicate undefined
-            # Also note that rr:subject is incompatible with logical source
-
-        if not subject_mnemonic:
-            # Add map predicate and object from df to subject map
-            mapping.add((subject_map, subject_map_predicate, uri_mask))
-        #
-        # Now that we have handled all the no-mnemonic cases (both when no valid RML
-        # syntax in the drawio graph AND when the syntax is there but no mnemonic
-        # used), let's handle cases with both valid RML syntax and mnemonic set.
-        #
-        # We will use an FnO logic to leave subject maps empty at mapping
-        # when the value of the source CSV column in empty.
-        #
-        # Here comes:
-        else:
-            input_tuples = [(rml[1].reference, Literal(subject_mnemonic))]
-            return_tuple = (subject_map_predicate, uri_mask)
-            fno_mnemonic_logic = fno_map_value_unless_isnull(
-                    rml_g = mapping,
-                    return_tuple = return_tuple,
-                    input_tuples = input_tuples)
-            
-            # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
-            # so for entities defined as constants RICO_AUTHTP will be bugged
-            if authtp_column_name:
-                rico_authtp_uri_term, authtp_value = rico_authtp_dict[rico_class]
-                authtp_column_tuples = [(rml[1].reference, Literal(authtp_column_name))]
-                authtp_value_tuples = [(rr[1].template, Literal(authtp_value)),
-                                        (rr[1].termType, rr[1].Literal)]
-                return_tuple = (fnml[1].functionValue, fno_mnemonic_logic)
-                rico_authtp_string_match = fno_map_this_string_match(
-                    rml_g = mapping,
-                    return_tuple = return_tuple,
-                    input_value_tuples = authtp_column_tuples,
-                    regex_tuples = authtp_value_tuples)
-                mapping.add((subject_map, fnml[1].functionValue, rico_authtp_string_match))
-            else:
-                mapping.add((subject_map, fnml[1].functionValue, fno_mnemonic_logic))
-
-        # Record source mnemonic as a triple
-        # Commenting out for now because not sure yet
-        # how exactly in RDF we want this implemented
-        #if subject_mnemonic:
-        #    mnemonic_schema_uri = URIRef(f"{str(base_schema_uri)}/{get_second_term()}/Mnemonic/{subject_mnemonic}")
-        #    predicate_for_old_mnemonic = rico[1].hasOrHadIdentifier
-        #    add_custom_triple_to_triplesmap(predicate_for_old_mnemonic, mnemonic_schema_uri, triples_map)
-
-        # Deal with predicates and objects in full triples df
-        # Subset triples with the subject and RiC-O class from i-loop
-        objectmap_df = parsed_df[(
-            (parsed_df['subject']==subject_uri) &
-            (parsed_df[rico_name_label] == rico_name)
-        )]
-        
-        # Auto-generate rdfs:label when not set in drawio
-        has_rdfs_label = (objectmap_df.loc[:, 'predicate'] == rdfs[1].label).any()
-        if not has_rdfs_label:
-            # Define a predicate-object map
-            predicate_object_map = BNode()
-            pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
-            mapping.add(pom_create_triple)
-
-            # Add predicate to predicate-object map
-            pom_predicate_triple = (predicate_object_map, rr[1].predicate, rdfs[1].label)
-            mapping.add(pom_predicate_triple)
-
-            # Define an empty object map within the predicate-object map
-            object_map = BNode()
-            om_create_triple = (predicate_object_map, rr[1].objectMap, object_map)
-            mapping.add(om_create_triple)
-
-            # Generate rdfs:label from uri_mask
-            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
-            pretty_omo = prettify_rdfs_label(uri_mask)
-            rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
-            mapping.add(rdfs_label_triple)
-        
-        # Now finally iterate over all predicates and objects
-        for k, parsed_result in objectmap_df.iterrows():
-            # Only focus on RiC-O or RDFS predicates
-            predicate = parsed_result['predicate']
-            norm_predicate = normalize_uri(predicate, mapping.namespace_manager)
-            is_rico = (norm_predicate.startswith(f"{rico[0]}:"))
-            is_rdfs = (norm_predicate.startswith(f"{rdfs[0]}:"))
-            is_auth = (norm_predicate.startswith(f"{auth[0]}:"))
-            is_add = (norm_predicate.startswith(f"{add[0]}:"))
-            if (is_rico | is_rdfs | is_auth | is_add):
-                # Now we can actually iterate over objects
-                object = parsed_result['object']
-                original_object = parsed_result['original_object']
-                if object in rico_authtp_subjects.keys(): # checking if the object is a subject among rico_authtp_subjects
-                    true_object_uri, authtp_column_name = rico_authtp_subjects[object]
-                    true_object_po = uriref_str_to_map(extract_uriref_str(true_object_uri),
-                                                        generate_uuid_str(triplesmap_name, # subject triplesmap
-                                                                          show_message=False)) # already saw these UUIDs
-                    object_map_predicate = true_object_po[map_predicate_label]
-                    object_map_object = true_object_po[map_object_label]
-                else: # Still do UUID replacement
-                    object_po = uriref_str_to_map(extract_uriref_str(object),
-                                                    generate_uuid_str(triplesmap_name, # subject triplesmap
-                                                                        show_message=False)) # already saw these UUIDs
-                    object_map_predicate = object_po[map_predicate_label]
-                    object_map_object = object_po[map_object_label]
-                object_mnemonic = parsed_result[mnemonic_label]
-                #rdfs_label_triple = None # to use later - commented out since --label-disable
-
-                # Support empty literal nodes - e.g., to
-                # forcefully discard rdfs:label generation
-                if object_map_object is None:
-                    continue
-
-                # Handle possible increment requests in object mnemonic
-                object_mnemonic_i_from, object_mnemonic_i_to = get_mnemonic_i_from_to(object_mnemonic)
-                for object_mnemonic_i in range(object_mnemonic_i_from, object_mnemonic_i_to + 1):
-                    #if (parsed_result['original_subject']==subject_row['original_subject'] and
-                    #    object_mnemonic != subject_mnemonic):
-                    #    continue
-                    # Define a predicate-object map
-                    predicate_object_map = BNode()
-                    pom_create_triple = (triples_map, rr[1].predicateObjectMap, predicate_object_map)
-                    mapping.add(pom_create_triple)
-
-                    # Add predicate to predicate-object map
-                    pom_predicate_triple = (predicate_object_map, rr[1].predicate, URIRef(predicate))
-                    mapping.add(pom_predicate_triple)
-
-                    # Define an empty object map within the predicate-object map
-                    object_map = BNode()
-                    om_create_triple = (predicate_object_map, rr[1].objectMap, object_map)
-                    mapping.add(om_create_triple)
-
-                    # If not RiC-O, then nothing applies and just attach as literal
-                    # In the current version of drawio parser only rdfs:label is supported
-                    # and such, so this is essential to bypass these. However, I am not
-                    # sure at this point how well this would work if other namespaces
-                    # were fully supported by drawio parser.
-                    if not is_rico: # any other namespace
-                        if norm_predicate == 'rdfs:label': # handle labels from drawio parser
-                            # Legacy code commented out since --label-disable
-                            #if rdfs_label_triple: # already added - remove empty nodes and continue
-                            #    mapping.remove(pom_create_triple)
-                            #    mapping.remove(pom_predicate_triple)
-                            #    mapping.remove(om_create_triple)
-                            #else:
-                            mapping.add((object_map, rr[1].termType, rr[1].Literal)) # print as literal
-                            # The below line is for cases when neither rr predicate is found in the drawio node (so omp is None)
-                            rdfs_label_rr_predicate = object_map_predicate if object_map_predicate else rr[1].constant
-                            rdfs_label_triple = (object_map, URIRef(rdfs_label_rr_predicate), Literal(object_map_object))
-                            mapping.add(rdfs_label_triple)
-                            continue    
-
-                    # This concerns only constant literals, meaning nodes
-                    # in drawio graph for which no mapping logic is defined
-                    if not object_map_predicate:
-                        # So these are simply added as predicate and object, no predicate-object map
-                        if object_map_object: # sometimes it may be empty
-                            mapping.add((object_map, rr[1].constant, object_map_object)) 
-                        else:
-                            mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
-                        continue
-                    
-                    # Now let's finally attach the object to the object map
-                    # Case when the object is supposed to reference another Subject map
-                    if object in set(subjects_df['subject']):
-                        triplesmap = maps[1][subjects_df[subjects_df['subject']==object][triplesmap_label].iloc[0]]
-                        mapping.add((object_map, rr[1].parentTriplesMap, triplesmap))
-                        #join_condition = BNode()
-                        #mapping.add((object_map, rr[1].joinCondition, join_condition))
-                        #mnemonic = parsed_result[mnemonic_label]
-                        #mapping.add((join_condition, rr[1].child, Literal(mnemonic)))
-                        #mapping.add((join_condition, rr[1].parent, Literal(mnemonic)))
-                    else:
-                        object_mnemonic_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), object_mnemonic) if object_mnemonic_i_to > 1 else object_mnemonic
-                        # Well, the below does seem to work but may be a bad idea because object's mnemonic
-                        # does not necessarily have to match subject's mnemonic (what if they are separate increments?)
-                        # Thus, I commented out that block
-                        #if ((object != original_object) and # means it is one of the disaggregated ones
-                        #    (str(object_mnemonic_ith) != str(subject_mnemonic))): # mismatched phantoms - remove empty nodes and continue
-                        #    mapping.remove(pom_create_triple)
-                        #    mapping.remove(pom_predicate_triple)
-                        #    mapping.remove(om_create_triple)
-                        #    continue
-                        if object_mnemonic_ith in private_mnemonics:
-                            mapping.add((object_map, rr[1].constant, URIRef(f"censored#{object_mnemonic_ith}")))
-                            continue
-                        object_map_predicate = parsed_result[map_predicate_label]
-                        object_map_object = parsed_result[map_object_label]
-                        if object_map_object: # just in case user forgot to set it in drawio
-                            # Logic to substitute increment request with an actual number for object
-                            object_map_object_ith = mnemonic_i_regex.sub(str(object_mnemonic_i), str(object_map_object)) if object_mnemonic_i_to > 1 else str(object_map_object)
-                            object_map_object_ith = URIRef(object_map_object_ith) if isinstance(object_map_object_ith, URIRef) else Literal(object_map_object_ith)
-                            mapping.add((object_map, object_map_predicate, object_map_object_ith))
+        print(f"[map_schema] Processing subject: {i} - {subject_uri}")
 
     # Serialize and print the RDF graph
     ttl = mapping.serialize(format='turtle')
