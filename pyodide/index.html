@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrawIO to RML Converter</title>
+</head>
+<body>
+    <h1>DrawIO to RML Converter</h1>
+    <form id="upload-form" action="/convert" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="drawio-file">DrawIO File (.drawio):</label><br>
+            <input type="file" id="drawio-file" name="drawioFile" accept=".drawio" required>
+        </div>
+        <br>
+        <div>
+            <label for="ontology-iris">Supported Ontology IRIs and prefixes (one per line, e.g., "rico: https://www.ica.org/standards/RiC/ontology#"):</label><br>
+            <textarea id="ontology-iris" name="ontologyIris" rows="5" cols="60"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="csv-file">CSV File (.csv):</label><br>
+            <input type="file" id="csv-file" name="csvFile" accept=".csv" required>
+        </div>
+        <br>
+        <div>
+            <label for="pre-processor">CSV Pre-processor (.py, optional):</label><br>
+            <input type="file" id="pre-processor" name="preProcessorFile" accept=".py">
+        </div>
+        <br>
+        <div>
+            <label for="post-processor">CSV Post-processor (.py, optional):</label><br>
+            <input type="file" id="post-processor" name="postProcessorFile" accept=".py">
+        </div>
+        <br>
+        <button type="submit">Convert</button>
+    </form>
+</body>
+</html>

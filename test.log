@@ -1,0 +1,44 @@
+bun test v1.2.14 (6a363a38)
+
+pyodide/app.test.ts:
+Listening on http://localhost:3000
+Loading micropip
+Loaded micropip
+Loading numpy, pandas, python-dateutil, pytz, six
+Loaded numpy, pandas, python-dateutil, pytz, six
+Loading pyparsing
+Loaded pyparsing
+Loading certifi, charset-normalizer, idna, requests, urllib3
+Loaded certifi, charset-normalizer, idna, requests, urllib3
+Loading lxml
+Loaded lxml
+3 |   var _scriptName = typeof document != 'undefined' ? document.currentScript?.src : undefined;
+4 |   return (
+5 | async function(moduleArg = {}) {
+6 |   var moduleRtn;
+7 |
+8 | var Module=moduleArg;var readyPromiseResolve,readyPromiseReject;var readyPromise=new Promise((resolve,reject)=>{readyPromiseResolve=resolve;readyPromiseReject=reject});var ENVIRONMENT_IS_WEB=typeof window=="object";var ENVIRONMENT_IS_WORKER=typeof WorkerGlobalScope!="undefined";var ENVIRONMENT_IS_NODE=typeof process=="object"&&process.versions?.node&&process.type!="renderer";var ENVIRONMENT_IS_SHELL=!ENVIRONMENT_IS_WEB&&!ENVIRONMENT_IS_NODE&&!ENVIRONMENT_IS_WORKER;if(ENVIRONMENT_IS_NODE){}var arguments_=[];var thisProgram="./this.program";var quit_=(status,toThrow)=>{throw toThrow};if(typeof __filename!="undefined"){_scriptName=__filename}else if(ENVIRONMENT_IS_WORKER){_scriptName=self.location.href}var scriptDirectory="";function locateFile(path){if(Module["locateFile"]){return Module["locateFile"](path,scriptDirectory)}return scriptDirectory+path}var readAsync,readBinary;if(ENVIRONMENT_IS_NODE){var fs=require("fs");var nodePath=require("path");scriptDirectory=__dirname+"/";readBinary=filename=>{filename=isF
+
+PythonError: Traceback (most recent call last):
+  File "/lib/python313.zip/_pyodide/_base.py", line 597, in eval_code_async
+    await CodeRunner(
+    ...<9 lines>...
+    .run_async(globals, locals)
+  File "/lib/python313.zip/_pyodide/_base.py", line 411, in run_async
+    coroutine = eval(self.code, globals, locals)
+  File "<exec>", line 21, in <module>
+AttributeError: globals. Did you mean: 'global_'?
+
+       type: "AttributeError",
+ __error_address: 52793712,
+
+      at new PythonError (/app/node_modules/pyodide/build/pyodide.asm.js:8:620491)
+      at new_error (/app/node_modules/pyodide/build/pyodide.asm.js:8:578922)
+      at callPyObjectKwargs (/app/node_modules/pyodide/build/pyodide.asm.js:8:632580)
+      at <anonymous> (/app/node_modules/pyodide/build/pyodide.asm.js:8:633739)
+      at wrapper (/app/node_modules/pyodide/build/pyodide.asm.js:8:596545)
+(fail) POST /convert with drawio and csv files returns RML [15060.51ms]
+
+ 0 pass
+ 1 fail
+Ran 1 tests across 1 files. [15.12s]
