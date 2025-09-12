@@ -1,29 +1,29 @@
-Script started on 2025-09-12 05:41:09-04:00 [COMMAND="     echo '--- Log Start: ' $(date) '---'     echo     echo '--- System Details ---'     uname -a     echo     echo '--- Bun Version ---'     bun --version     echo     echo '--- Node Version ---'     node --version     echo     echo '--- Building React Application ---'     bun build ./index.tsx --outdir ./dist     echo     echo '--- Starting Server ---'     cd dist     python -m http.server 8000 &     SERVER_PID=$!     cd ..     echo 'Server started with PID: ' $SERVER_PID     sleep 5 # Give the server some time to start     echo     echo '--- Running E2E Test ---'     # Update the playwright script to use port 8000     sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py     python ./verify_conversion.py     echo     echo '--- Stopping Server ---'     kill $SERVER_PID     echo     echo '--- Log End: ' $(date) '---' " TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="99" LINES="12"]
---- Log Start:  Fri Sep 12 05:41:09 EDT 2025 ---
+Script started on 2025-09-12 09:50:18+00:00 [COMMAND="     echo '--- Log Start: ' $(date) '---'     echo     echo '--- System Details ---'     uname -a     echo     echo '--- Bun Version ---'     bun --version     echo     echo '--- Node Version ---'     node --version     echo     echo '--- Building React Application ---'     bun build ./index.tsx --outdir ./dist     echo     echo '--- Starting Server ---'     cd dist     python -m http.server 8000 &     SERVER_PID=$!     cd ..     echo 'Server started with PID: ' $SERVER_PID     sleep 5 # Give the server some time to start     echo     echo '--- Running E2E Test ---'     # Update the playwright script to use port 8000     sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py     python ./verify_conversion.py     echo     echo '--- Stopping Server ---'     kill $SERVER_PID     echo     echo '--- Log End: ' $(date) '---' " <not executed on terminal>]
+--- Log Start:  Fri Sep 12 09:50:18 UTC 2025 ---
 
 --- System Details ---
-Linux lima-default 6.11.0-29-generic #29-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 13 20:32:41 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+Linux devbox 6.8.0 #1 SMP PREEMPT_DYNAMIC Thu Aug  7 22:13:44 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
 
 --- Bun Version ---
-1.2.21
+1.2.14
 
 --- Node Version ---
-v22.19.0
+v22.17.1
 
 --- Building React Application ---
-[32mBundled 11 modules in 29ms[0m
+[32mBundled 11 modules in 94ms[0m
 
   [34mindex.js[33m  0.98 MB  [2m(entry point)[0m
 
 
 --- Starting Server ---
-Server started with PID:  2860
+Server started with PID:  3716
 Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...
 
 --- Running E2E Test ---
 
 --- Stopping Server ---
 
---- Log End:  Fri Sep 12 05:41:14 EDT 2025 ---
+--- Log End:  Fri Sep 12 09:50:23 UTC 2025 ---
 
-Script done on 2025-09-12 05:41:14-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2025-09-12 09:50:23+00:00 [COMMAND_EXIT_CODE="0"]
