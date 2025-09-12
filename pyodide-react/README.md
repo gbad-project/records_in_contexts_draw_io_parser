@@ -45,15 +45,37 @@ This is a client-side React application that uses Pyodide to run a Python script
     bun install
     ```
 
-## Running the Application
+## Testing the Application
 
-To start the development server, run the following command from the `pyodide-react` directory:
+Install dev prerequisites:
+
+*  Install Python dev dependencies:
+    ```bash
+    pip install -r ../next/requirements.dev.txt
+    ```
+
+*  Install Playwright and dependencies:
+    ```bash
+    playwright install && playwright install-deps
+    ```
+
+Then run the following command from the `pyodide-react` directory:
 
 ```bash
-bun run dev
+./run_and_log.sh
 ```
 
-This will start a development server and open the application in your browser.
+This will build it, run an end-to-end test, and dump the log into `./debug_log.txt`
+
+## Using the Application
+
+Run the following command from the `pyodide-react` directory:
+
+```bash
+bun run index.tsx
+```
+
+This will build it and open the application in your browser.
 
 ## Specification
 

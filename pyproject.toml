@@ -11,7 +11,8 @@ dependencies = [
     "rdflib (==7.1.4)",
     "pandas (==2.2.3)",
     "requests (==2.32.3)",
-    "playwright (==1.55.0)"
+    "playwright (==1.55.0)",
+    "pytest-playwright (>=0.7.1,<0.8.0)"
 ]
 
 

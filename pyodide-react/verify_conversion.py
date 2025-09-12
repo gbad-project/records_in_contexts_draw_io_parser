@@ -23,4 +23,4 @@ def test_conversion(page: Page):
     expect(output_element).to_contain_text("@base <https://data.archives.gov.on.test.gbad.ca/>")
 
     # 4. Screenshot: Capture the final result for visual verification.
-    page.screenshot(path="/app/pyodide-react/verification.png")
+    page.screenshot(path="./verification.png")
