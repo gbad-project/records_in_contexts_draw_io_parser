@@ -1,16 +1,1 @@
 Listening on http://localhost:3000
-error: Cannot find module '/app/pyodide/node_modules/pyodide/build/pyodide.asm.js' from '/app/pyodide/node_modules/pyodide/pyodide.mjs'
-ENOENT: no such file or directory, open '/app/pyodide/node_modules/pyodide/build/python_stdlib.zip'
-    path: "/app/pyodide/node_modules/pyodide/build/python_stdlib.zip",
- syscall: "open",
-   errno: -2,
-    code: "ENOENT"
-
-ENOENT: no such file or directory, open '/app/pyodide/node_modules/pyodide/build/pyodide-lock.json'
-    path: "/app/pyodide/node_modules/pyodide/build/pyodide-lock.json",
- syscall: "open",
-   errno: -2,
-    code: "ENOENT"
-
-
-Bun v1.2.14 (Linux x64 baseline)

@@ -1,14 +1,15 @@
 import { test, expect, afterAll } from "bun:test";
 import { server } from "./app";
 
-const drawioFilePath = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio";
-const csvFilePath = "gbad/mapping/source/generic.csv";
-const expectedRmlPath = "pyodide/expected.rml";
+const drawioFilePath = "../gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio";
+const csvFilePath = "../gbad/mapping/source/generic.csv";
+const expectedRmlPath = "expected.rml";
 const ontologyIris = `rico: https://www.ica.org/standards/RiC/ontology#
 data: https://data.archives.gov.on.test.gbad.ca/
 auth: https://data.archives.gov.on.test.gbad.ca/Schema/Authority/
 add: https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/
-maps: https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#`;
+maps: https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#
+rdfs: http://www.w3.org/2000/01/rdf-schema#`;
 
 
 afterAll(() => {

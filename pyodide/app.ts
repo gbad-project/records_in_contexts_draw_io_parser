@@ -1,17 +1,16 @@
-import { loadPyodide } from "pyodide";
+import { loadPyodide } from "./node_modules/pyodide/pyodide.mjs";
 import { readdir, stat } from "fs/promises";
 import { join } from "path";
 
 async function initializePyodide() {
   const pyodide = await loadPyodide({
-    indexURL: "node_modules/pyodide/build",
+    indexURL: "./node_modules/pyodide/build",
   });
   await pyodide.loadPackage("micropip");
   const micropip = pyodide.pyimport("micropip");
   await micropip.install("pandas");
   await micropip.install("rdflib");
   await micropip.install("requests");
-  await micropip.install("pyrml-lib");
   await micropip.install("lxml");
   return pyodide;
 }
@@ -69,11 +68,11 @@ export const server = Bun.serve({
       }
 
       // Load repo files into Pyodide FS
-      const mapSchemaPy = await Bun.file("map_schema.py").text();
-      const drawIOParserPy = await Bun.file("draw_io_parser.py").text();
+      const mapSchemaPy = await Bun.file("/app/map_schema.py").text();
+      const drawIOParserPy = await Bun.file("/app/draw_io_parser.py").text();
       pyodide.FS.writeFile("/map_schema.py", mapSchemaPy);
       pyodide.FS.writeFile("/draw_io_parser.py", drawIOParserPy);
-      await copyToPyodideFS(pyodide, "gbad", "/gbad");
+      await copyToPyodideFS(pyodide, "/app/gbad", "/gbad");
 
       const prefixes = {};
       const ontologyIriLines = ontologyIris.split('\n');
@@ -90,8 +89,6 @@ export const server = Bun.serve({
       pyodide.globals.set("prefixes", prefixes);
 
       const pythonWrapper = `
-import draw_io_parser
-import map_schema
 import os
 import sys
 import importlib.util
@@ -100,15 +97,17 @@ import importlib.util
 sys.path.append("/")
 os.chdir("/")
 
-drawio_content = pyodide.globals.get("drawio_content")
-prefixes = pyodide.globals.get("prefixes").to_py()
+import draw_io_parser
+import map_schema
+prefixes = prefixes.to_py()
 
 rml_content = ""
 try:
     # 1. Parse the user's drawio file content
     schema_graph = draw_io_parser.parse_drawio_content_to_graph(
         drawio_content,
-        custom_prefixes=prefixes
+        custom_prefixes=prefixes,
+        metacharacter_substitute=[' =_']
     )
 
     # 2. Save the graph to a temporary TTL file
