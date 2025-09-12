@@ -1537,13 +1537,10 @@ def _parse_capitalisation_scheme(capitalisation_scheme: str) -> None:
             "-c/--capitalisation-scheme option for the permitted values")
 
 
-def parse_drawio_to_graph(drawio_file_path: str, **kwargs) -> Graph:
+def parse_drawio_content_to_graph(raw_xml: str, **kwargs) -> Graph:
     """
-    Parses a draw.io file and returns an rdflib.Graph.
+    Parses draw.io XML content and returns an rdflib.Graph.
     """
-    with open(drawio_file_path, "r", encoding="utf-8") as f:
-        raw_xml = f.read()
-
     # Default settings, can be overridden by kwargs
     config_args = {
         'infer_type_of_literals': True,
@@ -1558,9 +1555,13 @@ def parse_drawio_to_graph(drawio_file_path: str, **kwargs) -> Graph:
         'metacharacter_substitute': [],
         'capitalisation_scheme': DEFAULT_CAPITALISATION_SCHEME,
     }
+    custom_prefixes = kwargs.pop('custom_prefixes', None)
     config_args.update(kwargs)
 
-    prefixes = get_prefixes()
+    if custom_prefixes:
+        prefixes = custom_prefixes
+    else:
+        prefixes = get_prefixes()
 
     serialisation_config = SerialisationConfig(
         infer_type_of_literals=config_args['infer_type_of_literals'],
@@ -1582,6 +1583,14 @@ def parse_drawio_to_graph(drawio_file_path: str, **kwargs) -> Graph:
         config_args['capitalisation_scheme'])
 
     return serialise_to_graph(blocks, serialisation_config, prefixes)
+
+def parse_drawio_to_graph(drawio_file_path: str, **kwargs) -> Graph:
+    """
+    Parses a draw.io file and returns an rdflib.Graph.
+    """
+    with open(drawio_file_path, "r", encoding="utf-8") as f:
+        raw_xml = f.read()
+    return parse_drawio_content_to_graph(raw_xml, **kwargs)
 
 
 def _arguments_parser():

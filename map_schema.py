@@ -292,7 +292,7 @@ def generic_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
     preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path)
     preprocessor.dump()
 
-def __init__(schema_code, source_filename=None):
+def __init__(schema_code, source_filename=None, graph_path=None):
     # Define GBAD schema ontology
     base_data_uri = BASE_URI[:-1]
     #base_gbad_uri = URIRef(f"{base_data_uri}/RiC-O_1-0-1")
@@ -497,75 +497,76 @@ def __init__(schema_code, source_filename=None):
         #        literal_str = f'{{{mnemonic}}} ({rico_class})'
         
         return literal_str
-
-    # Choose ontology to map
-    base_uri = base_data_uri
-    #suppl_graph_dir = 'gbad/schema' # to add any standalone ttls in schema dir
-
-    # Set schema-specific params
-    if schema_code == 'add':
-        # Assume the first file found
-        graph_dir = 'gbad/schema/description-listings'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-        
-        # ADD: Choose source CSV for mapping
-        if source_filename is None:
-            source_filename = 'description_tailshuf_100.csv'
     
-    elif schema_code == 'auth':
-        #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
-        # Assume the first file found
-        graph_dir = 'gbad/schema/authority/'
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-
-        # Authority: Choose source CSV for mapping
-        if source_filename is None:
-            source_filename = 'authority_tailshuf_100.csv'
-
-        # Additional sources
-        correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
-
-    elif schema_code == 'generic':
-        graph_dir = 'gbad/schema/generic'
-        # Assume the first file found
-        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
-
-        # ADD: Choose source CSV for mapping
-        if source_filename is None:
-            source_filename = 'generic.csv'
-
-    else:
-        raise Exception(f"Fatal error: Schema code not supplied.")
-
-    if source_filename:
-        source_path = f'gbad/mapping/source/{source_filename}'
-        print(f"Using source file: '{source_path}'\n")
-        print(f"Checking in for preprocessing...\n")
+    if not graph_path:
+        # Set schema-specific params
         if schema_code == 'add':
-            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
-            add_preprocess(source_path, preprocessed_csv_path)
-            source_path = preprocessed_csv_path
+            # Assume the first file found
+            graph_dir = 'gbad/schema/description-listings'
+            graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+
+            # ADD: Choose source CSV for mapping
+            if source_filename is None:
+                source_filename = 'description_tailshuf_100.csv'
+
         elif schema_code == 'auth':
-            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
-            auth_preprocess(source_path,
-                            preprocessed_csv_path,
-                            correct_dateex_path=correct_dateex_path)
-            source_path = preprocessed_csv_path
+            #suppl_graph_dir = 'gbad/schema/authority_AgentControlRelation'
+            # Assume the first file found
+            graph_dir = 'gbad/schema/authority/'
+            graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+
+            # Authority: Choose source CSV for mapping
+            if source_filename is None:
+                source_filename = 'authority_tailshuf_100.csv'
+
+            # Additional sources
+            correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
+
         elif schema_code == 'generic':
-            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
-            generic_preprocess(source_path, preprocessed_csv_path)
-            source_path = preprocessed_csv_path
+            graph_dir = 'gbad/schema/generic'
+            # Assume the first file found
+            graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+
+            # ADD: Choose source CSV for mapping
+            if source_filename is None:
+                source_filename = 'generic.csv'
+
         else:
-            print("No preprocessing scheduled - none attempted.")
+            raise Exception(f"Fatal error: Schema code not supplied.")
+
+    if not os.path.isabs(source_filename):
+        source_path = f'gbad/mapping/source/{source_filename}'
+    else:
+        source_path = source_filename
+
+    print(f"Using source file: '{source_path}'\n")
+    print(f"Checking in for preprocessing...\n")
+    if schema_code == 'add':
+        preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
+        add_preprocess(source_path, preprocessed_csv_path)
+        source_path = preprocessed_csv_path
+    elif schema_code == 'auth':
+        preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
+        auth_preprocess(source_path,
+                        preprocessed_csv_path,
+                        correct_dateex_path=correct_dateex_path)
+        source_path = preprocessed_csv_path
+    elif schema_code == 'generic':
+        preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{os.path.basename(source_filename)}'
+        generic_preprocess(source_path, preprocessed_csv_path)
+        source_path = preprocessed_csv_path
+    else:
+        print("No preprocessing scheduled - none attempted.")
     print(f"Using source file: '{source_path}'\n")
 
     rml_path = graph_path[:-3]+ "rml"
     if source_filename:  # Override default
         graph_name = os.path.splitext(os.path.basename(graph_path))[0]
-        rml_path = f'{graph_dir}/{os.path.splitext(source_filename)[0]}/{graph_name}'+ ".rml"
+        graph_dir = os.path.dirname(graph_path)
+        rml_path = f'{graph_dir}/{os.path.splitext(os.path.basename(source_filename))[0]}/{graph_name}'+ ".rml"
 
     # Create the input RDF graph
-    g = Graph(base = base_uri)
+    g = Graph(base = base_data_uri)
     print(f"Using graph: '{graph_path}'\n")
     g.parse(graph_path,
             format="turtle")  # Adjust the format as needed
@@ -576,7 +577,7 @@ def __init__(schema_code, source_filename=None):
 
     # Define custom prefixes
     rico = ('rico', Namespace(rico_uri))
-    ns = ('data', Namespace(URIRef(f"{base_uri}/")))
+    ns = ('data', Namespace(URIRef(f"{base_data_uri}/")))
     auth = ('auth', Namespace(URIRef(f"{base_auth_uri}/")))
     add = ('add', Namespace(URIRef(f"{base_add_uri}/")))
     maps = ('maps', Namespace(URIRef(f"{base_mapping_uri}#")))
@@ -1237,7 +1238,7 @@ def __init__(schema_code, source_filename=None):
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_def_pomap))
         rml_g.add((nested_def_pomap, rr[1].predicate, fno[1].executes))
         nested_def_omap = BNode()
-        rml_g.add((nested_def_pomap, rr[1].objectMap, nested_def_omap))
+        rml_g.add((nested_def_omap, rr[1].objectMap, nested_def_omap))
         rml_g.add((nested_def_omap, rr[1].constant, grel[1].string_match))
 
         # Nested function argument 1
@@ -1599,6 +1600,7 @@ def __init__(schema_code, source_filename=None):
         f.write(ttl)
     print(f"\n\nSuccessfully saved RML map to: '{rml_path}'")
     #print(ttl)
+    return ttl
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Map schema of choice")
