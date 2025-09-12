@@ -4,7 +4,35 @@ This is a client-side React application that uses Pyodide to run a Python script
 
 ## Prerequisites
 
-*   [Bun](https://bun.sh/) must be installed.
+1. Install **Bun**:
+
+   ```bash
+   curl -fsSL https://bun.sh/install | bash
+   ```
+
+2. Install **Volta**:
+
+   ```bash
+   curl https://get.volta.sh | bash
+   ```
+
+3. Install **Node** via Volta:
+
+   ```bash
+   volta install node
+   ```
+
+4. Pin the Node version to your project:
+
+   ```bash
+   volta pin node
+   ```
+
+5. Install project dependencies from the Bun lockfile:
+
+   ```bash
+   bun install
+   ```
 
 ## Installation
 

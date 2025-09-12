@@ -824,7 +824,7 @@ var require_react_development = __commonJS((exports, module) => {
             if (moduleObject === undefined) {
               error("lazy: Expected the result of a dynamic imp" + "ort() call. " + `Instead received: %s
 
-Your code should look like:
+Your code should look like: 
   ` + "const MyComponent = lazy(() => imp" + `ort('./MyComponent'))
 
 ` + "Did you accidentally put curly braces around the import?", moduleObject);
@@ -834,7 +834,7 @@ Your code should look like:
             if (!("default" in moduleObject)) {
               error("lazy: Expected the result of a dynamic imp" + "ort() call. " + `Instead received: %s
 
-Your code should look like:
+Your code should look like: 
   ` + "const MyComponent = lazy(() => imp" + "ort('./MyComponent'))", moduleObject);
             }
           }

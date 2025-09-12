@@ -26,8 +26,8 @@ script -c "
     echo
     echo '--- Running E2E Test ---'
     # Update the playwright script to use port 8000
-    sed -i 's/localhost:3000/localhost:8000/g' ../jules-scratch/verification/verify_conversion.py
-    python ../jules-scratch/verification/verify_conversion.py
+    sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py
+    python ./verify_conversion.py
     echo
     echo '--- Stopping Server ---'
     kill \$SERVER_PID
