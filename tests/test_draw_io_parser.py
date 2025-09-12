@@ -5,10 +5,12 @@ draw_io_parser.py
 
 import os
 from pathlib import Path
+import sys
 from unittest import TestCase
 from rdflib import Graph
 from rdflib.compare import isomorphic, graph_diff
 
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from draw_io_parser import parse_drawio_to_graph
 
 

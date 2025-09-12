@@ -34,7 +34,7 @@ async function copyToPyodideFS(pyodide: any, source: string, destination: string
   }
 }
 
-const server = Bun.serve({
+export const server = Bun.serve({
   port: 3000,
   async fetch(req) {
     const url = new URL(req.url);

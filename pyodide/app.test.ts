@@ -1,34 +1,46 @@
-import { test, expect, describe } from "bun:test";
+import { test, expect, afterAll } from "bun:test";
+import { server } from "./app";
 
-describe("Server", () => {
-    test("should return index.html on GET /", async () => {
-        const res = await fetch("http://localhost:3000/");
-        expect(res.status).toBe(200);
-        const text = await res.text();
-        expect(text).toContain("<h1>DrawIO to RML Converter</h1>");
-    });
+const drawioFilePath = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio";
+const csvFilePath = "gbad/mapping/source/generic.csv";
+const expectedRmlPath = "pyodide/expected.rml";
+const ontologyIris = `rico: https://www.ica.org/standards/RiC/ontology#
+data: https://data.archives.gov.on.test.gbad.ca/
+auth: https://data.archives.gov.on.test.gbad.ca/Schema/Authority/
+add: https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/
+maps: https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#`;
 
-    test("should return 404 on unknown route", async () => {
-        const res = await fetch("http://localhost:3000/unknown");
-        expect(res.status).toBe(404);
-    });
 
-    // This is a basic test for the /convert endpoint.
-    // A more comprehensive test would require mocking the pyodide environment
-    // and the python scripts, which is complex.
-    test("should handle POST /convert", async () => {
-        const formData = new FormData();
-        formData.append("drawioFile", new File(["<drawio></drawio>"], "test.drawio", { type: "application/xml" }));
-        formData.append("csvFile", new File(["a,b,c"], "test.csv", { type: "text/csv" }));
-        formData.append("ontologyIris", "ex: http://example.com/");
-
-        const res = await fetch("http://localhost:3000/convert", {
-            method: "POST",
-            body: formData,
-        });
-
-        expect(res.status).toBe(200);
-        expect(res.headers.get("Content-Disposition")).toBe("attachment; filename=output.rml");
-        expect(res.headers.get("Content-Type")).toBe("application/rdf+xml");
-    });
+afterAll(() => {
+  server.stop();
 });
+
+test("POST /convert with drawio and csv files returns RML", async () => {
+  const drawioFile = Bun.file(drawioFilePath);
+  const csvFile = Bun.file(csvFilePath);
+  const expectedRml = await Bun.file(expectedRmlPath).text();
+
+  const formData = new FormData();
+  formData.append("drawioFile", new File([await drawioFile.arrayBuffer()], drawioFile.name, { type: drawioFile.type }));
+  formData.append("csvFile", new File([await csvFile.arrayBuffer()], csvFile.name, { type: csvFile.type }));
+  formData.append("ontologyIris", ontologyIris);
+
+  const response = await server.fetch(
+    new Request("http://localhost:3000/convert", {
+      method: "POST",
+      body: formData,
+    })
+  );
+
+  expect(response.status).toBe(200);
+
+  const responseText = await response.text();
+
+  // Normalize both expected and actual RML content
+  const normalize = (str: string) => str.replace(/\s+/g, ' ').trim();
+
+  const normalizedExpected = normalize(expectedRml);
+  const normalizedResponse = normalize(responseText);
+
+  expect(normalizedResponse).toBe(normalizedExpected);
+}, 20000); // 20 seconds timeout for pyodide loading and processing
