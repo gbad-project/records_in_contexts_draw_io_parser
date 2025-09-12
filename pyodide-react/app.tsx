@@ -2,21 +2,33 @@ import React, { useState, useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 
 const App = () => {
-  const [drawioFile, setDrawioFile] = useState<File | null>(null);
-  const [csvFile, setCsvFile] = useState<File | null>(null);
-  const [ontologyIris, setOntologyIris] = useState(
+  // File contents stored in state
+  const [drawioContent, setDrawioContent] = useState(localStorage.getItem('drawioFileContent') || '');
+  const [csvContent, setCsvContent] = useState(localStorage.getItem('csvFileContent') || '');
+  const [ontologyIris, setOntologyIris] = useState(localStorage.getItem('ontologyIris') || 
 `rico: https://www.ica.org/standards/RiC/ontology#
 data: https://data.archives.gov.on.test.gbad.ca/
 auth: https://data.archives.gov.on.test.gbad.ca/Schema/Authority/
 add: https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/
 maps: https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#
 rdfs: http://www.w3.org/2000/01/rdf-schema#`);
+
+  const [savedMessage, setSavedMessage] = useState('');
   const [output, setOutput] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
   const pyodide = useRef<any>(null);
 
+  // Show messages if files were already loaded from previous session
+  useEffect(() => {
+    if (drawioContent) setSavedMessage('Draw.io file already loaded from previous session.');
+    if (csvContent) setSavedMessage(prev => prev 
+      ? prev + ' CSV file already loaded from previous session.'
+      : 'CSV file already loaded from previous session.');
+  }, []);
+
+  // Load Pyodide once
   useEffect(() => {
     const loadPyodide = async () => {
       try {
@@ -39,9 +51,10 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#`);
     loadPyodide();
   }, []);
 
+  // Handle conversion
   const handleConvert = async () => {
-    if (!drawioFile || !csvFile || !pyodide.current) {
-      setError('Please select both a .drawio and a .csv file.');
+    if (!drawioContent || !csvContent || !pyodide.current) {
+      setError('Please upload both a Draw.io and a CSV file.');
       return;
     }
 
@@ -50,9 +63,6 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#`);
     setOutput('');
 
     try {
-      const drawioContent = await drawioFile.text();
-      const csvContent = await csvFile.text();
-
       // Load Python scripts
       const drawIOParserPy = await (await fetch('https://raw.githubusercontent.com/gbad-project/records_in_contexts_draw_io_parser/refs/heads/review/feat/pyodide-converter/pyodide-react/draw_io_parser.py')).text();
       const mapSchemaPy = await (await fetch('https://raw.githubusercontent.com/gbad-project/records_in_contexts_draw_io_parser/refs/heads/review/feat/pyodide-converter/pyodide-react/map_schema.py')).text();
@@ -120,41 +130,46 @@ except Exception as e:
     }
   };
 
-  useEffect(() => {
-    const savedDrawio = localStorage.getItem("drawioFileName");
-    const savedCsv = localStorage.getItem("csvFileName");
-    const savedIris = localStorage.getItem("ontologyIris");
-    if (savedIris) setOntologyIris(savedIris);
-  }, []);
-
-  useEffect(() => {
-    if (drawioFile) localStorage.setItem("drawioFileName", drawioFile.name);
-  }, [drawioFile]);
-
-  useEffect(() => {
-    if (csvFile) localStorage.setItem("csvFileName", csvFile.name);
-  }, [csvFile]);
-
-  useEffect(() => {
-    localStorage.setItem("ontologyIris", ontologyIris);
-  }, [ontologyIris]);
-
-
   return (
     <div style={{ padding: '20px' }}>
       <h1>Draw.io to RML Converter</h1>
+
       <div>
         <label>
           Draw.io File:
-          <input type="file" accept=".drawio" onChange={(e) => setDrawioFile(e.target.files ? e.target.files[0] : null)} />
+          <input
+            type="file"
+            accept=".drawio"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              const text = await file.text();
+              setDrawioContent(text);
+              localStorage.setItem('drawioFileContent', text);
+              setSavedMessage(`Draw.io file "${file.name}" saved!`);
+            }}
+          />
         </label>
       </div>
+
       <div style={{ marginTop: '10px' }}>
         <label>
           CSV File:
-          <input type="file" accept=".csv" onChange={(e) => setCsvFile(e.target.files ? e.target.files[0] : null)} />
+          <input
+            type="file"
+            accept=".csv"
+            onChange={async (e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              const text = await file.text();
+              setCsvContent(text);
+              localStorage.setItem('csvFileContent', text);
+              setSavedMessage(`CSV file "${file.name}" saved!`);
+            }}
+          />
         </label>
       </div>
+
       <div style={{ marginTop: '10px' }}>
         <label>
           Ontology IRIs:
@@ -162,14 +177,21 @@ except Exception as e:
             rows={6}
             style={{ width: '100%', verticalAlign: 'top' }}
             value={ontologyIris}
-            onChange={(e) => setOntologyIris(e.target.value)}
+            onChange={(e) => {
+              setOntologyIris(e.target.value);
+              localStorage.setItem('ontologyIris', e.target.value);
+            }}
           />
         </label>
       </div>
+
       <button onClick={handleConvert} disabled={isLoading} style={{ marginTop: '10px' }}>
         {isLoading ? 'Loading...' : 'Convert'}
       </button>
+
+      {savedMessage && <div style={{ color: 'green', marginTop: '10px' }}>{savedMessage}</div>}
       {error && <div style={{ color: 'red', marginTop: '10px' }}>{error}</div>}
+
       {output && (
         <div style={{ marginTop: '20px' }}>
           <h2>Output:</h2>
