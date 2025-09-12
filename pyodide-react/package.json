@@ -2,10 +2,8 @@
   "name": "pyodide-react-runner",
   "version": "1.0.0",
   "description": "A client-side React application for converting .drawio diagrams to RML using Pyodide.",
-  "main": "app.tsx",
-  "scripts": {
-    "dev": "bun --hot app.tsx"
-  },
+  "main": "index.tsx",
+  "scripts": {},
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
