@@ -54,8 +54,9 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#`);
       const csvContent = await csvFile.text();
 
       // Load Python scripts
-      const drawIOParserPy = await (await fetch('./draw_io_parser.py')).text();
-      const mapSchemaPy = await (await fetch('./map_schema.py')).text();
+      const drawIOParserPy = await (await fetch('https://raw.githubusercontent.com/gbad-project/records_in_contexts_draw_io_parser/refs/heads/review/feat/pyodide-converter/pyodide-react/draw_io_parser.py')).text();
+      const mapSchemaPy = await (await fetch('https://raw.githubusercontent.com/gbad-project/records_in_contexts_draw_io_parser/refs/heads/review/feat/pyodide-converter/pyodide-react/map_schema.py')).text();
+      const preprocessorsPy = await (await fetch('https://raw.githubusercontent.com/gbad-project/records_in_contexts_draw_io_parser/refs/heads/review/feat/pyodide-converter/gbad/converter/preprocessors.py')).text();
 
       pyodide.current.FS.writeFile('/draw_io_parser.py', drawIOParserPy);
       pyodide.current.FS.writeFile('/map_schema.py', mapSchemaPy);
@@ -68,15 +69,20 @@ rdfs: http://www.w3.org/2000/01/rdf-schema#`);
       pyodide.current.globals.set('csv_path', '/user.csv');
       pyodide.current.globals.set('ontology_iris', ontologyIris);
 
+      pyodide.current.FS.mkdir("/gbad");
+      pyodide.current.FS.mkdir("/gbad/converter");
+      pyodide.current.FS.writeFile("/gbad/converter/preprocessors.py", preprocessorsPy);
+
+
       const pythonCode = `
 import sys
 sys.path.append('/')
 import map_schema
 import draw_io_parser
 
-drawio_path = pyodide.globals.get('drawio_path')
-csv_path = pyodide.globals.get('csv_path')
-ontology_iris = pyodide.globals.get('ontology_iris')
+#drawio_path = pyodide.globals.get('drawio_path')
+#csv_path = pyodide.globals.get('csv_path')
+#ontology_iris = pyodide.globals.get('ontology_iris')
 
 prefixes = {}
 for line in ontology_iris.split('\\n'):
@@ -107,10 +113,32 @@ except Exception as e:
       setOutput(result);
     } catch (e) {
       setError('An error occurred during the conversion process.');
+      console.error(e);
+      setError(String(e));
     } finally {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    const savedDrawio = localStorage.getItem("drawioFileName");
+    const savedCsv = localStorage.getItem("csvFileName");
+    const savedIris = localStorage.getItem("ontologyIris");
+    if (savedIris) setOntologyIris(savedIris);
+  }, []);
+
+  useEffect(() => {
+    if (drawioFile) localStorage.setItem("drawioFileName", drawioFile.name);
+  }, [drawioFile]);
+
+  useEffect(() => {
+    if (csvFile) localStorage.setItem("csvFileName", csvFile.name);
+  }, [csvFile]);
+
+  useEffect(() => {
+    localStorage.setItem("ontologyIris", ontologyIris);
+  }, [ontologyIris]);
+
 
   return (
     <div style={{ padding: '20px' }}>
@@ -154,4 +182,5 @@ except Exception as e:
   );
 };
 
-export default App;
+// render directly here
+createRoot(document.getElementById("root")!).render(<App />);

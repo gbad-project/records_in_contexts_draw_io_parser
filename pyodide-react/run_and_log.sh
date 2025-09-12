@@ -13,18 +13,18 @@ script -c "
     echo '--- Node Version ---'
     node --version
     echo
-    echo '--- Building React Application ---'
-    bun build ./index.tsx --outdir ./dist
+    #echo '--- Building React Application ---'
+    #bun build ./index.html --outdir ./dist
     echo
     echo '--- Starting Server ---'
-    bun run index.tsx &
+    bun run index.html &
     SERVER_PID=\$!
     echo 'Server started with PID: ' \$SERVER_PID
     sleep 5 # Give the server some time to start
     echo
     echo '--- Running E2E Test ---'
     # Update the playwright script to use port 8000
-    sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py
+    #sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py
     pytest verify_conversion.py
     echo
     echo '--- Stopping Server ---'

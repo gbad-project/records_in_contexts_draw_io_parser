@@ -6,7 +6,7 @@ def test_conversion(page: Page):
     convert a .drawio file and a .csv file into RML.
     """
     # 1. Arrange: Go to the application's page.
-    page.goto("http://localhost:8000")
+    page.goto("http://localhost:3000")
 
     # 2. Act: Upload the files and click the convert button.
     drawio_file_path = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
