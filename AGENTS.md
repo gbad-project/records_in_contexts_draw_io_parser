@@ -53,14 +53,57 @@ Each task references the directory where work occurs and the test script to be a
    - Implement async `loadCsv` returning array of records.
    - Unit tests: `tests/lib/csv.test.ts`.
    - Test script: `scripts/test-lib-csv.sh`.
+3. **P1T3 – Prefix Expansion Utility** (`src/lib/prefix.ts`)
+    - **Goal**: Create a simple, configurable utility for expanding CURIEs (e.g., `rico:RecordSet`) into full IRIs.
+    - **AICODE-TODO: P1T3.1 - Implement Prefix Map and Expansion Function.**
+        - Create a function `createPrefixExpander(prefixMap: Record<string, string>)`. It takes a dictionary mapping prefixes to their IRI bases (e.g., `{ rico: "https://www.ica.org/standards/RiC/ontology#" }`).
+        - The function should return another function, `expand(curie: string): string`.
+        - The `expand` function should take a CURIE string, split it into prefix and local name, look up the prefix in the map, and return the concatenated full IRI.
+        - If the prefix is not found or the input is not a valid CURIE, it should handle the error gracefully (e.g., return the original string or throw a configured error).
+    - **AICODE-NOTE: Usage**: This utility will not be used by the Draw.io parser (P2T1) itself, but will be used by later stages in the pipeline (like the mapping engine in P4) after the raw CURIEs have been extracted.
+    - **Tests**: `tests/lib/prefix.test.ts`. Test the expander with valid CURIEs, unknown prefixes, and malformed inputs.
+    - **Test script**: `scripts/test-lib-prefix.sh`.
 
 ### Phase 2 – Draw.io Parsing
-1. **P2T1 – XML to internal model** (`src/drawio/parser.ts`)
-   - Parse Draw.io XML into `Individual` and `Arrow` objects modeled after Python `DrawIOXMLTree`.
-   - Provide `parseDrawio(xml: string): MappingModel`.
-   - Include necessary namespace handling and IRI creation.
-   - Tests: `tests/drawio/parser.test.ts` with sample diagram fixtures.
-   - Test script: `scripts/test-drawio-parser.sh`.
+1. **P2T1 – Ontology-Agnostic XML Parser** (`src/drawio/parser.ts`) <!-- reviewed -->
+    - **Goal**: To parse the structural and semantic information from a Draw.io XML file into a generic, ontology-agnostic intermediate representation. This module will **not** validate identifiers against any specific ontology. Its sole job is to faithfully translate the diagram's structure.
+
+    - **AICODE-TODO: P2T1.1 - Define Generic Data Structures** (`src/drawio/model.ts`)
+        - `DiagramNode`: Represents a swimlane or rounded rectangle.
+            - `id`: `string`
+            - `value`: `string` (The raw text content, e.g., `rr:template "/KB/{...}"` or `rico:RecordSet`)
+            - `geometry`: `{ x: number; y: number; width: number; height: number; }`
+            - `children`: `Map<string, DiagramNode>` (For nested nodes, like a class inside a swimlane)
+        - `DiagramArrow`: Represents an arrow.
+            - `id`: `string`
+            - `label`: `string` (The raw text from the edge label, e.g., `rico:hasRecordSetType`)
+            - `sourceId`: `string | null`
+            - `targetId`: `string | null`
+        - `ParsedDiagram`:
+            - `nodes`: `Map<string, DiagramNode>`
+            - `arrows`: `Map<string, DiagramArrow>`
+
+    - **AICODE-TODO: P2T1.2 - Implement Core XML Parsing and Structuring** (`src/drawio/parser.ts`)
+        - Create the main function `parseDrawio(xml: string): ParsedDiagram`.
+        - Use an XML parser to convert the XML string into a JavaScript object.
+        - Iterate through all `<mxCell>` elements and build a hierarchical tree of `DiagramNode` and `DiagramArrow` objects based on their `id` and `parent` attributes. This will create a structured representation of the raw graph.
+        - Use the `extractTextFromHtml` utility (from P2T1.3) to clean the `value` of each cell.
+
+    - **AICODE-TODO: P2T1.3 - Implement HTML Value Extraction** (`src/drawio/html-parser.ts`)
+        - Create a utility function `extractTextFromHtml(html: string): string` to correctly parse the HTML embedded in `value` attributes.
+
+    - **AICODE-TODO: P2T1.4 - Implement Arrow Source/Target Resolution** (`src/drawio/arrow-resolver.ts`)
+        - Create a function `resolveArrowConnections(diagram: ParsedDiagram, config: { maxGap: number })`.
+        - It will iterate through the arrows in the `ParsedDiagram` and resolve any missing `sourceId` or `targetId` by performing the geometric search against the `DiagramNode` geometries.
+
+    - **AICODE-NOTE: Decoupling Principle**
+        - This parser should not contain any hardcoded lists of classes or properties.
+        - It should not perform any validation of whether a `value` like `"rico:RecordSet"` is a "known" class. It simply extracts the string. The responsibility for interpreting and validating these strings lies with downstream modules.
+
+    - **AICODE-NOTE: Testing Strategy**
+        - Create `tests/drawio/parser.test.ts`.
+        - Unit test each helper function (`html-parser`, `arrow-resolver`).
+        - For the main `parseDrawio` function, use the sample `.drawio` files as input and compare the output `ParsedDiagram` object against a stored JSON snapshot. This ensures the structural parsing is correct without depending on any specific ontology.
    - **Relevant Files**:
      - **Python Scripts**: `draw_io_parser.py`
      - **Test Scripts**: `tests/test_draw_io_parser.py`
