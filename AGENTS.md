@@ -53,11 +53,29 @@ Each task references the directory where work occurs and the test script to be a
    - Expose `createDataset`, `serializeDataset`.
    - Unit tests: `tests/lib/rdf.test.ts`.
    - Test script: `scripts/test-lib-rdf.sh` → `bun test tests/lib/rdf.test.ts`.
-2. **P1T2 – CSV helpers** (`src/lib/csv.ts`)
+2. **P1T2 – CSV helpers** (`src/lib/csv.ts`) <!-- reviewed -->
    - Utilities for loading CSV in browser and applying transformations.
    - Implement async `loadCsv` returning array of records.
    - Unit tests: `tests/lib/csv.test.ts`.
    - Test script: `scripts/test-lib-csv.sh`.
+   - Details about how this task description was created are available from report file located at `reports/codex-report-20250913222101.md`.
+   - **AICODE-TODO: P1T2.1 - Core CSV Loader Implementation**
+       - Implement `async function loadCsv(input: File | string, opts?: { delimiter?: string; transforms?: CsvTransform[]; }): Promise<Record<string, string>[]>`.
+       - Use a browser-friendly parser (e.g., `PapaParse`) to read the CSV text.
+       - Treat the first row as headers, ensure all cell values remain strings, strip UTF-8 BOM, and skip empty lines.
+   - **AICODE-TODO: P1T2.2 - Transformation Pipeline Support**
+       - Define `type CsvTransform = (row: Record<string, string>) => Record<string, string>`.
+       - Apply transforms sequentially to each parsed row in an immutable way.
+       - Provide a helper `applyTransforms(records: Record<string, string>[], transforms: CsvTransform[]): Record<string, string>[]`.
+   - **AICODE-TODO: P1T2.3 - Error Handling and Validation**
+       - Detect malformed CSV (e.g., inconsistent column counts) and surface descriptive errors.
+       - Handle missing headers by throwing or returning a structured error object.
+   - **AICODE-TODO: P1T2.4 - Testing Scaffold**
+       - `tests/lib/csv.test.ts` should verify basic parsing, application of a transform (e.g., trimming whitespace), handling of BOMs, and skipping empty lines.
+       - `scripts/test-lib-csv.sh` should run `bun test tests/lib/csv.test.ts` and log results to `logs/test-lib-csv-<timestamp>.log`.
+   - **Relevant Files:**
+       - `gbad/converter/preprocessors.py` – demonstrates loading CSV data as strings and column transformation patterns.
+       - `map_schema.py` – uses `SourceCSVPreprocessor` and `column_split` to showcase transformation needs.
 3. **P1T3 – Prefix Expansion Utility** (`src/lib/prefix.ts`)
     - **Goal**: Create a simple, configurable utility for expanding CURIEs (e.g., `rico:RecordSet`) into full IRIs.
     - **AICODE-TODO: P1T3.1 - Implement Prefix Map and Expansion Function.**
