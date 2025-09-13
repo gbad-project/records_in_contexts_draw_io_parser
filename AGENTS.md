@@ -202,12 +202,45 @@ Each task references the directory where work occurs and the test script to be a
    - Test script: `scripts/test-postprocess-merge.sh`.
 
 ### Phase 6 – Graph Merge & Named Graph Handling
-1. **P6T1 – Merge utility** (`src/merge/merger.ts`)
-   - Combine multiple datasets, generate named graph URIs (sha256 → ni → uuid as in `merge_graphs.py`).
-   - Apply `applyMergePostprocess` from Phase 5.
-   - Output N‑Quads string.
-   - Tests: `tests/merge/merger.test.ts`.
-   - Test script: `scripts/test-merge-merger.sh`.
+1. **P6T1 – Merge utility** (`src/merge/merger.ts`) <!-- reviewed -->
+   - **Goal**: Create a client-side utility that takes multiple RDF graph datasets (as strings or `n3.Store` objects) and merges them into a single N-Quads string. Each input graph will be placed into its own deterministically generated named graph.
+   - **AICODE-TODO: P6T1.1 - Implement the Named Graph URI Generation Logic.**
+     - Create a function `generateNamedGraphUri(graphContent: string): NamedNode`.
+     - This function must replicate the exact logic from `create_named_graph_uri_from_file` in `merge_graphs.py`:
+         1.  Take the graph content as a string.
+         2.  Encode it to UTF-8 bytes.
+         3.  Calculate the SHA-256 hash of the bytes.
+         4.  Encode the hash using URL-safe Base64, removing padding (`=`).
+         5.  Construct the `ni:///sha-256;{hash}` URI.
+         6.  Generate a Version 5 UUID using `uuid.NAMESPACE_URL` and the `ni` URI.
+         7.  Return an `rdf:NamedNode` with the value `urn:uuid:{uuid}`.
+     - You will need a SHA-256 library and a UUID v5 library (e.g., `crypto-js`, `uuid`).
+   - **AICODE-TODO: P6T1.2 - Implement the Core Merge Function.**
+     - Create the main function `mergeGraphs(graphs: { name: string, data: Store }[]): Store`.
+     - This function should accept an array of objects, where each object contains the data of a graph (as an `n3.Store`) and a name or identifier.
+     - It should initialize a new `n3.Store` for the merged output.
+     - For each input graph:
+         1.  Serialize the input `Store` to a canonical string format (like N-Triples) to be used for hashing.
+         2.  Generate the named graph URI using the function from P6T1.1.
+         3.  Iterate through the quads of the input store and add them to the merged store, but replace their graph component with the newly generated named graph URI.
+   - **AICODE-TODO: P6T1.3 - Implement Second-Pass Post-processing.**
+     - Create a function `applyMergePostprocess(dataset: Store): Store`.
+     - This function will contain the logic for the second round of transformations, as mentioned in the `AGENTS.md` high-level description.
+     - For now, this can be a placeholder function that simply returns the dataset, with an `AICODE-TODO` comment inside it to indicate that the specific rules need to be implemented in task `P5T2`.
+   - **AICODE-TODO: P6T1.4 - Create the Final Orchestration Function.**
+     - Create a function `createMergedNquads(graphs: { name: string, data: Store }[]): string`.
+     - This function will orchestrate the process:
+         1.  Call `mergeGraphs` to get the merged dataset.
+         2.  Call `applyMergePostprocess` on the result.
+         3.  Serialize the final dataset to an N-Quads string.
+         4.  Return the string.
+   - **AICODE-NOTE: Testing Strategy.**
+     - Create a test file `tests/merge/merger.test.ts`.
+     - Create a test case that mimics the `test_run.sh` script.
+     - Have two sample input graphs (as strings or loaded from test files).
+     - Generate the merged N-Quads string using your new utility.
+     - To verify the output, you will need to manually calculate the expected named graph URIs for your sample inputs. You can use the provided Python script `merge_graphs.py` on your sample data to get the exact expected URIs.
+     - The test should then check that the output string contains the correct triples within the correct, expected named graphs.
    - **Relevant Files**:
      - **Python Scripts**: `merge_graphs.py`
      - **Integration Tests**: `tests/scripts/linux/test_run.sh`
