@@ -37,6 +37,7 @@ Each task references the directory where work occurs and the test script to be a
    - Add `package.json` with Volta pin (Node 20), Bun as runtime, scripts (`dev`, `build`, `test`).
    - Add `tsconfig.json`, `.eslintrc`, `.prettierrc` as needed.
    - Test script: `scripts/test-toolchain.sh` runs `bun test` (should exit 0 even when no tests).
+   - Details about how this task description was created are available from report file(s) located at `reports/architect-report-20250913180723.md`.
 2. **P0T2 – Directory scaffolding**
    - Create the `src` subfolders listed above with placeholder index files.
    - Add `tests/setup.ts` if needed for Vitest.
@@ -66,9 +67,10 @@ Each task references the directory where work occurs and the test script to be a
 
 ### Phase 2 – Draw.io Parsing
 1. **P2T1 – Ontology-Agnostic XML Parser** (`src/drawio/parser.ts`) <!-- reviewed -->
-    - **Goal**: To parse the structural and semantic information from a Draw.io XML file into a generic, ontology-agnostic intermediate representation. This module will **not** validate identifiers against any specific ontology. Its sole job is to faithfully translate the diagram's structure.
+   - **Goal**: To parse the structural and semantic information from a Draw.io XML file into a generic, ontology-agnostic intermediate representation. This module will **not** validate identifiers against any specific ontology. Its sole job is to faithfully translate the diagram's structure.
+   - Details about how this task description was created are available from report file(s) located at `reports/jules-report-20250913130525.md`.
 
-    - **AICODE-TODO: P2T1.1 - Define Generic Data Structures** (`src/drawio/model.ts`)
+   - **AICODE-TODO: P2T1.1 - Define Generic Data Structures** (`src/drawio/model.ts`)
         - `DiagramNode`: Represents a swimlane or rounded rectangle.
             - `id`: `string`
             - `value`: `string` (The raw text content, e.g., `rr:template "/KB/{...}"` or `rico:RecordSet`)
@@ -115,6 +117,7 @@ Each task references the directory where work occurs and the test script to be a
 ### Phase 3 – CSV Preprocessing
 1. **P3T1 – Custom preprocessing functions** (`src/csv/preprocess.ts`) <!-- reviewed -->
    - **Goal**: Port the CSV preprocessing logic from `map_schema.py` into a robust, well-tested TypeScript module. This module will accept raw CSV data as an array of objects and return a new array of objects with added and transformed columns. The logic is divided into three distinct pipelines based on a `schema_code`: `add`, `auth`, and `generic`.
+   - Details about how this task description was created are available from report file(s) located at `reports/jules-report-20250913113633.md` and `reports/jules-report-20250913120003.md`.
 
    - **AICODE-TODO: P3T1.1 - Implement a CSV Preprocessing Utility.**
      - Before implementing the specific pipelines, create a utility class or a set of functions in TypeScript that replicates the functionality of the `SourceCSVPreprocessor` class in `gbad/converter/preprocessors.py`.
@@ -186,6 +189,7 @@ Each task references the directory where work occurs and the test script to be a
    - Implement function `mapCsvToRdf(mapping: MappingModel, csv: Record[]): Dataset`.
    - Integrate preprocessing from Phase 3.
    - First round post‑processing hooks (`applyInitialPostprocess(dataset)` in `src/postprocess/initial.ts`).
+   - Details about how this task description was created are available from report file(s) located at `reports/jules-report-20250913121644.md`.
 
 - **AICODE-TODO: P4T2.1 - Implement Basic Mapping Loop and Subject Generation** (`src/mapping/mapper.ts`)
    - **Goal**: Create the `mapCsvToRdf` function skeleton and implement the core iteration logic. This first step will focus on generating the primary resources (subjects) and their `rdf:type` declarations.
@@ -233,6 +237,7 @@ Each task references the directory where work occurs and the test script to be a
 ### Phase 5 – Postprocessing Modules
 1. **P5T1 – Initial postprocessing** (`src/postprocess/initial.ts`) <!-- reviewed -->
    - **Goal**: Port the RDF graph post-processing logic from the Python script `map_rml.py` into a TypeScript module. This module will provide a function `applyInitialPostprocess(dataset)` that takes an `n3.js` dataset and applies a series of transformations to clean up and enrich the data.
+   - Details about how this task description was created are available from report file(s) located at `reports/jules-report-1757793156.md`.
 
    - **AICODE-TODO: P5T1.1 - Implement the `remove_shorter_duplicate_labels` Algorithm.**
      - **Description**: This is the primary active post-processing step. It identifies `rico:RecordSet` resources that have exactly two `rdfs:label` predicates. It then checks if both labels start with the text of the record set's `add:CurrentReferenceCode`. If this condition is met, the algorithm must remove the triple containing the shorter of the two labels.
@@ -296,6 +301,7 @@ Each task references the directory where work occurs and the test script to be a
 ### Phase 6 – Graph Merge & Named Graph Handling
 1. **P6T1 – Merge utility** (`src/merge/merger.ts`) <!-- reviewed -->
    - **Goal**: Create a client-side utility that takes multiple RDF graph datasets (as strings or `n3.Store` objects) and merges them into a single N-Quads string. Each input graph will be placed into its own deterministically generated named graph.
+   - Details about how this task description was created are available from report file(s) located at `reports/jules-report-20250913125101.md`.
    - **AICODE-TODO: P6T1.1 - Implement the Named Graph URI Generation Logic.**
      - Create a function `generateNamedGraphUri(graphContent: string): NamedNode`.
      - This function must replicate the exact logic from `create_named_graph_uri_from_file` in `merge_graphs.py`:
