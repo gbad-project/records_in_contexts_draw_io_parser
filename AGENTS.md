@@ -184,11 +184,45 @@ Each task references the directory where work occurs and the test script to be a
      - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`
 
 ### Phase 4 – Mapping Engine (RML removal)
-1. **P4T1 – Mapping model** (`src/mapping/model.ts`)
-   - Define interfaces for mapping instructions derived from Draw.io (`TriplesMap`, `PredicateObjectMap`, etc.).
-   - Include helper to build mapping model from Phase 2 output.
-   - Tests: `tests/mapping/model.test.ts`.
-   - Test script: `scripts/test-mapping-model.sh`.
+1. **P4T1 – Mapping model** (`src/mapping/model.ts`) <!-- reviewed -->
+   - **Goal**: Define the core TypeScript interfaces that represent the mapping instructions. This model will be generated from the `ParsedDiagram` (from `P2T1`) and used by the mapping engine (`P4T2`) to convert CSV data into RDF triples. This replaces the need for an intermediate RML file.
+   - **Details about how this task description was created are available from report file located at `reports/jules-report-20250913142338.md`.**
+
+   - **AICODE-TODO: P4T1.1 - Define the `ObjectMap` Interfaces.**
+        - Create a base interface `ObjectMap` with a `type` property.
+        - Create specific interfaces that extend `ObjectMap` for each type of object generation:
+            - `ReferenceObjectMap`: `{ type: 'reference'; column: string; }`
+            - `TemplateObjectMap`: `{ type: 'template'; template: string; }`
+            - `ConstantObjectMap`: `{ type: 'constant'; value: string; }`
+            - `ParentTriplesMapObjectMap`: `{ type: 'parentTriplesMap'; parentTriplesMapId: string; joinCondition?: { child: string; parent: string; }; }`
+
+   - **AICODE-TODO: P4T1.2 - Define the `PredicateObjectMap` Interface.**
+        - Create an interface `PredicateObjectMap`.
+        - It should have a `predicate` property (`string`) to hold the predicate URI.
+        - It should have an `objectMaps` property, which is an array of the `ObjectMap` union type (`(ReferenceObjectMap | TemplateObjectMap | ConstantObjectMap | ParentTriplesMapObjectMap)[]`).
+
+   - **AICODE-TODO: P4T1.3 - Define the `TriplesMap` Interface.**
+        - Create the main `TriplesMap` interface.
+        - It needs the following properties:
+            - `id`: `string` (A unique identifier for the map).
+            - `rdfClass`: `string` (The `rdf:type` of the resource to be created).
+            - `subjectTemplate`: `string` (The template for the subject URI).
+            - `logicalSource`: `{ path: string; }` (Information about the source data).
+            - `condition`: `{ column: string; value: 'not null'; }` (Optional, for conditional generation).
+            - `predicateObjectMaps`: `PredicateObjectMap[]` (An array of predicate-object maps).
+
+   - **AICODE-TODO: P4T1.4 - Define the main `MappingModel` and Helper Function.**
+        - Define a type alias `MappingModel` as `TriplesMap[]`.
+        - Define the signature for the helper function that will create this model: `buildMappingModel(parsedDiagram: ParsedDiagram): MappingModel`. The implementation of this function is not part of this task, but its signature should be defined for clarity.
+
+   - **AICODE-NOTE: Data Contract.**
+        - The `MappingModel` is the complete, declarative definition of the CSV-to-RDF mapping.
+        - The `buildMappingModel` function will be responsible for converting the generic `ParsedDiagram` into this specific `MappingModel`. This is where the logic from `map_schema.py`'s `uriref_str_to_map` will be adapted.
+        - The `mapCsvToRdf` function (`P4T2`) will take this `MappingModel` as input and execute the mapping.
+   - **Relevant Files**:
+     - **Python Scripts**: `map_schema.py`, `map_rml.py`
+     - **Test Scripts**: `tests/mapping/model.test.ts`
+     - **Test script**: `scripts/test-mapping-model.sh`
 2. **P4T2 – CSV → RDF triple conversion** (`src/mapping/mapper.ts`) <!-- reviewed -->
    - Implement function `mapCsvToRdf(mapping: MappingModel, csv: Record[]): Dataset`.
    - Integrate preprocessing from Phase 3.
