@@ -139,6 +139,11 @@ Each task references the directory where work occurs and the test script to be a
    - Include helper to build mapping model from Phase 2 output.
    - Tests: `tests/mapping/model.test.ts`.
    - Test script: `scripts/test-mapping-model.sh`.
+2. **P4T2 – CSV → RDF triple conversion** (`src/mapping/mapper.ts`) <!-- reviewed -->
+   - Implement function `mapCsvToRdf(mapping: MappingModel, csv: Record[]): Dataset`.
+   - Integrate preprocessing from Phase 3.
+   - First round post‑processing hooks (`applyInitialPostprocess(dataset)` in `src/postprocess/initial.ts`).
+
 - **AICODE-TODO: P4T2.1 - Implement Basic Mapping Loop and Subject Generation** (`src/mapping/mapper.ts`)
    - **Goal**: Create the `mapCsvToRdf` function skeleton and implement the core iteration logic. This first step will focus on generating the primary resources (subjects) and their `rdf:type` declarations.
    - **Implementation**:
