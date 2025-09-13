@@ -55,18 +55,18 @@ test('process file with pyodide - debug version', async ({ page }) => {
   console.log('Error elements found:', errorElements);
 
   // Look for the processed content container
-  const processedDiv = page.locator('div:has(h2:text("Processed Content:"))');
+  const processedDiv = page.locator('div:has(> h2:text("Processed Content:"))');
   const hasProcessedDiv = await processedDiv.count();
   console.log('Processed content div found:', hasProcessedDiv > 0);
 
   if (hasProcessedDiv > 0) {
-    const pContent = await processedDiv.locator('p').textContent();
+    const pContent = await processedDiv.locator('p').first().textContent();
     console.log('Actual processed content:', pContent);
   }
 
   // Try the original test but with better error reporting
   try {
-    await expect(page.locator('p')).toHaveText('HELLO', { timeout: 30000 });
+    await expect(processedDiv.locator('p')).toHaveText('HELLO', { timeout: 30000 });
     console.log('✓ Test passed!');
   } catch (error) {
     console.log('❌ Test failed. Let\'s see what we have instead:');
