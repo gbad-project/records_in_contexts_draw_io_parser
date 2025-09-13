@@ -351,11 +351,69 @@ Each task references the directory where work occurs and the test script to be a
        - `tests/data/store.nq`
 
 ### Phase 7 – React User Interface
-1. **P7T1 – File upload & pipeline orchestration** (`src/ui/App.tsx` + components)
-   - UI to upload Draw.io and CSV pairs, execute pipeline entirely in browser, show status and download merged graph.
-   - Use React hooks, maintain pipeline state.
-   - Tests: `tests/ui/app.test.tsx` with Vitest + React Testing Library.
-   - Test script: `scripts/test-ui-app.sh`.
+1. **P7T1 – File upload & pipeline orchestration** (`src/ui/App.tsx` + components) <!-- reviewed -->
+   - **Goal**: To create the main user interface for the application, which allows a user to upload their Draw.io and CSV files, configure and execute the entire end-to-end conversion pipeline in the browser, monitor its progress, and download the final, merged RDF graph.
+   - **Details about how this task description was created are available from report file located at `reports/jules-report-20250913135639.md`.**
+
+   - **AICODE-TODO: P7T1.1 - UI Component Scaffolding (`src/ui/components/`)**
+     - Create the main application layout component (`App.tsx`).
+     - Create stateless, presentational components for the key UI areas:
+       - `Header.tsx`: For the application title.
+       - `FileUpload.tsx`: A component with two upload zones, one for the Draw.io XML file and one for the CSV data file.
+       - `PipelineControls.tsx`: A component containing a "Run Pipeline" button and any configuration options (e.g., dropdowns for `schema_code`, checkboxes for strict mode).
+       - `StatusBar.tsx`: A component to display the current status of the pipeline (e.g., "Ready", "Parsing Draw.io...", "Complete").
+       - `ResultsViewer.tsx`: A component to display a summary of the results and a "Download .nq file" button.
+
+   - **AICODE-TODO: P7T1.2 - State Management Setup (`src/ui/App.tsx`)**
+     - In the main `App.tsx` component, set up state management using React hooks (`useState`, `useReducer`) to track the entire application state, including:
+       - The uploaded Draw.io file content (`string | null`).
+       - The uploaded CSV file content (`string | null`).
+       - The selected `schema_code` (`'add' | 'auth' | 'generic'`).
+       - The current pipeline status (`'idle' | 'parsing' | 'mapping' | 'merging' | 'complete' | 'error'`).
+       - The intermediate and final results (e.g., parsed diagram object, preprocessed CSV data, generated RDF datasets).
+       - The final merged N-Quads string (`string | null`).
+       - Any error messages.
+
+   - **AICODE-TODO: P7T1.3 - File Input and Parsing Orchestration**
+     - Implement the logic within `FileUpload.tsx` and `App.tsx` to handle file selection. Use the FileReader API to read the content of the uploaded files into state.
+     - When the "Run Pipeline" button is clicked, begin the orchestration:
+       1. Set the status to "Parsing Draw.io...".
+       2. Call the `parseDrawio` function from the `P2T1` module with the Draw.io XML string.
+       3. Store the resulting `ParsedDiagram` object in the state.
+       4. Set the status to "Loading CSV...".
+       5. Call the `loadCsv` helper from the `P1T2` module with the CSV string.
+       6. Store the resulting array of records in the state.
+
+   - **AICODE-TODO: P7T1.4 - CSV Preprocessing and Mapping Orchestration**
+     - Continuing the pipeline orchestration:
+       1. Set the status to "Preprocessing CSV...".
+       2. Call the appropriate preprocessing function from the `P3T1` module based on the selected `schema_code`.
+       3. Set the status to "Mapping CSV to RDF...".
+       4. Call the `mapCsvToRdf` function from the `P4T2` module, passing in the `ParsedDiagram` and the preprocessed CSV data. This function will internally use the mapping model from `P4T1`.
+       5. Store the resulting RDF `Dataset` in the state.
+
+   - **AICODE-TODO: P7T1.5 - Post-processing and Merging Orchestration**
+     - This step assumes a scenario where multiple files could be processed and merged. For a single Draw.io/CSV pair, this will merge the main graph with supplementary schema graphs.
+       1. Set the status to "Post-processing...".
+       2. Call the `applyInitialPostprocess` function from `P5T1` on the mapped dataset. This will also handle loading supplementary schema triples.
+       3. Set the status to "Merging graphs...".
+       4. Call the `createMergedNquads` function from `P6T1`. Pass it an array containing the main processed dataset. This function will generate the named graph and serialize the final output to an N-Quads string.
+       5. Store the final N-Quads string in the state.
+       6. Set the status to "Complete".
+
+   - **AICODE-TODO: P7T1.6 - Results Display and Download**
+     - In `ResultsViewer.tsx`, display a summary of the successful conversion.
+     - Enable the "Download .nq file" button.
+     - Implement the download logic: create a `Blob` from the final N-Quads string in state and use a temporary `<a>` tag to trigger the browser download.
+
+   - **AICODE-NOTE: Testing Strategy**
+     - Use Vitest and React Testing Library for component-level tests (`tests/ui/*.test.tsx`).
+     - Mock the pipeline modules (`P1T1` through `P6T1`) to test the UI's state transitions and orchestration logic without running the actual heavy processing.
+     - Test that file uploads update the state correctly.
+     - Test that clicking the "Run Pipeline" button calls the mocked functions in the correct sequence and updates the status bar appropriately.
+     - Test that the download button is enabled only upon completion and that it triggers a download.
+
+   - **Test script**: `scripts/test-ui-app.sh`
 
 ### Phase 8 – Integration & Example Workflow
 1. **P8T1 – End-to-end example**
