@@ -71,20 +71,67 @@ Each task references the directory where work occurs and the test script to be a
 
 ### Phase 3 – CSV Preprocessing
 1. **P3T1 – Custom preprocessing functions** (`src/csv/preprocess.ts`)
-   - Port logic from `map_schema.py` (column splits, field logic).
-   - Functions should accept raw CSV records and output transformed records.
-   - Mark any domain‑specific behavior needing clarification with `AICODE-ASK`.
-   - Tests: `tests/csv/preprocess.test.ts`.
-   - Test script: `scripts/test-csv-preprocess.sh`.
+   - **Goal**: Port the CSV preprocessing logic from `map_schema.py` into a robust, well-tested TypeScript module. This module will accept raw CSV data as an array of objects and return a new array of objects with added and transformed columns. The logic is divided into three distinct pipelines based on a `schema_code`: `add`, `auth`, and `generic`.
+
+   - **AICODE-TODO: P3T1.1 - Implement a CSV Preprocessing Utility.**
+     - Before implementing the specific pipelines, create a utility class or a set of functions in TypeScript that replicates the functionality of the `SourceCSVPreprocessor` class in `gbad/converter/preprocessors.py`.
+     - This utility must provide methods for:
+       - Loading and managing an array of CSV record objects.
+       - Adding a new column to every record from a provided series/array of values.
+       - Updating records from an external data source.
+       - A generic `columnSplit` function that takes a source column name, a list of new column names, and a transformation function. This function should apply the transformation to the source column for each record and populate the new columns.
+
+   - **AICODE-TODO: P3T1.2 - Implement the `add` Schema Preprocessing Pipeline.**
+     - This pipeline transforms data for "Descriptions and Listings".
+     - **Column Splits**: Implement the following transformations, using the utility from P3T1.1:
+       1.  `FINDAID:FINDAIDLINK:FINDAID_URL` -> `FINDAID`, `FINDAIDLINK`, `FINDAID_URL`. Logic: split by ` : `.
+       2.  `IIL:IIL_URL` -> `IIL`, `IIL_URL`. Logic: split by ` : `.
+       3.  `INDEXPROV` -> `INDEXPROV_1` to `INDEXPROV_30`. Logic: split by adjacent-case (e.g., `FirstSecond` becomes `["First", "Second"]`).
+       4.  `INDEXNAME` -> `INDEXNAME_1` to `INDEXNAME_30`. Logic: split by adjacent-case.
+       5.  `INDEXSUB` -> `INDEXSUB_1` to `INDEXSUB_30`. Logic: split by adjacent-case.
+       6.  `DATEOFF:OFFICEAB:AB_REFA:OFFICEC:C_REFA` -> 100 new columns (`DATEOFF_1`, `OFFICEAB_1`...`C_REFA_20`). Logic: split by ` : `.
+       7.  For each `DATEOFF_{i}` (from 1 to 20) -> `DATEOFF_{i}_BEGINNING`, `DATEOFF_{i}_END`. Logic: split by `-`.
+     - **Conditional Logic**:
+       1.  For each record `i` from 1 to 20:
+       2.  Create `ABC_REFA_{i}` by combining `C_REFA_{i}` and `AB_REFA_{i}` (preferring the value from `C_REFA_{i}`).
+       3.  Create `OFFICE_TYPE_{i}` by taking the first character of `ABC_REFA_{i}`.
+       4.  Create `OFFICEABC_{i}` by selecting the value from `OFFICEAB_{i}` if `OFFICE_TYPE_{i}` is 'A' or 'B', or from `OFFICEC_{i}` if it's 'C'.
+
+   - **AICODE-TODO: P3T1.3 - Implement the `auth` Schema Preprocessing Pipeline.**
+     - This pipeline transforms data for "Authorities".
+     - **Regex-based Categorization**:
+       1.  For `AUTHTP_1` and `AUTHTP_2`, apply a categorization logic based on regex matching.
+       2.  For each input column, generate a set of new columns: `RICO_AUTHTP_NEW_{i}`, `RICO_AUTHTP_LABEL_{i}`, and specific type columns (`..._CORPORATEBODY_{i}`, `..._FAMILY_{i}`, etc.).
+       3.  The mapping from regex to category is defined in the `rico_authtp_dict` in `map_schema.py`. This dictionary must be replicated in TypeScript.
+     - **External Data Merge**:
+       1.  Implement logic to read a secondary CSV file (`gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv`).
+       2.  Use the data from this file to update the `DATEEX_BEGINNING` and `DATEEX_END` columns in the primary dataset, matching on the `SISN` index.
+
+   - **AICODE-NOTE: Data Contract and Models.**
+     - The input data for the `add` pipeline will be records with columns like `SISN`, `FINDAID:FINDAIDLINK:FINDAID_URL`, `INDEXPROV`, etc.
+     - The output for the `add` pipeline will be records containing all original columns plus ~150 new columns (e.g., `FINDAID`, `FINDAIDLINK`, `INDEXPROV_1`, `DATEOFF_1_BEGINNING`, `OFFICEABC_1`, etc.).
+     - The input data for the `auth` pipeline will have columns like `SISN`, `AUTHTP_1`, `AUTHTP_2`.
+     - The output for the `auth` pipeline will have all original columns plus 12 new `RICO_AUTHTP_*` columns.
+
+   - **AICODE-NOTE: Testing Strategy.**
+     - The existing Python unit test (`tests/test_map_schema_generic.py`) is insufficient as it does not test the `add` or `auth` preprocessing logic.
+     - A new, comprehensive test suite **must** be created in `tests/csv/preprocess.test.ts`.
+     - Use the test files `gbad/mapping/source/tests/test_description_tailshuf_100.csv` and `gbad/mapping/source/tests/test_authority_tailshuf_100.csv` as the basis for your test cases.
+     - Create specific unit tests for each transformation:
+       - Test the adjacent-case split logic.
+       - Test the colon-splitting logic with both full and partial data.
+       - Test the `OFFICEABC` conditional logic.
+       - Test each regex category in the `AUTHTP` mapping.
+       - Mock the external date file to test the data merging logic.
+
+   - **AICODE-NOTE: Discovered Issues.**
+     - The paths to test data in the integration scripts (e.g., `tests/scripts/linux/test_add.sh`) are incorrect. They point to `tests/test_...` when the files are actually in `gbad/mapping/source/tests/`. Be aware of this if you need to run those scripts.
+
    - **Relevant Files**:
-     - **Python Scripts**: `map_schema.py`
-     - **Test Scripts**: `tests/test_map_schema_generic.py`
-     - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`, `tests/scripts/linux/test_rg_1-429.sh`, `tests/scripts/linux/test_run.sh`
-     - **Referenced Files**:
-       - `gbad/mapping/source/generic.csv`
-       - `gbad/mapping/source/preprocessed/`
-       - `gbad/schema/description-listings/*.ttl`
-       - `gbad/schema/authority/*.ttl`
+     - **Source Logic**: `map_schema.py`, `gbad/converter/preprocessors.py`
+     - **Test Case Definition (Input)**: `gbad/mapping/source/tests/test_description_tailshuf_100.csv`, `gbad/mapping/source/tests/test_authority_tailshuf_100.csv`
+     - **Test Case Definition (Output)**: The corresponding files in `gbad/mapping/source/preprocessed/tests/`
+     - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`
 
 ### Phase 4 – Mapping Engine (RML removal)
 1. **P4T1 – Mapping model** (`src/mapping/model.ts`)
