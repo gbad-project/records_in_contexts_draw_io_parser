@@ -360,51 +360,58 @@ Each task references the directory where work occurs and the test script to be a
      - Create stateless, presentational components for the key UI areas:
        - `Header.tsx`: For the application title.
        - `FileUpload.tsx`: A component with two upload zones, one for the Draw.io XML file and one for the CSV data file.
-       - `PipelineControls.tsx`: A component containing a "Run Pipeline" button and any configuration options (e.g., dropdowns for `schema_code`, checkboxes for strict mode).
-       - `StatusBar.tsx`: A component to display the current status of the pipeline (e.g., "Ready", "Parsing Draw.io...", "Complete").
-       - `ResultsViewer.tsx`: A component to display a summary of the results and a "Download .nq file" button.
+       - `PipelineControls.tsx`: A component containing a "Run Pipeline" button and other configuration options.
+       - `StatusBar.tsx`: A component to display the current status of the pipeline.
+       - `ResultsViewer.tsx`: A component to display a summary of the results and a download button.
 
-   - **AICODE-TODO: P7T1.2 - State Management Setup (`src/ui/App.tsx`)**
-     - In the main `App.tsx` component, set up state management using React hooks (`useState`, `useReducer`) to track the entire application state, including:
+   - **AICODE-TODO: P7T1.2 - Prefix Map Configuration (`src/ui/components/PrefixMapEditor.tsx`)**
+     - Create a new component `PrefixMapEditor.tsx` that allows the user to provide a prefix map.
+     - This component should contain a `textarea` where a user can paste a JSON object representing the `prefixMap` (e.g., `{ "rico": "https://www.ica.org/standards/RiC/ontology#" }`).
+     - Include basic validation to ensure the input is valid JSON.
+     - The `PipelineControls.tsx` component should include this new editor.
+
+   - **AICODE-TODO: P7T1.3 - State Management Setup (`src/ui/App.tsx`)**
+     - In the main `App.tsx` component, set up state management to track the application state, including:
        - The uploaded Draw.io file content (`string | null`).
        - The uploaded CSV file content (`string | null`).
+       - The user-provided `prefixMap` string and parsed object (`Record<string, string>`).
        - The selected `schema_code` (`'add' | 'auth' | 'generic'`).
        - The current pipeline status (`'idle' | 'parsing' | 'mapping' | 'merging' | 'complete' | 'error'`).
-       - The intermediate and final results (e.g., parsed diagram object, preprocessed CSV data, generated RDF datasets).
+       - The intermediate and final results.
        - The final merged N-Quads string (`string | null`).
        - Any error messages.
 
-   - **AICODE-TODO: P7T1.3 - File Input and Parsing Orchestration**
-     - Implement the logic within `FileUpload.tsx` and `App.tsx` to handle file selection. Use the FileReader API to read the content of the uploaded files into state.
+   - **AICODE-TODO: P7T1.4 - File Input and Initial Orchestration**
+     - Implement the logic for file selection and reading file content into state.
      - When the "Run Pipeline" button is clicked, begin the orchestration:
-       1. Set the status to "Parsing Draw.io...".
-       2. Call the `parseDrawio` function from the `P2T1` module with the Draw.io XML string.
-       3. Store the resulting `ParsedDiagram` object in the state.
-       4. Set the status to "Loading CSV...".
-       5. Call the `loadCsv` helper from the `P1T2` module with the CSV string.
-       6. Store the resulting array of records in the state.
+       1. Validate that all required inputs (files, prefix map JSON) are present and valid.
+       2. **Create the configured prefix expander**: Call `createPrefixExpander` from `P1T3` with the user's `prefixMap` to get a configured `expand` function.
+       3. Set the status to "Parsing Draw.io...".
+       4. Call the `parseDrawio` function from `P2T1`.
+       5. Set the status to "Loading CSV...".
+       6. Call the `loadCsv` helper from `P1T2`.
 
-   - **AICODE-TODO: P7T1.4 - CSV Preprocessing and Mapping Orchestration**
+   - **AICODE-TODO: P7T1.5 - CSV Preprocessing and Mapping Orchestration**
      - Continuing the pipeline orchestration:
        1. Set the status to "Preprocessing CSV...".
-       2. Call the appropriate preprocessing function from the `P3T1` module based on the selected `schema_code`.
+       2. Call the appropriate preprocessing function from `P3T1`.
        3. Set the status to "Mapping CSV to RDF...".
-       4. Call the `mapCsvToRdf` function from the `P4T2` module, passing in the `ParsedDiagram` and the preprocessed CSV data. This function will internally use the mapping model from `P4T1`.
+       4. **Inject the dependency**: Call the `mapCsvToRdf` function from `P4T2`, passing in the `ParsedDiagram`, the preprocessed CSV data, **and the configured `expand` function created in the previous step.**
        5. Store the resulting RDF `Dataset` in the state.
 
-   - **AICODE-TODO: P7T1.5 - Post-processing and Merging Orchestration**
-     - This step assumes a scenario where multiple files could be processed and merged. For a single Draw.io/CSV pair, this will merge the main graph with supplementary schema graphs.
+   - **AICODE-TODO: P7T1.6 - Post-processing and Merging Orchestration**
+     - Continuing the pipeline:
        1. Set the status to "Post-processing...".
-       2. Call the `applyInitialPostprocess` function from `P5T1` on the mapped dataset. This will also handle loading supplementary schema triples.
+       2. Call `applyInitialPostprocess` from `P5T1`.
        3. Set the status to "Merging graphs...".
-       4. Call the `createMergedNquads` function from `P6T1`. Pass it an array containing the main processed dataset. This function will generate the named graph and serialize the final output to an N-Quads string.
+       4. Call `createMergedNquads` from `P6T1`.
        5. Store the final N-Quads string in the state.
        6. Set the status to "Complete".
 
-   - **AICODE-TODO: P7T1.6 - Results Display and Download**
+   - **AICODE-TODO: P7T1.7 - Results Display and Download**
      - In `ResultsViewer.tsx`, display a summary of the successful conversion.
      - Enable the "Download .nq file" button.
-     - Implement the download logic: create a `Blob` from the final N-Quads string in state and use a temporary `<a>` tag to trigger the browser download.
+     - Implement the download logic using a `Blob` and a temporary `<a>` tag.
 
    - **AICODE-NOTE: Testing Strategy**
      - Use Vitest and React Testing Library for component-level tests (`tests/ui/*.test.tsx`).
