@@ -2,7 +2,7 @@
   "name": "pyodide-demo",
   "type": "module",
   "scripts": {
-    "build": "bun build index.html --outdir dist && cp script.py dist/",
+    "build": "./download_pyodide.sh && bun build index.tsx --outdir dist && cp index.html dist/ && cp script.py dist/ && cp -r pyodide dist/",
     "serve": "bun run server.ts",
     "test": "playwright test"
   },
