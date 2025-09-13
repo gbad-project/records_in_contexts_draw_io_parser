@@ -76,12 +76,42 @@ Each task references the directory where work occurs and the test script to be a
    - Include helper to build mapping model from Phase 2 output.
    - Tests: `tests/mapping/model.test.ts`.
    - Test script: `scripts/test-mapping-model.sh`.
-2. **P4T2 – CSV → RDF triple conversion** (`src/mapping/mapper.ts`)
-   - Implement function `mapCsvToRdf(mapping: MappingModel, csv: Record[]): Dataset`.
-   - Integrate preprocessing from Phase 3.
-   - First round post‑processing hooks (`applyInitialPostprocess(dataset)` in `src/postprocess/initial.ts`).
-   - Tests: `tests/mapping/mapper.test.ts` with small fixture CSV and Draw.io pair.
-   - Test script: `scripts/test-mapping-mapper.sh`.
+2. **P4T2 – CSV → RDF triple conversion** (`src/mapping/mapper.ts`) <!-- reviewed -->
+   - **Goal:** Implement the core mapping engine that replaces the legacy `rmlmapper.jar`. This function will take a mapping model and preprocessed CSV data and generate an RDF dataset. This is not a direct port of Python code but a new implementation of a mapping engine.
+   - **Function Signature:** `mapCsvToRdf(mapping: MappingModel, csvData: Record<string, any>[]): Dataset`
+   - **Inputs:**
+     - `mapping`: The `MappingModel` instance built in P4T1. This model contains a list of `TriplesMap` objects, each defining how to generate a subject and its properties.
+     - `csvData`: An array of records from the preprocessed CSV file (output of P3T1). Each record is an object where keys are column headers.
+   - **Core Implementation Steps:**
+     1. Initialize an empty RDF/JS-compliant `Dataset` (e.g., from the `n3` library).
+     2. Iterate over each `record` in the `csvData` array.
+     3. For each `record`, iterate through each `triplesMap` in the `mapping` model.
+     4. **Subject Generation:** Construct the subject IRI for the current `triplesMap` using its `subjectTemplate` (e.g., `KB/Agent/{HEADING}`) by replacing placeholders like `{HEADING}` with values from the current `record`.
+     5. **Type Generation:** For the generated subject, add `rdf:type` triples for every class specified in the `triplesMap.rdfTypes` array.
+     6. **Predicate-Object Generation:** Iterate through the `predicateObjectMaps` array of the current `triplesMap`. For each `pom`:
+        - **Conditional Triple Creation:** The creation of this triple is conditional. Implement a check that mimics the legacy `fno_map_value_unless_isnull` logic: only proceed to generate the object if the source column(s) referenced in the `pom`'s object map are present and not empty in the current `record`.
+        - **Object Generation:** Determine the object's value and type based on the `pom.objectMap`:
+          - If it's a `reference`, get the value from `record[objectMap.value]`. This will be an `rdf:Literal`.
+          - If it's a `template`, construct an IRI by replacing placeholders with values from the `record`. This will be an `rdf:NamedNode`.
+          - If it's a `parentTriplesMap`, this indicates a join. The object is the subject of another `TriplesMap`. You will need to find the corresponding `TriplesMap` in the `mapping` model and generate its subject IRI using the *same* current `record`.
+          - If it's a `constant`, use the provided value directly as a `NamedNode` or `Literal`.
+        - Add the complete `(subject, predicate, object)` triple to the dataset.
+   - **Post-processing Integration:** This task includes the *first round* of post-processing, which should be applied to the dataset *after* the main mapping loop is complete.
+     - Create a function `applyInitialPostprocess(dataset: Dataset)` in `src/postprocess/initial.ts` and call it from `mapCsvToRdf`.
+     - Implement the logic from the legacy `remove_shorter_duplicate_labels` function (`map_rml.py`):
+       1. Find all subjects of type `rico:RecordSet`.
+       2. For each, if it has exactly two `rdfs:label` properties, find its related `add:CurrentReferenceCode` identifier.
+       3. Extract the reference code string from the identifier's label (e.g., get "C 119" from "C 119 (Current Reference Code)").
+       4. If both `rdfs:label`s of the `RecordSet` start with this reference code, remove the triple containing the shorter label from the dataset.
+     - `AICODE-NOTE`: Other post-processing logic from the legacy scripts, such as merging supplementary graphs, is out of scope for this task and will be handled in Phase 6.
+   - **Testing:**
+     - Unit tests in `tests/mapping/mapper.test.ts` should cover:
+       - Basic triple generation from a simple mapping.
+       - Correct IRI generation from templates.
+       - Correct literal generation from references.
+       - The "not null" conditional logic (a triple is not generated for an empty source column).
+       - The `remove_shorter_duplicate_labels` post-processing logic.
+   - **Test Script:** `scripts/test-mapping-mapper.sh`.
 
 ### Phase 5 – Postprocessing Modules
 1. **P5T1 – Initial postprocessing** (`src/postprocess/initial.ts`)
