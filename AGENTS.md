@@ -53,69 +53,57 @@ Each task references the directory where work occurs and the test script to be a
    - Implement async `loadCsv` returning array of records.
    - Unit tests: `tests/lib/csv.test.ts`.
    - Test script: `scripts/test-lib-csv.sh`.
+3. **P1T3 – Prefix Expansion Utility** (`src/lib/prefix.ts`)
+    - **Goal**: Create a simple, configurable utility for expanding CURIEs (e.g., `rico:RecordSet`) into full IRIs.
+    - **AICODE-TODO: P1T3.1 - Implement Prefix Map and Expansion Function.**
+        - Create a function `createPrefixExpander(prefixMap: Record<string, string>)`. It takes a dictionary mapping prefixes to their IRI bases (e.g., `{ rico: "https://www.ica.org/standards/RiC/ontology#" }`).
+        - The function should return another function, `expand(curie: string): string`.
+        - The `expand` function should take a CURIE string, split it into prefix and local name, look up the prefix in the map, and return the concatenated full IRI.
+        - If the prefix is not found or the input is not a valid CURIE, it should handle the error gracefully (e.g., return the original string or throw a configured error).
+    - **AICODE-NOTE: Usage**: This utility will not be used by the Draw.io parser (P2T1) itself, but will be used by later stages in the pipeline (like the mapping engine in P4) after the raw CURIEs have been extracted.
+    - **Tests**: `tests/lib/prefix.test.ts`. Test the expander with valid CURIEs, unknown prefixes, and malformed inputs.
+    - **Test script**: `scripts/test-lib-prefix.sh`.
 
 ### Phase 2 – Draw.io Parsing
-1. **P2T1 – XML to internal model** (`src/drawio/parser.ts`) <!-- reviewed -->
-   - **Goal**: Port the core parsing logic from `draw_io_parser.py` to create a robust TypeScript module. This module will take a Draw.io XML string and produce a structured representation of the mapping graph, consisting of `Individual` and `Arrow` objects. This intermediate representation will be the input for the mapping model generation in Phase 4.
+1. **P2T1 – Ontology-Agnostic XML Parser** (`src/drawio/parser.ts`) <!-- reviewed -->
+    - **Goal**: To parse the structural and semantic information from a Draw.io XML file into a generic, ontology-agnostic intermediate representation. This module will **not** validate identifiers against any specific ontology. Its sole job is to faithfully translate the diagram's structure.
 
-   - **AICODE-TODO: P2T1.1 - Define Core Data Structures** (`src/drawio/model.ts`)
-     - Create TypeScript interfaces to represent the parsed graph elements. These should be modeled after the Python `dataclasses`.
-     - `Individual`:
-         - `id`: `string` (The unique ID from the `mxCell`, e.g., `sWa0SD8Ajx1KSGOqKPP4-1`)
-         - `identifier`: `string` (The primary text content, used for IRI generation, e.g., `rr:template "/KB/RecordSet/{REFD_FILE}"`)
-         - `ricClass`: `string` (The RiC-O class, e.g., `rico:RecordSet`)
-         - `geometry`: `{ x: number; y: number; width: number; height: number; }`
-     - `Arrow`:
-         - `id`: `string`
-         - `label`: `string` (The property, e.g., `rico:hasRecordSetType`)
-         - `sourceId`: `string | null` (The ID of the source `mxCell`)
-         - `targetId`: `string | null` (The ID of the target `mxCell`)
-     - `Literal`:
-         - `id`: `string`
-         - `value`: `string` (The text content, e.g., `rml:reference "SCOPE"`)
-         - `geometry`: `{ x: number; y: number; width: number; height: number; }`
-     - `ParsedDrawio`:
-         - `individuals`: `Map<string, Individual>` (keyed by cell ID)
-         - `arrows`: `Arrow[]`
-         - `literals`: `Map<string, Literal>` (keyed by cell ID)
+    - **AICODE-TODO: P2T1.1 - Define Generic Data Structures** (`src/drawio/model.ts`)
+        - `DiagramNode`: Represents a swimlane or rounded rectangle.
+            - `id`: `string`
+            - `value`: `string` (The raw text content, e.g., `rr:template "/KB/{...}"` or `rico:RecordSet`)
+            - `geometry`: `{ x: number; y: number; width: number; height: number; }`
+            - `children`: `Map<string, DiagramNode>` (For nested nodes, like a class inside a swimlane)
+        - `DiagramArrow`: Represents an arrow.
+            - `id`: `string`
+            - `label`: `string` (The raw text from the edge label, e.g., `rico:hasRecordSetType`)
+            - `sourceId`: `string | null`
+            - `targetId`: `string | null`
+        - `ParsedDiagram`:
+            - `nodes`: `Map<string, DiagramNode>`
+            - `arrows`: `Map<string, DiagramArrow>`
 
-   - **AICODE-TODO: P2T1.2 - Implement Initial XML Parsing and Cell Categorization** (`src/drawio/parser.ts`)
-     - Create the main function `parseDrawioXml(xml: string): ParsedDrawio`.
-     - Use a reliable XML parsing library (like `fast-xml-parser`) to convert the XML string into a JavaScript object.
-     - Iterate through all `<mxCell>` elements within the `<root>`.
-     - Create a helper function `categorizeCell(cell: any)` that inspects a cell's attributes (`style`, `value`, `edge`, `vertex`) and determines if it represents an `Individual`, an `Arrow`, a `Literal`, or is just a label or other ignored element.
-     - Populate the `individuals`, `arrows`, and `literals` collections in the `ParsedDrawio` object.
-         - **Individual Detection**: An `Individual` is a `swimlane` `mxCell`. Its `identifier` is its `value`, and its `ricClass` comes from its child `mxCell`.
-         - **Literal Detection**: A `Literal` is a `rounded=1` `mxCell` that is not an `Individual`.
-         - **Arrow Detection**: An `Arrow` is an `edge=1` `mxCell`. Its label is found in a child `edgeLabel` cell.
+    - **AICODE-TODO: P2T1.2 - Implement Core XML Parsing and Structuring** (`src/drawio/parser.ts`)
+        - Create the main function `parseDrawio(xml: string): ParsedDiagram`.
+        - Use an XML parser to convert the XML string into a JavaScript object.
+        - Iterate through all `<mxCell>` elements and build a hierarchical tree of `DiagramNode` and `DiagramArrow` objects based on their `id` and `parent` attributes. This will create a structured representation of the raw graph.
+        - Use the `extractTextFromHtml` utility (from P2T1.3) to clean the `value` of each cell.
 
-   - **AICODE-TODO: P2T1.3 - Implement HTML Value Extraction** (`src/drawio/html-parser.ts`)
-     - Create a utility function `extractTextFromHtml(html: string): string`.
-     - This function must replicate the behavior of the Python `NodeHTMLParser` to correctly extract plain text from the HTML embedded in `value` attributes. It should handle tags like `<div>`, `<span>`, `<br>`, and `<blockquote>`.
-     - A lightweight DOM parser or a series of regex replacements could be used, but a parser is preferred for robustness. This utility will be used by the cell categorization logic.
+    - **AICODE-TODO: P2T1.3 - Implement HTML Value Extraction** (`src/drawio/html-parser.ts`)
+        - Create a utility function `extractTextFromHtml(html: string): string` to correctly parse the HTML embedded in `value` attributes.
 
-   - **AICODE-TODO: P2T1.4 - Implement Arrow Source/Target Resolution** (`src/drawio/arrow-resolver.ts`)
-     - Create a function `resolveArrows(data: ParsedDrawio, config: { maxGap: number }): Arrow[]`. This is the most complex part of the parser.
-     - This function will take the partially parsed data and finalize the `sourceId` and `targetId` for each arrow.
-     - **Locked Arrows**: For arrows with `source` and `target` attributes, directly use those IDs.
-     - **Unlocked Arrows (Geometric Search)**: For arrows missing `source` or `target`, implement the geometric search logic from `_cell_close_to` in the Python script.
-         - Get the arrow's start/end coordinates from its `mxGeometry`.
-         - Iterate through all `Individual` and `Literal` nodes.
-         - Calculate if the arrow's endpoint is within the bounding box of a node, plus a `maxGap` buffer.
-         - The first node that matches becomes the source/target.
-         - If no node is found, throw an error (as in the Python script).
+    - **AICODE-TODO: P2T1.4 - Implement Arrow Source/Target Resolution** (`src/drawio/arrow-resolver.ts`)
+        - Create a function `resolveArrowConnections(diagram: ParsedDiagram, config: { maxGap: number })`.
+        - It will iterate through the arrows in the `ParsedDiagram` and resolve any missing `sourceId` or `targetId` by performing the geometric search against the `DiagramNode` geometries.
 
-   - **AICODE-NOTE: Final Output**
-     - The `parseDrawio` function in `parser.ts` will orchestrate these steps: initial parse, categorization, and arrow resolution.
-     - The final, validated output of the `parseDrawio` function will be an object containing fully resolved `Individual` and `Arrow` objects. This is the `MappingModel` referred to in the high-level plan, which will be consumed by Phase 4.
+    - **AICODE-NOTE: Decoupling Principle**
+        - This parser should not contain any hardcoded lists of classes or properties.
+        - It should not perform any validation of whether a `value` like `"rico:RecordSet"` is a "known" class. It simply extracts the string. The responsibility for interpreting and validating these strings lies with downstream modules.
 
-   - **AICODE-NOTE: Testing Strategy**
-     - The TypeScript implementation **must** include comprehensive unit tests, which were absent in the Python version.
-     - Create `tests/drawio/parser.test.ts`:
-         - Test `categorizeCell` with various `mxCell` examples.
-         - Test `extractTextFromHtml` with different HTML snippets.
-         - Test `resolveArrows` with both locked and unlocked arrows, and with cases that should fail.
-     - Use the `.drawio` files from `gbad/schema/` as fixtures for end-to-end integration tests of the `parseDrawio` function. The output can be compared against a stored JSON snapshot of the expected `ParsedDrawio` object.
+    - **AICODE-NOTE: Testing Strategy**
+        - Create `tests/drawio/parser.test.ts`.
+        - Unit test each helper function (`html-parser`, `arrow-resolver`).
+        - For the main `parseDrawio` function, use the sample `.drawio` files as input and compare the output `ParsedDiagram` object against a stored JSON snapshot. This ensures the structural parsing is correct without depending on any specific ontology.
    - **Relevant Files**:
      - **Python Scripts**: `draw_io_parser.py`
      - **Test Scripts**: `tests/test_draw_io_parser.py`
