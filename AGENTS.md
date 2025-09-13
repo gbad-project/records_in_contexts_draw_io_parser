@@ -55,12 +55,67 @@ Each task references the directory where work occurs and the test script to be a
    - Test script: `scripts/test-lib-csv.sh`.
 
 ### Phase 2 – Draw.io Parsing
-1. **P2T1 – XML to internal model** (`src/drawio/parser.ts`)
-   - Parse Draw.io XML into `Individual` and `Arrow` objects modeled after Python `DrawIOXMLTree`.
-   - Provide `parseDrawio(xml: string): MappingModel`.
-   - Include necessary namespace handling and IRI creation.
-   - Tests: `tests/drawio/parser.test.ts` with sample diagram fixtures.
-   - Test script: `scripts/test-drawio-parser.sh`.
+1. **P2T1 – XML to internal model** (`src/drawio/parser.ts`) <!-- reviewed -->
+   - **Goal**: Port the core parsing logic from `draw_io_parser.py` to create a robust TypeScript module. This module will take a Draw.io XML string and produce a structured representation of the mapping graph, consisting of `Individual` and `Arrow` objects. This intermediate representation will be the input for the mapping model generation in Phase 4.
+
+   - **AICODE-TODO: P2T1.1 - Define Core Data Structures** (`src/drawio/model.ts`)
+     - Create TypeScript interfaces to represent the parsed graph elements. These should be modeled after the Python `dataclasses`.
+     - `Individual`:
+         - `id`: `string` (The unique ID from the `mxCell`, e.g., `sWa0SD8Ajx1KSGOqKPP4-1`)
+         - `identifier`: `string` (The primary text content, used for IRI generation, e.g., `rr:template "/KB/RecordSet/{REFD_FILE}"`)
+         - `ricClass`: `string` (The RiC-O class, e.g., `rico:RecordSet`)
+         - `geometry`: `{ x: number; y: number; width: number; height: number; }`
+     - `Arrow`:
+         - `id`: `string`
+         - `label`: `string` (The property, e.g., `rico:hasRecordSetType`)
+         - `sourceId`: `string | null` (The ID of the source `mxCell`)
+         - `targetId`: `string | null` (The ID of the target `mxCell`)
+     - `Literal`:
+         - `id`: `string`
+         - `value`: `string` (The text content, e.g., `rml:reference "SCOPE"`)
+         - `geometry`: `{ x: number; y: number; width: number; height: number; }`
+     - `ParsedDrawio`:
+         - `individuals`: `Map<string, Individual>` (keyed by cell ID)
+         - `arrows`: `Arrow[]`
+         - `literals`: `Map<string, Literal>` (keyed by cell ID)
+
+   - **AICODE-TODO: P2T1.2 - Implement Initial XML Parsing and Cell Categorization** (`src/drawio/parser.ts`)
+     - Create the main function `parseDrawioXml(xml: string): ParsedDrawio`.
+     - Use a reliable XML parsing library (like `fast-xml-parser`) to convert the XML string into a JavaScript object.
+     - Iterate through all `<mxCell>` elements within the `<root>`.
+     - Create a helper function `categorizeCell(cell: any)` that inspects a cell's attributes (`style`, `value`, `edge`, `vertex`) and determines if it represents an `Individual`, an `Arrow`, a `Literal`, or is just a label or other ignored element.
+     - Populate the `individuals`, `arrows`, and `literals` collections in the `ParsedDrawio` object.
+         - **Individual Detection**: An `Individual` is a `swimlane` `mxCell`. Its `identifier` is its `value`, and its `ricClass` comes from its child `mxCell`.
+         - **Literal Detection**: A `Literal` is a `rounded=1` `mxCell` that is not an `Individual`.
+         - **Arrow Detection**: An `Arrow` is an `edge=1` `mxCell`. Its label is found in a child `edgeLabel` cell.
+
+   - **AICODE-TODO: P2T1.3 - Implement HTML Value Extraction** (`src/drawio/html-parser.ts`)
+     - Create a utility function `extractTextFromHtml(html: string): string`.
+     - This function must replicate the behavior of the Python `NodeHTMLParser` to correctly extract plain text from the HTML embedded in `value` attributes. It should handle tags like `<div>`, `<span>`, `<br>`, and `<blockquote>`.
+     - A lightweight DOM parser or a series of regex replacements could be used, but a parser is preferred for robustness. This utility will be used by the cell categorization logic.
+
+   - **AICODE-TODO: P2T1.4 - Implement Arrow Source/Target Resolution** (`src/drawio/arrow-resolver.ts`)
+     - Create a function `resolveArrows(data: ParsedDrawio, config: { maxGap: number }): Arrow[]`. This is the most complex part of the parser.
+     - This function will take the partially parsed data and finalize the `sourceId` and `targetId` for each arrow.
+     - **Locked Arrows**: For arrows with `source` and `target` attributes, directly use those IDs.
+     - **Unlocked Arrows (Geometric Search)**: For arrows missing `source` or `target`, implement the geometric search logic from `_cell_close_to` in the Python script.
+         - Get the arrow's start/end coordinates from its `mxGeometry`.
+         - Iterate through all `Individual` and `Literal` nodes.
+         - Calculate if the arrow's endpoint is within the bounding box of a node, plus a `maxGap` buffer.
+         - The first node that matches becomes the source/target.
+         - If no node is found, throw an error (as in the Python script).
+
+   - **AICODE-NOTE: Final Output**
+     - The `parseDrawio` function in `parser.ts` will orchestrate these steps: initial parse, categorization, and arrow resolution.
+     - The final, validated output of the `parseDrawio` function will be an object containing fully resolved `Individual` and `Arrow` objects. This is the `MappingModel` referred to in the high-level plan, which will be consumed by Phase 4.
+
+   - **AICODE-NOTE: Testing Strategy**
+     - The TypeScript implementation **must** include comprehensive unit tests, which were absent in the Python version.
+     - Create `tests/drawio/parser.test.ts`:
+         - Test `categorizeCell` with various `mxCell` examples.
+         - Test `extractTextFromHtml` with different HTML snippets.
+         - Test `resolveArrows` with both locked and unlocked arrows, and with cases that should fail.
+     - Use the `.drawio` files from `gbad/schema/` as fixtures for end-to-end integration tests of the `parseDrawio` function. The output can be compared against a stored JSON snapshot of the expected `ParsedDrawio` object.
    - **Relevant Files**:
      - **Python Scripts**: `draw_io_parser.py`
      - **Test Scripts**: `tests/test_draw_io_parser.py`
