@@ -10,6 +10,10 @@ Port the existing four Python scripts (`draw_io_parser.py`, `map_schema.py`, `ma
   - `AICODE-ASK:` question that requires human feedback
 - **Testing scripts**: every task that adds or modifies code must provide a bash script in `scripts/` that runs the relevant tests and writes a log at `logs/<agent>-log-<timestamp>.log` containing start and end timestamps.
 - **Reports**: each agent writes a report to `reports/<agent>-report-<timestamp>.md` summarizing work and any follow‑ups.
+- **Report mapping**: `reports/codex-report-20250913201852.md` links report files to their related tasks.
+- **Globally relevant reports**:
+  - `reports/jules-report-20250913113633.md`
+  - `reports/architect-report-20250913180723.md`
 - **Commit discipline**: one focused task per commit, tests must run before committing, logs and reports included in the commit.
 
 ## Proposed Project Structure
