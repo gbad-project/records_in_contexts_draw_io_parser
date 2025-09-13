@@ -258,3 +258,53 @@ verify_conversion.py Bundled page in 150ms: index.html
 End time: Sat Sep 13 13:38:59 UTC 2025
 + echo 'Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-react/run_demo.log'
 Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-react/run_demo.log
++ echo '--- System Information ---'
+--- System Information ---
++ uname -a
+Linux d240921e57f6 6.12.13 #1 SMP Thu Mar 13 11:34:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
++ echo --------------------------
+--------------------------
++ echo '--- Starting Demo ---'
+--- Starting Demo ---
+++ date
++ echo 'Start time: Sat Sep 13 14:04:34 UTC 2025'
+Start time: Sat Sep 13 14:04:34 UTC 2025
++ cd /workspace/records_in_contexts_draw_io_parser/pyodide-react
++ bun install
+bun install v1.2.14 (6a363a38)
+
++ @types/react@18.3.24
++ @types/react-dom@18.3.7
++ pyodide@0.28.2
++ react@18.3.1
++ react-dom@18.3.1
+
+11 packages installed [588.00ms]
++ SERVER_PID=3928
++ sleep 5
++ bun run index.html
+Bun v1.2.14 dev server ready in 59.72 ms
+
+url: http://localhost:3000/
++ pytest verify_conversion.py
+===================================================== test session starts ======================================================
+platform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /workspace/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+collected 0 items / 1 error
+
+============================================================ ERRORS ============================================================
+_____________________________________ ERROR collecting pyodide-react/verify_conversion.py ______________________________________
+ImportError while importing test module '/workspace/records_in_contexts_draw_io_parser/pyodide-react/verify_conversion.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/.pyenv/versions/3.11.12/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+verify_conversion.py:1: in <module>
+    from playwright.sync_api import Page, expect
+E   ModuleNotFoundError: No module named 'playwright'
+=================================================== short test summary info ====================================================
+ERROR verify_conversion.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================================================= 1 error in 0.24s =======================================================
