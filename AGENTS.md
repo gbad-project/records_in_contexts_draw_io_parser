@@ -70,7 +70,7 @@ Each task references the directory where work occurs and the test script to be a
        - `gbad/schema/authority/General Authority to RiC-O Model_2025-06-25_PZ.drawio`
 
 ### Phase 3 – CSV Preprocessing
-1. **P3T1 – Custom preprocessing functions** (`src/csv/preprocess.ts`)
+1. **P3T1 – Custom preprocessing functions** (`src/csv/preprocess.ts`) <!-- reviewed -->
    - **Goal**: Port the CSV preprocessing logic from `map_schema.py` into a robust, well-tested TypeScript module. This module will accept raw CSV data as an array of objects and return a new array of objects with added and transformed columns. The logic is divided into three distinct pipelines based on a `schema_code`: `add`, `auth`, and `generic`.
 
    - **AICODE-TODO: P3T1.1 - Implement a CSV Preprocessing Utility.**
