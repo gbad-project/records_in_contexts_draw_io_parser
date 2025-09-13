@@ -1,0 +1,39 @@
+[2m[WebServer] [22m[0m[2m[35m$[0m [2m[1m./download_pyodide.sh && bun build index.tsx --outdir dist && cp index.html dist/ && cp script.py dist/ && cp -r pyodide dist/[0m
+[2m[WebServer] [22m[0m[2m[35m$[0m [2m[1mbun run server.ts[0m
+
+Running 1 test using 1 worker
+
+PAGE LOG: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+PAGE LOG: Starting Pyodide load...
+✓ Page loaded successfully
+Waiting for Pyodide to load…
+PAGE LOG: Pyodide loaded successfully
+Pyodide ready status: [33mtrue[39m
+✓ File uploaded
+PAGE LOG: File content: hello
+
+PAGE LOG: Fetching Python script...
+PAGE LOG: Python script: # content variable provided from JS
+result = content.upper()
+result
+
+PAGE LOG: Running Python code...
+PAGE LOG: Python result: HELLO
+
+Full page content:
+    File Upload + Pyodide ProcessingStatus: File processed successfullyOriginal Content:hello
+Processed Content:HELLO
+Download Processed FileDebug InfoPyodide loaded: YesLoading: NoError: NoneFile content length: 6Processed content: HELLO
+
+
+
+
+
+Error elements found: [33m0[39m
+Processed content div found: [33mtrue[39m
+Actual processed content: HELLO
+
+✓ Test passed!
+  ✓  1 tests/demo.spec.ts:6:1 › process file with pyodide - debug version (1.1m)
+
+  1 passed (1.2m)
