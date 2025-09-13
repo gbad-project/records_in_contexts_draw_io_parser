@@ -54,13 +54,13 @@ Each task references the directory where work occurs and the test script to be a
    - Unit tests: `tests/lib/rdf.test.ts`.
    - Test script: `scripts/test-lib-rdf.sh` → `bun test tests/lib/rdf.test.ts`.
 2. **P1T2 – CSV helpers** (`src/lib/csv.ts`) <!-- reviewed -->
-   - Utilities for loading CSV in browser and applying transformations.
+   - Utilities for loading CSV in the browser; transformations are handled by a separate helper.
    - Implement async `loadCsv` returning array of records.
    - Unit tests: `tests/lib/csv.test.ts`.
    - Test script: `scripts/test-lib-csv.sh`.
    - Details about how this task description was created are available from report file located at `reports/codex-report-20250913222101.md`.
    - **AICODE-TODO: P1T2.1 - Core CSV Loader Implementation**
-       - Implement `async function loadCsv(input: File | string, opts?: { delimiter?: string; transforms?: CsvTransform[]; }): Promise<Record<string, string>[]>`.
+       - Implement `async function loadCsv(input: File | string, opts?: { delimiter?: string; }): Promise<Record<string, string>[]>`.
        - Use a browser-friendly parser (e.g., `PapaParse`) to read the CSV text.
        - Treat the first row as headers, ensure all cell values remain strings, strip UTF-8 BOM, and skip empty lines.
    - **AICODE-TODO: P1T2.2 - Transformation Pipeline Support**
