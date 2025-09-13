@@ -1,5 +1,8 @@
 #!/bin/bash
-set -e
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+exec &> >(tee -a "$SCRIPT_DIR/run_demo.log")
+
+set -ex
 
 echo "--- System Information ---"
 uname -a
@@ -8,8 +11,9 @@ echo "--------------------------"
 echo "--- Starting Demo ---"
 echo "Start time: $(date)"
 
-npx playwright test > run_demo.log 2>&1
+cd "$SCRIPT_DIR"
+npx playwright test
 
 echo "--- Demo Finished ---"
 echo "End time: $(date)"
-echo "Log file created at run_demo.log"
+echo "Log file created at $SCRIPT_DIR/run_demo.log"
