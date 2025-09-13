@@ -76,7 +76,7 @@ Each task references the directory where work occurs and the test script to be a
    - Include helper to build mapping model from Phase 2 output.
    - Tests: `tests/mapping/model.test.ts`.
    - Test script: `scripts/test-mapping-model.sh`.
-2. **P4T2.1 - Implement Basic Mapping Loop and Subject Generation** (`src/mapping/mapper.ts`)
+2. **AICODE-TODO: P4T2.1 - Implement Basic Mapping Loop and Subject Generation** (`src/mapping/mapper.ts`)
    - **Goal**: Create the `mapCsvToRdf` function skeleton and implement the core iteration logic. This first step will focus on generating the primary resources (subjects) and their `rdf:type` declarations.
    - **Implementation**:
      - Create the `mapCsvToRdf` function.
@@ -86,7 +86,7 @@ Each task references the directory where work occurs and the test script to be a
    - **Tests**: `tests/mapping/mapper.test.ts` should verify that subjects and their types are created correctly for a basic mapping.
    - **Test Script**: `scripts/test-mapping-mapper.sh`
 
-3. **P4T2.2 - Add Object Generation for Literals and Constants** (`src/mapping/mapper.ts`)
+3. **AICODE-TODO: P4T2.2 - Add Object Generation for Literals and Constants** (`src/mapping/mapper.ts`)
    - **Goal**: Extend the mapper to handle the simplest object types: literals from CSV columns and constant values.
    - **Implementation**: In the `predicateObjectMaps` loop, add logic to handle object maps of type `reference` and `constant`.
      - For `reference`, create an `rdf:Literal` using the value from the specified CSV column in the current record.
@@ -94,19 +94,19 @@ Each task references the directory where work occurs and the test script to be a
    - **Tests**: Extend `tests/mapping/mapper.test.ts` to test that properties with literal and constant objects are correctly generated.
    - **Test Script**: `scripts/test-mapping-mapper.sh`
 
-4. **P4T2.3 - Implement Conditional Triple Generation** (`src/mapping/mapper.ts`)
+4. **AICODE-TODO: P4T2.3 - Implement Conditional Triple Generation** (`src/mapping/mapper.ts`)
    - **Goal**: Implement the "not null" condition to prevent creating triples when source data is missing.
    - **Implementation**: Wrap the predicate-object generation logic in a conditional check. If any source column for an object is empty, skip creating that triple.
    - **Tests**: `tests/mapping/mapper.test.ts` must include cases where source data is missing and verify that triples are *not* generated.
    - **Test Script**: `scripts/test-mapping-mapper.sh`
 
-5. **P4T2.4 - Add Object Generation for Joins** (`src/mapping/mapper.ts`)
+5. **AICODE-TODO: P4T2.4 - Add Object Generation for Joins** (`src/mapping/mapper.ts`)
    - **Goal**: Implement support for linking between resources using `parentTriplesMap`.
    - **Implementation**: Add logic to handle `objectMap` of type `parentTriplesMap`, which requires looking up the target `TriplesMap` and generating its subject IRI using the same current CSV record.
    - **Tests**: `tests/mapping/mapper.test.ts` needs a test case with a mapping that uses `parentTriplesMap`.
    - **Test Script**: `scripts/test-mapping-mapper.sh`
 
-6. **P4T2.5 - Implement Initial Post-processing** (`src/postprocess/initial.ts`)
+6. **AICODE-TODO: P4T2.5 - Implement Initial Post-processing** (`src/postprocess/initial.ts`)
    - **Goal**: Implement the `remove_shorter_duplicate_labels` algorithm and integrate it into the pipeline.
    - **Implementation**: Create `applyInitialPostprocess` in `src/postprocess/initial.ts` with the required logic. Call it from `mapCsvToRdf` after the main mapping loop.
    - **Tests**: `tests/postprocess/initial.test.ts` should be created to specifically test the algorithm.
