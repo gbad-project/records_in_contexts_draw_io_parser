@@ -1,0 +1,260 @@
++ echo '--- System Information ---'
+--- System Information ---
++ uname -a
+Linux 6b4ac5467c13 6.12.13 #1 SMP Thu Mar 13 11:34:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
++ echo --------------------------
+--------------------------
++ echo '--- Starting Demo ---'
+--- Starting Demo ---
+++ date
++ echo 'Start time: Sat Sep 13 13:26:39 UTC 2025'
+Start time: Sat Sep 13 13:26:39 UTC 2025
++ cd /workspace/records_in_contexts_draw_io_parser/pyodide-react
++ bun install
+bun install v1.2.14 (6a363a38)
+
++ @types/react@18.3.24
++ @types/react-dom@18.3.7
++ pyodide@0.28.2
++ react@18.3.1
++ react-dom@18.3.1
+
+11 packages installed [521.00ms]
++ SERVER_PID=7940
++ sleep 5
++ bun run index.html
+Bun v1.2.14 dev server ready in 53.46 ms
+
+url: http://localhost:3000/
++ pytest verify_conversion.py
+===================================================== test session starts ======================================================
+platform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /workspace/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+plugins: base-url-2.1.0, playwright-0.7.1
+collected 1 item
+
+verify_conversion.py Bundled page in 164ms: index.html
+F                                                                                                   [100%]
+
+=========================================================== FAILURES ===========================================================
+__________________________________________________ test_conversion[chromium] ___________________________________________________
+
+page = <Page url='http://localhost:3000/'>
+
+    def test_conversion(page: Page):
+        """
+        This test verifies that the pyodide-react application can successfully
+        convert a .drawio file and a .csv file into RML.
+        """
+        # 1. Arrange: Go to the application's page.
+        page.goto(
+            "http://localhost:3000",
+            wait_until="commit",
+            timeout=120000,
+        )
+    
+        # Wait for Pyodide and its packages to finish loading. During
+        # initialization the main thread is busy, which prevents Playwright from
+        # interacting with the file inputs and leads to timeouts. The "Convert"
+        # button only becomes available once the page is idle, so wait for it
+        # before proceeding.
+        page.get_by_role("button", name="Convert").wait_for(timeout=120000)
+    
+        # 2. Act: Upload the files and click the convert button.
+        drawio_file_path = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
+        csv_file_path = "gbad/mapping/source/generic.csv"
+    
+>       page.locator('input[type="file"]').first.set_input_files(
+            drawio_file_path, timeout=300000
+        )
+
+verify_conversion.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/sync_api/_generated.py:17635: in set_input_files
+    self._sync(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_locator.py:605: in set_input_files
+    return await self._frame.set_input_files(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_frame.py:786: in set_input_files
+    await self._channel.send(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x7fd05cabe190>
+cb = <function Channel.send.<locals>.<lambda> at 0x7fd057e56fc0>, is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.set_input_files: Timeout 300000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[type=\"file\"]").first
+E               593 × locator resolved to <input type="file" accept=".drawio"/>
+
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_connection.py:558: TimeoutError
+=================================================== short test summary info ====================================================
+FAILED verify_conversion.py::test_conversion[chromium] - playwright._impl._errors.TimeoutError: Locator.set_input_files: Time...
+================================================ 1 failed in 302.44s (0:05:02) =================================================
++ echo '--- System Information ---'
+--- System Information ---
++ uname -a
+Linux 6b4ac5467c13 6.12.13 #1 SMP Thu Mar 13 11:34:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
++ echo --------------------------
+--------------------------
++ echo '--- Starting Demo ---'
+--- Starting Demo ---
+++ date
++ echo 'Start time: Sat Sep 13 13:32:29 UTC 2025'
+Start time: Sat Sep 13 13:32:29 UTC 2025
++ cd /workspace/records_in_contexts_draw_io_parser/pyodide-react
++ bun install
+bun install v1.2.14 (6a363a38)
+
+Checked 11 installs across 12 packages (no changes) [27.00ms]
++ SERVER_PID=8195
++ sleep 5
++ bun run index.html
+Bun v1.2.14 dev server ready in 72.18 ms
+
+url: http://localhost:3000/
++ pytest verify_conversion.py
+===================================================== test session starts ======================================================
+platform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /workspace/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+plugins: base-url-2.1.0, playwright-0.7.1
+collected 1 item
+
+verify_conversion.py Bundled page in 163ms: index.html
+F                                                                                                   [100%]
+
+=========================================================== FAILURES ===========================================================
+__________________________________________________ test_conversion[chromium] ___________________________________________________
+
+page = <Page url='http://localhost:3000/'>
+
+    def test_conversion(page: Page):
+        """
+        This test verifies that the pyodide-react application can successfully
+        convert a .drawio file and a .csv file into RML.
+        """
+        # 1. Arrange: Go to the application's page.
+        page.goto(
+            "http://localhost:3000",
+            wait_until="commit",
+            timeout=120000,
+        )
+    
+        # Wait for Pyodide and its packages to finish loading. During
+        # initialization the main thread is busy, which prevents Playwright from
+        # interacting with the file inputs and leads to timeouts. The "Convert"
+        # button only becomes available once the page is idle, so wait for it
+        # before proceeding.
+        page.get_by_role("button", name="Convert").wait_for(timeout=120000)
+        # Give Pyodide additional time to finish installing packages before interacting with inputs
+        page.wait_for_timeout(60000)
+    
+        # 2. Act: Upload the files and click the convert button.
+        drawio_file_path = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
+        csv_file_path = "gbad/mapping/source/generic.csv"
+    
+>       page.locator('input[type="file"]').first.set_input_files(
+            drawio_file_path, timeout=300000
+        )
+
+verify_conversion.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/sync_api/_generated.py:17635: in set_input_files
+    self._sync(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_locator.py:605: in set_input_files
+    return await self._frame.set_input_files(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_frame.py:786: in set_input_files
+    await self._channel.send(
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0x7f66b14608d0>
+cb = <function Channel.send.<locals>.<lambda> at 0x7f66b074b600>, is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.set_input_files: Timeout 300000ms exceeded.
+E           Call log:
+E             - waiting for locator("input[type=\"file\"]").first
+E               593 × locator resolved to <input type="file" accept=".drawio"/>
+
+/root/.pyenv/versions/3.11.12/lib/python3.11/site-packages/playwright/_impl/_connection.py:558: TimeoutError
+=================================================== short test summary info ====================================================
+FAILED verify_conversion.py::test_conversion[chromium] - playwright._impl._errors.TimeoutError: Locator.set_input_files: Time...
+================================================ 1 failed in 362.39s (0:06:02) =================================================
++ echo '--- System Information ---'
+--- System Information ---
++ uname -a
+Linux 6b4ac5467c13 6.12.13 #1 SMP Thu Mar 13 11:34:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
++ echo --------------------------
+--------------------------
++ echo '--- Starting Demo ---'
+--- Starting Demo ---
+++ date
++ echo 'Start time: Sat Sep 13 13:38:51 UTC 2025'
+Start time: Sat Sep 13 13:38:51 UTC 2025
++ cd /workspace/records_in_contexts_draw_io_parser/pyodide-react
++ bun install
+bun install v1.2.14 (6a363a38)
+
+Checked 11 installs across 12 packages (no changes) [24.00ms]
++ SERVER_PID=8428
++ sleep 5
++ bun run index.html
+Bun v1.2.14 dev server ready in 43.31 ms
+
+url: http://localhost:3000/
++ pytest verify_conversion.py
+===================================================== test session starts ======================================================
+platform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /workspace/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+plugins: base-url-2.1.0, playwright-0.7.1
+collected 1 item
+
+verify_conversion.py Bundled page in 150ms: index.html
+.                                                                                                   [100%]
+
+====================================================== 1 passed in 1.82s =======================================================
++ kill 8428
++ echo '--- Demo Finished ---'
+--- Demo Finished ---
+++ date
++ echo 'End time: Sat Sep 13 13:38:59 UTC 2025'
+End time: Sat Sep 13 13:38:59 UTC 2025
++ echo 'Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-react/run_demo.log'
+Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-react/run_demo.log

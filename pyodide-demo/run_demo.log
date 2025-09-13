@@ -37,3 +37,63 @@ Actual processed content: HELLO
   ✓  1 tests/demo.spec.ts:6:1 › process file with pyodide - debug version (1.1m)
 
   1 passed (1.2m)
++ echo '--- System Information ---'
+--- System Information ---
++ uname -a
+Linux 6b4ac5467c13 6.12.13 #1 SMP Thu Mar 13 11:34:50 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
++ echo --------------------------
+--------------------------
++ echo '--- Starting Demo ---'
+--- Starting Demo ---
+++ date
++ echo 'Start time: Sat Sep 13 13:24:28 UTC 2025'
+Start time: Sat Sep 13 13:24:28 UTC 2025
++ cd /workspace/records_in_contexts_draw_io_parser/pyodide-demo
++ npx playwright test
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+[2m[WebServer] [22m[0m[2m[35m$[0m [2m[1m./download_pyodide.sh && bun build index.tsx --outdir dist && cp index.html dist/ && cp script.py dist/ && cp -r pyodide dist/[0m
+[2m[WebServer] [22m[0m[2m[35m$[0m [2m[1mbun run server.ts[0m
+
+Running 1 test using 1 worker
+
+PAGE LOG: %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold
+PAGE LOG: Starting Pyodide load...
+✓ Page loaded successfully
+Waiting for Pyodide to load…
+PAGE LOG: Pyodide loaded successfully
+Pyodide ready status: [33mtrue[39m
+✓ File uploaded
+PAGE LOG: File content: hello
+
+PAGE LOG: Fetching Python script...
+PAGE LOG: Python script: # content variable provided from JS
+result = content.upper()
+result
+
+PAGE LOG: Running Python code...
+PAGE LOG: Python result: HELLO
+
+Full page content: 
+    File Upload + Pyodide ProcessingStatus: File processed successfullyOriginal Content:hello
+Processed Content:HELLO
+Download Processed FileDebug InfoPyodide loaded: YesLoading: NoError: NoneFile content length: 6Processed content: HELLO
+
+    
+  
+
+
+Error elements found: [33m0[39m
+Processed content div found: [33mtrue[39m
+Actual processed content: HELLO
+
+✓ Test passed!
+  ✓  1 tests/demo.spec.ts:6:1 › process file with pyodide - debug version (1.1m)
+
+  1 passed (1.3m)
++ echo '--- Demo Finished ---'
+--- Demo Finished ---
+++ date
++ echo 'End time: Sat Sep 13 13:25:51 UTC 2025'
+End time: Sat Sep 13 13:25:51 UTC 2025
++ echo 'Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-demo/run_demo.log'
+Log file created at /workspace/records_in_contexts_draw_io_parser/pyodide-demo/run_demo.log
