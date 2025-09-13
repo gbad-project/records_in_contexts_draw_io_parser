@@ -188,13 +188,62 @@ Each task references the directory where work occurs and the test script to be a
        - `gbad/mapping/target/`
 
 ### Phase 5 – Postprocessing Modules
-1. **P5T1 – Initial postprocessing** (`src/postprocess/initial.ts`)
-   - Port existing postprocessing steps from `map_rml.py` (e.g., URI normalization).
-   - Tests: `tests/postprocess/initial.test.ts`.
-   - Test script: `scripts/test-postprocess-initial.sh`.
+1. **P5T1 – Initial postprocessing** (`src/postprocess/initial.ts`) <!-- reviewed -->
+   - **Goal**: Port the RDF graph post-processing logic from the Python script `map_rml.py` into a TypeScript module. This module will provide a function `applyInitialPostprocess(dataset)` that takes an `n3.js` dataset and applies a series of transformations to clean up and enrich the data.
+
+   - **AICODE-TODO: P5T1.1 - Implement the `remove_shorter_duplicate_labels` Algorithm.**
+     - **Description**: This is the primary active post-processing step. It identifies `rico:RecordSet` resources that have exactly two `rdfs:label` predicates. It then checks if both labels start with the text of the record set's `add:CurrentReferenceCode`. If this condition is met, the algorithm must remove the triple containing the shorter of the two labels.
+     - **Implementation Details**:
+       - The function should accept an `n3.js` `Dataset` as input.
+       - It needs to query the dataset to find all `?subject a rico:RecordSet`.
+       - For each subject, get all its `rdfs:label` values.
+       - If there are two labels, find the linked identifier via `rico:hasOrHadIdentifier` that is of type `add:CurrentReferenceCode`.
+       - The reference code text must be extracted from the identifier's label (e.g., extract "C 1" from `"C 1 (Current Reference Code)"`).
+       - Perform the string comparison and remove the triple with the shorter label from the dataset.
+
+   - **AICODE-TODO: P5T1.2 - Implement Supplemental Triple Loading.**
+     - **Description**: The Python script has a function `add_suppl_triples` that loads all `.ttl` files from the `gbad/schema` directory and merges them into the main graph. This functionality needs to be replicated.
+     - **Implementation Details**:
+       - Create a helper function that can fetch and parse multiple Turtle files from a given directory path.
+       - The `applyInitialPostprocess` function should orchestrate this, adding the triples from `gbad/schema/*.ttl` to the dataset it is processing.
+       - This will likely require an async function and fetching files over HTTP in a browser context.
+
+   - **AICODE-TODO: P5T1.3 - Stub Out Inactive Post-processing Functions.**
+     - **Description**: The Python script contains two commented-out functions: `remove_false_agentcontrolrelation` and `remove_false_authtp`. While they are not currently active, they should be ported as stubbed-out functions in the TypeScript module for future use.
+     - **Implementation Details**:
+       - Create empty functions `removeFalseAgentControlRelation(dataset)` and `removeFalseAuthTp(dataset)` in `src/postprocess/initial.ts`.
+       - Add comments inside each function explaining its original purpose based on the Python source.
+
+   - **AICODE-NOTE: Function Signature and Data Contract.**
+     - The main function to be exported from `src/postprocess/initial.ts` should be:
+       ```typescript
+       import { Dataset } from 'n3';
+
+       export async function applyInitialPostprocess(dataset: Dataset): Promise<Dataset> {
+         // ... implementation ...
+         return dataset;
+       }
+       ```
+     - The function will directly mutate the dataset passed to it.
+
+   - **AICODE-NOTE: Testing Strategy.**
+     - A new test suite `tests/postprocess/initial.test.ts` must be created.
+     - **For `remove_shorter_duplicate_labels`**:
+       - Create a test case with a sample `rico:RecordSet`.
+       - The record set should have two `rdfs:label`s and a linked `add:CurrentReferenceCode`.
+       - Case 1: Both labels start with the ref code. Verify the shorter label is removed.
+       - Case 2: Only one label starts with the ref code. Verify no labels are removed.
+       - Case 3: The record set has only one label, or three labels. Verify no labels are removed.
+     - **For Supplemental Triple Loading**:
+       - Mock the file fetching mechanism.
+       - Provide a sample `.ttl` file content in the mock.
+       - Verify that the triples from the mocked file are present in the dataset after the function runs.
+     - The test script `scripts/test-postprocess-initial.sh` will execute `bun test tests/postprocess/initial.test.ts`.
+
    - **Relevant Files**:
-     - **Python Scripts**: `map_rml.py` (contains `postprocess` function)
-     - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`, `tests/scripts/linux/test_rg_1-429.sh`, `tests/scripts/linux/test_run.sh`
+     - **Source Logic**: `map_rml.py` (the `postprocess` function and its callees)
+     - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`
+     - **Supplemental Data**: `gbad/schema/`
 2. **P5T2 – Merge-stage postprocessing** (`src/postprocess/merge.ts`)
    - New second-round transformations to apply after graph merging.
    - Stub out with `AICODE-TODO` where rules are unspecified.
