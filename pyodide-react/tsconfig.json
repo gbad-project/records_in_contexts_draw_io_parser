@@ -11,5 +11,5 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["app.tsx"]
+  "include": ["app.tsx", "cli_test.ts"]
 }

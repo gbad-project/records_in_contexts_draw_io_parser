@@ -13,8 +13,8 @@ script -c "
     echo '--- Node Version ---'
     node --version
     echo
-    #echo '--- Building React Application ---'
-    #bun build ./index.html --outdir ./dist
+    echo '--- Installing Dependencies ---'
+    bun install
     echo
     echo '--- Starting Server ---'
     bun run index.html &

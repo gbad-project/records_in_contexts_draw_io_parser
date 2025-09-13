@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A client-side React application for converting .drawio diagrams to RML using Pyodide.",
   "main": "index.tsx",
-  "scripts": {},
+  "scripts": {
+    "cli-test": "bun run cli_test.ts"
+  },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
