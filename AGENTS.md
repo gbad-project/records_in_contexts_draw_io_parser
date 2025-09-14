@@ -14,6 +14,7 @@ Port the existing four Python scripts (`draw_io_parser.py`, `map_schema.py`, `ma
 - **Globally relevant reports**:
   - [reports/jules-report-20250913113633.md](reports/jules-report-20250913113633.md)
   - [reports/architect-report-20250913180723.md](reports/architect-report-20250913180723.md)
+  - Chief architect review: [reports/codex-report-20250914184816.md](reports/codex-report-20250914184816.md)
 - **Commit discipline**: one focused task per commit, tests must run before committing, logs and reports included in the commit.
 
 ## Proposed Project Structure
@@ -51,6 +52,7 @@ Each task references the directory where work occurs and the test script to be a
    - Provision the `gbad-next` Conda environment using `next/environment.yml` and `conda env create -n gbad-next -f next/environment.yml`.
    - Ensure the environment is activated with `conda activate gbad-next` so legacy Python scripts and OpenJDK dependencies are available for regression testing.
    - Details about how this task description was created are available from report file located at [reports/codex-report-20250914021652.md](reports/codex-report-20250914021652.md).
+   - **AICODE-NOTE:** Provide `scripts/test-conda-env.sh` to verify the environment is created and activated, logging to `logs/test-conda-env-<timestamp>.log`.
 
 ### Phase 1 – RDF & CSV Utility Layer
 1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`) <!-- reviewed -->
@@ -113,6 +115,7 @@ Each task references the directory where work occurs and the test script to be a
         - The function should return another function, `expand(curie: string): string`.
         - The `expand` function should take a CURIE string, split it into prefix and local name, look up the prefix in the map, and return the concatenated full IRI.
         - If the prefix is not found or the input is not a valid CURIE, it should handle the error gracefully (e.g., return the original string or throw a configured error).
+        - **AICODE-NOTE:** Decide and document a single strategy for unknown prefixes so downstream modules behave consistently.
     - **AICODE-NOTE: Usage**: This utility will not be used by the Draw.io parser (P2T1) itself, but will be used by later stages in the pipeline (like the mapping engine in P4) after the raw CURIEs have been extracted.
     - **Tests**: `tests/lib/prefix.test.ts`. Test the expander with valid CURIEs, unknown prefixes, and malformed inputs.
     - **Test script**: `scripts/test-lib-prefix.sh`.
@@ -504,6 +507,7 @@ Each task references the directory where work occurs and the test script to be a
      - Test that the download button is enabled only upon completion and that it triggers a download.
 
    - **Test script**: `scripts/test-ui-app.sh`
+   - **AICODE-NOTE:** Surface errors at each pipeline step and allow rerunning the workflow without a page reload.
 
 ### Phase 8 – Integration & Example Workflow
 1. **P8T1 – End-to-end example** <!-- reviewed -->
@@ -534,6 +538,7 @@ Each task references the directory where work occurs and the test script to be a
        - `bash tests/scripts/linux/test_rg_1-429.sh`
        - `bash tests/scripts/linux/test_run.sh`
        - **AICODE-NOTE:** These regression tests require the fully provisioned `gbad-next` Conda environment from `next/environment.yml` to be activated, providing OpenJDK and other pinned dependencies.
+       - **AICODE-NOTE:** Several legacy scripts reference outdated test data paths; update them to `gbad/mapping/source/tests` before executing.
    - **AICODE-TODO: P8T1.4 - Test script.**
      - Create `scripts/test-example.sh` that:
        1. Runs `bun scripts/run-example.sh`.
