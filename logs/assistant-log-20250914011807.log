@@ -1,0 +1,24 @@
+start: 2025-09-14T01:18:07Z
+===================================================== test session starts ======================================================
+platform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0
+rootdir: /workspace/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+collected 3 items / 1 error
+
+============================================================ ERRORS ============================================================
+___________________________________________ ERROR collecting test_draw_io_parser.py ____________________________________________
+ImportError while importing test module '/workspace/records_in_contexts_draw_io_parser/test_draw_io_parser.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/root/.pyenv/versions/3.11.12/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test_draw_io_parser.py:9: in <module>
+    from draw_io_parser import (
+E   ImportError: cannot import name 'serialise' from 'draw_io_parser' (/workspace/records_in_contexts_draw_io_parser/draw_io_parser.py)
+=================================================== short test summary info ====================================================
+ERROR test_draw_io_parser.py
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+======================================================= 1 error in 1.58s =======================================================
+pytest_exit_code: 0
+end: 2025-09-14T01:18:10Z

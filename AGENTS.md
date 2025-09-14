@@ -376,6 +376,7 @@ Each task references the directory where work occurs and the test script to be a
 2. **P5T2 – Merge-stage postprocessing** (`src/postprocess/merge.ts`)
    - New second-round transformations to apply after graph merging.
    - Stub out with `AICODE-TODO` where rules are unspecified.
+   - **AICODE-ASK:** This feature was never implemented in the legacy code base, so an AI agent assigned this task should flag it for human review before proceeding.
    - Tests: `tests/postprocess/merge.test.ts`.
    - Test script: `scripts/test-postprocess-merge.sh`.
 
