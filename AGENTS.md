@@ -48,13 +48,37 @@ Each task references the directory where work occurs and the test script to be a
    - Test script: reuse `scripts/test-toolchain.sh`.
 
 ### Phase 1 – RDF & CSV Utility Layer
-1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`)
-   - Wrap an RDF library (e.g., `n3`) to create quads, serialize to Turtle and N‑Quads.
-   - Expose `createDataset`, `serializeDataset`.
-   - Unit tests: `tests/lib/rdf.test.ts`.
-   - Test script: `scripts/test-lib-rdf.sh` → `bun test tests/lib/rdf.test.ts`.
-2. **P1T2 – CSV helpers** (`src/lib/csv.ts`) <!-- reviewed -->
-   - Utilities for loading CSV in the browser; transformations are handled by a separate helper.
+1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`) <!-- reviewed -->
+   - **Goal**: Create a robust, well-tested wrapper around the `n3` library to provide a consistent and easy-to-use API for creating and serializing RDF throughout the application.
+   - **Details about how this task description was created are available from report file located at `reports/jules-report-1757793520.md`.**
+
+   - **AICODE-TODO: P1T1.1 - Add `n3` dependency.**
+     - The first step is to add the `n3` library to the project's dependencies. Run `bun add n3 @types/n3`.
+   - **AICODE-TODO: P1T1.2 - Create the module and re-export core types.**
+     - In `src/lib/rdf.ts`, import and re-export the following core types from the `n3` library for easy access in other parts of the codebase: `NamedNode`, `Literal`, `BlankNode`, `Quad`, `Store`, `DataFactory`.
+   - **AICODE-TODO: P1T1.3 - Implement Term Factory Functions.**
+     - Create and export a set of thin wrapper functions around `n3.DataFactory` to simplify the creation of RDF terms.
+     - `export const namedNode = DataFactory.namedNode;`
+     - `export const literal = DataFactory.literal;`
+     - `export const blankNode = DataFactory.blankNode;`
+     - `export const quad = DataFactory.quad;`
+   - **AICODE-TODO: P1T1.4 - Implement Store Creation Function.**
+     - Create and export a function `createStore(quads?: Quad[]): Store`. This function will instantiate a new `n3.Store`, optionally seeding it with an initial array of quads.
+   - **AICODE-TODO: P1T1.5 - Implement Serialization Function.**
+     - Create and export an `async` function `serialize(store: Store, format: 'Turtle' | 'N-Quads' | 'N-Triples'): Promise<string>`. This function will use an `n3.Writer` to serialize the store's contents into a string, returning a `Promise` that resolves with the result.
+   - **AICODE-TODO: P1T1.6 - Set up the Test File.**
+     - Create `tests/lib/rdf.test.ts`. Import the necessary functions from `src/lib/rdf.ts` and testing utilities from `vitest`.
+   - **AICODE-TODO: P1T1.7 - Test Term Creation Functions.**
+     - Write individual tests for `namedNode`, `literal`, and `blankNode` to verify that they return objects with the expected `termType` and `value`.
+   - **AICODE-TODO: P1T1.8 - Test `createStore` Function.**
+     - Test `createStore` with no arguments (to ensure it returns an empty store) and with an array of quads (to ensure it returns a store with the correct size).
+   - **AICODE-TODO: P1T1.9 - Test `serialize` Function.**
+     - Test `serialize` for `'Turtle'`, `'N-Quads'`, and `'N-Triples'` formats. Verify the output is a valid string. Test with an empty store.
+   - **AICODE-TODO: P1T1.10 - Test Error Handling.**
+     - Test that the `serialize` function throws an error when an invalid format string is provided.
+   - **Test script**: `scripts/test-lib-rdf.sh` → `bun test tests/lib/rdf.test.ts`.
+2. **P1T2 – CSV helpers** (`src/lib/csv.ts`)
+   - Utilities for loading CSV in browser and applying transformations.
    - Implement async `loadCsv` returning array of records.
    - Unit tests: `tests/lib/csv.test.ts`.
    - Test script: `scripts/test-lib-csv.sh`.
