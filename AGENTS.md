@@ -102,6 +102,7 @@ Each task references the directory where work occurs and the test script to be a
        - `map_schema.py` – uses `SourceCSVPreprocessor` and `column_split` to showcase transformation needs.
 3. **P1T3 – Prefix Expansion Utility** (`src/lib/prefix.ts`)
     - **Goal**: Create a simple, configurable utility for expanding CURIEs (e.g., `rico:RecordSet`) into full IRIs.
+    - **Details about how this task description was created are available from report file located at [reports/jules-report-20250913130525.md](reports/jules-report-20250913130525.md).**
     - **AICODE-TODO: P1T3.1 - Implement Prefix Map and Expansion Function.**
         - Create a function `createPrefixExpander(prefixMap: Record<string, string>)`. It takes a dictionary mapping prefixes to their IRI bases (e.g., `{ rico: "https://www.ica.org/standards/RiC/ontology#" }`).
         - The function should return another function, `expand(curie: string): string`.
