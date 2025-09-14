@@ -1,5 +1,7 @@
 # Implementation Plan for TypeScript Client-Side Refactor
 
+**AICODE-NOTE: Chief Architect review conducted on 2025-09-14. Detailed findings and recommendations are available in [reports/jules-report-20250914120443.md](reports/jules-report-20250914120443.md).**
+
 ## Goal
 Port the existing four Python scripts (`draw_io_parser.py`, `map_schema.py`, `map_rml.py`, `merge_graphs.py`) to a fully client-side TypeScript + React stack. The new pipeline will parse Draw.io diagrams and companion CSV files directly into RDF triples, apply two rounds of post-processing, and merge results into a single quadstore with each conversion placed in its own named graph.
 
@@ -39,6 +41,7 @@ Each task references the directory where work occurs and the test script to be a
 ### Phase 0 – Toolchain & Skeleton
 1. **P0T1 – Node toolchain setup**
    - Add `package.json` with Volta pin (Node 20), Bun as runtime, scripts (`dev`, `build`, `test`).
+   - **AICODE-NOTE:** The plan specifies using Volta to pin the Node.js version. The agent assigned to this task must ensure Volta is available in its execution environment.
    - Add `tsconfig.json`, `.eslintrc`, `.prettierrc` as needed.
    - Test script: `scripts/test-toolchain.sh` runs `bun test` (should exit 0 even when no tests).
    - Details about how this task description was created are available from report file(s) located at [reports/architect-report-20250913180723.md](reports/architect-report-20250913180723.md).
@@ -205,6 +208,10 @@ Each task references the directory where work occurs and the test script to be a
        1.  Implement logic to read a secondary CSV file (`gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv`).
        2.  Use the data from this file to update the `DATEEX_BEGINNING` and `DATEEX_END` columns in the primary dataset, matching on the `SISN` index.
 
+   - **AICODE-NOTE (from Chief Architect): Implementation Complexity and Clarification.**
+     - **Risk:** The agent assigned to P3T1 should be aware that replicating the logic from `map_schema.py` is a high-complexity task. The Python script relies heavily on the `pandas` library for powerful, dataset-level operations. The agent will need to implement this non-trivial data manipulation logic for arrays of objects in TypeScript.
+     - **Clarification:** For `P3T1.2`, the instruction to "combine" `C_REFA_{i}` and `AB_REFA_{i}` must be implemented with specific "fill nulls" logic. The original Python code uses `pandas.Series.combine_first`, which means the value from `AB_REFA_{i}` should only be used if the corresponding value in `C_REFA_{i}` is null. A simple string concatenation is incorrect.
+
    - **AICODE-NOTE: Data Contract and Models.**
      - The input data for the `add` pipeline will be records with columns like `SISN`, `FINDAID:FINDAIDLINK:FINDAID_URL`, `INDEXPROV`, etc.
      - The output for the `add` pipeline will be records containing all original columns plus ~150 new columns (e.g., `FINDAID`, `FINDAIDLINK`, `INDEXPROV_1`, `DATEOFF_1_BEGINNING`, `OFFICEABC_1`, etc.).
@@ -230,6 +237,13 @@ Each task references the directory where work occurs and the test script to be a
      - **Test Case Definition (Input)**: `gbad/mapping/source/tests/test_description_tailshuf_100.csv`, `gbad/mapping/source/tests/test_authority_tailshuf_100.csv`
      - **Test Case Definition (Output)**: The corresponding files in `gbad/mapping/source/preprocessed/tests/`
      - **Integration Tests**: `tests/scripts/linux/test_add.sh`, `tests/scripts/linux/test_auth.sh`
+
+### Chief Architect's Note on a Critical Gap
+
+- **AICODE-NOTE: (Blocker)** The entire project plan is missing a critical step for **Identifier Sanitization**.
+  - **Problem:** The legacy `draw_io_parser.py` script contains logic to sanitize raw text from the diagram (e.g., replacing spaces and special characters like `()[]:`) before it's used to form an IRI. This plan omits that step.
+  - **Impact:** Without this sanitization, the mapping engine in Phase 4 will receive raw strings (e.g., `"Corporate Body (acting)"`) and use them in IRI templates, which will produce invalid RDF. This will cause the entire pipeline to fail or produce incorrect data, and the regression tests in Phase 8 will not pass.
+  - **Recommendation:** Before proceeding with Phase 4, a new task should be created (likely in Phase 1) to implement a generic "Identifier Sanitization" utility that replicates the logic from `_replace_metacharacters` in `draw_io_parser.py`. The `mapCsvToRdf` function (P4T2) must then be updated to use this utility to clean all identifier strings before they are used in templates.
 
 ### Phase 4 – Mapping Engine (RML removal)
 1. **P4T1 – Mapping model** (`src/mapping/model.ts`) <!-- reviewed -->
