@@ -47,6 +47,11 @@ Each task references the directory where work occurs and the test script to be a
    - Add `tests/setup.ts` if needed for Vitest.
    - Test script: reuse `scripts/test-toolchain.sh`.
 
+3. **AICODE-TODO: P0T3 – Python/Conda environment for regression tests**
+   - Provision the `gbad-next` Conda environment using `next/environment.yml` and `conda env create -n gbad-next -f next/environment.yml`.
+   - Ensure the environment is activated with `conda activate gbad-next` so legacy Python scripts and OpenJDK dependencies are available for regression testing.
+   - Details about how this task description was created are available from report file located at [reports/codex-report-20250914021652.md](reports/codex-report-20250914021652.md).
+
 ### Phase 1 – RDF & CSV Utility Layer
 1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`) <!-- reviewed -->
    - **Goal**: Create a robust, well-tested wrapper around the `n3` library to provide a consistent and easy-to-use API for creating and serializing RDF throughout the application.
@@ -501,9 +506,47 @@ Each task references the directory where work occurs and the test script to be a
    - **Test script**: `scripts/test-ui-app.sh`
 
 ### Phase 8 – Integration & Example Workflow
-1. **P8T1 – End-to-end example**
-   - Add `examples/` with sample Draw.io & CSV, plus script `scripts/run-example.sh` demonstrating full pipeline.
-   - Test script: `scripts/test-example.sh` to run `bun scripts/run-example.sh` and verify output file exists.
+1. **P8T1 – End-to-end example** <!-- reviewed -->
+   - **Goal**: Provide a runnable demonstration of the full TypeScript pipeline from Draw.io and CSV inputs to a merged N-Quads output.
+   - **Details about how this task description was created are available from report file located at [reports/codex-report-20250914014845.md](reports/codex-report-20250914014845.md).**
+
+   - **AICODE-TODO: P8T1.1 - Prepare example inputs.**
+     - Place a representative `.drawio` diagram in `examples/example.drawio` (e.g., reuse `examples/f_4711_orville_wood_fonds.drawio`).
+     - Place a matching CSV in `examples/example.csv`. Sample test CSVs are available in `gbad/mapping/source/tests/` such as `test_description_tailshuf_100.csv` and `test_authority_tailshuf_100.csv`.
+   - **AICODE-TODO: P8T1.2 - Implement example workflow.**
+     - Add `scripts/run-example.sh`.
+     - Script steps:
+       1. `bunx tsx src/examples/runExample.ts examples/example.drawio examples/example.csv`.
+       2. `src/examples/runExample.ts` orchestrates:
+          - `parseDrawio` from `P2T1` to parse the Draw.io diagram.
+          - `loadCsv` from `P1T2` to read the CSV.
+          - preprocessing utilities from `P3T1`.
+          - `mapCsvToRdf` from `P4T2`.
+          - `applyInitialPostprocess` from `P5T1`.
+          - `createMergedNquads` from `P6T1`.
+       3. Write the merged output to `examples/output.nq`.
+   - **AICODE-TODO: P8T1.3 - Regression comparison.**
+     - After running `scripts/run-example.sh`, execute legacy regression tests to ensure parity with the Python pipeline:
+       - `python tests/test_draw_io_parser.py`
+       - `python tests/test_map_schema_generic.py`
+       - `bash tests/scripts/linux/test_add.sh`
+       - `bash tests/scripts/linux/test_auth.sh`
+       - `bash tests/scripts/linux/test_rg_1-429.sh`
+       - `bash tests/scripts/linux/test_run.sh`
+       - **AICODE-NOTE:** These regression tests require the fully provisioned `gbad-next` Conda environment from `next/environment.yml` to be activated, providing OpenJDK and other pinned dependencies.
+   - **AICODE-TODO: P8T1.4 - Test script.**
+     - Create `scripts/test-example.sh` that:
+       1. Runs `bun scripts/run-example.sh`.
+       2. Confirms `examples/output.nq` exists.
+       3. Logs output to `logs/test-example-<timestamp>.log`.
+   - **Relevant Files:**
+     - `tests/test_draw_io_parser.py`
+     - `tests/test_map_schema_generic.py`
+     - `tests/scripts/linux/test_add.sh`
+     - `tests/scripts/linux/test_auth.sh`
+     - `tests/scripts/linux/test_rg_1-429.sh`
+     - `tests/scripts/linux/test_run.sh`
+   - **Test script**: `scripts/test-example.sh`.
 
 ### Phase 9 – Documentation and Cleanup
 1. **P9T1 – README updates**

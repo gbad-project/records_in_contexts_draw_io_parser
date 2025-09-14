@@ -1,0 +1,30 @@
+Start: Sun Sep 14 02:16:54 UTC 2025
+Traceback (most recent call last):
+  File "/workspace/records_in_contexts_draw_io_parser/tests/test_draw_io_parser.py", line 12, in <module>
+    from draw_io_parser import parse_drawio_to_graph
+ModuleNotFoundError: No module named 'draw_io_parser'
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.220s
+
+OK
+Using source file: 'gbad/mapping/source/generic.csv'
+
+Checking in for preprocessing...
+
+Saving preprocessed to: 'gbad/mapping/source/preprocessed/generic.csv'
+
+Using source file: 'gbad/mapping/source/preprocessed/generic.csv'
+
+Using graph: 'gbad/schema/generic/generic_schema.ttl'
+
+
+
+Successfully saved RML map to: 'gbad/schema/generic/generic/generic_schema.rml'
+Activating conda environment: gbad-next
+/workspace/records_in_contexts_draw_io_parser/tests/scripts/linux/test_add.sh: line 39: conda: command not found
+/workspace/records_in_contexts_draw_io_parser/tests/scripts/linux/test_add.sh: line 40: conda: command not found
+Failed to activate conda environment: gbad-next
+Deactivating conda environment...
+/workspace/records_in_contexts_draw_io_parser/tests/scripts/linux/test_add.sh: line 31: conda: command not found
+End: Sun Sep 14 02:16:57 UTC 2025
