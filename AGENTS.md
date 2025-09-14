@@ -47,6 +47,10 @@ Each task references the directory where work occurs and the test script to be a
    - Add `tests/setup.ts` if needed for Vitest.
    - Test script: reuse `scripts/test-toolchain.sh`.
 
+3. **AICODE-TODO: P0T3 – Python/Conda environment for regression tests**
+   - Provision the `gbad-next` Conda environment using `next/environment.yml` and `conda env create -n gbad-next -f next/environment.yml`.
+   - Ensure the environment is activated with `conda activate gbad-next` so legacy Python scripts and OpenJDK dependencies are available for regression testing.
+
 ### Phase 1 – RDF & CSV Utility Layer
 1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`) <!-- reviewed -->
    - **Goal**: Create a robust, well-tested wrapper around the `n3` library to provide a consistent and easy-to-use API for creating and serializing RDF throughout the application.
@@ -528,6 +532,7 @@ Each task references the directory where work occurs and the test script to be a
        - `bash tests/scripts/linux/test_auth.sh`
        - `bash tests/scripts/linux/test_rg_1-429.sh`
        - `bash tests/scripts/linux/test_run.sh`
+       - **AICODE-NOTE:** These regression tests require the fully provisioned `gbad-next` Conda environment from `next/environment.yml` to be activated, providing OpenJDK and other pinned dependencies.
    - **AICODE-TODO: P8T1.4 - Test script.**
      - Create `scripts/test-example.sh` that:
        1. Runs `bun scripts/run-example.sh`.
