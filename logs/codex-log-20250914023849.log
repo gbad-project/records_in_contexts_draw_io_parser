@@ -1,0 +1,17 @@
+Start: Sun Sep 14 02:38:50 UTC 2025
+Using source file: 'gbad/mapping/source/generic.csv'
+
+Checking in for preprocessing...
+
+Saving preprocessed to: 'gbad/mapping/source/preprocessed/generic.csv'
+
+Using source file: 'gbad/mapping/source/preprocessed/generic.csv'
+
+Using graph: 'gbad/schema/generic/generic_schema.ttl'
+
+
+
+Successfully saved RML map to: 'gbad/schema/generic/generic/generic_schema.rml'
+Activating conda environment: gbad-next
+Deactivating conda environment...
+End: Sun Sep 14 02:38:54 UTC 2025

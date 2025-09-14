@@ -50,6 +50,7 @@ Each task references the directory where work occurs and the test script to be a
 3. **AICODE-TODO: P0T3 – Python/Conda environment for regression tests**
    - Provision the `gbad-next` Conda environment using `next/environment.yml` and `conda env create -n gbad-next -f next/environment.yml`.
    - Ensure the environment is activated with `conda activate gbad-next` so legacy Python scripts and OpenJDK dependencies are available for regression testing.
+   - Details about how this task description was created are available from report file located at [reports/codex-report-20250914021652.md](reports/codex-report-20250914021652.md).
 
 ### Phase 1 – RDF & CSV Utility Layer
 1. **P1T1 – RDF helpers** (`src/lib/rdf.ts`) <!-- reviewed -->
