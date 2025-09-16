@@ -1,5 +1,4 @@
 @prefix : <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix add: <https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

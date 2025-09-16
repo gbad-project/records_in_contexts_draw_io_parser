@@ -16,3 +16,4 @@
             rml:source "gbad/mapping/source/preprocessed/generic.csv" ] ;
     rr:subjectMap [ rr:class rico:Thing ;
             rr:constant "https://data.archives.gov.on.ca/test/rrtemplateKBTestID" ] .
+
