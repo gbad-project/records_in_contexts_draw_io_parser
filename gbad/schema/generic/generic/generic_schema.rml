@@ -1,0 +1,19 @@
+@base <https://data.archives.gov.on.test.gbad.ca/> .
+@prefix : <https://data.archives.gov.on.test.gbad.ca/Schema/Mapping#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+
+<Schema/Mapping#_rrtemplateKBTest2ID2> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/preprocessed/generic.csv" ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:constant "https://data.archives.gov.on.ca/test/rrtemplateKBTest2ID2" ] .
+
+<Schema/Mapping#_rrtemplateKBTestID> a rr:TriplesMap ;
+    rml:logicalSource [ rml:referenceFormulation ql:CSV ;
+            rml:source "gbad/mapping/source/preprocessed/generic.csv" ] ;
+    rr:subjectMap [ rr:class rico:Thing ;
+            rr:constant "https://data.archives.gov.on.ca/test/rrtemplateKBTestID" ] .
+
