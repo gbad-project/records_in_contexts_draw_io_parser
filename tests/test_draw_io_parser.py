@@ -3,25 +3,13 @@ Tests the DrawIOXMLTree class in the way it would be used when running
 draw_io_parser.py
 """
 
+import os
 from pathlib import Path
 from unittest import TestCase
+from rdflib import Graph
+from rdflib.compare import isomorphic, graph_diff
 
-from draw_io_parser import (
-    DEFAULT_CAPITALISATION_SCHEME, DEFAULT_INDENTATION, DEFAULT_MAX_GAP,
-    DrawIOXMLTree, SerialisationConfig, individual_blocks, serialise)
-
-_examples_directory = Path.cwd() / "examples"
-
-_serialisation_config = SerialisationConfig(
-    infer_type_of_literals=True,
-    include_preamble=False,
-    ontology_iri=None,
-    prefix=None,
-    prefix_iri=None,
-    indentation=DEFAULT_INDENTATION,
-    include_label=True)
-
-_metacharacters = [(",", "-"), ("[", "{"), ("]", "}")]
+from draw_io_parser import parse_drawio_to_graph
 
 
 class TestDrawIOParser(TestCase):
@@ -30,58 +18,77 @@ class TestDrawIOParser(TestCase):
     gives the expected results
     """
 
-    def test_examples_without_preamble(self) -> None:
+    def test_end_to_end(self):
         """
-        Tests, for each .drawio file in the examples/ directory, that the OWL
-        generated (without preamble) is equal to that contained in the
-        corresponding _without_preamble.owl file
+        Tests that parsing the specified draw.io file produces a graph
+        isomorphic to the ground truth turtle file.
         """
-        self.maxDiff = None  # pylint: disable=invalid-name
-        for path in _examples_directory.iterdir():
-            if path.suffix != ".drawio":
-                continue
-            with open(path, "r", encoding="utf-8") as draw_io_file:
-                draw_io_xml_tree = DrawIOXMLTree(draw_io_file.read())
-            blocks = individual_blocks(
-                draw_io_xml_tree.individuals_and_arrows(
-                    False, DEFAULT_MAX_GAP),
-                _metacharacters,
-                "",
-                DEFAULT_CAPITALISATION_SCHEME)
-            owl = serialise(blocks, _serialisation_config)
-            with open(
-                    _examples_directory / f"{path.stem}_without_preamble.owl",
-                    "r",
-                    encoding="utf-8") as owl_file:
-                self.assertEqual(owl.strip(), owl_file.read().strip())
+        self.maxDiff = None
+        drawio_file = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
+        ttl_file = "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.ttl"
 
-    def test_example_with_preamble(self) -> None:
+        # Set the base URI for the test
+        os.environ['BASE_URI'] = 'https://data.archives.gov.on.test.gbad.ca'
+
+
+        # Generate the graph from the draw.io file
+        generated_graph = parse_drawio_to_graph(
+            drawio_file,
+            metacharacter_substitute=['url', ' =%20'],
+            capitalisation_scheme='none',
+            ontology_iri='https://data.archives.gov.on.test.gbad.ca/Schema/Mapping',
+            include_label=False
+        )
+
+        # Load the ground truth graph
+        ground_truth_graph = Graph()
+        ground_truth_graph.parse(ttl_file, format="turtle")
+
+        # Compare the graphs
+        are_isomorphic = isomorphic(generated_graph, ground_truth_graph)
+        if not are_isomorphic:
+            in_both, in_generated, in_ground_truth = graph_diff(generated_graph, ground_truth_graph)
+            print("--- In Generated Graph Only ---")
+            for t in in_generated:
+                print(t)
+            print("--- In Ground Truth Graph Only ---")
+            for t in in_ground_truth:
+                print(t)
+        self.assertTrue(are_isomorphic, "The generated graph is not isomorphic to the ground truth graph.")
+
+    def test_end_to_end_authority(self):
         """
-        Tests, for one of the .drawio files in the examples/ directory, that the
-        OWL generated is equal to that contained in the corresponding
-        .owl file with the correct preamble (with the ontology IRI specified
-        here to be the same as that in the .owl file)
+        Tests the second graph for isomorphism.
         """
-        self.maxDiff = None  # pylint: disable=invalid-name
-        path = _examples_directory / "koronakommisjonen.drawio"
-        with open(path, "r", encoding="utf-8") as draw_io_file:
-            draw_io_xml_tree = DrawIOXMLTree(draw_io_file.read())
-        blocks = individual_blocks(
-            draw_io_xml_tree.individuals_and_arrows(False, DEFAULT_MAX_GAP),
-            [],
-            "",
-            DEFAULT_CAPITALISATION_SCHEME)
-        serialisation_config = SerialisationConfig(
-            infer_type_of_literals=True,
-            include_preamble=True,
-            ontology_iri="ontology://generated-from-draw-io/2024-04-26T01-31-21",
-            prefix=None,
-            prefix_iri=None,
-            indentation=DEFAULT_INDENTATION,
-            include_label=True)
-        owl = serialise(blocks, serialisation_config)
-        with open(
-                _examples_directory / f"{path.stem}.owl",
-                "r",
-                encoding="utf-8") as owl_file:
-            self.assertEqual(owl.strip(), owl_file.read().strip())
+        self.maxDiff = None
+        project_root = Path(__file__).resolve().parent.parent
+        drawio_file = project_root / "gbad/schema/authority/General Authority to RiC-O Model_2025-06-25_PZ.drawio"
+        ttl_file = project_root / "gbad/schema/authority/general_authority_to_ric-o_model_2025-06-25_pz.ttl"
+
+        # Set the base URI for the test
+        os.environ['BASE_URI'] = 'https://data.archives.gov.on.test.gbad.ca'
+
+        # Generate the graph from the draw.io file
+        generated_graph = parse_drawio_to_graph(
+            drawio_file,
+            metacharacter_substitute=['url', ' =%20'],
+            capitalisation_scheme='none',
+            ontology_iri='https://data.archives.gov.on.test.gbad.ca/Schema/Mapping',
+            include_label=False
+        )
+
+        # Load the ground truth graph
+        ground_truth_graph = Graph()
+        ground_truth_graph.parse(ttl_file, format="turtle")
+
+        # Compare the graphs
+        are_isomorphic = isomorphic(generated_graph, ground_truth_graph)
+        if not are_isomorphic:
+            in_both, in_generated, in_ground_truth = graph_diff(generated_graph, ground_truth_graph)
+            print("--- In Generated Graph Only (Authority Test) ---")
+            for t in in_generated:
+                print(t)
+            print("--- In Ground Truth Graph Only (Authority Test) ---")
+            for t in in_ground_truth:
+                print(t)
+        self.assertTrue(are_isomorphic, "The generated authority graph is not isomorphic to the ground truth graph.")
