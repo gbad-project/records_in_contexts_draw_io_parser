@@ -1187,11 +1187,8 @@ class DrawIOXMLTree:
         try:
             source = self._source_or_target(source_cell, True)
         except _SourceNotIndividualException as exception:
-            raise ArrowWithoutIndividualAsSourceException(
-                f"The arrow with id {arrow_cell.attrib['id']} and label "
-                f"{arrow_label} has a source which appears not to be a node "
-                "defining a RiC-O individual"
-            ) from exception
+            print(f"DEBUG: skipping arrow {arrow_cell.attrib['id']} with label {arrow_label} due to non-individual source")
+            return None
         try:
             target_cell = self._cell_with_id(arrow_cell.attrib["target"])
         except KeyError as key_error:
@@ -1223,7 +1220,9 @@ class DrawIOXMLTree:
         for _, individual, _ in self.individual_cells:
             yield individual
         for arrow_data in self.arrow_cells:
-            yield self._arrow(arrow_data, strict_mode, max_gap)
+            arrow = self._arrow(arrow_data, strict_mode, max_gap)
+            if arrow is not None:
+                yield arrow
 
 
 def _verify_is_ric_class(ric_class: str):

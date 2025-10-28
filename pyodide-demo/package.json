@@ -1,0 +1,17 @@
+{
+  "name": "pyodide-demo",
+  "type": "module",
+  "scripts": {
+    "build": "./download_pyodide.sh && bun build index.tsx --outdir dist && cp index.html dist/ && cp script.py dist/ && cp -r pyodide dist/",
+    "serve": "bun run server.ts",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "typescript": "^5.4.0"
+  }
+}

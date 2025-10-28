@@ -80,7 +80,7 @@ def add_suppl_triples(source_graph: Graph, root_folder, format="turtle"):
                 if ((file_ext in extensions) & (format_name == format)):
                     file_path = os.path.join(folder_path, filename)
                     print(f"Adding a supplemental '{format_name}' file: '{file_path}'\n")
-                    
+
                     # Parse the Turtle file and add its contents to the combined graph
                     source_graph.parse(file_path, format=format)
 
@@ -101,17 +101,17 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
             value = value[2:] if value.startswith(': ') else value  # to fix any starting colon
             return value
         return preprocessor.separate_value(fix_colon_spacing(value), expect_num_cols, sep=SEP)
-    
+
     def split_by_adjacent_case(value: str, expect_num_cols: int):
         unique_separator = '<split-by-adjacent-case>'
         value = re.sub(r'([^A-Z\s\(\[])([A-Z])', rf'\1{unique_separator}\2', value)
         return preprocessor.separate_value(value, expect_num_cols, sep=unique_separator)
-    
+
     def split_by_hyphen(value: str, expect_num_cols: int):
         if re.fullmatch(r'\d{4}-\d{4}', value) is None:
             value = ''  # won't try to separate these for now
         return preprocessor.separate_value(value, expect_num_cols, sep='-')
-    
+
     # Column split #1
     joint_findaid_col = 'FINDAID:FINDAIDLINK:FINDAID_URL'
     separate_findaid_cols = ['FINDAID', 'FINDAIDLINK', 'FINDAID_URL']
@@ -174,14 +174,14 @@ def add_preprocess(source_csv_path, preprocessed_csv_path):
         officec_colname = f'OFFICEC_{i}'
         officeabc_colname = f'OFFICEABC_{i}'
         office_df = preprocessor.get([officeab_colname, officec_colname])
-        
+
         # Initialize the result series with None values (same index as other series)
         officeabc_series = pd.Series(None, index=office_df.index, dtype='object')
-        
+
         # Fill in values based on office type
         # For A or B types, use OFFICEAB
         officeabc_series.loc[office_type_series.isin(['A', 'B'])] = office_df.loc[office_type_series.isin(['A', 'B']), officeab_colname]
-        
+
         # For C type, use OFFICEC
         officeabc_series.loc[office_type_series == 'C'] = office_df.loc[office_type_series == 'C', officec_colname]
 
@@ -200,11 +200,11 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
         authtp_df = preprocessor.get(['AUTHTP_1', 'AUTHTP_2'])
 
         added_cols = []
-        
+
         # Process AUTHTP_1 and AUTHTP_2 separately
         for authtp_num in [1, 2]:
             authtp_col = f'AUTHTP_{authtp_num}'
-            
+
             # Initialize result columns for this authtp
             rico_authtp_series = pd.Series(None, index=authtp_df.index, dtype='object')
             rico_authtp_label_series = pd.Series(None, index=authtp_df.index, dtype='object')
@@ -212,18 +212,18 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
             rico_family_series = pd.Series(None, index=authtp_df.index, dtype='object')
             rico_place_series = pd.Series(None, index=authtp_df.index, dtype='object')
             rico_person_series = pd.Series(None, index=authtp_df.index, dtype='object')
-            
+
             # Process each row for this authtp column
             for idx in authtp_df.index:
                 authtp_value = authtp_df.loc[idx, authtp_col]
-                
+
                 if pd.notna(authtp_value):
                     # Check against each regex pattern
                     for key, (value, pattern) in rico_authtp_dict.items():
                         pythonic_regex_pattern = pattern[1:-1]
                         if re.search(pythonic_regex_pattern, str(authtp_value)):
                             rico_authtp_series.loc[idx] = value
-                            
+
                             # Set the corresponding specific column
                             if key == 'CorporateBody':
                                 rico_corporatebody_series.loc[idx] = value
@@ -237,9 +237,9 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
                             elif key == 'Person':
                                 rico_person_series.loc[idx] = value
                                 rico_authtp_label_series.loc[idx] = key
-                            
+
                             break  # Stop after first match
-            
+
             # Add all the new columns to the preprocessor with appropriate suffix
             rico_authtp_colname = f'RICO_AUTHTP_NEW_{authtp_num}'
             preprocessor.add(rico_authtp_colname, rico_authtp_series)
@@ -278,11 +278,11 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
         try:
             correct_dateex_df = pd.read_csv(correct_dateex_path, index_col=SISN, dtype='object')
             preprocessor.update(correct_dateex_df[DATEEX_COLS])
-            
+
             print(f"Source preprocessed by updating {DATEEX_COLS} with values from '{correct_dateex_name}'\n")
         except Exception as e:
             print(f"Failed to update Authority DATEEX with correct values: '{e}'")
-    
+
     # Update DATEEX with correct values
     pull_correct_dateex()
 
@@ -381,7 +381,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             pass
 
         return None
-    
+
     ### Start block for downloading RiC-O version
     #try:
     #    gbad_term = gbadify_rico_version(get_rico_version())
@@ -470,7 +470,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                 #        print(f"Invoking rdfs:label replacement for '{literal_str}'. The following mask will be used: '{mnemonic_mask}'. Note that whenever any of the referenced columns is empty, these rdfs:label triples may be dropped by RML Mapper. To work around, ensure that all such records contain a value in all of the referenced columns.")
                     # Case 2. Will only happen if no REF_FILE per disaggregate_refd_file logic,
                     # or if the same is set manually in drawio
-                #    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'): 
+                #    elif mnemonic == add_ref_add_label and optional_rest.startswith('{TITLE}'):
                 #        mnemonic_mask = f'{{TITLE}}. {{{mnemonic}}}-?' # hardcode for readability
                 literal_str = f'{mnemonic_mask} ({rico_ish_class})'
                 if optional_rest: # anything, importantly UUID
@@ -495,9 +495,9 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                 #    literal_str = literal_str + f' #{instance_number}'
                 #literal_str = literal_str + f' from "{mnemonic}")'
         #        literal_str = f'{{{mnemonic}}} ({rico_class})'
-        
+
         return literal_str
-    
+
     if not graph_path:
         # Set schema-specific params
         if schema_code == 'add':
@@ -702,9 +702,9 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                         else:
                             rico_disaggregated_object_uri = Literal(rico_disaggregated_object_uri)
                         rico_disaggregated_objects.append(rico_disaggregated_object_uri)
-            elif len(rico_disaggregated_objects) == 0: 
+            elif len(rico_disaggregated_objects) == 0:
                 rico_disaggregated_objects.append(object_uri)
-            
+
             # Collect all subjects and objects
             for rico_disaggregated_subject in rico_disaggregated_subjects:
                 for rico_disaggregated_object in rico_disaggregated_objects:
@@ -713,7 +713,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                                                     rico_disaggregated_object))
 
         return rico_disaggregated_triples
-    
+
     def disaggregate_refd_file(spo):
         subject_uri, predicate_uri, object_uri = spo
         ref_disaggregated_subjects = []
@@ -765,9 +765,9 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                     ref_disaggregated_object_uri = str(object_uri).replace(object_mask, ref_term)
                     ref_disaggregated_object_uri = Literal(ref_disaggregated_object_uri)
                 ref_disaggregated_objects.append(ref_disaggregated_object_uri)
-        else: 
+        else:
             ref_disaggregated_objects.append(object_uri)
-        
+
         # Collect all subjects and objects
         for ref_disaggregated_subject in ref_disaggregated_subjects:
             for ref_disaggregated_object in ref_disaggregated_objects:
@@ -792,7 +792,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                     'predicate': p,
                     'object': o
                 })
-        
+
     #print(parsed_results[:5]) # debug
 
     # Convert the parsed results to a dataframe
@@ -844,7 +844,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
         # Decode special URI entities
         uriref_str = urllib.parse.unquote(uriref_str)
         return uriref_str
-    
+
     def triplesmap_clean(str):
         # Replace with underscores anything but Latin letters, numbers, hyphens, and underscores
         triplesmap_name = re.sub(antitriplesmap_pattern, '_', str, flags=re.IGNORECASE)
@@ -857,7 +857,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                 uuid_label: uuid_str
             })
             return map_series
-        
+
         # This implementation assumes that subject URIs are unique
         subject_uri = row.get('subject', None)
         if not pd.isna(subject_uri):
@@ -868,11 +868,11 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             uuid_str = generate_uuid_str(cleaned_subject, show_message=show_message)
             return series(cleaned_subject, uuid_str)
         return series(None, None)
-    
+
     # Necessary to init namespace manager for uriref_str_to_map
     # Initialize an RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    
+
     def uriref_str_to_map(uriref_str, uuid_str=None):
         map_predicate = None
         map_object = None
@@ -886,17 +886,17 @@ def __init__(schema_code, source_filename=None, graph_path=None):
 
         if not uriref_str:
             return series(map_predicate, map_object)
-        
+
         uriref_str = re.sub(r'\s+', ' ', uriref_str)
 
         def remove(predicate: URIRef, uriref_str):
             sin_predicate = re.sub(rf"^{str(predicate)}\s+", "", uriref_str)
             sin_predicate = sin_predicate.strip('"')
             return sin_predicate
-        
+
         def norm(uriref):
             return str(normalize_uri(uriref, g.namespace_manager))
-        
+
         # Literal mapped from source
         if uriref_str.startswith(norm(rml[1].reference)):
             map_predicate = rml[1].reference
@@ -933,12 +933,12 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             map_object = Literal(uriref_str)
 
         return series(map_predicate, map_object)
-    
+
     def review_mnemonics(matches):
         global mnemonics_contain_title
         if add_title_label in matches:
             mnemonics_contain_title = True
-    
+
     def extract_mnemonic(row, all=False):
         map_predicate = row[map_predicate_label]
         map_object = row[map_object_label]
@@ -979,13 +979,13 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                     #return None
                 return matches if all is True else matches[0]
         return None
-    
+
     def generate_rico_name(row):
         object_uri = row['object']
         object_str = str(normalize_uri(object_uri, g.namespace_manager))
         cleaned_object = object_str
         return cleaned_object
-    
+
     rico_name_label = 'RiC-O Name'.replace(' ','_')
     mnemonic_label = 'Authority Mnemonic'.replace(' ','_')
 
@@ -1037,14 +1037,14 @@ def __init__(schema_code, source_filename=None, graph_path=None):
         disaggregated_series_list.extend(dense_new_rows)
 
         return row
-    
+
     # Note for next line that it is the only one that applies to series, all other to df
     subjects_df[uriref_str_label] = subjects_df['subject'].apply(extract_uriref_str)
     # Well, and the next one is also series only because uriref_str_to_map can then be reused outside of apply context
     subjects_df[[map_predicate_label, map_object_label]] = subjects_df[uriref_str_label].apply(uriref_str_to_map)
     # Mnemonic is necessary for disaggregation logic that follows
     subjects_df[mnemonic_label] = subjects_df.apply(extract_mnemonic, axis=1)
-    
+
     # Now that we have mnemonics generated, let's honor any increment requests
     disaggregated_subject_rows = []
     def collect_incremented_subject_uri(row): return collect_incremented_uri(row, 'subject', disaggregated_subject_rows)
@@ -1072,11 +1072,11 @@ def __init__(schema_code, source_filename=None, graph_path=None):
     #print("\n\nSubjects Dataframe Preview:")
     #subjects_df.info()
     #print("\n", "\n\n".join([str(display_table.iloc[i]) for i in range(len(display_table))])) # debug
-    
+
     # Add useful columns from subjects dataset for matching within loop later
     # The column name stays unique so we should just remember that RiC-O name refers to subject
     # The line below is really important, or triples will be lost!
-    parsed_df = parsed_df.rename(columns={'subject': 'original_subject'}) 
+    parsed_df = parsed_df.rename(columns={'subject': 'original_subject'})
     merge_cols = ['original_subject', 'subject', rico_name_label]
     if increment_number_label in subjects_df.columns:
         merge_cols.append(increment_number_label)
@@ -1145,15 +1145,15 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                         uri_mask = f'{{{add_ref_add_label}}}/{{{add_title_label}}}/{rico_class}/{iterator_mask}'
                 elif add_refd_label in mnemonics: # We have a DESCRIPTION source
                     uri_mask = f'{{{add_refd_label}}}/{rico_class}/{iterator_mask}'
-            
+
             return uri_mask
         except UnboundLocalError:
             print(f'No valid identifiers found for an ADD source:\n{subject_row}')
             return None
-    
+
     # Initialize a mapping RDF graph
     mapping = Graph(base = URIRef(f"{base_gbad_uri}/"))
-    
+
     # Define custom prefix
     maps = ('', Namespace(URIRef(f"{base_mapping_uri}#")))
 
@@ -1225,9 +1225,9 @@ def __init__(schema_code, source_filename=None, graph_path=None):
         rml_g.add((mnemonic_uri_mask_pomap, rr[1].objectMap, mnemonic_uri_mask_omap))
         # Here goes the climax of writing - the return value
         rml_g.add((mnemonic_uri_mask_omap, return_predicate, return_object))
-        
+
         return fno_wrapper
-    
+
     def fno_map_this_string_match(
             rml_g,
             return_tuple, input_value_tuples, regex_tuples):
@@ -1266,7 +1266,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             rml_g.add((nested_tostring_fun_arg_1_pomap, rr[1].objectMap, nested_tostring_fun_arg_1_omap))
             rml_g.add((nested_tostring_fun_arg_1_omap, input_value_tuple_1[0], input_value_tuple_1[1]))
             rml_g.add((nested_fun_arg_1_omap, fnml[1].functionValue, nested_tostring_fno_wrapper))
-        
+
         # Nested function argument 2
         nested_fun_arg_2_pomap = BNode()
         rml_g.add((nested_fno_wrapper, rr[1].predicateObjectMap, nested_fun_arg_2_pomap))
@@ -1283,7 +1283,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             rml_g = rml_g,
             return_tuple = return_tuple,
             input_tuples = input_tuples)
-        
+
         return fno_wrapper
 
     def add_custom_triple_to_triplesmap(predicate_uri, object_var, triples_map):
@@ -1299,7 +1299,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
         object = object_var if isinstance(object_var, URIRef) else Literal(object_var)
         mapping.add((object_map, rr[1].template, object))
         return None
-    
+
     # Construct RML graph
     for i, subject_row in subjects_df.drop_duplicates().iterrows():  # not sure why but drop dupes is needed now after adding support for multiple incremented mnemonics
         # This refers to the original subject URI from drawio graph
@@ -1338,7 +1338,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             uri_mask = subject_row[map_object_label]
         #URIRef(urllib.parse.unquote(str(subject)))
         #uri_mask = construct_uri_mask(subjects_df, i)
-        
+
         # Define an empty Subject Map
         subject_map = BNode()
         mapping.add((triples_map, rr[1].subjectMap, subject_map))
@@ -1392,7 +1392,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
         # If no valid RML definitions in the graph
         if not subject_map_predicate:
             #if isinstance(triples_map, BNode):
-            #    # Means that 
+            #    # Means that
             #    continue
             # Replace the blank node with subject as literal
             # Well, this is not really a subject "uri" in this case
@@ -1421,7 +1421,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                     rml_g = mapping,
                     return_tuple = return_tuple,
                     input_tuples = input_tuples)
-            
+
             # IMPORTANT! Note that the below only executes if mnemonic is set in drawio,
             # so for entities defined as constants RICO_AUTHTP will be bugged
             if authtp_column_name:
@@ -1453,7 +1453,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             (parsed_df['subject']==subject_uri) &
             (parsed_df[rico_name_label] == rico_name)
         )]
-        
+
         # Auto-generate rdfs:label when not set in drawio
         has_rdfs_label = (objectmap_df.loc[:, 'predicate'] == rdfs[1].label).any()
         if not has_rdfs_label:
@@ -1476,7 +1476,7 @@ def __init__(schema_code, source_filename=None, graph_path=None):
             pretty_omo = prettify_rdfs_label(uri_mask)
             rdfs_label_triple = (object_map, rr[1].template, Literal(pretty_omo))
             mapping.add(rdfs_label_triple)
-        
+
         # Now finally iterate over all predicates and objects
         for k, parsed_result in objectmap_df.iterrows():
             # Only focus on RiC-O or RDFS predicates
@@ -1549,18 +1549,18 @@ def __init__(schema_code, source_filename=None, graph_path=None):
                             rdfs_label_rr_predicate = object_map_predicate if object_map_predicate else rr[1].constant
                             rdfs_label_triple = (object_map, URIRef(rdfs_label_rr_predicate), Literal(object_map_object))
                             mapping.add(rdfs_label_triple)
-                            continue    
+                            continue
 
                     # This concerns only constant literals, meaning nodes
                     # in drawio graph for which no mapping logic is defined
                     if not object_map_predicate:
                         # So these are simply added as predicate and object, no predicate-object map
                         if object_map_object: # sometimes it may be empty
-                            mapping.add((object_map, rr[1].constant, object_map_object)) 
+                            mapping.add((object_map, rr[1].constant, object_map_object))
                         else:
                             mapping.add((object_map, rr[1].constant, Literal(object))) # point to constant URI
                         continue
-                    
+
                     # Now let's finally attach the object to the object map
                     # Case when the object is supposed to reference another Subject map
                     if object in set(subjects_df['subject']):

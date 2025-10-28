@@ -1,0 +1,95 @@
+Script started on 2025-09-12 15:06:08-04:00 [COMMAND="     echo '--- Log Start: ' $(date) '---'     echo     echo '--- System Details ---'     uname -a     echo     echo '--- Bun Version ---'     bun --version     echo     echo '--- Node Version ---'     node --version     echo     #echo '--- Building React Application ---'     #bun build ./index.html --outdir ./dist     echo     echo '--- Starting Server ---'     bun run index.html &     SERVER_PID=$!     echo 'Server started with PID: ' $SERVER_PID     sleep 5 # Give the server some time to start     echo     echo '--- Running E2E Test ---'     # Update the playwright script to use port 8000     #sed -i 's/localhost:3000/localhost:8000/g' ./verify_conversion.py     pytest verify_conversion.py     echo     echo '--- Stopping Server ---'     kill $SERVER_PID     echo     echo '--- Log End: ' $(date) '---' " TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="114" LINES="12"]
+--- Log Start:  Fri Sep 12 15:06:08 EDT 2025 ---
+
+--- System Details ---
+Linux lima-default 6.11.0-29-generic #29-Ubuntu SMP PREEMPT_DYNAMIC Fri Jun 13 20:32:41 UTC 2025 aarch64 aarch64 aarch64 GNU/Linux
+
+--- Bun Version ---
+1.2.21
+
+--- Node Version ---
+v22.19.0
+
+
+--- Starting Server ---
+Server started with PID:  17821
+[34;7m DEV [0m [1;34m[5mBun[0m [1;34mv1.2.21[0m [2mready in[0m [1m8.73[0m ms
+
+[1;34m➜[0m [36mhttp://localhost:3000/[0m
+
+--- Running E2E Test ---
+[1m============================================== test session starts ===============================================[0m
+platform linux -- Python 3.12.9, pytest-8.4.2, pluggy-1.6.0
+rootdir: /Volumes/home/anonymous/records_in_contexts_draw_io_parser
+configfile: pyproject.toml
+plugins: playwright-0.7.1, base-url-2.1.0, anyio-4.9.0
+[1mcollecting ... [0m[1mcollected 1 item                                                                                                 [0m
+
+verify_conversion.py [32mBundled page in 18ms[0m[2m:[0m index.html
+[31mF[0m[31m                                                                                     [100%][0m
+
+==================================================== FAILURES ====================================================
+[31m[1m___________________________________________ test_conversion[chromium] ____________________________________________[0m
+
+page = <Page url='http://localhost:3000/'>
+
+    [0m[94mdef[39;49;00m[90m [39;49;00m[92mtest_conversion[39;49;00m(page: Page):[90m[39;49;00m
+    [90m    [39;49;00m[33m"""[39;49;00m
+    [33m    This test verifies that the pyodide-react application can successfully[39;49;00m
+    [33m    convert a .drawio file and a .csv file into RML.[39;49;00m
+    [33m    """[39;49;00m[90m[39;49;00m
+        [90m# 1. Arrange: Go to the application's page.[39;49;00m[90m[39;49;00m
+        page.goto([33m"[39;49;00m[33mhttp://localhost:3000[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+        [90m# 2. Act: Upload the files and click the convert button.[39;49;00m[90m[39;49;00m
+        drawio_file_path = [33m"[39;49;00m[33mgbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+        csv_file_path = [33m"[39;49;00m[33mgbad/mapping/source/generic.csv[39;49;00m[33m"[39;49;00m[90m[39;49;00m
+    [90m[39;49;00m
+>       page.locator([33m'[39;49;00m[33minput[type=[39;49;00m[33m"[39;49;00m[33mfile[39;49;00m[33m"[39;49;00m[33m][39;49;00m[33m'[39;49;00m).first.set_input_files(drawio_file_path)[90m[39;49;00m
+
+[1m[31mverify_conversion.py[0m:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+[1m[31m/home/anonymous.linux/miniconda3/envs/gbad-next/lib/python3.12/site-packages/playwright/sync_api/_generated.py[0m:17635: in set_input_files
+    [0m[96mself[39;49;00m._sync([90m[39;49;00m
+[1m[31m/home/anonymous.linux/miniconda3/envs/gbad-next/lib/python3.12/site-packages/playwright/_impl/_locator.py[0m:605: in set_input_files
+    [0m[94mreturn[39;49;00m [94mawait[39;49;00m [96mself[39;49;00m._frame.set_input_files([90m[39;49;00m
+[1m[31m/home/anonymous.linux/miniconda3/envs/gbad-next/lib/python3.12/site-packages/playwright/_impl/_frame.py[0m:786: in set_input_files
+    [0m[94mawait[39;49;00m [96mself[39;49;00m._channel.send([90m[39;49;00m
+[1m[31m/home/anonymous.linux/miniconda3/envs/gbad-next/lib/python3.12/site-packages/playwright/_impl/_connection.py[0m:69: in send
+    [0m[94mreturn[39;49;00m [94mawait[39;49;00m [96mself[39;49;00m._connection.wrap_api_call([90m[39;49;00m
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <playwright._impl._connection.Connection object at 0xfbf2c2e2c770>
+cb = <function Channel.send.<locals>.<lambda> at 0xfbf2c02bef20>, is_internal = False, title = None
+
+    [0m[94masync[39;49;00m [94mdef[39;49;00m[90m [39;49;00m[92mwrap_api_call[39;49;00m([90m[39;49;00m
+        [96mself[39;49;00m, cb: Callable[[], Any], is_internal: [96mbool[39;49;00m = [94mFalse[39;49;00m, title: [96mstr[39;49;00m = [94mNone[39;49;00m[90m[39;49;00m
+    ) -> Any:[90m[39;49;00m
+        [94mif[39;49;00m [96mself[39;49;00m._api_zone.get():[90m[39;49;00m
+            [94mreturn[39;49;00m [94mawait[39;49;00m cb()[90m[39;49;00m
+        task = asyncio.current_task([96mself[39;49;00m._loop)[90m[39;49;00m
+        st: List[inspect.FrameInfo] = [96mgetattr[39;49;00m([90m[39;49;00m
+            task, [33m"[39;49;00m[33m__pw_stack__[39;49;00m[33m"[39;49;00m, [94mNone[39;49;00m[90m[39;49;00m
+        ) [95mor[39;49;00m inspect.stack([94m0[39;49;00m)[90m[39;49;00m
+    [90m[39;49;00m
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)[90m[39;49;00m
+        [96mself[39;49;00m._api_zone.set(parsed_st)[90m[39;49;00m
+        [94mtry[39;49;00m:[90m[39;49;00m
+            [94mreturn[39;49;00m [94mawait[39;49;00m cb()[90m[39;49;00m
+        [94mexcept[39;49;00m [96mException[39;49;00m [94mas[39;49;00m error:[90m[39;49;00m
+>           [94mraise[39;49;00m rewrite_error(error, [33mf[39;49;00m[33m"[39;49;00m[33m{[39;49;00mparsed_st[[33m'[39;49;00m[33mapiName[39;49;00m[33m'[39;49;00m][33m}[39;49;00m[33m: [39;49;00m[33m{[39;49;00merror[33m}[39;49;00m[33m"[39;49;00m) [94mfrom[39;49;00m[90m [39;49;00m[94mNone[39;49;00m[90m[39;49;00m
+[1m[31mE           playwright._impl._errors.TimeoutError: Locator.set_input_files: Timeout 30000ms exceeded.[0m
+[1m[31mE           Call log:[0m
+[1m[31mE             - waiting for locator("input[type=\"file\"]").first[0m
+[1m[31mE               63 × locator resolved to <input type="file" accept=".drawio"/>[0m
+
+[1m[31m/home/anonymous.linux/miniconda3/envs/gbad-next/lib/python3.12/site-packages/playwright/_impl/_connection.py[0m:558: TimeoutError
+[36m[1m============================================ short test summary info =============================================[0m
+[31mFAILED[0m verify_conversion.py::[1mtest_conversion[chromium][0m - playwright._impl._errors.TimeoutError: Locator.set_input_files: Timeout 30000ms exceeded.
+[31m=============================================== [31m[1m1 failed[0m[31m in 30.43s[0m[31m ===============================================[0m
+
+--- Stopping Server ---
+
+--- Log End:  Fri Sep 12 15:06:44 EDT 2025 ---
+
+Script done on 2025-09-12 15:06:44-04:00 [COMMAND_EXIT_CODE="0"]
