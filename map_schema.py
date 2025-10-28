@@ -288,6 +288,10 @@ def auth_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
 
     preprocessor.dump()
 
+def generic_preprocess(source_csv_path, preprocessed_csv_path, **kwargs):
+    preprocessor = SourceCSVPreprocessor(source_csv_path, preprocessed_csv_path)
+    preprocessor.dump()
+
 def __init__(schema_code, source_filename=None):
     # Define GBAD schema ontology
     base_data_uri = BASE_URI[:-1]
@@ -521,6 +525,15 @@ def __init__(schema_code, source_filename=None):
         # Additional sources
         correct_dateex_path = 'gbad/mapping/source/New-export-of-Government-authorities-with-correct-Dates-of-Existence-xlsx.csv'
 
+    elif schema_code == 'generic':
+        graph_dir = 'gbad/schema/generic'
+        # Assume the first file found
+        graph_path = glob.glob(os.path.join(graph_dir, "*.ttl"))[0]
+
+        # ADD: Choose source CSV for mapping
+        if source_filename is None:
+            source_filename = 'generic.csv'
+
     else:
         raise Exception(f"Fatal error: Schema code not supplied.")
 
@@ -537,6 +550,10 @@ def __init__(schema_code, source_filename=None):
             auth_preprocess(source_path,
                             preprocessed_csv_path,
                             correct_dateex_path=correct_dateex_path)
+            source_path = preprocessed_csv_path
+        elif schema_code == 'generic':
+            preprocessed_csv_path = f'gbad/mapping/source/preprocessed/{source_filename}'
+            generic_preprocess(source_path, preprocessed_csv_path)
             source_path = preprocessed_csv_path
         else:
             print("No preprocessing scheduled - none attempted.")
@@ -619,6 +636,8 @@ def __init__(schema_code, source_filename=None):
 
     rico_authtp_subjects = dict() # keeping these out for future use
     def disaggregate_rico_authtp(spo):
+        if schema_code == 'generic':
+            return [spo]
         subject_uri, predicate_uri, object_uri = spo
         rico_disaggregated_subjects = []
         rico_disaggregated_objects = []
@@ -702,7 +721,7 @@ def __init__(schema_code, source_filename=None):
 
         # Substitute correct terms
         ref_terms = []
-        if schema_code == 'auth': # no need to execute
+        if schema_code == 'auth' or schema_code == 'generic': # no need to execute
             return [spo]
         elif schema_code == 'add': # add all options - empty fields will be skipped by RML mapper
             ref_terms.extend([
@@ -1057,9 +1076,13 @@ def __init__(schema_code, source_filename=None):
     # The column name stays unique so we should just remember that RiC-O name refers to subject
     # The line below is really important, or triples will be lost!
     parsed_df = parsed_df.rename(columns={'subject': 'original_subject'}) 
-    parsed_df = pd.merge(parsed_df, subjects_df[['original_subject', 'subject', rico_name_label, increment_number_label]], on='original_subject', how='left')
+    merge_cols = ['original_subject', 'subject', rico_name_label]
+    if increment_number_label in subjects_df.columns:
+        merge_cols.append(increment_number_label)
+    parsed_df = pd.merge(parsed_df, subjects_df[merge_cols], on='original_subject', how='left')
     # The below line is necessary because np.nan in merged df force this col into float
-    parsed_df[increment_number_label] = parsed_df[increment_number_label].astype('Int64')
+    if increment_number_label in parsed_df.columns:
+        parsed_df[increment_number_label] = parsed_df[increment_number_label].astype('Int64')
     #parsed_df[increment_number_label] = parsed_df[increment_number_label].astype(int)  # Convert to int
     #print(parsed_df[increment_number_label])
     # Also extract map predicates and objects for each object
