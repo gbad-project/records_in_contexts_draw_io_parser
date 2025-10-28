@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:add="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/">
+
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/privateNote"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/notes"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/relatedMaterial"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/associatedMaterial"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/findingAidNote"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/immediateSourceOfAcquisition"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/custodialHistory"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/availabilityOfOtherFormats"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/accumulationDate"/>
+    <owl:DatatypeProperty rdf:about="https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/howToOrder"/>
+</rdf:RDF>

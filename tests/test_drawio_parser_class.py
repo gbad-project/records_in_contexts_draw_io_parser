@@ -1,109 +1,25 @@
 """
-Tests the DrawIOXMLTree class in the way it would be used when running
-draw_io_parser.py
+Tests for the DrawioParser class.
 """
 
+import unittest
 from pathlib import Path
-from unittest import TestCase
-
-from draw_io_parser import (
-    DEFAULT_CAPITALISATION_SCHEME, DEFAULT_INDENTATION, DEFAULT_MAX_GAP,
-    DrawIOXMLTree, SerialisationConfig, individual_blocks, serialise)
-
-import io
-import sys
-from unittest.mock import patch
+from argparse import Namespace
+import unittest.mock
 import rdflib
-from rdflib import Graph, URIRef, Namespace
-from rdflib.namespace import RDF, OWL, RDFS
 
-_examples_directory = Path.cwd() / "examples"
+from draw_io_parser import DrawioParser, _arguments_parser
 
-_serialisation_config = SerialisationConfig(
-    infer_type_of_literals=True,
-    include_preamble=False,
-    ontology_iri=None,
-    prefix=None,
-    prefix_iri=None,
-    indentation=DEFAULT_INDENTATION,
-    include_label=True)
-
-_metacharacters = [(",", "-"), ("[", "{"), ("]", "}")]
-
-
-# class TestDrawIOParser(TestCase):
-#     """
-#     Tests that the parsing of the .drawio files in the examples/ directory
-#     gives the expected results
-#     """
-#
-#     def test_examples_without_preamble(self) -> None:
-#         """
-#         Tests, for each .drawio file in the examples/ directory, that the OWL
-#         generated (without preamble) is equal to that contained in the
-#         corresponding _without_preamble.owl file
-#         """
-#         self.maxDiff = None  # pylint: disable=invalid-name
-#         for path in _examples_directory.iterdir():
-#             if path.suffix != ".drawio":
-#                 continue
-#             with open(path, "r", encoding="utf-8") as draw_io_file:
-#                 draw_io_xml_tree = DrawIOXMLTree(draw_io_file.read())
-#             blocks = individual_blocks(
-#                 draw_io_xml_tree.individuals_and_arrows(
-#                     False, DEFAULT_MAX_GAP),
-#                 _metacharacters,
-#                 "",
-#                 DEFAULT_CAPITALISATION_SCHEME)
-#             owl = serialise(blocks, _serialisation_config)
-#             with open(
-#                     _examples_directory / f"{path.stem}_without_preamble.owl",
-#                     "r",
-#                     encoding="utf-8") as owl_file:
-#                 self.assertEqual(owl.strip(), owl_file.read().strip())
-#
-#     def test_example_with_preamble(self) -> None:
-#         """
-#         Tests, for one of the .drawio files in the examples/ directory, that the
-#         OWL generated is equal to that contained in the corresponding
-#         .owl file with the correct preamble (with the ontology IRI specified
-#         here to be the same as that in the .owl file)
-#         """
-#         self.maxDiff = None  # pylint: disable=invalid-name
-#         path = _examples_directory / "koronakommisjonen.drawio"
-#         with open(path, "r", encoding="utf-8") as draw_io_file:
-#             draw_io_xml_tree = DrawIOXMLTree(draw_io_file.read())
-#         blocks = individual_blocks(
-#             draw_io_xml_tree.individuals_and_arrows(False, DEFAULT_MAX_GAP),
-#             [],
-#             "",
-#             DEFAULT_CAPITALISATION_SCHEME)
-#         serialisation_config = SerialisationConfig(
-#             infer_type_of_literals=True,
-#             include_preamble=True,
-#             ontology_iri="ontology://generated-from-draw-io/2024-04-26T01-31-21",
-#             prefix=None,
-#             prefix_iri=None,
-#             indentation=DEFAULT_INDENTATION,
-#             include_label=True)
-#         owl = serialise(blocks, serialisation_config)
-#         with open(
-#                 _examples_directory / f"{path.stem}.owl",
-#                 "r",
-#                 encoding="utf-8") as owl_file:
-#             self.assertEqual(owl.strip(), owl_file.read().strip())
-
-
-class TestDynamicOntologyLoading(TestCase):
+class TestDrawioParserClass(unittest.TestCase):
     """
-    Tests the dynamic ontology loading functionality.
+    Tests the DrawioParser class.
     """
 
     def _create_mock_rico_ontology_from_hardcoded_data(self):
         """
         Generates a mock rico.rdf file from the original hardcoded lists.
         """
-        g = Graph()
+        g = rdflib.Graph()
 
         prefixes = {
             'rico': 'https://www.ica.org/standards/RiC/ontology#',
@@ -111,7 +27,7 @@ class TestDynamicOntologyLoading(TestCase):
             'rdfs': 'http://www.w3.org/2000/01/rdf-schema#'
         }
 
-        namespaces = {prefix: Namespace(uri) for prefix, uri in prefixes.items()}
+        namespaces = {prefix: rdflib.Namespace(uri) for prefix, uri in prefixes.items()}
 
         for prefix, namespace in namespaces.items():
             g.bind(prefix, namespace)
@@ -124,86 +40,66 @@ class TestDynamicOntologyLoading(TestCase):
             if ":" not in qname: continue
             prefix, local_name = qname.split(':', 1)
             if prefix in namespaces:
-                g.add((namespaces[prefix][local_name], RDF.type, RDFS.Class))
+                g.add((namespaces[prefix][local_name], rdflib.RDF.type, rdflib.RDFS.Class))
 
         for qname in _object_properties:
             if ":" not in qname: continue
             prefix, local_name = qname.split(':', 1)
             if prefix in namespaces:
-                g.add((namespaces[prefix][local_name], RDF.type, OWL.ObjectProperty))
+                g.add((namespaces[prefix][local_name], rdflib.RDF.type, rdflib.OWL.ObjectProperty))
 
         for qname in _datatype_properties:
             if ":" not in qname: continue
             prefix, local_name = qname.split(':', 1)
             if prefix in namespaces:
-                g.add((namespaces[prefix][local_name], RDF.type, OWL.DatatypeProperty))
+                g.add((namespaces[prefix][local_name], rdflib.RDF.type, rdflib.OWL.DatatypeProperty))
 
         g.serialize(destination="tests/ontologies/rico.rdf", format="xml")
 
-    def test_e2e_parsing_with_dynamic_ontologies(self):
-        """
-        End-to-end test for parsing a .drawio file with dynamically loaded
-        ontologies.
-        """
-        self._create_mock_rico_ontology_from_hardcoded_data()
+    def test_parser_with_file(self):
         self.maxDiff = None
+        self._create_mock_rico_ontology_from_hardcoded_data()
 
-        # Mock rdflib's parsing of remote graphs
-        uri_map = {
-            "https://www.ica.org/standards/RiC/ontology/": "tests/ontologies/rico.rdf",
-            "http://www.w3.org/2000/01/rdf-schema#": "tests/ontologies/rdfs.rdf",
-            "http://www.w3.org/2002/07/owl#": "tests/ontologies/owl.rdf",
-        }
+        drawio_file_path = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
+        with open(drawio_file_path, "r", encoding="utf-8") as f:
+            drawio_content = f.read()
+
+        golden_file_path = "gbad/schema/description-listings/general_add_descriptions_and_listings_to_ric-o_model_2025-06-20_pz.omn"
+        with open(golden_file_path, "r", encoding="utf-8") as f:
+            golden_content = f.read()
+
+        parser = DrawioParser()
+
+        output_ontology_iri = "https://data.archives.gov.on.test.gbad.ca/Schema/Mapping"
+        argv = [
+            "draw_io_parser.py",
+            "-m", "url",
+            "-c", "none",
+            "--infer-types-disable",
+            "--label-disable",
+            "-o", output_ontology_iri,
+            "-x", "", "-p", f"{output_ontology_iri}#",
+            "-x", "rico", "-p", "https://www.ica.org/standards/RiC/ontology#",
+            "-x", "add", "-p", "https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/",
+            "-x", "auth", "-p", "https://data.archives.gov.on.test.gbad.ca/Schema/Authority/",
+            "-x", "owl", "-p", "http://www.w3.org/2002/07/owl#",
+        ]
+
+        args = _arguments_parser().parse_args(argv[1:])
 
         original_parse = rdflib.graph.ConjunctiveGraph.parse
-
         def mock_parse(self, source=None, publicID=None, format=None, location=None, file=None, data=None, **kwargs):
+            uri_map = {
+                "https://www.ica.org/standards/RiC/ontology/": "tests/ontologies/rico.rdf",
+                "http://www.w3.org/2000/01/rdf-schema#": "tests/ontologies/rdfs.rdf",
+                "http://www.w3.org/2002/07/owl#": "tests/ontologies/owl.rdf",
+                "https://data.archives.gov.on.test.gbad.ca/Schema/Description-Listings/": "tests/ontologies/add.rdf",
+                "https://data.archives.gov.on.test.gbad.ca/Schema/Authority/": "tests/ontologies/auth.rdf",
+            }
             if source in uri_map:
                 source = uri_map[source]
             return original_parse(self, source=source, publicID=publicID, format=format, location=location, file=file, data=data, **kwargs)
 
-        with patch("rdflib.graph.ConjunctiveGraph.parse", mock_parse):
-            drawio_file_path = "gbad/schema/description-listings/General ADD (Descriptions and Listings) to RiC-O Model_2025-06-20_PZ.drawio"
-            with open(drawio_file_path, "r", encoding="utf-8") as f:
-                drawio_content = f.read()
-
-            output_ontology_iri = "https://data.archives.gov.on.test.gbad.ca/Schema/Mapping"
-
-            argv = [
-                "draw_io_parser.py",
-                "-m", "url",
-                "-c", "none",
-                "--label-disable",
-                "-o", output_ontology_iri,
-                "-x", "mapping", "-p", f"{output_ontology_iri}#",
-                "-x", "rico", "-p", "https://www.ica.org/standards/RiC/ontology/",
-                "-x", "rdfs", "-p", "http://www.w3.org/2000/01/rdf-schema#",
-                "-x", "owl", "-p", "http://www.w3.org/2002/07/owl#",
-                "-x", "gbad", "-p", f"file://{Path.cwd()}/gbad/schema/gbad.ttl",
-                "-x", "auth", "-p", f"file://{Path.cwd()}/gbad/schema/authority.ttl",
-                "-x", "add", "-p", f"file://{Path.cwd()}/gbad/schema/description-listings.ttl",
-            ]
-
-            # Capture stdout
-            old_stdout = sys.stdout
-            sys.stdout = my_stdout = io.StringIO()
-
-            with patch('draw_io_parser.stdin', io.StringIO(drawio_content)), patch('sys.argv', argv):
-                from draw_io_parser import _main as main
-                main()
-
-            sys.stdout = old_stdout
-            output = my_stdout.getvalue()
-
-            # Assert that prefixes are present
-            self.assertIn("Prefix: add:", output)
-            self.assertIn("Prefix: auth:", output)
-            self.assertIn("Prefix: gbad:", output)
-            self.assertIn("Prefix: owl:", output)
-            self.assertIn("Prefix: rdfs:", output)
-            self.assertIn("Prefix: rico:", output)
-
-            # Assert that some known terms from the ontologies are used
-            self.assertIn("Types: rico:RecordSet", output)
-            self.assertIn("add1:mnemonic", output)
-            self.assertIn("auth1:sourceNote", output)
+        with unittest.mock.patch('rdflib.graph.ConjunctiveGraph.parse', mock_parse):
+            output = parser.run(drawio_content, args)
+            self.assertEqual(output.strip(), golden_content.strip())
