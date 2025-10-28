@@ -1,0 +1,12 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix add: <https://example.com/Schema/Description-Listings/> .
+@prefix auth: <https://example.com/Schema/Authority/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <https://data.archives.gov.on.ca/test/> .
+
+<https://data.archives.gov.on.ca/test/ontology> a owl:Ontology ;
+    owl:imports <https://www.ica.org/standards/RiC/ontology#> .
+:rrtemplateKBTestID a rico:Thing ;
+  rico:title "rml:reference \"LiteralValue\"" .
+
+:rrtemplateKBTest2ID2 a rico:Thing .
